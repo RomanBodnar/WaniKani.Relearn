@@ -6,16 +6,18 @@ Project Description
 
 ### Todo
 
+- [ ] Add Spaced Repetition System models  
 - [ ] Set up logging: Add simple console logging  
+- [ ] Set up Refit client: Authorization and JsonSerialization  
 - [ ] Set up logging: Choose logging framework  
-- [ ] Add Reviews models  
 - [ ] Implement Get All Reviews  
 - [ ] Add Review Statistics model  
 
 ### In Progress
 
-- [ ] Set up Refit client: Authorization and JsonSerialization  
+- [ ] Add Assignments models  
 
 ### Done ✓
 
+- [x] Add Reviews models  
 
