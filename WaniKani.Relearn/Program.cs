@@ -1,3 +1,6 @@
+using WaniKani.Relearn;
+using Refit;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuration
@@ -16,6 +19,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+var services = builder.Services;
+var configuration = builder.Configuration;
+
+services.AddRefitClient<IAssignmentApi>();
 
 var app = builder.Build();
 

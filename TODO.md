@@ -9,7 +9,6 @@ Project Description
 - [ ] Add Review Statistics Client and Query  
 - [ ] Add Subjects Client and Query  
 - [ ] Add Reviews Client and Query  
-- [ ] Add Assignments Client and Query  
 - [ ] Add Spaced Repetition System models  
 - [ ] Set up logging: Add simple console logging  
 - [ ] Set up Refit client: Authorization and JsonSerialization  
@@ -18,6 +17,7 @@ Project Description
 
 ### In Progress
 
+- [ ] Add Assignments Client and Query  
 
 ### Done ✓
 
