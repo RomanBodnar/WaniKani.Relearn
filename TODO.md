@@ -6,12 +6,15 @@ Project Description
 
 ### Todo
 
+- [ ] Add Review Statistics Client and Query  
+- [ ] Add Subjects Client and Query  
+- [ ] Add Reviews Client and Query  
+- [ ] Add Assignments Client and Query  
 - [ ] Add Spaced Repetition System models  
 - [ ] Set up logging: Add simple console logging  
 - [ ] Set up Refit client: Authorization and JsonSerialization  
 - [ ] Set up logging: Choose logging framework  
 - [ ] Implement Get All Reviews  
-- [ ] Add Review Statistics model  
 
 ### In Progress
 
@@ -20,4 +23,5 @@ Project Description
 
 - [x] Add Reviews models  
 - [x] Add Assignments models  
+- [x] Add Review Statistics model  
 
