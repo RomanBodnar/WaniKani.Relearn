@@ -15,9 +15,9 @@ Project Description
 
 ### In Progress
 
-- [ ] Add Assignments models  
 
 ### Done ✓
 
 - [x] Add Reviews models  
+- [x] Add Assignments models  
 
