@@ -1,10 +1,11 @@
 ﻿namespace WaniKani.Relearn;
 
-public class AuxiliaryMeaning
+public record AuxiliaryMeaning
 {
     /// <summary>
     /// A singular subject meaning.
     /// </summary>
+    [JsonPropertyName("meaning")]
     public string Meaning { get; init; }
 
     /// <summary>
@@ -12,5 +13,6 @@ public class AuxiliaryMeaning
     /// When evaluating user input, whitelisted meanings are used to match for correctness. 
     /// Blacklisted meanings are used to match for incorrectness.
     /// </summary>
+    [JsonPropertyName("type")]
     public string Type { get; init; }
 }

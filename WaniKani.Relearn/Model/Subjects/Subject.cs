@@ -1,6 +1,6 @@
 ﻿namespace WaniKani.Relearn;
 
-public class Subject
+public record Subject
 {
     [JsonPropertyName("auxiliary_meanings")]
     public IReadOnlyCollection<AuxiliaryMeaning> AuxiliaryMeanings { get; init; }
@@ -34,31 +34,37 @@ public class Subject
     /// The position that the subject appears in lessons. 
     /// Note that the value is scoped to the level of the subject, so there are duplicate values across levels.
     /// </summary>
+    [JsonPropertyName("lesson_position")]
     public int LessonPosition { get; init; }
 
     /// <summary>
     /// The level of the subject, from 1 to 60.
     /// </summary>
+    [JsonPropertyName("level")]
     public int Level { get; init; }
 
     /// <summary>
     /// The subject's meaning mnemonic.
     /// </summary>
+    [JsonPropertyName("meaning_mnemonic")]
     public string MeaningMnemonic { get; init; }
 
     /// <summary>
     /// The subject meanings.
     /// </summary>
+    [JsonPropertyName("meanings")]
     public IReadOnlyCollection<MeaningObject> Meanings { get; init; }
 
     /// <summary>
     /// The string that is used when generating the document URL for the subject. 
     /// Radicals use their meaning, downcased. Kanji and vocabulary use their characters.
     /// </summary>
+    [JsonPropertyName("slug")]
     public string Slug { get; init; }
 
     /// <summary>
     /// Unique identifier of the associated spaced_repetition_system.
     /// </summary>
+    [JsonPropertyName("spaced_repetition_system_id")]
     public int SpacedRepetitionSystemId { get; init; }
 }
