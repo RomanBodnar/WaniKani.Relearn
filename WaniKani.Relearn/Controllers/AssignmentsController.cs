@@ -1,17 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WaniKani.Relearn.Controllers;
 
-public class AssignmentsController : ControllerBase
+[Route("assignments")]
+public class AssignmentsController(
+    IAssignmentApi assignmentApi
+) : ControllerBase
 {
-    public AssignmentsController(IHttpClientFactory httpClientFactory)
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
     {
+        var queryParams = new AssignmentsQuery();
+        queryParams.Levels = [23];
+        var assignments = await assignmentApi.GetAssignments(queryParams);
+        return Ok(assignments);
+    }
 
-        
-        
+    [HttpGet("{assignmentId}")]
+    public async Task<IActionResult> Get(int assignmentId)
+    {
+        var assignment = await assignmentApi.GetAssignment(assignmentId);
+        return Ok(assignment);
     }
 }

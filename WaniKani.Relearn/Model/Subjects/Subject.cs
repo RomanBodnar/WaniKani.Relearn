@@ -1,35 +1,33 @@
-﻿using Newtonsoft.Json;
-
-namespace WaniKani.Relearn;
+﻿namespace WaniKani.Relearn;
 
 public class Subject
 {
-    [JsonProperty("auxiliary_meanings")]
+    [JsonPropertyName("auxiliary_meanings")]
     public IReadOnlyCollection<AuxiliaryMeaning> AuxiliaryMeanings { get; }
 
     /// <summary>
     /// The UTF-8 characters for the subject, including kanji and hiragana.
     /// </summary>
-    [JsonProperty("characters")]
+    [JsonPropertyName("characters")]
     public string Characters { get; }
 
     /// <summary>
     /// Timestamp when the subject was created.
     /// </summary>
-    [JsonProperty("created_at")]
+    [JsonPropertyName("created_at")]
     public DateTime CreatedAt { get; }
 
     /// <summary>
     /// A URL pointing to the page on wanikani.com that provides detailed information about this subject.
     /// </summary>
-    [JsonProperty("document_url")]
+    [JsonPropertyName("document_url")]
     public string DocumentUrl { get; }
 
     /// <summary>
     /// Timestamp when the subject was hidden, indicating associated assignments will no longer 
     /// appear in lessons or reviews and that the subject page is no longer visible on wanikani.com.
     /// </summary>
-    [JsonProperty("hidden_at")]
+    [JsonPropertyName("hidden_at")]
     public DateTime? HiddenAt { get; }
 
     /// <summary>

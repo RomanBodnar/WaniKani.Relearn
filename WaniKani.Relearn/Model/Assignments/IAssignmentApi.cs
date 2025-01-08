@@ -5,8 +5,8 @@ namespace WaniKani.Relearn;
 public interface IAssignmentApi
 {
     [Get("/assignments")]
-    Task<CollectionResource> GetAssignments();
+    Task<CollectionResource<Assignment>> GetAssignments(AssignmentsQuery queryParams);
 
     [Get("/assignments/{id}")]
-    Task<SingleResource> GetAssignment(int id);
+    Task<SingleResource<Assignment>> GetAssignment(int id);
 }
