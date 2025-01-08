@@ -1,5 +1,5 @@
 using WaniKani.Relearn;
-using Refit;
+using WaniKani.Relearn.Extensions;
 
 internal class Program
 {
@@ -26,16 +26,9 @@ internal class Program
         var services = builder.Services;
         var configuration = builder.Configuration;
 
-        services.AddRefitClient<IAssignmentApi>()
-        .ConfigureHttpClient(c => 
-        {
-            c.BaseAddress = new Uri(configuration["WaniKani:Api"]!);
-            var accessToken = configuration["WaniKani:AccessToken"]!;
-            c.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
-            c.DefaultRequestHeaders.Add("Wanikani-Revision", configuration["WaniKani:Revision"]);
-        });
+        services.AddRefitClients(configuration);
 
-        services.AddHttpClient<IWaniKaniClient, WaniKaniClient>(client => 
+        services.AddHttpClient<IWaniKaniClient, WaniKaniClient>(client =>
         {
             client.BaseAddress = new Uri(configuration["WaniKani:Api"]!);
             var accessToken = configuration["WaniKani:AccessToken"]!;

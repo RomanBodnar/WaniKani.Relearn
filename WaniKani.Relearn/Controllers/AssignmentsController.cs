@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace WaniKani.Relearn.Controllers;
 
+[ApiController]
 [Route("assignments")]
 public class AssignmentsController(
     IAssignmentApi assignmentApi

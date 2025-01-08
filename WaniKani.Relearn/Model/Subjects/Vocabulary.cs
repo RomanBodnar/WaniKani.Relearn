@@ -7,35 +7,35 @@ public class Vocabulary : Subject
     /// Note that these are the subjects that must be have passed assignments in order to 
     /// unlock this subject's assignment.
     /// </summary>
-    public IReadOnlyCollection<int> ComponentSubjectIds { get; }
+    public IReadOnlyCollection<int> ComponentSubjectIds { get; init; }
 
     /// <summary>
     /// A collection of context sentences. See table below for the object structure.
     /// </summary>
-    public IReadOnlyCollection<ContextSentence> ContextSentences { get; }
+    public IReadOnlyCollection<ContextSentence> ContextSentences { get; init; }
 
     /// <summary>
     /// The subject's meaning mnemonic.
     /// </summary>
-    public string MeaningMnemonic { get; }
+    public string MeaningMnemonic { get; init; }
 
     /// <summary>
     /// Parts of speech.
     /// </summary>
-    public IReadOnlyCollection<string> PartsOfSpeech { get; }
+    public IReadOnlyCollection<string> PartsOfSpeech { get; init; }
 
     /// <summary>
     /// A collection of pronunciation audio. See table below for the object structure.
     /// </summary>
-    public IReadOnlyCollection<PronunciationAudio> PronunciationAudios { get; }
+    public IReadOnlyCollection<PronunciationAudio> PronunciationAudios { get; init; }
 
     /// <summary>
     /// Selected readings for the vocabulary. See table below for the object structure.
     /// </summary>
-    public IReadOnlyCollection<VocabularyReading> Readings { get; }
+    public IReadOnlyCollection<VocabularyReading> Readings { get; init; }
 
     /// <summary>
     /// The subject's reading mnemonic.
     /// </summary>
-    public string ReadingMnemonic { get; }
+    public string ReadingMnemonic { get; init; }
 }

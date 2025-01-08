@@ -5,17 +5,17 @@ public class PronunciationAudioMetadata
     /// <summary>
     /// The gender of the voice actor. 'male', 'female'
     /// </summary>
-    public string Gender { get; }
+    public string Gender { get; init; }
 
     /// <summary>
     /// A unique ID shared between same source pronunciation audio.
     /// </summary>
-    public int SourceId { get; }
+    public int SourceId { get; init; }
 
     /// <summary>
     /// Vocabulary being pronounced in kana.
     /// </summary>
-    public string Pronunciation { get; }
+    public string Pronunciation { get; init; }
 
     /// <summary>
     /// A unique ID belonging to the voice actor.

@@ -1,69 +1,82 @@
 ﻿namespace WaniKani.Relearn;
 
-public class ReviewStatistic
+public record ReviewStatistic
 {
     /// <summary>
     /// Timestamp when the review statistic was created.
     /// </summary>
-    public DateTime CreatedAt { get; }
+    [JsonPropertyName("created_at")]
+    public DateTime CreatedAt { get; init; }
 
     /// <summary>
     /// Indicates if the associated subject has been hidden, preventing it from appearing in lessons or reviews.
     /// </summary>
-    public bool Hidden { get; }
+    [JsonPropertyName("hidden")]
+    public bool Hidden { get; init; }
 
     /// <summary>
     /// Total number of correct answers submitted for the meaning of the associated subject.
     /// </summary>
-    public int MeaningCorrect { get; }
+    [JsonPropertyName("meaning_correct")]
+    public int MeaningCorrect { get; init; }
 
     /// <summary>
     /// The current, uninterrupted series of correct answers given for the meaning of the associated subject.
     /// </summary>
-    public int MeaningCurrentStreak { get; }
+    [JsonPropertyName("meaning_current_streak")]
+    public int MeaningCurrentStreak { get; init; }
 
     /// <summary>
     /// Total number of incorrect answers submitted for the meaning of the associated subject
     /// </summary>
-    public int MeaningIncorrect { get; }
+    [JsonPropertyName("meaning_incorrect")]
+    public int MeaningIncorrect { get; init; }
 
     /// <summary>
     /// The longest, uninterrupted series of correct answers ever given for the meaning of the associated subject.
     /// </summary>
-    public int MeaningMaxStreak { get; }
+    [JsonPropertyName("meaning_max_streak")]
+    public int MeaningMaxStreak { get; init; }
 
     /// <summary>
     /// The overall correct answer rate by the user for the subject, including both meaning and reading.
     /// </summary>
-    public int PercentageCorrect { get; }
+    [JsonPropertyName("percentage_correct")]
+    public int PercentageCorrect { get; init; }
 
     /// <summary>
     /// Total number of correct answers submitted for the reading of the associated subject.
     /// </summary>
-    public int ReadingCorrect { get; }
+    [JsonPropertyName("reading_correct")]
+    public int ReadingCorrect { get; init; }
 
     /// <summary>
     /// The current, uninterrupted series of correct answers given for the reading of the associated subject.
     /// </summary>
-    public int ReadingCurrentStreak { get; }
+    [JsonPropertyName("reading_current_streak")]
+    public int ReadingCurrentStreak { get; init; }
 
     /// <summary>
     /// Total number of incorrect answers submitted for the reading of the associated subject.
     /// </summary>
-    public int ReadingIncorrect { get; }
+    [JsonPropertyName("reading_incorrect")]
+    public int ReadingIncorrect { get; init; }
 
     /// <summary>
     /// The longest, uninterrupted series of correct answers ever given for the reading of the associated subject.
     /// </summary>
-    public int ReadingMaxStreak { get; }
+    [JsonPropertyName("reading_max_streak")]
+    public int ReadingMaxStreak { get; init; }
     
     /// <summary>
     /// Unique identifier of the associated subject.
     /// </summary>
-    public int SubjectId { get; }
+    [JsonPropertyName("subject_id")]
+    public int SubjectId { get; init; }
 
     /// <summary>
     /// The type of the associated subject, one of: 'kana_vocabulary', 'kanji', 'radical', or 'vocabulary'.
     /// </summary>
-    public string SubjectType { get; }
+    [JsonPropertyName("subject_type")]
+    public string SubjectType { get; init; }
 }
