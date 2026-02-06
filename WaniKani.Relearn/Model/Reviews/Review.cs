@@ -48,6 +48,6 @@ public record Review
     /// <summary>
     /// Unique identifier of the associated subject.
     /// </summary>
-    [JsonPropertyName("starting_srs_stage")]
+    [JsonPropertyName("subject_id")]
     public int SubjectId { get; init; }
 }

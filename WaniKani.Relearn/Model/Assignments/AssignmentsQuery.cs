@@ -1,6 +1,4 @@
-﻿using Refit;
-
-namespace WaniKani.Relearn;
+﻿namespace WaniKani.Relearn;
 
 public class AssignmentsQuery
 {

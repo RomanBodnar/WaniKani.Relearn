@@ -14,10 +14,11 @@ Project Description
 - [ ] Set up logging: Choose logging framework  
 - [ ] Add rate limit handling  
 - [ ] Add global exception handling  
-- [ ] Add persisting caching  
 
 ### In Progress
 
+- [ ] Add persisting caching  
+- [ ] Add home page  
 
 ### Done ✓
 
