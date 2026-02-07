@@ -1,0 +1,102 @@
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch; 
+    gap: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    flex: 1 1 auto;
+    background-color: #007bff93;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    display: flex; /* 2. Allows the 'li' to pass the stretch command to the 'a' tag */
+    margin: 0 -2px; /* Negative margin pulls them together */
+}
+
+.nav-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    width: 100%;
+    padding: 10px 25px; /* Adjust padding for smaller screens */
+    color: #efefef;
+    transition: background-color 0.2s;
+    /* 6. Ensure it takes the full height of the parent 'li' */
+    height: auto; 
+    min-height: 100%;
+    border-radius: 20px;
+}
+.nav-link:hover {
+    background-color: #007bffaf;
+    z-index: 1; /* Hover moves it above the normal links */
+}
+
+/* Subtle click effect */
+.nav-link:active {
+    transform: scale(0.95);
+}
+
+/* Active state (looks like a solid button) */
+.nav-link.active {
+    background-color: #007bff;
+    color: white;
+    /* 2. Add the Shadow "Floor" */
+    box-shadow: 0 10px 20px rgba(0, 0, 128, 0.15);
+    transform: scale(1.05);
+    /* 3. Round all corners to make it look like a separate piece */
+    border-radius: 20px;
+    /* 4. Sit on top of neighbors */
+    z-index: 10;
+    /* 5. Remove the separator line if you had one */
+    border-right: none;
+}
+
+.nav-link.active:hover {
+    background-color: #0056b3; /* Darker blue when hovering active link */
+}
+
+/* 1. Default Mobile-First Styles (Optional, but good practice) 
+   Or simply keep your current styles and add the query below. */
+/* 2. The Media Query */
+@media(max-width: 600px) {
+    .navigation ul {
+        display: flex;
+
+        flex-direction: row; /* Stacks links on top of each other */
+        gap: 10px;              /* Space between individual links */
+        width: 100%;            /* Ensures nav takes full width for centering */
+        align-items: stretch;
+        border-radius: 0;
+        padding: 0;
+    }
+    .navigation li {
+        flex: 1;
+        text-align: center;
+        /* margin: 10; */
+    }
+    .navigation {
+        width: 100%;;
+    }
+    .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;/* Horizontally centers text */
+        height: 100%;           /* Fill the li height */
+        width: 100%;        /* Ensures the clickable area covers the whole li */
+        padding: 12px 0;    /* Vertical padding only for better thumb targets */
+        box-sizing: border-box;
+        border-radius: 0;
+        font-weight: 300;
+    }
+    .nav-link.active {
+        transform: none; /* Scale on mobile often causes alignment flickering */
+        border-radius: 0; /* Ensures the active color fills the square gap */
+    }
+}
