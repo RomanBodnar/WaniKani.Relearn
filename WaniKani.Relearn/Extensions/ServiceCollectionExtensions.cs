@@ -1,25 +1,35 @@
+using WaniKani.Relearn.Http;
+
 namespace WaniKani.Relearn.Extensions;
 
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddRefitClients(this IServiceCollection services, IConfiguration configuration)
     {
+        var refitSettings = new RefitSettings
+        {
+            UrlParameterFormatter = new BooleanUrlParameterFormatter()
+        };
+        services.AddSingleton<HttpLoggingHandler>();
         services
-            .AddRefitClient<IAssignmentApi>()
-            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration));
+            .AddRefitClient<IAssignmentApi>(refitSettings)
+            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
+            .AddHttpMessageHandler<HttpLoggingHandler>();
 
         services
-            .AddRefitClient<IReviewStatisticApi>()
-            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration));
+            .AddRefitClient<IReviewStatisticApi>(refitSettings)
+            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
+            .AddHttpMessageHandler<HttpLoggingHandler>();
+        services
+            .AddRefitClient<ISubjectsApi>(refitSettings)
+            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
+            .AddHttpMessageHandler<HttpLoggingHandler>();
 
         services
-            .AddRefitClient<ISubjectsApi>()
-            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration));;
-        
-        services
-            .AddRefitClient<IReviewsApi>()
-            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration));
-        
+            .AddRefitClient<IReviewsApi>(refitSettings)
+            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
+            .AddHttpMessageHandler<HttpLoggingHandler>();
+
         return services;
     }
 

@@ -9,11 +9,18 @@ public class AssignmentsController(
 ) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery]SubjectType[] subjectTypes)
+    public async Task<IActionResult> GetAll(
+        [FromQuery] SubjectType[]? subjectTypes = null,
+        [FromQuery] bool? burned = null)
     {
         var queryParams = new AssignmentsQuery();
-        queryParams.Levels = [23];
-        queryParams.SubjectTypes = subjectTypes.Select(st => st.ToSnakeCaseString()).ToArray();
+        queryParams.Levels = [23, 1];
+        queryParams.Burned = burned;
+        if (subjectTypes is not [])
+        {
+            queryParams.SubjectTypes = subjectTypes?.Select(st => st.ToSnakeCaseString()).ToArray() ?? null;
+        }
+
         var assignments = await assignmentApi.GetAssignments(queryParams);
         return Ok(assignments);
     }
