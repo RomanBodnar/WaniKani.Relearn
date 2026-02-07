@@ -11,10 +11,8 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <h1>Home Page</h1>
-      <nav>
-        <Link to="/assignments">Assignments</Link>
-      </nav>
+      <h1 style={{ color: "cyan", textAlign: "center" }}>Home Page</h1>
+      
       <hr />
     </>
   );
