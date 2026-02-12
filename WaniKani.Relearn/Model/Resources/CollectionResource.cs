@@ -2,7 +2,8 @@
 
 // check 
 public interface IResource<out T>
-{ }
+{
+}
 
 public record CollectionResource<T> : IResource<T>
 {

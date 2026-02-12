@@ -1,4 +1,5 @@
 using System;
+using WaniKani.Relearn.Model.Subjects;
 
 namespace WaniKani.Relearn.DataAccess;
 
@@ -91,26 +92,42 @@ public class StaticFileDataAccess(
         return await File.ReadAllTextAsync(path);
     }
 
-    public async Task SaveKanjiForLevel(int level, string json)
+    public async Task SaveKanjiForLevel(int level, IEnumerable<Kanji> kanji)
     {
+        var json = JsonSerializer.Serialize(kanji, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kanji-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 
-    public async Task SaveVocabularyForLevel(int level, string json)
+    public async Task SaveVocabularyForLevel(int level, IEnumerable<Vocabulary> vocabulary)
     {
+        var json = JsonSerializer.Serialize(vocabulary, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"vocabulary-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 
-    public async Task SaveRadicalsForLevel(int level, string json)
+    public async Task SaveRadicalsForLevel(int level, IEnumerable<Radical> radicals)
     {
+        var json = JsonSerializer.Serialize(radicals, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"radical-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 
-    public async Task SaveKanaVocabularyForLevel(int level, string json)
+    public async Task SaveKanaVocabularyForLevel(int level, IEnumerable<KanaVocabulary> kanaVocabulary)
     {
+        var json = JsonSerializer.Serialize(kanaVocabulary, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kana_vocabulary-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
