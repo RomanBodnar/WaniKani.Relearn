@@ -1,9 +1,23 @@
+using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Http;
+using WaniKani.Relearn.Model.Subjects;
 
 namespace WaniKani.Relearn.Extensions;
 
 public static class ServiceCollectionExtensions
 {
+    public static IServiceCollection AddDataAccess(this IServiceCollection services)
+    {
+        services.AddSingleton<StaticFileDataAccess>();
+        return services;
+    }
+
+    public static IServiceCollection AddServices(this IServiceCollection services)
+    {
+        services.AddScoped<SubjectsService>();
+        return services;
+    }
+
     public static IServiceCollection AddRefitClients(this IServiceCollection services, IConfiguration configuration)
     {
         var refitSettings = new RefitSettings

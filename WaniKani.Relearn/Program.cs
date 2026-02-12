@@ -9,6 +9,7 @@ internal class Program
 
         // Configuration
         IHostEnvironment env = builder.Environment;
+         
         builder.Configuration
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
@@ -16,7 +17,8 @@ internal class Program
             {
                 ["WaniKani:Api"] = "https://api.wanikani.com/v2/",
                 ["WaniKani:AccessToken"] = "a31b5b14-24cb-482a-8c93-ca6a17e3fa08",
-                ["WaniKani:Revision"] = "20170710"
+                ["WaniKani:Revision"] = "20170710",
+                ["StaticFiles:Path"] = Path.Combine(env.ContentRootPath, "static")
             });
 
         builder.Services.AddCors(options =>
@@ -34,7 +36,10 @@ internal class Program
         var services = builder.Services;
         var configuration = builder.Configuration;
 
-        services.AddRefitClients(configuration);
+        services
+            .AddDataAccess()
+            .AddServices()
+            .AddRefitClients(configuration);
 
         services.AddHttpClient<IWaniKaniClient, WaniKaniClient>(client =>
         {
