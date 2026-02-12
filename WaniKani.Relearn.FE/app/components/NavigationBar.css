@@ -92,11 +92,13 @@
         width: 100%;        /* Ensures the clickable area covers the whole li */
         padding: 12px 0;    /* Vertical padding only for better thumb targets */
         box-sizing: border-box;
-        border-radius: 0;
+        border-radius: 0 !important;
         font-weight: 300;
     }
     .nav-link.active {
         transform: none; /* Scale on mobile often causes alignment flickering */
-        border-radius: 0; /* Ensures the active color fills the square gap */
+        border-radius: 0 !important; /* Ensures the active color fills the square gap */
+        box-shadow: none; /* Remove shadow on mobile */
     }
+
 }

@@ -3,7 +3,7 @@ using WaniKani.Relearn.Model.Subjects;
 
 namespace WaniKani.Relearn.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/subjects")]
 [ApiController]
 public class SubjectsController(
     SubjectsService subjectsService) : ControllerBase

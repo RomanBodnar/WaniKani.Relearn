@@ -3,8 +3,8 @@ namespace WaniKani.Relearn;
 public interface ISubjectsApi
 {
     [Get("/subjects")]
-    Task<CollectionResource<Subject>> GetSubjects(SubjectsQuery queryParams);
+    Task<CollectionResource<TSubject>> GetSubjects<TSubject>(SubjectsQuery queryParams) where TSubject : Subject;
 
-    [Get("/subjects/{id}")]
-    Task<SingleResource<Subject>> GetSubject(int id);
+    [Get("/subjects/{slug}")]
+    Task<SingleResource<TSubject>> GetSubject<TSubject>(string slug) where TSubject : Subject;
 }

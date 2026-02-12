@@ -13,23 +13,19 @@ public class SubjectsService(
 {
     public async Task<IReadOnlyList<Subject>> GetSubjects(SubjectType type, int? level)
     {
-        if(level is null)
-        {
-            var allSubjectsForType = await GetAllSubjectsForType(type);
-            return allSubjectsForType;
-        }
         var subjects = type switch
         {
-            SubjectType.Radical => await GetRadicals(level.Value),
-            SubjectType.Kanji => await GetKanji(level.Value),
-            SubjectType.Vocabulary => await GetVocabulary(level.Value),
-            SubjectType.KanaVocabulary => await GetKanaVocabulary(level.Value),
+            SubjectType.Radical => level is null ? await staticFileDataAccess.GetAllRadicals() : await GetRadicals(level.Value),
+            SubjectType.Kanji => level is null ? await staticFileDataAccess.GetAllKanji() : await GetKanji(level.Value),
+            SubjectType.Vocabulary => level is null ? await staticFileDataAccess.GetAllVocabulary() : await GetVocabulary(level.Value),
+            SubjectType.KanaVocabulary => level is null ? await staticFileDataAccess.GetAllKanaVocabulary() : await GetKanaVocabulary(level.Value),
             _ => throw new ArgumentException($"Unsupported subject type: {type}")
         };
 
         return subjects ?? new List<Subject>();
     }
 
+    // todo: integrate IDataAccess methods
     private async Task<IReadOnlyList<Subject>> GetAllSubjectsForType(SubjectType type)
     {
         // todo: check for files first
@@ -52,7 +48,7 @@ public class SubjectsService(
     }
 
     
-    private async Task<IReadOnlyList<Subject>> GetSubjectsFromApi(SubjectType type, int? level = null)
+    private async Task<List<Subject>> GetSubjectsFromApi(SubjectType type, int? level = null)
     {
         var subjectsQuery = new SubjectsQuery
         {
@@ -60,7 +56,15 @@ public class SubjectsService(
             Levels = level is not null ? [level.Value] : null
         };
 
-        var subjects = await subjectsApi.GetSubjects(subjectsQuery);
+        var subjects = type switch
+        {
+            SubjectType.Kanji => (await subjectsApi.GetSubjects<Kanji>(subjectsQuery)) ,
+            SubjectType.Radical => (await subjectsApi.GetSubjects<Radical>(subjectsQuery)),
+            SubjectType.Vocabulary => (await subjectsApi.GetSubjects<Vocabulary>(subjectsQuery)),
+            SubjectType.KanaVocabulary => (await subjectsApi.GetSubjects<KanaVocabulary>(subjectsQuery)) as IResource<Subject>,
+            _ => throw new ArgumentException($"Unsupported subject type: {type}")
+        };
+        
         List<Subject> allSubjects = subjects.Data.Select(s => s.Data).ToList();
 
         logger.LogInformation("Fetched {Count} subjects for type {Type}", allSubjects.Count, type);
@@ -77,7 +81,7 @@ public class SubjectsService(
         return allSubjects;
     }
 
-    private async Task<IReadOnlyList<Subject>> GetKanji(int level)
+    private async Task<List<Subject>> GetKanji(int level)
     {
         try
         {
@@ -94,7 +98,7 @@ public class SubjectsService(
         }
     }
 
-    private async Task<IReadOnlyList<Subject>> GetVocabulary(int level)
+    private async Task<List<Subject>> GetVocabulary(int level)
     {
         try
         {
@@ -110,7 +114,7 @@ public class SubjectsService(
             return vocabulary;
         }
     }
-    private async Task<IReadOnlyList<Subject>> GetRadicals(int level)
+    private async Task<List<Subject>> GetRadicals(int level)
     {
         try
         {
@@ -126,7 +130,7 @@ public class SubjectsService(
             return radicals;
         }
     }
-    private async Task<IReadOnlyList<Subject>> GetKanaVocabulary(int level)
+    private async Task<List<Subject>> GetKanaVocabulary(int level)
     {
         try
         {

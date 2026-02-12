@@ -1,6 +1,10 @@
 ﻿namespace WaniKani.Relearn;
 
-public record CollectionResource<T>
+// check 
+public interface IResource<out T>
+{ }
+
+public record CollectionResource<T> : IResource<T>
 {
     /// <summary>
     /// The kind of object returned. See the object types section below for all the kinds. (Resources.cs)

@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataAccess/" />
     <Folder Include="Http\" />
     <Folder Include="Model/Resources/" />
+    <Folder Include="static\" />
   </ItemGroup>
 
 </Project>

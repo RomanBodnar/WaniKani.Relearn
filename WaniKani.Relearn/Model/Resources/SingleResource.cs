@@ -1,6 +1,6 @@
 ﻿namespace WaniKani.Relearn;
 
-public class SingleResource<T>
+public class SingleResource<T> : IResource<T>
 {
     [JsonPropertyName("id")]
     public int Id { get; set; }
