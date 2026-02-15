@@ -1,6 +1,6 @@
 ﻿namespace WaniKani.Relearn;
 
-public record Subject
+public abstract record Subject
 {
     [JsonPropertyName("auxiliary_meanings")]
     public IReadOnlyCollection<AuxiliaryMeaning> AuxiliaryMeanings { get; init; }

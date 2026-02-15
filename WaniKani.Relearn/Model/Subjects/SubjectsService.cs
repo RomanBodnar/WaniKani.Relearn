@@ -25,29 +25,27 @@ public class SubjectsService(
         return subjects?.ToList() ?? new List<Subject>();
     }
 
-    // todo: integrate IDataAccess methods
     private async Task<IReadOnlyList<Subject>> GetAllSubjectsForType(SubjectType type)
     {
         // todo: check for files first
         var levels = Enumerable.Range(1, 61);
         var subjects = await GetSubjectsFromApi(type);
-        var subjectsByLevel = subjects.GroupBy(s => s.Level).ToDictionary(g => g.Key, g => g.ToList());
+        var subjectsByLevel = subjects.GroupBy(s => s.Data.Level).ToDictionary(g => g.Key, g => g.ToList());
         foreach(var item in subjectsByLevel)
         {
             await (type switch
             {
-                SubjectType.Kanji => staticFileDataAccess.SaveKanjiForLevel(item.Key, item.Value.Select(x => (Kanji)x)),
-                SubjectType.Radical => staticFileDataAccess.SaveRadicalsForLevel(item.Key, item.Value.Select(x => (Radical)x)),
-                SubjectType.Vocabulary => staticFileDataAccess.SaveVocabularyForLevel(item.Key, item.Value.Select(x => (Vocabulary)x)),
-                SubjectType.KanaVocabulary => staticFileDataAccess.SaveKanaVocabularyForLevel(item.Key, item.Value.Select(x => (KanaVocabulary)x)),
+                SubjectType.Kanji => staticFileDataAccess.SaveKanjiForLevel(item.Key, item.Value.Select(x => x)),
+                SubjectType.Radical => staticFileDataAccess.SaveRadicalsForLevel(item.Key, item.Value.Select(x => x)),
+                SubjectType.Vocabulary => staticFileDataAccess.SaveVocabularyForLevel(item.Key, item.Value.Select(x => x)),
+                SubjectType.KanaVocabulary => staticFileDataAccess.SaveKanaVocabularyForLevel(item.Key, item.Value.Select(x => x)),
                 _ => throw new ArgumentException($"Unsupported subject type: {type}")
             });
         }
-        return subjects.ToList();
+        return subjects.Select(x => x.Data).ToList();
     }
-
     
-    private async Task<IEnumerable<Subject>> GetSubjectsFromApi(SubjectType type, int? level = null)
+    private async Task<IEnumerable<SingleResource<Subject>>> GetSubjectsFromApi(SubjectType type, int? level = null)
     {
         var subjectsQuery = new SubjectsQuery
         {
@@ -55,27 +53,50 @@ public class SubjectsService(
             Levels = level is not null ? [level.Value] : null
         };
 
-        //if(type is SubjectType.Kanji)
-        //{
-        //    return await GetTypedSubjects<Kanji>(subjectsQuery);
- 
-        //}
-        var subjects = type switch
+        IEnumerable<SingleResource<Subject>> subjects = type switch
         {
-            SubjectType.Kanji => await GetTypedSubjects<Kanji>(subjectsQuery),
-            SubjectType.Radical => await GetTypedSubjects<Radical>(subjectsQuery),
-            SubjectType.Vocabulary => await GetTypedSubjects<Vocabulary>(subjectsQuery),
-            SubjectType.KanaVocabulary => (await GetTypedSubjects<KanaVocabulary>(subjectsQuery)) as IEnumerable<Subject>,
+            SubjectType.Kanji => (await GetTypedSubjects<Kanji>(subjectsQuery)).Select(x => new SingleResource<Subject>
+            {
+                Id = x.Id,
+                Object = x.Object,
+                Url = x.Url,
+                DataUpdatedAt = x.DataUpdatedAt,
+                Data = x.Data
+            }),
+            SubjectType.Radical => (await GetTypedSubjects<Radical>(subjectsQuery)).Select(x => new SingleResource<Subject>
+            {
+                Id = x.Id,
+                Object = x.Object,
+                Url = x.Url,
+                DataUpdatedAt = x.DataUpdatedAt,
+                Data = x.Data
+            }),
+            SubjectType.Vocabulary => (await GetTypedSubjects<Vocabulary>(subjectsQuery)).Select(x => new SingleResource<Subject>
+            {
+                Id = x.Id,
+                Object = x.Object,
+                Url = x.Url,
+                DataUpdatedAt = x.DataUpdatedAt,
+                Data = x.Data
+            }),
+            SubjectType.KanaVocabulary => (await GetTypedSubjects<KanaVocabulary>(subjectsQuery)).Select(x => new SingleResource<Subject>
+            {
+                Id = x.Id,
+                Object = x.Object,
+                Url = x.Url,
+                DataUpdatedAt = x.DataUpdatedAt,
+                Data = x.Data
+            }),
             _ => throw new ArgumentException($"Unsupported subject type: {type}")
         };
         return subjects?.ToList() ?? [];
     }
 
-    private async Task<IEnumerable<T>> GetTypedSubjects<T>(SubjectsQuery subjectsQuery) where T : Subject
+    private async Task<IEnumerable<SingleResource<T>>> GetTypedSubjects<T>(SubjectsQuery subjectsQuery) where T : Subject
     {
         var collection = await subjectsApi.GetSubjects<T>(subjectsQuery);
 
-        List<T> allSubjects = collection.Data.Select(s => s.Data).ToList();
+        List<SingleResource<T>> allSubjects = collection.Data.ToList();
 
         logger.LogInformation("Fetched {Count} subjects for type {Type}", allSubjects.Count, typeof(T));
 
@@ -86,7 +107,7 @@ public class SubjectsService(
             var nextCollection = JsonSerializer.Deserialize<CollectionResource<T>>(subjectsJson);
 
             logger.LogInformation("Fetched {Count} subjects for type {Type}", nextCollection.Data.Count, typeof(T));
-            allSubjects.AddRange(nextCollection.Data.Select(s => s.Data) ?? []);
+            allSubjects.AddRange(nextCollection.Data ?? []);
             nextUrl = nextCollection?.Pages.NextUrl;
         }
 
@@ -104,8 +125,8 @@ public class SubjectsService(
         catch (FileNotFoundException)
         {
             var kanji = await GetSubjectsFromApi(SubjectType.Kanji, level);
-            await staticFileDataAccess.SaveKanjiForLevel(level, kanji.Select(x => (Kanji)x));
-            return kanji;
+            await staticFileDataAccess.SaveKanjiForLevel(level, kanji.Select(x => x));
+            return kanji.Select(x => x.Data);
         }
     }
 
@@ -120,8 +141,8 @@ public class SubjectsService(
         catch (FileNotFoundException)
         {
             var vocabulary = await GetSubjectsFromApi(SubjectType.Vocabulary, level);
-            await staticFileDataAccess.SaveVocabularyForLevel(level, vocabulary.Select(x => (Vocabulary)x));
-            return vocabulary;
+            await staticFileDataAccess.SaveVocabularyForLevel(level, vocabulary.Select(x => x));
+            return vocabulary.Select(x => x.Data);
         }
     }
 
@@ -136,8 +157,8 @@ public class SubjectsService(
         catch (FileNotFoundException)
         {
             var radicals = await GetSubjectsFromApi(SubjectType.Radical, level);
-            await staticFileDataAccess.SaveRadicalsForLevel(level, radicals.Select(x => (Radical)x));
-            return radicals;
+            await staticFileDataAccess.SaveRadicalsForLevel(level, radicals.Select(x => x));
+            return radicals.Select(x => x.Data);
         }
     }
 
@@ -152,8 +173,8 @@ public class SubjectsService(
         catch (FileNotFoundException)
         {
             var subjects = await GetSubjectsFromApi(SubjectType.KanaVocabulary, level);
-            await staticFileDataAccess.SaveKanaVocabularyForLevel(level, subjects.Select(x => (KanaVocabulary)x));
-            return subjects;
+            await staticFileDataAccess.SaveKanaVocabularyForLevel(level, subjects.Select(x => x));
+            return subjects.Select(x => x.Data);
         }
     }
 }

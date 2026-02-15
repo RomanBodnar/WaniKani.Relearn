@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using WaniKani.Relearn.Model.Subjects;
 
 namespace WaniKani.Relearn.DataAccess;
@@ -12,7 +13,7 @@ public class StaticFileDataAccess(
         throw new NotImplementedException();
     }
 
-    public async Task<List<Subject>> GetAllKanji(params int[] levels)
+    public async Task<List<SingleResource<Kanji>>> GetAllKanji(params int[] levels)
     {
         string prefix = "kanji-";
         levels = levels is not [] ? levels : Enumerable.Range(1, 60).ToArray();
@@ -32,7 +33,7 @@ public class StaticFileDataAccess(
         await Task.WhenAll(fileReadTasks);
         var rawJsons = fileReadTasks.Select(task => task.Result).Where(content => !string.IsNullOrWhiteSpace(content));
         var subjects = rawJsons
-            .Select(json => JsonSerializer.Deserialize<List<Subject>>(json) ?? [])
+            .Select(json => JsonConvert.DeserializeObject<List<SingleResource<Kanji>>>(json) ?? [])
             .SelectMany(subjects => subjects.Select(s => s))
             .ToList();
         return subjects;
@@ -92,42 +93,30 @@ public class StaticFileDataAccess(
         return await File.ReadAllTextAsync(path);
     }
 
-    public async Task SaveKanjiForLevel(int level, IEnumerable<Kanji> kanji)
+    public async Task SaveKanjiForLevel(int level, IEnumerable<SingleResource<Subject>> kanji)
     {
-        var json = JsonSerializer.Serialize(kanji, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        });
+        var json = JsonConvert.SerializeObject(kanji, Formatting.Indented);
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kanji-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 
-    public async Task SaveVocabularyForLevel(int level, IEnumerable<Vocabulary> vocabulary)
+    public async Task SaveVocabularyForLevel(int level, IEnumerable<SingleResource<Subject>> vocabulary)
     {
-        var json = JsonSerializer.Serialize(vocabulary, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        });
+        var json = JsonConvert.SerializeObject(vocabulary, Formatting.Indented);
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"vocabulary-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 
-    public async Task SaveRadicalsForLevel(int level, IEnumerable<Radical> radicals)
+    public async Task SaveRadicalsForLevel(int level, IEnumerable<SingleResource<Subject>> radicals)
     {
-        var json = JsonSerializer.Serialize(radicals, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        });
+        var json = JsonConvert.SerializeObject(radicals, Formatting.Indented);
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"radical-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 
-    public async Task SaveKanaVocabularyForLevel(int level, IEnumerable<KanaVocabulary> kanaVocabulary)
+    public async Task SaveKanaVocabularyForLevel(int level, IEnumerable<SingleResource<Subject>> kanaVocabulary)
     {
-        var json = JsonSerializer.Serialize(kanaVocabulary, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        });
+        var json = JsonConvert.SerializeObject(kanaVocabulary, Formatting.Indented);
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kana_vocabulary-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
