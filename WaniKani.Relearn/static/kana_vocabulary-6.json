@@ -1,0 +1,832 @@
+[
+  {
+    "Id": 9198,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9198",
+    "DataUpdatedAt": "2025-10-08T17:35:06.19161Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Who's this?",
+          "Ja": "この人、だれ？"
+        },
+        {
+          "En": "Please look at this page.",
+          "Ja": "このページを見てください。"
+        },
+        {
+          "En": "Sorry, my schedule is full on this day.",
+          "Ja": "ごめん、この日はスケジュールがいっぱいなんだ。"
+        }
+      ],
+      "MeaningMnemonic": "Remember how これ means \"this one\"? Well, この simply means <vocabulary>this</vocabulary>. The difference is that これ is used on its own, whereas この goes before a noun. For example, この人 means \"this person\".\n\nNotice how words like this starting with こ are close to you? We'll be learning a few more of these, and they all follow the same pattern!",
+      "PartsOfSpeech": [
+        "adjective",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/48mhaufo61ahaj5wvqd9nf5fae3f",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44760,
+            "Pronunciation": "この",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9cwj91te75l2v731kos9sd8bkzj1",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44760,
+            "Pronunciation": "この",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qndim2yoku2l659lb5czgrn3y8uu",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44701,
+            "Pronunciation": "この",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ipinvxi3kpry5uduu8nk30buzg7v",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44701,
+            "Pronunciation": "この",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Those",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "この",
+      "CreatedAt": "2023-04-24T23:16:20.622475Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%93%E3%81%AE",
+      "HiddenAt": null,
+      "LessonPosition": 140,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "This",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "These",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "この",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9199,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9199",
+    "DataUpdatedAt": "2025-10-08T17:35:06.202895Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Isn't that Emily over there?",
+          "Ja": "あれ、エミリーじゃない？"
+        },
+        {
+          "En": "That one over there is my house.",
+          "Ja": "あれがオレのうちだよ。"
+        },
+        {
+          "En": "That was terrible, to say the least.",
+          "Ja": "いくらなんでもあれはヒドいよ。"
+        }
+      ],
+      "MeaningMnemonic": "You need <reading>a le</reading>ns (あれ)? How about <vocabulary>that one over there</vocabulary>? You’re in a camera shop picking out a new lens, and that one over there looks good.\n\nUse あれ to refer to something that's far from both you and the person you're talking to.",
+      "PartsOfSpeech": [
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/rz4zlei1x7q5eiqv31ef0fe0wc8t",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44752,
+            "Pronunciation": "あれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/6eyh441qcdfor5nt8pcdcpetqjxn",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44752,
+            "Pronunciation": "あれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xnna465f4lfelqz7766rmqvxpg5s",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44693,
+            "Pronunciation": "あれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/kcrbguyg35mi3mvjablnhvv95495",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44693,
+            "Pronunciation": "あれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "That Over There",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Those Over There",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "That",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Those",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "That One",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Those Ones",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "This One",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "This",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "These Ones",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "These",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "あれ",
+      "CreatedAt": "2023-04-24T23:19:54.829678Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%82%E3%82%8C",
+      "HiddenAt": null,
+      "LessonPosition": 141,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "That One Over There",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Those Ones Over There",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "あれ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9200,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9200",
+    "DataUpdatedAt": "2025-10-08T17:35:06.209385Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "It says this bread costs $5.",
+          "Ja": "このパン、５ドルだって。"
+        },
+        {
+          "En": "Is that U.S. dollars? Or is it Canadian dollars?",
+          "Ja": "それって米ドル？それともカナダドル？"
+        },
+        {
+          "En": "The dollar to yen rate finally reached 150 yen to the dollar.",
+          "Ja": "ついにドル円のレートが１ドル＝１５０円になった。"
+        }
+      ],
+      "MeaningMnemonic": "ドル is the Japanese version of the English word <vocabulary>dollar</vocabulary>. \n\nThe dollar symbol $ is also common in Japanese, and the pronunciation is still ドル.",
+      "PartsOfSpeech": [
+        "noun",
+        "suffix"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/lritn0w7ewqn4ls3h067g0d3jfmt",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44805,
+            "Pronunciation": "ドル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/bof93irmwsm72ebxpacnqdbr78c3",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44805,
+            "Pronunciation": "ドル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/y1e5pyz1kopt5ws35aizfnqvq7nb",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44737,
+            "Pronunciation": "ドル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/90k9pea7gdr5nwkzz23pjz607kls",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44737,
+            "Pronunciation": "ドル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Dollars",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "$",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ドル",
+      "CreatedAt": "2023-04-24T23:22:42.63872Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%89%E3%83%AB",
+      "HiddenAt": null,
+      "LessonPosition": 142,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "Dollar",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ドル",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9201,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9201",
+    "DataUpdatedAt": "2025-10-08T17:35:05.463926Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Which child is Maria?",
+          "Ja": "どの子がマリアちゃん？"
+        },
+        {
+          "En": "I wonder which hotel I should stay at.",
+          "Ja": "どのホテルにしようかな。"
+        },
+        {
+          "En": "When can you do it?",
+          "Ja": "どのタイミングでできますか？"
+        }
+      ],
+      "MeaningMnemonic": "Remember how どれ means \"which one\"? どの has a very similar meaning: <vocabulary>which</vocabulary>. Whereas どれ is used on its own, どの is used before a noun to ask \"which\" out of three or more options. So for example, どの本 is \"which book (out of that pile)?\".\n\nNotice how question words often start with a ど? We'll be seeing more of these!",
+      "PartsOfSpeech": [
+        "adjective",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/0ry2mlmu8vvl58kzhzfp0tpejj0e",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44775,
+            "Pronunciation": "どの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/wvpg52zl724167nx7xhzod29s9z8",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44775,
+            "Pronunciation": "どの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/yfrz6ers0w0lmut3wbdfzxqfjasp",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44716,
+            "Pronunciation": "どの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0mlbgvzzed219wj0v98snx3axabi",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44716,
+            "Pronunciation": "どの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "What",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "That",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "どの",
+      "CreatedAt": "2023-04-24T23:24:16.684845Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%A9%E3%81%AE",
+      "HiddenAt": null,
+      "LessonPosition": 76,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "Which",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "どの",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9202,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9202",
+    "DataUpdatedAt": "2025-10-08T17:35:05.128212Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I don't have any money at all.",
+          "Ja": "お金がぜんぜんない。"
+        },
+        {
+          "En": "Do you have scissors?",
+          "Ja": "ハサミ、ない？"
+        },
+        {
+          "En": "I don't have scissors, but I do have a cutter.",
+          "Ja": "ハサミはないけど、カッターならあるよ。"
+        },
+        {
+          "En": "\"Moommm, I want apple!\" \"I can't give you what I don't have, Hana-chan.\"",
+          "Ja": "「ママぁー、りんご、ほしい！」「ないものはないのよ、はなちゃん。」"
+        }
+      ],
+      "MeaningMnemonic": "The <reading>kni</reading>fe (ない) is <vocabulary>not there</vocabulary>. It's not here and it's not there. It’s missing. It's nowhere to be found, so don't bother looking for it!",
+      "PartsOfSpeech": [
+        "い adjective"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/jogvh7ez8qhkh9a20vx4oalabjjp",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44777,
+            "Pronunciation": "ない",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ey4yzq9mkpl7guw49anmss6eqi87",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44777,
+            "Pronunciation": "ない",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dthimlgei8ez2iys5x832r4mbedf",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44718,
+            "Pronunciation": "ない",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/s6ebcxcdioyta1znjwtnuvqo0l68",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44718,
+            "Pronunciation": "ない",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Not To Be",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "There Is Not",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "There Are Not",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not To Have",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not To Own",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not To Do",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not To Exist",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not Be",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "There's Not",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "There Isn't",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "There Aren't",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not Have",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not Own",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Not Do",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Do You Have",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Isn't There",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Doesn't Exist",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ない",
+      "CreatedAt": "2023-04-24T23:28:19.045752Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%AA%E3%81%84",
+      "HiddenAt": null,
+      "LessonPosition": 43,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "Not There",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Not Exist",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ない",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9203,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9203",
+    "DataUpdatedAt": "2026-01-13T02:43:41.175274Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh, I don't have my bag!",
+          "Ja": "あ、カバンがない！"
+        },
+        {
+          "En": "That's funny. I thought I put them in my bag.",
+          "Ja": "おかしいなぁ。カバンに入れたはずなのに。"
+        },
+        {
+          "En": "I opted for a larger bag that can hold a lot of stuff.",
+          "Ja": "いっぱい入るよう、大きめのカバンにしたよ。"
+        }
+      ],
+      "MeaningMnemonic": "If there's a <reading>ca</reading>r <reading>ban</reading> (カバン), you'll need a nice <vocabulary>bag</vocabulary> to carry all your stuff in. You can't just throw it all in the car, so get yourself a nice bag instead.\n\nカバン is used for bags that you can close and that have a fairly rigid structure, like satchels or briefcases, but not more flimsy bags that don't close, like plastic or paper shopping bags.\n\nThis word can also be written in hiragana and kanji. All versions are pretty common, but you'll probably see it in katakana the most. ",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/eeu2zfeuqf3uiij9k5xf9nmxs4r2",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44758,
+            "Pronunciation": "かばん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/muvhjqfir1es13tvj9owa6u5dz0a",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44758,
+            "Pronunciation": "かばん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3fg8uescqg77kvflx4zj8omiv4b1",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44699,
+            "Pronunciation": "かばん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rqe82yg4zdbyqvb9yo7xosccao0m",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44699,
+            "Pronunciation": "かばん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Handbag",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Backpack",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Satchel",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Briefcase",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Rucksack",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Purse",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "カバン",
+      "CreatedAt": "2023-04-24T23:34:28.686555Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%AB%E3%83%90%E3%83%B3",
+      "HiddenAt": null,
+      "LessonPosition": 146,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "Bag",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "カバン",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9204,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9204",
+    "DataUpdatedAt": "2025-10-08T17:35:05.404869Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I can't find a cab at all.",
+          "Ja": "タクシーがぜんぜん見つからないんだよね。"
+        },
+        {
+          "En": "Shall we take a cab?",
+          "Ja": "タクシーで行く？"
+        },
+        {
+          "En": "Don't use me as a taxi!",
+          "Ja": "タクシー代わりにしないでよ！"
+        }
+      ],
+      "MeaningMnemonic": "タクシー is the katakana version of the English word <vocabulary>taxi</vocabulary>. The \"xi\" sound becomes クシー to fit better with Japanese pronunciation.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/5ijq3e8g5ibj4rwsyskai91jdrhx",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44800,
+            "Pronunciation": "タクシー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/1t5kss0ie3oc0wshxj6scj5733wv",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44800,
+            "Pronunciation": "タクシー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/6ahep7d3saz3l3xcwh4wp5eqs0cf",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44732,
+            "Pronunciation": "タクシー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/cphi57ulsxpnxialkbvcweuox3fw",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44732,
+            "Pronunciation": "タクシー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "タクシー",
+      "CreatedAt": "2023-04-24T23:39:13.658795Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%BF%E3%82%AF%E3%82%B7%E3%83%BC",
+      "HiddenAt": null,
+      "LessonPosition": 69,
+      "Level": 6,
+      "Meanings": [
+        {
+          "Meaning": "Taxi",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Cab",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "タクシー",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

@@ -1,0 +1,627 @@
+[
+  {
+    "Id": 9213,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9213",
+    "DataUpdatedAt": "2025-10-01T13:47:25.075078Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I've played almost all of the games here.",
+          "Ja": "ここにあるゲーム、ほとんどプレイしたことあるよ。"
+        },
+        {
+          "En": "I hardly understand any of this lecture.",
+          "Ja": "このレクチャー、ほとんど分からないんだけど。"
+        },
+        {
+          "En": "Most people have smartphones nowadays.",
+          "Ja": "今どき、スマホなんてほとんどの人がもってるでしょ。"
+        }
+      ],
+      "MeaningMnemonic": "What can be eaten <reading>hot on dough</reading> (ほとんど)? <vocabulary>Most</vocabulary> things can. <vocabulary>Almost all</vocabulary> things, in fact. <vocabulary>Hardly</vocabulary> anything tastes bad when it's hot and served on dough.",
+      "PartsOfSpeech": [
+        "adverb",
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/yrsr51n4hd5lg8ylzgne535n8vfd",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44780,
+            "Pronunciation": "ほとんど",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5yrs3sjv8w0t50iypiiu98fxgt1e",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44780,
+            "Pronunciation": "ほとんど",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dfdea5412cwmwlqji31ls2mwdm9y",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44721,
+            "Pronunciation": "ほとんど",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/b6euyf42pyx691v2eqo9daeai0j9",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44721,
+            "Pronunciation": "ほとんど",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Almost Nothing",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Rarely",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "A Few",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Mostly",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Nearly",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Scarcely",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Most Of",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "All But",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Hardly Any",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Barely",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Barely Any",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Virtually",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Almost",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Really",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "ほとんど",
+      "CreatedAt": "2023-04-25T00:01:23.967209Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%BB%E3%81%A8%E3%82%93%E3%81%A9",
+      "HiddenAt": null,
+      "LessonPosition": 73,
+      "Level": 9,
+      "Meanings": [
+        {
+          "Meaning": "Most",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Almost All",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Hardly",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ほとんど",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9214,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9214",
+    "DataUpdatedAt": "2025-10-01T13:47:25.094764Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Is this pen made of glass?",
+          "Ja": "このペン、ガラスで出来てるの？"
+        },
+        {
+          "En": "Wow, it looks like Cinderella's glass slipper.",
+          "Ja": "うわー、シンデレラのガラスのくつみたい。"
+        },
+        {
+          "En": "You have bird poop on your windshield.",
+          "Ja": "フロントガラスに鳥のフンが付いてるよ。"
+        }
+      ],
+      "MeaningMnemonic": "This comes from the word <vocabulary>glass</vocabulary>, and it refers to the stuff used to make Cinderella's slippers, and windows, in which case it can also mean a <vocabulary>pane of glass</vocabulary>.\n\nWe'll learn how to say the other meanings of \"glass\" later!",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/0jffmighyuti5n51x03f9ed581ih",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44795,
+            "Pronunciation": "ガラス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/u687rss7nwfrmcltrfxjnwzqif5f",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44795,
+            "Pronunciation": "ガラス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7jerejyiyboawyjp5oiakfzl1ogw",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44727,
+            "Pronunciation": "ガラス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/s0zkm6n62dd59y3d7ycjiagv3g9k",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44727,
+            "Pronunciation": "ガラス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Grass",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "ガラス",
+      "CreatedAt": "2023-04-25T00:04:54.596915Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%AC%E3%83%A9%E3%82%B9",
+      "HiddenAt": null,
+      "LessonPosition": 74,
+      "Level": 9,
+      "Meanings": [
+        {
+          "Meaning": "Glass",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Pane of Glass",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ガラス",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9215,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9215",
+    "DataUpdatedAt": "2025-10-01T13:47:25.131671Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I met my teacher there.",
+          "Ja": "そこで先生に会ったよ。"
+        },
+        {
+          "En": "If you're looking for snacks, they're there.",
+          "Ja": "おやつなら、そこにあるよ。"
+        },
+        {
+          "En": "You don't have to say so much!",
+          "Ja": "そこまで言わなくてもいいじゃない！"
+        }
+      ],
+      "MeaningMnemonic": "Remember how words beginning with そ are either close to the person you're talking to, or fairly close to both of you? And how words ending in こ refer to places? This one's no exception. そこ means <vocabulary>there</vocabulary>.",
+      "PartsOfSpeech": [
+        "noun",
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/8kaz2pwl47fyaq3v11flh3zo638s",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44709,
+            "Pronunciation": "そこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/udzx1m6fy86gm3br8kej5crnezj0",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44709,
+            "Pronunciation": "そこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3a1b87hpuwm49a2m79skyt8zw2gm",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44768,
+            "Pronunciation": "そこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vyyu3mowkghlhsl79z81xfx23365",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44768,
+            "Pronunciation": "そこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "That Place",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Where",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "Here",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "そこ",
+      "CreatedAt": "2023-04-25T00:07:31.489584Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%9D%E3%81%93",
+      "HiddenAt": null,
+      "LessonPosition": 77,
+      "Level": 9,
+      "Meanings": [
+        {
+          "Meaning": "There",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "そこ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9216,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9216",
+    "DataUpdatedAt": "2025-12-10T21:38:05.898646Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "My house is over there.",
+          "Ja": "私のうちは、あそこだよ。"
+        },
+        {
+          "En": "Let's take a short rest over there!",
+          "Ja": "あそこでちょっと休もう！"
+        },
+        {
+          "En": "What's that thing over there?",
+          "Ja": "あそこにあるのは何？"
+        }
+      ],
+      "MeaningMnemonic": "Remember how words beginning with あ show that whatever you're talking about is far away from both you and the person you're talking to? And how words ending in こ refer to places? So what do you think this means? That right, it's <vocabulary>over there</vocabulary>.\n\nNote that even though あそこ means \"over there,\" it's still used to refer to a specific, concrete place, as opposed to a word like 向こう which means \"over there\" in a broader, more general sense.",
+      "PartsOfSpeech": [
+        "noun",
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/sj16tps7c6skpmh8qryca8l05x1g",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44749,
+            "Pronunciation": "あそこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4dlba2jsz5jodpam8zli4a28eqqj",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44749,
+            "Pronunciation": "あそこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/m55xiswf9q6hcvoygqxiou3zc2if",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44690,
+            "Pronunciation": "あそこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fzhxz0xciahzzklnqz6xm6eirau9",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44690,
+            "Pronunciation": "あそこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "There",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "That Place Over There",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "That Place",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Yonder",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Over Here",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "Here",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "あそこ",
+      "CreatedAt": "2023-04-25T00:09:44.774013Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%82%E3%81%9D%E3%81%93",
+      "HiddenAt": null,
+      "LessonPosition": 78,
+      "Level": 9,
+      "Meanings": [
+        {
+          "Meaning": "Over There",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "あそこ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9217,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9217",
+    "DataUpdatedAt": "2025-10-01T13:47:25.146876Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I lost five kilos in one month.",
+          "Ja": "一ヶ月で五キロやせました。"
+        },
+        {
+          "En": "It is roughly 3 km from our house to the school.",
+          "Ja": "うちから学校まで、大体３キロです。"
+        },
+        {
+          "En": "This stone sells for only one yen per kilo.",
+          "Ja": "この石は、キロ当たり１円にしかなりません。"
+        }
+      ],
+      "MeaningMnemonic": "キロ comes from <vocabulary>kilo</vocabulary>, and it can mean <vocabulary>kilogram</vocabulary>, <vocabulary>kilometer</vocabulary>, or any unit that starts with \"kilo\" in English.\n\nYou can also use abbreviations like \"kg\" and \"km\" in Japanese, and they're often just pronounced キロ too.",
+      "PartsOfSpeech": [
+        "noun",
+        "suffix"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/md2r74sb58xxkwvaacdjlx1q4toi",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44796,
+            "Pronunciation": "キロ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/c9o7n97hjihrt7z28fg1buv2uk4r",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44796,
+            "Pronunciation": "キロ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qooy0fproztpeg5x9c59zal936fe",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44728,
+            "Pronunciation": "キロ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/i7746htb8h987f3trlpcugl57ghn",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44728,
+            "Pronunciation": "キロ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Kg",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Km",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Kl",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Kw",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Kiloliter",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Kilobyte",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Kb",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "キロ",
+      "CreatedAt": "2023-04-25T00:17:35.208605Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%AD%E3%83%AD",
+      "HiddenAt": null,
+      "LessonPosition": 79,
+      "Level": 9,
+      "Meanings": [
+        {
+          "Meaning": "Kilo",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Kilogram",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Kilometer",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Kilowatt",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "キロ",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

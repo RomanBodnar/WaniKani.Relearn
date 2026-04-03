@@ -1,0 +1,128 @@
+[
+  {
+    "Id": 9232,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9232",
+    "DataUpdatedAt": "2025-06-11T05:34:19.374062Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh man, I'm so nervous.",
+          "Ja": "やばい、めっちゃドキドキする。"
+        },
+        {
+          "En": "He was so cool that my heart was pounding.",
+          "Ja": "カッコよくて、ドキドキでした。"
+        },
+        {
+          "En": "I could feel your excitement.",
+          "Ja": "ドキドキが伝わってきたよ。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Doc, Doc</reading> (ドキドキ), listen to my <vocabulary>racing heart</vocabulary>. I'm so <vocabulary>excited</vocabulary>, but I'm also a bit <vocabulary>nervous</vocabulary>.\n\nドキドキ is an オノマトペ used to describe the feeling of your heart beating fast. When does your heart race? When you get excited or nervous, so ドキドキ also expresses those feelings!",
+      "PartsOfSpeech": [
+        "noun",
+        "する verb",
+        "な adjective",
+        "オノマトペ"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/q86hpatt81npunffei4hvhu98yzp",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 45162,
+            "Pronunciation": "ドキドキ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/iqjhpxeunyi57sll3nketn9bktbr",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 45162,
+            "Pronunciation": "ドキドキ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ggl5wcy8gyv49qsfgei4cyxs8alo",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 45163,
+            "Pronunciation": "ドキドキ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/czjoudsrc8uy305f9hgrvt52vtl1",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 45163,
+            "Pronunciation": "ドキドキ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Heartbeat",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pounding",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Throbbing",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Thumping",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Beating Fast",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ドキドキ",
+      "CreatedAt": "2023-04-25T01:15:44.539362Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%89%E3%82%AD%E3%83%89%E3%82%AD",
+      "HiddenAt": null,
+      "LessonPosition": 41,
+      "Level": 18,
+      "Meanings": [
+        {
+          "Meaning": "Racing Heart",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Excited",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Nervous",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ドキドキ",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

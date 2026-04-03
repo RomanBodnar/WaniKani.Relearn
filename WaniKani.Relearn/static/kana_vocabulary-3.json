@@ -1,0 +1,590 @@
+[
+  {
+    "Id": 9179,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9179",
+    "DataUpdatedAt": "2025-10-15T19:00:27.446275Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "This one is Mt Fuji.",
+          "Ja": "これがふじ山です。"
+        },
+        {
+          "En": "This is a pen.",
+          "Ja": "これはペンです。"
+        },
+        {
+          "En": "Give me two of these, please.",
+          "Ja": "これを二つ下さい。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Colle</reading>ct (これ) <vocabulary>this one</vocabulary> right here! Go ahead, collect this one.\n\nYou can use これ to talk about anything that's close to you. Things that are close to you are easy to collect, after all!",
+      "PartsOfSpeech": [
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/43ep2b05pga82v37kwr1mqzq6fc9",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44761,
+            "Pronunciation": "これ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ikrc81vrqt5bf0qup2fshig9g61e",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44761,
+            "Pronunciation": "これ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zy3zzaavpsf9mitdploc9lm9fkkf",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44702,
+            "Pronunciation": "これ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ct3foozf62j5qk8ihycn6x59pdbr",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44702,
+            "Pronunciation": "これ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "This",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "These",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Which One",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "That One",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "Those Ones",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "Those",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "これ",
+      "CreatedAt": "2023-04-18T18:12:48.999787Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%93%E3%82%8C",
+      "HiddenAt": null,
+      "LessonPosition": 62,
+      "Level": 3,
+      "Meanings": [
+        {
+          "Meaning": "This One",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "These Ones",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "これ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9180,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9180",
+    "DataUpdatedAt": "2025-10-15T19:00:27.456691Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "What do you want to do for Christmas?",
+          "Ja": "クリスマス、どうする？"
+        },
+        {
+          "En": "If you don't, someone else will.",
+          "Ja": "あなたがしなくても、だれかがするよ。"
+        },
+        {
+          "En": "Shoot there with all your might.",
+          "Ja": "そこで、力いっぱいシュートをするんだ。"
+        }
+      ],
+      "MeaningMnemonic": "It's only <reading>through</reading> (する) doing things that we get better at them, so you need <vocabulary>to do</vocabulary> them as much as you can.\n\nする basically means <vocabulary>to do</vocabulary>, but it’s incredibly versatile and goes beyond its English equivalent. Besides being used alone, it can be put together with a whole range of nouns to turn them into verbs. We call these する verbs and you'll learn a lot of them as we go along!",
+      "PartsOfSpeech": [
+        "する verb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/3xnh2ub1a0gnow9i6zsx6k2wdda6",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44767,
+            "Pronunciation": "する",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0rfc69bezx17r66aghvlakusunlz",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44767,
+            "Pronunciation": "する",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/324gmmp85n2eggw3lqqrzxyaykr2",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44708,
+            "Pronunciation": "する",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/b8wpzr0eela6mt6391ro20nfj4h8",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44708,
+            "Pronunciation": "する",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "する",
+      "CreatedAt": "2023-04-18T18:27:49.646257Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%99%E3%82%8B",
+      "HiddenAt": null,
+      "LessonPosition": 63,
+      "Level": 3,
+      "Meanings": [
+        {
+          "Meaning": "To Do",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "する",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9181,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9181",
+    "DataUpdatedAt": "2025-10-15T19:00:27.466635Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Two apple juices, please.",
+          "Ja": "リンゴジュース、二つ下さい。"
+        },
+        {
+          "En": "Do you want an apple or a banana?",
+          "Ja": "リンゴかバナナ、いる？"
+        },
+        {
+          "En": "This apple tastes bad!",
+          "Ja": "このリンゴ、まずい！"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Ringo</reading> (リンゴ) just ate your <vocabulary>apple</vocabulary>! You were about to take a bite, and he grabbed it. What is Ringo doing snatching apples? Surely he can afford his own.\n\nDid you know that Ringo Starr once appeared in a Japanese TV commercial for <vocabulary>apple</vocabulary> juice? That might help you remember this word, too!\n\nリンゴ is also commonly written in hiragana, and even in kanji, but you’ll probably see it in katakana the most.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/kijeg1ktng42vcacybsxdofchztu",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44814,
+            "Pronunciation": "リンゴ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/noeddnpxot4oxzmfvg0qz4mu2xoq",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44814,
+            "Pronunciation": "リンゴ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/n7e328tkdtfznti4wlfqf89p8x7i",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44746,
+            "Pronunciation": "リンゴ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4xf55v7jycg4jrdhv7xx807nt5l5",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44746,
+            "Pronunciation": "リンゴ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "リンゴ",
+      "CreatedAt": "2023-04-24T21:41:08.633403Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%AA%E3%83%B3%E3%82%B4",
+      "HiddenAt": null,
+      "LessonPosition": 64,
+      "Level": 3,
+      "Meanings": [
+        {
+          "Meaning": "Apple",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "リンゴ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9182,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9182",
+    "DataUpdatedAt": "2025-10-15T19:00:27.477438Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Do you want a cup of coffee?",
+          "Ja": "コーヒー、のむ？"
+        },
+        {
+          "En": "Should we have a coffee break soon?",
+          "Ja": "そろそろコーヒーブレークにする？"
+        },
+        {
+          "En": "One hot coffee, please.",
+          "Ja": "ホットコーヒー、一つ下さい。"
+        }
+      ],
+      "MeaningMnemonic": "コーヒー is the katakana version of the English word <vocabulary>coffee</vocabulary>. \n\nJust watch out for the second syllable, which changes to ヒー in Japanese.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/3g43n01qejuap0vjpcvupbmljl73",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44798,
+            "Pronunciation": "コーヒー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/21xpeoy8fggo041105p5d59ul5k9",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44798,
+            "Pronunciation": "コーヒー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ewtqcwdif9kpg840z4e7qezv1kk3",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44730,
+            "Pronunciation": "コーヒー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/n0aejqjq6yc077zhrem1malcc963",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44730,
+            "Pronunciation": "コーヒー",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "コーヒー",
+      "CreatedAt": "2023-04-24T21:49:47.951572Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC",
+      "HiddenAt": null,
+      "LessonPosition": 65,
+      "Level": 3,
+      "Meanings": [
+        {
+          "Meaning": "Coffee",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "コーヒー",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9183,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9183",
+    "DataUpdatedAt": "2025-10-15T19:00:27.500579Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Hello Sensei.",
+          "Ja": "先生、こんにちは。"
+        },
+        {
+          "En": "Hello Aya.",
+          "Ja": "アヤちゃん、こんにちは。"
+        },
+        {
+          "En": "Hello, I'm Jenny.",
+          "Ja": "こんにちは、ジェニーです。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Connie Chihua</reading>hua (こんにちは) says <vocabulary>hello</vocabulary>. Connie Chihuahua is an amazing talking chihuahua. She can only say \"hello\", but that alone is pretty impressive.\n\nこんにちは is a formal way to say \"hello\". It’s generally used during the daytime, from late morning to early evening. Watch out for the は on the end, which is always pronounced わ.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/lmokl51sra79u9sslcye4dgoh619",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44762,
+            "Pronunciation": "こんにちは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5i84nrltyg6ccb8dsceacqppss2u",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44762,
+            "Pronunciation": "こんにちは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/clt8vcf8qknqt3ghxctcdu1ahhp0",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44703,
+            "Pronunciation": "こんにちは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/puhfa6iaabgntk9d2b5iy2y3mvmx",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44703,
+            "Pronunciation": "こんにちは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "こんにちは",
+      "CreatedAt": "2023-04-24T21:53:13.498824Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF",
+      "HiddenAt": null,
+      "LessonPosition": 66,
+      "Level": 3,
+      "Meanings": [
+        {
+          "Meaning": "Hello",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Good afternoon",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "こんにちは",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9184,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9184",
+    "DataUpdatedAt": "2025-10-15T19:00:27.515961Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "When will you do it?",
+          "Ja": "いつするの？"
+        },
+        {
+          "En": "Until when are you in the U.S.?",
+          "Ja": "いつまでアメリカ？"
+        },
+        {
+          "En": "From when will you be in Canada?",
+          "Ja": "いつからカナダ？"
+        }
+      ],
+      "MeaningMnemonic": "He <reading>eats</reading> (いつ) and eats and eats. <vocabulary>When</vocabulary> does this guy not eat?\n\nいつ is a question word that is used to ask <vocabulary>when</vocabulary>.",
+      "PartsOfSpeech": [
+        "pronoun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/9ra2zavkl6qybuyjlnep1o131jr0",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44754,
+            "Pronunciation": "いつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2z6cwn18tj3og6yu01kyq25dd39a",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44754,
+            "Pronunciation": "いつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/z919ia0rrf2zwetam0wvec1q7k4q",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44695,
+            "Pronunciation": "いつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0viyq5e2mwdlador64rpzahoi4ae",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44695,
+            "Pronunciation": "いつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "いつ",
+      "CreatedAt": "2023-04-24T21:57:04.910366Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%84%E3%81%A4",
+      "HiddenAt": null,
+      "LessonPosition": 67,
+      "Level": 3,
+      "Meanings": [
+        {
+          "Meaning": "When",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "いつ",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

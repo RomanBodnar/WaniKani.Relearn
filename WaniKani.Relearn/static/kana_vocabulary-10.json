@@ -1,0 +1,761 @@
+[
+  {
+    "Id": 9176,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9176",
+    "DataUpdatedAt": "2025-11-27T04:32:55.772249Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh, wait a moment!",
+          "Ja": "あ、ちょっとまって！"
+        },
+        {
+          "En": "I think it's a little different.",
+          "Ja": "ちょっとちがう気がする。"
+        },
+        {
+          "En": "I'll think about it a little.",
+          "Ja": "ちょっと考えてみるよ。"
+        }
+      ],
+      "MeaningMnemonic": "You <reading>chort</reading>le (ちょっと) <vocabulary>a little</vocabulary> at a silly joke. You can’t help chortling <vocabulary>for a moment</vocabulary>. Go ahead, chortle just a little, for just a moment, to help you remember this word.",
+      "PartsOfSpeech": [
+        "adverb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/aytkvvszkbef6bs6fcn1jvgtjlpl",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44712,
+            "Pronunciation": "ちょっと",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/a9b6kvgfl1atmoh0i35ywuekhx2g",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44712,
+            "Pronunciation": "ちょっと",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zq6et3w71q6esjg9eh4lvhchpp7f",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44771,
+            "Pronunciation": "ちょっと",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7bgju0uuqgehil54q583xqaeeqwe",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44771,
+            "Pronunciation": "ちょっと",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "A Bit",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "A Few",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "For A Moment",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "A Minute",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "For A Minute",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Some",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ちょっと",
+      "CreatedAt": "2022-09-14T11:39:10.684981Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8",
+      "HiddenAt": null,
+      "LessonPosition": 69,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "A Little",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "A Moment",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ちょっと",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9218,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9218",
+    "DataUpdatedAt": "2025-11-27T04:32:55.783606Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh, I can smell cigarette smoke.",
+          "Ja": "あ、タバコのにおいがする。"
+        },
+        {
+          "En": "I've been struggling to quit smoking.",
+          "Ja": "タバコが中々やめられないんだ。"
+        },
+        {
+          "En": "It's not good to smoke while walking.",
+          "Ja": "歩きタバコはよくないよ。"
+        }
+      ],
+      "MeaningMnemonic": "タバコ is the Japanese version of the Portuguese word \"tabaco.\" You probably won’t be shocked to learn that タバコ means <vocabulary>tobacco</vocabulary> or <vocabulary>cigarette</vocabulary> in English!\n\nWatch out for the first syllable, which is タ and not ト. タバコ can also be written in hiragana, and even in kanji, but katakana is the most common by far.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/zymwv8kmky4w83xq1ka2jb1fh27h",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44801,
+            "Pronunciation": "タバコ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qwfoudco3szmzk4gqalj534xi9y7",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44801,
+            "Pronunciation": "タバコ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/cusag0hyj45az7lawtykqtihj9j4",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44733,
+            "Pronunciation": "タバコ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vp1eeqh9udhpaiv0omw45eh1w2hz",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44733,
+            "Pronunciation": "タバコ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Smoking",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Smoke",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "タバコ",
+      "CreatedAt": "2023-04-25T00:24:14.607432Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%BF%E3%83%90%E3%82%B3",
+      "HiddenAt": null,
+      "LessonPosition": 70,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "Tobacco",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Cigarette",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "タバコ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9219,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9219",
+    "DataUpdatedAt": "2025-11-27T04:32:55.792696Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "The service at that restaurant isn't great, is it?",
+          "Ja": "あのレストランのサービス、ビミョーじゃない？"
+        },
+        {
+          "En": "It's on the house.",
+          "Ja": "サービスです。"
+        },
+        {
+          "En": "Eh, it's just lip service, isn't it?",
+          "Ja": "えー、ただのリップサービスじゃない？"
+        },
+        {
+          "En": "When I bought cream buns, they gave me bread crusts for free.",
+          "Ja": "クリームパン買ったら、パンの耳、サービスしてくれた。"
+        }
+      ],
+      "MeaningMnemonic": "This is the equivalent of the English word <vocabulary>service</vocabulary>. By extension, it's often used to mean a <vocabulary>freebie</vocabulary>. Though it's generally used as a standard noun, it can also be a verbal noun used with する. In this case, it means <vocabulary>giving a freebie</vocabulary>.",
+      "PartsOfSpeech": [
+        "noun",
+        "する verb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/82rn7kwiolh8d04crkoowgfxhmrr",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44799,
+            "Pronunciation": "サービス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/c7p701dkbzpxp8oggin2wclur4hg",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44799,
+            "Pronunciation": "サービス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ejzjdk6sy766amvbkct8bdc2cozz",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44731,
+            "Pronunciation": "サービス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9ihjonoym9fk1dxslk35yxjfuz38",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44731,
+            "Pronunciation": "サービス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Offering A Service",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Discount",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Gift",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "On The House",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Giving A Discount",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "For Free",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Free",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "サービス",
+      "CreatedAt": "2023-04-25T00:26:49.486712Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9",
+      "HiddenAt": null,
+      "LessonPosition": 71,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "Service",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Freebie",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Giving A Freebie",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "サービス",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9220,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9220",
+    "DataUpdatedAt": "2025-11-27T04:32:55.800739Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "However, that was a lie.",
+          "Ja": "しかし、それはウソだった。"
+        },
+        {
+          "En": "However, it was raining that day.",
+          "Ja": "しかし、その日は雨だった。"
+        },
+        {
+          "En": "However, she was found by the queen.",
+          "Ja": "しかし、女王に見つかってしまった。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>She cashe</reading>s (しかし) in on everything. <vocabulary>However</vocabulary>, this time you're going to stop her. No more cashing in.\n\nしかし is used at the beginning of a sentence, just like \"however.\" It's pretty formal, and you'll see it much more in written Japanese than spoken Japanese.",
+      "PartsOfSpeech": [
+        "conjunction"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/hej7lo6xdtpxf4f59qzzqgqytodx",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44765,
+            "Pronunciation": "しかし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/w4k90pmiwp34cxtt2plc6rv81ie7",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44765,
+            "Pronunciation": "しかし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/1ynu0y2ekx9sh01brcc5d2xfnnj0",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44706,
+            "Pronunciation": "しかし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4xkz716vghq1chdu1ahq3x3fkmc3",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44706,
+            "Pronunciation": "しかし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Yet",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "But",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "しかし",
+      "CreatedAt": "2023-04-25T00:28:12.335485Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%97%E3%81%8B%E3%81%97",
+      "HiddenAt": null,
+      "LessonPosition": 72,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "However",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "しかし",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9221,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9221",
+    "DataUpdatedAt": "2025-11-27T04:32:55.808143Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I always eat bread in the mornings.",
+          "Ja": "朝はいつもパンを食べます。"
+        },
+        {
+          "En": "Oh, we're out of bread.",
+          "Ja": "あ、食パン切れてる。"
+        },
+        {
+          "En": "It says bread crusts are 100 yen.",
+          "Ja": "パンの耳、百円だって。"
+        }
+      ],
+      "MeaningMnemonic": "パン is the katakana version of the Portuguese word \"pão\" and means <vocabulary>bread</vocabulary> in English.\n\nIf you know the Portuguese, Spanish, or French word for bread, you shouldn't have trouble remembering this word. If not, here's a mnemonic to help you:\n\nYou use a <reading>pan</reading> (パン) to make all your <vocabulary>bread</vocabulary>. It's your special bread pan, and all the bread you make with it is delicious.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/n3zsed9odig29twkelemzzyc4fjc",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44808,
+            "Pronunciation": "パン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fzb5mk0etfu9sp6xzxfpe4rwed78",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44808,
+            "Pronunciation": "パン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/au1x9fvj1wumwtbol8ujktr1pnfo",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44740,
+            "Pronunciation": "パン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xlfifeoum9w9b35tsr5aqez62svz",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44740,
+            "Pronunciation": "パン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "パン",
+      "CreatedAt": "2023-04-25T00:32:16.066622Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%91%E3%83%B3",
+      "HiddenAt": null,
+      "LessonPosition": 73,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "Bread",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "パン",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9222,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9222",
+    "DataUpdatedAt": "2025-11-27T04:32:55.816409Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Thank you, I am very happy to hear that.",
+          "Ja": "ありがとう、とてもうれしいです。"
+        },
+        {
+          "En": "This is a very precious teddy bear.",
+          "Ja": "これは、とても大切なテディベアなの。"
+        },
+        {
+          "En": "That teacher's lecture is very easy to understand.",
+          "Ja": "あの先生のレクチャーはとても分かりやすい。"
+        }
+      ],
+      "MeaningMnemonic": "Look at this <reading>totem, oh</reading> (とても)! It's <vocabulary>very</vocabulary>, very, very, very lucky, as all totems should be. \n\nThis word has a slightly formal feel to it, and you’ll come across it most in writing.",
+      "PartsOfSpeech": [
+        "adverb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/30za86fbubwz4xh560ru5mnuamwj",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44773,
+            "Pronunciation": "とても",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/b9uvh2j59aq8xan7xu46ynd7g3xu",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44773,
+            "Pronunciation": "とても",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/x32duy884ivsd25bfzsv6bpe5q0i",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44714,
+            "Pronunciation": "とても",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5j6kp5f5phsq4dt0imj0xz19q2q8",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44714,
+            "Pronunciation": "とても",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Very Much",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Rather",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Exceedingly",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "とても",
+      "CreatedAt": "2023-04-25T00:33:52.424602Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%A8%E3%81%A6%E3%82%82",
+      "HiddenAt": null,
+      "LessonPosition": 74,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "Very",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "とても",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9223,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9223",
+    "DataUpdatedAt": "2025-11-27T04:32:55.825076Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "My company is in that office building over there.",
+          "Ja": "うちの会社は、あそこのオフィスビルに入ってるんだよ。"
+        },
+        {
+          "En": "I'll call you when I get out of the building.",
+          "Ja": "ビルから出たら、電話するよ。"
+        },
+        {
+          "En": "The moon was visible in a gap between the tall buildings.",
+          "Ja": "ビルの谷間に月が見えた。"
+        }
+      ],
+      "MeaningMnemonic": "ビル is the Japanese version of the English word <vocabulary>building</vocabulary>. It usually refers to buildings that are taller than they are wide, most commonly apartment blocks and office buildings.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/5l5mk4hufwkbjgtglkkrni1g4awg",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44809,
+            "Pronunciation": "ビル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/sgt7lymx0cnh47a3sg32kt8z4izh",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44809,
+            "Pronunciation": "ビル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/96nh1evyqk7v5ubtffix4kvz66fw",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44741,
+            "Pronunciation": "ビル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/jxc1tht9ov9dol4bcdpw5oo7qnia",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44741,
+            "Pronunciation": "ビル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Tall Building",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ビル",
+      "CreatedAt": "2023-04-25T00:38:16.353957Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%93%E3%83%AB",
+      "HiddenAt": null,
+      "LessonPosition": 75,
+      "Level": 10,
+      "Meanings": [
+        {
+          "Meaning": "Building",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ビル",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

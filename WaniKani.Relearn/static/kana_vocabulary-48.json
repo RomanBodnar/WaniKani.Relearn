@@ -1,0 +1,94 @@
+[
+  {
+    "Id": 9236,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9236",
+    "DataUpdatedAt": "2025-06-11T05:34:19.48251Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Ah, we're out of staples.",
+          "Ja": "あ、ホッチキスの針、切れちゃった。"
+        },
+        {
+          "En": "Wow, that's thick! I wonder if I can staple it together with this stapler?",
+          "Ja": "うわっ、分厚い！このホッチキスでとじれるかな？"
+        },
+        {
+          "En": "When stapling Japanese documents, it is common practice to staple the top right corner for vertical writing and the top left corner for horizontal writing.",
+          "Ja": "日本の書類をホッチキスで止める時は、縦書きの場合は右上、横書きの場合は左上をホッチキスで止めるのが一般的です。"
+        }
+      ],
+      "MeaningMnemonic": "This word means <vocabulary>stapler</vocabulary>. It comes from the name of the company that first imported staplers into Japan: Hotchkiss! Here’s a mnemonic to help you remember it:\n\nEver given a <reading>hot kiss</reading> (ホッチキス) to a <vocabulary>stapler</vocabulary>? Imagine what that feels like, and you'll remember this word forever. Just keep in mind that sometimes it's written as ホチキス, but ホッチキス is more common. ",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/dusy5tpavkd6wv0ssx9etlzqqnlw",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44811,
+            "Pronunciation": "ホッチキス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/r45zq9sdykzvn37pozrthgqkfww2",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44811,
+            "Pronunciation": "ホッチキス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fnfk16sqmmbd3r5bi1btfm4w9kko",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44743,
+            "Pronunciation": "ホッチキス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/heprmieqq0onxzu37thi9ehsduyw",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44743,
+            "Pronunciation": "ホッチキス",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "ホッチキス",
+      "CreatedAt": "2023-04-25T01:29:58.217522Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%9B%E3%83%83%E3%83%81%E3%82%AD%E3%82%B9",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 48,
+      "Meanings": [
+        {
+          "Meaning": "Stapler",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ホッチキス",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

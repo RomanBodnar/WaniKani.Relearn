@@ -1,1072 +1,2675 @@
 [
   {
-    "id": 458,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/458",
-    "data_updated_at": "2025-10-01T06:09:49.991028Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u5200",
-      "created_at": "2012-02-28T21:32:28Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%88%80",
-      "hidden_at": null,
-      "lesson_position": 33,
-      "level": 2,
-      "meaning_mnemonic": "The radical and the meaning of this kanji are almost the same! The radical is \u003Cradical\u003Esword\u003C/radical\u003E, but we\u0027re learning Japanese, so can you name a Japanese \u003Ckanji\u003Esword\u003C/kanji\u003E? That\u0027s right, the most common is a \u003Ckanji\u003Ekatana\u003C/kanji\u003E, which happens to be the meaning of this kanji as well.",
-      "meanings": [
+    "Id": 458,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/458",
+    "DataUpdatedAt": "2025-10-01T06:09:49.991028Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2507,
+        3399
+      ],
+      "ComponentSubjectIds": [
+        24
+      ],
+      "MeaningHint": "This kanji also looks a lot like the kanji 力. To avoid getting them confused, remember that this one is missing the little nubbin at the top, because 90% of the power comes from the sword to cut your enemies down (which is why the sword kanji is 90% of the power kanji).",
+      "ReadingHint": "Imagine trying to travel to とうきょう with your katana. Airport security is not happy with you trying to take a katana on the plane, so you get a full cavity search. I hope you don't have any other swords hidden anywhere.",
+      "ReadingMnemonic": "So now you have this sweet <kanji>katana</kanji> in your hands and you're swinging it around like an idiot. Feel free to make whooshing noises as you swing it around. To become a master katana wielder, you decide to travel to <reading>とう</reading>きょう (Tokyo). とうきょう has the best sword and katana schools in the world, so it makes sense to travel to とうきょう.",
+      "Readings": [
         {
-          "meaning": "Sword",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "とう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Katana",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "かたな",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u5200",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 459,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/459",
-    "data_updated_at": "2025-10-08T23:31:05.530857Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "Soil",
-          "type": "whitelist"
-        }
+      "VisuallySimilarSubjectIds": [
+        1877,
+        447
       ],
-      "characters": "\u571F",
-      "created_at": "2012-02-28T23:31:05Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%9C%9F",
-      "hidden_at": null,
-      "lesson_position": 34,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Edirt\u003C/radical\u003E radical and the \u003Ckanji\u003Edirt\u003C/kanji\u003E kanji are the same!",
-      "meanings": [
+      "AuxiliaryMeanings": [],
+      "Characters": "刀",
+      "CreatedAt": "2012-02-28T21:32:28Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%88%80",
+      "HiddenAt": null,
+      "LessonPosition": 33,
+      "Level": 2,
+      "MeaningMnemonic": "The radical and the meaning of this kanji are almost the same! The radical is <radical>sword</radical>, but we're learning Japanese, so can you name a Japanese <kanji>sword</kanji>? That's right, the most common is a <kanji>katana</kanji>, which happens to be the meaning of this kanji as well.",
+      "Meanings": [
         {
-          "meaning": "Dirt",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "Sword",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Earth",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Katana",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "刀",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 459,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/459",
+    "DataUpdatedAt": "2025-10-08T23:31:05.530857Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2508,
+        2849,
+        4054,
+        4541,
+        7048,
+        7061,
+        7089,
+        7155,
+        7673,
+        7972,
+        7999,
+        8753,
+        9015,
+        9127
+      ],
+      "ComponentSubjectIds": [
+        17
+      ],
+      "MeaningHint": "As long as you know the radical dirt, you know the kanji dirt.",
+      "ReadingHint": "Dogs and dirt just go together!",
+      "ReadingMnemonic": "Who spends a lot of time in <kanji>dirt</kanji>? <reading>Do</reading>gs (ど) do! Dogs dig in dirt, they roll in dirt, sometimes they try to eat dirt (which isn't so great).",
+      "Readings": [
+        {
+          "Reading": "ど",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Ground",
-          "primary": false,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u571F",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 460,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/460",
-    "data_updated_at": "2026-02-09T01:46:41.543429Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "1000",
-          "type": "whitelist"
+          "Reading": "と",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "1,000",
-          "type": "whitelist"
+          "Reading": "つち",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "characters": "\u5343",
-      "created_at": "2012-02-28T23:34:28Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%8D%83",
-      "hidden_at": null,
-      "lesson_position": 35,
-      "level": 2,
-      "meaning_mnemonic": "This kanji is the same as the radical you learned, so it means \u003Ckanji\u003Ethousand\u003C/kanji\u003E.",
-      "meanings": [
+      "VisuallySimilarSubjectIds": [
+        877
+      ],
+      "AuxiliaryMeanings": [
         {
-          "meaning": "Thousand",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "Soil",
+          "Type": "whitelist"
         }
       ],
-      "slug": "\u5343",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 461,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/461",
-    "data_updated_at": "2025-10-01T06:09:50.011058Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u5915",
-      "created_at": "2012-02-28T23:36:17Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%A4%95",
-      "hidden_at": null,
-      "lesson_position": 36,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Eevening\u003C/radical\u003E radical and the \u003Ckanji\u003Eevening\u003C/kanji\u003E kanji are the same. If you know the radical you know the meaning of the kanji.",
-      "meanings": [
+      "Characters": "土",
+      "CreatedAt": "2012-02-28T23:31:05Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%9C%9F",
+      "HiddenAt": null,
+      "LessonPosition": 34,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>dirt</radical> radical and the <kanji>dirt</kanji> kanji are the same!",
+      "Meanings": [
         {
-          "meaning": "Evening",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u5915",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 462,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/462",
-    "data_updated_at": "2026-01-29T00:00:27.472065Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "Children",
-          "type": "whitelist"
+          "Meaning": "Dirt",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Kids",
-          "type": "whitelist"
-        }
-      ],
-      "characters": "\u5B50",
-      "created_at": "2012-02-28T23:38:28Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%AD%90",
-      "hidden_at": null,
-      "lesson_position": 37,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Echild\u003C/radical\u003E radical and the \u003Ckanji\u003Echild\u003C/kanji\u003E kanji are exactly the same.",
-      "meanings": [
-        {
-          "meaning": "Child",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "Earth",
+          "Primary": false,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Kid",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Ground",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
-      "slug": "\u5B50",
-      "spaced_repetition_system_id": 2
+      "Slug": "土",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 463,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/463",
-    "data_updated_at": "2025-10-21T16:17:02.815667Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u5C0F",
-      "created_at": "2012-02-28T23:40:00Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%B0%8F",
-      "hidden_at": null,
-      "lesson_position": 38,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Esmall\u003C/radical\u003E radical and the \u003Ckanji\u003Esmall\u003C/kanji\u003E kanji are exactly the same.",
-      "meanings": [
+    "Id": 460,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/460",
+    "DataUpdatedAt": "2026-02-09T01:46:41.543429Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2509,
+        2510,
+        2533,
+        2565,
+        2780,
+        2933,
+        7534,
+        9166
+      ],
+      "ComponentSubjectIds": [
+        32
+      ],
+      "MeaningHint": "As long as you know the \"thousand\" radical, you'll know this kanji as well!",
+      "ReadingHint": "Problem is, as they all tumble down the slide the change falls out of their pockets, so there's a thousand times a thousand cents scattered all over on the floor under the slide.",
+      "ReadingMnemonic": "Remember the thousand people going down the slide on a cross in the radical 千? Turns out each one of them was carrying a <kanji>thousand</kanji> <reading>cen</reading>ts (せん). Go ahead and try to calculate what a thousand times a thousand cents would come out to. It's quite a lot, actually.",
+      "Readings": [
         {
-          "meaning": "Small",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "せん",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Little",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "ち",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u5C0F",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 464,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/464",
-    "data_updated_at": "2026-01-07T01:07:41.176706Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u4E01",
-      "created_at": "2012-02-28T23:42:48Z",
-      "document_url": "https://www.wanikani.com/kanji/%E4%B8%81",
-      "hidden_at": null,
-      "lesson_position": 39,
-      "level": 2,
-      "meaning_mnemonic": "The kanji and the radical that look like this are exactly the same. They are both \u003Ckanji\u003Estreet\u003C/kanji\u003E.",
-      "meanings": [
-        {
-          "meaning": "Street",
-          "primary": true,
-          "accepted_answer": true
-        }
+      "VisuallySimilarSubjectIds": [
+        1014
       ],
-      "slug": "\u4E01",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 467,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/467",
-    "data_updated_at": "2026-01-12T15:28:07.146032Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u4E38",
-      "created_at": "2012-02-28T23:53:55Z",
-      "document_url": "https://www.wanikani.com/kanji/%E4%B8%B8",
-      "hidden_at": null,
-      "lesson_position": 40,
-      "level": 2,
-      "meaning_mnemonic": "What\u0027s something with \u003Cradical\u003Enine\u003C/radical\u003E sides? Just add a \u003Cradical\u003Edrop\u003C/radical\u003E and you\u0027ll have something that\u0027s almost a \u003Ckanji\u003Ecircle\u003C/kanji\u003E.",
-      "meanings": [
+      "AuxiliaryMeanings": [
         {
-          "meaning": "Circle",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "1000",
+          "Type": "whitelist"
         },
         {
-          "meaning": "Circular",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "1,000",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "千",
+      "CreatedAt": "2012-02-28T23:34:28Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%8D%83",
+      "HiddenAt": null,
+      "LessonPosition": 35,
+      "Level": 2,
+      "MeaningMnemonic": "This kanji is the same as the radical you learned, so it means <kanji>thousand</kanji>.",
+      "Meanings": [
+        {
+          "Meaning": "Thousand",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "千",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 461,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/461",
+    "DataUpdatedAt": "2026-03-25T08:56:35.408019Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2511,
+        4119,
+        6173,
+        9456
+      ],
+      "ComponentSubjectIds": [
+        33
+      ],
+      "MeaningHint": "Do what you're meant to do. Study those radicals!",
+      "ReadingHint": "Young people love staying up the entire evening doing youth-people things, and it's really obnoxious for us curmudgeonly folk.\n\nNote: All the ゆう readings will use the word \"youths\" as a keyword for the mnemonic, so bear that in mind for any future ゆう reading you'll encounter.",
+      "ReadingMnemonic": "The <kanji>evening</kanji> is when all the <reading>you</reading>ths (ゆう) come outside to play.",
+      "Readings": [
+        {
+          "Reading": "ゆう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "夕",
+      "CreatedAt": "2012-02-28T23:36:17Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%A4%95",
+      "HiddenAt": null,
+      "LessonPosition": 36,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>evening</radical> radical and the <kanji>evening</kanji> kanji are the same. If you know the radical you know the meaning of the kanji.",
+      "Meanings": [
+        {
+          "Meaning": "Evening",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "夕",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 462,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/462",
+    "DataUpdatedAt": "2026-03-20T15:33:33.561611Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2512,
+        2513,
+        2514,
+        2551,
+        2553,
+        2684,
+        3080,
+        3220,
+        3324,
+        3403,
+        3408,
+        3640,
+        3779,
+        3965,
+        4176,
+        4281,
+        4316,
+        4371,
+        4411,
+        4753,
+        4965,
+        4995,
+        5089,
+        5192,
+        5454,
+        5662,
+        5938,
+        6140,
+        6256,
+        6572,
+        6750,
+        6792,
+        6835,
+        6957,
+        6989,
+        7100,
+        7111,
+        7154,
+        7356,
+        7702,
+        8022,
+        8466,
+        9104,
+        9367
+      ],
+      "ComponentSubjectIds": [
+        34
+      ],
+      "MeaningHint": "So, if you know your radicals, you know your kanji as well! This won't last forever (where radicals are exactly the same as the kanji) so enjoy it while the kanji are still small and simple!",
+      "ReadingHint": "The child (sheep) runs away and you chase after it. Every time it's about to turn a corner it looks like a sheep again, but whenever you yell and point, it changes back into a child. You're the only one who can see this sheep child!",
+      "ReadingMnemonic": "The main reading here is し, so to remember it we'll use this mnemonic:\n\nThere is a <kanji>child</kanji> standing in front of you. You look closely at the child but something seems wrong. You rub your eyes and when you open them again, there is a <reading>shee</reading>p (し) in front of you. A sheep?! You yelp, blink again, and it's back to being a child. Are… are all children really just sheep? ",
+      "Readings": [
+        {
+          "Reading": "し",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Round",
-          "primary": false,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u4E38",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 468,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/468",
-    "data_updated_at": "2025-10-01T06:09:50.054441Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u624D",
-      "created_at": "2012-02-28T23:57:42Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%89%8D",
-      "hidden_at": null,
-      "lesson_position": 41,
-      "level": 2,
-      "meaning_mnemonic": "On the \u003Cradical\u003Eground\u003C/radical\u003E you put \u003Cradical\u003Ebarb\u003C/radical\u003Es at the bottom of a \u003Cradical\u003Eslide\u003C/radical\u003E. This is your special \u003Ckanji\u003Etalent\u003C/kanji\u003E. When you go down the slide, you fly right past the barbs like some kind of daredevil. Any normal kid would land on the barbs and get hurt, but you have this talent.",
-      "meanings": [
-        {
-          "meaning": "Talent",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u624D",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 469,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/469",
-    "data_updated_at": "2026-02-12T07:17:21.136514Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u4E2D",
-      "created_at": "2012-02-29T00:01:12Z",
-      "document_url": "https://www.wanikani.com/kanji/%E4%B8%AD",
-      "hidden_at": null,
-      "lesson_position": 42,
-      "level": 2,
-      "meaning_mnemonic": "The radical \u003Creading\u003Emiddle\u003C/reading\u003E and the kanji \u003Ckanji\u003Emiddle\u003C/kanji\u003E are both the same. So if you know one, you know the other.",
-      "meanings": [
-        {
-          "meaning": "Middle",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "す",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "In",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "こ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        464,
+        465
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Children",
+          "Type": "whitelist"
         },
         {
-          "meaning": "Inside",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Kids",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "子",
+      "CreatedAt": "2012-02-28T23:38:28Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%AD%90",
+      "HiddenAt": null,
+      "LessonPosition": 37,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>child</radical> radical and the <kanji>child</kanji> kanji are exactly the same.",
+      "Meanings": [
+        {
+          "Meaning": "Child",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Center",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Kid",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
-      "slug": "\u4E2D",
-      "spaced_repetition_system_id": 2
+      "Slug": "子",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 470,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/470",
-    "data_updated_at": "2026-02-02T21:20:15.015515Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "5",
-          "type": "whitelist"
-        }
+    "Id": 463,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/463",
+    "DataUpdatedAt": "2025-10-21T16:17:02.815667Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2515,
+        2737,
+        3290,
+        3411,
+        3449,
+        3469,
+        4038,
+        4250,
+        5046,
+        5700,
+        5764,
+        5827,
+        6249,
+        6862,
+        6956,
+        7665,
+        7735,
+        8871
       ],
-      "characters": "\u4E94",
-      "created_at": "2012-02-29T00:04:18Z",
-      "document_url": "https://www.wanikani.com/kanji/%E4%BA%94",
-      "hidden_at": null,
-      "lesson_position": 43,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Efive\u003C/radical\u003E radical and the \u003Ckanji\u003Efive\u003C/kanji\u003E kanji are the same.",
-      "meanings": [
-        {
-          "meaning": "Five",
-          "primary": true,
-          "accepted_answer": true
-        }
+      "ComponentSubjectIds": [
+        35
       ],
-      "slug": "\u4E94",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 471,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/471",
-    "data_updated_at": "2026-02-02T21:20:39.363765Z",
-    "data": {
-      "auxiliary_meanings": [
+      "MeaningHint": "Knowing radicals sure is nice, huh?",
+      "ReadingHint": "You read that right, shougun is written with a long う sound. Make sure you spell it right from now on!",
+      "ReadingMnemonic": "This <kanji>small</kanji> kanji would be the perfect gift to give to the <reading>Shou</reading>gun (しょう). The Shougun loves little things, and the <kanji>little</kanji> kanji represents all of that.",
+      "Readings": [
         {
-          "meaning": "6",
-          "type": "whitelist"
-        }
-      ],
-      "characters": "\u516D",
-      "created_at": "2012-02-29T00:17:02Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%85%AD",
-      "hidden_at": null,
-      "lesson_position": 44,
-      "level": 2,
-      "meaning_mnemonic": "Just imagine a beast with a \u003Cradical\u003Elid\u003C/radical\u003E for a head and \u003Cradical\u003Efins\u003C/radical\u003E for feet, running around looking as insane as possible (really imagine it!). When it runs up to you, it shows you the top of its lid-head. On it is written the numbers 666. Why? Because it\u0027s a spawn of the devil, and the number \u003Ckanji\u003Esix\u003C/kanji\u003E is the devil\u0027s number.",
-      "meanings": [
-        {
-          "meaning": "Six",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u516D",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 472,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/472",
-    "data_updated_at": "2025-11-07T23:10:09.414813Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "\u00A5",
-          "type": "whitelist"
-        }
-      ],
-      "characters": "\u5186",
-      "created_at": "2012-02-29T00:18:18Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%86%86",
-      "hidden_at": null,
-      "lesson_position": 45,
-      "level": 2,
-      "meaning_mnemonic": "Here we have a \u003Cradical\u003Ehead\u003C/radical\u003E with a \u003Cradical\u003Elid\u003C/radical\u003E in it, near the top. Imagine the top of someone\u0027s head being closed by a lid. Open that lid up and peer inside... it\u0027s full of \u003Ckanji\u003Eyen\u003C/kanji\u003E coins, the currency of Japan. Jackpot! And all those yen coins have a nice \u003Ckanji\u003Eround\u003C/kanji\u003E shape, naturally.",
-      "meanings": [
-        {
-          "meaning": "Yen",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "しょう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Round",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "ちい",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         },
         {
-          "meaning": "Circle",
-          "primary": false,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u5186",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 473,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/473",
-    "data_updated_at": "2026-01-22T21:57:35.099275Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u5929",
-      "created_at": "2012-02-29T00:22:40Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%A4%A9",
-      "hidden_at": null,
-      "lesson_position": 46,
-      "level": 2,
-      "meaning_mnemonic": "The radical \u003Cradical\u003Eheaven\u003C/radical\u003E is the same as the kanji \u003Ckanji\u003Eheaven\u003C/kanji\u003E, making this an easy kanji to memorize.",
-      "meanings": [
-        {
-          "meaning": "Heaven",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u5929",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 474,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/474",
-    "data_updated_at": "2025-10-01T06:09:50.096272Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u624B",
-      "created_at": "2012-02-29T00:26:40Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%89%8B",
-      "hidden_at": null,
-      "lesson_position": 47,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Ehand\u003C/radical\u003E radical and the \u003Ckanji\u003Ehand\u003C/kanji\u003E kanji are identical in looks and meaning! That should make things easy!",
-      "meanings": [
-        {
-          "meaning": "Hand",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "こ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         },
         {
-          "meaning": "Doer",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "お",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u624B",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 475,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/475",
-    "data_updated_at": "2025-12-23T01:36:37.064251Z",
-    "data": {
-      "auxiliary_meanings": [
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "小",
+      "CreatedAt": "2012-02-28T23:40:00Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%B0%8F",
+      "HiddenAt": null,
+      "LessonPosition": 38,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>small</radical> radical and the <kanji>small</kanji> kanji are exactly the same.",
+      "Meanings": [
         {
-          "meaning": "Text",
-          "type": "whitelist"
-        }
-      ],
-      "characters": "\u6587",
-      "created_at": "2012-02-29T00:29:24Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%96%87",
-      "hidden_at": null,
-      "lesson_position": 48,
-      "level": 2,
-      "meaning_mnemonic": "The kanji and the radical are the same, so remembering the meaning of this kanji is as simple as making sure you know the radical for \u003Cradical\u003Ewriting\u003C/radical\u003E first! If you know the radical, you know this kanji means \u003Ckanji\u003Ewriting\u003C/kanji\u003E as well.",
-      "meanings": [
-        {
-          "meaning": "Writing",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "Small",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Sentence",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Little",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
-      "slug": "\u6587",
-      "spaced_repetition_system_id": 2
+      "Slug": "小",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 476,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/476",
-    "data_updated_at": "2026-01-18T18:20:32.716328Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u65E5",
-      "created_at": "2012-02-29T00:32:19Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%97%A5",
-      "hidden_at": null,
-      "lesson_position": 49,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Esun\u003C/radical\u003E radical and \u003Ckanji\u003Esun\u003C/kanji\u003E kanji are the same, huzzah! Also, if you want to remember \u003Ckanji\u003Eday\u003C/kanji\u003E as well, you can just think about how a day is the time it takes for the sun to cross the sky.",
-      "meanings": [
+    "Id": 464,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/464",
+    "DataUpdatedAt": "2026-01-07T01:07:41.176706Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        3124,
+        6237,
+        6527,
+        6983,
+        7493
+      ],
+      "ComponentSubjectIds": [
+        27
+      ],
+      "MeaningHint": "As long as you know the radical street, you know the kanji street.",
+      "ReadingHint": "Mrs. Chou is a character you'll see a lot throughout WaniKani, anytime the reading is ちょう like this one. A lore will develop around her, so the more vividly you can imagine your Mrs. Chou right now, the easier things will get later. In general, she's a mean, evil woman, so as long as you imagine her within those parameters, you're good. And, when I say she is a \"street-woman\" in the mnemonic, I don't mean she is homeless. She has a nice, middle-class home that's not outside of her financial means. What I'm saying is she wanders the streets looking for evil things to do. These are HER streets. So whenever you see the street radical, know that Mrs. Chou is probably going to show up!",
+      "ReadingMnemonic": "So you're walking down this <kanji>street</kanji>, and off in the distance you see the silhouette of somebody. A lady. Big, black curly hair and red eyes. It is the street-woman, Mrs. <reading>Chou</reading> (ちょう).",
+      "Readings": [
         {
-          "meaning": "Sun",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "ちょう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Day",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "てい",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         }
       ],
-      "slug": "\u65E5",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [
+        462,
+        465
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "丁",
+      "CreatedAt": "2012-02-28T23:42:48Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E4%B8%81",
+      "HiddenAt": null,
+      "LessonPosition": 39,
+      "Level": 2,
+      "MeaningMnemonic": "The kanji and the radical that look like this are exactly the same. They are both <kanji>street</kanji>.",
+      "Meanings": [
+        {
+          "Meaning": "Street",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "丁",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 477,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/477",
-    "data_updated_at": "2026-02-02T21:29:30.856143Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u6708",
-      "created_at": "2012-02-29T00:34:02Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%9C%88",
-      "hidden_at": null,
-      "lesson_position": 50,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Ckanji\u003Emoon\u003C/kanji\u003E kanji is made up of the \u003Cradical\u003Emoon\u003C/radical\u003E radical. This kanji is also used to mean \u003Ckanji\u003Emonth\u003C/kanji\u003E.",
-      "meanings": [
+    "Id": 467,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/467",
+    "DataUpdatedAt": "2026-01-12T15:28:07.146032Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2517,
+        2518,
+        6099,
+        7729
+      ],
+      "ComponentSubjectIds": [
+        11,
+        3
+      ],
+      "MeaningHint": "It's not quite a <kanji>circle</kanji> though. You just need to add a <radical>drop</radical> of liquid to the edges to smooth it out to become a full circle.",
+      "ReadingHint": "Obviously if you \"don't know this reading\" well enough, you should watch some more Maru videos. I'll understand... just make sure you come back someday, okay?",
+      "ReadingMnemonic": "Do you know about the adorable cat Maru? If not, you should <a href=\"http://www.youtube.com/watch?v=z_AbfPXTKms\" target=\"_blank\">check it out</a>. May seem like a distraction, but if you come back knowing the reading for this kanji, then it's totally worthwhile.\n\nWhen you think about a circle, think about <reading>Maru</reading> all rolled up in a little circle, being super adorable. Don't tell me it doesn't melt your heart just thinking about it.\n\nAlternatively, you could also look at this kanji and think of Maru inside of a box, with his little tail sticking out of it. Whatever works best for you, just get yourself to \"Maru.\"",
+      "Readings": [
         {
-          "meaning": "Moon",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "まる",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
         },
         {
-          "meaning": "Month",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "がん",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
         }
       ],
-      "slug": "\u6708",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 478,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/478",
-    "data_updated_at": "2025-10-01T06:09:50.12256Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u6728",
-      "created_at": "2012-02-29T00:34:36Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%9C%A8",
-      "hidden_at": null,
-      "lesson_position": 51,
-      "level": 2,
-      "meaning_mnemonic": "This is another kanji that is the same as the radical. Both \u003Cradical\u003Etree\u003C/radical\u003E and \u003Ckanji\u003Etree\u003C/kanji\u003E are the same in looks and meaning.",
-      "meanings": [
+      "VisuallySimilarSubjectIds": [
+        442,
+        447
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "丸",
+      "CreatedAt": "2012-02-28T23:53:55Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E4%B8%B8",
+      "HiddenAt": null,
+      "LessonPosition": 40,
+      "Level": 2,
+      "MeaningMnemonic": "What's something with <radical>nine</radical> sides? Just add a <radical>drop</radical> and you'll have something that's almost a <kanji>circle</kanji>.",
+      "Meanings": [
         {
-          "meaning": "Tree",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "Circle",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Wood",
-          "primary": false,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u6728",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 479,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/479",
-    "data_updated_at": "2026-02-04T19:37:36.011788Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u6C34",
-      "created_at": "2012-02-29T00:36:53Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%B0%B4",
-      "hidden_at": null,
-      "lesson_position": 52,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Ewater\u003C/radical\u003E radical and the \u003Ckanji\u003Ewater\u003C/kanji\u003E kanji are the same.",
-      "meanings": [
-        {
-          "meaning": "Water",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u6C34",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 480,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/480",
-    "data_updated_at": "2025-10-01T06:09:50.13282Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "Flame",
-          "type": "whitelist"
+          "Meaning": "Circular",
+          "Primary": false,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Blaze",
-          "type": "whitelist"
+          "Meaning": "Round",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
-      "characters": "\u706B",
-      "created_at": "2012-02-29T00:38:57Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%81%AB",
-      "hidden_at": null,
-      "lesson_position": 53,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Efire\u003C/radical\u003E radical and the \u003Ckanji\u003Efire\u003C/kanji\u003E kanji are the same as each other.",
-      "meanings": [
-        {
-          "meaning": "Fire",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u706B",
-      "spaced_repetition_system_id": 2
+      "Slug": "丸",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 481,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/481",
-    "data_updated_at": "2025-12-21T20:37:07.691155Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u72AC",
-      "created_at": "2012-02-29T00:42:35Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%8A%AC",
-      "hidden_at": null,
-      "lesson_position": 54,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Edog\u003C/radical\u003E radical and \u003Ckanji\u003Edog\u003C/kanji\u003E kanji are exactly the same!",
-      "meanings": [
+    "Id": 468,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/468",
+    "DataUpdatedAt": "2025-10-01T06:09:50.054441Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2519,
+        2536,
+        3721,
+        6377,
+        7381
+      ],
+      "ComponentSubjectIds": [
+        1,
+        6,
+        5
+      ],
+      "MeaningHint": "Imagine yourself placing the barbs in front of the slide, thinking about how talented you are. It took years of training to perfect this talent. But it was worth it. Everyone on the playground respects you now.",
+      "ReadingHint": "Cyborgs have brain implants and cool bionic limbs, so they're basically the most talented people around.",
+      "ReadingMnemonic": "But then people start to say that no human could have so much <kanji>talent</kanji>, that you must be a <reading>cy</reading>borg (さい). Are you really a talented cyborg?",
+      "Readings": [
         {
-          "meaning": "Dog",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "さい",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         }
       ],
-      "slug": "\u72AC",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [
+        2083
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "才",
+      "CreatedAt": "2012-02-28T23:57:42Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%89%8D",
+      "HiddenAt": null,
+      "LessonPosition": 41,
+      "Level": 2,
+      "MeaningMnemonic": "On the <radical>ground</radical> you put <radical>barb</radical>s at the bottom of a <radical>slide</radical>. This is your special <kanji>talent</kanji>. When you go down the slide, you fly right past the barbs like some kind of daredevil. Any normal kid would land on the barbs and get hurt, but you have this talent.",
+      "Meanings": [
+        {
+          "Meaning": "Talent",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "才",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 482,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/482",
-    "data_updated_at": "2026-01-13T02:11:43.486542Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u738B",
-      "created_at": "2012-02-29T00:44:29Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%8E%8B",
-      "hidden_at": null,
-      "lesson_position": 55,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Eking\u003C/radical\u003E radical and the \u003Ckanji\u003Eking\u003C/kanji\u003E kanji are the same!",
-      "meanings": [
-        {
-          "meaning": "King",
-          "primary": true,
-          "accepted_answer": true
-        }
+    "Id": 469,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/469",
+    "DataUpdatedAt": "2026-02-12T07:17:21.136514Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2520,
+        2521,
+        2615,
+        2626,
+        2664,
+        2726,
+        2882,
+        2899,
+        3190,
+        3284,
+        3303,
+        3442,
+        3451,
+        3474,
+        3769,
+        3771,
+        3942,
+        4273,
+        4681,
+        4862,
+        5062,
+        5095,
+        5157,
+        5245,
+        5427,
+        5515,
+        5923,
+        6088,
+        6253,
+        6607,
+        6610,
+        7079,
+        7466,
+        7551,
+        7569,
+        7576,
+        7728,
+        7732,
+        7804,
+        8272,
+        8974,
+        9377
       ],
-      "slug": "\u738B",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 483,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/483",
-    "data_updated_at": "2025-10-29T11:23:03.88344Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u51FA",
-      "created_at": "2012-02-29T00:45:28Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%87%BA",
-      "hidden_at": null,
-      "lesson_position": 56,
-      "level": 2,
-      "meaning_mnemonic": "There are two \u003Cradical\u003Emountains\u003C/radical\u003E in front of you... and probably a bunch more around you too. You are in a pass, and don\u0027t know how to get out. You are frantically looking for the \u003Ckanji\u003Eexit\u003C/kanji\u003E before you freeze to death. The most important thing is to find the exit from this mountain range - your life depends on it.",
-      "meanings": [
-        {
-          "meaning": "Exit",
-          "primary": true,
-          "accepted_answer": true
-        }
+      "ComponentSubjectIds": [
+        49
       ],
-      "slug": "\u51FA",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 484,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/484",
-    "data_updated_at": "2025-10-01T06:09:50.162323Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u53F3",
-      "created_at": "2012-02-29T00:50:30Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%8F%B3",
-      "hidden_at": null,
-      "lesson_position": 57,
-      "level": 2,
-      "meaning_mnemonic": "\u003Cradical\u003ENarwhal\u003C/radical\u003E \u003Cradical\u003Emouth\u003C/radical\u003Es are on the \u003Ckanji\u003Eright\u003C/kanji\u003E side of their head. In fact, some people didn\u0027t think they had mouths at all because they weren\u0027t looking from the right. Rookie mistake.\n\nSee how the \u0022mouth\u0022 radical is to the right of the \u0022narwhal\u0022 radical? That should help you remember that this means \u003Ckanji\u003Eright\u003C/kanji\u003E.",
-      "meanings": [
+      "MeaningHint": "Make sure you're studying your radicals, otherwise you might find yourself in the middle of a kanji-learning problem.",
+      "ReadingHint": "Imagine the fear and shock you'd feel after finding out it was Chewbacca who shot the middle of your mouth (and head). Touch his fur. Look really close at his weapon. Give him a sniff, too. Just so that memory never fades away.",
+      "ReadingMnemonic": "To remember the reading for this kanji, we use the word Chewbacca to pull up ちゅう in our memory.\n\nIf you remember back to the radical 中, a stick was stuck in the middle of the mouth of something. Let's say it was your mouth, and when you look up to see who did it, there stands <reading>Chew</reading>bacca. He's even doing his Chewbacca yell. And it isn't a stick in your mouth, it's an arrow from his bowcaster. It just so happens Chewbacca's bowcaster looks just like this kanji too. Go figure.",
+      "Readings": [
         {
-          "meaning": "Right",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u53F3",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 485,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/485",
-    "data_updated_at": "2026-02-02T21:23:32.143331Z",
-    "data": {
-      "auxiliary_meanings": [
-        {
-          "meaning": "4",
-          "type": "whitelist"
-        }
-      ],
-      "characters": "\u56DB",
-      "created_at": "2012-02-29T00:53:29Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%9B%9B",
-      "hidden_at": null,
-      "lesson_position": 58,
-      "level": 2,
-      "meaning_mnemonic": "Imagine contorting yourself in such a way that your \u003Cradical\u003Emouth\u003C/radical\u003E now has your \u003Cradical\u003Elegs\u003C/radical\u003E inside it. You\u0027ve bent your body in all the wrong ways to achieve this. In fact, if you look at yourself, you look like a square now... You\u0027re just a person with \u003Ckanji\u003Efour\u003C/kanji\u003E sides.",
-      "meanings": [
-        {
-          "meaning": "Four",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u56DB",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 486,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/486",
-    "data_updated_at": "2025-10-01T06:09:50.1736Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u5DE6",
-      "created_at": "2012-02-29T00:57:18Z",
-      "document_url": "https://www.wanikani.com/kanji/%E5%B7%A6",
-      "hidden_at": null,
-      "lesson_position": 59,
-      "level": 2,
-      "meaning_mnemonic": "\u003Cradical\u003ENarwhal\u003C/radical\u003Es do \u003Cradical\u003Econstruction\u003C/radical\u003E with their \u003Ckanji\u003Eleft\u003C/kanji\u003E hands (or flippers, I guess). That\u0027s because all narwhals are left-handed!",
-      "meanings": [
-        {
-          "meaning": "Left",
-          "primary": true,
-          "accepted_answer": true
-        }
-      ],
-      "slug": "\u5DE6",
-      "spaced_repetition_system_id": 2
-    }
-  },
-  {
-    "id": 487,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/487",
-    "data_updated_at": "2025-10-01T06:09:50.175411Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u672C",
-      "created_at": "2012-02-29T00:58:32Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%9C%AC",
-      "hidden_at": null,
-      "lesson_position": 60,
-      "level": 2,
-      "meaning_mnemonic": "The kanji and the radical are the same, so remembering the meaning of this kanji is as simple as making sure you know the radical for \u003Cradical\u003Ebook\u003C/radical\u003E first! If you know the radical, you know this kanji means \u003Ckanji\u003Ebook\u003C/kanji\u003E as well.\n\nTake note that the second, third, and fourth meanings of this kanji are \u003Ckanji\u003Eorigin\u003C/kanji\u003E, \u003Ckanji\u003Ereal\u003C/kanji\u003E, and \u003Ckanji\u003Emain\u003C/kanji\u003E. You can figure this out by thinking about how books mainly have their origins in real life.",
-      "meanings": [
-        {
-          "meaning": "Book",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "ちゅう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Origin",
-          "primary": false,
-          "accepted_answer": true
-        },
-        {
-          "meaning": "Real",
-          "primary": false,
-          "accepted_answer": true
-        },
-        {
-          "meaning": "Main",
-          "primary": false,
-          "accepted_answer": true
+          "Reading": "なか",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u672C",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "中",
+      "CreatedAt": "2012-02-29T00:01:12Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E4%B8%AD",
+      "HiddenAt": null,
+      "LessonPosition": 42,
+      "Level": 2,
+      "MeaningMnemonic": "The radical <reading>middle</reading> and the kanji <kanji>middle</kanji> are both the same. So if you know one, you know the other.",
+      "Meanings": [
+        {
+          "Meaning": "Middle",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "In",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Inside",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Center",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "中",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 488,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/488",
-    "data_updated_at": "2026-02-02T21:29:30.856143Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u6B63",
-      "created_at": "2012-02-29T01:04:20Z",
-      "document_url": "https://www.wanikani.com/kanji/%E6%AD%A3",
-      "hidden_at": null,
-      "lesson_position": 61,
-      "level": 2,
-      "meaning_mnemonic": "There is a line on the \u003Cradical\u003Eground\u003C/radical\u003E so you \u003Cradical\u003Estop\u003C/radical\u003E, making a giant sign pop up that says \u003Ckanji\u003ECORRECT\u003C/kanji\u003E! You obeyed the rules of the road and did the correct thing. Good on you.",
-      "meanings": [
+    "Id": 470,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/470",
+    "DataUpdatedAt": "2026-02-02T21:20:15.015515Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2522,
+        2523,
+        2524,
+        2525,
+        2526,
+        2629,
+        2682,
+        3546,
+        4110,
+        4253
+      ],
+      "ComponentSubjectIds": [
+        39
+      ],
+      "MeaningHint": "Know your radicals, friend-o.",
+      "ReadingHint": "One, two, three, four, five—GODZILLA IS HERE GO GO, RUN!",
+      "ReadingMnemonic": "<kanji>Five</kanji> is the number of buildings <reading>Go</reading>dzilla (ご) will knock down. Oh, look! There he goes now.",
+      "Readings": [
         {
-          "meaning": "Correct",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "ご",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "いつ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u6B63",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "5",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "五",
+      "CreatedAt": "2012-02-29T00:04:18Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E4%BA%94",
+      "HiddenAt": null,
+      "LessonPosition": 43,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>five</radical> radical and the <kanji>five</kanji> kanji are the same.",
+      "Meanings": [
+        {
+          "Meaning": "Five",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "五",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 489,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/489",
-    "data_updated_at": "2026-01-09T15:49:57.166609Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u7389",
-      "created_at": "2012-02-29T01:07:13Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%8E%89",
-      "hidden_at": null,
-      "lesson_position": 62,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Eking\u003C/radical\u003E has a big \u003Cradical\u003Edrop\u003C/radical\u003E of liquid in his hand... but then he bounces it! The drop was really a \u003Ckanji\u003Eball\u003C/kanji\u003E.",
-      "meanings": [
+    "Id": 471,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/471",
+    "DataUpdatedAt": "2026-02-02T21:20:39.363765Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2527,
+        2528,
+        2529,
+        2530,
+        2531
+      ],
+      "ComponentSubjectIds": [
+        8,
+        2
+      ],
+      "MeaningHint": "Imagine this beast doing various crazy things, the crazier the better (to help you remember). Make sure all these things are associated with the devil and the devil's number (<kanji>six</kanji>), so you can remember the meaning of this kanji.",
+      "ReadingHint": "Sing along with the monster, if it helps you to remember the reading of this kanji.",
+      "ReadingMnemonic": "Whenever we need to remember the reading ろく we just use the word <reading>rock</reading>. \n\nSo, think about the devil and the devil's number. What is often associated with those things? Why, <reading>rock</reading> (ろく) and roll is. Imagine the lid-head fin-legged beast suddenly blasting out rock music in the middle of his destructive mayhem.",
+      "Readings": [
         {
-          "meaning": "Ball",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "ろく",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "む",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u7389",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [
+        1118
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "6",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "六",
+      "CreatedAt": "2012-02-29T00:17:02Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%85%AD",
+      "HiddenAt": null,
+      "LessonPosition": 44,
+      "Level": 2,
+      "MeaningMnemonic": "Just imagine a beast with a <radical>lid</radical> for a head and <radical>fins</radical> for feet, running around looking as insane as possible (really imagine it!). When it runs up to you, it shows you the top of its lid-head. On it is written the numbers 666. Why? Because it's a spawn of the devil, and the number <kanji>six</kanji> is the devil's number.",
+      "Meanings": [
+        {
+          "Meaning": "Six",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "六",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 490,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/490",
-    "data_updated_at": "2025-10-01T06:09:50.188014Z",
-    "data": {
-      "auxiliary_meanings": [
+    "Id": 472,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/472",
+    "DataUpdatedAt": "2025-11-07T23:10:09.414813Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2532,
+        2533,
+        2534,
+        2933,
+        3528,
+        6205,
+        6588,
+        6619
+      ],
+      "ComponentSubjectIds": [
+        29,
+        8
+      ],
+      "MeaningHint": "This kanji can mean both \"yen\" and \"round\"! It's OK if you can't remember both meanings. But it might help to think about how round the yen coins are inside this person's head, which can also be pretty round… ",
+      "ReadingHint": "Picture these round えん in your mind. Maybe look some up online too, just to be safe. See how round those yen (えん) are?",
+      "ReadingMnemonic": "What does the word <kanji>yen</kanji> sound like? It sounds like <reading>えん</reading>. Why? because back in the day, Japanese used to have a \"ye\" sound, but now it doesn't. Instead, it's an \"e\" sound, which is why yen = えん!",
+      "Readings": [
         {
-          "meaning": "Paddy Field",
-          "type": "whitelist"
+          "Reading": "えん",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Paddy",
-          "type": "whitelist"
+          "Reading": "まる",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "characters": "\u7530",
-      "created_at": "2012-02-29T01:12:55Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%94%B0",
-      "hidden_at": null,
-      "lesson_position": 63,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Erice paddy\u003C/radical\u003E radical and the \u003Ckanji\u003Erice paddy\u003C/kanji\u003E kanji are the same, making this one super easy to remember, at least meaning-wise.",
-      "meanings": [
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
         {
-          "meaning": "Rice Paddy",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "¥",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "円",
+      "CreatedAt": "2012-02-29T00:18:18Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%86%86",
+      "HiddenAt": null,
+      "LessonPosition": 45,
+      "Level": 2,
+      "MeaningMnemonic": "Here we have a <radical>head</radical> with a <radical>lid</radical> in it, near the top. Imagine the top of someone's head being closed by a lid. Open that lid up and peer inside... it's full of <kanji>yen</kanji> coins, the currency of Japan. Jackpot! And all those yen coins have a nice <kanji>round</kanji> shape, naturally.",
+      "Meanings": [
+        {
+          "Meaning": "Yen",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Rice Field",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Round",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Circle",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
-      "slug": "\u7530",
-      "spaced_repetition_system_id": 2
+      "Slug": "円",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 491,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/491",
-    "data_updated_at": "2025-10-01T06:09:50.201463Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u767D",
-      "created_at": "2012-02-29T01:13:32Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%99%BD",
-      "hidden_at": null,
-      "lesson_position": 64,
-      "level": 2,
-      "meaning_mnemonic": "The radical \u003Cradical\u003Ewhite\u003C/radical\u003E and the kanji \u003Ckanji\u003Ewhite\u003C/kanji\u003E are the same.",
-      "meanings": [
+    "Id": 473,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/473",
+    "DataUpdatedAt": "2026-01-22T21:57:35.099275Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2535,
+        2536,
+        2676,
+        2883,
+        3986,
+        4795,
+        5661,
+        6884,
+        7406,
+        7464,
+        7762,
+        8676,
+        9009,
+        9174,
+        9267,
+        9273
+      ],
+      "ComponentSubjectIds": [
+        40
+      ],
+      "MeaningHint": "If you know your radicals well (and you should!) you know the meaning of this kanji well, as well!",
+      "ReadingHint": "Imagine yourself in line to get into heaven. You're super worried, because you're not sure if you'll get in. You heard there was a one in <reading>ten</reading> chance... those aren't good odds. Feel nervous in your imagination. Feel worried. Feel the pressure as you get closer and closer to the gate... will you make it?? Ten percent!",
+      "ReadingMnemonic": "<kanji>Heaven</kanji>... nowadays, people aren't all that good. Things have gotten bad. That's why the acceptance rate to get into heaven is only <reading>ten</reading> (てん) percent!",
+      "Readings": [
         {
-          "meaning": "White",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "てん",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "あま",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u767D",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [
+        945
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "天",
+      "CreatedAt": "2012-02-29T00:22:40Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%A4%A9",
+      "HiddenAt": null,
+      "LessonPosition": 46,
+      "Level": 2,
+      "MeaningMnemonic": "The radical <radical>heaven</radical> is the same as the kanji <kanji>heaven</kanji>, making this an easy kanji to memorize.",
+      "Meanings": [
+        {
+          "Meaning": "Heaven",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "天",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 492,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/492",
-    "data_updated_at": "2025-10-01T06:09:50.214494Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u76EE",
-      "created_at": "2012-02-29T01:14:43Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%9B%AE",
-      "hidden_at": null,
-      "lesson_position": 65,
-      "level": 2,
-      "meaning_mnemonic": "The \u003Cradical\u003Eeye\u003C/radical\u003E radical and \u003Ckanji\u003Eeye\u003C/kanji\u003E kanji are the same as each other, so now you know them both.",
-      "meanings": [
+    "Id": 474,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/474",
+    "DataUpdatedAt": "2025-10-01T06:09:50.096272Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2537,
+        2538,
+        2539,
+        2560,
+        2568,
+        2819,
+        2851,
+        2964,
+        2999,
+        3138,
+        3205,
+        3404,
+        3422,
+        3513,
+        3549,
+        3567,
+        3571,
+        3629,
+        4061,
+        4264,
+        4353,
+        4402,
+        4438,
+        5030,
+        6276,
+        6458,
+        6472,
+        6596,
+        6771,
+        6948,
+        7167,
+        7193,
+        7467,
+        7726,
+        7770,
+        8286,
+        8506,
+        8737,
+        8814,
+        9082,
+        9238,
+        9270,
+        9339,
+        9340
+      ],
+      "ComponentSubjectIds": [
+        41
+      ],
+      "MeaningHint": "Make sure you're studying your radicals. It won't be forever that radicals and kanji overlap so nicely like this!",
+      "ReadingHint": "You try to shake your hands off, but it's no good. The televisions are stuck, and the volume won't go down. You have no idea how you got these televisions on your hands. All you know is that you want them off right this instant.",
+      "ReadingMnemonic": "To remember the reading て we will use the word \"television.\" You have great hands. Go ahead and look at them. OH MY GOD. You have little <reading>te</reading>levisions (て) on your hands. They are playing the dumbest show you can think of, too, both hands at the same time.",
+      "Readings": [
         {
-          "meaning": "Eye",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "て",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "しゅ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ず",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
         }
       ],
-      "slug": "\u76EE",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [
+        513
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "手",
+      "CreatedAt": "2012-02-29T00:26:40Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%89%8B",
+      "HiddenAt": null,
+      "LessonPosition": 47,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>hand</radical> radical and the <kanji>hand</kanji> kanji are identical in looks and meaning! That should make things easy!",
+      "Meanings": [
+        {
+          "Meaning": "Hand",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Doer",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "手",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 494,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/494",
-    "data_updated_at": "2025-11-17T22:10:21.462077Z",
-    "data": {
-      "auxiliary_meanings": [],
-      "characters": "\u7ACB",
-      "created_at": "2012-02-29T01:18:04Z",
-      "document_url": "https://www.wanikani.com/kanji/%E7%AB%8B",
-      "hidden_at": null,
-      "lesson_position": 66,
-      "level": 2,
-      "meaning_mnemonic": "The radical \u003Cradical\u003Estand\u003C/radical\u003E and the kanji \u003Ckanji\u003Estand\u003C/kanji\u003E are the same thing, so now you know them both.",
-      "meanings": [
+    "Id": 475,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/475",
+    "DataUpdatedAt": "2026-03-25T07:09:11.444332Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2540,
+        2659,
+        2660,
+        2661,
+        2809,
+        2846,
+        3283,
+        3346,
+        3411,
+        3580,
+        3658,
+        3774,
+        3786,
+        4075,
+        4327,
+        4612,
+        5519,
+        5994,
+        7632,
+        7750,
+        8303,
+        8696,
+        8706,
+        8740
+      ],
+      "ComponentSubjectIds": [
+        42
+      ],
+      "MeaningHint": "If you can't remember the radical for writing, maybe you could try… writing it down?",
+      "ReadingHint": "Imagine writing a big X (or even a big 文) on all your buns, then showing them to the bun monster. Watch as he turns and goes at the sight of the writing, all disappointed. Not today, bun monster.",
+      "ReadingMnemonic": "This kanji has more than one important reading you need to learn! But don't worry, here's a mnemonic to help you:\n\nYou always put <kanji>writing</kanji> on your <reading>bun</reading>s (ぶん) to keep them from getting eaten by the bun <reading>mon</reading>ster (もん). What kind of writing? Usually it's just an X to show the monster these buns are off-limits. (In fact, it kind of looks like the X part in 文. Hmm…)",
+      "Readings": [
         {
-          "meaning": "Stand",
-          "primary": true,
-          "accepted_answer": true
+          "Reading": "ぶん",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "もん",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ふみ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "slug": "\u7ACB",
-      "spaced_repetition_system_id": 2
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Text",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "文",
+      "CreatedAt": "2012-02-29T00:29:24Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%96%87",
+      "HiddenAt": null,
+      "LessonPosition": 48,
+      "Level": 2,
+      "MeaningMnemonic": "The kanji and the radical are the same, so remembering the meaning of this kanji is as simple as making sure you know the radical for <radical>writing</radical> first! If you know the radical, you know this kanji means <kanji>writing</kanji> as well.",
+      "Meanings": [
+        {
+          "Meaning": "Writing",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Sentence",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "文",
+      "SpacedRepetitionSystemId": 2
     }
   },
   {
-    "id": 856,
-    "object": "kanji",
-    "url": "https://api.wanikani.com/v2/subjects/856",
-    "data_updated_at": "2026-02-02T21:27:18.333927Z",
-    "data": {
-      "auxiliary_meanings": [
+    "Id": 476,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/476",
+    "DataUpdatedAt": "2026-03-25T06:55:27.682401Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2523,
+        2529,
+        2541,
+        2563,
+        2570,
+        2594,
+        2647,
+        2652,
+        2728,
+        2746,
+        2748,
+        2759,
+        2784,
+        2843,
+        2852,
+        2856,
+        2965,
+        3046,
+        3164,
+        3210,
+        3712,
+        3762,
+        3850,
+        3948,
+        3983,
+        4054,
+        4055,
+        4056,
+        4057,
+        4058,
+        4116,
+        4361,
+        4362,
+        4659,
+        4680,
+        4688,
+        4969,
+        5185,
+        5246,
+        5295,
+        5353,
+        5357,
+        5934,
+        6048,
+        6175,
+        6362,
+        6693,
+        7515,
+        7561,
+        7562,
+        7563,
+        7565,
+        7587,
+        7593,
+        7614,
+        7615,
+        7616,
+        7899,
+        8265,
+        8709,
+        8816,
+        9131,
+        9169,
+        9288,
+        9356
+      ],
+      "ComponentSubjectIds": [
+        22
+      ],
+      "MeaningHint": "The radical for this one is easy too, making the meaning for this kanji super easy as well!",
+      "ReadingHint": "This reading will be easier to remember if you know of Friedrich Nietzsche... so do your research and learn about him if you don't. He's a pretty historical dude. Imagine the sun totally pissed off, too. It makes a grunting noise as it builds up a sun beam to blast him off the face of the earth.\n\nAlso note that there's another reading worth learning as well: じつ. The reading can be remembered by thinking \"<reading>Gee! Two</reading> readings?\" Because, seriously, two readings? Too many...",
+      "ReadingMnemonic": "There are so many on'yomi for this kanji, but since this kanji is so important and common, you'll end up learning them all eventually whether you want to or not. For now, you're only going to have to learn one of the readings, and that one is にち. \n\nThe <kanji>sun</kanji> is so hot. It focused its rays to take out one man... and that man is Friedrich <reading>Nietzsche</reading> (にち), famous philosopher. He philosophized one too many things about the sun, so the sun decided it was time he paid.",
+      "Readings": [
         {
-          "meaning": "Kanji Repeater",
-          "type": "whitelist"
+          "Reading": "にち",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
         },
         {
-          "meaning": "Repeater Kanji",
-          "type": "whitelist"
+          "Reading": "じつ",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ひ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "か",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "び",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
-      "characters": "\u3005",
-      "created_at": "2012-07-24T23:58:04.63059Z",
-      "document_url": "https://www.wanikani.com/kanji/%E3%80%85",
-      "hidden_at": null,
-      "lesson_position": 67,
-      "level": 2,
-      "meaning_mnemonic": "This is a strange kanji because it doesn\u0027t really mean anything at all. In fact, what it does is it repeats the kanji that comes before it. For example: \u4EBA\u3005 is actually \u4EBA\u4EBA. This kanji shows up whenever there\u0027s a repeating kanji, because it\u0027s often easier to write than writing a more complicated kanji twice. That\u0027s why this kanji is the \u003Ckanji\u003Erepeater\u003C/kanji\u003E. It repeats what comes before it.\n\nTo remember that this kanji is the repeater, though, think of a \u003Cradical\u003Eprison\u003C/radical\u003E with \u003Cradical\u003Edrop\u003C/radical\u003Es of water dripping over and over in it. Drip drop drip drop. It does that over and over again, driving the prisoners nuts. But it never stops. It just repeats over and over.",
-      "meanings": [
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "日",
+      "CreatedAt": "2012-02-29T00:32:19Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%97%A5",
+      "HiddenAt": null,
+      "LessonPosition": 49,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>sun</radical> radical and <kanji>sun</kanji> kanji are the same, huzzah! Also, if you want to remember <kanji>day</kanji> as well, you can just think about how a day is the time it takes for the sun to cross the sky.",
+      "Meanings": [
         {
-          "meaning": "Repeater",
-          "primary": true,
-          "accepted_answer": true
+          "Meaning": "Sun",
+          "Primary": true,
+          "AcceptedAnswer": true
         },
         {
-          "meaning": "Repetition",
-          "primary": false,
-          "accepted_answer": true
-        },
-        {
-          "meaning": "Reduplication",
-          "primary": false,
-          "accepted_answer": true
-        },
-        {
-          "meaning": "Iteration Mark",
-          "primary": false,
-          "accepted_answer": true
+          "Meaning": "Day",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
-      "slug": "\u3005",
-      "spaced_repetition_system_id": 2
+      "Slug": "日",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 477,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/477",
+    "DataUpdatedAt": "2026-02-24T00:52:10.891369Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2522,
+        2528,
+        2542,
+        2543,
+        2544,
+        2545,
+        2562,
+        2595,
+        2650,
+        2651,
+        2702,
+        2745,
+        2758,
+        2783,
+        2825,
+        2949,
+        4056,
+        4674,
+        4817,
+        4888,
+        5358,
+        6172,
+        6990,
+        7325,
+        9169,
+        9241,
+        9286,
+        9287
+      ],
+      "ComponentSubjectIds": [
+        43
+      ],
+      "MeaningHint": "This should be EZPZ as long as you know the radicals already!",
+      "ReadingHint": "Use the げつ reading when this kanji means \"moon\", in words like \"moonlight\". Use げつ for counting months, and saying things like \"last month and \"next month\", too. Go for がつ in the names of months, like \"January\".\n\nDon't worry too much about memorizing this pattern, though. You'll be getting lots of practice soon!",
+      "ReadingMnemonic": "The <kanji>moon</kanji> really <reading>gets</reading> (げつ) to your <reading>guts</reading> (がつ). Staring at the moon for too long will give you terrible indigestion, so be careful!",
+      "Readings": [
+        {
+          "Reading": "げつ",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "がつ",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "つき",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "月",
+      "CreatedAt": "2012-02-29T00:34:02Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%9C%88",
+      "HiddenAt": null,
+      "LessonPosition": 50,
+      "Level": 2,
+      "MeaningMnemonic": "The <kanji>moon</kanji> kanji is made up of the <radical>moon</radical> radical. This kanji is also used to mean <kanji>month</kanji>.",
+      "Meanings": [
+        {
+          "Meaning": "Moon",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Month",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "月",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 478,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/478",
+    "DataUpdatedAt": "2025-10-01T06:09:50.12256Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2546,
+        3692,
+        3694,
+        4057,
+        4679,
+        7993,
+        8034,
+        8218,
+        8692,
+        9011
+      ],
+      "ComponentSubjectIds": [
+        23
+      ],
+      "MeaningHint": "So, how are those radicals doing? Do you know them well?",
+      "ReadingHint": "Feel the shame, feel the irritation. Make yourself want to run away from those dumb trees that are mocking you.",
+      "ReadingMnemonic": "You’re walking through the trees, looking at them. They look ominous. Suddenly, you trip and fall. The trees start to <reading>mock</reading> (もく) you. Even the mocking birds mock you. It’s terrible. It’s painful. You’re being mocked as you pull yourself up off the ground.",
+      "Readings": [
+        {
+          "Reading": "もく",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ぼく",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "き",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "こ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "木",
+      "CreatedAt": "2012-02-29T00:34:36Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%9C%A8",
+      "HiddenAt": null,
+      "LessonPosition": 51,
+      "Level": 2,
+      "MeaningMnemonic": "This is another kanji that is the same as the radical. Both <radical>tree</radical> and <kanji>tree</kanji> are the same in looks and meaning.",
+      "Meanings": [
+        {
+          "Meaning": "Tree",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Wood",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "木",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 479,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/479",
+    "DataUpdatedAt": "2026-02-04T19:37:36.011788Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2547,
+        2774,
+        3366,
+        3397,
+        3630,
+        3972,
+        4058,
+        4289,
+        4335,
+        4347,
+        5334,
+        5445,
+        5587,
+        6116,
+        6284,
+        6401,
+        6512,
+        6516,
+        6928,
+        7016,
+        7121,
+        7201,
+        7207,
+        7307,
+        7310,
+        7425,
+        7619,
+        7624,
+        7728,
+        7871,
+        8001,
+        8297,
+        8376,
+        8633,
+        9293,
+        9333
+      ],
+      "ComponentSubjectIds": [
+        45
+      ],
+      "MeaningHint": "So as long as you know the radicals, you know the kanji.",
+      "ReadingHint": "I know that was a long one, but try to imagine all the different bits. Try to feel the feelings (cold, smell, etc) too. The more you create in this fake memory (which you’re using to remember and associate water with すい (swing)) the more likely you are to end up remembering enough to make it happen. Especially when it comes to the senses part, the more vividly you imagined it, the more likely you are to remember the on’yomi.",
+      "ReadingMnemonic": "Imagine a lake (i.e. a whole bunch of <kanji>water</kanji>). When you think of water, you should try to think of this beautiful lake. It’s sunny, the trees smell nice (imagine a tree smell if you can – the more senses you use the better!) and on that tree there is an awesome tire <reading>swi</reading>ng (すい). You get onto the tire swing and you are swinging back and forth. The water is right in front of you, and you are able to use the swing to throw yourself into the water. It’s a lot colder than you expected, and you come back to the surface, gasping for breath. The water gets into your mouth and you taste it. How strange, it’s very, very <reading>swee</reading>t. Imagine the sweetness of the water and how weird it is (really really sweet, this water is).",
+      "Readings": [
+        {
+          "Reading": "すい",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "みず",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        717,
+        832,
+        1486,
+        537,
+        913
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "水",
+      "CreatedAt": "2012-02-29T00:36:53Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%B0%B4",
+      "HiddenAt": null,
+      "LessonPosition": 52,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>water</radical> radical and the <kanji>water</kanji> kanji are the same.",
+      "Meanings": [
+        {
+          "Meaning": "Water",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "水",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 480,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/480",
+    "DataUpdatedAt": "2025-10-01T06:09:50.13282Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2548,
+        2549,
+        2695,
+        4300,
+        4336,
+        4361,
+        6138,
+        7176,
+        7211,
+        7484,
+        7740,
+        7816,
+        7868,
+        8723,
+        9010
+      ],
+      "ComponentSubjectIds": [
+        46
+      ],
+      "MeaningHint": "If you know the radicals then this one is EZPZ.",
+      "ReadingHint": "Oh no... Oh no!! If you don't have a <reading>car</reading>, imagine what it'd feel like if your car just exploded and burned down. If you do have a car, imagine your own car in this situation. It should be a terrible feeling, if you imagine it well enough. So, when you think <kanji>fire</kanji>, remember the fear you had when your car was given to the flames. Now you have to walk everywhere, sad :(",
+      "ReadingMnemonic": "Whenever we need to remember か, we use the word <reading>car</reading>.\n\nFor this kanji, when we think <kanji>fire</kanji>, we ought to think of something on fire. What's on fire? It's obviously your very own <reading>car</reading> (か)! Oh Goddd NOOO!",
+      "Readings": [
+        {
+          "Reading": "か",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ひ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "ほ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Flame",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Blaze",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "火",
+      "CreatedAt": "2012-02-29T00:38:57Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%81%AB",
+      "HiddenAt": null,
+      "LessonPosition": 53,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>fire</radical> radical and the <kanji>fire</kanji> kanji are the same as each other.",
+      "Meanings": [
+        {
+          "Meaning": "Fire",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "火",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 481,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/481",
+    "DataUpdatedAt": "2025-12-21T20:37:07.691155Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2550,
+        2551,
+        3502,
+        5405,
+        7910,
+        8296
+      ],
+      "ComponentSubjectIds": [
+        47
+      ],
+      "MeaningHint": "Soon there will be very few kanji/radical-same combos ... so enjoy it while you can.",
+      "ReadingHint": "P.S. Don't actually let your dog eat noodles, at least not with marinara sauce. Disney didn't show you how that Lady and Tramp date probably ended — unromantically, with indigestion.",
+      "ReadingMnemonic": "Every <kanji>dog</kanji> likes to <reading>ea</reading>t <reading>noo</reading>dles (いぬ). Like that movie where the dogs share a noodle and end up kissing, right? So when you see 犬, just imagine how those two eat noodles.",
+      "Readings": [
+        {
+          "Reading": "いぬ",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "けん",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        505,
+        453
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "犬",
+      "CreatedAt": "2012-02-29T00:42:35Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%8A%AC",
+      "HiddenAt": null,
+      "LessonPosition": 54,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>dog</radical> radical and <kanji>dog</kanji> kanji are exactly the same!",
+      "Meanings": [
+        {
+          "Meaning": "Dog",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "犬",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 482,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/482",
+    "DataUpdatedAt": "2026-01-13T02:11:43.486542Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2552,
+        2553,
+        2554,
+        2555,
+        7355,
+        7618,
+        7751,
+        8068,
+        8662,
+        9009,
+        9013
+      ],
+      "ComponentSubjectIds": [
+        48
+      ],
+      "MeaningHint": "Hopefully you're a king of radicals... because if you are, this kanji was super easy for you!",
+      "ReadingHint": "You need to be polite when you talk to the king and add \"Oh\" to the beginning, otherwise the king will be pretty angry and bad things might happen.\n\nWe're going to use the 王 kanji for all おう mnemonics from now on. So make sure you always remember to say おう King!",
+      "ReadingMnemonic": "When you see the <kanji>king</kanji> you need to say, \"<reading>Oh</reading> (おう) King! Oh King, oh no, oh why are you looking at me like that? Oh King... you aren't going to chop off my head are you? OH NO!\"",
+      "Readings": [
+        {
+          "Reading": "おう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        528,
+        1286,
+        794,
+        679,
+        1745
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "王",
+      "CreatedAt": "2012-02-29T00:44:29Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%8E%8B",
+      "HiddenAt": null,
+      "LessonPosition": 55,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>king</radical> radical and the <kanji>king</kanji> kanji are the same!",
+      "Meanings": [
+        {
+          "Meaning": "King",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "王",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 483,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/483",
+    "DataUpdatedAt": "2026-03-02T19:40:58.052424Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2556,
+        2557,
+        2558,
+        2880,
+        3040,
+        3418,
+        3433,
+        3435,
+        3461,
+        3506,
+        3980,
+        4071,
+        4380,
+        4566,
+        4684,
+        4977,
+        5027,
+        5335,
+        5340,
+        5508,
+        5509,
+        5915,
+        5940,
+        6402,
+        6561,
+        6675,
+        6936,
+        6959,
+        7274,
+        7423,
+        7872,
+        7903,
+        8086,
+        8660,
+        9020,
+        9083,
+        9084,
+        9131,
+        9154,
+        9364
+      ],
+      "ComponentSubjectIds": [
+        20
+      ],
+      "MeaningHint": "In your imagination, really feel like your life depends on getting out. The important part is the feeling of \"needing to get out of the mountain pass.\" If you have this feeling, you'll be more likely to remember that this kanji means exit, because that's what you want to do when you see this kanji.",
+      "ReadingHint": "Focus on the surprise of realizing you're being hunted while trying to find the exit to the mountain range, then focus on the next part, where you get shot. View it in your head as the hunter shooting you. Powww!",
+      "ReadingMnemonic": "As you're trying to <kanji>exit</kanji> this mountain range, you suddenly realize that someone is actually hunting you. What? Make sure to feel that sudden realization. It's crazy. Then, you find the exit and run towards it. Sadly, the hunter is waiting there, and he <reading>shoots you</reading> (しゅつ) through the leg, knocking you down.",
+      "Readings": [
+        {
+          "Reading": "しゅつ",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "で",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "だ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "出",
+      "CreatedAt": "2012-02-29T00:45:28Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%87%BA",
+      "HiddenAt": null,
+      "LessonPosition": 56,
+      "Level": 2,
+      "MeaningMnemonic": "There are two <radical>mountains</radical> in front of you... and probably a bunch more around you too. You are in a pass, and don't know how to get out. You are frantically looking for the <kanji>exit</kanji> before you freeze to death. The most important thing is to find the exit from this mountain range - your life depends on it.",
+      "Meanings": [
+        {
+          "Meaning": "Exit",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "出",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 484,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/484",
+    "DataUpdatedAt": "2025-10-01T06:09:50.162323Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2559,
+        2560,
+        3574,
+        3953,
+        6779,
+        8693,
+        8717
+      ],
+      "ComponentSubjectIds": [
+        26,
+        16
+      ],
+      "MeaningHint": "Imagine looking at a narwhal from the front. No mouth. Now look at it from the right. Mouth!",
+      "ReadingHint": "Imagine a bunch of youths walking in a group and looking at everything from the right. You remember when you were a youth and you used to look at everything from one side too.\n\nNote: All the ゆう readings will use the word \"youths\" for the reading mnemonic. You can think of these \"youths\" as a group of younger people who cause a lot of the problems in this world.",
+      "ReadingMnemonic": "How did we know to look from the <kanji>right</kanji>, though? Because the <reading>you</reading>ths (ゆう) figured it out. Youths think in ways that older people usually don't. That's why they can see the swirls on cereal, hear the music behind noise, and of course, look at things from the right side.",
+      "Readings": [
+        {
+          "Reading": "ゆう",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "う",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "みぎ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        486,
+        493,
+        504
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "右",
+      "CreatedAt": "2012-02-29T00:50:30Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%8F%B3",
+      "HiddenAt": null,
+      "LessonPosition": 57,
+      "Level": 2,
+      "MeaningMnemonic": "<radical>Narwhal</radical> <radical>mouth</radical>s are on the <kanji>right</kanji> side of their head. In fact, some people didn't think they had mouths at all because they weren't looking from the right. Rookie mistake.\n\nSee how the \"mouth\" radical is to the right of the \"narwhal\" radical? That should help you remember that this means <kanji>right</kanji>.",
+      "Meanings": [
+        {
+          "Meaning": "Right",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "右",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 485,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/485",
+    "DataUpdatedAt": "2026-02-02T21:23:32.143331Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2561,
+        2562,
+        2563,
+        2564,
+        2565,
+        2566,
+        2681,
+        2837,
+        2885,
+        3237,
+        3374,
+        3671,
+        6810,
+        7854
+      ],
+      "ComponentSubjectIds": [
+        16,
+        28
+      ],
+      "MeaningHint": "If you can see this kanji as a kind of square, you should be able to remember it means \"four\" as well, since squares always have four sides.",
+      "ReadingHint": "What's better than a four-sided sheep?",
+      "ReadingMnemonic": "Now that you have <kanji>four</kanji> sides, you look like a four-sided animal: the <reading>shee</reading>p (し). Look at yourself in the mirror and see an adorable four-sided sheep looking back at you. Imagine yourself with perfectly square wool. (You can only see four sides because mirrors aren't 3D. So you're a flat, cartoonish sheep.)",
+      "Readings": [
+        {
+          "Reading": "し",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "よん",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "よ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        1891
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "4",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "四",
+      "CreatedAt": "2012-02-29T00:53:29Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%9B%9B",
+      "HiddenAt": null,
+      "LessonPosition": 58,
+      "Level": 2,
+      "MeaningMnemonic": "Imagine contorting yourself in such a way that your <radical>mouth</radical> now has your <radical>legs</radical> inside it. You've bent your body in all the wrong ways to achieve this. In fact, if you look at yourself, you look like a square now... You're just a person with <kanji>four</kanji> sides.",
+      "Meanings": [
+        {
+          "Meaning": "Four",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "四",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 486,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/486",
+    "DataUpdatedAt": "2025-10-01T06:09:50.1736Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2567,
+        2568,
+        3572,
+        3954,
+        6778,
+        7652,
+        8585,
+        8693
+      ],
+      "ComponentSubjectIds": [
+        26,
+        25
+      ],
+      "MeaningHint": "Picture a bunch of narwhals constructing an underwater ice village. They're all working away with their left hands.",
+      "ReadingHint": "If you're right-handed, imagine trying to use these left-handed saws. It flips and flops all over until you drop it. But if you're left-handed it feels just right!",
+      "ReadingMnemonic": "In their <kanji>left</kanji> hands, the narwhals all hold <reading>saw</reading>s (さ). That's because the ice for their homes is already there, so they just need to saw away at them to make the shapes they want. Narwhal construction is actually very simple.",
+      "Readings": [
+        {
+          "Reading": "さ",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ひだり",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        493,
+        484,
+        1985
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "左",
+      "CreatedAt": "2012-02-29T00:57:18Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%B7%A6",
+      "HiddenAt": null,
+      "LessonPosition": 59,
+      "Level": 2,
+      "MeaningMnemonic": "<radical>Narwhal</radical>s do <radical>construction</radical> with their <kanji>left</kanji> hands (or flippers, I guess). That's because all narwhals are left-handed!",
+      "Meanings": [
+        {
+          "Meaning": "Left",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "左",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 487,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/487",
+    "DataUpdatedAt": "2026-03-02T06:58:42.409411Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2569,
+        2570,
+        2677,
+        2679,
+        2833,
+        2856,
+        2865,
+        3108,
+        3164,
+        3210,
+        3329,
+        3336,
+        3642,
+        3670,
+        3712,
+        3911,
+        4429,
+        4680,
+        4876,
+        4877,
+        5911,
+        6244,
+        6832,
+        6881,
+        7149,
+        7766,
+        8031,
+        8736,
+        8749
+      ],
+      "ComponentSubjectIds": [
+        50
+      ],
+      "MeaningHint": "Make sure you know those radicals, yo! And good luck with all the meanings (sorry sorry sorry).",
+      "ReadingHint": "Just think about books and how you use them to hone your skills. Or read a book about honing things. Like swords.",
+      "ReadingMnemonic": "<kanji>Book</kanji>s are one of the best ways to <reading>hone</reading> (ほん) your intellect, you know?",
+      "Readings": [
+        {
+          "Reading": "ほん",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "もと",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "本",
+      "CreatedAt": "2012-02-29T00:58:32Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%9C%AC",
+      "HiddenAt": null,
+      "LessonPosition": 60,
+      "Level": 2,
+      "MeaningMnemonic": "The kanji and the radical are the same, so remembering the meaning of this kanji is as simple as making sure you know the radical for <radical>book</radical> first! If you know the radical, you know this kanji means <kanji>book</kanji> as well.\n\nTake note that the second, third, and fourth meanings of this kanji are <kanji>origin</kanji>, <kanji>real</kanji>, and <kanji>main</kanji>. You can figure this out by thinking about how books mainly have their origins in real life.",
+      "Meanings": [
+        {
+          "Meaning": "Book",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Origin",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Real",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Main",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "本",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 488,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/488",
+    "DataUpdatedAt": "2026-02-28T03:04:44.304483Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2571,
+        2572,
+        2739,
+        2904,
+        4095,
+        4205,
+        4311,
+        4467,
+        4476,
+        7382,
+        7654,
+        8642,
+        9069,
+        9241
+      ],
+      "ComponentSubjectIds": [
+        1,
+        44
+      ],
+      "MeaningHint": "Imagine walking, staring at the ground until you come across a line that you're supposed to stop at. If you stop, the big \"correct\" sign appears, chiming a happy tune.",
+      "ReadingHint": "Perhaps a slightly unorthodox weapon for a ruler of medieval Japan, but you won't complain about a saber from the Shogun himself! ",
+      "ReadingMnemonic": "You did the <kanji>correct</kanji> thing, so here's your reward: a <reading>sa</reading>ber (せい) from the <reading>Shou</reading>gun (しょう) himself! ",
+      "Readings": [
+        {
+          "Reading": "せい",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "しょう",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ただ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "まさ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        514
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "正",
+      "CreatedAt": "2012-02-29T01:04:20Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E6%AD%A3",
+      "HiddenAt": null,
+      "LessonPosition": 61,
+      "Level": 2,
+      "MeaningMnemonic": "There is a line on the <radical>ground</radical> so you <radical>stop</radical>, making a giant sign pop up that says <kanji>CORRECT</kanji>! You obeyed the rules of the road and did the correct thing. Good on you.",
+      "Meanings": [
+        {
+          "Meaning": "Correct",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "正",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 489,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/489",
+    "DataUpdatedAt": "2026-01-09T15:49:57.166609Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2573,
+        2574,
+        2575,
+        2584,
+        2798,
+        6302
+      ],
+      "ComponentSubjectIds": [
+        48,
+        3
+      ],
+      "MeaningHint": "This kanji looks just like a king bouncing a <kanji>ball</kanji>, no? If not, imagine the kanji itself bouncing the drop (the <kanji>ball</kanji>) over and over again. Kanji are surprisingly playful like that.",
+      "ReadingHint": "Try to remember Tamara the ball girl. She'll come up anytime the reading for a kanji is たま, and usually she'll be involved with some kind of ball or round object. That's her job, after all.",
+      "ReadingMnemonic": "When he's done playing with it, the king gives his <kanji>ball</kanji> to <reading>Tama</reading>ra (たま), the resident ball girl, for safekeeping.",
+      "Readings": [
+        {
+          "Reading": "たま",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "ぎょく",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [
+        528
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "玉",
+      "CreatedAt": "2012-02-29T01:07:13Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%8E%89",
+      "HiddenAt": null,
+      "LessonPosition": 62,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>king</radical> has a big <radical>drop</radical> of liquid in his hand... but then he bounces it! The drop was really a <kanji>ball</kanji>.",
+      "Meanings": [
+        {
+          "Meaning": "Ball",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "玉",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 490,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/490",
+    "DataUpdatedAt": "2025-10-01T06:09:50.188014Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2580,
+        5871,
+        5930,
+        6316,
+        6524,
+        6735,
+        7537,
+        9167
+      ],
+      "ComponentSubjectIds": [
+        51
+      ],
+      "MeaningHint": "Just know your radicals, and you will know your kanji as well.",
+      "ReadingHint": "Smell the tacos. Touch the tacos. Taste the tacos. This is definitely a very strange rice field.",
+      "ReadingMnemonic": "To remember the reading た, we use the word \"taco.\"\n\nYou're in the rice field... but when you lean down to examine the rice more closely, you see that it's not rice that's growing, it's a bunch of little <reading>ta</reading>cos (た), blossoming out of the ground.",
+      "Readings": [
+        {
+          "Reading": "た",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "でん",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Paddy Field",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Paddy",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "田",
+      "CreatedAt": "2012-02-29T01:12:55Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%94%B0",
+      "HiddenAt": null,
+      "LessonPosition": 63,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>rice paddy</radical> radical and the <kanji>rice paddy</kanji> kanji are the same, making this one super easy to remember, at least meaning-wise.",
+      "Meanings": [
+        {
+          "Meaning": "Rice Paddy",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Rice Field",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "田",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 491,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/491",
+    "DataUpdatedAt": "2025-10-01T06:09:50.201463Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2581,
+        2582,
+        2986,
+        3514,
+        3878,
+        4081,
+        5322,
+        7034,
+        7521,
+        8688,
+        9110
+      ],
+      "ComponentSubjectIds": [
+        52
+      ],
+      "MeaningHint": "Study your radicals hard! Most important thing!",
+      "ReadingHint": "Imagine two teams (black and <kanji>white</kanji>), wearing their team colors, working really hard on hacking the iPhone. It is a huge contest, and people are watching with a lot of tension, to see who will hack the <kanji>white</kanji> iPhone first. Feel that tension, and see the colors separating them so vividly. The colors are important, and the excitement of the winner holding up the <reading>hack</reading>ed iPhone is too.",
+      "ReadingMnemonic": "The <kanji>white</kanji> team was the first to be able to <reading>hack</reading> (はく) the <kanji>white</kanji> iPhone.",
+      "Readings": [
+        {
+          "Reading": "はく",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "しろ",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "しら",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "白",
+      "CreatedAt": "2012-02-29T01:13:32Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%99%BD",
+      "HiddenAt": null,
+      "LessonPosition": 64,
+      "Level": 2,
+      "MeaningMnemonic": "The radical <radical>white</radical> and the kanji <kanji>white</kanji> are the same.",
+      "Meanings": [
+        {
+          "Meaning": "White",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "白",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 492,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/492",
+    "DataUpdatedAt": "2026-03-24T09:41:29.137839Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2583,
+        2584,
+        2872,
+        3480,
+        3481,
+        3553,
+        3603,
+        3713,
+        3912,
+        6237,
+        6332,
+        7372,
+        7737,
+        8386,
+        8489,
+        8539,
+        8600,
+        8699,
+        8712,
+        9161
+      ],
+      "ComponentSubjectIds": [
+        53
+      ],
+      "MeaningHint": "Well... you'll know them both as long as you studied your radicals, young grasshopper. If you didn't, then you're just a young grasshopper who needs to study their radicals.",
+      "ReadingHint": "Of course, feel the pain of your eye being gone... and struggle to get it back. You eventually give up because the sheep is too fast, but then you come up with an idea. What if I call out back to the sheep in its own language? Go ahead and cover one eye and start making \"MEHHH\" noises to see if you can get the sheep to come back to you and give you your eye. It's up to you whether it works or not, but be sure to feel frustrated by its reaction, or happy by it. Either one works.",
+      "ReadingMnemonic": "Your <kanji>eyes</kanji> are important to you, right? Sadly, one of your eyes is missing right now, because a sheep grabbed it and pulled it out, and is now running away from you, yelling his sheep call.... \"<reading>Mehhhhhh</reading> (め)!\"",
+      "Readings": [
+        {
+          "Reading": "め",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "もく",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "onyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "目",
+      "CreatedAt": "2012-02-29T01:14:43Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%9B%AE",
+      "HiddenAt": null,
+      "LessonPosition": 65,
+      "Level": 2,
+      "MeaningMnemonic": "The <radical>eye</radical> radical and <kanji>eye</kanji> kanji are the same as each other, so now you know them both.",
+      "Meanings": [
+        {
+          "Meaning": "Eye",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "目",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 494,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/494",
+    "DataUpdatedAt": "2025-11-17T22:10:21.462077Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2586,
+        2587,
+        2636,
+        2771,
+        3009,
+        3015,
+        3716,
+        3918,
+        4312,
+        4439,
+        4899,
+        4953,
+        5076,
+        5116,
+        5457,
+        7536,
+        7876,
+        7891,
+        9081,
+        9237,
+        9283
+      ],
+      "ComponentSubjectIds": [
+        55
+      ],
+      "MeaningHint": "If you're keeping up with your radical studies, you're also keeping up with your kanji studies!",
+      "ReadingHint": "Imagine the doormen being extra straight… too straight in their standing. On their uniform is “The Ritz” written in fine lettering, and as you walk past them, they stand up straight and say “Welcome to the Ritz!” Whatever you do, while you’re thinking about it, make sure you think about how they stand up so straight, and associate it with these doormen, who work, specifically, at the Ritz. If you effectively imagine all this, you should be able to remember this on’yomi. Go through it like it’s a movie in your head!",
+      "ReadingMnemonic": "Think of someone who has to <kanji>stand</kanji> up straight for you. These people are pros in hospitality. These are the doormen at the <reading>Ritz</reading> (りつ).",
+      "Readings": [
+        {
+          "Reading": "りつ",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "りゅう",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "た",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [],
+      "Characters": "立",
+      "CreatedAt": "2012-02-29T01:18:04Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E7%AB%8B",
+      "HiddenAt": null,
+      "LessonPosition": 66,
+      "Level": 2,
+      "MeaningMnemonic": "The radical <radical>stand</radical> and the kanji <kanji>stand</kanji> are the same thing, so now you know them both.",
+      "Meanings": [
+        {
+          "Meaning": "Stand",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "立",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 856,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/856",
+    "DataUpdatedAt": "2026-03-02T19:13:23.883974Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2521,
+        2650,
+        2669,
+        2773,
+        3265,
+        3427,
+        3447,
+        3478,
+        3510,
+        3601,
+        4227,
+        4232,
+        4366,
+        4508,
+        5048,
+        5390,
+        5614,
+        5843,
+        6796,
+        6950,
+        7388,
+        7405,
+        7448,
+        7517,
+        7855,
+        7981,
+        8095,
+        8253,
+        8481,
+        8493,
+        8731,
+        8817,
+        8843,
+        8998,
+        9142,
+        9165
+      ],
+      "ComponentSubjectIds": [
+        14,
+        3
+      ],
+      "MeaningHint": "Since this kanji doesn't really have a meaning as much as it does a function, try to change the way you think about it when you're memorizing it.",
+      "ReadingHint": "If you feel like you're so full you're about to burst, and if you imagine your mom doing this to you (how could you, ma?), you should be able to remember the reading of this kanji. That being said, the reading is mostly only useful in the event that you have to identify a 々 — otherwise, you won't see it much.",
+      "ReadingMnemonic": "This symbol doesn't really have a name, but it's sometimes called the のま because it looks like the katakana characters ノ and マ put together. If you know katakana then this will be easy to read. If you don't, think of it this way:\n\nYour mom is the <kanji>repeater</kanji>. She is trying to force feed you over and over again until you explode (literally). You keep yelling \"<reading>No ma</reading> (のま)!\" but she doesn't stop. She's on a repeating track, never stopping, repeating forever.",
+      "Readings": [
+        {
+          "Reading": "のま",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Kanji Repeater",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Repeater Kanji",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "々",
+      "CreatedAt": "2012-07-24T23:58:04.63059Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E3%80%85",
+      "HiddenAt": null,
+      "LessonPosition": 67,
+      "Level": 2,
+      "MeaningMnemonic": "This is a strange kanji because it doesn't really mean anything at all. In fact, what it does is it repeats the kanji that comes before it. For example: 人々 is actually 人人. This kanji shows up whenever there's a repeating kanji, because it's often easier to write than writing a more complicated kanji twice. That's why this kanji is the <kanji>repeater</kanji>. It repeats what comes before it.\n\nTo remember that this kanji is the repeater, though, think of a <radical>prison</radical> with <radical>drop</radical>s of water dripping over and over in it. Drip drop drip drop. It does that over and over again, driving the prisoners nuts. But it never stops. It just repeats over and over.",
+      "Meanings": [
+        {
+          "Meaning": "Repeater",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Repetition",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Reduplication",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Iteration Mark",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "々",
+      "SpacedRepetitionSystemId": 2
     }
   }
 ]

@@ -1,0 +1,746 @@
+[
+  {
+    "Id": 9185,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9185",
+    "DataUpdatedAt": "2025-06-11T05:34:17.914103Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Which one of these ties shall I give as a gift?",
+          "Ja": "プレゼントのネクタイ、どれにする？"
+        },
+        {
+          "En": "Can you tell which ones are tasty onions?",
+          "Ja": "どれがおいしい玉ねぎか、分かる？"
+        },
+        {
+          "En": "Hmm, which one should I cut first?",
+          "Ja": "えっと、どれから切ればいい？"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Do re</reading> (どれ) mi fa sol la ti... <vocabulary>which one</vocabulary> of these notes are you going to start singing from?\n\nThe question word どれ is used to ask <vocabulary>which one</vocabulary> out of three or more choices.",
+      "PartsOfSpeech": [
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/oc82pf1alet0u5hko4ddb8ig3dgh",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44776,
+            "Pronunciation": "どれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/mof7of7l6pig1uqhkh7cfddh3kru",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44776,
+            "Pronunciation": "どれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ar0jviepj2w2irkmgftcbafh84qv",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44717,
+            "Pronunciation": "どれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/hny0opwryyvjojhwvmm9zf9csk91",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44717,
+            "Pronunciation": "どれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Which Ones",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "this one",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "this",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "どれ",
+      "CreatedAt": "2023-04-24T22:01:30.93083Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%A9%E3%82%8C",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Which One",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Which",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "どれ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9186,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9186",
+    "DataUpdatedAt": "2025-06-11T05:34:17.935402Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I'm going to speak on TV now.",
+          "Ja": "今から、テレビでしゃべるんだ。"
+        },
+        {
+          "En": "What, you're going on TV?",
+          "Ja": "えっ、テレビに出るの？"
+        },
+        {
+          "En": "I'll turn on the TV immediately!",
+          "Ja": "すぐにテレビをつけるよ！"
+        }
+      ],
+      "MeaningMnemonic": "テレビ comes from the English word <vocabulary>television</vocabulary>. It’s been shortened, which is really common with loanwords in Japanese. The \"vi\" sound becomes ビ, too.\n\nテレビ is sometimes written as \"TV\", but even then it’s usually pronounced テレビ.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/1pso6t5kdmrn0m90ri1ajz6hadqt",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44802,
+            "Pronunciation": "テレビ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/8kno2a30iqq2vodc8hxntj9plynu",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44802,
+            "Pronunciation": "テレビ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/naxf4ogbxj171p12gm3gygt4hn3a",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44734,
+            "Pronunciation": "テレビ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/kv864g9vn5m5peiepgwi3smife0i",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44734,
+            "Pronunciation": "テレビ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Telly",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "テレビ",
+      "CreatedAt": "2023-04-24T22:14:02.189207Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%86%E3%83%AC%E3%83%93",
+      "HiddenAt": null,
+      "LessonPosition": 9,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Television",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "TV",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "テレビ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9187,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9187",
+    "DataUpdatedAt": "2025-06-11T05:34:17.957585Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Yep, let's do that!",
+          "Ja": "うん、そうしよう！"
+        },
+        {
+          "En": "Yeah, sorry, that's wrong.",
+          "Ja": "うん、ごめん、ちがう。"
+        },
+        {
+          "En": "Yep, it's yummy!",
+          "Ja": "うん、おいしい！"
+        }
+      ],
+      "MeaningMnemonic": "Wanna play <reading>Un</reading>o (うん)? <vocabulary>Yep</vocabulary>! 'Course I do. I always wanna play Uno.\n\nうん is a casual way to say <vocabulary>yes</vocabulary>, or <vocabulary>yeah</vocabulary>, so you’d generally use it with friends and family, and in other informal situations.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/es3zxnmhfatg5wpsfhtjcljgzlmm",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44755,
+            "Pronunciation": "うん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/s7xm596ci6qvxphh6y7dttewyitl",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44755,
+            "Pronunciation": "うん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/27xrirm45gc7bmq2gt5r73xsj70w",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44696,
+            "Pronunciation": "うん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/8y8gppy8csfktufn4zi1l0tnkues",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44696,
+            "Pronunciation": "うん",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Yup",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Yeh",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "うん",
+      "CreatedAt": "2023-04-24T22:34:28.303716Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%86%E3%82%93",
+      "HiddenAt": null,
+      "LessonPosition": 8,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Yep",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Yeah",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Yes",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "うん",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9188,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9188",
+    "DataUpdatedAt": "2025-06-11T05:34:17.97887Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "\"Mr. Chandler.\" \"Yes!\"",
+          "Ja": "「チャンドラーさん」「はい！」"
+        },
+        {
+          "En": "Yes, thank you very much.",
+          "Ja": "はい、ありがとうございます。"
+        },
+        {
+          "En": "Yes, understood.",
+          "Ja": "はい、分かりました。"
+        }
+      ],
+      "MeaningMnemonic": "Want me to write a <reading>hai</reading>ku (はい)? <vocabulary>Yes</vocabulary>, of course!\n\nはい is a formal word for \"yes\". You can use it to let someone know they’re right, or simply that you’re listening, as well as to respond if someone says your name.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/xak11xu02cnlpuqh3htfxwbxr9lc",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44778,
+            "Pronunciation": "はい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/i7d64qk9onzpttkzhtewicnxwd49",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44778,
+            "Pronunciation": "はい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vmiehd5dkw12duttcazjyg52s5rf",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44719,
+            "Pronunciation": "はい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/eypgyk010dcwzowsvv6jqaf4pwih",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44719,
+            "Pronunciation": "はい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Yep",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Certainly",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Surely",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Sure",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "All right",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "はい",
+      "CreatedAt": "2023-04-24T22:38:41.754869Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%AF%E3%81%84",
+      "HiddenAt": null,
+      "LessonPosition": 6,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Yes",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "はい",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9189,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9189",
+    "DataUpdatedAt": "2025-06-11T05:34:18.001286Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "If it's that notebook you mean, it's on my desk.",
+          "Ja": "そのノートなら、デスクの上だよ。"
+        },
+        {
+          "En": "Did you take good notes on the lesson?",
+          "Ja": "レッスン、ちゃんとノートにまとめた？"
+        },
+        {
+          "En": "I need an A4 size notebook, you know.",
+          "Ja": "A4サイズのノートがいるんだよね。"
+        }
+      ],
+      "MeaningMnemonic": "ノート is a shortened form of <vocabulary>notebook</vocabulary>, with an extra \"o\" on the end since you can’t end a word with \"t\" in Japanese.\n\nYou can also use this to mean <vocabulary>notes</vocabulary>, in the context of taking down notes in a class.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/vbawpw93tou74wnpd4fj6mf3wbbh",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44806,
+            "Pronunciation": "ノート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/mwlbnw5vsb2blwk30a7gf1ga18kn",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44806,
+            "Pronunciation": "ノート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3bya4ths1chs7ifsilzsdn3imivo",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44738,
+            "Pronunciation": "ノート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ns47eg3jlrs2z38m6okwsve6w60o",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44738,
+            "Pronunciation": "ノート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Notepad",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ノート",
+      "CreatedAt": "2023-04-24T22:41:46.35982Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%8E%E3%83%BC%E3%83%88",
+      "HiddenAt": null,
+      "LessonPosition": 1,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Notebook",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Notes",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ノート",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9190,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9190",
+    "DataUpdatedAt": "2026-03-17T01:28:58.646416Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Goodbye, Sensei.",
+          "Ja": "先生、さようなら。"
+        },
+        {
+          "En": "Goodbye, January. Hello, February.",
+          "Ja": "さようなら、一月。こんにちは、二月。"
+        },
+        {
+          "En": "So long, and thanks for all the fish.",
+          "Ja": "さようなら、今までサカナをありがとう。"
+        }
+      ],
+      "MeaningMnemonic": "I <reading>saw your Nara</reading> (さようなら), but I then had to say <vocabulary>goodbye</vocabulary>. It was just a short trip, but at least I saw your Nara.\n\nさようなら is a formal way to say goodbye, so a good word to use with colleagues and teachers.\n\nA quick tip before I say goodbye: さようなら often drops its middle う, becoming さよなら.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/hcsh3at0vza8tpki4pirf26q13lb",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44705,
+            "Pronunciation": "さようなら",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0we3i8b1i9jkbicayy7f6vfkmq3c",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44764,
+            "Pronunciation": "さようなら",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/g0ebpiopdf9s5lsym9zw16xo2s1q",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44764,
+            "Pronunciation": "さようなら",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3b97ekvit72j8os17ifkhy5s1drb",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44705,
+            "Pronunciation": "さようなら",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Bye",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "So Long",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Adieu",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Good-Bye",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Farewell",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "さようなら",
+      "CreatedAt": "2023-04-24T22:44:09.937711Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%95%E3%82%88%E3%81%86%E3%81%AA%E3%82%89",
+      "HiddenAt": null,
+      "LessonPosition": 2,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Goodbye",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "さようなら",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9191,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9191",
+    "DataUpdatedAt": "2026-03-17T01:29:30.32804Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh, good evening.",
+          "Ja": "あ、こんばんは。"
+        },
+        {
+          "En": "Good evening, everyone.",
+          "Ja": "みなさん、こんばんは。"
+        },
+        {
+          "En": "Good evening. Nice work today!",
+          "Ja": "こんばんは〜、おつかれさまです！"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Con ban, wah!</reading> (こんばんは) cries your friend, just as you say <vocabulary>good evening</vocabulary>. There's a report on the evening news about a con ban (yes, that's a ban on conning people). Wah! Exciting stuff.\n\nYou can use こんばんは as a greeting from around 5pm or 6pm, in both formal and informal situations.　Watch out for that は on the end, which is pronounced わ here too.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/u5bumunf9rmlp6j5hlmn8rjdf1g6",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44763,
+            "Pronunciation": "こんばんは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qf3t4rcmmndnyjiife4ybw6gy2mr",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44763,
+            "Pronunciation": "こんばんは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/1dkkjw7i65uhqxwd9fbf6an2jqv7",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44704,
+            "Pronunciation": "こんばんは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0x9dfu2axy4b3jrnt2xirkm1nybs",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44704,
+            "Pronunciation": "こんばんは",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "こんばんは",
+      "CreatedAt": "2023-04-24T22:46:02.407047Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%93%E3%82%93%E3%81%B0%E3%82%93%E3%81%AF",
+      "HiddenAt": null,
+      "LessonPosition": 4,
+      "Level": 4,
+      "Meanings": [
+        {
+          "Meaning": "Good Evening",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "こんばんは",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

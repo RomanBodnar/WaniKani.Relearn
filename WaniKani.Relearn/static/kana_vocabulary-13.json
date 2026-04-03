@@ -1,0 +1,225 @@
+[
+  {
+    "Id": 9226,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9226",
+    "DataUpdatedAt": "2025-06-11T05:34:19.206181Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "That dress is so cute!",
+          "Ja": "そのワンピース、めっちゃかわいいね！"
+        },
+        {
+          "En": "I bought five dresses at a bargain sale.",
+          "Ja": "バーゲンで、ワンピースを五着も買っちゃった。"
+        },
+        {
+          "En": "I spilled coffee on my favorite white dress.",
+          "Ja": "お気に入りの白いワンピースにコーヒーをこぼしてしまった。"
+        }
+      ],
+      "MeaningMnemonic": "ワンピース comes from the English word one-piece, but it generally refers to a casual <vocabulary>dress</vocabulary> in Japanese.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/dmf5mrj6xt7r9hhrjq2ksvmk6l4m",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44816,
+            "Pronunciation": "ワンピース",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rwaxvra36jek94ytwgwum1v2p0to",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44816,
+            "Pronunciation": "ワンピース",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dx7aotb6e2kxq6a8nfqs6yar5o2b",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44748,
+            "Pronunciation": "ワンピース",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ilt6u0kzat2regvklu73hhytywfn",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44748,
+            "Pronunciation": "ワンピース",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Casual Dress",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "One-Piece Dress",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "One-Piece Suit",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ワンピース",
+      "CreatedAt": "2023-04-25T00:52:02.856721Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%AF%E3%83%B3%E3%83%94%E3%83%BC%E3%82%B9",
+      "HiddenAt": null,
+      "LessonPosition": 4,
+      "Level": 13,
+      "Meanings": [
+        {
+          "Meaning": "Dress",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ワンピース",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9227,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9227",
+    "DataUpdatedAt": "2025-06-11T05:34:19.233292Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "We can see the fireworks really well from the balcony of my apartment!",
+          "Ja": "うちのマンションのベランダから、花火めっちゃよく見えるよ！"
+        },
+        {
+          "En": "Huh, you'd rather live in an apartment than in your own house? Why?",
+          "Ja": "えーっ、マイホームよりマンションに住む方がいいの？なんで？"
+        },
+        {
+          "En": "I'm planning to leave this apartment next month.",
+          "Ja": "私、来月、このマンションを出る予定なんだ。"
+        }
+      ],
+      "MeaningMnemonic": "マンション comes from the English word \"mansion,\" but it just means an ordinary <vocabulary>apartment building</vocabulary> in Japanese. Depending on context, it can also mean an individual <vocabulary>apartment</vocabulary>. Either way, it’s definitely not a big, luxurious house in Japanese!",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/mz9we4zceof22ztontu3q73m7wjq",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44813,
+            "Pronunciation": "マンション",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/gooruyxrw7s7accn3y11lzk4cgwv",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44813,
+            "Pronunciation": "マンション",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/kvg071m1nhi4hub5uqdzr373jmx0",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44745,
+            "Pronunciation": "マンション",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9ti95c9ecy19rp6o5gxw42ktrend",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44745,
+            "Pronunciation": "マンション",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Condominium",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Block of Flats",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Condo",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Flat",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Apartment Block",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "マンション",
+      "CreatedAt": "2023-04-25T00:58:20.179039Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3",
+      "HiddenAt": null,
+      "LessonPosition": 5,
+      "Level": 13,
+      "Meanings": [
+        {
+          "Meaning": "Apartment Building",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Apartment",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "マンション",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

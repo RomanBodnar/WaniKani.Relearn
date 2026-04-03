@@ -18,7 +18,7 @@ public record CharacterImage
     /// Details about the image. Each content_type returns a uniquely structured object.
     /// </summary>
     [JsonPropertyName("metadata")]
-    public Dictionary<string, string> Metadata { get; init; }
+    public object Metadata { get; init; }
 }
 
 public class ImageSvgXmlMetadata

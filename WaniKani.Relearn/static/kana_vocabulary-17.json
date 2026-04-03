@@ -1,0 +1,137 @@
+[
+  {
+    "Id": 9231,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9231",
+    "DataUpdatedAt": "2025-06-11T05:34:19.346653Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "How did you become fluent in Japanese?",
+          "Ja": "どうやって日本語ペラペラになったの？"
+        },
+        {
+          "En": "Ah, I want to be able to speak English fluently soon.",
+          "Ja": "あー、はやく英語がペラペラ話せるようになりたい。"
+        },
+        {
+          "En": "Hey, you've been blabbing on and on! We're in the library, remember?",
+          "Ja": "ねえ、さっきから、ペラペラペラペラうるさいよ！ここ、図書館だよ？"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Parrot, parrot</reading> (ペラペラ), your speaking is so <vocabulary>fluent</vocabulary>!\n\nペラペラ is an オノマトペ that describes someone speaking a language fluently, or simply being a real chatterbox.\n\nRelated to this, ペラペラ also means <vocabulary>leafing through a book</vocabulary>. And in an extension of that meaning, it can describe something <vocabulary>paper thin</vocabulary> or flimsy, like a piece of paper from that book you're leafing through.",
+      "PartsOfSpeech": [
+        "adverb",
+        "noun",
+        "な adjective",
+        "の adjective",
+        "オノマトペ"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/ct45qzgjbho9jwjhu3ldjn685yb7",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44810,
+            "Pronunciation": "ペラペラ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/lqzvpjm2wt0o3wj5v3cp5gsclgxz",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44810,
+            "Pronunciation": "ペラペラ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9q8i5eztljlppuo2h0kavk15cptw",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44742,
+            "Pronunciation": "ペラペラ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/268hqtnpwqcij4likjz851d2scaz",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44742,
+            "Pronunciation": "ペラペラ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Fluently",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Incessantly",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Continually",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Flimsy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Leafing Through",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Flipping Through",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Flipping Through A Book",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ペラペラ",
+      "CreatedAt": "2023-04-25T01:12:32.657197Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%9A%E3%83%A9%E3%83%9A%E3%83%A9",
+      "HiddenAt": null,
+      "LessonPosition": 1,
+      "Level": 17,
+      "Meanings": [
+        {
+          "Meaning": "Fluent",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Paper Thin",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Leafing Through A Book",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ペラペラ",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

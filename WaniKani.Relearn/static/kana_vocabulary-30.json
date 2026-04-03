@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 9233,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9233",
+    "DataUpdatedAt": "2025-06-17T14:30:44.530905Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Apparently, an overnight stay with a breakfast buffet costs 5,000 yen at this hotel.",
+          "Ja": "このホテル、朝食バイキング付きで五千円だって。"
+        },
+        {
+          "En": "Would you like to go to an all-you-can-eat cake place with me sometime?",
+          "Ja": "今度いっしょにケーキバイキングに行かない？"
+        },
+        {
+          "En": "The Christmas party will be buffet style.",
+          "Ja": "クリスマスパーティーは、バイキング形式にする予定だよ。"
+        }
+      ],
+      "MeaningMnemonic": "バイキング comes from the English word <vocabulary>Viking</vocabulary>, but in Japanese, it often refers to a <vocabulary>buffet</vocabulary>.\n\nバイキング came to mean \"buffet\" thanks to Japan’s first all-you-can-eat restaurant, \"Viking\", which was named after a feast scene from a movie called (you guessed it) \"Viking\".",
+      "PartsOfSpeech": [
+        "noun",
+        "する verb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/m6trh7bzhwvw0a20luk70w8tymcy",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44807,
+            "Pronunciation": "バイキング",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/upu79isgmj0garefya0f4m6zn4hs",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44807,
+            "Pronunciation": "バイキング",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7kxt0u1f7f326vd9rs56budbp884",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44739,
+            "Pronunciation": "バイキング",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/a9xsia8541cc70u8j39g4kuwpcog",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44739,
+            "Pronunciation": "バイキング",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "All-You-Can-Eat",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "バイキング",
+      "CreatedAt": "2023-04-25T01:18:59.378343Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%90%E3%82%A4%E3%82%AD%E3%83%B3%E3%82%B0",
+      "HiddenAt": null,
+      "LessonPosition": 11,
+      "Level": 30,
+      "Meanings": [
+        {
+          "Meaning": "Buffet",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Smorgasbord",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Viking",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "バイキング",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

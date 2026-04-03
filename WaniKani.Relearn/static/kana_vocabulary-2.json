@@ -1,0 +1,191 @@
+[
+  {
+    "Id": 9177,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9177",
+    "DataUpdatedAt": "2025-06-11T05:34:17.715564Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Good morning, Miho-chan!",
+          "Ja": "ミホちゃん、おはよう！"
+        },
+        {
+          "En": "I texted \"good morning\" to Mike.",
+          "Ja": "マイクに「おはよう」とメールをした。"
+        },
+        {
+          "En": "Ugh, I'm sleepy... morning.",
+          "Ja": "うーっ、ねむいー、おはよう。"
+        }
+      ],
+      "MeaningMnemonic": "From <reading>Ohio</reading> (おはよう), you shout <vocabulary>good morning</vocabulary>. Why Ohio? Because that's where you woke up this morning. Imagine yourself waking up in Ohio, and wishing everyone \"good morning\" at the top of your lungs.\n\nおはよう is a casual way to say \"good morning.\" It can also be written in kanji, but hiragana is much more common.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/njheegr4osypvf7p4i651ojp11cd",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44756,
+            "Pronunciation": "おはよう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rglunoo2v4nocsvp7rlm49krbkzt",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44756,
+            "Pronunciation": "おはよう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/spj6vzcgaf7il6pvju6jnu63fkmf",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44697,
+            "Pronunciation": "おはよう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ra1ykvgpv1l1ma04loqkojmo3j5s",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44697,
+            "Pronunciation": "おはよう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "おはよう",
+      "CreatedAt": "2023-03-14T13:35:00.593974Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%8A%E3%81%AF%E3%82%88%E3%81%86",
+      "HiddenAt": null,
+      "LessonPosition": 76,
+      "Level": 2,
+      "Meanings": [
+        {
+          "Meaning": "Good Morning",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "おはよう",
+      "SpacedRepetitionSystemId": 2
+    }
+  },
+  {
+    "Id": 9178,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9178",
+    "DataUpdatedAt": "2025-06-11T05:34:17.743871Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Did you book a hotel already?",
+          "Ja": "ホテル、もうとった？"
+        },
+        {
+          "En": "I'm just about to check out of the hotel.",
+          "Ja": "今、ホテルをチェックアウトするところ。"
+        },
+        {
+          "En": "Which hotel will you stay at?",
+          "Ja": "どこのホテルにステイするの？"
+        }
+      ],
+      "MeaningMnemonic": "ホテル comes from the English word <vocabulary>hotel</vocabulary> and the meaning is exactly the same!\n\nThe only thing to watch out for is that the \"l\" on the end becomes ル, because that's the closest sound in Japanese.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/btv98fatnwncjsciv4o021lw0663",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44812,
+            "Pronunciation": "ホテル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ntffqzug4r630nmo8n2r7eoi15n1",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44812,
+            "Pronunciation": "ホテル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rzkl70cr1io8ngp7phofmwyvcc9f",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44744,
+            "Pronunciation": "ホテル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xskv4hvqktrnd1mfok7d4xonu7yq",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44744,
+            "Pronunciation": "ホテル",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Hotels",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ホテル",
+      "CreatedAt": "2023-03-14T14:26:53.74665Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%9B%E3%83%86%E3%83%AB",
+      "HiddenAt": null,
+      "LessonPosition": 77,
+      "Level": 2,
+      "Meanings": [
+        {
+          "Meaning": "Hotel",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ホテル",
+      "SpacedRepetitionSystemId": 2
+    }
+  }
+]

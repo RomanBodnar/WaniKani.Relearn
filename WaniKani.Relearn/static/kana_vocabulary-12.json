@@ -1,0 +1,130 @@
+[
+  {
+    "Id": 9224,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9224",
+    "DataUpdatedAt": "2025-06-11T05:34:19.149525Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I've already seen that anime.",
+          "Ja": "そのアニメ、もう見たよ。"
+        },
+        {
+          "En": "I'm almost done!",
+          "Ja": "もうそろそろ終わる！"
+        },
+        {
+          "En": "I understand. I won't come here anymore.",
+          "Ja": "分かった。ここにはもう来ないね。"
+        }
+      ],
+      "MeaningMnemonic": "You've <reading>mow</reading>ed your lawn (もう) <vocabulary>already</vocabulary>? Wow, you're ahead on your mowing. Good work. You'll have to do it again <vocabulary>soon</vocabulary>, though.\n\nThis can also mean <vocabulary>yet</vocabulary> in a question, and <vocabulary>anymore</vocabulary> with a negative.",
+      "PartsOfSpeech": [
+        "adverb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/tdp6vx8m6s9pnp5cbi0g44b8tlzh",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44786,
+            "Pronunciation": "もう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/v1tid2lyw9rwj52v0khgo186j9aw",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44786,
+            "Pronunciation": "もう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ckrnwztwwyy5mbznrgseu7qb7w36",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44724,
+            "Pronunciation": "もう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/r8yrjsf4f40fx6ppg9w65odzsep1",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44724,
+            "Pronunciation": "もう",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Any Longer",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "No Longer",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Now",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "By Now",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Almost",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "もう",
+      "CreatedAt": "2023-04-25T00:40:10.937095Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%82%E3%81%86",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 12,
+      "Meanings": [
+        {
+          "Meaning": "Already",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Soon",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Yet",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Anymore",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "もう",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

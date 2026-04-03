@@ -1,0 +1,639 @@
+[
+  {
+    "Id": 9192,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9192",
+    "DataUpdatedAt": "2025-10-08T16:49:34.154231Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "That looks fun!",
+          "Ja": "それ、おもしろそうだね！"
+        },
+        {
+          "En": "Oh, you're going to go for that?",
+          "Ja": "え、それにするの？"
+        },
+        {
+          "En": "That's not candy, that's an eyeball.",
+          "Ja": "それはキャンディじゃなくて目玉です。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Sorry</reading> (それ), can you grab <vocabulary>that one</vocabulary> for me? Yeah, <vocabulary>that</vocabulary>, thanks!\n\nYou can use それ for things that are close to the person you're talking to, or fairly close to both of you.",
+      "PartsOfSpeech": [
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/5eyvmvt993p1f4gax3umed2qn4ws",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44770,
+            "Pronunciation": "それ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/y88linrj5qv3ui894y2ivz3q1is7",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44770,
+            "Pronunciation": "それ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ucb6w9ekwr5ui1cg5m4na5iihqoc",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44711,
+            "Pronunciation": "それ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/n91xbfp9ddi2r18c6618ozgm357k",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44711,
+            "Pronunciation": "それ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "That",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Those",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "This One",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "This",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "These Ones",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "それ",
+      "CreatedAt": "2023-04-24T22:50:07.710461Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%9D%E3%82%8C",
+      "HiddenAt": null,
+      "LessonPosition": 73,
+      "Level": 5,
+      "Meanings": [
+        {
+          "Meaning": "That One",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Those Ones",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "それ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9193,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9193",
+    "DataUpdatedAt": "2025-10-08T16:49:34.206891Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh, you work part-time at a convenience store?",
+          "Ja": "え、コンビニでバイトしてるの？"
+        },
+        {
+          "En": "Convenience store rice balls are so good!",
+          "Ja": "コンビニのおにぎりっておいしいよね！"
+        },
+        {
+          "En": "Oh, there's a convenience store over there!",
+          "Ja": "あ、あそこにコンビニがある！"
+        }
+      ],
+      "MeaningMnemonic": "コンビニ comes from the English word <vocabulary>convenience store</vocabulary>, but who has time for all those syllables? That's why they cut it down to \"conveni\". So much more convenient that way.\n\nWatch out for the “v” sound, which usually becomes “b” in Japanese, and this word is no exception.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/xkkl9ougjg18qyl84v7s1q15e5cp",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44797,
+            "Pronunciation": "コンビニ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/epierqtrzkw8y1u8jqfqvwo8qheg",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44797,
+            "Pronunciation": "コンビニ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/cyqmuf7p7jxg7c65jdedhl9ugz8q",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44729,
+            "Pronunciation": "コンビニ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/lw5ndkqahjo2nh6jzgoxgg59xnsz",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44729,
+            "Pronunciation": "コンビニ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Konbini",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Conbini",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Corner Store",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "コンビニ",
+      "CreatedAt": "2023-04-24T23:01:18.823533Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B",
+      "HiddenAt": null,
+      "LessonPosition": 74,
+      "Level": 5,
+      "Meanings": [
+        {
+          "Meaning": "Convenience Store",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "コンビニ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9194,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9194",
+    "DataUpdatedAt": "2025-10-08T16:49:34.235868Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I'm in the department store restroom right now.",
+          "Ja": "今、デパートのトイレにいる。"
+        },
+        {
+          "En": "They had that at the department store.",
+          "Ja": "それ、デパートにあったよ。"
+        },
+        {
+          "En": "I saw Leo at the department store!",
+          "Ja": "レオなら、デパートで見かけたよ！"
+        }
+      ],
+      "MeaningMnemonic": "デパート comes from  <vocabulary>department store</vocabulary>. Yet another shortened loanword! There's an extra \"o\" sound on the end of this one, since a word can't end in \"t\" in Japanese.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/q9ce21ragcyk199mhdtfnbl4f6aa",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44803,
+            "Pronunciation": "デパート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/usp0p1nqv09bsllib15qh8bihu0m",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44803,
+            "Pronunciation": "デパート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/d9t550htshc1fo9meu047iugfua1",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44735,
+            "Pronunciation": "デパート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/pdhcnlntqre4gfs9rh5ti30u9dyn",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44735,
+            "Pronunciation": "デパート",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "デパート",
+      "CreatedAt": "2023-04-24T23:05:41.604417Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%87%E3%83%91%E3%83%BC%E3%83%88",
+      "HiddenAt": null,
+      "LessonPosition": 75,
+      "Level": 5,
+      "Meanings": [
+        {
+          "Meaning": "Department Store",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "デパート",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9195,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9195",
+    "DataUpdatedAt": "2025-10-08T16:49:34.262839Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Oh, excuse me! I'm sorry!",
+          "Ja": "あ、すみません！ごめんなさい！"
+        },
+        {
+          "En": "Excuse me, where's the \"Ocean Hotel\"?",
+          "Ja": "すみません、オーシャンホテルってどこですか。"
+        },
+        {
+          "En": "Excuse me, is now a good time?",
+          "Ja": "すみません、今ちょっといいですか？"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Sue me, Ma Sen!</reading> (すみません), you yell at Ma Sen, before quickly adding \"<vocabulary>Excuse me</vocabulary>…<vocabulary>I'm sorry</vocabulary>, so <vocabulary> sorry</vocabulary>!\" You shouldn't have shouted at Ma Sen like that. You hope she won’t actually sue you.\n\nYou can use すみません both to apologize and to get someone’s attention. This expression is really common in Japan, and dropping it in wherever you can will help you blend right in!",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/bjp28g6kczyweusd948k21qmjhkb",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44766,
+            "Pronunciation": "すみません",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fat27es3a7fitxg22wzfr3thj21b",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44766,
+            "Pronunciation": "すみません",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/jvkxofgp40hpxlu5pfgqilstodxc",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44707,
+            "Pronunciation": "すみません",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/q7a466ukh6vztrhnkxnmano5avfm",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44707,
+            "Pronunciation": "すみません",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "We're Sorry",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Excuse Us",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pardon Me",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Thank You",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "すみません",
+      "CreatedAt": "2023-04-24T23:08:10.474835Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%99%E3%81%BF%E3%81%BE%E3%81%9B%E3%82%93",
+      "HiddenAt": null,
+      "LessonPosition": 76,
+      "Level": 5,
+      "Meanings": [
+        {
+          "Meaning": "Excuse Me",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "I'm Sorry",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Sorry",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "すみません",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9196,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9196",
+    "DataUpdatedAt": "2025-10-08T16:49:34.28578Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "No, it's not.",
+          "Ja": "いいえ、ちがいます。"
+        },
+        {
+          "En": "No, you have the wrong person.",
+          "Ja": "いいえ、人ちがいです。"
+        },
+        {
+          "En": "No, it's not England. It's Canada.",
+          "Ja": "いいえ、イギリスじゃないです。カナダです。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Eeh! Eh?</reading> (いいえ) <vocabulary>No</vocabulary>! You’re so surprised by whatever the question was, you can only manage \"Eeh! Eh? No!\" in response.\n\nいいえ is a formal word for \"no\", so you can use it to answer politely in the negative.",
+      "PartsOfSpeech": [
+        "expression"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/6a1zwv8m84filsnlh7h0l2epsc8y",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44753,
+            "Pronunciation": "いいえ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/nad3zby1f3lym8jdz99nxkywaiw0",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44753,
+            "Pronunciation": "いいえ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/nwu8yzplen0rs5b3syjrid1ei78k",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44694,
+            "Pronunciation": "いいえ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/lt9d9ya07spk2uo5meoqdepsdaxt",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44694,
+            "Pronunciation": "いいえ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "いいえ",
+      "CreatedAt": "2023-04-24T23:10:33.851884Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%84%E3%81%84%E3%81%88",
+      "HiddenAt": null,
+      "LessonPosition": 77,
+      "Level": 5,
+      "Meanings": [
+        {
+          "Meaning": "No",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "いいえ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9197,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9197",
+    "DataUpdatedAt": "2025-10-08T16:49:34.303147Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Is this your blog?",
+          "Ja": "これ、あなたのブログですか？"
+        },
+        {
+          "En": "What would you do in that kind of situation?",
+          "Ja": "こんなとき、あなたならどうしますか？"
+        },
+        {
+          "En": "I miss you darling.",
+          "Ja": "あなたがいなくてさみしいです。"
+        }
+      ],
+      "MeaningMnemonic": "\"<reading>A gnat, ah!</reading> (あなた). I’m going to get <vocabulary>you</vocabulary>! Yes YOU,\" you shout as you swat at that pesky gnat buzzing around your head.\n\nあなた is a lot less common than “you” in English, but you’ll come across it in adverts, online forums, and textbooks, where it’s used to address a general, anonymous audience. Some people also use it with their significant other, in which case it sounds intimate, like \"darling\". In casual conversations, though, it can come off as standoffish, so it's better to use someone's name or social title (like \"teacher\") instead.",
+      "PartsOfSpeech": [
+        "pronoun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/pp8vwmbnm0yv29s7leok35mj25n6",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44750,
+            "Pronunciation": "あなた",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/y8yjirab9c1dh9lk15iqiikipwkk",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44750,
+            "Pronunciation": "あなた",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/bjgaulp70e2mj4br8oxnn3lez70q",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44691,
+            "Pronunciation": "あなた",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/c2mspi2fo54am5ieg8hcj5v580zd",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44691,
+            "Pronunciation": "あなた",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Dear",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Honey",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Yourself",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "あなた",
+      "CreatedAt": "2023-04-24T23:13:12.429906Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%82%E3%81%AA%E3%81%9F",
+      "HiddenAt": null,
+      "LessonPosition": 78,
+      "Level": 5,
+      "Meanings": [
+        {
+          "Meaning": "You",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Darling",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "あなた",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

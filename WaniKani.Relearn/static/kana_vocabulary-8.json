@@ -1,0 +1,635 @@
+[
+  {
+    "Id": 9207,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9207",
+    "DataUpdatedAt": "2025-11-18T14:34:21.223325Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "But I can't.",
+          "Ja": "でも、できないよ。"
+        },
+        {
+          "En": "But are you okay with that?",
+          "Ja": "でも、いいの？"
+        },
+        {
+          "En": "But it's 50 percent off, you know?",
+          "Ja": "でも、５０パーセントオフだよ？"
+        }
+      ],
+      "MeaningMnemonic": "I want to show you my <reading>demo</reading> (でも), <vocabulary>but</vocabulary> you don't want to see it. <vocabulary>However</vocabulary>, I'm going to show it to you anyway. So there.\n\nSomething to watch out for with でも is that it always goes at the beginning of a sentence, not in the middle, like \"but\" usually does in English. It’s also a fairly casual word, so it’s not normally used in formal situations.",
+      "PartsOfSpeech": [
+        "conjunction"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/iyolf3tn3rwk4h6ywb53zzqia9rh",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44713,
+            "Pronunciation": "でも",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/05eqwa43f5xj2wkqm8rfey2hlxiq",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44713,
+            "Pronunciation": "でも",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fsh217l0eh1dau1tkig0pm0y2g56",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44772,
+            "Pronunciation": "でも",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xbc3devwyfqeg7gzrmq0qhjicw92",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44772,
+            "Pronunciation": "でも",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Though",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Nevertheless",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "でも",
+      "CreatedAt": "2023-04-24T23:43:43.733819Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%A7%E3%82%82",
+      "HiddenAt": null,
+      "LessonPosition": 7,
+      "Level": 8,
+      "Meanings": [
+        {
+          "Meaning": "But",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "However",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "でも",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9208,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9208",
+    "DataUpdatedAt": "2025-11-18T14:34:21.340416Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I don't know that yet.",
+          "Ja": "それはまだ分からないよ。"
+        },
+        {
+          "En": "What, are you still in the bathroom?",
+          "Ja": "え、まだトイレにいるの？"
+        },
+        {
+          "En": "If you're looking for Ken, he's still taking a shower.",
+          "Ja": "ケンなら、まだシャワーしてるよ。"
+        }
+      ],
+      "MeaningMnemonic": "You've been getting <reading>madder</reading> (まだ) and madder, and you’re <vocabulary>still</vocabulary> mad. You’re <vocabulary>not yet</vocabulary> as mad as you could be, though.\n\nYou can use まだ to talk about a situation that started in the past and continues into the present. Wait! Where are you going? I'm still explaining this! I'm not done yet!",
+      "PartsOfSpeech": [
+        "adverb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/tmq436fyv9q7784qa2hx61vjch3j",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44782,
+            "Pronunciation": "まだ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/f217mb682qu6uwuzxl8u5tdy7eil",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44782,
+            "Pronunciation": "まだ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0iblksq2dvjf4nv3juv75w5uwbhn",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44723,
+            "Pronunciation": "まだ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/e10vreepqnjmqcwulkhkqiy2uvca",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44723,
+            "Pronunciation": "まだ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Yet",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "As Yet",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "So Far",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Still Not",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "まだ",
+      "CreatedAt": "2023-04-24T23:45:52.233059Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%BE%E3%81%A0",
+      "HiddenAt": null,
+      "LessonPosition": 16,
+      "Level": 8,
+      "Meanings": [
+        {
+          "Meaning": "Still",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Not Yet",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "まだ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9209,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9209",
+    "DataUpdatedAt": "2025-11-18T14:34:21.215666Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Let's eat here!",
+          "Ja": "ここで食べよう！"
+        },
+        {
+          "En": "If you're looking for your glasses, they're here.",
+          "Ja": "メガネなら、ここにあるよ。"
+        },
+        {
+          "En": "Where am I? Who am I?",
+          "Ja": "ここはどこ？私はだれ？"
+        }
+      ],
+      "MeaningMnemonic": "Remember how words beginning with こ are close to you? It ends with こ too, which is a clue that we’re talking about a place. So ここ means <vocabulary>here</vocabulary>.",
+      "PartsOfSpeech": [
+        "noun",
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/u1mrag6cdqth2akgrt8hld1jux83",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44759,
+            "Pronunciation": "ここ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rjjlz3sqc4purhq9dpcnf2hyi4z1",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44759,
+            "Pronunciation": "ここ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vxwmzbma9mec39m9vd3coshzaxir",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44700,
+            "Pronunciation": "ここ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/iood23uq9fag0n9lc11qayf7roqo",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44700,
+            "Pronunciation": "ここ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Where",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "There",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "ここ",
+      "CreatedAt": "2023-04-24T23:49:19.082747Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%93%E3%81%93",
+      "HiddenAt": null,
+      "LessonPosition": 6,
+      "Level": 8,
+      "Meanings": [
+        {
+          "Meaning": "Here",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ここ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9210,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9210",
+    "DataUpdatedAt": "2025-11-18T14:34:21.257925Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Today I ate a muffin as a snack.",
+          "Ja": "今日はおやつにマフィンを食べた。"
+        },
+        {
+          "En": "Shall we take a snack break?",
+          "Ja": "そろそろおやつにする？"
+        },
+        {
+          "En": "Kaori's snacks are always homemade!",
+          "Ja": "カオリちゃんのおやつは、いつも手作りだよ！"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Oh yah! Two</reading> (おやつ) <vocabulary>snack</vocabulary>s, just for you. Imagine your two snacks. What are they? I bet they're delicious. Oh yah!\n\nおやつ can be anything from candy to cookies to onigiri. Basically, it's anything fairly light that’s eaten between meals.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/3tsnrcvt4qk83z66glw0asbhxly6",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44757,
+            "Pronunciation": "おやつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2ot8wxvhf0mj7vhpk89mit807csm",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44757,
+            "Pronunciation": "おやつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/v61sf533gah77jbxbovf60mu01sx",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44698,
+            "Pronunciation": "おやつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0ucytajantnizr0nz73ix3di7epe",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44698,
+            "Pronunciation": "おやつ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "Characters": "おやつ",
+      "CreatedAt": "2023-04-24T23:52:43.457614Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%8A%E3%82%84%E3%81%A4",
+      "HiddenAt": null,
+      "LessonPosition": 11,
+      "Level": 8,
+      "Meanings": [
+        {
+          "Meaning": "Snack",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "おやつ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9211,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9211",
+    "DataUpdatedAt": "2025-11-18T14:34:21.278177Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Where are you going?",
+          "Ja": "どこに行くの？"
+        },
+        {
+          "En": "Which McDonald's?",
+          "Ja": "どこのマクドナルド？"
+        },
+        {
+          "En": "Where do you come from?",
+          "Ja": "どこから来たの？"
+        }
+      ],
+      "MeaningMnemonic": "Remember how words beginning with ど are often question words, and words ending in こ refer to places? This one's no exception, so どこ means <vocabulary>where</vocabulary>. ",
+      "PartsOfSpeech": [
+        "noun",
+        "pronoun",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/2bnfuspt3ngjdunajg058ygdxsq4",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44774,
+            "Pronunciation": "どこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/doqxpq1dwgl2k627p86fwmea6yz2",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44774,
+            "Pronunciation": "どこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4rewysy0kt8pl97j6zkxlk3mf9dy",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44715,
+            "Pronunciation": "どこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/a3oawhw6ez7ofjjia0t0sxrssq5o",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44715,
+            "Pronunciation": "どこ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Here",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "There",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "どこ",
+      "CreatedAt": "2023-04-24T23:55:52.602511Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%A9%E3%81%93",
+      "HiddenAt": null,
+      "LessonPosition": 13,
+      "Level": 8,
+      "Meanings": [
+        {
+          "Meaning": "Where",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "どこ",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9212,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9212",
+    "DataUpdatedAt": "2025-11-18T14:34:21.313121Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Hello, this is Yamakawa.",
+          "Ja": "もしもし、山川です。"
+        },
+        {
+          "En": "Hello, can you hear me?",
+          "Ja": "もしもし、きこえますか？"
+        },
+        {
+          "En": "Hello, what are you doing now?",
+          "Ja": "もしもし、今なにしてるの？"
+        }
+      ],
+      "MeaningMnemonic": "Woah, this place is <reading>mossy</reading>, <reading>mossy</reading> (もしもし)! This moss needs clearing up, so you call up the person in charge. <vocabulary>Hello</vocabulary>, says the person on the phone.\n\nもしもし is a <vocabulary>telephone hello</vocabulary>, the standard way to answer the phone in Japan!",
+      "PartsOfSpeech": [
+        "interjection"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/sp5ssklk1p7cnszwb0sqt00vm4xr",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44789,
+            "Pronunciation": "もしもし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/pl8l5gqw9qrm6nlat0ytt8x5n6ed",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44789,
+            "Pronunciation": "もしもし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rs5snlta323rtagk4o9z0xrumjm2",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44725,
+            "Pronunciation": "もしもし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9yhomhg76ifbmg8s8n4u7h8xvrbh",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44725,
+            "Pronunciation": "もしもし",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Phone Hello",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Hello On The Telephone",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Hello On The Phone",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "もしもし",
+      "CreatedAt": "2023-04-24T23:58:15.359562Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%82%82%E3%81%97%E3%82%82%E3%81%97",
+      "HiddenAt": null,
+      "LessonPosition": 15,
+      "Level": 8,
+      "Meanings": [
+        {
+          "Meaning": "Hello",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Telephone Hello",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Excuse Me",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "もしもし",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

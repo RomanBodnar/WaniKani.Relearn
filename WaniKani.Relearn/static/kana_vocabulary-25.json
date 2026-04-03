@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 9235,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9235",
+    "DataUpdatedAt": "2026-02-25T19:24:03.249276Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "It's just a fluke.",
+          "Ja": "ただのまぐれだよ。"
+        },
+        {
+          "En": "It was just a lucky guess.",
+          "Ja": "まぐれで当たっただけなんだよね。"
+        },
+        {
+          "En": "Even if it's a fluke, it's still great!",
+          "Ja": "まぐれでもすごいよ！"
+        }
+      ],
+      "MeaningMnemonic": "Somebody tried to <reading>mug Re</reading>mi (まぐれ), your friend, but by <vocabulary>chance</vocabulary> they managed to escape! Their escape was a <vocabulary>fluke</vocabulary>, but what a relief they didn't get mugged.\n\nThis word can be written in kanji, but the kana version is way more common. In fact, it'd be quite a fluke if you saw it in kanji.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/5fsca2fiegipgl29vb0nfzntmv02",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44781,
+            "Pronunciation": "まぐれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/240gfvwcghbbxi2tdh99msaa1vni",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44781,
+            "Pronunciation": "まぐれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zfndj96g4kpf6bxssoom2yo2hx5t",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44722,
+            "Pronunciation": "まぐれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/8zgd01m54khs6j50kxfsw8pmyt5m",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44722,
+            "Pronunciation": "まぐれ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Luck",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "A Fluke",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pure Luck",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "まぐれ",
+      "CreatedAt": "2023-04-25T01:27:12.487553Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%BE%E3%81%90%E3%82%8C",
+      "HiddenAt": null,
+      "LessonPosition": 4,
+      "Level": 25,
+      "Meanings": [
+        {
+          "Meaning": "Fluke",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Chance",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "まぐれ",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "Id": 9205,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9205",
+    "DataUpdatedAt": "2025-10-01T14:32:25.919421Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "That person is famous.",
+          "Ja": "その人、有名人だよ。"
+        },
+        {
+          "En": "I'm busy that day.",
+          "Ja": "その日は、いそがしいんだ。"
+        },
+        {
+          "En": "At that moment, there was a loud boom.",
+          "Ja": "そのとき、ドーンと大きな音がした。"
+        }
+      ],
+      "MeaningMnemonic": "Remember how それ means \"that one\"? その has a very similar meaning: <vocabulary>that</vocabulary>. It's used before a noun that's either close to the person you're talking to, or fairly close to both of you. For example, その本 is \"that book\", and the book in question might be in the hand of the person you're talking to, or it might be on a shelf not far from you both.",
+      "PartsOfSpeech": [
+        "adjective",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/r7te3vzz42eym162anabqfa2sfww",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44769,
+            "Pronunciation": "その",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/nn2zi3wgnb3qfjzrlbp5a1dyvopq",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44769,
+            "Pronunciation": "その",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/j57j51sj5fyapuackeecxbhu52r0",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44710,
+            "Pronunciation": "その",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/b6h3565dnjk4yc9yudtoxwc5662n",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44710,
+            "Pronunciation": "その",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "The",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "These",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "その",
+      "CreatedAt": "2023-04-24T23:40:53.959896Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%9D%E3%81%AE",
+      "HiddenAt": null,
+      "LessonPosition": 61,
+      "Level": 7,
+      "Meanings": [
+        {
+          "Meaning": "That",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Those",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "その",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9206,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9206",
+    "DataUpdatedAt": "2025-10-01T14:32:25.930423Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "I think I've seen that person over there somewhere before.",
+          "Ja": "あの人、どこかで見たことある気がする。"
+        },
+        {
+          "En": "Do you remember that day?",
+          "Ja": "あの日のこと、おぼえてる？"
+        },
+        {
+          "En": "I should have said \"thank you\" at the time.",
+          "Ja": "あのとき、「ありがとう」って言えばよかった。"
+        }
+      ],
+      "MeaningMnemonic": "Remember how あれ means \"that one over there\"? Well, あの means <vocabulary>that</vocabulary>, and goes before a noun to point out something that is far away from both you and the person you're talking to, such as あの本 (that book over there) or あの子犬 (that puppy over there).\n\nNotice how these words starting with あ are far away from you? We'll be learning a few more of these, and they all follow the same pattern! What's more, you’ll notice that words ending in の tend to go before a noun.",
+      "PartsOfSpeech": [
+        "adjective",
+        "こそあど word"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/f6rmcnh2thxo3msndbvals0c57qp",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44751,
+            "Pronunciation": "あの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/71l1wis2te1s8kimc7atvmxm7323",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44751,
+            "Pronunciation": "あの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dc483ox44c6d51wrna7cyb56np7a",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44692,
+            "Pronunciation": "あの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/urdqbekqfem8exq6atcr7e4tuyl1",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44692,
+            "Pronunciation": "あの",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "That",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Those",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "The",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "These Over Here",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "This Over Here",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "These",
+          "Type": "blacklist"
+        }
+      ],
+      "Characters": "あの",
+      "CreatedAt": "2023-04-24T23:42:33.596913Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%82%E3%81%AE",
+      "HiddenAt": null,
+      "LessonPosition": 62,
+      "Level": 7,
+      "Meanings": [
+        {
+          "Meaning": "That Over There",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Those Over There",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "あの",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

@@ -1,0 +1,115 @@
+[
+  {
+    "Id": 9234,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9234",
+    "DataUpdatedAt": "2025-06-11T05:34:19.427526Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "The X-rays showed no abnormalities.",
+          "Ja": "レントゲン写真には、異常は認められませんでした。"
+        },
+        {
+          "En": "Let's take a chest X-ray just to be sure.",
+          "Ja": "念の為、胸部のレントゲンを撮りましょう。"
+        },
+        {
+          "En": "Please wait in front of the X-ray room.",
+          "Ja": "レントゲン室の前でお待ちください。"
+        }
+      ],
+      "MeaningMnemonic": "レントゲン comes from the German word \"Röntgen\" meaning <vocabulary>X-ray</vocabulary>, named after their inventor Wilhelm Conrad Röntgen.\n\nIf that’s news to you, here’s a mnemonic to help you remember: \n\nYou’re planning to <reading>rent a Gen</reading>ji (レントゲン), but you ask Genji to get an <vocabulary>X-ray</vocabulary> first, just to make sure he’s in good health before signing the rental contract.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/w32d34j9vemah8pag1fxm07ww4sp",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44815,
+            "Pronunciation": "レントゲン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7cfcx9w4gff8dqzvxwgcriodueho",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44815,
+            "Pronunciation": "レントゲン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/x7ork4ld3mhdlk0nuqt9jxmxwe9z",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44747,
+            "Pronunciation": "レントゲン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/881irvi86hd1u54sp8rir18rkuz6",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44747,
+            "Pronunciation": "レントゲン",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Roentgen",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Röntgen",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Roentgen Rays",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Röntgen Rays",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "X-rays",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "レントゲン",
+      "CreatedAt": "2023-04-25T01:24:53.229106Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%83%AC%E3%83%B3%E3%83%88%E3%82%B2%E3%83%B3",
+      "HiddenAt": null,
+      "LessonPosition": 5,
+      "Level": 36,
+      "Meanings": [
+        {
+          "Meaning": "X-ray",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "レントゲン",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

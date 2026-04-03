@@ -11,10 +11,11 @@ public class AssignmentsController(
     [HttpGet]
     public async Task<IActionResult> GetAll(
         [FromQuery] SubjectType[]? subjectTypes = null,
-        [FromQuery] bool? burned = null)
+        [FromQuery] bool? burned = null,
+        [FromQuery] int[]? levels = null)
     {
         var queryParams = new AssignmentsQuery();
-        queryParams.Levels = [23, 1];
+        queryParams.Levels = levels;
         queryParams.Burned = burned;
         if (subjectTypes is not [])
         {

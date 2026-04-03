@@ -15,7 +15,7 @@ const NavigationBar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/kanji?type=kanji"
+                        to="/kanji"
                         className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                     >
                         Kanji
@@ -23,7 +23,7 @@ const NavigationBar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/vocabulary?type=vocabulary"
+                        to="/vocabulary"
                         className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                     >
                         Vocabulary
@@ -31,7 +31,7 @@ const NavigationBar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/kana-vocabulary?type=kana-vocabulary"
+                        to="/kana-vocabulary"
                         className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                     >
                         Kana vocabulary

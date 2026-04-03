@@ -1,0 +1,129 @@
+[
+  {
+    "Id": 9230,
+    "Object": "kana_vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9230",
+    "DataUpdatedAt": "2025-10-30T00:02:23.07156Z",
+    "Data": {
+      "ContextSentences": [
+        {
+          "En": "Wow, this bread is so fluffy, isn't it!",
+          "Ja": "うわー、このパン、ふわふわだね！"
+        },
+        {
+          "En": "Isn't it cute to see jellyfish floating in the sea?",
+          "Ja": "クラゲが海でふわふわ泳いでるのって、かわいくない？"
+        },
+        {
+          "En": "I’m kind of light-headed.",
+          "Ja": "なんか頭がふわふわする。"
+        }
+      ],
+      "MeaningMnemonic": "<reading>Who are who are</reading> (ふわふわ) <vocabulary>fluffy</vocabulary>? I’m thinking puppies, but ask yourself, \"who are the fluffiest creatures I know?\"\n\nThis is an オノマトペ meaning fluffy, like a puppy, a cloud, or a cotton ball. It can also describe the movement of a dandelion puffball or a jellyfish, <vocabulary>floating lightly</vocabulary> in the air or the water. And if you’re <vocabulary>feeling lightheaded</vocabulary>, that’s called ふわふわ too. Basically, anything with light or fluffy vibe!",
+      "PartsOfSpeech": [
+        "adverb",
+        "する verb",
+        "な adjective",
+        "の adjective",
+        "オノマトペ"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/0ldp5g25rp6fz3geirfwrfnavyng",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44779,
+            "Pronunciation": "ふわふわ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fod866s019ugggegsl3exlhrvyyq",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 44779,
+            "Pronunciation": "ふわふわ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/erlhnxflbz3t2mq0y8zkekmxe1mw",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44720,
+            "Pronunciation": "ふわふわ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xnc223yb0opiunabxaj77da8biut",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 44720,
+            "Pronunciation": "ふわふわ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Cottony",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Downy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Poofy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Soft And Springy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Float Lightly",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "ふわふわ",
+      "CreatedAt": "2023-04-25T01:08:48.090865Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%B5%E3%82%8F%E3%81%B5%E3%82%8F",
+      "HiddenAt": null,
+      "LessonPosition": 43,
+      "Level": 16,
+      "Meanings": [
+        {
+          "Meaning": "Fluffy",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Floating Lightly",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Light-Headed",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "ふわふわ",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]
