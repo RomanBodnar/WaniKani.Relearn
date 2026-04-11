@@ -7781,7 +7781,7 @@
     "Id": 7032,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7032",
-    "DataUpdatedAt": "2025-06-11T05:33:42.030731Z",
+    "DataUpdatedAt": "2026-04-06T19:38:48.299693Z",
     "Data": {
       "ComponentSubjectIds": [
         1968,
@@ -7791,6 +7791,10 @@
         {
           "En": "The moment they walk into a spider web, people suddenly turn into karate experts.",
           "Ja": "蜘蛛の巣にぶつかった瞬間に、人は突然空手の達人へと変身する。"
+        },
+        {
+          "En": "In that moment, a small light appeared in her eyes.",
+          "Ja": "その瞬間、彼女の目に小さな光が灯った。"
         }
       ],
       "MeaningMnemonic": "A <kanji>blink</kanji> <kanji>interval of time</kanji> is a very short period of time. It's <vocabulary>an instant</vocabulary> or a <vocabulary>moment</vocabulary>.",
@@ -8305,7 +8309,7 @@
     "Id": 7037,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7037",
-    "DataUpdatedAt": "2025-06-11T05:33:42.091155Z",
+    "DataUpdatedAt": "2026-04-06T17:50:55.457813Z",
     "Data": {
       "ComponentSubjectIds": [
         440,
@@ -8313,8 +8317,12 @@
       ],
       "ContextSentences": [
         {
-          "En": "\"You’ll never catch me!\" \"Gotcha!\" \"What! That was fast! You caught me in an instant, but that’s childish. You should go a little easier on your kid.\"",
+          "En": "\"You'll never catch me!\" \"Gotcha!\" \"What! That was fast! You caught me in an instant, but that’s childish. You should go a little easier on your kid.\"",
           "Ja": "「お前には捕まらないぞ！」「捕まえたっ！」「うわっ！速い！一瞬だったな。でも、大人げないよ。子どもなんだからもう少し手加減してよ。」"
+        },
+        {
+          "En": "I renewed my apartment lease yesterday, and the rent went up $500 from last year — what's with that? I thought about moving out for a second.",
+          "Ja": "昨日、アパートの契約更新したんだけど、去年から家賃が500ドルも上がったってどういうこと？一瞬引っ越そうかと思ったよ。"
         }
       ],
       "MeaningMnemonic": "<kanji>One</kanji> <kanji>blink</kanji> is one instant. That is <vocabulary>an instant</vocabulary> or <vocabulary>a moment</vocabulary>.",
@@ -8604,7 +8612,7 @@
     "Id": 7040,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7040",
-    "DataUpdatedAt": "2026-02-04T19:33:34.227167Z",
+    "DataUpdatedAt": "2026-04-06T18:29:08.167217Z",
     "Data": {
       "ComponentSubjectIds": [
         1971,
@@ -8612,8 +8620,20 @@
       ],
       "ContextSentences": [
         {
+          "En": "Many private estates were established during the Heian period.",
+          "Ja": "平安時代には多くの庄園が作られた。"
+        },
+        {
+          "En": "Long ago, there was a large manor in this area.",
+          "Ja": "この地域には昔、大きな庄園があったんです。"
+        },
+        {
           "En": "Everything is in order for the introduction of manorialism.",
           "Ja": "庄園制度導入への準備は全て整っています。"
+        },
+        {
+          "En": "The manorial system had a major impact on medieval Japanese society.",
+          "Ja": "庄園制度は日本の中世社会に大きな影響を与えました。"
         }
       ],
       "MeaningMnemonic": "A <kanji>manor</kanji> with a <kanji>park</kanji> is still a <vocabulary>manor</vocabulary> — it's just a really big and impressive one.\n\n庄園 refers to a medieval-style manor — a large <vocabulary>agricultural estate</vocabulary> granted to a lord by the monarch to be managed privately as a source of personal income. In Japan, 庄園 were an important part of the medieval economic system, with the aristocracy and the religious establishment controlling thousands of them around the country. Many famous samurai families took their names from 庄園, as they often managed them locally in place of absentee owners who preferred to hang out in Kyoto.",
@@ -8701,6 +8721,18 @@
         },
         {
           "Meaning": "Rural Manor",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Landed Estate",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Private Manor",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Private Estate",
           "Type": "whitelist"
         }
       ],
@@ -10984,6 +11016,161 @@
         }
       ],
       "Slug": "木綿",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9467,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9467",
+    "DataUpdatedAt": "2026-04-08T07:32:57.460038Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        9449
+      ],
+      "ContextSentences": [
+        {
+          "En": "The story goes back ten years.",
+          "Ja": "話は十年前に遡る。"
+        },
+        {
+          "En": "We investigated the cause by tracing it back.",
+          "Ja": "原因を遡って調べた。"
+        },
+        {
+          "En": "I explained the incident by tracing the course of events back to the beginning.",
+          "Ja": "事件の経緯を遡って説明した。"
+        },
+        {
+          "En": "I watched salmon swimming upstream in a river on YouTube.",
+          "Ja": "サケが川を遡るのをYouTubeで見ました。"
+        }
+      ],
+      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means <kanji>go upstream</kanji>, so the verb vocab version is <vocabulary>to go upstream</vocabulary>.\n\n遡る literally means to go upstream against the flow of a river, but it's often used figuratively to mean going back in time or tracing something back to its origin — the idea being that you're going \"against the flow\" of time. You'll see it used in regard to things like history, root causes, and memories with phrases like 過去に遡る. ",
+      "PartsOfSpeech": [
+        "intransitive verb",
+        "godan verb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/d3vlrb8eair6vqxteoj7uxueqaia",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60170,
+            "Pronunciation": "さかのぼる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/pwewvx5hp9o1sj4g7g5sda1zspov",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60170,
+            "Pronunciation": "さかのぼる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/6umpeb3zj6jvm3ckzzte7zpckx0q",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60167,
+            "Pronunciation": "さかのぼる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/8al8a1d9okwmutsjq7nanvpatmpk",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60167,
+            "Pronunciation": "さかのぼる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "さかのぼる"
+        }
+      ],
+      "ReadingMnemonic": "This word's reading, さかのぼる, sounds a lot like a combination of two other words you already know: 逆らう and 上る. Think about it: <vocabulary>to go upstream</vocabulary>, you need to 逆らう (<reading>さか</reading>らう) and 上る (<reading>のぼ</reading>る), because you're <em>going against</em> the current as you <em>go up</em> the river.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "To Trace Back In Time",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Date Back",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Travel Upstream",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Swim Upstream",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Head Upstream",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Go Upriver",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Travel Upriver",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Swim Upriver",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Head Upriver",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "遡る",
+      "CreatedAt": "2026-02-25T19:26:34.127797Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E9%81%A1%E3%82%8B",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 46,
+      "Meanings": [
+        {
+          "Meaning": "To Go Upstream",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "To Go Back In Time",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "To Trace Back",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "遡る",
       "SpacedRepetitionSystemId": 1
     }
   }

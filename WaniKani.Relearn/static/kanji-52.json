@@ -1530,7 +1530,7 @@
     "Id": 2179,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2179",
-    "DataUpdatedAt": "2026-02-24T00:45:22.177231Z",
+    "DataUpdatedAt": "2026-04-09T00:55:31.565928Z",
     "Data": {
       "AmalgationSubjectIds": [
         7884,
@@ -1546,9 +1546,9 @@
         163,
         30
       ],
-      "MeaningHint": "Your soul just doesn't want to move or do anything though... and that may look like laziness, but you can't help it. You wish your friends and family wouldn't ridicule you. You're going through enough, internally.",
-      "ReadingHint": "Picture yourself reading manga and watch as the people who ridicule you and call you lazy fade away into the background. You're going to be okay.",
-      "ReadingMnemonic": "When people <kanji>ridicule</kanji> you, when you can't stop the <kanji>laziness</kanji>, you read <reading>man</reading>ga (まん). Manga helps you feel better about the mean things people say. Manga helps you feel like you're doing something, and that you aren't just a lazy person.",
+      "MeaningHint": "Imagine the level of overconfidence necessary to think you could capture the soul of such an important celestial body with just a net. Get off your stool, stop being lazy, and go try to catch the soul of something more within your league — a small asteroid, for example.",
+      "ReadingHint": "Manga has also given you the overconfidence to believe that your lack of progress in life isn't due to laziness — it's because you're still in your \"training arc.\" ",
+      "ReadingMnemonic": "Your <kanji>overconfidence</kanji> stems from your <reading>man</reading>ga (まん) addiction, which is also the source of your <kanji>laziness</kanji>. You lie in bed for hours a day reading manga and imagining yourself as the protagonist, and it's seriously distorted your sense of reality. This is probably why you think you can do outlandish things like capturing the sun's soul. ",
       "Readings": [
         {
           "Reading": "まん",
@@ -1560,17 +1560,34 @@
       "VisuallySimilarSubjectIds": [
         2095
       ],
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Overconfident",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Lazy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Slow",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Ridicule",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "慢",
       "CreatedAt": "2015-06-30T21:21:19.987378Z",
       "DocumentUrl": "https://www.wanikani.com/kanji/%E6%85%A2",
       "HiddenAt": null,
       "LessonPosition": 31,
       "Level": 52,
-      "MeaningMnemonic": "If your <radical>soul</radical> is acting like the <radical>sun</radical> trapped in a <radical>net</radical> sitting on a <radical>stool</radical>, then people will <kanji>ridicule</kanji> you for your <kanji>laziness</kanji>. You're just sitting there, trapped and not moving.",
+      "MeaningMnemonic": "You think you can catch the <radical>soul</radical> of the <radical>sun</radical> in a <radical>net</radical> without even getting up from your <radical>stool</radical>? That's some serious <kanji>overconfidence</kanji>, buddy. The fact that you want to stay seated really proves your <kanji>laziness</kanji>, too.",
       "Meanings": [
         {
-          "Meaning": "Ridicule",
+          "Meaning": "Overconfidence",
           "Primary": true,
           "AcceptedAnswer": true
         },
@@ -1669,7 +1686,7 @@
     "Id": 2181,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2181",
-    "DataUpdatedAt": "2025-10-01T06:10:02.293713Z",
+    "DataUpdatedAt": "2026-04-09T01:15:41.32175Z",
     "Data": {
       "AmalgationSubjectIds": [
         7877,
@@ -1683,9 +1700,9 @@
         417,
         65
       ],
-      "MeaningHint": "Picture a machine with a heart, lying on the couch, eating oil snacks, and snoozing. What a lazy machine!",
-      "ReadingHint": "Picture the lazy machine sitting on the couch again. There are untied ties all over the floor.",
-      "ReadingMnemonic": "The machine is so <kanji>lazy</kanji> it won't even wear its <reading>tie</reading> (たい) anymore. That was the only official thing left about it, but now it's as lazy as a human. Would a lazy human put on a tie? I don't think so.",
+      "MeaningHint": "Picture a machine with a heart, lying on the couch, eating oil snacks, snoozing and neglecting the orders you've given it. What a lazy machine!",
+      "ReadingHint": "Picture this lazy machine sitting on the couch again. There are untied ties all over the floor, hanging on the back of the couch, but it totally neglects them.",
+      "ReadingMnemonic": "The machine is so <kanji>lazy</kanji> it even starts to <kanji>neglect</kanji> its <reading>tie</reading> (たい). It's supposed to wear one, but it's too lazy to put it on now. Do lazy humans put on ties? Nope, and neither do neglectful machines. ",
       "Readings": [
         {
           "Reading": "たい",
@@ -1714,7 +1731,7 @@
       "HiddenAt": null,
       "LessonPosition": 33,
       "Level": 52,
-      "MeaningMnemonic": "If you give a <radical>machine</radical> a <radical>heart</radical> it will get <kanji>lazy</kanji>. Hearts give us emotions and with emotions we become weak. Why would a machine with a heart want to work anymore? Nah. It's lazy time now.",
+      "MeaningMnemonic": "If you give a <radical>machine</radical> a <radical>heart</radical> it will get <kanji>lazy</kanji> and <kanji>neglect</kanji> its duties. Hearts give us emotions and with emotions we become weak. Why would a machine with a heart want to work anymore? Nah. It's going to be lazy and neglectful now.",
       "Meanings": [
         {
           "Meaning": "Lazy",
@@ -1794,7 +1811,7 @@
     "Id": 2183,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2183",
-    "DataUpdatedAt": "2026-01-29T00:33:25.633876Z",
+    "DataUpdatedAt": "2026-04-09T01:03:45.517242Z",
     "Data": {
       "AmalgationSubjectIds": [
         7877,

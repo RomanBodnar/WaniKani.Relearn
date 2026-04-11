@@ -9227,7 +9227,7 @@
     "Id": 5694,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5694",
-    "DataUpdatedAt": "2025-09-01T04:01:44.689175Z",
+    "DataUpdatedAt": "2026-04-07T18:10:27.895031Z",
     "Data": {
       "ComponentSubjectIds": [
         1542
@@ -9236,6 +9236,10 @@
         {
           "En": "My profile can be found on the back page of this pamphlet.",
           "Ja": "私の紹介はパンフレットの裏表紙に記されています。"
+        },
+        {
+          "En": "An elite group of brilliant minds is behind this plan.",
+          "Ja": "この計画の裏には、最高の頭脳集団がいる。"
         }
       ],
       "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.",
@@ -9558,7 +9562,7 @@
     "Id": 5697,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5697",
-    "DataUpdatedAt": "2025-09-01T04:01:44.722079Z",
+    "DataUpdatedAt": "2026-04-06T17:50:26.818765Z",
     "Data": {
       "ComponentSubjectIds": [
         660,
@@ -9566,19 +9570,23 @@
       ],
       "ContextSentences": [
         {
-          "En": "If the rent is this much, I might be able to manage living on a small salary.",
+          "En": "How much is the rent for this place?",
+          "Ja": "この部屋、家賃いくら？"
+        },
+        {
+          "En": "Could you lower the rent?",
+          "Ja": "家賃を下げてもらえませんか。"
+        },
+        {
+          "En": "Oh no, I forgot to pay the rent!",
+          "Ja": "やべっ、家賃、払い忘れてた！"
+        },
+        {
+          "En": "My monthly salary isn't much, but with rent this low I might be able to get by.",
           "Ja": "安月給だけど、この家賃だったら何とか暮らしていけそうかな。"
-        },
-        {
-          "En": "I renewed my contract for the apartment yesterday, but I didn't understand why the rent was $500 more than last year. I thought about moving out for a second.",
-          "Ja": "昨日、アパートの契約更新したんだけど、去年から家賃が500ドルも上がったってどういうこと？一しゅん引っ越そうかと思ったよ。"
-        },
-        {
-          "En": "When I think about the way Fugu treated me, I realized that he was a real jerk. I paid his rent, phone bills, groceries, and everything, but he ended up cheating on me!",
-          "Ja": "フグが私にどんな扱いをしてたか考えてみると、彼がどれだけ最低男だったかが分かるわ。私は彼の家賃から電話代から食費から何から何まで払ってあげていたのに、あの男は他の女と浮気してたのよ！"
         }
       ],
-      "MeaningMnemonic": "Your <kanji>house</kanji> <kanji>rent</kanji> is your <vocabulary>house rent</vocabulary>, though it can be your apartment rent too.",
+      "MeaningMnemonic": "Your <kanji>house</kanji> <kanji>rent</kanji> is your <vocabulary>house rent</vocabulary>, though it can be your apartment <vocabulary>rent</vocabulary> too.",
       "PartsOfSpeech": [
         "noun"
       ],

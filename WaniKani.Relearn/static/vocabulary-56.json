@@ -123,6 +123,150 @@
     }
   },
   {
+    "Id": 8251,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/8251",
+    "DataUpdatedAt": "2026-04-08T06:35:40.345892Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        799,
+        2271
+      ],
+      "ContextSentences": [
+        {
+          "En": "I was shown what it truly means to be a professional.",
+          "Ja": "プロの神髄を見せつけられました。"
+        },
+        {
+          "En": "This way of thinking is the very essence of Japanese culture.",
+          "Ja": "この考え方こそが、日本文化の神髄です。"
+        },
+        {
+          "En": "He understands the true essence of martial arts well.",
+          "Ja": "彼は武道の神髄をよく理解している。"
+        },
+        {
+          "En": "There's no point in copying the form without knowing the essence.\n",
+          "Ja": "神髄を知らずに、形だけ真似ても意味がない。"
+        },
+        {
+          "En": "The essence of this work lies in its portrayal of human weakness.",
+          "Ja": "この作品の神髄は、人間の弱さを描いた点にある。"
+        }
+      ],
+      "MeaningMnemonic": "A <kanji>god</kanji>'s bone <kanji>marrow</kanji> contains their <vocabulary>essence</vocabulary> and <vocabulary>soul</vocabulary>. Don't go messing around with the bone marrow of gods trying to confirm this, though — you'll probably end up getting smote.\n\n神髄 is just another way of writing 真髄, so it shares its nuance of describing the deepest meaning or most important part of something. 真髄 actually started out as an incorrect spelling of 神髄, but got promoted to a legit alternative after enough people started using it.",
+      "PartsOfSpeech": [
+        "noun",
+        "の adjective"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/dyec5jqnfi4t5sby97oxgpzh2ell",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 26985,
+            "Pronunciation": "しんずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/h2g9v42dl6azyw4z16yym0xe0wnd",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 26985,
+            "Pronunciation": "しんずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0kceluymcf42qqra5t5foay0z6qg",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 10109,
+            "Pronunciation": "しんずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/i0edb200y6hcoilmuwt2egkybf9p",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 10109,
+            "Pronunciation": "しんずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "しんずい"
+        }
+      ],
+      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Spirit",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Core",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Quintessence",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "True Essence",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pith",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "神髄",
+      "CreatedAt": "2015-07-08T19:05:49.389523Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E7%A5%9E%E9%AB%84",
+      "HiddenAt": null,
+      "LessonPosition": 120,
+      "Level": 56,
+      "Meanings": [
+        {
+          "Meaning": "Essence",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Soul",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "True Meaning",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "神髄",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
     "Id": 8253,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8253",
@@ -683,7 +827,7 @@
     "Id": 8258,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8258",
-    "DataUpdatedAt": "2026-03-18T00:32:25.151852Z",
+    "DataUpdatedAt": "2026-04-07T19:42:03.461615Z",
     "Data": {
       "ComponentSubjectIds": [
         2326
@@ -700,6 +844,10 @@
         {
           "En": "In the silent workshop, the craftsman quietly sharpened the blade.",
           "Ja": "静まり返った工房の中で、匠は静かに刃を研いでいました。"
+        },
+        {
+          "En": "The master craftsman gave the vessel his utmost care, crafting it without the slightest bit of compromise.",
+          "Ja": "匠は丹誠をこらし、一切の妥協なくその器を作り上げた。"
         }
       ],
       "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.\n\n匠 means a skilled <vocabulary>artisan</vocabulary> or <vocabulary>craftsman</vocabulary>, someone who has exceptional skill in making things by hand. The word carries a strong sense of expertise and craftsmanship, often built through years of dedication. It's commonly used for traditional craftspeople such as carpenters, swordsmiths, or potters, but it can also be used more broadly for anyone considered a \"master\" of their craft.",
@@ -2301,7 +2449,7 @@
     "Id": 8273,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8273",
-    "DataUpdatedAt": "2025-06-11T05:34:02.358984Z",
+    "DataUpdatedAt": "2026-04-04T20:17:45.612577Z",
     "Data": {
       "ComponentSubjectIds": [
         2236,
@@ -3163,7 +3311,7 @@
     "Id": 8280,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8280",
-    "DataUpdatedAt": "2025-06-11T05:34:02.473762Z",
+    "DataUpdatedAt": "2026-04-09T01:15:41.306519Z",
     "Data": {
       "ComponentSubjectIds": [
         2181
@@ -3174,7 +3322,7 @@
           "Ja": "インフルエンザによる高熱で、体が怠いんです。"
         }
       ],
-      "MeaningMnemonic": "This is a single kanji with an い on the end, meaning you know it's probably an adjective. What's the adjective form of <kanji>lazy</kanji>? It's <vocabulary>sluggish</vocabulary> and <vocabulary>dull</vocabulary>. ",
+      "MeaningMnemonic": "This is a single kanji with an い on the end, meaning you know it's probably an adjective. The kanji itself means <kanji>lazy</kanji>, but this adjective is more for the kinds of feelings associated with laziness or inactivity. That's why it means <vocabulary>feeling sluggish</vocabulary> or <vocabulary>lacking energy</vocabulary>.\n\n怠い is how you feel when you're sick, exhausted, or just can't get moving. You can also use it figuratively for something <vocabulary>bothersome</vocabulary> or mentally draining — a wearisome argument, maybe, or an unfunny joke that makes you think \"Ugh.\"\n\nNote that this word is usually written in kana as だるい or ダルい, especially in casual writing.",
       "PartsOfSpeech": [
         "い adjective"
       ],
@@ -3235,8 +3383,53 @@
           "Reading": "だるい"
         }
       ],
-      "ReadingMnemonic": "The reading for this word is an exception. Here's a mnemonic to help you remember it:\n\nIf you're feeling <vocabulary>sluggish</vocabulary> just turn on <reading>Daru</reading>de's (だる) \"Sandstorm\" and it will perk you right up. But a world where people don't know Darude's \"<a href=\"https://www.youtube.com/watch?v=y6120QOlsfU\" target=\"_blank\">Sandstorm</a>\"  is full of sluggish, dull nerds.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "The reading for this word is an exception. Here's a mnemonic to help you remember it:\n\nIf you're <vocabulary>feeling sluggish</vocabulary> or <vocabulary>lacking energy</vocabulary> just turn on <reading>Daru</reading>de's (だる) \"Sandstorm\" and it will perk you right up. If going to all the trouble of looking up Darude on YouTube feels too <vocabulary>bothersome</vocabulary>, here's a <a href=\"https://www.youtube.com/watch?v=y6120QOlsfU\" target=\"_blank\">link</a> for you, ya lazy bum.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Sluggish",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Feel Heavy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Languid",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Dull",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Weary",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Feeling Heavy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Listless",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Feeling Low Energy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Tiresome",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Wearisome",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pain In The Ass",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "怠い",
       "CreatedAt": "2015-07-09T17:50:19.06619Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%80%A0%E3%81%84",
@@ -3245,22 +3438,17 @@
       "Level": 56,
       "Meanings": [
         {
-          "Meaning": "Sluggish",
+          "Meaning": "Feeling Sluggish",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Feel Heavy",
+          "Meaning": "Lacking Energy",
           "Primary": false,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Languid",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Dull",
+          "Meaning": "Bothersome",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -3273,7 +3461,7 @@
     "Id": 8281,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8281",
-    "DataUpdatedAt": "2026-02-04T06:25:49.820187Z",
+    "DataUpdatedAt": "2026-04-09T01:09:06.523459Z",
     "Data": {
       "ComponentSubjectIds": [
         2181,
@@ -3285,7 +3473,7 @@
           "Ja": "彼は会社で一番の怠け者だが、一番成績を上げている。"
         }
       ],
-      "MeaningMnemonic": "A <kanji>lazy</kanji> <kanji>someone</kanji> is a <vocabulary>lazy person</vocabulary>.",
+      "MeaningMnemonic": "A <kanji>lazy</kanji> <kanji>someone</kanji> is a <vocabulary>lazy person</vocabulary>.\n\n怠け者 describes someone who habitually avoids effort. Note that when written in katakana as ナマケモノ, it usually refers to the animal. Because, well… Sloths move slowly and look kinda lazy, you know?",
       "PartsOfSpeech": [
         "noun"
       ],

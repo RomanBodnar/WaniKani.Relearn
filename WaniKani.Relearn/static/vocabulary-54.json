@@ -3656,7 +3656,7 @@
     "Id": 8094,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8094",
-    "DataUpdatedAt": "2025-06-11T05:33:59.923795Z",
+    "DataUpdatedAt": "2026-04-09T01:06:10.716947Z",
     "Data": {
       "ComponentSubjectIds": [
         2181
@@ -3667,7 +3667,7 @@
           "Ja": "努力する人は希望を語るが、怠ける人は不満を語るのさ。"
         }
       ],
-      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means <kanji>neglect</kanji> and <kanji>lazy</kanji>, so the verb version is <vocabulary>to neglect</vocabulary> or <vocabulary>to be idle</vocabulary>.",
+      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means <kanji>lazy</kanji> or <kanji>neglect</kanji>, and this verb means basically the same thing — <vocabulary>to slack off</vocabulary>, <vocabulary>to be lazy</vocabulary>, or <vocabulary>to neglect</vocabulary>.\n\n怠ける is a word you use to describe someone who skips study time, avoids chores, or isn't trying very hard at something — even though they should be. It can sound critical, but it isn't nearly as heavy as words like 怠慢 or 怠惰, and it can even be used in a light or joking way sometimes.",
       "PartsOfSpeech": [
         "intransitive verb",
         "ichidan verb"
@@ -3729,8 +3729,17 @@
           "Reading": "なまける"
         }
       ],
-      "ReadingMnemonic": "Since this word consists of a kanji with hiragana attached, you can bet that it will use the kun'yomi reading. You didn't learn that reading with this kanji, so here's a mnemonic to help you: \n\nYou decide <vocabulary>to neglect</vocabulary> everything. Your school, your family, even your own <reading>name</reading> (なま). You've managed <vocabulary>to slack</vocabulary> for so long that you can't even remember your name? That's pretty impressive, actually.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "Since this word consists of a kanji with hiragana attached, you can bet that it will use the kun'yomi reading. You didn't learn that reading with this kanji, so here's a mnemonic to help you:\n\nYou're the type <vocabulary>to slack off</vocabulary> on all your duties, then play it off by saying \"<reading>nama</reading>ste\" (なま) and acting like you're some kind of wise guru who's too enlightened for worldly tasks like chores. In reality, you don't even know what \"namaste\" means — you're just using it as an excuse <vocabulary>to be lazy</vocabulary>.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "To Slack",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Be Idle",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "怠ける",
       "CreatedAt": "2015-07-06T21:40:27.175352Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%80%A0%E3%81%91%E3%82%8B",
@@ -3739,17 +3748,17 @@
       "Level": 54,
       "Meanings": [
         {
-          "Meaning": "To Neglect",
+          "Meaning": "To Slack Off",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "To Be Idle",
+          "Meaning": "To Be Lazy",
           "Primary": false,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "To Slack",
+          "Meaning": "To Neglect",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -4338,7 +4347,7 @@
     "Id": 8100,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8100",
-    "DataUpdatedAt": "2025-06-11T05:34:00.005825Z",
+    "DataUpdatedAt": "2026-04-09T00:55:31.617443Z",
     "Data": {
       "ComponentSubjectIds": [
         2253,
@@ -4346,14 +4355,14 @@
       ],
       "ContextSentences": [
         {
-          "En": "This is the first time I’ve met such an arrogant man.",
+          "En": "This is the first time I've met such an arrogant man.",
           "Ja": "あんな傲慢な男は初めてだよ。"
         }
       ],
-      "MeaningMnemonic": "If you <kanji>ridicule</kanji> other people because you're so <kanji>proud</kanji> of yourself that everyone seems like crap in comparison, you've got too much <vocabulary>pride</vocabulary>. You should also work on toning down your <vocabulary>arrogance</vocabulary> and <vocabulary>haughtiness</vocabulary>, because people won't like you.",
+      "MeaningMnemonic": "You are <kanji>proud</kanji> and bursting with <kanji>overconfidence</kanji>, so it naturally follows that you would be an <vocabulary>arrogant</vocabulary> and <vocabulary>haughty</vocabulary> person. <vocabulary>Pride</vocabulary> always comes before the fall, though, so… watch yourself.",
       "PartsOfSpeech": [
-        "noun",
-        "な adjective"
+        "な adjective",
+        "noun"
       ],
       "PronunciationAudios": [
         {
@@ -4413,7 +4422,32 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Haughtiness",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Arrogance",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Insolence",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Proud",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Insolent",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Prideful",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "傲慢",
       "CreatedAt": "2015-07-06T21:56:23.210266Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E5%82%B2%E6%85%A2",
@@ -4422,22 +4456,17 @@
       "Level": 54,
       "Meanings": [
         {
-          "Meaning": "Pride",
+          "Meaning": "Arrogant",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Haughtiness",
+          "Meaning": "Haughty",
           "Primary": false,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Arrogance",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Insolence",
+          "Meaning": "Pride",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -8738,7 +8767,7 @@
     "Id": 8141,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8141",
-    "DataUpdatedAt": "2025-06-11T05:34:00.495823Z",
+    "DataUpdatedAt": "2026-04-06T18:18:01.165967Z",
     "Data": {
       "ComponentSubjectIds": [
         2226,
@@ -8748,12 +8777,24 @@
         {
           "En": "The ceremony was held solemnly.",
           "Ja": "その儀式は荘厳に行われました。"
+        },
+        {
+          "En": "The temple was enveloped in a dignified atmosphere.",
+          "Ja": "寺院は荘厳な空気に包まれていた。"
+        },
+        {
+          "En": "A majestic light streamed in from deep within the temple.",
+          "Ja": "荘厳な光が、神殿の奥から差し込んでいた。"
+        },
+        {
+          "En": "At the mountain's peak, there was a solemn stillness.",
+          "Ja": "山の頂には、荘厳な静けさがあった。"
         }
       ],
-      "MeaningMnemonic": "A <kanji>villa</kanji> that's kept under really <kanji>strict</kanji> rules will press <vocabulary>solemnity</vocabulary> on everyone who tries to stay there.",
+      "MeaningMnemonic": "A <kanji>villa</kanji> must be <kanji>strict</kanji> with its rules to maintain its <vocabulary>solemn</vocabulary>, <vocabulary>majestic</vocabulary>, and <vocabulary>dignified</vocabulary> atmosphere. A lax, loosey-goosey villa isn't going to impress anyone.\n\n荘厳 is a relatively formal word often used in writing to describe something grand and dignified. You'll see it used for things like historic cathedrals where the atmosphere feels solemn and reverent, as well as formal ceremonies like royal events. In music, it can describe symphonies or orchestral pieces that sound powerful, majestic and awe-inspiring.",
       "PartsOfSpeech": [
-        "noun",
-        "な adjective"
+        "な adjective",
+        "noun"
       ],
       "PronunciationAudios": [
         {
@@ -8812,8 +8853,33 @@
           "Reading": "そうごん"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You didn't learn this reading for 厳 yet, so here's a mnemonic to help you:\n\nTo help you understand the <vocabulary>solemnity</vocabulary> of a moment of silence, usually a <reading>gon</reading>g (ごん) will play a few times. As you listen to the echo and silence that comes after it. The gravity of what you're being silent for really sinks in.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You didn't learn this reading for 厳 yet, so here's a mnemonic to help you:\n\nIf you want to create a <vocabulary>solemn</vocabulary> vibe, just hit a big <reading>gong</reading> (ごん) a couple times. Listen to the <vocabulary>majestic</vocabulary> peal of the gong echo across the room, and then bask in the silence that comes after it. I bet you're feeling pretty solemn and <vocabulary>dignified</vocabulary> right now, huh?",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Awe-Inspiring",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Magnificence",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Magnificent",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Sublime",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Gravity",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Solemnity",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "荘厳",
       "CreatedAt": "2015-07-07T17:55:54.170044Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E8%8D%98%E5%8E%B3",
@@ -8822,12 +8888,17 @@
       "Level": 54,
       "Meanings": [
         {
-          "Meaning": "Solemnity",
+          "Meaning": "Solemn",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Gravity",
+          "Meaning": "Majestic",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Dignified",
           "Primary": false,
           "AcceptedAnswer": true
         }

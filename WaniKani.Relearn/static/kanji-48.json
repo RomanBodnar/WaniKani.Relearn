@@ -333,7 +333,7 @@
     "Id": 2018,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2018",
-    "DataUpdatedAt": "2025-11-25T02:13:44.248099Z",
+    "DataUpdatedAt": "2026-04-07T21:29:54.254494Z",
     "Data": {
       "AmalgationSubjectIds": [
         7178,
@@ -391,7 +391,7 @@
     "Id": 2019,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2019",
-    "DataUpdatedAt": "2025-10-01T06:10:01.143952Z",
+    "DataUpdatedAt": "2026-04-07T21:23:35.249604Z",
     "Data": {
       "AmalgationSubjectIds": [
         7181,
@@ -1459,7 +1459,7 @@
     "Id": 2037,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2037",
-    "DataUpdatedAt": "2026-02-04T19:45:11.565369Z",
+    "DataUpdatedAt": "2026-04-07T20:20:40.00989Z",
     "Data": {
       "AmalgationSubjectIds": [
         7226,
@@ -1492,6 +1492,30 @@
           "Primary": false,
           "AcceptedAnswer": false,
           "Type": "kunyomi"
+        },
+        {
+          "Reading": "どん",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ちん",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        },
+        {
+          "Reading": "ともしび",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
+        },
+        {
+          "Reading": "ともし",
+          "Primary": false,
+          "AcceptedAnswer": false,
+          "Type": "kunyomi"
         }
       ],
       "VisuallySimilarSubjectIds": [
@@ -1504,6 +1528,14 @@
         },
         {
           "Meaning": "Torch",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Lamplight",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Torchlight",
           "Type": "whitelist"
         }
       ],

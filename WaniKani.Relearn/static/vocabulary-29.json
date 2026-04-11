@@ -670,7 +670,7 @@
     "Id": 5075,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5075",
-    "DataUpdatedAt": "2026-03-18T15:55:50.355892Z",
+    "DataUpdatedAt": "2026-04-06T19:29:08.554779Z",
     "Data": {
       "ComponentSubjectIds": [
         1317
@@ -685,15 +685,15 @@
           "Ja": "四十代になってお腹がぽっこり出てきた。"
         },
         {
-          "En": "Since I ate until I was completely full of delicious food today, I feel like I can work hard again starting tomorrow.",
+          "En": "Since I ate my fill of delicious food today, I feel like I can work hard again at my job starting tomorrow.",
           "Ja": "今日はおいしいものをお腹いっぱい食べたから、また明日から仕事がんばれそうだよ。"
         },
         {
-          "En": "\"Supper is ready! Come and get it.\" \"Oh, thank god! I'm starving!\"",
+          "En": "\"Supper is ready! Come and get it.\" \"Oh, perfect! I'm starving!\"",
           "Ja": "「お夕飯の支度ができましたよ！いらっしゃい。」「ああ、よかった！お腹ペコペコだよ。」"
         }
       ],
-      "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.\n\nIt's common to see this word written in kanji, but you'll also see it written in hiragana, especially in casual contexts.",
+      "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.\n\nお腹 is the common everyday word for your <vocabulary>belly</vocabulary>, <vocabulary>abdomen</vocabulary>, or <vocabulary>stomach</vocabulary>. It's common to see this word written in kanji, but you'll also see it written in hiragana, especially in casual contexts.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -754,8 +754,13 @@
           "Reading": "おなか"
         }
       ],
-      "ReadingMnemonic": "The reading is an exception, but it isn't too hard to remember. It's the same as <reading>中</reading> (なか), so if you think about it it makes sense. It's your insides, just like your <vocabulary>belly</vocabulary> is your insides!",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "The reading is an exception, but it isn't too hard to remember. Your <vocabulary>belly</vocabulary> contains all your insides, so it makes sense that it would have the same reading as the word for \"inside\" — <reading>中</reading> (なか)!",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Tummy",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "お腹",
       "CreatedAt": "2013-01-24T04:33:09.256258Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E3%81%8A%E8%85%B9",
@@ -769,12 +774,12 @@
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Stomach",
+          "Meaning": "Abdomen",
           "Primary": false,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Abdomen",
+          "Meaning": "Stomach",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -787,7 +792,7 @@
     "Id": 5076,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5076",
-    "DataUpdatedAt": "2026-03-18T15:55:50.355892Z",
+    "DataUpdatedAt": "2026-04-06T19:29:08.554779Z",
     "Data": {
       "ComponentSubjectIds": [
         1317,
@@ -970,7 +975,7 @@
     "Id": 5078,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5078",
-    "DataUpdatedAt": "2026-03-18T15:55:50.355892Z",
+    "DataUpdatedAt": "2026-04-06T19:29:08.554779Z",
     "Data": {
       "ComponentSubjectIds": [
         1317,
@@ -978,23 +983,23 @@
       ],
       "ContextSentences": [
         {
-          "En": "The feudal lord ordered the low-grade samurai to perform ritual suicide.",
+          "En": "The feudal lord ordered the low-ranking samurai to perform ritual suicide.",
           "Ja": "大名はその下級武士に腹切りを命じた。"
         },
         {
-          "En": "The word \"harakiri\" might have spread more among foreigners because the sound of it has a strong impact.",
+          "En": "The word \"harakiri\" might have spread more among foreigners because it has a memorable ring to it.",
           "Ja": "外国人に「腹切り」という言葉の方が広まったのは、響きにインパクトあったからかもね。"
         },
         {
-          "En": "The word harakiri feels somehow more visceral than seppuku, doesn’t it?",
+          "En": "The word \"harakiri\" feels somehow more visceral than \"seppuku,\" doesn’t it?",
           "Ja": "腹切りって言葉、なんだか切腹よりも生々しい感じがするよね。"
         },
         {
-          "En": "The movie based on samurai harakiri will be released next week.",
-          "Ja": "侍の腹切りをテーマにした映画は来週公開されます。"
+          "En": "A movie about a samurai committing harakiri will be released next week.",
+          "Ja": "武士の腹切りをテーマにした映画は来週公開されます。"
         }
       ],
-      "MeaningMnemonic": "If your <kanji>abdomen</kanji> is getting <kanji>cut</kanji>, and you're the one doing the cutting, there's a good chance you're committing <vocabulary>harakiri</vocabulary>, a form of <vocabulary>ritual suicide</vocabulary>.\n\n腹切り sounds blunt and colloquial compared to the more formal 切腹. Kind of like you're just saying the words \"belly cutting\" — not very refined! This is often the case with synonym pairs like this: the one with kun'yomi readings will sound more casual, while the one with on'yomi readings will sound more formal. ",
+      "MeaningMnemonic": "You know 腹 means <kanji>belly</kanji>, and 切り is from 切る, meaning \"to cut.\" Well, if you're cutting your own belly, there's a good chance you're committing <vocabulary>harakiri</vocabulary>, a form of <vocabulary>ritual suicide</vocabulary>.\n\n腹切り sounds blunt and colloquial compared to the more formal 切腹. Kind of like you're just saying the words \"belly cutting\" — not very refined! This is often the case with synonym pairs like this: the one with kun'yomi readings will sound more casual, while the one with on'yomi readings will sound more formal. ",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -1055,7 +1060,7 @@
           "Reading": "はらきり"
         }
       ],
-      "ReadingMnemonic": "The readings come from 腹 and 切る. If you're lucky, you already know the word harakiri as it's made its way into English as well.",
+      "ReadingMnemonic": "The readings come from 腹 and 切る. You may also just know the word harakiri already, as it's made its way into English as well.",
       "AuxiliaryMeanings": [
         {
           "Meaning": "Belly Cutting",
@@ -6689,7 +6694,7 @@
     "Id": 5247,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5247",
-    "DataUpdatedAt": "2025-09-10T17:43:36.740604Z",
+    "DataUpdatedAt": "2026-04-07T20:13:55.260135Z",
     "Data": {
       "ComponentSubjectIds": [
         1385,
@@ -6705,8 +6710,8 @@
           "Ja": "江戸前ずしの特徴を教えてください。"
         },
         {
-          "En": "The diorama that replicates the townscape of Edo is a highlight of this museum.",
-          "Ja": "この博物館では江戸の町並みを再現したジオラマが見ものです。"
+          "En": "The highlight of this museum is a diorama recreating what towns looked like in the Edo period.",
+          "Ja": "この博物館では江戸時代の町の様子を再現したジオラマが見ものです。"
         },
         {
           "En": "Stop mucking around and go upstairs and do your homework. You said you gotta write an essay about the Edo period in Japan, right?",
@@ -8242,7 +8247,7 @@
     "Id": 5258,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5258",
-    "DataUpdatedAt": "2025-09-10T17:43:36.873604Z",
+    "DataUpdatedAt": "2026-04-06T15:10:41.904955Z",
     "Data": {
       "ComponentSubjectIds": [
         1396,
@@ -8251,7 +8256,7 @@
       "ContextSentences": [
         {
           "En": "I'll draw a rough map from your house to mine and email it to you.",
-          "Ja": "あなたの家からうちまでの略図をかいて、メールでお送りします"
+          "Ja": "あなたの家からうちまでの略図をかいて、メールでお送りします。"
         },
         {
           "En": "Could you show me the rough diagram you made?",
@@ -8567,7 +8572,7 @@
     "Id": 5260,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5260",
-    "DataUpdatedAt": "2025-09-10T17:43:36.897049Z",
+    "DataUpdatedAt": "2026-04-06T18:48:39.716764Z",
     "Data": {
       "ComponentSubjectIds": [
         1318
@@ -8679,7 +8684,7 @@
     "Id": 5261,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5261",
-    "DataUpdatedAt": "2025-09-10T17:43:36.906638Z",
+    "DataUpdatedAt": "2026-04-06T18:48:39.716764Z",
     "Data": {
       "ComponentSubjectIds": [
         1318,
@@ -13056,7 +13061,7 @@
     "Id": 5394,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5394",
-    "DataUpdatedAt": "2026-03-18T15:55:50.355892Z",
+    "DataUpdatedAt": "2026-04-06T19:29:08.554779Z",
     "Data": {
       "ComponentSubjectIds": [
         1317,
@@ -16733,7 +16738,7 @@
     "Id": 9376,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/9376",
-    "DataUpdatedAt": "2025-11-19T09:09:14.346524Z",
+    "DataUpdatedAt": "2026-04-04T20:17:45.612577Z",
     "Data": {
       "ComponentSubjectIds": [
         622,

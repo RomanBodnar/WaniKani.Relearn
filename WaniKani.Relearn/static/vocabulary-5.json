@@ -248,7 +248,7 @@
     "Id": 2494,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/2494",
-    "DataUpdatedAt": "2025-11-07T23:06:30.483389Z",
+    "DataUpdatedAt": "2026-04-09T01:34:09.465804Z",
     "Data": {
       "ComponentSubjectIds": [
         451
@@ -259,8 +259,8 @@
           "Ja": "雨の日は気分が下がる。"
         },
         {
-          "En": "Excuse me. Your jeans are hanging down and I can see your panties.",
-          "Ja": "すみません。ジーンズが下がってパンツが見えてますよ。"
+          "En": "I wasn't wearing a belt, so my jeans started to slip down.",
+          "Ja": "ベルトをしてなかったので、ジーンズが下がってきた。"
         },
         {
           "En": "Scores have dropped since last year.",
@@ -608,12 +608,16 @@
     "Id": 2577,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/2577",
-    "DataUpdatedAt": "2025-10-08T16:49:34.546077Z",
+    "DataUpdatedAt": "2026-04-09T01:35:48.808465Z",
     "Data": {
       "ComponentSubjectIds": [
         850
       ],
       "ContextSentences": [
+        {
+          "En": "Natsumi gave birth to a healthy baby boy.",
+          "Ja": "ナツミは元気な男の子を生んだ。"
+        },
         {
           "En": "Money breeds fraud.",
           "Ja": "お金は不正を生む。"
@@ -621,10 +625,6 @@
         {
           "En": "The owner of this restaurant is the chef who made Italian cuisine popular in Japan.",
           "Ja": "このレストランのオーナーが、日本のイタリアンの人気を生んだシェフです。"
-        },
-        {
-          "En": "Even though it wasn't my husband's, I had no choice but to give birth to the baby.",
-          "Ja": "主人の子ではなかったが、生むしかなかった。"
         }
       ],
       "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means \"life\" so what is the verb form of that? Would it be \"to do life\"? No, probably not. In this case it is <vocabulary>to give birth</vocabulary>, or <vocabulary>to produce</vocabulary>.\n\nYou'll have to differentiate this one from the word 生まれる as well. Just remember that when you give birth, you're the one who has to actually <reading>mo</reading>ve (む) your body by finding the right position and pushing with every ounce of strength you can muster. In contrast, when you're being born, you can just kind of lie there and enjoy the ride. ",
@@ -14310,7 +14310,7 @@
     "Id": 7617,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7617",
-    "DataUpdatedAt": "2025-10-08T16:49:35.900896Z",
+    "DataUpdatedAt": "2026-04-09T01:25:14.273424Z",
     "Data": {
       "ComponentSubjectIds": [
         440,
@@ -14330,7 +14330,7 @@
           "Ja": "あなたは一生、大学一年生でいるつもりですか？"
         }
       ],
-      "MeaningMnemonic": "<kanji>One</kanji> <kanji>life</kanji> is all you get. It's your <vocabulary>whole life</vocabulary>. This can also mean <vocabulary>all through life</vocabulary>, and when it's used as an adjective it means <vocabulary>lifelong</vocabulary>.",
+      "MeaningMnemonic": "<kanji>One</kanji> <kanji>life</kanji> is all you get. It's your <vocabulary>whole life</vocabulary>. This can also mean <vocabulary>all one's life</vocabulary>, and when it's used as an adjective it means <vocabulary>lifelong</vocabulary>.\n\n一生 is about life as a span of time: your whole life from start to finish. You'll see it in phrases like 一生の友人 (a lifelong friend) or 一生わすれない (to never forget something for the rest of one's life).",
       "PartsOfSpeech": [
         "noun",
         "の adjective"
@@ -14392,8 +14392,12 @@
           "Reading": "いっしょう"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You didn't learn this reading for 生 though, so here's a mnemonic to help you:\n\nWho has been in charge of you your <vocabulary>whole life</vocabulary>? The <reading>sho</reading>gun (しょう). He owns everyone and that's how it will stay for your <vocabulary>entire life</vocabulary>.",
+      "ReadingMnemonic": "This is a jukugo word that uses on'yomi readings of the kanji. You didn't learn this reading for 生 though, so here's a mnemonic to help you:\n\nWho has been in charge of you your <vocabulary>whole life</vocabulary>? The <reading>sho</reading>gun (しょう).",
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "All Through Life",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "Entire Life",
           "Type": "whitelist"
@@ -14403,16 +14407,40 @@
           "Type": "whitelist"
         },
         {
-          "Meaning": "One Existence",
+          "Meaning": "Throughout Life",
           "Type": "whitelist"
         },
         {
-          "Meaning": "A Generation",
+          "Meaning": "Throughout One's Life",
           "Type": "whitelist"
         },
         {
-          "Meaning": "An Age",
+          "Meaning": "Lifetime",
           "Type": "whitelist"
+        },
+        {
+          "Meaning": "One's Life",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "A Life",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "One's Lifetime",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "One's Whole Life",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "One Lifetime",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "One Life",
+          "Type": "blacklist"
         }
       ],
       "Characters": "一生",
@@ -14428,7 +14456,7 @@
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "All Through Life",
+          "Meaning": "All One's Life",
           "Primary": false,
           "AcceptedAnswer": true
         },

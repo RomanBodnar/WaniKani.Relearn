@@ -653,7 +653,7 @@
     "Id": 2271,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2271",
-    "DataUpdatedAt": "2026-02-26T18:21:06.06885Z",
+    "DataUpdatedAt": "2026-04-08T06:35:40.449797Z",
     "Data": {
       "AmalgationSubjectIds": [
         8249,
@@ -1420,66 +1420,6 @@
         }
       ],
       "Slug": "凝",
-      "SpacedRepetitionSystemId": 1
-    }
-  },
-  {
-    "Id": 2284,
-    "Object": "kanji",
-    "Url": "https://api.wanikani.com/v2/subjects/2284",
-    "DataUpdatedAt": "2026-02-26T18:23:19.317077Z",
-    "Data": {
-      "AmalgationSubjectIds": [
-        8252,
-        8471
-      ],
-      "ComponentSubjectIds": [
-        7,
-        9,
-        43
-      ],
-      "MeaningHint": "Imagine how much height and stature you'd gain if you spent time lifting weights on the moon!",
-      "ReadingHint": "Imagine how sexy the height of a ten foot tall person would be right after they'd gotten back from weight training on the moon.",
-      "ReadingMnemonic": "Getting a taller <kanji>stature</kanji> will also make you seem super <reading>sexy</reading> (せき), both on the moon and back home on earth. If you stay on the moon long enough, you'll be the tallest person in the galaxy — and who wouldn't find that sexy?! Huh?",
-      "Readings": [
-        {
-          "Reading": "せき",
-          "Primary": true,
-          "AcceptedAnswer": true,
-          "Type": "onyomi"
-        }
-      ],
-      "VisuallySimilarSubjectIds": [],
-      "AuxiliaryMeanings": [
-        {
-          "Meaning": "Spine",
-          "Type": "whitelist"
-        },
-        {
-          "Meaning": "Backbone",
-          "Type": "whitelist"
-        }
-      ],
-      "Characters": "脊",
-      "CreatedAt": "2015-07-07T23:25:00.468698Z",
-      "DocumentUrl": "https://www.wanikani.com/kanji/%E8%84%8A",
-      "HiddenAt": null,
-      "LessonPosition": 43,
-      "Level": 55,
-      "MeaningMnemonic": "If you put <radical>two</radical> <radical>two</radical> pound weights on a <radical>person</radical> on the <radical>moon</radical> they'll increase in <kanji>stature</kanji> when they come back down. Everything is lighter on the moon so the person won't even feel the weights. Then when they come back to earth they'll have grown a whole two inches in <kanji>height</kanji>!",
-      "Meanings": [
-        {
-          "Meaning": "Stature",
-          "Primary": true,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Height",
-          "Primary": false,
-          "AcceptedAnswer": true
-        }
-      ],
-      "Slug": "脊",
       "SpacedRepetitionSystemId": 1
     }
   },

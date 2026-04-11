@@ -1,5 +1,6 @@
 import type { Route } from "../+types/root";
-import { fetchSubjects, type SubjectsResponse, type Subject } from "../hooks/useSubjects";
+import { fetchSubjects, type SubjectsResponse } from "../hooks/useSubjects";
+import { type Subject } from "~/hooks/Subject";
 import { SubjectCard } from "../components/SubjectCard";
 import "./subjects.css";
 
@@ -21,15 +22,15 @@ export async function loader({}: Route.LoaderArgs) {
 }
 
 export default function KanaVocabulary({ loaderData }: Route.ComponentProps) {
-  const response = loaderData as SubjectsResponse;
-  const subjects = response.data || [];
+  const response = loaderData as unknown as Subject[];
+  const subjects = response || [];
 
   return (
     <div className="subjects-container">
       <h1 className="subjects-title">Kana Vocabulary</h1>
       <p className="subjects-subtitle">
         {subjects.length > 0
-          ? `Total: ${response.total_count} kana vocabulary items`
+          ? `Total: ${response.length} kana vocabulary items`
           : "Loading kana vocabulary..."}
       </p>
 

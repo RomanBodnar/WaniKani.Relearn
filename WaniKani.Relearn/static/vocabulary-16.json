@@ -131,7 +131,7 @@
     "Id": 2896,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/2896",
-    "DataUpdatedAt": "2026-02-25T19:07:32.098495Z",
+    "DataUpdatedAt": "2026-04-10T05:38:55.064771Z",
     "Data": {
       "ComponentSubjectIds": [
         563,
@@ -6014,7 +6014,7 @@
     "Id": 3848,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3848",
-    "DataUpdatedAt": "2026-02-25T19:07:32.820247Z",
+    "DataUpdatedAt": "2026-04-10T05:38:55.064771Z",
     "Data": {
       "ComponentSubjectIds": [
         626,
@@ -11421,7 +11421,7 @@
     "Id": 3947,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3947",
-    "DataUpdatedAt": "2026-02-25T19:07:31.872845Z",
+    "DataUpdatedAt": "2026-04-10T05:38:55.064771Z",
     "Data": {
       "ComponentSubjectIds": [
         987,
@@ -11570,7 +11570,7 @@
     "Id": 3948,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3948",
-    "DataUpdatedAt": "2026-02-25T19:07:32.494409Z",
+    "DataUpdatedAt": "2026-04-09T16:54:31.234984Z",
     "Data": {
       "ComponentSubjectIds": [
         961,
@@ -11582,17 +11582,18 @@
           "Ja": "今日って何曜日だっけ？"
         },
         {
-          "En": "I have Japanese lessons on Wednesdays.",
-          "Ja": "水曜日は、日本語のレッスンがあります。"
+          "En": "I have Japanese lessons on Fridays.",
+          "Ja": "金曜日は、日本語のレッスンがあります。"
         },
         {
-          "En": "At our place, we have decided on dinner menus for each day of the week.",
+          "En": "At our place, we've decided on a set dinner menu for each day of the week",
           "Ja": "うちの家では、曜日ごとに夕飯のメニューを決めてるんです。"
         }
       ],
-      "MeaningMnemonic": "The <kanji>weekday</kanji> <kanji>day</kanji> is the <vocabulary>day of the week</vocabulary>, as in \"Monday\" or \"Tuesday.\" You'll be learning those on level 18, but first you should learn 曜日 to get you prepared.",
+      "MeaningMnemonic": "The <kanji>weekday</kanji> <kanji>day</kanji> is the <vocabulary>day of the week</vocabulary>, as in \"Monday\" or \"Tuesday.\" You'll be learning those soon, but first you should learn 曜日 to get you prepared.",
       "PartsOfSpeech": [
-        "noun"
+        "noun",
+        "suffix"
       ],
       "PronunciationAudios": [
         {
@@ -15567,6 +15568,119 @@
         }
       ],
       "Slug": "新緑",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9465,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9465",
+    "DataUpdatedAt": "2026-04-08T07:17:38.354238Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        936,
+        562
+      ],
+      "ContextSentences": [
+        {
+          "En": "The next train is in 10 minutes.",
+          "Ja": "次の列車は10分後です。"
+        },
+        {
+          "En": "The train slowly began to move.",
+          "Ja": "列車はゆっくりと動き出しました。"
+        },
+        {
+          "En": "Have you ever taken a night train?",
+          "Ja": "夜行列車に乗ったことはありますか？"
+        },
+        {
+          "En": "When the train entered the tunnel, only the sound grew louder.",
+          "Ja": "列車がトンネルに入ると、音だけが大きくなった。"
+        }
+      ],
+      "MeaningMnemonic": "You see a <kanji>row</kanji> of <kanji>car</kanji>s lined up neatly. Are they stuck in traffic? Nope. They're train cars. Congratulations, you've found a <vocabulary>train</vocabulary>!\n\nYou learned 電車 means \"train,\" but it technically just refers to electric ones. On the other hand, 列車 is the broader, all-trains-welcome term. Diesel? Steam? Fancy long-distance express? All covered. But 列車 sounds more formal, so while 電車 is an everyday word, you may come across 列車 more often in writing or in the official descriptions used by railway companies.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/oagg3mgw0rnw99p4hz5v4jwepa7e",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60155,
+            "Pronunciation": "れっしゃ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/cudzftouh0n0nxrlsm53o2j8u2st",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60155,
+            "Pronunciation": "れっしゃ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ma4htbsour68lj1ro8o0li2hpnx0",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60152,
+            "Pronunciation": "れっしゃ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7qmezy26mh2xl3tomdde7g261x44",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60152,
+            "Pronunciation": "れっしゃ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "れっしゃ"
+        }
+      ],
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just be sure to note the れつ reading, which gets changed to れっ.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Railway Train",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "列車",
+      "CreatedAt": "2026-02-25T18:57:12.721412Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E5%88%97%E8%BB%8A",
+      "HiddenAt": null,
+      "LessonPosition": 59,
+      "Level": 16,
+      "Meanings": [
+        {
+          "Meaning": "Train",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "列車",
       "SpacedRepetitionSystemId": 1
     }
   }

@@ -1,33 +1,7 @@
 import { useState, useEffect } from "react";
+import type { Subject } from "./Subject";
 
 export type SubjectType = "kanji" | "vocabulary" | "kana_vocabulary";
-
-export interface Subject {
-  Id: number;
-  Object: string;
-  Url: string;
-  DataUpdatedAt: string;
-  Data: {
-    Characters: string;
-    Meanings: Array<{
-      Meaning: string;
-      Primary: boolean;
-      AcceptedAnswer: boolean;
-    }>;
-    Readings?: Array<{
-      Reading: string;
-      Primary: boolean;
-      AcceptedAnswer: boolean;
-      Type: string;
-    }>;
-    Level?: number;
-    LessonPosition?: number;
-    MeaningMnemonic?: string;
-    ReadingMnemonic?: string;
-    PartOfSpeech?: string[];
-    [key: string]: any;
-  };
-}
 
 export interface SubjectsResponse {
   data: Subject[];
@@ -44,7 +18,7 @@ interface UseSubjectsResult {
 
 export async function fetchSubjects(
   subjectType: SubjectType
-): Promise<SubjectsResponse> {
+): Promise<Subject[]> {
   const typeMap: Record<SubjectType, string> = {
     kanji: "Kanji",
     vocabulary: "Vocabulary",
@@ -73,7 +47,7 @@ export function useSubjects(subjectType: SubjectType): UseSubjectsResult {
       try {
         setIsLoading(true);
         const result = await fetchSubjects(subjectType);
-        setData(result.data);
+        setData(result);
         setError(null);
       } catch (err) {
         setError(err instanceof Error ? err : new Error("Unknown error"));

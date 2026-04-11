@@ -7005,7 +7005,7 @@
     "Id": 5998,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5998",
-    "DataUpdatedAt": "2025-06-11T05:33:27.650011Z",
+    "DataUpdatedAt": "2026-04-06T17:36:15.651867Z",
     "Data": {
       "ComponentSubjectIds": [
         681,
@@ -7015,6 +7015,10 @@
         {
           "En": "I want to be a doctor in Japan, so I’m studying medical terminology now.",
           "Ja": "日本で医者になりたいので、今は医療用語を勉強しています。"
+        },
+        {
+          "En": "This constitutes a medical procedure.",
+          "Ja": "これは医療行為にあたります。"
         }
       ],
       "MeaningMnemonic": "A <kanji>medicine</kanji> can <kanji>heal</kanji>. This is <vocabulary>medical treatment</vocabulary>.",

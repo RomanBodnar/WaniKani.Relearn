@@ -3642,7 +3642,7 @@
     "Id": 8471,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8471",
-    "DataUpdatedAt": "2026-02-26T18:23:19.388826Z",
+    "DataUpdatedAt": "2026-04-08T06:30:43.680591Z",
     "Data": {
       "ComponentSubjectIds": [
         2284,
@@ -4383,7 +4383,7 @@
     "Id": 8478,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8478",
-    "DataUpdatedAt": "2025-06-11T05:34:05.606506Z",
+    "DataUpdatedAt": "2026-04-09T01:41:09.901507Z",
     "Data": {
       "ComponentSubjectIds": [
         2372,
@@ -4391,11 +4391,23 @@
       ],
       "ContextSentences": [
         {
-          "En": "He rescued the things that were gulped down by the muddy stream.",
+          "En": "Heavy rain turned the river into a raging muddy current.",
+          "Ja": "大雨で川は濁流と化した。"
+        },
+        {
+          "En": "I was about to be swallowed up by the muddy current, but he saved me.",
           "Ja": "濁流に飲み込まれそうになったのを、彼が救ってくれたのです。"
+        },
+        {
+          "En": "I caught sight of a red car being swept away by the raging muddy waters.",
+          "Ja": "赤い車が一台、濁流に押し流されていくのが見えた。"
+        },
+        {
+          "En": "As the muddy torrent came crashing in, he alone, without hesitation, plunged into the violently swirling waters.",
+          "Ja": "濁流が襲い来る中、彼はただ一人、迷いなくその荒れ狂ったように渦巻く水の中へ飛び込んだ。"
         }
       ],
-      "MeaningMnemonic": "A <kanji>muddy</kanji> <kanji>stream</kanji> is a <vocabulary>muddy stream</vocabulary>!",
+      "MeaningMnemonic": "What's another way to say <kanji>muddy</kanji> <kanji>stream</kanji>? That would be <vocabulary>muddy current</vocabulary> or <vocabulary>muddy river</vocabulary>. \n\n濁流 usually refers to a fast-moving current that's churning with dirt and debris. You'll often see it in the context of flooding or heavy rain, so a murky 濁流 river can be associated with danger.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -4457,7 +4469,60 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Turbid Current",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Turbid Stream",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Turbid River",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Murky Current",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Murky Stream",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Murky River",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Raging Current",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Raging River",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Raging Stream",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Muddy Waters",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Muddy Torrent",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Murky Torrent",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Raging Torrent",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "濁流",
       "CreatedAt": "2015-07-14T18:54:57.655329Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%BF%81%E6%B5%81",
@@ -4466,8 +4531,18 @@
       "Level": 58,
       "Meanings": [
         {
-          "Meaning": "Muddy Stream",
+          "Meaning": "Muddy Current",
           "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Muddy River",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Muddy Stream",
+          "Primary": false,
           "AcceptedAnswer": true
         }
       ],
@@ -6713,7 +6788,7 @@
     "Id": 8502,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8502",
-    "DataUpdatedAt": "2025-06-11T05:34:05.98257Z",
+    "DataUpdatedAt": "2026-04-04T20:17:45.612577Z",
     "Data": {
       "ComponentSubjectIds": [
         1431,

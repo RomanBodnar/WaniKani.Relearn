@@ -916,7 +916,7 @@
     "Id": 4412,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4412",
-    "DataUpdatedAt": "2025-12-31T21:56:23.352206Z",
+    "DataUpdatedAt": "2026-04-07T19:51:18.620347Z",
     "Data": {
       "ComponentSubjectIds": [
         1140,
@@ -932,8 +932,8 @@
           "Ja": "トーフグでは、ポートランドで評判の美人が働いている。"
         },
         {
-          "En": "This area was once a slum, but the government's gentrification strategy was successful and dramatically changed the living conditions.  Now it has an extremely good reputation.",
-          "Ja": "この地域は昔はスラム街でしたが、政府の戦略としての居住地域の高級化が功を奏し、住環境ががらっと変わったんですよ。今は評判もすこぶるいいです。"
+          "En": "That shop's cakes have a reputation for being very delicious.",
+          "Ja": "あの店のケーキはとてもおいしいと評判です。"
         }
       ],
       "MeaningMnemonic": "When people <kanji>evaluate</kanji> and <kanji>judge</kanji> you at every turn, it means you have quite a <vocabulary>reputation</vocabulary>, and indeed <vocabulary>fame</vocabulary>. Wouldn't this be terrible if people evaluated and judged you 24/7? Having that kind of reputation or fame would be difficult.",
@@ -10860,7 +10860,7 @@
     "Id": 6530,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/6530",
-    "DataUpdatedAt": "2025-11-07T23:57:32.391485Z",
+    "DataUpdatedAt": "2026-04-04T20:17:45.612577Z",
     "Data": {
       "ComponentSubjectIds": [
         1431,
@@ -14245,6 +14245,119 @@
         }
       ],
       "Slug": "自ら",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9462,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9462",
+    "DataUpdatedAt": "2026-04-08T06:41:17.883745Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        9451,
+        644
+      ],
+      "ContextSentences": [
+        {
+          "En": "If you don't wanna be shark food, stay out of the ocean around here.",
+          "Ja": "サメの餌食になりたくなけりゃ、この辺の海には入るなよ。"
+        },
+        {
+          "En": "He fell victim to a scam.",
+          "Ja": "彼はサギの餌食になった。"
+        },
+        {
+          "En": "Who will be preyed upon next?",
+          "Ja": "次は誰が餌食になるのか。"
+        },
+        {
+          "En": "Please be careful of shady businesses that prey on young people.",
+          "Ja": "若者を餌食にする悪いビジネスに気をつけてください。"
+        }
+      ],
+      "MeaningMnemonic": "An animal makes you its <kanji>feed</kanji> and <kanji>eat</kanji>s you. You have become its <vocabulary>prey</vocabulary>.\n\n餌食 refers to a living thing eaten as food by a predator. Beyond its literal meaning of animal prey, it's also often used figuratively to mean someone who is helplessly targeted and falls <vocabulary>victim</vocabulary> to a crime, scam, or bad situation — as if they were being hunted in the wild.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/gn1zh5i41240cr973sd89ohyys4v",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60137,
+            "Pronunciation": "えじき",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vsou13w19gkqbqpu41jw0ku73mg8",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60137,
+            "Pronunciation": "えじき",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/am0gyj1bixsg8ovsvjcyb97nh9a7",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60134,
+            "Pronunciation": "えじき",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dyurc8j8mryld8q0tpasonjtf1k0",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60134,
+            "Pronunciation": "えじき",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "えじき"
+        }
+      ],
+      "ReadingMnemonic": "This word uses irregular readings from both of the kanji, so here's a mnemonic to help you remember how to read it:\n\nYou're always threatening to turn people into your \"<vocabulary>prey</vocabulary>\" because you're an <reading>edgy ki</reading>d (えじき). \"Cross me at your own peril, sheeple — you'll be my prey next,\" you mutter as you wander around your affluent suburb in sunglasses and a trench coat. Gosh, you're such an edgy kid.",
+      "AuxiliaryMeanings": [],
+      "Characters": "餌食",
+      "CreatedAt": "2026-02-25T17:42:54.86635Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E9%A4%8C%E9%A3%9F",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 23,
+      "Meanings": [
+        {
+          "Meaning": "Prey",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Victim",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "餌食",
       "SpacedRepetitionSystemId": 1
     }
   }

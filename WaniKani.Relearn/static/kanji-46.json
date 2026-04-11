@@ -1523,7 +1523,7 @@
     "Id": 1968,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/1968",
-    "DataUpdatedAt": "2025-11-24T20:34:39.359876Z",
+    "DataUpdatedAt": "2026-04-06T19:38:48.256629Z",
     "Data": {
       "AmalgationSubjectIds": [
         7031,
@@ -1695,7 +1695,7 @@
     "Id": 1971,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/1971",
-    "DataUpdatedAt": "2026-02-04T19:33:34.288011Z",
+    "DataUpdatedAt": "2026-04-06T18:24:53.012902Z",
     "Data": {
       "AmalgationSubjectIds": [
         7040
@@ -1704,9 +1704,9 @@
         62,
         17
       ],
-      "MeaningHint": "Picture yourself on top of this manor that rose out of the ground. The canopy is still above you and it seems to be attached to the roof.",
-      "ReadingHint": "Imagine being chased by an angry shougun all through his giant, luxurious manor. You barely have time to admire the interior design with him gaining on you like this!",
-      "ReadingMnemonic": "The beautiful <kanji>manor</kanji> begins to shake and the <reading>shou</reading>gun (しょう) bursts out of the front door. \"WHO HAS UNEARTHED MY SECRET MANOR?!\" he screams.",
+      "MeaningHint": "Not only will the canopy protect your manorial estate from the elements, it will also let would-be trespassers know that this is <em>your</em> private patch of dirt that they're not allowed to set foot on.",
+      "ReadingHint": "You keep a big portrait of the shogun on the wall of your manor house to let all the serfs and peasants on your estate know who they'll have to deal with if they question your authority.",
+      "ReadingMnemonic": "The establishment of your <kanji>manor</kanji> was approved by the <reading>sho</reading>gun (しょう) himself. The shogun presides over all the territory in the land, so you can't set up a private <kanji>estate</kanji> without his blessing.",
       "Readings": [
         {
           "Reading": "しょう",
@@ -1719,18 +1719,36 @@
         1810,
         1106
       ],
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Countryside",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Village",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Rural Home",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "庄",
       "CreatedAt": "2013-08-02T21:45:43.77676Z",
       "DocumentUrl": "https://www.wanikani.com/kanji/%E5%BA%84",
       "HiddenAt": null,
       "LessonPosition": 31,
       "Level": 46,
-      "MeaningMnemonic": "You're standing under a <radical>canopy</radical> when you see something strange sticking out of the <radical>dirt</radical>. You pull it, but it won't budge. You pull harder and harder until the dirt starts rumbling and a giant <kanji>manor</kanji> starts rising out of the ground with you on top!",
+      "MeaningMnemonic": "You set up a <radical>canopy</radical> over a patch of <radical>dirt</radical> because you're setting up a <kanji>manor</kanji> here — you know, a big rural <kanji>estate</kanji>, probably with serfs and stuff.",
       "Meanings": [
         {
           "Meaning": "Manor",
           "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Estate",
+          "Primary": false,
           "AcceptedAnswer": true
         }
       ],
@@ -1801,7 +1819,7 @@
     "Id": 1973,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/1973",
-    "DataUpdatedAt": "2026-02-25T20:13:06.783966Z",
+    "DataUpdatedAt": "2026-04-09T08:55:56.229376Z",
     "Data": {
       "AmalgationSubjectIds": [
         7044,
@@ -1831,7 +1849,9 @@
           "Type": "kunyomi"
         }
       ],
-      "VisuallySimilarSubjectIds": [],
+      "VisuallySimilarSubjectIds": [
+        881
+      ],
       "AuxiliaryMeanings": [],
       "Characters": "黙",
       "CreatedAt": "2013-08-02T21:46:31.081878Z",

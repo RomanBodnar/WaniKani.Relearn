@@ -792,7 +792,7 @@
     "Id": 3295,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3295",
-    "DataUpdatedAt": "2025-11-13T21:53:15.126796Z",
+    "DataUpdatedAt": "2026-04-06T19:01:29.866512Z",
     "Data": {
       "ComponentSubjectIds": [
         798,
@@ -808,8 +808,8 @@
           "Ja": "いわゆる昔ながらの洋食屋さんで、バイトをしています。"
         },
         {
-          "En": "Oh, did you eat the western-style lunch set at that restaurant? Hahaha. No wonder you still feel full.",
-          "Ja": "ええっ！あそこのレストランで洋食ランチセットを食べたの？ははは。どおりでまだお腹がいっぱいなはずだわ。"
+          "En": "Oh, did you eat the Western-style lunch set at that restaurant? Hahaha. No wonder you don't want to eat dinner yet.",
+          "Ja": "ええっ！あそこのレストランで洋食ランチセットを食べたの？ははは。どおりでまだ夕食を食べたくないわけだね。"
         }
       ],
       "MeaningMnemonic": "<kanji>Western-style</kanji> <kanji>eat</kanji>s just means <vocabulary>Western-style food</vocabulary>.\n\nYou can call this <vocabulary>Western food</vocabulary> for short, but in Japan it actually refers to a Japanese genre of food inspired by European dishes. Think omurice (omelette rice) or Napolitan pasta (spaghetti and ketchup). You know, Western-<em>style</em> food.",
@@ -5237,7 +5237,7 @@
     "Id": 3356,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3356",
-    "DataUpdatedAt": "2025-12-04T08:41:25.964816Z",
+    "DataUpdatedAt": "2026-04-06T18:52:35.619777Z",
     "Data": {
       "ComponentSubjectIds": [
         828,
@@ -5253,8 +5253,12 @@
           "Ja": "町には商人がたくさんいます。"
         },
         {
-          "En": "He said he was a merchant, but he was actually homeless, and his job was collecting empty cans.",
-          "Ja": "彼、自分が商人だって言ってたんだけど、実はホームレスで、仕事は空き缶収集だったの。"
+          "En": "He was born into a family of merchants.",
+          "Ja": "彼は商人の家に生まれた。"
+        },
+        {
+          "En": "There was a certain merchant-like toughness in the way the man spoke.",
+          "Ja": "その男の話し方には、どこか商人のようなしたたかさがあった。"
         }
       ],
       "MeaningMnemonic": "A <kanji>merchandise</kanji> <kanji>person</kanji> is a <vocabulary>merchant</vocabulary>. You want to buy something or you just looking?",
@@ -9701,7 +9705,7 @@
     "Id": 3401,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3401",
-    "DataUpdatedAt": "2025-06-11T05:32:24.062772Z",
+    "DataUpdatedAt": "2026-04-07T19:51:01.368335Z",
     "Data": {
       "ComponentSubjectIds": [
         849
@@ -9712,12 +9716,12 @@
           "Ja": "これは泉の水です。"
         },
         {
-          "En": "There is a small spring in this city.",
-          "Ja": "この街には小さな泉があります。"
+          "En": "There is a small spring in this town.",
+          "Ja": "この町には小さな泉があります。"
         },
         {
-          "En": "Wow! You look beautiful! Did you go on a special diet? Or did you find the Fountain of Youth?",
-          "Ja": "わぁ！すごく綺麗。何か特別なダイエットでもしたの？それとも、若返りの泉でも見つけたとか？"
+          "En": "I was walking in the mountains when I found a small, beautiful spring.",
+          "Ja": "山の中を歩いていると、小さなきれいな泉を見つけた。"
         }
       ],
       "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.",
@@ -12495,16 +12499,12 @@
     "Id": 3565,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3565",
-    "DataUpdatedAt": "2025-11-11T23:18:22.908078Z",
+    "DataUpdatedAt": "2026-04-06T19:02:01.837869Z",
     "Data": {
       "ComponentSubjectIds": [
         766
       ],
       "ContextSentences": [
-        {
-          "En": "My stomach growled.",
-          "Ja": "お腹が鳴ってしまった。"
-        },
         {
           "En": "The phone is ringing.",
           "Ja": "電話が鳴っている。"
@@ -12512,6 +12512,10 @@
         {
           "En": "The door bell rang.",
           "Ja": "ドアのベルが鳴った。"
+        },
+        {
+          "En": "When the bell goes off, please enter the classroom.",
+          "Ja": "チャイムが鳴ったら、教室に入ってください。"
         }
       ],
       "MeaningMnemonic": "You learned 鳴く means \"to chirp\" (or some other animal sound). 鳴る is similar, but it's used when something just makes a sound, like a phone ringing, a bell jingling, or thunder rumbling. So 鳴る means <vocabulary>to sound</vocabulary> or <vocabulary>to ring</vocabulary>. You know this because 鳴る can also be used for when your stomach rumbles: \"<reading>rrrr</reading>\" (る)!",
@@ -12975,7 +12979,7 @@
     "Id": 3649,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3649",
-    "DataUpdatedAt": "2025-06-11T05:32:30.619244Z",
+    "DataUpdatedAt": "2026-04-06T18:04:05.609053Z",
     "Data": {
       "ComponentSubjectIds": [
         826,
@@ -12987,12 +12991,12 @@
           "Ja": "その日は都合が悪くて、キャンセルしてもらってもいいですか？"
         },
         {
-          "En": "If it works for you, why don't we go to the bookstore together?",
-          "Ja": "もし都合が良ければ、一緒に本屋に行きませんか？"
+          "En": "If it works for you, why don't we go to the bookstore?",
+          "Ja": "もし都合が良ければ、本屋に行きませんか？"
         },
         {
-          "En": "\"Which day is convenient for you, Saturday or Sunday?\" \"It makes no difference to me.\"",
-          "Ja": "「土曜日と日曜日、どちらの方が都合がいい？」「どちらでもいいよ。」"
+          "En": "\"Which day is more convenient for you, tomorrow or the day after?\" \"It makes no difference to me.\"",
+          "Ja": "「明日と明後日、どちらの方が都合がいい？」「どちらでもいいよ。」"
         }
       ],
       "MeaningMnemonic": "This one makes no sense (sorry!). When you <kanji>join</kanji> together with someone at a <kanji>metropolis</kanji>, you do it <vocabulary>at your convenience</vocabulary>. You're important, after all, so you just do what you want and make the other person wait in this giant metropolis while you move along leisurely. Imagine this, and keep thinking \"at your convenience\" as you walk about.\n\nThis word is usually used in a nicer way, though. As in, \"do it at your convenience!\"",
@@ -13580,7 +13584,7 @@
     "Id": 4073,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4073",
-    "DataUpdatedAt": "2025-06-11T05:32:41.11572Z",
+    "DataUpdatedAt": "2026-04-07T19:50:41.083993Z",
     "Data": {
       "ComponentSubjectIds": [
         966
@@ -13595,8 +13599,8 @@
           "Ja": "このシミは取れないかもしれないね。"
         },
         {
-          "En": "Renting an office in the business district will be considerably expensive, but it’s important for our image and I think it will pay for itself in about a year.",
-          "Ja": "ビジネス街にオフィスを設けるとなると賃料はかなり高くつきますが、我々のイメージにとって重要な事でもありますし、一年ぐらいで元は取れるのではないかと思うんです。"
+          "En": "Opening an office in Marunouchi would be quite expensive, but it's important for our image, and I think we could recoup the cost in about a year.",
+          "Ja": "丸の内にオフィスを開くとなるとお金はかなりかかりますが、私たちのイメージにとって大切な事ですし、一年ぐらいで元は取れると思います。"
         }
       ],
       "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb.\n\nThis is an intransitive verb. That means it does not take a direct object. Something comes off. Something is removed. No direct object here. That's why this verb means <vocabulary>to come off</vocabulary> or <vocabulary>to be removed</vocabulary>.",

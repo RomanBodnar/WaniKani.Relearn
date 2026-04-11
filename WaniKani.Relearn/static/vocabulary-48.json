@@ -3001,7 +3001,7 @@
     "Id": 7178,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7178",
-    "DataUpdatedAt": "2025-06-11T05:33:44.132633Z",
+    "DataUpdatedAt": "2026-04-07T21:29:54.281231Z",
     "Data": {
       "ComponentSubjectIds": [
         2018
@@ -3010,6 +3010,10 @@
         {
           "En": "I switched eyes with an owl so now I can see in the dark.",
           "Ja": "僕はある梟と目を交換したから、暗闇でも目が見えるんだよ。"
+        },
+        {
+          "En": "He quietly leaned closer and peered into the depths of the darkness. But within that darkness there was something that never should have been seen.",
+          "Ja": "彼は静かに顔を近づけ、闇の奥を覗き込んだ。だが、覗き込んだ先に、見てはいけないものがあった。"
         }
       ],
       "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.",
@@ -3455,7 +3459,7 @@
     "Id": 7182,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7182",
-    "DataUpdatedAt": "2025-06-11T05:33:44.196624Z",
+    "DataUpdatedAt": "2026-04-07T21:23:35.278206Z",
     "Data": {
       "ComponentSubjectIds": [
         2019,
@@ -3465,6 +3469,10 @@
         {
           "En": "I found a few coins in the gap between two vending machines. ",
           "Ja": "二台の自販機の隙間に、小銭が2-3枚落ちているのを見つけました。"
+        },
+        {
+          "En": "When I happened to glance toward the window, I saw someone peering at me through a gap in the curtains.",
+          "Ja": "ふと窓際を見ると、カーテンの隙間から、誰かがこちらを覗いていた。"
         }
       ],
       "MeaningMnemonic": "A <kanji>crevice</kanji> <kanji>interval</kanji> is an area with a <vocabulary>crevice</vocabulary> or <vocabulary>crack</vocabulary>.",
@@ -7282,7 +7290,7 @@
     "Id": 7219,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7219",
-    "DataUpdatedAt": "2026-02-04T19:14:35.144665Z",
+    "DataUpdatedAt": "2026-04-10T05:38:55.064771Z",
     "Data": {
       "ComponentSubjectIds": [
         2033,
@@ -8071,18 +8079,30 @@
     "Id": 7226,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7226",
-    "DataUpdatedAt": "2026-02-04T19:45:11.793535Z",
+    "DataUpdatedAt": "2026-04-06T19:56:31.688597Z",
     "Data": {
       "ComponentSubjectIds": [
         2037
       ],
       "ContextSentences": [
         {
+          "En": "A lone light can be seen in the distance.",
+          "Ja": "遠くにぽつんと灯りが見える。"
+        },
+        {
+          "En": "A warm light could be seen through the window.",
+          "Ja": "窓から暖かい灯りが見えた。"
+        },
+        {
+          "En": "The town felt somehow lonely once all the lights had gone out.",
+          "Ja": "灯りの消えた町は、どこかさびしかった。"
+        },
+        {
           "En": "The room was lit only by the light of a small candle.",
-          "Ja": "その部屋には、小さなロウソクの灯りだけが灯っていました。"
+          "Ja": "その部屋には、小さなロウソクの灯りだけがともっていました。"
         }
       ],
-      "MeaningMnemonic": "The meaning of this noun is the same as the kanji: <vocabulary>lamp</vocabulary>. This can also mean <vocabulary>light</vocabulary> or <vocabulary>torch</vocabulary> as well, depending on the context.",
+      "MeaningMnemonic": "The kanji means <kanji>lamp</kanji>, and the noun version means essentially the same thing: a <vocabulary>light</vocabulary> or a <vocabulary>lamp</vocabulary>.\n\nWhile 光 refers to light in an abstract sense and 明かり to the illumination something gives off, 灯り (or sometimes just 灯) refers to a manmade light source — whether a lamp, a candle, or even an indistinct light glimpsed in the distance at night. Compared to more modern terms like ライト, it feels gentler and warmer, and appears more often in poetic or descriptive contexts like novels or songs.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -8143,8 +8163,21 @@
           "Reading": "あかり"
         }
       ],
-      "ReadingMnemonic": "This word uses a kun'yomi reading for 灯 that you haven't learned yet, so here's a mnemonic:\n\nThe reading sounds just like 明かり, which means \"light.\" Makes sense, if you think about it, since a <vocabulary>lamp</vocabulary> is something that makes <reading>明か</reading>り (あか).",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "This word uses a kun'yomi reading for 灯 that you haven't learned yet, so here's a mnemonic:\n\nThe reading sounds just like 明かり, another light-related word. Makes sense, if you think about it, since a <vocabulary>light</vocabulary> will make <reading>明か</reading>り (あか) when it's lit.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Torch",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Light Source",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Source Of Light",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "灯り",
       "CreatedAt": "2013-08-16T23:25:30.282922Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E7%81%AF%E3%82%8A",
@@ -8153,17 +8186,12 @@
       "Level": 48,
       "Meanings": [
         {
-          "Meaning": "Lamp",
+          "Meaning": "Light",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Light",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Torch",
+          "Meaning": "Lamp",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -8176,7 +8204,7 @@
     "Id": 7227,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7227",
-    "DataUpdatedAt": "2025-09-09T23:22:17.218623Z",
+    "DataUpdatedAt": "2026-04-06T19:56:31.688597Z",
     "Data": {
       "ComponentSubjectIds": [
         1400,
@@ -8184,8 +8212,20 @@
       ],
       "ContextSentences": [
         {
+          "En": "The streetlights lit up one by one.",
+          "Ja": "街灯が一つずつともっていった。"
+        },
+        {
+          "En": "Only streetlights quietly lined the night road.",
+          "Ja": "夜道には、街灯だけが静かに並んでいた。"
+        },
+        {
+          "En": "The streetlight was out, and the road was completely dark.",
+          "Ja": "街灯が切れていて、その道は真っ暗だった。"
+        },
+        {
           "En": "There are a ton of moths flying around each street lamp.",
-          "Ja": "大量の蛾が、各街灯の周りを飛び交っています。"
+          "Ja": "大量のガが、各街灯の周りを飛び回っています。"
         }
       ],
       "MeaningMnemonic": "The <kanji>streets</kanji> are lit by <kanji>lamp</kanji>s — <vocabulary>streetlight</vocabulary>s, to be specific! And nighttime in the city sure would be a lot scarier without them.",
@@ -8250,7 +8290,16 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Street Light",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Streetlamp",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "街灯",
       "CreatedAt": "2013-08-16T23:25:35.143021Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E8%A1%97%E7%81%AF",
@@ -8277,7 +8326,7 @@
     "Id": 7228,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7228",
-    "DataUpdatedAt": "2025-11-08T00:17:20.030484Z",
+    "DataUpdatedAt": "2026-04-06T19:56:31.688597Z",
     "Data": {
       "ComponentSubjectIds": [
         706,
@@ -8285,11 +8334,23 @@
       ],
       "ContextSentences": [
         {
-          "En": "My wife never turns off the light. She probably doesn’t even know there is a switch.",
-          "Ja": "うちの嫁さんは全然電灯を消さないんだよね。きっとスイッチがあることを知らないんだと思うよ。"
+          "En": "At night, the streetlights come on.",
+          "Ja": "夜になると、通りの電灯がともります。"
+        },
+        {
+          "En": "The light burned out.",
+          "Ja": "電灯が切れてしまったんだよ。"
+        },
+        {
+          "En": "Whoever leaves the office last, please don't forget to turn off the lights.",
+          "Ja": "最後にオフィスを出る人は、電灯を消すのを忘れないでください。"
+        },
+        {
+          "En": "Small insects gathered around the electric light.",
+          "Ja": "電灯の光に、小さな虫が集まっていた。"
         }
       ],
-      "MeaningMnemonic": "An <kanji>electricity</kanji> <kanji>lamp</kanji> is an <vocabulary>electric lamp</vocabulary>. Nowadays they're all electricity, though, which means it's a <vocabulary>lamp</vocabulary>.",
+      "MeaningMnemonic": "An <kanji>electricity</kanji> <kanji>lamp</kanji> is exactly what it sounds like: an <vocabulary>electric light</vocabulary> or <vocabulary>electric lamp</vocabulary>.\n\n電灯 is a slightly technical word that broadly refers to electrical lighting. It can include many kinds of lighting devices, such as light bulbs, fluorescent lamps, streetlights, and flashlights, but it's most commonly used for a fixed light that illuminates a room or street.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -8351,7 +8412,24 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Lamp",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Electrical Light",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Electrical Lamp",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Light",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "電灯",
       "CreatedAt": "2013-08-16T23:25:40.826671Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E9%9B%BB%E7%81%AF",
@@ -8362,11 +8440,6 @@
         {
           "Meaning": "Electric Light",
           "Primary": true,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Lamp",
-          "Primary": false,
           "AcceptedAnswer": true
         },
         {

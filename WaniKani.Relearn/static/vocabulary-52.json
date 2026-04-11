@@ -1963,7 +1963,7 @@
     "Id": 7877,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7877",
-    "DataUpdatedAt": "2026-04-02T04:32:16.567434Z",
+    "DataUpdatedAt": "2026-04-09T01:03:45.494916Z",
     "Data": {
       "ComponentSubjectIds": [
         2181,
@@ -1975,7 +1975,7 @@
           "Ja": "どうすれば怠惰を克服できるのでしょうか。"
         }
       ],
-      "MeaningMnemonic": "A <kanji>lazy</kanji> <kanji>lazy</kanji> person is plagued with never ending <vocabulary>laziness</vocabulary>. They never get up. They just move slowly around the floor.",
+      "MeaningMnemonic": "A <kanji>lazy</kanji>, <kanji>lazy</kanji> person is plagued with never ending <vocabulary>laziness</vocabulary>. They spend their days in <vocabulary>idleness</vocabulary>, totally afflicted with <vocabulary>sloth</vocabulary>.\n\n怠惰 is a formal word you'll most likely see in writing. It describes someone who habitually avoids effort or responsibility, so it speaks to a person's character or general attitude rather than a single instance of laziness.",
       "PartsOfSpeech": [
         "noun",
         "な adjective"
@@ -2079,7 +2079,7 @@
     "Id": 7878,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7878",
-    "DataUpdatedAt": "2026-04-02T04:32:17.658496Z",
+    "DataUpdatedAt": "2026-04-09T01:01:55.772552Z",
     "Data": {
       "ComponentSubjectIds": [
         2181
@@ -2090,7 +2090,7 @@
           "Ja": "この失敗は確認を怠った私の責任です。"
         }
       ],
-      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means <kanji>neglect</kanji>, so the verb version is <vocabulary>to be negligent</vocabulary> or <vocabulary>to neglect</vocabulary> something.",
+      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. You learned the kanji means \"lazy,\" but it can also mean <kanji>neglect</kanji>, so the verb means <vocabulary>to be negligent</vocabulary> or <vocabulary>to neglect</vocabulary> something.\n\n怠る is a relatively formal word for failing to carry out a responsibility, either on purpose or due to forgetfulness or negligence. You'll see it in contexts like 義務を怠る (to neglect one's duty) or 注意を怠る (to fail to exercise caution).",
       "PartsOfSpeech": [
         "transitive verb",
         "godan verb"
@@ -2152,8 +2152,21 @@
           "Reading": "おこたる"
         }
       ],
-      "ReadingMnemonic": "Since this word consists of a kanji with hiragana attached, you can bet that it will use the kun'yomi reading. You didn't learn that reading with this kanji, so here's a mnemonic to help you: \n\nIf you always seem <vocabulary>to be negligent</vocabulary> to your kids you'll end up with this situation. It's winter and your kid comes home from school covered in snow and sneezing. \"<reading>Oh, coat</reading>... (おこた)\" you say. You didn't give them a coat when they went out today. Maybe if you weren't so negligent that wouldn't have happened.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "Since this word consists of a kanji with hiragana attached, you can bet that it will use the kun'yomi reading. You didn't learn that reading with this kanji, so here's a mnemonic to help you:\n\nYou have a bad tendency <vocabulary>to be negligent</vocabulary> with paying people back, so you <reading>owe quarter</reading>s (おこた) to pretty much everyone you know. You owe quarters to your coworker for spotting you at the vending machine yesterday, and you owe quarters to your friend for all those games of air hockey at the arcade last weekend. Stop being so negligent with your debts!",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "To Be Off One's Guard",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Neglect Something",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Shirk Something",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "怠る",
       "CreatedAt": "2015-06-30T23:05:40.949425Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%80%A0%E3%82%8B",
@@ -2173,11 +2186,6 @@
         },
         {
           "Meaning": "To Shirk",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "To Be Off One's Guard",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -2712,7 +2720,7 @@
     "Id": 7884,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7884",
-    "DataUpdatedAt": "2026-02-24T00:45:22.657798Z",
+    "DataUpdatedAt": "2026-04-09T00:45:50.932066Z",
     "Data": {
       "ComponentSubjectIds": [
         1294,
@@ -2728,7 +2736,7 @@
           "Ja": "我慢するんだ！諦めるなよ。明日は明日の風が吹くんだからさ！"
         }
       ],
-      "MeaningMnemonic": "<kanji>I</kanji> get <kanji>ridiculed</kanji> a lot, but it makes me have really strong <vocabulary>endurance</vocabulary>. If you get picked on a lot, just say, \"I have <vocabulary>patience</vocabulary> and <vocabulary>self control</vocabulary>, and I can make it through this.\"",
+      "MeaningMnemonic": "When <kanji>I</kanji> am faced with <kanji>overconfidence</kanji>, it seriously tests my <vocabulary>endurance</vocabulary> and <vocabulary>patience</vocabulary>. I really hate overconfident people, so it takes a lot of <vocabulary>self-control</vocabulary> for me to smile at them and pretend to be civil.",
       "PartsOfSpeech": [
         "noun",
         "verbal noun"
@@ -2791,7 +2799,44 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Self Control",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Perseverance",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Tolerance",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Self-Restraint",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Enduring",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Tolerating",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Putting Up With",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Bearing",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Persevering",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "我慢",
       "CreatedAt": "2015-06-30T23:14:23.410886Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%88%91%E6%85%A2",
@@ -2805,22 +2850,12 @@
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Perseverance",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Tolerance",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
           "Meaning": "Patience",
           "Primary": false,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Self Control",
+          "Meaning": "Self-Control",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -2833,7 +2868,7 @@
     "Id": 7885,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7885",
-    "DataUpdatedAt": "2025-06-11T05:33:57.126215Z",
+    "DataUpdatedAt": "2026-04-09T00:46:51.636369Z",
     "Data": {
       "ComponentSubjectIds": [
         578,
@@ -2841,11 +2876,11 @@
       ],
       "ContextSentences": [
         {
-          "En": "It’s impossible for me to proudly boast about my own affair.",
+          "En": "It's impossible for me to proudly boast about my own affair.",
           "Ja": "自分の不倫を得意気に自慢するとか、ありえないんだけど。"
         }
       ],
-      "MeaningMnemonic": "You <kanji>ridicule</kanji> everyone but your<kanji>self</kanji> because you have so much <vocabulary>pride</vocabulary>. When you talk about yourself you only <vocabulary>boast</vocabulary> because there's nothing to ridicule. That's how great you think you are.",
+      "MeaningMnemonic": "When your <kanji>self</kanji> has <kanji>overconfidence</kanji> in something, that's called <vocabulary>pride</vocabulary>. You can't shut up about that thing, and you <vocabulary>boast</vocabulary> about it to whoever will listen.",
       "PartsOfSpeech": [
         "noun",
         "verbal noun",
@@ -2936,7 +2971,7 @@
     "Id": 7886,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7886",
-    "DataUpdatedAt": "2025-06-11T05:33:57.138949Z",
+    "DataUpdatedAt": "2026-04-09T00:47:59.981843Z",
     "Data": {
       "ComponentSubjectIds": [
         1700,
@@ -2944,11 +2979,11 @@
       ],
       "ContextSentences": [
         {
-          "En": "That waitress’ movements were really slow so she was fired.",
+          "En": "That waitress' movements were really slow so she was fired.",
           "Ja": "あのウエイトレスは動きが緩慢なので首にしたよ。"
         }
       ],
-      "MeaningMnemonic": "When your <kanji>laziness</kanji> is <kanji>loose</kanji> you can't pull yourself together and you end up moving really <vocabulary>slow</vocabulary>. Your arms and legs get loose and your movements become <vocabulary>sluggish</vocabulary>.",
+      "MeaningMnemonic": "You learned 慢 as \"overconfidence,\" but it can also mean \"laziness.\" And when you're feeling all <kanji>loose</kanji> due to your <kanji>laziness</kanji>, your movements are probably going to be pretty <vocabulary>slow</vocabulary> and <vocabulary>sluggish</vocabulary>.",
       "PartsOfSpeech": [
         "noun",
         "な adjective"
@@ -3043,7 +3078,7 @@
     "Id": 7887,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7887",
-    "DataUpdatedAt": "2026-04-02T04:32:17.195866Z",
+    "DataUpdatedAt": "2026-04-09T00:59:45.447543Z",
     "Data": {
       "ComponentSubjectIds": [
         2181,
@@ -3051,11 +3086,11 @@
       ],
       "ContextSentences": [
         {
-          "En": "Isn’t that police negligence?",
+          "En": "Isn't that police negligence?",
           "Ja": "それは警察の怠慢なんじゃないんですか。"
         }
       ],
-      "MeaningMnemonic": "You ignore everything around you because you are <kanji>lazy</kanji> with <kanji>laziness</kanji>. That's too much lazy for one person so you're prone to <vocabulary>negligence</vocabulary> and <vocabulary>procrastination</vocabulary>. You definitely can't manage to take care of things when you're this lazy.",
+      "MeaningMnemonic": "If you get <kanji>lazy</kanji> because of your <kanji>overconfidence</kanji>, you'll probably be prone to <vocabulary>negligence</vocabulary>. You start cutting corners everywhere because you think you're infallible, and before you know it you're neglecting all the little things you were supposed to take care of.\n\n怠慢 refers to the kind of negligence where someone fails to fulfill a duty. It suggests they could have done better but didn't because of <vocabulary>laziness</vocabulary>, carelessness, lack of effort, or not taking their responsibilities seriously.",
       "PartsOfSpeech": [
         "noun",
         "な adjective",
@@ -3119,7 +3154,44 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Carelessness",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Lazy",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Lax",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Laxity",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Laxness",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Neglect",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Neglectful",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Negligent",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Careless",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "怠慢",
       "CreatedAt": "2015-06-30T23:28:14.736069Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%80%A0%E6%85%A2",
@@ -3133,12 +3205,7 @@
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Procrastination",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "Carelessness",
+          "Meaning": "Laziness",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -3151,7 +3218,7 @@
     "Id": 7888,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7888",
-    "DataUpdatedAt": "2026-04-02T04:32:16.908569Z",
+    "DataUpdatedAt": "2026-04-09T00:52:31.973714Z",
     "Data": {
       "ComponentSubjectIds": [
         2179,
@@ -3163,7 +3230,7 @@
           "Ja": "私は慢性胃腸炎を患っているんです。"
         }
       ],
-      "MeaningMnemonic": "If it's in your <kanji>nature</kanji> to <kanji>ridicule</kanji> people, it will become a <vocabulary>chronic</vocabulary> problem. You can't change something that's so embedded in who you are, which is a shame, since you're a jerk.",
+      "MeaningMnemonic": "<kanji>Overconfidence</kanji> is in the <kanji>nature</kanji> of any problem that's <vocabulary>chronic</vocabulary>. No matter what you throw at it, it just confidently sticks around. Whether it's an illness or some other nagging issue, one thing's for sure: it's going to chronically and confidently bug you, forever.",
       "PartsOfSpeech": [
         "noun",
         "の adjective"
@@ -4464,7 +4531,7 @@
     "Id": 7900,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7900",
-    "DataUpdatedAt": "2026-04-02T04:32:17.118084Z",
+    "DataUpdatedAt": "2026-04-06T17:38:54.907026Z",
     "Data": {
       "ComponentSubjectIds": [
         2180,

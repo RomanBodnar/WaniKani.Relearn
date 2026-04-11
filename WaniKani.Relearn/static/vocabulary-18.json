@@ -614,7 +614,7 @@
     "Id": 4054,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4054",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-06T18:07:48.953804Z",
     "Data": {
       "ComponentSubjectIds": [
         459,
@@ -623,7 +623,7 @@
       ],
       "ContextSentences": [
         {
-          "En": "I'm working on Saturday this week.",
+          "En": "This week I'm working on Saturday too.",
           "Ja": "今週は土曜日も仕事です。"
         },
         {
@@ -631,11 +631,11 @@
           "Ja": "土曜日は雨みたいですね。"
         },
         {
-          "En": "Are you going to the year-end party on Saturday?",
-          "Ja": "土曜日の忘年会、行く？"
+          "En": "Are you going to the drinking party on Saturday?",
+          "Ja": "土曜日の飲み会、行く？"
         }
       ],
-      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>earth</kanji> day of the week is a day you find yourself close to the earth. Either you found you drank too much on Friday, so on this day's morning you're laying right on the ground of earth. Or, maybe you just want to sleep in after staying up late on Friday. Either way, this day you lay close to the earth is <vocabulary>Saturday</vocabulary>.",
+      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>dirt</kanji> day is the day you finally get to go outside and get a little dirty. Maybe you're in the yard gardening, at the park playing baseball, or even riding dirt bikes somewhere with buddies. Or maybe you're just lying face down in the dirt 'cause you drank too much on Friday. Either way, <vocabulary>Saturday</vocabulary> is the day for getting down and dirty.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -696,8 +696,12 @@
           "Reading": "どようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just watch out for the ひ becoming a び like it did in the word 曜日.",
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "Sat",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "Sunday",
           "Type": "blacklist"
@@ -724,7 +728,7 @@
     "Id": 4055,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4055",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-06T18:02:58.553797Z",
     "Data": {
       "ComponentSubjectIds": [
         476,
@@ -740,7 +744,7 @@
           "Ja": "日曜日の朝は、毎週教会に行きます。"
         },
         {
-          "En": "I got sunburned during Sunday's hike.",
+          "En": "I got injured during Sunday's hike.",
           "Ja": "日曜日のハイキングで日焼けをしてしまいました。"
         }
       ],
@@ -805,8 +809,12 @@
           "Reading": "にちようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just watch out for the ひ becoming a び like it did in the word 曜日.",
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "Sun",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "Saturday",
           "Type": "blacklist"
@@ -837,7 +845,7 @@
     "Id": 4056,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4056",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-06T17:23:52.568567Z",
     "Data": {
       "ComponentSubjectIds": [
         477,
@@ -846,7 +854,7 @@
       ],
       "ContextSentences": [
         {
-          "En": "Would you like to go out for a drink this coming Monday after work?",
+          "En": "Wanna go out for a drink this coming Monday after work?",
           "Ja": "今度の月曜日、仕事の後、飲みに行かない？"
         },
         {
@@ -858,7 +866,7 @@
           "Ja": "月曜日はいつも起きるのがツライです。会社に行きたくないんで。"
         }
       ],
-      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The \"<kanji>moon</kanji>\" day of the week is <vocabulary>monday</vocabulary>. Why? Because \"Moon\" is pretty much just \"Mon,\" right?",
+      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The \"<kanji>moon</kanji>\" day of the week is <vocabulary>Monday</vocabulary>. Why? Because \"Moon\" is pretty much just \"Mon,\" right?",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -919,8 +927,12 @@
           "Reading": "げつようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. The 曜日 part is read just like the word 曜日, which you already learned, but 月 has two different on'yomi readings, so here's a mnemonic to help you remember which one to use:\n\n<vocabulary>Monday</vocabulary> is the day when a person <reading>gets</reading> (げつ) back to their regular weekday schedule. He or she gets out of bed, gets in the car, gets to work, and gets after that paycheck!",
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "Mon",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "Sunday",
           "Type": "blacklist"
@@ -947,7 +959,7 @@
     "Id": 4057,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4057",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-07T13:28:42.935127Z",
     "Data": {
       "ComponentSubjectIds": [
         478,
@@ -960,11 +972,11 @@
           "Ja": "木曜日は六時からピアノなんです。"
         },
         {
-          "En": "I am planning to do the cleanup on Thursday.",
+          "En": "I'm planning to clean on Thursday.",
           "Ja": "そうじは木曜日にしようと思ってます。"
         },
         {
-          "En": "I've been having coughs since Thursday.",
+          "En": "I've had a cough since Thursday.",
           "Ja": "木曜日からセキが出てるんです。"
         }
       ],
@@ -1029,8 +1041,16 @@
           "Reading": "もくようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just watch out for the ひ becoming a び like it did in the word 曜日.",
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "Thurs",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Thur",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "Tuesday",
           "Type": "blacklist"
@@ -1057,7 +1077,7 @@
     "Id": 4058,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4058",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-06T17:58:21.218551Z",
     "Data": {
       "ComponentSubjectIds": [
         479,
@@ -1078,7 +1098,7 @@
           "Ja": "毎週水曜日、学校の後プールに行って泳いでいます。"
         }
       ],
-      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>water</kanji> day of the week is where the water flows from. Think of your entire week as a big hill, with Wednesday (hump day) being in the middle. This hump is a hill. What originates from hills? Water! That's why Water day is <vocabulary>Wednesday</vocabulary>.",
+      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>water</kanji> day of the week is where the water flows from. Think of Wednesday (hump day) as being like a big hill in the middle of your week. What originates in the hills and flows down from them? Water! That's why \"water day\" is <vocabulary>Wednesday</vocabulary>.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -1139,8 +1159,17 @@
           "Reading": "すいようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just watch out for the ひ becoming a び like it did in the word 曜日.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Wed",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Weds",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "水曜日",
       "CreatedAt": "2012-11-01T00:08:59.18387Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E6%B0%B4%E6%9B%9C%E6%97%A5",
@@ -1986,7 +2015,7 @@
     "Id": 4067,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4067",
-    "DataUpdatedAt": "2025-11-27T19:44:31.146854Z",
+    "DataUpdatedAt": "2026-04-06T17:47:01.699064Z",
     "Data": {
       "ComponentSubjectIds": [
         1039,
@@ -2122,7 +2151,12 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji, but in this case the second kanji can be read with either the on'yomi or kun'yomi. This uses a less common kun'yomi of 家, so here's a mnemonic to help you:\n\nIf you live in a <vocabulary>rented house</vocabulary>, someone has to give you the keys and let you in and stuff. You're only renting, after all. And when they let you in they'll say, \"Here's a <reading>shack</reading>, <reading>yah</reading> (しゃくや) house renter! Enjoy!\"\n\nBy the way, in the secondary reading しゃっか, the しゃく changes to しゃっ. This reading is mostly used in legal contexts though, so しゃくや is more common.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Rent A House",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "借家",
       "CreatedAt": "2012-11-01T00:10:06.835186Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E5%80%9F%E5%AE%B6",
@@ -11062,7 +11096,7 @@
     "Id": 4350,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4350",
-    "DataUpdatedAt": "2025-11-19T09:43:48.683391Z",
+    "DataUpdatedAt": "2026-04-10T05:38:55.064771Z",
     "Data": {
       "ComponentSubjectIds": [
         1026,
@@ -11549,7 +11583,7 @@
     "Id": 4361,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4361",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-06T17:14:10.151078Z",
     "Data": {
       "ComponentSubjectIds": [
         480,
@@ -11566,11 +11600,11 @@
           "Ja": "すみませんが、来週の月曜日と火曜日は予定があるんです。"
         },
         {
-          "En": "I got owned in baseball on Tuesday.",
+          "En": "We got our butts kicked in baseball on Tuesday.",
           "Ja": "火曜日は野球でコテンパにやられたよ。"
         }
       ],
-      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>fire</kanji> day of the week is the day after the worst day of the week (monday). You set fire to everything because you're so pissed off about yesterday, which makes today <vocabulary>Tuesday</vocabulary>.",
+      "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>fire</kanji> day of the week is the day after the worst day of the week (Monday). You set fire to everything because you're so pissed off about yesterday, which makes today <vocabulary>Tuesday</vocabulary>.",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -11631,8 +11665,16 @@
           "Reading": "かようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just watch out for the ひ becoming a び like it did in the word 曜日.",
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "Tue",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Tues",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "Thursday",
           "Type": "blacklist"
@@ -11659,7 +11701,7 @@
     "Id": 4362,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/4362",
-    "DataUpdatedAt": "2025-08-26T23:54:11.527252Z",
+    "DataUpdatedAt": "2026-04-06T18:10:11.021307Z",
     "Data": {
       "ComponentSubjectIds": [
         602,
@@ -11676,8 +11718,8 @@
           "Ja": "金曜日の午後までにはできていると思います。"
         },
         {
-          "En": "You haven't forgotten that we planned to go out for drinks Friday night, have you?",
-          "Ja": "金曜日に飲みに行く約束、忘れてないよね？"
+          "En": "We planned to go out for drinks Friday night, right?",
+          "Ja": "金曜日に飲みに行く約束だったよね？"
         }
       ],
       "MeaningMnemonic": "This is a day of the week. You know this because it has 曜日 in it. But what day of the week is it? The <kanji>gold</kanji> day of the week is the greatest day. It's the day that makes you feel like gold because it's the end of the weekdays and the beginning of the weekend! This day is <vocabulary>Friday</vocabulary>.",
@@ -11741,8 +11783,13 @@
           "Reading": "きんようび"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. It will help to know the word 曜日 as well.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well. Just watch out for the ひ becoming a び like it did in the word 曜日.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Fri",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "金曜日",
       "CreatedAt": "2012-11-15T19:42:15.738898Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E9%87%91%E6%9B%9C%E6%97%A5",
@@ -13764,7 +13811,7 @@
     "Id": 8849,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8849",
-    "DataUpdatedAt": "2025-06-11T05:34:11.750202Z",
+    "DataUpdatedAt": "2026-04-06T18:49:17.397909Z",
     "Data": {
       "ComponentSubjectIds": [
         8838
@@ -13779,8 +13826,8 @@
           "Ja": "なんか喉がイガイガする。"
         },
         {
-          "En": "I have a sore throat. Can you sing on my behalf?",
-          "Ja": "喉が痛いので、私の代わりに歌ってくれませんか？"
+          "En": "My throat is sore, so could you sing on my behalf?",
+          "Ja": "喉がヒリヒリするので、私の代わりに歌ってくれませんか？"
         }
       ],
       "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.",
@@ -13867,7 +13914,7 @@
     "Id": 8851,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8851",
-    "DataUpdatedAt": "2025-11-13T01:43:14.567637Z",
+    "DataUpdatedAt": "2026-04-06T17:38:54.907026Z",
     "Data": {
       "ComponentSubjectIds": [
         8838,

@@ -1854,5 +1854,59 @@
       "Slug": "疫",
       "SpacedRepetitionSystemId": 1
     }
+  },
+  {
+    "Id": 9450,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/9450",
+    "DataUpdatedAt": "2026-04-08T06:58:05.016918Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        9464
+      ],
+      "ComponentSubjectIds": [
+        97,
+        204
+      ],
+      "MeaningHint": "Picture a lone samurai — like a ronin or something — wandering the pottery markets of mainland Asia in search of beautiful pots and jars to take back to Japan. What a cultured guy.",
+      "ReadingHint": "Imagine this samurai walking around a pottery market asking vendors about pots and jars \"big enough for two bodies.\" Everyone's getting pretty sketched out.",
+      "ReadingMnemonic": "Specifically, this samurai wants to buy a <kanji>pot</kanji> big enough to hold <reading>two bo</reading>dies (つぼ). Why? Well, samurai have a lot of enemies. I wouldn't pry into it too much — you might end up as one of the two bodies inside the pot.",
+      "Readings": [
+        {
+          "Reading": "つぼ",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Vase",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "壺",
+      "CreatedAt": "2026-02-24T18:04:40.895168Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E5%A3%BA",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 50,
+      "MeaningMnemonic": "Why would a <radical>samurai</radical> go to mainland <radical>Asia</radical>? To buy a <kanji>pot</kanji>, of course! Asia's full of potters making all kinds of cool traditional pots and <kanji>jar</kanji>s. The samurai probably wants to take them back home and show them off to his pot-loving samurai buddies.",
+      "Meanings": [
+        {
+          "Meaning": "Pot",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Jar",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "壺",
+      "SpacedRepetitionSystemId": 1
+    }
   }
 ]

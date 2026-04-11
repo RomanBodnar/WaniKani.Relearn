@@ -10465,18 +10465,30 @@
     "Id": 7667,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/7667",
-    "DataUpdatedAt": "2025-10-09T23:19:34.263069Z",
+    "DataUpdatedAt": "2026-04-06T19:56:31.688597Z",
     "Data": {
       "ComponentSubjectIds": [
         2037
       ],
       "ContextSentences": [
         {
-          "En": "I can see light burning in that room.",
+          "En": "I saw a light come on in that room.",
           "Ja": "あの部屋に明かりが灯るのを見たんだ。"
+        },
+        {
+          "En": "As evening falls, lights begin to come on across the town.",
+          "Ja": "夕暮れとともに、町に灯りが灯っていく。"
+        },
+        {
+          "En": "In the midst of despair, a faint light of hope flickered to life.",
+          "Ja": "絶望の中に、かすかな希望の光が灯った。"
+        },
+        {
+          "En": "When the candle was lit, a soft orange glow gently spread.",
+          "Ja": "ろうそくの火が灯ると、やわらかなオレンジ色の光がぼんやりと広がった。"
         }
       ],
-      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means <kanji>lamp</kanji>, so the verb version is <vocabulary>to burn</vocabulary> or <vocabulary>to be lit</vocabulary>. Just like what you'd do with a lamp.",
+      "MeaningMnemonic": "This word consists of kanji with hiragana attached. Because the hiragana ends with an う sound, you know this word is a verb. The kanji itself means <kanji>lamp</kanji>, so the verb vocab version is <vocabulary>to be lit</vocabulary>.\n\n灯る describes a light appearing and beginning to glow, like ろうそくに火が灯る (a candle is lit) or 灯りが灯る (a light comes on). Compared to more matter-of-fact words like つく (turn on), 灯る feels softer and a bit more descriptive, almost like the light is quietly coming to life rather than simply switching on.",
       "PartsOfSpeech": [
         "intransitive verb",
         "godan verb"
@@ -10538,8 +10550,21 @@
           "Reading": "ともる"
         }
       ],
-      "ReadingMnemonic": "Since this word consists of a kanji with hiragana attached, you can bet that it will use the kun'yomi reading. You haven't learned this reading yet, so here's a mnemonic to help you:\n\nWho wanted the candle <vocabulary>to be lit</vocabulary>? <reading>Tom</reading> (とも) Cruise. He's afraid of the dark so he always wants all the lights and candles in the house to be burning at all times.",
-      "AuxiliaryMeanings": [],
+      "ReadingMnemonic": "This word's reading is a little tricky, because it looks like it would have the same reading as 灯り, but… it doesn't. Here's a mnemonic to help you remember this new reading:\n\nYou need all the candles in your house <vocabulary>to be lit</vocabulary> so you can have some <reading>友</reading>達 (とも) over and tell spooky stories by candlelight. Once all the candles are lit, you and your 友達 will sit in a circle and take turns telling ghostly tales till the sun comes up. It's going to be… lit.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "To Be Alight",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Burn",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Be Burning",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "灯る",
       "CreatedAt": "2015-03-24T16:29:32.541522Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E7%81%AF%E3%82%8B",
@@ -10548,22 +10573,12 @@
       "Level": 50,
       "Meanings": [
         {
-          "Meaning": "To Burn",
+          "Meaning": "To Be Lit",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
           "Meaning": "To Be Lighted",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "To Be Lit",
-          "Primary": false,
-          "AcceptedAnswer": true
-        },
-        {
-          "Meaning": "To Be Burning",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -10796,6 +10811,147 @@
         }
       ],
       "Slug": "煮える",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9464,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9464",
+    "DataUpdatedAt": "2026-04-08T06:58:05.011031Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        9450
+      ],
+      "ContextSentences": [
+        {
+          "En": "That jar looks very old.",
+          "Ja": "とても古そうな壺ですね。"
+        },
+        {
+          "En": "The pot is fragile, so please don't touch it.",
+          "Ja": "割れやすいから、壺には触らないでください。"
+        },
+        {
+          "En": "When I gently opened the lid of the jar, I found that it was empty inside.",
+          "Ja": "壺のふたをそっと開けてみたら、中は空っぽだった。"
+        }
+      ],
+      "MeaningMnemonic": "The kanji and the word are exactly the same, so this means <vocabulary>pot</vocabulary> or <vocabulary>jar</vocabulary>.\n\n壺 usually refers to a pot — as in a ceramic vessel — with a rounded body and narrow opening. It can also be used figuratively, like 壺にはまる (something perfectly clicks with your sense of humor and you can't stop laughing) and ド壺にはまる (getting completely stuck in a bad situation with no easy way out). In these figurative uses, 壺 is often written in kana.",
+      "PartsOfSpeech": [
+        "noun"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/46x0dphrprrmdomlnonmeuvr9zai",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60149,
+            "Pronunciation": "つぼ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/gh9333jghpcrawchz4cdmtsol6e8",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60149,
+            "Pronunciation": "つぼ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5judd76ishob5p94c779ek8daite",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60146,
+            "Pronunciation": "つぼ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/b71asnsgzmlxozq258nepth1le4w",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60146,
+            "Pronunciation": "つぼ",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "つぼ"
+        }
+      ],
+      "ReadingMnemonic": "This word is made up of a single kanji, so it uses the kun'yomi reading. Thankfully, that's the reading you already learned!",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Vase",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pottery Pot",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pottery Jar",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Pottery Vase",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Ceramic Pot",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Ceramic Jar",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Ceramic Vessel",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Ceramic Vase",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "壺",
+      "CreatedAt": "2026-02-25T18:07:22.701616Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E5%A3%BA",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 50,
+      "Meanings": [
+        {
+          "Meaning": "Pot",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Jar",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "壺",
       "SpacedRepetitionSystemId": 1
     }
   }

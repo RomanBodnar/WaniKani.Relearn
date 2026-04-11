@@ -3719,7 +3719,7 @@
     "Id": 5019,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5019",
-    "DataUpdatedAt": "2025-11-11T23:18:22.908078Z",
+    "DataUpdatedAt": "2026-04-06T18:38:47.781967Z",
     "Data": {
       "ComponentSubjectIds": [
         1330,
@@ -3731,15 +3731,15 @@
           "Ja": "私、怒鳴る人、ホントに嫌なんだよね。"
         },
         {
-          "En": "My boss yells at me so much that I got a hole in my stomach.",
-          "Ja": "上司に怒鳴られてばっかりで、胃に穴が空いちゃったよ。"
+          "En": "My boss yells at me so much that I'm starting to hate going to work.",
+          "Ja": "上司に怒鳴られてばっかりで、会社に行くのが嫌になってきたよ。"
         },
         {
-          "En": "Mr. Fujisaki has very mild personality, so I have never seen him shout at somebody.\t",
-          "Ja": "藤崎さんは温厚な性格で、怒鳴っているところを見たことがありません。"
+          "En": "Mr. Fujisaki is a very easygoing person, and I've never seen him shout at anyone.",
+          "Ja": "藤崎さんはとてもおだやかな人で、怒鳴っているところを見たことがありません。"
         },
         {
-          "En": "\"Kinnikuma yells a lot.\" \"Yeah, but don’t worry. His bark is worse than his bite.\"",
+          "En": "\"Kinnikuma yells a lot.\" \"Yeah, but don't worry. His bark is worse than his bite.\"",
           "Ja": "「キンニクマってよく怒鳴るよね。」「そうだね。でも、心配しないで。彼は口は悪いけど根は悪い人ではないから。」"
         }
       ],
@@ -7913,7 +7913,7 @@
     "Id": 5055,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5055",
-    "DataUpdatedAt": "2025-06-11T05:33:06.790215Z",
+    "DataUpdatedAt": "2026-04-06T18:38:20.528806Z",
     "Data": {
       "ComponentSubjectIds": [
         563,
@@ -7922,8 +7922,8 @@
       ],
       "ContextSentences": [
         {
-          "En": "I'm suffering from insomnia and stomach cramps.",
-          "Ja": "不眠症と胃けいれんに悩まされています。"
+          "En": "I'm suffering from insomnia.",
+          "Ja": "不眠症に悩まされています。"
         },
         {
           "En": "Please sell me medicine that is effective for insomnia.",
@@ -8027,7 +8027,7 @@
     "Id": 5056,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5056",
-    "DataUpdatedAt": "2025-06-11T05:33:06.850818Z",
+    "DataUpdatedAt": "2026-04-06T18:48:39.716764Z",
     "Data": {
       "ComponentSubjectIds": [
         1318
@@ -8172,7 +8172,7 @@
     "Id": 5057,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5057",
-    "DataUpdatedAt": "2025-11-13T01:43:14.567637Z",
+    "DataUpdatedAt": "2026-04-06T18:48:39.716764Z",
     "Data": {
       "ComponentSubjectIds": [
         771,
@@ -8180,8 +8180,8 @@
       ],
       "ContextSentences": [
         {
-          "En": "Headache, stomachache, lower back pain... I am full of pains in my body.",
-          "Ja": "頭痛に胃痛に腰痛に...身体中痛いところだらけです。"
+          "En": "Since yesterday, my headache has been so bad that I haven't been able to eat anything.",
+          "Ja": "昨日から頭痛がひどくて、何も食べられていないんです。"
         },
         {
           "En": "No, the reason for your headache Ms. Yamane, is simply lack of sleep.",
@@ -8192,8 +8192,8 @@
           "Ja": "チョコレートを食べたりココアを飲んだりすると、いつも頭痛におそわれます。"
         },
         {
-          "En": "I discussed my frequent headaches with my mother.",
-          "Ja": "頭痛が頻発することを母親に相談しました。"
+          "En": "My headache is taking a long time to go away, so I talked to my mom about it.",
+          "Ja": "頭痛がなかなか治らないので、母親に相談しました。"
         }
       ],
       "MeaningMnemonic": "<kanji>Head</kanji> <kanji>pain</kanji> is when you have a <vocabulary>headache</vocabulary>.",
@@ -8261,6 +8261,18 @@
       "AuxiliaryMeanings": [
         {
           "Meaning": "Pain In The Head",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Head Pain",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Head Ache",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Head Hurts",
           "Type": "whitelist"
         }
       ],
@@ -9639,7 +9651,7 @@
     "Id": 5071,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5071",
-    "DataUpdatedAt": "2025-06-11T05:33:07.342912Z",
+    "DataUpdatedAt": "2026-04-05T19:31:59.040578Z",
     "Data": {
       "ComponentSubjectIds": [
         670,
@@ -9882,7 +9894,7 @@
     "Id": 5073,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5073",
-    "DataUpdatedAt": "2025-08-20T23:21:32.403707Z",
+    "DataUpdatedAt": "2026-04-06T18:48:39.716764Z",
     "Data": {
       "ComponentSubjectIds": [
         1316,
@@ -9890,7 +9902,7 @@
       ],
       "ContextSentences": [
         {
-          "En": "My stomachache got worse and I was hospitalized, so I spent a month at the hospital.",
+          "En": "My stomachache got really bad and I was hospitalized for a month.",
           "Ja": "胃痛がひどくなって入院し、病院で一ヶ月過ごしました。"
         },
         {
@@ -9970,10 +9982,6 @@
       "ReadingMnemonic": "This is a jukugo word, which usually means on'yomi readings from the kanji. If you know the readings of your kanji you'll know how to read this as well.",
       "AuxiliaryMeanings": [
         {
-          "Meaning": "Stomach Pain",
-          "Type": "whitelist"
-        },
-        {
           "Meaning": "Stomach Pains",
           "Type": "whitelist"
         },
@@ -9993,6 +10001,11 @@
           "Meaning": "Stomachache",
           "Primary": true,
           "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Stomach Pain",
+          "Primary": false,
+          "AcceptedAnswer": true
         }
       ],
       "Slug": "胃痛",
@@ -10003,14 +10016,14 @@
     "Id": 5074,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5074",
-    "DataUpdatedAt": "2026-03-18T15:55:50.355892Z",
+    "DataUpdatedAt": "2026-04-06T19:29:08.554779Z",
     "Data": {
       "ComponentSubjectIds": [
         1317
       ],
       "ContextSentences": [
         {
-          "En": "You are getting a little fat around the belly, aren’t you?",
+          "En": "You're starting to get a bit of a gut, aren't you?",
           "Ja": "お前ちょっと腹が出てきたんじゃねぇか？"
         },
         {
@@ -10018,11 +10031,11 @@
           "Ja": "島崎さんは腹をかかえて笑っていました。"
         },
         {
-          "En": "These days, I have been bothered by my beer belly, so I finally decided to go on a diet.",
+          "En": "I've been feeling self-conscious about my beer belly lately, so I finally decided to try to slim down.",
           "Ja": "最近ビール腹が気になって、とうとうダイエットをすることにしました。"
         },
         {
-          "En": "I've been experiencing stomach pain for quite some time now.",
+          "En": "My stomach's been hurting nonstop lately.",
           "Ja": "ここ最近、ずっと腹が痛いんだ。"
         }
       ],
@@ -10088,7 +10101,12 @@
         }
       ],
       "ReadingMnemonic": "If anyone tries to touch your <kanji>belly</kanji>, that's <reading>hara</reading>ssment (はら). Unless you're cool with it, obviously. But if you're not, make sure to yell \"harassment!\" when they touch your belly. You should also shout what kind of harassment it is: 腹ハラ (腹 harassment).\n\nNote: This word will often get rendaku'd when it's combined with other vocab, like in ビールばら (beer belly) or 別ばら (separate stomach for dessert).",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Tummy",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "腹",
       "CreatedAt": "2013-01-24T04:33:04.122908Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E8%85%B9",
@@ -10120,7 +10138,7 @@
     "Id": 5077,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5077",
-    "DataUpdatedAt": "2026-03-18T15:55:50.355892Z",
+    "DataUpdatedAt": "2026-04-06T19:29:08.554779Z",
     "Data": {
       "ComponentSubjectIds": [
         502,
@@ -10128,11 +10146,11 @@
       ],
       "ContextSentences": [
         {
-          "En": "It hurts just to think about seppuku, doesn't it?",
-          "Ja": "切腹とか考えるだけで痛いよね。"
+          "En": "Just the thought of seppuku is horrible, isn't it?",
+          "Ja": "切腹とか考えるだけで嫌だよね。"
         },
         {
-          "En": "How did Japanese samurai warriors come to commit seppuku?",
+          "En": "Why did Japanese samurai warriors start committing seppuku?",
           "Ja": "どうして日本の武士は切腹をするようになったのでしょうか？"
         },
         {
@@ -10140,8 +10158,8 @@
           "Ja": "昨日、サムライになって切腹する夢を見た。"
         },
         {
-          "En": "The old samurai insisted on committing ritual suicide.",
-          "Ja": "その年老いた武士は、切腹をすることに固執した。"
+          "En": "The elderly samurai said he would commit ritual suicide and refused to back down.",
+          "Ja": "その年老いた武士は、切腹をすると言って、一歩も引かなかった。"
         }
       ],
       "MeaningMnemonic": "When you <kanji>cut</kanji> your <kanji>abdomen</kanji> you are committing <vocabulary>seppuku</vocabulary>. It will help if you already know the word \"seppuku\" from English, since it's also the reading here.\n\n切腹 is a form of <vocabulary>ritual suicide</vocabulary> by self-inflicted disembowelment, often performed by samurai to restore honor.",
@@ -10206,7 +10224,7 @@
           "Reading": "せっぷく"
         }
       ],
-      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. But it's got shortening and rendaku going on, so you have to remember those if you want to get it right. Or just know the word seppuku already since it's pretty popular. That works too.",
+      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. Just watch out for the せつ getting shortened to せっ and the ふく changing to ぷく. Or just know the word seppuku already since it's pretty well-known. That works too.",
       "AuxiliaryMeanings": [
         {
           "Meaning": "Harakiri",
@@ -10235,6 +10253,18 @@
         {
           "Meaning": "Committing Ritual Suicide",
           "Type": "whitelist"
+        },
+        {
+          "Meaning": "Suicide By Disemboweling",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Suicide By Stomach Cutting",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Ritual Suicide By Disembowelment",
+          "Type": "whitelist"
         }
       ],
       "Characters": "切腹",
@@ -10251,6 +10281,11 @@
         },
         {
           "Meaning": "Ritual Suicide",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Suicide By Disembowelment",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -12251,7 +12286,7 @@
     "Id": 5094,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5094",
-    "DataUpdatedAt": "2026-01-27T00:53:32.555199Z",
+    "DataUpdatedAt": "2026-04-06T18:39:10.881814Z",
     "Data": {
       "ComponentSubjectIds": [
         547,
@@ -12263,11 +12298,11 @@
           "Ja": "一緒に学校を早退しない？"
         },
         {
-          "En": "Because I had a severe stomachache, I left work early and went to see a doctor.",
-          "Ja": "激しい胃痛があったので、会社を早退して医者に行きました。"
+          "En": "Because I had a severe headache, I left work early and went to see a doctor.",
+          "Ja": "激しい頭痛があったので、会社を早退して医者に行きました。"
         },
         {
-          "En": "I submitted an early leave form at work, but it doesn't seem to be approved yet.",
+          "En": "I submitted a request to leave work early, but it doesn't seem to have been approved yet.",
           "Ja": "会社に早退届を出したのですが、まだ受理されていないようです。"
         },
         {
@@ -13247,7 +13282,7 @@
     "Id": 5103,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5103",
-    "DataUpdatedAt": "2025-08-27T00:02:29.618118Z",
+    "DataUpdatedAt": "2026-04-06T18:39:30.849786Z",
     "Data": {
       "ComponentSubjectIds": [
         1277,
@@ -13255,8 +13290,8 @@
       ],
       "ContextSentences": [
         {
-          "En": "I had some stomach trouble and that forced me to retire.",
-          "Ja": "胃病のせいで、隠居することになりました。"
+          "En": "My illness ended up forcing me into retirement.",
+          "Ja": "病気のせいで、隠居することになりました。"
         },
         {
           "En": "My father is retired in a farming village.",
@@ -14666,7 +14701,7 @@
     "Id": 8718,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8718",
-    "DataUpdatedAt": "2025-06-11T05:34:09.890208Z",
+    "DataUpdatedAt": "2026-04-06T18:42:06.30193Z",
     "Data": {
       "ComponentSubjectIds": [
         1316
@@ -14681,11 +14716,11 @@
           "Ja": "人生で初めて胃カメラを飲んだ。"
         },
         {
-          "En": "What was the name of the character with the trait of having a weak stomach?",
+          "En": "What was the name of the character with the weak stomach?",
           "Ja": "あの胃が弱い設定のキャラクター、何て名前だっけ？"
         },
         {
-          "En": "I ate too much cake and bacon, and they've been heavy on my stomach.",
+          "En": "I ate too much cake and bacon and I'm having indigestion.",
           "Ja": "ケーキとベーコンの食べ過ぎで胃がもたれています。"
         }
       ],
@@ -14751,7 +14786,12 @@
         }
       ],
       "ReadingMnemonic": "This has the same reading as the kanji you learned, meaning you know the reading!",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Gastric",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "胃",
       "CreatedAt": "2015-10-26T21:46:39.620281Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E8%83%83",
@@ -15722,7 +15762,7 @@
     "Id": 9373,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/9373",
-    "DataUpdatedAt": "2025-11-12T08:58:36.334318Z",
+    "DataUpdatedAt": "2026-04-04T20:17:45.612577Z",
     "Data": {
       "ComponentSubjectIds": [
         1431

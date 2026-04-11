@@ -7639,7 +7639,7 @@
     "Id": 5908,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/5908",
-    "DataUpdatedAt": "2025-06-11T05:33:26.395707Z",
+    "DataUpdatedAt": "2026-04-06T17:35:24.308173Z",
     "Data": {
       "ComponentSubjectIds": [
         580,
@@ -7651,11 +7651,19 @@
           "Ja": "それは裏切り行為ですよ。"
         },
         {
-          "En": "I repeated those brutal acts because I was able to feel a sense of accomplishment each time.",
-          "Ja": "私がそのような残虐行為を繰り返したのは、その度に達成感を得られることができたからです。"
+          "En": "Headbutting is dangerous behavior.",
+          "Ja": "頭突きは危険な行為ですよ。"
+        },
+        {
+          "En": "I can't understand his actions.",
+          "Ja": "私には彼の行為は理解できません。"
+        },
+        {
+          "En": "Illegal activity will be severely punished.",
+          "Ja": "違法行為は厳しく罰せられます。"
         }
       ],
-      "MeaningMnemonic": "You <kanji>go</kanji> for the <kanji>sake</kanji> of others. You are constantly doing <vocabulary>deed</vocabulary>s like this for others.",
+      "MeaningMnemonic": "You <kanji>go</kanji> somewhere for the <kanji>sake</kanji> of committing some <vocabulary>deed</vocabulary>. Is the <vocabulary>act</vocabulary> you plan to carry out there benevolent? Or will your <vocabulary>behavior</vocabulary> perhaps be… malicious?\n\n行為 is a somewhat formal word that objectively refers to something a person does, with the focus more on the action itself than the intention behind it. It's commonly used in writing, rules, or discussions about right and wrong, like 犯罪行為 (criminal act) or 迷惑行為 (nuisance behavior).",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -7717,7 +7725,16 @@
         }
       ],
       "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Action",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Conduct",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "行為",
       "CreatedAt": "2013-04-05T19:24:19.157562Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E8%A1%8C%E7%82%BA",
@@ -7728,6 +7745,16 @@
         {
           "Meaning": "Deed",
           "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Act",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Behavior",
+          "Primary": false,
           "AcceptedAnswer": true
         }
       ],

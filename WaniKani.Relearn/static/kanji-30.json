@@ -252,7 +252,7 @@
     "Id": 1417,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/1417",
-    "DataUpdatedAt": "2025-10-01T06:09:56.753003Z",
+    "DataUpdatedAt": "2026-04-07T18:47:45.528196Z",
     "Data": {
       "AmalgationSubjectIds": [
         5376,
@@ -369,7 +369,7 @@
     "Id": 1419,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/1419",
-    "DataUpdatedAt": "2025-10-01T06:09:56.769421Z",
+    "DataUpdatedAt": "2026-04-07T20:20:56.922499Z",
     "Data": {
       "AmalgationSubjectIds": [
         5337,
@@ -1002,7 +1002,7 @@
     "Id": 1429,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/1429",
-    "DataUpdatedAt": "2026-01-29T00:33:25.633876Z",
+    "DataUpdatedAt": "2026-04-07T20:20:40.00989Z",
     "Data": {
       "AmalgationSubjectIds": [
         5315
@@ -1013,9 +1013,9 @@
         163,
         320
       ],
-      "MeaningHint": "When you put on an old piece of clothing, a shirt maybe, or some pants, feel the nostalgia that was embedded in it and left there by your soul.",
-      "ReadingHint": "Feel these nostalgic knots inside you. Now tie knots in the clothes that make you feel nostalgic so you don't wear them again.",
-      "ReadingMnemonic": "This <kanji>nostalgia</kanji> ties <reading>knots</reading> (なつ) in your stomach and your chest. Even if the memories and feelings weren't particularly bad, there's something about the wistful feeling of nostalgia that knots up your insides.",
+      "MeaningHint": "Try to imagine the person who gave you this nostalgic cross. Was it a grandparent? An old friend or mentor, perhaps? Reach into your bosom pocket and think back on those good old days.",
+      "ReadingHint": "Put on your rosy-tinted glasses and bask in the nostalgic memories of 夏 days long past.",
+      "ReadingMnemonic": "The <kanji>nostalgia</kanji> hits you the hardest in <reading>夏</reading> (なつ). It was a beautiful 夏 day many years ago when you were given that cross that you keep in your <kanji>bosom pocket</kanji>.",
       "Readings": [
         {
           "Reading": "なつ",
@@ -1041,18 +1041,80 @@
         1660,
         1389
       ],
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Bosom",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Breast Pocket",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Chest Pocket",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Inner Pocket",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Inside Pocket",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Feelings",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Feeling",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Yearn",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Miss Someone",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Become Attached To",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Become Attached",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Become Close",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Become Affectionate",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Become Intimate",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "懐",
       "CreatedAt": "2013-01-24T21:26:39.242738Z",
       "DocumentUrl": "https://www.wanikani.com/kanji/%E6%87%90",
       "HiddenAt": null,
       "LessonPosition": 37,
       "Level": 30,
-      "MeaningMnemonic": "Your <radical>soul</radical> will <radical>cross</radical> through your body and into the <radical>net</radical> of your <radical>clothes</radical> so that you'll be hit with <kanji>nostalgia</kanji> when you wear them again. Nostalgia for all the things that happened every single time you wore those clothes.",
+      "MeaningMnemonic": "A piece of your <radical>soul</radical> lives in a <radical>cross</radical> that you keep in a <radical>net</radical>-like pocket inside your <radical>clothing</radical> because of the nostalgia it brings you. Someone special gave you that cross, and you feel great <kanji>nostalgia</kanji> when you look at it. That's why you keep it in your <kanji>bosom pocket</kanji>, close to your heart.",
       "Meanings": [
         {
           "Meaning": "Nostalgia",
           "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Bosom Pocket",
+          "Primary": false,
           "AcceptedAnswer": true
         }
       ],

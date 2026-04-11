@@ -13299,5 +13299,180 @@
       "Slug": "金儲け",
       "SpacedRepetitionSystemId": 1
     }
+  },
+  {
+    "Id": 9463,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/9463",
+    "DataUpdatedAt": "2026-04-08T06:46:12.216013Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        9448
+      ],
+      "ContextSentences": [
+        {
+          "En": "Be careful of accounts impersonating celebrities.",
+          "Ja": "有名人を騙るアカウントに注意してください。"
+        },
+        {
+          "En": "She pretended to be a reporter and gathered information. ",
+          "Ja": "彼女は記者を騙って情報を集めた。"
+        },
+        {
+          "En": "Someone falsely impersonating the individual surfaced on social media.",
+          "Ja": "本人を騙る人物がSNSに現れた。"
+        },
+        {
+          "En": "I received a call from someone posing as a city employee.",
+          "Ja": "市の職員を騙る電話がかかってきた。"
+        }
+      ],
+      "MeaningMnemonic": "Because the hiragana ends with an う sound, you know this word is a verb. Huh — another verb for <kanji>trickery</kanji>? Yup, but this one is for a specific kind of trickery: it means <vocabulary>to falsely impersonate</vocabulary>.\n\n騙る refers to pretending to be something you're not, especially by claiming a false identity, status, or story. It's narrower than 騙す, because it specifically involves misrepresentation — like when a scammer tries <vocabulary>to pose as</vocabulary> someone they're not.",
+      "PartsOfSpeech": [
+        "transitive verb",
+        "godan verb"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/c6kyx7wghy6uu3czs8f1f11q2kev",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60143,
+            "Pronunciation": "かたる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/u2t7z2h8ehw9t1kc3tc5v3vkh34r",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 60143,
+            "Pronunciation": "かたる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2xjsevgz1l9h2on18o91prdkbqzj",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60140,
+            "Pronunciation": "かたる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vp950czlr929o3fvyptwoej2i1ov",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 60140,
+            "Pronunciation": "かたる",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "かたる"
+        }
+      ],
+      "ReadingMnemonic": "This word uses a different kun'yomi reading than the one you learned with the kanji and with 騙す. Here's a mnemonic to help you remember it:\n\nThe punishment for trying <vocabulary>to falsely impersonate</vocabulary> someone is to get launched out of a <reading>cata</reading>pult (かた). If you want <vocabulary>to pose as</vocabulary> someone else and scam innocent people, you'd better prepare to get loaded into a catapult and jettisoned into oblivion.\n\nAlternatively, you can think about how this word is like the evil version of 語る (to talk). You're talking, but this time you're using your words to fraudulently claim to be someone you're not.",
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "To Pass Oneself Off As",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Pass Yourself Off As",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Fraudulently Impersonate",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Pretend To Be",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Assume The Identity",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Assume The Identity Of",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Assume Someone's Identity",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Claim To Be",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Falsely Claim To Be",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Misrepresent Oneself",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Misrepresent Yourself",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Masquerade As",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Swindle",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "To Cheat",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "騙る",
+      "CreatedAt": "2026-02-25T17:52:10.43796Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E9%A8%99%E3%82%8B",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 34,
+      "Meanings": [
+        {
+          "Meaning": "To Falsely Impersonate",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "To Pose As",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "To Impersonate",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "騙る",
+      "SpacedRepetitionSystemId": 1
+    }
   }
 ]

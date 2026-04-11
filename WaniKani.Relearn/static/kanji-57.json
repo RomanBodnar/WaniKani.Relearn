@@ -1,5 +1,65 @@
 [
   {
+    "Id": 2284,
+    "Object": "kanji",
+    "Url": "https://api.wanikani.com/v2/subjects/2284",
+    "DataUpdatedAt": "2026-04-08T06:30:43.176155Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        8252,
+        8471
+      ],
+      "ComponentSubjectIds": [
+        7,
+        9,
+        43
+      ],
+      "MeaningHint": "Imagine how much height and stature you'd gain if you spent time lifting weights on the moon!",
+      "ReadingHint": "Imagine how sexy the height of a ten foot tall person would be right after they'd gotten back from weight training on the moon.",
+      "ReadingMnemonic": "Getting a taller <kanji>stature</kanji> will also make you seem super <reading>sexy</reading> (せき), both on the moon and back home on earth. If you stay on the moon long enough, you'll be the tallest person in the galaxy — and who wouldn't find that sexy?! Huh?",
+      "Readings": [
+        {
+          "Reading": "せき",
+          "Primary": true,
+          "AcceptedAnswer": true,
+          "Type": "onyomi"
+        }
+      ],
+      "VisuallySimilarSubjectIds": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Spine",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Backbone",
+          "Type": "whitelist"
+        }
+      ],
+      "Characters": "脊",
+      "CreatedAt": "2015-07-07T23:25:00.468698Z",
+      "DocumentUrl": "https://www.wanikani.com/kanji/%E8%84%8A",
+      "HiddenAt": null,
+      "LessonPosition": 43,
+      "Level": 57,
+      "MeaningMnemonic": "If you put <radical>two</radical> <radical>two</radical> pound weights on a <radical>person</radical> on the <radical>moon</radical> they'll increase in <kanji>stature</kanji> when they come back down. Everything is lighter on the moon so the person won't even feel the weights. Then when they come back to earth they'll have grown a whole two inches in <kanji>height</kanji>!",
+      "Meanings": [
+        {
+          "Meaning": "Stature",
+          "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Height",
+          "Primary": false,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "脊",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
     "Id": 2330,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2330",
@@ -118,7 +178,7 @@
     "Id": 2332,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2332",
-    "DataUpdatedAt": "2025-10-01T06:10:03.596347Z",
+    "DataUpdatedAt": "2026-04-06T18:18:18.202602Z",
     "Data": {
       "AmalgationSubjectIds": [
         8371,
@@ -381,7 +441,7 @@
     "Id": 2337,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/2337",
-    "DataUpdatedAt": "2026-02-05T22:23:18.58405Z",
+    "DataUpdatedAt": "2026-04-09T01:24:18.997304Z",
     "Data": {
       "AmalgationSubjectIds": [
         8352
@@ -390,25 +450,63 @@
         17,
         279
       ],
-      "MeaningHint": "Picture how big a two mat area is. Lie down and feel the peace this much space brings to you.",
-      "ReadingHint": "Try to picture a two mat area with two bodies lying in it. Whether they're alive or dead is up to you.",
-      "ReadingMnemonic": "A <kanji>two mat area</kanji> also happens to be big enough to hold <reading>two bo</reading>dies (つぼ). That's enough space to bring peace to two living, or dead, bodies!",
+      "MeaningHint": "Try to imagine roughly how big a 3.3-square-meter area is. Now imagine yourself lying down in that space. You feel pretty peaceful, right?",
+      "ReadingHint": "Even better, you and your friend can squeeze your two bodies into the 壺 after setting it in the 3.3-square-meter area. Now you're really using the space efficiently!",
+      "ReadingMnemonic": "An area of <kanji>3.3 square meters</kanji> also happens to be just the right size for <reading>two bo</reading>dies (つぼ)! Not in, like, a creepy way, mind you — two bodies in the sense of you and a friend snuggling up and finding peace in this <kanji>two-mat area</kanji> together. \n\nAlternatively, you can remember this word with 壺, which has the same reading. Just imagine putting a big, fancy 壺 in your 3.3 square meter area. It's the perfect way to utilize the space.",
       "Readings": [
         {
           "Reading": "つぼ",
           "Primary": true,
           "AcceptedAnswer": true,
           "Type": "kunyomi"
-        },
-        {
-          "Reading": "へい",
-          "Primary": false,
-          "AcceptedAnswer": false,
-          "Type": "onyomi"
         }
       ],
       "VisuallySimilarSubjectIds": [],
       "AuxiliaryMeanings": [
+        {
+          "Meaning": "3.3 Meters Squared",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "3.3 m2",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "3.3 m^2",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "3.3 m²",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "2-Mat Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Two Tatami Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "2 Tatami Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Two Tatami Mat Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "2 Tatami Mat Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Three Point Three Square Meters",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Three Point Three Meters Squared",
+          "Type": "whitelist"
+        },
         {
           "Meaning": "One Mat Area",
           "Type": "blacklist"
@@ -420,11 +518,16 @@
       "HiddenAt": null,
       "LessonPosition": 12,
       "Level": 57,
-      "MeaningMnemonic": "The amount of <radical>dirt</radical> you need to get some <radical>peace</radical> is a <kanji>two mat area</kanji>. Two tatami mats, that is. Also called a <kanji>tsubo</kanji>, this is a pretty common measurement in Japan, so you should get really familiar with the amount of space that two tatami mats take up together.",
+      "MeaningMnemonic": "The amount of <radical>dirt</radical> you need to get some <radical>peace</radical> is <kanji>3.3 square meters</kanji>. This is roughly the area of two tatami mats, so some might call it a <kanji>two-mat area</kanji>. Not only is it the perfect amount of space for finding peace, but it's also a pretty common measurement in Japan (called a <kanji>tsubo</kanji>), so it's worth getting familiar with.",
       "Meanings": [
         {
-          "Meaning": "Two Mat Area",
+          "Meaning": "3.3 Square Meters",
           "Primary": true,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Two-Mat Area",
+          "Primary": false,
           "AcceptedAnswer": true
         },
         {

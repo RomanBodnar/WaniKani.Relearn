@@ -247,6 +247,115 @@
     }
   },
   {
+    "Id": 8252,
+    "Object": "vocabulary",
+    "Url": "https://api.wanikani.com/v2/subjects/8252",
+    "DataUpdatedAt": "2026-04-08T06:30:43.680591Z",
+    "Data": {
+      "ComponentSubjectIds": [
+        2284,
+        2271
+      ],
+      "ContextSentences": [
+        {
+          "En": "My spinal cord was damaged in the accident.",
+          "Ja": "事故で脊髄に傷がついてしまったのです。"
+        },
+        {
+          "En": "The spinal cord is an important part that connects the brain and the body.",
+          "Ja": "脊髄は脳と体をつなぐ重要な部分です。"
+        },
+        {
+          "En": "If the spinal cord is damaged, the body may become unable to move.",
+          "Ja": "脊髄を損傷すると、体が動かなくなることがあります。"
+        },
+        {
+          "En": "A spinal reflex is a response in which your body moves before you can think.",
+          "Ja": "脊髄反射とは、考える前に体が動く反応のことです。"
+        }
+      ],
+      "MeaningMnemonic": "A person of great <kanji>stature</kanji> probably has a lot of <kanji>marrow</kanji> around their <vocabulary>spinal cord</vocabulary>. (Tall stature = longer spinal cord, after all.)\n\nBe careful with this one — it actually has nothing to do with the bone marrow in your spine, and everything to do with your spinal cord. You know, that nerve superhighway protected by your spine's vertebrae? That thing. They just called it marrow in the old days because it was something soft they found inside the spine. ",
+      "PartsOfSpeech": [
+        "noun",
+        "の adjective"
+      ],
+      "PronunciationAudios": [
+        {
+          "Url": "https://files.wanikani.com/dau9z19sftlbc4gmq16sfx0m03uh",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 10141,
+            "Pronunciation": "せきずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/t3azpwixk40ky50rcag24p3fmj5q",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "male",
+            "SourceId": 10141,
+            "Pronunciation": "せきずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0gyl6hn7frenehrkdv5epo9mzrkf",
+          "ContentType": "audio/webm",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 27017,
+            "Pronunciation": "せきずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3d7o6uyrkox4ojkejg9l07uve57e",
+          "ContentType": "audio/mpeg",
+          "Metadata": {
+            "Gender": "female",
+            "SourceId": 27017,
+            "Pronunciation": "せきずい",
+            "VoiceActorId": null,
+            "VoiceActorName": null,
+            "VoiceDescription": null
+          }
+        }
+      ],
+      "Readings": [
+        {
+          "AcceptedAnswer": true,
+          "Primary": true,
+          "Reading": "せきずい"
+        }
+      ],
+      "ReadingMnemonic": "This is a jukugo word that uses the on'yomi readings of the kanji. You should be able to read this on your own.",
+      "AuxiliaryMeanings": [],
+      "Characters": "脊髄",
+      "CreatedAt": "2015-07-08T19:13:57.155321Z",
+      "DocumentUrl": "https://www.wanikani.com/vocabulary/%E8%84%8A%E9%AB%84",
+      "HiddenAt": null,
+      "LessonPosition": 121,
+      "Level": 57,
+      "Meanings": [
+        {
+          "Meaning": "Spinal Cord",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "脊髄",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
     "Id": 8341,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8341",
@@ -1452,7 +1561,7 @@
     "Id": 8352,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8352",
-    "DataUpdatedAt": "2026-02-05T22:23:18.679048Z",
+    "DataUpdatedAt": "2026-04-09T01:24:18.855236Z",
     "Data": {
       "ComponentSubjectIds": [
         2337
@@ -1525,7 +1634,52 @@
         }
       ],
       "ReadingMnemonic": "This has the same reading as the kanji you learned, meaning you know the reading!",
-      "AuxiliaryMeanings": [],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "3.3 Meters Squared",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "3.3 m2",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "3.3 m^2",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "3.3 m²",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "2-Mat Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Two Tatami Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "2 Tatami Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Two Tatami Mat Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "2 Tatami Mat Area",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Three Point Three Square Meters",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Three Point Three Meters Squared",
+          "Type": "whitelist"
+        }
+      ],
       "Characters": "坪",
       "CreatedAt": "2015-07-13T18:09:00.764761Z",
       "DocumentUrl": "https://www.wanikani.com/vocabulary/%E5%9D%AA",
@@ -1534,12 +1688,17 @@
       "Level": 57,
       "Meanings": [
         {
-          "Meaning": "Tsubo",
+          "Meaning": "3.3 Square Meters",
           "Primary": true,
           "AcceptedAnswer": true
         },
         {
-          "Meaning": "Two Mat Area",
+          "Meaning": "Two-Mat Area",
+          "Primary": false,
+          "AcceptedAnswer": true
+        },
+        {
+          "Meaning": "Tsubo",
           "Primary": false,
           "AcceptedAnswer": true
         }
@@ -3754,7 +3913,7 @@
     "Id": 8373,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8373",
-    "DataUpdatedAt": "2025-06-11T05:34:04.041032Z",
+    "DataUpdatedAt": "2026-04-06T18:18:18.260627Z",
     "Data": {
       "ComponentSubjectIds": [
         2332,
@@ -3764,6 +3923,10 @@
         {
           "En": "I could always hear the melody of a beautiful piano from that house.",
           "Ja": "あの家からは、いつも美しいピアノの旋律が聞こえていました。"
+        },
+        {
+          "En": "The majestic melody slowly unfurled, and for a moment, everything seemed to stand still.",
+          "Ja": "荘厳な旋律がゆっくりと広がっていき、すべての動きが一瞬止まったかのように感じられた。"
         }
       ],
       "MeaningMnemonic": "If you follow the <kanji>law</kanji> of <kanji>rotation</kanji> while you play music you'll end up with a lovely <vocabulary>melody</vocabulary>. If you don't, you'll miss all the cues on beat that rotation gives you and it will sound like crap.",
@@ -6423,7 +6586,7 @@
     "Id": 8399,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/8399",
-    "DataUpdatedAt": "2025-06-11T05:34:04.399736Z",
+    "DataUpdatedAt": "2026-04-06T18:42:06.30193Z",
     "Data": {
       "ComponentSubjectIds": [
         1316,

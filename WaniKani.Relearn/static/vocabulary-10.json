@@ -9214,26 +9214,34 @@
     "Id": 3227,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/3227",
-    "DataUpdatedAt": "2025-11-27T04:32:56.819156Z",
+    "DataUpdatedAt": "2026-04-06T17:44:07.362004Z",
     "Data": {
       "ComponentSubjectIds": [
         771
       ],
       "ContextSentences": [
         {
-          "En": "You have something like a thread on your head.",
+          "En": "You have what looks like a thread stuck to your head.",
           "Ja": "頭に何か糸のような物が付いてますよ。"
         },
         {
-          "En": "This apartment isn't that tall, so watch your head, please.",
+          "En": "This apartment has a low ceiling, so please watch your head.",
           "Ja": "このアパートは高さがあまりないので、頭の上に気をつけてください。"
         },
         {
           "En": "What kind of person is a \"smart person\"?",
           "Ja": "「頭がいい人」というのは、一体、どういう人の事ですか？"
+        },
+        {
+          "En": "Recently, my father's hair has been turning gray.",
+          "Ja": "最近、父の頭が白くなってきた。"
+        },
+        {
+          "En": "That story was a lie from the very beginning.",
+          "Ja": "あの話、頭からウソだったんだよ。"
         }
       ],
-      "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.",
+      "MeaningMnemonic": "The kanji and the word are exactly the same. That means they share meanings as well.\n\n頭 means <vocabulary>head</vocabulary>, but it can refer to lots of other related things by extension. For example, 頭がいい means you're smart (you've got a \"good head\") and 話の頭 means the beginning of a story (the part at \"the head\" of it). Just remember the \"head\" meaning, and you'll usually be able to guess the figurative meanings from context!",
       "PartsOfSpeech": [
         "noun"
       ],
@@ -17259,7 +17267,7 @@
     "Id": 9288,
     "Object": "vocabulary",
     "Url": "https://api.wanikani.com/v2/subjects/9288",
-    "DataUpdatedAt": "2025-11-27T04:32:54.927804Z",
+    "DataUpdatedAt": "2026-04-10T05:38:55.064771Z",
     "Data": {
       "ComponentSubjectIds": [
         626,

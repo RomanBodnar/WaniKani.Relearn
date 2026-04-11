@@ -1,4 +1,4 @@
-import type { Subject } from "../hooks/useSubjects";
+import type { Subject } from "~/hooks/Subject";
 import "./SubjectCard.css";
 
 interface SubjectCardProps {
@@ -6,9 +6,10 @@ interface SubjectCardProps {
 }
 
 export const SubjectCard = ({ subject }: SubjectCardProps) => {
+console.log("Rendering SubjectCard for subject:", subject);
   const primaryMeaning = subject.Data.Meanings.find((m) => m.Primary);
   const primaryReading = subject.Data.Readings?.find((r) => r.Primary);
-
+console.log("Primary meaning:", primaryMeaning);
   return (
     <div className="subject-card">
       <div className="subject-card-character">

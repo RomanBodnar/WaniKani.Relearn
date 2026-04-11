@@ -2000,7 +2000,7 @@
     "Id": 766,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/766",
-    "DataUpdatedAt": "2025-11-27T04:32:55.588453Z",
+    "DataUpdatedAt": "2026-04-06T19:02:01.799026Z",
     "Data": {
       "AmalgationSubjectIds": [
         3217,
@@ -2335,7 +2335,7 @@
     "Id": 771,
     "Object": "kanji",
     "Url": "https://api.wanikani.com/v2/subjects/771",
-    "DataUpdatedAt": "2026-01-29T08:14:54.362399Z",
+    "DataUpdatedAt": "2026-04-07T18:47:27.492256Z",
     "Data": {
       "AmalgationSubjectIds": [
         3227,
@@ -2377,6 +2377,12 @@
           "Primary": false,
           "AcceptedAnswer": false,
           "Type": "onyomi"
+        },
+        {
+          "Reading": "こうべ",
+          "Primary": false,
+          "AcceptedAnswer": true,
+          "Type": "kunyomi"
         }
       ],
       "VisuallySimilarSubjectIds": [
