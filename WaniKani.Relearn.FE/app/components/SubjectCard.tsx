@@ -1,4 +1,5 @@
 import type { Subject } from "~/hooks/Subject";
+import { Link } from "react-router";
 import "./SubjectCard.css";
 
 interface SubjectCardProps {
@@ -10,9 +11,10 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
   const primaryReading = subject.Readings?.find((r) => r.Primary);
 
   return (
-    <div className="subject-card">
-      <div className="subject-card-character">{subject.Characters}</div>
-      <div className="subject-card-content">
+    <Link to={`/subject/${subject.Id}`} className="subject-card-link">
+      <div className="subject-card">
+        <div className="subject-card-character">{subject.Characters}</div>
+        <div className="subject-card-content">
         {primaryMeaning && (
           <div className="subject-card-meaning">
             <strong>{primaryMeaning.Meaning}</strong>
@@ -30,6 +32,7 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
           </div>
         )}
       </div>
-    </div>
+      </div>
+    </Link>
   );
 };

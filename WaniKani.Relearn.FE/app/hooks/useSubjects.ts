@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Subject } from "./Subject";
 
-export type SubjectType = "kanji" | "vocabulary" | "kana_vocabulary";
+export type SubjectType = "radical" | "kanji" | "vocabulary" | "kana_vocabulary";
 
 export interface SubjectsResponse {
   data: Subject[];
@@ -57,6 +57,7 @@ export async function fetchSubjects(
   subjectType: SubjectType
 ): Promise<Subject[]> {
   const typeMap: Record<SubjectType, string> = {
+    radical: "Radical",
     kanji: "Kanji",
     vocabulary: "Vocabulary",
     kana_vocabulary: "KanaVocabulary",
