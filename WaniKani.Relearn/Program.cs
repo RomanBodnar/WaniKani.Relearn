@@ -23,7 +23,10 @@ internal class Program
 
         builder.Services.AddCors(options =>
         {
-            options.AddPolicy("localhost", policy => policy.AllowAnyOrigin());
+            options.AddPolicy("localhost", policy => policy
+                .WithOrigins("http://localhost:3000")
+                .AllowAnyMethod()
+                .AllowAnyHeader());
         });
 
         builder.Services.AddControllers().AddJsonOptions(options =>
@@ -64,6 +67,7 @@ internal class Program
 
         app.UseHttpsRedirection();
         app.MapControllers();
+        app.UseCors("localhost");
 
         app.Run();
     }
