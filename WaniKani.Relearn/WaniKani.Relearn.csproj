@@ -11,10 +11,14 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Refit" Version="8.0.0" />
     <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+    <PackageReference Include="Riok.Mapperly" Version="4.3.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Api/" />
+    <Folder Include="Api/Mappers/" />
+    <Folder Include="Api/Response/" />
     <Folder Include="Http\" />
     <Folder Include="Model/Resources/" />
     <Folder Include="static/" />

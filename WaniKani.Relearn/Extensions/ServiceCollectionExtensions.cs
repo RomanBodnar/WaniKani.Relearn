@@ -1,3 +1,4 @@
+using WaniKani.Relearn.Api.Mappers;
 using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Model.Subjects;
@@ -18,11 +19,29 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    public static IServiceCollection AddMappers(this IServiceCollection services)
+    {
+        services.AddScoped<KanjiMapper>();
+        services.AddScoped<VocabularyMapper>();
+        services.AddScoped<RadicalMapper>();
+        services.AddScoped<KanaVocabularyMapper>();
+        return services;
+    }
+
     public static IServiceCollection AddRefitClients(this IServiceCollection services, IConfiguration configuration)
     {
         var refitSettings = new RefitSettings
         {
-            UrlParameterFormatter = new BooleanUrlParameterFormatter()
+            UrlParameterFormatter = new BooleanUrlParameterFormatter(),
+            ContentSerializer = new SystemTextJsonContentSerializer(new JsonSerializerOptions
+            {
+                Converters =
+                {
+                    new JsonStringEnumConverter(),
+                },
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                NumberHandling = JsonNumberHandling.AllowReadingFromString
+            })
         };
         services.AddSingleton<HttpLoggingHandler>();
         services

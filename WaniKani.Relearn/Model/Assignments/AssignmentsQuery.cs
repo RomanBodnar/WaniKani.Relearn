@@ -56,7 +56,7 @@ public class AssignmentsQuery
     /// Valid values range from 1 to 60.
     /// </summary>
     [AliasAs("levels")]
-    public int[] Levels { get; set; }
+    public int[]? Levels { get; set; }
 
     /// <summary>
     /// Only assignments where data.srs_stage matches one of the array values are returned. 

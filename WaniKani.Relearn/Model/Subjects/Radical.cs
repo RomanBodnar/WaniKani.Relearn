@@ -6,7 +6,7 @@ public record Radical : Subject
     /// An array of numeric identifiers for the kanji that have the radical as a component.
     /// </summary>
     [JsonPropertyName("amalgamation_subject_ids")]
-    public IReadOnlyCollection<string> AmalgationSubjectIds { get; init; }
+    public IReadOnlyCollection<int> AmalgationSubjectIds { get; init; }
 
     /// <summary>
     /// Unlike kanji and vocabulary, radicals can have a null value for characters. 
