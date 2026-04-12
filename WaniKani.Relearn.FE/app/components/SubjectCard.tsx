@@ -6,15 +6,13 @@ interface SubjectCardProps {
 }
 
 export const SubjectCard = ({ subject }: SubjectCardProps) => {
-console.log("Rendering SubjectCard for subject:", subject);
-  const primaryMeaning = subject.Data.Meanings.find((m) => m.Primary);
-  const primaryReading = subject.Data.Readings?.find((r) => r.Primary);
-console.log("Primary meaning:", primaryMeaning);
+    
+  const primaryMeaning = subject.Meanings?.find((m) => m.Primary);
+  const primaryReading = subject.Readings?.find((r) => r.Primary);
+
   return (
     <div className="subject-card">
-      <div className="subject-card-character">
-        {subject.Data.Characters}
-      </div>
+      <div className="subject-card-character">{subject.Characters}</div>
       <div className="subject-card-content">
         {primaryMeaning && (
           <div className="subject-card-meaning">
@@ -22,18 +20,14 @@ console.log("Primary meaning:", primaryMeaning);
           </div>
         )}
         {primaryReading && (
-          <div className="subject-card-reading">
-            {primaryReading.Reading}
-          </div>
+          <div className="subject-card-reading">{primaryReading.Reading}</div>
         )}
-        {subject.Data.Level !== undefined && (
-          <div className="subject-card-level">
-            Level {subject.Data.Level}
-          </div>
+        {subject.Level !== undefined && (
+          <div className="subject-card-level">Level {subject.Level}</div>
         )}
-        {subject.Data.PartOfSpeech && subject.Data.PartOfSpeech.length > 0 && (
+        {subject.PartsOfSpeech && subject.PartsOfSpeech.length > 0 && (
           <div className="subject-card-pos">
-            {subject.Data.PartOfSpeech.join(", ")}
+            {subject.PartsOfSpeech.join(", ")}
           </div>
         )}
       </div>

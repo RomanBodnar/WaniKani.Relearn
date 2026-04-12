@@ -1,5 +1,5 @@
 import type { Route } from "../+types/root";
-import { fetchSubjects, type SubjectsResponse } from "../hooks/useSubjects";
+import { fetchSubjects } from "../hooks/useSubjects";
 import { type Subject } from "~/hooks/Subject";
 import { SubjectCard } from "../components/SubjectCard";
 import "./subjects.css";
@@ -17,12 +17,13 @@ export async function loader({}: Route.LoaderArgs) {
     return data;
   } catch (error) {
     console.error("Failed to fetch kanji:", error);
-    return { data: [], total_count: 0, pages_total_count: 0, current_page: 1 };
+    return [];
   }
 }
 
 export default function Kanji({ loaderData }: Route.ComponentProps) {
   const response = loaderData as unknown as Subject[];
+  console.log("Kanji loader data:", response);
   const subjects = response || [];
 
   return (

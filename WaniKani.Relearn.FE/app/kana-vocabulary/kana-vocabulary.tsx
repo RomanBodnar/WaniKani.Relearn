@@ -1,5 +1,5 @@
 import type { Route } from "../+types/root";
-import { fetchSubjects, type SubjectsResponse } from "../hooks/useSubjects";
+import { fetchSubjects } from "../hooks/useSubjects";
 import { type Subject } from "~/hooks/Subject";
 import { SubjectCard } from "../components/SubjectCard";
 import "./subjects.css";
@@ -17,7 +17,7 @@ export async function loader({}: Route.LoaderArgs) {
     return data;
   } catch (error) {
     console.error("Failed to fetch kana vocabulary:", error);
-    return { data: [], total_count: 0, pages_total_count: 0, current_page: 1 };
+    return [];
   }
 }
 
