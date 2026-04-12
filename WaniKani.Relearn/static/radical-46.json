@@ -1,0 +1,101 @@
+[
+  {
+    "Id": 400,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/400",
+    "DataUpdatedAt": "2025-10-01T06:09:49.566137Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1966
+      ],
+      "Characters": "恵",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/322h7ausaxy64bh9ap81wp6ncen0",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/hbc93n7cyj02uzl4bjis7m93fie9",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7mkk5ixx6humhwwmq3w555h0o3gz",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fnt33yi18sy11gyg3kkl3i8nfabp",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/n6ljl55s8gnjyplqczc9go84ctky",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/x6fedql7hu3tkw5gad5t40g02n39",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ejlbpcncd6cy0eqelegirc50fyy8",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/f9x3ol38r0uikcg98vqgtdu0n1t6",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Favour",
+          "Type": "whitelist"
+        },
+        {
+          "Meaning": "Flavor",
+          "Type": "blacklist"
+        },
+        {
+          "Meaning": "Flavour",
+          "Type": "blacklist"
+        }
+      ],
+      "CreatedAt": "2013-08-02T21:22:08.947111Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/favor",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 46,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>favor</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Favor",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "favor",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

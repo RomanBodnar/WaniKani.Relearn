@@ -1,0 +1,700 @@
+[
+  {
+    "Id": 242,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/242",
+    "DataUpdatedAt": "2026-03-24T15:11:48.995533Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1053,
+        2050,
+        2056
+      ],
+      "Characters": "句",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/q0i7sepp0wlhgqxncypqjwgpwfkd",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/drh9ec8pw6xgu68gvvcnxipgo3ei",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/mymhgolr4kcb6lnyqznznilu91qv",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/r9yobqcag39fcv4xjrzm8r1hz1ao",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ovbehfsafmhe6it1f041h894b54u",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5epbk1deqm7fhmkbp5m9z4r8cace",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/1mc6syveolt5o7lzau0ll1zh0wnj",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/c6x4zf2jh811uhtnc3wdg2u97ses",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2012-09-18T23:33:40.646661Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/paragraph",
+      "HiddenAt": null,
+      "LessonPosition": 10,
+      "Level": 15,
+      "MeaningMnemonic": "In prison, your mouth is not allowed to talk freely. Get a piece of paper to use in place of your mouth and start writing your thoughts out in <radical>paragraph</radical> form!",
+      "Meanings": [
+        {
+          "Meaning": "Paragraph",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "paragraph",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 244,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/244",
+    "DataUpdatedAt": "2026-03-24T15:11:49.007278Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        949,
+        1688,
+        1916
+      ],
+      "Characters": "去",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/jp91czg7nm4ozbcy1dbhp5f71pj7",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/tl9sp2rpks7t91w20g2mvuvt90ds",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/lk2vas6ddrhdijjgrmzfn7rmc2iy",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/uoz9ge3xqw9g9tsh4zotb3vva693",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/txn52yrrmkb05kd9jzx480hx9d17",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/npr7jb67m30fbzf52l6rsx08tdn0",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0lui3g6pmdkhj2brjoikrcxe83nx",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zaho5e8raktpu9bbzecslfem9nac",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Cemetery",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2012-09-18T23:34:05.742973Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/past",
+      "HiddenAt": null,
+      "LessonPosition": 11,
+      "Level": 15,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>past</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Past",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "past",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 245,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/245",
+    "DataUpdatedAt": "2026-03-24T15:11:49.017152Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1016,
+        1765
+      ],
+      "Characters": "歩",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/m2o393w773m3g3f8w43okmy0wivv",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/brk7qnfl29bvqpjn8ipj83vtv3ta",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fi5r9kobfhuay1jdg92vo2x90s2s",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/mybvlbgft3k6pemqmm0qgshwo4dt",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/mu66iohk6owkp53y4qe91czlots1",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/m6e9yqt936616fn5w1rdpd1f8ow7",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/e52peulxuhm3d3f9hfgs0ubv04fi",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/92mno7ay98rxm6d9ms83paem0gnl",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Step",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2012-09-18T23:34:29.729664Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/walk",
+      "HiddenAt": null,
+      "LessonPosition": 12,
+      "Level": 15,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>walk</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Walk",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "walk",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 408,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/408",
+    "DataUpdatedAt": "2026-03-24T15:11:49.024895Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2083
+      ],
+      "Characters": "丈",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/fs483q0ir0i1x45d75p5ciyhneir",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fvcwpte2vd4astlxnzuwv9b9cdfj",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/odyn7segg1lh72ffqmtnfldb8ejv",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0fo89eyix79gqk5ey5bpgnutx1qp",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zcbc5k2hyfkfpy8uq2tyk50p0vxu",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0xy1e7o4rhuh3zfxjhq2g0cyzype",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vyv84g3asju008lx7t25qy83ol3k",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/buguxgpiazv1gc19yro0fdg7ghac",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2013-08-19T17:45:36.216442Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/height",
+      "HiddenAt": null,
+      "LessonPosition": 13,
+      "Level": 15,
+      "MeaningMnemonic": "You see a narwhal struggling with a measuring tape, trying to measure his <radical>height</radical>! His fins can't reach the end of the tape, but of course he wants to include his glorious tusk. Measuring height is not an easy tusk… er, task for a narwhal, but he'll figure it out. Probably.",
+      "Meanings": [
+        {
+          "Meaning": "Height",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "height",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 437,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/437",
+    "DataUpdatedAt": "2026-03-24T15:11:48.984892Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        941,
+        2447
+      ],
+      "Characters": "勇",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/tuu934yxnn4qtisdclxcgzlag71v",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0cdpzomtlhr6cceo9vi0e17svr2v",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/28ku00ydxojwxhxpbdimj6lds25v",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/kjlm3e6s4camf5rvrs0d9sf6cy8c",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/d64qd2arf1g3a33lzixl6rk9kho5",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/f675oqjfclop58zfnptvdafcgneg",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2g5ocksayj2gw46y57u1vq53nx4p",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/a5zx539dl67ddf8ym5d66kaj4tza",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Encourage",
+          "Type": "blacklist"
+        }
+      ],
+      "CreatedAt": "2015-06-26T22:52:06.018741Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/courage",
+      "HiddenAt": null,
+      "LessonPosition": 9,
+      "Level": 15,
+      "MeaningMnemonic": "When a mama watches over a man, it gives him the <radical>courage</radical> he needs to take on any foe.",
+      "Meanings": [
+        {
+          "Meaning": "Courage",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "courage",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 8783,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/8783",
+    "DataUpdatedAt": "2026-03-24T15:11:49.036685Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1045,
+        1126,
+        1303,
+        1321,
+        1462,
+        1485,
+        1502,
+        1769,
+        2184
+      ],
+      "Characters": "𭕄",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/dpa3z9ilq1vakp7a8f0x7iq3u1gf",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/m8uh54ds6oc379yigtj3q6sg9jnc",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/cij4878ie3s8lfw3y4iabxusioqv",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/c4ihne5gnmuakvwexs1olrtzlthy",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4kboehdd4vqhz2hzp7w6tca20dbh",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/m1tsut4lxahbt6wd4j7wseh5srak",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/06thz8e0b3ajn4ucav1iybpueita",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zy6rcbyhx4co2tm3r1jsj2oehznk",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2012-09-18T23:30:37.698252Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/grass",
+      "HiddenAt": null,
+      "LessonPosition": 14,
+      "Level": 15,
+      "MeaningMnemonic": "Don't confuse this with triceratops. <radical>Grass</radical> is closer together, and a little bushier, like this. It's also more random and squished down in parts. If you see a bush of lines like this, it's probably going to be grass.",
+      "Meanings": [
+        {
+          "Meaning": "Grass",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "grass",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 8824,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/8824",
+    "DataUpdatedAt": "2026-03-24T15:11:49.15141Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        867,
+        1174,
+        1475,
+        1621
+      ],
+      "Characters": "畐",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/8ua52th5need3x3upuptabptj4sa",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/flbo29rj7regprsiis97s47rof35",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/24kntw72ozh5nga860ld69xmiogv",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/l9cytjjuqiudbuxhzmczg826sfnt",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/q6nt2t9jpdiy4rxziofniu5viv16",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/v90afrxfwq2irgzm39u01yy44g7p",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3u69b7vs98ru2mjjzou0ycsgs17c",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/it4tjfhvphxmxehmn9dmtjkkyxh3",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2018-12-05T18:39:12.68508Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/scarecrow",
+      "HiddenAt": null,
+      "LessonPosition": 25,
+      "Level": 15,
+      "MeaningMnemonic": "A creeper in a rice paddy? That's just a <radical>scarecrow</radical>!",
+      "Meanings": [
+        {
+          "Meaning": "Scarecrow",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "scarecrow",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9329,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/9329",
+    "DataUpdatedAt": "2026-01-29T00:55:23.433642Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        944,
+        1024,
+        1657,
+        1661,
+        2464
+      ],
+      "Characters": "亦",
+      "CharacterImages": [],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2024-02-12T19:34:01.366819Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/again",
+      "HiddenAt": null,
+      "LessonPosition": 1,
+      "Level": 15,
+      "MeaningMnemonic": "What's under the lid on your cook pot? Legs and fins. <radical>Again</radical>. All you know how to cook is legs (of chicken) and fins, so you cook them again and again and again. You'll be having them for dinner tonight, and again tomorrow, and again the next day. Legs and fins, again and again and again, for the rest of your days.\n\nAlternatively, you can also think of this as a laundry hanger with a pair of pants and two little socks flapping like fins. Because laundry is something you have to do again and again… whether you like it or not!",
+      "Meanings": [
+        {
+          "Meaning": "Again",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "again",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 9391,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/9391",
+    "DataUpdatedAt": "2026-03-04T02:46:21.114484Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        930,
+        1362,
+        1455
+      ],
+      "Characters": "帚",
+      "CharacterImages": [],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2025-12-21T20:45:04.690882Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/broom",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 15,
+      "MeaningMnemonic": "This is the <radical>broom</radical> radical, because the top part looks like a sideways hand broom and the bottom part looks like a dustpan.\n\nAlternatively, you can remember this one with its components: Wolverine wipes his forehead with a towel every time he picks up a broom, because sweeping gets him sweaty fast. Poor guy can fight supervillains all day, but give him a broom and he's instantly exhausted.",
+      "Meanings": [
+        {
+          "Meaning": "Broom",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "broom",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

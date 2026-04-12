@@ -1,3 +1,4 @@
+using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Model.Assignments;
 
 namespace WaniKani.Relearn.Controllers;
@@ -5,7 +6,8 @@ namespace WaniKani.Relearn.Controllers;
 [ApiController]
 [Route("assignments")]
 public class AssignmentsController(
-    IAssignmentApi assignmentApi
+    IAssignmentApi assignmentApi,
+    SubjectCache subjectCache
 ) : ControllerBase
 {
     [HttpGet]
@@ -31,5 +33,15 @@ public class AssignmentsController(
     {
         var assignment = await assignmentApi.GetAssignment(assignmentId);
         return Ok(assignment);
+    }
+
+    [HttpGet("subjects/{subjectId}")]
+    public async Task<IActionResult> GetBySubjectId(int subjectId)
+    {
+        var assignments = await assignmentApi.GetAssignments(new AssignmentsQuery
+        {
+            SubjectIds = [subjectId]
+        });
+        return Ok(assignments);
     }
 }

@@ -1,6 +1,4 @@
-using System;
 using Newtonsoft.Json;
-using WaniKani.Relearn.Model.Subjects;
 
 namespace WaniKani.Relearn.DataAccess;
 

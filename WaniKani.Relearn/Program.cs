@@ -42,6 +42,8 @@ internal class Program
             .AddDataAccess()
             .AddServices()
             .AddMappers()
+            //.AddHttpLogging()
+            .AddCustomHttpLogging()
             .AddRefitClients(configuration);
 
         services.AddHttpClient<IWaniKaniClient, WaniKaniClient>(client =>

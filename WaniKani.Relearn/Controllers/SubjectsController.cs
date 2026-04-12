@@ -1,4 +1,5 @@
 using WaniKani.Relearn.Api.Mappers;
+using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Model.Assignments;
 using WaniKani.Relearn.Model.Subjects;
 
@@ -8,6 +9,7 @@ namespace WaniKani.Relearn.Controllers;
 [ApiController]
 public class SubjectsController(
     SubjectsService subjectsService,
+    SubjectCache subjectCache,
     KanjiMapper kanjiMapper,
     VocabularyMapper vocabularyMapper,
     RadicalMapper radicalMapper,
@@ -29,5 +31,25 @@ public class SubjectsController(
         };
 
         return new JsonResult(result);
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetSubjectById([FromRoute] int id)
+    {
+        if(subjectCache.TryGet(id, out var subject))
+        {
+            return new JsonResult(subject!.Data switch
+            {
+                Kanji kanji => kanjiMapper.Map(subject.CopyAs<Kanji>()),
+                Vocabulary vocab => vocabularyMapper.Map(subject.CopyAs<Vocabulary>()),
+                Radical radical => radicalMapper.Map(subject.CopyAs<Radical>()),
+                KanaVocabulary kanaVocab => kanaVocabularyMapper.Map(subject.CopyAs<KanaVocabulary>()),
+                _ => throw new InvalidOperationException("Unknown subject type")
+            });
+        }
+        else
+        {
+            return NotFound();
+        }
     }
 }

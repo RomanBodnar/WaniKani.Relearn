@@ -1,0 +1,626 @@
+[
+  {
+    "Id": 288,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/288",
+    "DataUpdatedAt": "2026-03-29T19:11:43.434481Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1188,
+        1337,
+        2157,
+        9396
+      ],
+      "Characters": "革",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/c0te5l8an6awb6pw18z92ao48ui4",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/wfeemh1k8u0fgyzdo7h5bac6gtns",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/wkcw3lardea1u7a4j215dlt0xq1l",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0fgew886z70ux2gxcx6snetgwjyb",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dnqyiaz4s5a9aalww7eds064dx7j",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qiujlmkkm0nitou3lux141le562b",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2zekial7iew6ihgbvgf8lcer9ikg",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/86ijmjv2a0h51k50wog4o4l03nw4",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2012-12-06T02:18:20.561797Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/leather",
+      "HiddenAt": null,
+      "LessonPosition": 5,
+      "Level": 23,
+      "MeaningMnemonic": "When I look at this radical, I see the body and (mainly) head of a bull. What are bulls made of? They're made of <radical>leather</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Leather",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "leather",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 289,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/289",
+    "DataUpdatedAt": "2026-02-17T17:41:24.783434Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1186,
+        1830,
+        1892
+      ],
+      "Characters": "丩",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/vz5bmxyk3nsyse88ip21dtqxvnmd",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zt2rn1l7b7uwuvkz8aj4m1e1zwkm",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/0lu8s36dl8g90izkanosma4r35f1",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/f4uo6jo7lele7upe5sj0crvu1ekk",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zm5rlmnn4uqpoc4jzp3enb4ngeu0",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/w1q3p5domkdfhyhph0zvfnlcx4do",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dfeglxf5jj4o5go9752huqzuo0m5",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/be3m392ogwegx02ma8uwfxgp5xu2",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Four",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2012-12-06T02:19:19.571338Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/vines",
+      "HiddenAt": null,
+      "LessonPosition": 11,
+      "Level": 23,
+      "MeaningMnemonic": "This radical is made up of two <radical>vines</radical> hanging down and a branch linking them together. Imagine swinging on these Tarzan style. AaaaAA aAA AAAaaaa!",
+      "Meanings": [
+        {
+          "Meaning": "Vines",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "vines",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 290,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/290",
+    "DataUpdatedAt": "2025-10-01T06:09:48.700769Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1187,
+        2106
+      ],
+      "Characters": "亭",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/anyt6cjtnpvtsait4m18r3uo0kqd",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/6ru5n2imq5kakzzeec7ou76cjxvo",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5m87raw8nurht4o7zbnb9fo534bm",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9m1k325t2wcb6ad5is4qh2jvbmt2",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9ja9jg1ujih73knmr6douqcncumz",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5uckvj4jzn7mejqyo9jvvw42hrsf",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xhbkyu163ms8djshy4lnkc952y1d",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/f0tlpc90vnyd7wklpjvjl525chy6",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Nailgun",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2012-12-06T02:19:35.836156Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/restaurant",
+      "HiddenAt": null,
+      "LessonPosition": 12,
+      "Level": 23,
+      "MeaningMnemonic": "You see a lid on the street with a drawing of a forehead and a mouth on it. Hmm strange. You pick the lid up and reveal... a secret, underground <radical>restaurant</radical>! The mouth + forehead combo was secret street restaurant code for, \"There's good eats down in this here restaurant hole!\"",
+      "Meanings": [
+        {
+          "Meaning": "Restaurant",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "restaurant",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 291,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/291",
+    "DataUpdatedAt": "2025-11-30T19:27:58.20826Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1203
+      ],
+      "Characters": "道",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/wswp8p3yzc9vyu7ipu8vg33p3tvw",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4j67fdw0qfy8oqj9mqtmkw6qkx2g",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ahfa9zfy0cm05bfam6yfa2i0aefl",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/842y863jrca858a9yv6robq2o700",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/5gihy3i372ry61a9wol1rsrvig2c",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4gkj7gbpfrdd31gsbncevz8rxx7s",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/mxg3zuksbdz5ay8s1qs3ixngu4k2",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/zwdloqjvexsunl08d819ep8v4gp0",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2012-12-06T02:19:44.640557Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/road",
+      "HiddenAt": null,
+      "LessonPosition": 13,
+      "Level": 23,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>road</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Road",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "road",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 292,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/292",
+    "DataUpdatedAt": "2025-10-01T06:09:48.712959Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1190,
+        1413,
+        1912,
+        1915,
+        1945,
+        2448
+      ],
+      "Characters": "鬼",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/p20a1lamqpznrpm7zd8bssemk4z8",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2ubvcbr9k7ugp49fy4paevik0xws",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2ueq0x7yg46hjkvhr9d6yxl3ts1s",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/1wp1ilosy0sqtkhygbrv0b4m0i2p",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/b87ovj3drqq68qfnherr4cnsjcqc",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/uku5348gqyulv6lw8md7tqgii8d3",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/savyg0wgubzp2sg3f6v8cqzj0qzi",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qthd0fuhrz2xrn95bl83vllqks44",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2012-12-06T02:20:12.404561Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/demon",
+      "HiddenAt": null,
+      "LessonPosition": 14,
+      "Level": 23,
+      "MeaningMnemonic": "This is a <radical>demon</radical>. Can you see him? He has a crazy face and some tentacles holding something demonic. Try to figure out how to see a demon. But don't see him too good, cause then he'll come out of your computer and eat you.",
+      "Meanings": [
+        {
+          "Meaning": "Demon",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "demon",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 8789,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/8789",
+    "DataUpdatedAt": "2025-10-01T06:10:31.598665Z",
+    "Data": {
+      "AmalgationSubjectIds": [],
+      "Characters": null,
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/8wz9zz8bjpfszu9he2x2e7airyta",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4b035oqqb1wn03kvowmwg5m4kuja",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/vy9f9cazmowm298qt2w05bvk8knf",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/hhxqza0bew6gv2bd29487tn5n8i0",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7xjauz66s8hgm9jwqze861mslc6s",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/budv5qf6m02bc2q6bdmqf3rbxbu8",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/jlwzqaalq0fghv1vg5g2rppri94z",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/849sumcy9wv911e0cgdt5ux8i6bd",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2012-12-06T02:20:17.818054Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/corn-8789",
+      "HiddenAt": "2018-12-05T18:38:51.134238Z",
+      "LessonPosition": 10,
+      "Level": 23,
+      "MeaningMnemonic": "It has a leaf and it's connected to something that has lots of little sections. This looks just like a short, stubby thing of <radical>corn</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Corn",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "corn-8789",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 8793,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/8793",
+    "DataUpdatedAt": "2026-01-06T00:31:19.090161Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1204,
+        1381,
+        1388,
+        1849
+      ],
+      "Characters": "𠦝",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/81pg34n4kag878ssx01tfh8eh8v8",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/58qytkog94n7yuiw6rsjok80tvfw",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/p19wmvy4p6dvu2ttyy99g9jojzpa",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/e10hddwc6npc8i0u7y585pz3zqwu",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/gsbdd3uwfirn1nk3frgq9wm4ksre",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dbxrko5kqfkumuywbbm3xdrpiqpx",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/o2afj4hfd5bzsa83mp67phpjxlkz",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ukii297f9p133x0k70y1acn0o610",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2013-01-24T10:47:03.732544Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/morning",
+      "HiddenAt": null,
+      "LessonPosition": 16,
+      "Level": 23,
+      "MeaningMnemonic": "This is the left side of the kanji 朝, so we'll call it <radical>morning</radical> too.",
+      "Meanings": [
+        {
+          "Meaning": "Morning",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "morning",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

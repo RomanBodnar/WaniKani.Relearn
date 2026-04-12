@@ -1,0 +1,179 @@
+[
+  {
+    "Id": 404,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/404",
+    "DataUpdatedAt": "2025-10-01T06:09:49.626424Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2030
+      ],
+      "Characters": "容",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/g9wd0laqzjwax3jf1bf7pksc78v4",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/tkdcg6yllsojjuyg2n769yi0nrec",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/x76k71utvpuha5tru89gfpg12ug8",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9py4vj3blaknn5tclb8qtn2cxzcm",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/8x0j1a77mc7zjyc4gfyenw66s09q",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/10uujfx946r5fozxcv1xx7j7ty3c",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2khl7l8u9j3ud4eenwk60f5plzm5",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/t7g41cqihky4b48liokw66hqya2u",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2013-08-16T22:23:17.43067Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/form",
+      "HiddenAt": null,
+      "LessonPosition": 4,
+      "Level": 48,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>form</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Form",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "form",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 405,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/405",
+    "DataUpdatedAt": "2025-10-01T06:09:49.625495Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        2034
+      ],
+      "Characters": "光",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/v5kmhgdgj4tlqofrdb0h7s3axkiz",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/nqov3nd9a9ueapnilx1l3pq4ials",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/tvyqhvtk1i7puy6qtikk3bd1gppq",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ze7wolzinrtlot12odzoq363icl5",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/hdsqwqmlmfrju7tfbkjk9u77sqhj",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/dzhrj596x04sqe294ver5s2ai7o0",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3fvs30cr4tb3jvss8kt3nq7zcohc",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4stsloh1xb0hjzrg5mc7gvhpa1df",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Sunlight",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2013-08-16T22:23:23.742932Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/light",
+      "HiddenAt": null,
+      "LessonPosition": 5,
+      "Level": 48,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>light</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Light",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "light",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

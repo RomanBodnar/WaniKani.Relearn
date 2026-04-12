@@ -16,6 +16,43 @@ interface UseSubjectsResult {
   error: Error | null;
 }
 
+/**
+ * Transforms API response (snake_case/lowercase) to match Subject interface (PascalCase)
+ * Handles both top-level and nested property name conversions
+ */
+function transformSubject(apiSubject: any): Subject {
+  return {
+    Id: apiSubject.id,
+    Object: apiSubject.object,
+    Url: apiSubject.url,
+    DataUpdatedAt: apiSubject.dataUpdatedAt,
+    Characters: apiSubject.characters,
+    Meanings: apiSubject.meanings?.map((m: any) => ({
+      Meaning: m.meaning,
+      Primary: m.primary,
+      AcceptedAnswer: m.accepted_answer,
+    })) || [],
+    Readings: apiSubject.readings?.map((r: any) => ({
+      Reading: r.reading,
+      Primary: r.primary,
+      AcceptedAnswer: r.accepted_answer,
+      Type: r.type,
+    })) || [],
+    Level: apiSubject.level,
+    LessonPosition: apiSubject.lessonPosition,
+    MeaningMnemonic: apiSubject.meaningMnemonic,
+    ReadingMnemonic: apiSubject.readingMnemonic,
+    PartsOfSpeech: apiSubject.partsOfSpeech,
+    Slug: apiSubject.slug,
+    SpacedRepetitionSystemId: apiSubject.spacedRepetitionSystemId,
+    ComponentSubjectIds: apiSubject.componentSubjectIds,
+    ContextSentences: apiSubject.contextSentences,
+    PronunciationAudios: apiSubject.pronunciationAudios,
+    AmalgationSubjectIds: apiSubject.amalgationSubjectIds,
+    CharacterImages: apiSubject.characterImages,
+  };
+}
+
 export async function fetchSubjects(
   subjectType: SubjectType
 ): Promise<Subject[]> {
@@ -34,7 +71,8 @@ export async function fetchSubjects(
     throw new Error(`Failed to fetch ${subjectType} data`);
   }
 
-  return response.json();
+  const apiData = await response.json();
+  return apiData.map(transformSubject);
 }
 
 export function useSubjects(subjectType: SubjectType): UseSubjectsResult {

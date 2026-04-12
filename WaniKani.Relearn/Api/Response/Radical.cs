@@ -10,7 +10,7 @@ public record RadicalResponse
 
     // Subject base properties
     public IReadOnlyCollection<AuxiliaryMeaning> AuxiliaryMeanings { get; init; }
-    public string Characters { get; init; }
+    public string? Characters { get; init; }
     public DateTime CreatedAt { get; init; }
     public string DocumentUrl { get; init; }
     public DateTime? HiddenAt { get; init; }

@@ -36,3 +36,30 @@ public class SingleResource<T> : IResource<T>
     [JsonPropertyName("data")]
     public T Data { get; set; }
 }
+
+public static class SubjectExtensions
+{
+    public static SingleResource<T> CopyAs<T>(this SingleResource<Subject> subject) where T : Subject
+    {
+        return new SingleResource<T>
+        {
+            Id = subject.Id,
+            Object = subject.Object,
+            Url = subject.Url,
+            DataUpdatedAt = subject.DataUpdatedAt,
+            Data = (T)subject.Data
+        };
+    }
+
+    public static SingleResource<Subject> CopyAsSubject<T>(this SingleResource<T> subject) where T : Subject
+    {
+        return new SingleResource<Subject>
+        {
+            Id = subject.Id,
+            Object = subject.Object,
+            Url = subject.Url,
+            DataUpdatedAt = subject.DataUpdatedAt,
+            Data = subject.Data 
+        };
+    }
+}

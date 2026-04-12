@@ -22,7 +22,7 @@ public class SubjectsService(
     {
         try
         {
-            var levels = level is not null ? [level.Value] : Enumerable.Range(1, 61).ToArray();
+            var levels = level is not null ? [level.Value] : Enumerable.Range(1, 60).ToArray();
             return await staticFileDataAccess.GetAllSubjects<T>(levels);
         }
         catch (FileNotFoundException)
@@ -73,81 +73,5 @@ public class SubjectsService(
         }
 
         return allSubjects;
-    }
-
-    // private async Task<IEnumerable<SingleResource<Subject>>> GetKanji(int level)
-    // {
-    //     try
-    //     {
-    //         var kanjiJson = await staticFileDataAccess.GetKanjiForLevel(level);
-    //         var kanji = JsonConvert.DeserializeObject<List<SingleResource<Kanji>>>(kanjiJson);
-    //         return ConvertToSingleResourceList(kanji ?? []);
-    //     }
-    //     catch (FileNotFoundException)
-    //     {
-    //         var kanji = await GetSubjectsFromApi<Kanji>(SubjectType.Kanji, level);
-    //         await staticFileDataAccess.SaveKanjiForLevel(level, kanji.Select(x => x));
-    //         return kanji;
-    //     }
-    // }
-
-    // private async Task<IEnumerable<SingleResource<Subject>>> GetVocabulary(int level)
-    // {
-    //     try
-    //     {
-    //         var vocabularyJson = await staticFileDataAccess.GetVocabularyForLevel(level);
-    //         var vocabulary = JsonConvert.DeserializeObject<List<SingleResource<Vocabulary>>>(vocabularyJson);
-    //         return ConvertToSingleResourceList(vocabulary ?? []);
-    //     }
-    //     catch (FileNotFoundException)
-    //     {
-    //         var vocabulary = await GetSubjectsFromApi(SubjectType.Vocabulary, level);
-    //         await staticFileDataAccess.SaveVocabularyForLevel(level, vocabulary.Select(x => x));
-    //         return vocabulary;
-    //     }
-    // }
-
-    // private async Task<IEnumerable<SingleResource<Subject>>> GetRadicals(int level)
-    // {
-    //     try
-    //     {
-    //         var radicalsJson = await staticFileDataAccess.GetRadicalsForLevel(level);
-    //         var radicals = JsonConvert.DeserializeObject<List<SingleResource<Radical>>>(radicalsJson);
-    //         return ConvertToSingleResourceList(radicals ?? []);
-    //     }
-    //     catch (FileNotFoundException)
-    //     {
-    //         var radicals = await GetSubjectsFromApi(SubjectType.Radical, level);
-    //         await staticFileDataAccess.SaveRadicalsForLevel(level, radicals.Select(x => x));
-    //         return radicals;
-    //     }
-    // }
-
-    // private async Task<IEnumerable<SingleResource<Subject>>> GetKanaVocabulary(int level)
-    // {
-    //     try
-    //     {
-    //         var kanaVocabularyJson = await staticFileDataAccess.GetKanaVocabularyForLevel(level);
-    //         var kanaVocabulary = JsonConvert.DeserializeObject<List<SingleResource<KanaVocabulary>>>(kanaVocabularyJson);
-    //         return ConvertToSingleResourceList(kanaVocabulary ?? []);
-    //     }
-    //     catch (FileNotFoundException)
-    //     {
-    //         var subjects = await GetSubjectsFromApi(SubjectType.KanaVocabulary, level);
-    //         await staticFileDataAccess.SaveKanaVocabularyForLevel(level, subjects.Select(x => x));
-    //         return subjects;
-    //     }
-    // }
-
-    private static IEnumerable<SingleResource<Subject>> ConvertToSingleResourceList<T>(IEnumerable<SingleResource<T>> subjects) where T : Subject
-    {
-        return subjects.Select(s => new SingleResource<Subject>
-        {
-            Id = s.Id,
-            Object = s.Object,
-            Url = s.Url,
-            DataUpdatedAt = s.DataUpdatedAt,
-            Data = s.Data
-        });
     }
 }

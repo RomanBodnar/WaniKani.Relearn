@@ -1,6 +1,4 @@
-using System;
-
-namespace WaniKani.Relearn.Model.Subjects;
+namespace WaniKani.Relearn;
 
 public record KanaVocabulary : Subject
 {

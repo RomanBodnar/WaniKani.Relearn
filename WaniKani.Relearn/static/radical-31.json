@@ -1,0 +1,546 @@
+[
+  {
+    "Id": 333,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/333",
+    "DataUpdatedAt": "2025-10-01T06:09:49.018013Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1447,
+        1642,
+        1773,
+        1904,
+        2064,
+        2086,
+        2368
+      ],
+      "Characters": "牙",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/e251g3gcnsze0zoqemysfbildj2t",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/e1fh547h5q9y0niivpnr68h3n6c6",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/al7qdj2iulu359g34z5rcxnfmr09",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ixmifcs64uf33h3znoya958tj06z",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/gevs1rglkokqwxhzd4fpv311ikx6",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/6tto5y6gmjaj1wn2o68qtotvk81n",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/p9bkg4ftqhg52ryia5ic7djshq25",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/78hy4ba1mrdfd3loupxl7p1uma47",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Tusk",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2013-03-12T19:41:19.632848Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/fang",
+      "HiddenAt": null,
+      "LessonPosition": 0,
+      "Level": 31,
+      "MeaningMnemonic": "Imagine this in your mouth. It's one tooth that sticks out more than any other. It's your <radical>fang</radical>. Can you see this sticking out of a wolf mouth instead? Try that if you can't picture yourself with a fang this cool.",
+      "Meanings": [
+        {
+          "Meaning": "Fang",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "fang",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 334,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/334",
+    "DataUpdatedAt": "2026-02-11T09:51:44.569062Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1448,
+        2387
+      ],
+      "Characters": "並",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/3yha6hgqrffa7l7eqnjp0dfcqo4w",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/xbr9jk6ll063h84gv3szy4s5niug",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/gbjce9zfzutgmg6ynnxw4k8qzhcq",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/csfevbu2ahsa160onmft4bun3wmt",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/lcpsfdptdofu3yk35trpbmx8efk6",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/wgn20slhmi04c62dt8o6i5iexyuw",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rfc3nfutkrs1goza1xg62hlm5ovf",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/4l3r2pi5740f48ge5xjajo9egktj",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2013-03-12T19:41:27.842672Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/line-up",
+      "HiddenAt": null,
+      "LessonPosition": 2,
+      "Level": 31,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>line up</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Line Up",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "line-up",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 336,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/336",
+    "DataUpdatedAt": "2026-02-19T14:31:49.726046Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1444,
+        2071
+      ],
+      "Characters": "鬲",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/jek336j2aluxclxmx9byyofgteck",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7u6t6jx85ay0nzn4j76qtzz4lrt3",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ougqg81z8nlyp3g7grsv78ixd6d8",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/falyghe7lay5fm3mdh6egtsw6viw",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/igw5xqwfk4nw6h5rhnz3td6zbb53",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ica1n3ml4m2wphf36zo0jhokygeq",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/f3uu6fvzb1n4w1kwjr01eok4xyb0",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/wlc61qwf95qup0hmex1xg8zffyxa",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Chester",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2013-03-12T19:42:13.189436Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/bully",
+      "HiddenAt": null,
+      "LessonPosition": 3,
+      "Level": 31,
+      "MeaningMnemonic": "He's a creeper and he's Four-T (forty). If someone like this creeps on you, they're just a <radical>bully</radical>. When you get to forty you aren't supposed to creep on people anymore. You bully. You jerk.",
+      "Meanings": [
+        {
+          "Meaning": "Bully",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "bully",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 337,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/337",
+    "DataUpdatedAt": "2025-10-01T06:09:49.051447Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1443,
+        2399
+      ],
+      "Characters": "离",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/l53pewvn611fw5blacq6cwag1b79",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/fvy3fptq6er6gbnhxeq54wfs63mx",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/1cuqlf2kgkh6573iqvygcx3qyp61",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/r8klcf8019y5tc3unn0f3vme1xl7",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/381251wo9zahatufd6nvp5tl2wbt",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/2kg5yhbqhoslz6ps9il3e3f9ol91",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/ich1k1ehwjoth3t9nr191lwh5706",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/u0wwqsiotklhdoc68gmrxpsoncme",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2013-03-12T19:42:56.312161Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/rocket",
+      "HiddenAt": null,
+      "LessonPosition": 4,
+      "Level": 31,
+      "MeaningMnemonic": "See how there’s a lid on top of the treasure chest? That’s because the whole thing is a <radical>rocket</radical> which contains all the necessary items (treasures) to live in outer space. The bottom part of the radical shows you that this is a top secret project, though, so keep this private in your own head.",
+      "Meanings": [
+        {
+          "Meaning": "Rocket",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "rocket",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 338,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/338",
+    "DataUpdatedAt": "2026-03-25T07:14:39.053338Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1445,
+        2175,
+        2345,
+        9448
+      ],
+      "Characters": "扁",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/2317bktwcp80awaeistmyascjgfg",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/q3g4orvlrsni0bgsbchy8zgua9c4",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/7pqwdj1chectiiqwx3zb5skyaxjv",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9agwmwmyk4gomtaymfqpm1akfd8w",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/stoy7ggc2w9xj009io2fvf8g2a2b",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/rdjod9d5wcqemienujgpd3a6aen2",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/krvh4fjhhrpr61ealfw5fpg6xdox",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/01mg4n376deycu0zrioy10gxa5ab",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [
+        {
+          "Meaning": "Bookshelf",
+          "Type": "whitelist"
+        }
+      ],
+      "CreatedAt": "2013-03-12T19:43:14.867804Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/library",
+      "HiddenAt": null,
+      "LessonPosition": 5,
+      "Level": 31,
+      "MeaningMnemonic": "There's a door over the bookcase. That makes this a <radical>library</radical>!",
+      "Meanings": [
+        {
+          "Meaning": "Library",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "library",
+      "SpacedRepetitionSystemId": 1
+    }
+  },
+  {
+    "Id": 8829,
+    "Object": "radical",
+    "Url": "https://api.wanikani.com/v2/subjects/8829",
+    "DataUpdatedAt": "2025-10-01T06:10:31.858096Z",
+    "Data": {
+      "AmalgationSubjectIds": [
+        1454,
+        1801
+      ],
+      "Characters": "郎",
+      "CharacterImages": [
+        {
+          "Url": "https://files.wanikani.com/see5mtjjrklk9eogotvsxrvxqe35",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/qvxj4lsnm8y6v48l3zpj0nkwatoe",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/bwpwepdv32pn4mbek9r890e4lhq5",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/9weunt6saktwsrzne8qyba58mc76",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/e19unw59jy4gsvfkribcdc9wvkhc",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/q7opcqmlvh2ai7k1vrzlgxijws65",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/3vw8vnw9od99zf0ryedlh33wxqqr",
+          "ContentType": "image/png",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        },
+        {
+          "Url": "https://files.wanikani.com/62yo6gavwqiy5prt01p00b03tdeh",
+          "ContentType": "image/svg+xml",
+          "Metadata": {
+            "ValueKind": 1
+          }
+        }
+      ],
+      "AuxiliaryMeanings": [],
+      "CreatedAt": "2018-12-05T18:39:26.296576Z",
+      "DocumentUrl": "https://www.wanikani.com/radicals/guy",
+      "HiddenAt": null,
+      "LessonPosition": 6,
+      "Level": 31,
+      "MeaningMnemonic": "This radical is the same as the kanji. It means <radical>guy</radical>.",
+      "Meanings": [
+        {
+          "Meaning": "Guy",
+          "Primary": true,
+          "AcceptedAnswer": true
+        }
+      ],
+      "Slug": "guy",
+      "SpacedRepetitionSystemId": 1
+    }
+  }
+]

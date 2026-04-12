@@ -6,7 +6,6 @@ interface SubjectCardProps {
 }
 
 export const SubjectCard = ({ subject }: SubjectCardProps) => {
-    
   const primaryMeaning = subject.Meanings?.find((m) => m.Primary);
   const primaryReading = subject.Readings?.find((r) => r.Primary);
 

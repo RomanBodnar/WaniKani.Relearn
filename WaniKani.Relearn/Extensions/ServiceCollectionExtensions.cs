@@ -2,6 +2,7 @@ using WaniKani.Relearn.Api.Mappers;
 using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Model.Subjects;
+using WaniKani.Relearn.Services;
 
 namespace WaniKani.Relearn.Extensions;
 
@@ -9,6 +10,8 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDataAccess(this IServiceCollection services)
     {
+        services.AddHostedService<InMemoryDataLoader>();
+        services.AddSingleton<SubjectCache>();
         services.AddSingleton<StaticFileDataAccess>();
         return services;
     }
@@ -28,6 +31,18 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    public static IServiceCollection AddCustomHttpLogging(this IServiceCollection services)
+    {
+        services.Configure<HttpLoggingHandlerOptions>(options =>
+        {
+            options.LogRequestHeaders = true;
+            options.LogResponseHeaders = true;
+            options.SensitiveHeaderNames = ["Authorization", "X-API-Key"];
+        });
+
+        return services.AddTransient<HttpLoggingHandler>();
+    }
+
     public static IServiceCollection AddRefitClients(this IServiceCollection services, IConfiguration configuration)
     {
         var refitSettings = new RefitSettings
@@ -43,7 +58,6 @@ public static class ServiceCollectionExtensions
                 NumberHandling = JsonNumberHandling.AllowReadingFromString
             })
         };
-        services.AddSingleton<HttpLoggingHandler>();
         services
             .AddRefitClient<IAssignmentApi>(refitSettings)
             .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
