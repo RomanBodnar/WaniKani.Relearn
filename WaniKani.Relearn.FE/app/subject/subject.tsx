@@ -1,6 +1,9 @@
 import type { Route } from "../+types/root";
 import { useNavigate, Link } from "react-router";
 import { type Subject } from "~/hooks/Subject";
+import { API_ENDPOINTS } from "~/config/api";
+import { transformSubject } from "~/utils/transformSubject";
+import type { SubjectDetailData } from "~/types/subject";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -13,14 +16,13 @@ export function meta({ params }: Route.MetaArgs) {
 /**
  * Fetches a subject by ID from the API
  */
-async function fetchSubjectById(id: number | string): Promise<any> {
-  const response = await fetch(
-    `http://localhost:5138/api/subjects/${id}`
-  );
+async function fetchSubjectById(id: number | string): Promise<Subject | null> {
+  const response = await fetch(API_ENDPOINTS.subjectById(id));
   if (!response.ok) {
     return null;
   }
-  return response.json();
+  const data = await response.json();
+  return transformSubject(data);
 }
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -30,9 +32,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   }
 
   try {
-    const response = await fetch(
-      `http://localhost:5138/api/subjects/${id}`
-    );
+    const response = await fetch(API_ENDPOINTS.subjectById(id));
 
     if (!response.ok) {
       throw new Response("Subject not found", { status: 404 });
@@ -41,33 +41,39 @@ export async function loader({ params }: Route.LoaderArgs) {
     const apiData = await response.json();
     const subject = transformSubject(apiData);
 
-    // Fetch related subjects (components and amalgamations)
-    const componentSubjects: any[] = [];
+    // Fetch related subjects (components and amalgamations) in parallel for performance
+    const componentSubjects: Array<{ id: number; characters: string }> = [];
     if (subject.ComponentSubjectIds && subject.ComponentSubjectIds.length > 0) {
-      for (const componentId of subject.ComponentSubjectIds) {
-        const componentData = await fetchSubjectById(componentId);
-        if (componentData) {
-          componentSubjects.push({
-            id: componentData.id,
-            characters: componentData.characters,
-          });
-        }
-      }
+      const componentPromises = subject.ComponentSubjectIds.map((componentId) =>
+        fetchSubjectById(componentId)
+      );
+      const results = await Promise.all(componentPromises);
+      componentSubjects.push(
+        ...results
+          .filter((result) => result !== null)
+          .map((result) => ({
+            id: result!.Id,
+            characters: result!.Characters,
+          }))
+      );
     }
 
-    const amalgamationSubjects: any[] = [];
-    if (subject.AmalgationSubjectIds && subject.AmalgationSubjectIds.length > 0) {
+    const amalgamationSubjects: Array<{ id: number; characters: string }> = [];
+    if (subject.AmalgamationSubjectIds && subject.AmalgamationSubjectIds.length > 0) {
       // Limit to first 20 for performance
-      const limitedIds = subject.AmalgationSubjectIds.slice(0, 20);
-      for (const amalgamationId of limitedIds) {
-        const amalgamationData = await fetchSubjectById(amalgamationId);
-        if (amalgamationData) {
-          amalgamationSubjects.push({
-            id: amalgamationData.id,
-            characters: amalgamationData.characters,
-          });
-        }
-      }
+      const limitedIds = subject.AmalgamationSubjectIds.slice(0, 20);
+      const amalgamationPromises = limitedIds.map((amalgamationId) =>
+        fetchSubjectById(amalgamationId)
+      );
+      const results = await Promise.all(amalgamationPromises);
+      amalgamationSubjects.push(
+        ...results
+          .filter((result) => result !== null)
+          .map((result) => ({
+            id: result!.Id,
+            characters: result!.Characters,
+          }))
+      );
     }
 
     return {
@@ -81,48 +87,8 @@ export async function loader({ params }: Route.LoaderArgs) {
   }
 }
 
-/**
- * Transforms API response (snake_case/lowercase) to match Subject interface (PascalCase)
- */
-function transformSubject(apiSubject: any): Subject {
-  return {
-    Id: apiSubject.id,
-    Object: apiSubject.object,
-    Url: apiSubject.url,
-    DataUpdatedAt: apiSubject.dataUpdatedAt,
-    Characters: apiSubject.characters,
-    Meanings: apiSubject.meanings?.map((m: any) => ({
-      Meaning: m.meaning,
-      Primary: m.primary,
-      AcceptedAnswer: m.accepted_answer,
-    })) || [],
-    Readings: apiSubject.readings?.map((r: any) => ({
-      Reading: r.reading,
-      Primary: r.primary,
-      AcceptedAnswer: r.accepted_answer,
-      Type: r.type,
-    })) || [],
-    Level: apiSubject.level,
-    LessonPosition: apiSubject.lessonPosition,
-    MeaningMnemonic: apiSubject.meaningMnemonic,
-    ReadingMnemonic: apiSubject.readingMnemonic,
-    PartsOfSpeech: apiSubject.partsOfSpeech,
-    Slug: apiSubject.slug,
-    SpacedRepetitionSystemId: apiSubject.spacedRepetitionSystemId,
-    ComponentSubjectIds: apiSubject.componentSubjectIds,
-    ContextSentences: apiSubject.contextSentences,
-    PronunciationAudios: apiSubject.pronunciationAudios,
-    AmalgationSubjectIds: apiSubject.amalgationSubjectIds,
-    CharacterImages: apiSubject.characterImages,
-  };
-}
-
 export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
-  const { subject, componentSubjects, amalgamationSubjects } = loaderData as unknown as {
-    subject: Subject;
-    componentSubjects: Array<{ id: number; characters: string }>;
-    amalgamationSubjects: Array<{ id: number; characters: string }>;
-  };
+  const { subject, componentSubjects, amalgamationSubjects } = loaderData as unknown as SubjectDetailData;
   const navigate = useNavigate();
 
   return (
@@ -261,7 +227,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           <section className="detail-section">
             <h2>
               Used In (
-              {subject.AmalgationSubjectIds?.length || 0})
+              {subject.AmalgamationSubjectIds?.length || 0})
             </h2>
             <div className="subject-links">
               {amalgamationSubjects.map((amal) => (
@@ -273,10 +239,10 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   {amal.characters}
                 </Link>
               ))}
-              {subject.AmalgationSubjectIds &&
-                subject.AmalgationSubjectIds.length > 20 && (
+              {subject.AmalgamationSubjectIds &&
+                subject.AmalgamationSubjectIds.length > 20 && (
                   <span className="more-indicator">
-                    +{subject.AmalgationSubjectIds.length - 20} more
+                    +{subject.AmalgamationSubjectIds.length - 20} more
                   </span>
                 )}
             </div>

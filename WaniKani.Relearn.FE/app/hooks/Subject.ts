@@ -26,7 +26,6 @@ export interface Subject {
   ComponentSubjectIds?: number[];
   ContextSentences?: Array<{ en: string; ja: string }>;
   PronunciationAudios?: Array<{ url: string; content_type: string; metadata: unknown }>;
-  AmalgationSubjectIds?: number[];
+  AmalgamationSubjectIds?: number[];
   CharacterImages?: Array<{ url: string; content_type: string; metadata: unknown }>;
-  [key: string]: any;
 }

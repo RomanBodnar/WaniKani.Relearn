@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
 import type { Route } from "../+types/root";
-import { fetchSubjects } from "../hooks/useSubjects";
-import { type Subject } from "~/hooks/Subject";
+import { useSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import "./subjects.css";
@@ -14,28 +12,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Vocabulary() {
-  const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const loadVocabulary = async () => {
-      try {
-        setIsLoading(true);
-        const data = await fetchSubjects("vocabulary");
-        setSubjects(data || []);
-        setError(null);
-      } catch (err) {
-        console.error("Failed to fetch vocabulary:", err);
-        setError("Failed to load vocabulary");
-        setSubjects([]);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadVocabulary();
-  }, []);
+  const { data: subjects, isLoading, error } = useSubjects("vocabulary");
 
   return (
     <div className="subjects-container">
@@ -45,18 +22,18 @@ export default function Vocabulary() {
       ) : (
         <>
           <p className="subjects-subtitle">
-            {subjects.length > 0
+            {subjects && subjects.length > 0
               ? `Total: ${subjects.length} vocabulary words`
               : "No vocabulary data available"}
           </p>
 
           {error ? (
             <div className="subjects-empty">
-              <p style={{ color: "#d32f2f" }}>{error}</p>
+              <p role="alert" className="error-message">{error.message}</p>
             </div>
-          ) : subjects.length > 0 ? (
+          ) : subjects && subjects.length > 0 ? (
             <div className="subjects-grid">
-              {subjects.map((subject: Subject) => (
+              {subjects.map((subject) => (
                 <SubjectCard key={subject.Id} subject={subject} />
               ))}
             </div>

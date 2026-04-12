@@ -11,7 +11,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <h1 style={{ color: "cyan", textAlign: "center" }}>Home Page</h1>
+      <h1 className="text-cyan-500 text-center text-3xl font-bold my-8">Home Page</h1>
       
       <hr />
     </>

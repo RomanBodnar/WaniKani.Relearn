@@ -1,28 +1,18 @@
-import { useLoaderData } from "react-router";
 import type { Route } from "../+types/root";
-
-type Assignment = {
-  id: number;
-  subjectType: "radical" | "kanji" | "vocabulary" | "kana_vocabulary";
-  subjectId: number;
-  availableAt: string;
-};
+import { API_ENDPOINTS } from "~/config/api";
+import type { AssignmentsResponse } from "~/types/assignments";
 
 export async function loader( {params}: Route.LoaderArgs) {
-    console.log("test");
-    var response = await fetch("http://localhost:5138/assignments?subjectTypes=Kanji");
-    console.log("response from api", response);
-    var data = response.json();
-    return data;
+    const response = await fetch(`${API_ENDPOINTS.assignments}?subjectTypes=Kanji`);
+    return response.json() as Promise<AssignmentsResponse>;
 }
 
-export default function Assingnements({loaderData}: Route.ComponentProps) {
-    const assignments = loaderData as any;
-    console.log(assignments);
+export default function Assignments({loaderData}: Route.ComponentProps) {
+    const assignments = loaderData as unknown as AssignmentsResponse;
 
     return (
         <>
-            <h1>Kanji Assignments: {assignments && assignments.total_count}</h1>
+            <h1>Kanji Assignments: {assignments?.total_count || 0}</h1>
         </>
     );
 }
