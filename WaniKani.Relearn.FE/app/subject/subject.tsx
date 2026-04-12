@@ -103,7 +103,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
       </button>
 
       <div className="subject-detail-header">
-        <div className="subject-detail-character">{subject.Characters}</div>
+        <div className="subject-detail-character japanese-text">{subject.Characters}</div>
         <div className="subject-detail-info">
           <span className="subject-detail-type">{subject.Object}</span>
           {subject.Level !== undefined && (

@@ -13,7 +13,7 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
   return (
     <Link to={`/subject/${subject.Id}`} className="subject-card-link">
       <div className="subject-card">
-        <div className="subject-card-character">{subject.Characters}</div>
+        <div className="subject-card-character japanese-text">{subject.Characters}</div>
         <div className="subject-card-content">
         {primaryMeaning && (
           <div className="subject-card-meaning">

@@ -30,6 +30,7 @@
   margin-bottom: 12px;
   line-height: 1;
   color: #333;
+  font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 .subject-card-content {
@@ -47,7 +48,7 @@
   font-size: 14px;
   color: #666;
   margin-bottom: 8px;
-  font-family: "Hiragana", sans-serif;
+  font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 .subject-card-level {

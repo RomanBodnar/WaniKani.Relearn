@@ -3,6 +3,7 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-jp: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 html,
@@ -12,4 +13,10 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+/* Japanese text styling */
+.japanese-text {
+  font-family: var(--font-jp);
+  font-weight: 600;
 }

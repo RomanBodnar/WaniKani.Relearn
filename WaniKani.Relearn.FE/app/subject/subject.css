@@ -35,6 +35,7 @@
   line-height: 1;
   color: #333;
   min-width: 140px;
+  font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 .subject-detail-info {
@@ -104,6 +105,7 @@
   font-weight: 500;
   color: #333;
   flex: 1;
+  font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 .reading-type {
@@ -220,6 +222,7 @@
   border: 2px solid #007bff;
   border-radius: 8px;
   transition: all 0.2s ease;
+  font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 .subject-link:hover {
