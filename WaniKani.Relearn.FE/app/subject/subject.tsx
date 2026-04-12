@@ -4,6 +4,7 @@ import { type Subject } from "~/hooks/Subject";
 import { API_ENDPOINTS } from "~/config/api";
 import { transformSubject } from "~/utils/transformSubject";
 import type { SubjectDetailData } from "~/types/subject";
+import { parseMnemonics } from "~/utils/parseMnemonics";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -177,7 +178,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {subject.MeaningMnemonic && (
           <section className="detail-section mnemonic-section">
             <h2>Meaning Mnemonic</h2>
-            <p className="mnemonic-text">{subject.MeaningMnemonic}</p>
+            <p className="mnemonic-text">{parseMnemonics(subject.MeaningMnemonic)}</p>
           </section>
         )}
 
@@ -185,7 +186,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {subject.ReadingMnemonic && (
           <section className="detail-section mnemonic-section">
             <h2>Reading Mnemonic</h2>
-            <p className="mnemonic-text">{subject.ReadingMnemonic}</p>
+            <p className="mnemonic-text">{parseMnemonics(subject.ReadingMnemonic)}</p>
           </section>
         )}
 
