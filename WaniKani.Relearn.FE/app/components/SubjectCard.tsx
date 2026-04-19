@@ -4,15 +4,16 @@ import "./SubjectCard.css";
 
 interface SubjectCardProps {
   subject: Subject;
+  variant?: "kanji" | "vocabulary" | "radical";
 }
 
-export const SubjectCard = ({ subject }: SubjectCardProps) => {
+export const SubjectCard = ({ subject, variant }: SubjectCardProps) => {
   const primaryMeaning = subject.Meanings?.find((m) => m.Primary);
   const primaryReading = subject.Readings?.find((r) => r.Primary);
 
   return (
     <Link to={`/subject/${subject.Id}`} className="subject-card-link">
-      <div className="subject-card">
+      <div className={`subject-card ${variant ? `subject-card-${variant}` : ''}`}>
         <div className="subject-card-character japanese-text">{subject.Characters}</div>
         <div className="subject-card-content">
         {primaryMeaning && (

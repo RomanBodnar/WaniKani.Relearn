@@ -1,7 +1,7 @@
 .subjects-container {
-  padding: 20px;
-  max-width: 1400px;
+  max-width: 75%;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .subjects-title {
@@ -22,6 +22,10 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 16px;
   margin-bottom: 20px;
+}
+
+.subject-card-radical {
+    background: rgb(0, 170, 255);
 }
 
 .subjects-empty {

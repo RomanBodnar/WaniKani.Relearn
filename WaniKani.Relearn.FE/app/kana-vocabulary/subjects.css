@@ -1,5 +1,5 @@
 .subjects-container {
-  max-width: 1200px;
+  max-width: 75%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -24,6 +24,10 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
   margin-bottom: 40px;
+}
+
+.subject-card-vocabulary {
+    background: rgb(170, 0, 255);
 }
 
 .subjects-empty {

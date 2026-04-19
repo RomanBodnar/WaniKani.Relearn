@@ -16,6 +16,7 @@
   align-items: center;
   text-align: center;
   cursor: pointer;
+  color: white;
 }
 
 .subject-card:hover {
@@ -29,7 +30,6 @@
   font-weight: bold;
   margin-bottom: 12px;
   line-height: 1;
-  color: #333;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -40,13 +40,13 @@
 .subject-card-meaning {
   font-size: 16px;
   font-weight: 600;
-  color: #007bff;
+  color: rgba(252, 252, 252, 0.754);
   margin-bottom: 8px;
 }
 
 .subject-card-reading {
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 8px;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
@@ -54,7 +54,7 @@
 .subject-card-level {
   font-size: 12px;
   background-color: #f0f0f0;
-  color: #666;
+  color: #3d3d3d;
   padding: 4px 8px;
   border-radius: 4px;
   display: inline-block;
@@ -63,7 +63,7 @@
 
 .subject-card-pos {
   font-size: 12px;
-  color: #999;
+  color: #ffffff;
   margin-top: 8px;
   font-style: italic;
 }

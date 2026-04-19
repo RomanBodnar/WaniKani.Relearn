@@ -34,7 +34,7 @@ export default function Vocabulary() {
           ) : subjects && subjects.length > 0 ? (
             <div className="subjects-grid">
               {subjects.map((subject) => (
-                <SubjectCard key={subject.Id} subject={subject} />
+                <SubjectCard key={subject.Id} subject={subject} variant="vocabulary" />
               ))}
             </div>
           ) : (

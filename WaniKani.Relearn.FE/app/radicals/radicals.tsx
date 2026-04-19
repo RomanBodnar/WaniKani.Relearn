@@ -34,7 +34,7 @@ export default function Radicals() {
           ) : subjects && subjects.length > 0 ? (
             <div className="subjects-grid">
               {subjects.map((subject) => (
-                <SubjectCard key={subject.Id} subject={subject} />
+                <SubjectCard key={subject.Id} subject={subject} variant="radical" />
               ))}
             </div>
           ) : (
