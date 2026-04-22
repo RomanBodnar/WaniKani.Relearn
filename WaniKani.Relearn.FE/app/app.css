@@ -13,6 +13,7 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
   background-color: rgb(250, 250, 250);
 }
 
@@ -20,4 +21,14 @@ body {
 .japanese-text {
   font-family: var(--font-jp);
   font-weight: 600;
+}
+
+:root {
+  --color-wk-radical: rgb(0, 170, 255);
+  --color-wk-kanji: rgb(255, 0, 170);
+  --color-wk-vocabulary: rgb(170, 0, 255);
+}
+
+.chart-card {
+  @apply bg-sky-500/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-sky-500/20;
 }
