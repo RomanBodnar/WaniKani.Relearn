@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
-import { stubDashboardData } from "../components/dashboard/StubData";
+import { useDashboardData } from "../hooks/useDashboardData";
 import { SrsStageChart } from "../components/dashboard/SrsStageChart";
 import { SrsStageStackedChart } from "../components/dashboard/SrsStageStackedChart";
 import { CurrentQueueStackedChart } from "../components/dashboard/CurrentQueueStackedChart";
@@ -14,7 +14,17 @@ export function meta({ }: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const { srsDistribution, reviewsAwaiting, upcomingReviews, lessonsReady } = stubDashboardData;
+  const { data: dashboardData } = useDashboardData();
+  
+  if (!dashboardData) {
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        <p className="text-slate-600 dark:text-slate-400">Loading dashboard...</p>
+      </div>
+    );
+  }
+
+  const { srsDistribution, reviewsAwaiting, upcomingReviews, lessonsReady } = dashboardData;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">

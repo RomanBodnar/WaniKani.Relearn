@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-
+using Microsoft.AspNetCore.WebUtilities;
 namespace WaniKani.Relearn;
 
 public interface IWaniKaniClient
@@ -28,17 +28,23 @@ public class WaniKaniClient(
     {
         try
         {
+            var parameters = new Dictionary<string, string?>
+            {
+                ["immediately_available_for_review"] = assignmentsQuery.ImmediatelyAvailableForReview?.ToString().ToLower() ?? null,
+                ["immediately_available_for_lessons"] = assignmentsQuery.ImmediatelyAvailableForLessons?.ToString().ToLower() ?? null,
+            };
+            
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(httpClient.BaseAddress, "assignments")
+                RequestUri = new Uri(QueryHelpers.AddQueryString(new Uri(httpClient.BaseAddress, "assignments").ToString(), parameters))
             };
 
             var response = await httpClient.SendAsync(request);
 
             var code = response.StatusCode;
             var resourcesJson = await response.Content.ReadAsStringAsync();
-            var collectionResource = JsonConvert.DeserializeObject<CollectionResource<Assignment>>(resourcesJson);
+            var collectionResource = System.Text.Json.JsonSerializer.Deserialize<CollectionResource<Assignment>>(resourcesJson);
             return collectionResource;
         } 
         catch (Exception e)

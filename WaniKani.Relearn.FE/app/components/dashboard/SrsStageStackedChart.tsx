@@ -1,7 +1,8 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import type { SrsDistributionItem } from '~/types/dashboard';
 
 interface Props {
-  data: Array<{ stageGroup: string; radicals: number; kanji: number; vocabulary: number }>;
+  data: SrsDistributionItem[];
 }
 
 export function SrsStageStackedChart({ data }: Props) {

@@ -1,7 +1,8 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import type { UpcomingReviewsSummary } from '~/types/dashboard';
 
 interface Props {
-  data: Array<{ timeLabel: string; radicals: number; kanji: number; vocabulary: number }>;
+  data: UpcomingReviewsSummary[];
 }
 
 export function UpcomingReviewsChart({ data }: Props) {

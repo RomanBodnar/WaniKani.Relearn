@@ -12,7 +12,7 @@ public class AssignmentsQuery
     /// Only assignments available at or before this time are returned.
     /// </summary>
     [AliasAs("available_before")]
-    public DateTime? AvailableBefore { get; set; }
+    public string? AvailableBefore { get; set; }
 
     /// <summary>
     /// When set to true, returns assignments that have a value in data.burned_at. 

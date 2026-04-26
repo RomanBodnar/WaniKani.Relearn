@@ -24,4 +24,20 @@ public partial class VocabularyMapper
     [MapProperty(nameof(SingleResource<Vocabulary>.Data) + "." + nameof(Vocabulary.PronunciationAudios), nameof(VocabularyResponse.PronunciationAudios))]
     [MapProperty(nameof(SingleResource<Vocabulary>.Data) + "." + nameof(Vocabulary.Readings), nameof(VocabularyResponse.Readings))]
     public partial VocabularyResponse Map(SingleResource<Vocabulary> resource);
+
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.AuxiliaryMeanings), nameof(VocabularyResponse.AuxiliaryMeanings))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.Characters), nameof(VocabularyResponse.Characters))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.CreatedAt), nameof(VocabularyResponse.CreatedAt))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.DocumentUrl), nameof(VocabularyResponse.DocumentUrl))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.HiddenAt), nameof(VocabularyResponse.HiddenAt))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.LessonPosition), nameof(VocabularyResponse.LessonPosition))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.Level), nameof(VocabularyResponse.Level))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.MeaningMnemonic), nameof(VocabularyResponse.MeaningMnemonic))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.Meanings), nameof(VocabularyResponse.Meanings))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.Slug), nameof(VocabularyResponse.Slug))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.SpacedRepetitionSystemId), nameof(VocabularyResponse.SpacedRepetitionSystemId))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.ContextSentences), nameof(VocabularyResponse.ContextSentences))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.PartsOfSpeech), nameof(VocabularyResponse.PartsOfSpeech))]
+    [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.PronunciationAudios), nameof(VocabularyResponse.PronunciationAudios))]
+    public partial VocabularyResponse Map(SingleResource<KanaVocabulary> resource);
 }

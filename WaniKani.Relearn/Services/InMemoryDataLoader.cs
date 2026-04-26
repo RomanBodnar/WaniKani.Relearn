@@ -15,7 +15,6 @@ public class InMemoryDataLoader(
         var radicals = await staticFileDataAccess.GetAllSubjects<Radical>();
         var kanaVocabulary = await staticFileDataAccess.GetAllSubjects<KanaVocabulary>();
 
-
         foreach (var kanjiSubject in kanji)
         {
             subjectCache.AddOrUpdate(kanjiSubject.CopyAsSubject());

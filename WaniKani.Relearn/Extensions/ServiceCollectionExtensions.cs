@@ -1,6 +1,7 @@
 using WaniKani.Relearn.Api.Mappers;
 using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Http;
+using WaniKani.Relearn.Model.Reviews;
 using WaniKani.Relearn.Model.Subjects;
 using WaniKani.Relearn.Services;
 
@@ -19,6 +20,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddScoped<SubjectsService>();
+        services.AddScoped<IDashboardService, DashboardService>();
         return services;
     }
 

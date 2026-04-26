@@ -16,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api/" />
     <Folder Include="Api/Mappers/" />
-    <Folder Include="Api/Response/" />
     <Folder Include="Http\" />
     <Folder Include="Model/Resources/" />
     <Folder Include="static/" />

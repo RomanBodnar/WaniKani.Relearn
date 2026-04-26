@@ -1,8 +1,9 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import type { SrsDistributionItem } from '~/types/dashboard';
 
 interface Props {
-  data: Array<{ stageGroup: string; [key: string]: string | number }>;
-  dataKey: string;
+  data: SrsDistributionItem[];
+  dataKey: 'radicals' | 'kanji' | 'vocabulary';
   color: string;
   title: string;
 }

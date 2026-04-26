@@ -7,10 +7,12 @@ public class ReviewStatisticsController(
 ) : ControllerBase
 {
     [HttpGet("statistics")]
-    public async Task<IActionResult> GetReviewStatistics()
+    public async Task<IActionResult> GetReviewStatistics(string[]? resources = null)
     {
-        var reviewStatisticsQuery = new ReviewStatisticsQuery();
-        reviewStatisticsQuery.SubjectTypes = [Resources.Kanji];
+        var reviewStatisticsQuery = new ReviewStatisticsQuery
+        {
+            SubjectTypes = resources ?? [Resources.Kanji]
+        };
         var statistics = await reviewStatisticApi.GetReviewStatistics(reviewStatisticsQuery);
         return Ok(statistics);
     }

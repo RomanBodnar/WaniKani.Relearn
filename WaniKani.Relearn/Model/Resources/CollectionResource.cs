@@ -35,7 +35,7 @@ public record CollectionResource<T> : IResource<T>
     /// then this will be null. For a resource, then this is the last time that particular resource was updated.
     /// </summary>
     [JsonPropertyName("data_updated_at")]
-    public DateTime DataUpdatedAt { get; init; }
+    public DateTime? DataUpdatedAt { get; init; }
 
     /// <summary>
     /// For collections, this is going to be the resources returned by the specified scope. 

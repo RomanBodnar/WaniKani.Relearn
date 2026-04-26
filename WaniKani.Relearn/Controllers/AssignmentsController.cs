@@ -7,24 +7,22 @@ namespace WaniKani.Relearn.Controllers;
 [Route("assignments")]
 public class AssignmentsController(
     IAssignmentApi assignmentApi,
+    IWaniKaniClient waniKaniClient,
     SubjectCache subjectCache
 ) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> GetAll(
-        [FromQuery] SubjectType[]? subjectTypes = null,
-        [FromQuery] bool? burned = null,
-        [FromQuery] int[]? levels = null)
+    public async Task<IActionResult> GetAll([FromQuery] AssignmentsQuery query)
     {
-        var queryParams = new AssignmentsQuery();
-        queryParams.Levels = levels;
-        queryParams.Burned = burned;
-        if (subjectTypes is not [])
-        {
-            queryParams.SubjectTypes = subjectTypes?.Select(st => st.ToSnakeCaseString()).ToArray() ?? null;
-        }
+        //var queryParams = new AssignmentsQuery();
+        //queryParams.Levels = levels;
+        //queryParams.Burned = burned;
+        //if (subjectTypes is not [])
+        //{
+        //    queryParams.SubjectTypes = subjectTypes?.Select(st => st.ToSnakeCaseString()).ToArray() ?? null;
+        //}
 
-        var assignments = await assignmentApi.GetAssignments(queryParams);
+        var assignments = await assignmentApi.GetAssignments(query);
         return Ok(assignments);
     }
 

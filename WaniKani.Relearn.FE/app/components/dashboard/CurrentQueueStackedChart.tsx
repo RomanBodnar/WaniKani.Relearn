@@ -1,7 +1,8 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import type { ReviewsReadySummary, LessonsReadySummary } from '~/types/dashboard';
 
 interface Props {
-  data: { total: number; radicals: number; kanji: number; vocabulary: number };
+  data: ReviewsReadySummary | LessonsReadySummary;
   title: string;
 }
 

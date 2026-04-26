@@ -36,13 +36,13 @@ public record Assignment
     /// Timestamp when the subject is resurrected and placed back in the user's review queue.
     /// </summary>
     [JsonPropertyName("ressurected_at")]
-    public DateTime? RessurectedAt {get;}
+    public DateTime? RessurectedAt { get; init; }
 
     /// <summary>
     /// The current SRS stage interval. The interval range is determined by the related subject's spaced repetition system.
     /// </summary>
-    [JsonPropertyName("src_stage")]
-    public int SrsStage {get;}
+    [JsonPropertyName("srs_stage")]
+    public int SrsStage { get; init; }
 
     /// <summary>
     /// Timestamp when the user completes the lesson for the related subject.
