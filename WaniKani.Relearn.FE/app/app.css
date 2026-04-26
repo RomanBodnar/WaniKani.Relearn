@@ -25,8 +25,25 @@ body {
 
 :root {
   --color-wk-radical: rgb(0, 170, 255);
-  --color-wk-kanji: rgb(255, 0, 170);
+  --color-wk-kanji: rgb(230, 0, 170);
   --color-wk-vocabulary: rgb(170, 0, 255);
+  --color-wk-kana-vocabulary: rgb(170, 0, 255);
+
+  --chart-axis-color: #64748b;
+  --chart-grid-color: #cbd5e1;
+  --chart-tooltip-bg: #ffffff;
+  --chart-tooltip-border: #e2e8f0;
+  --chart-tooltip-text: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --chart-axis-color: #94a3b8;
+    --chart-grid-color: #334155;
+    --chart-tooltip-bg: #1e293b;
+    --chart-tooltip-border: #334155;
+    --chart-tooltip-text: #f8fafc;
+  }
 }
 
 .chart-card {

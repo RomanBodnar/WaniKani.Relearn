@@ -11,7 +11,7 @@ import type React from "react";
 export function parseMnemonics(text: string): React.ReactNode {
   // Regular expression to find custom tags and their content
   // Matches: <tagname>content</tagname>
-  const tagRegex = /<(radical|kanji|vocabulary|kana_vocabulary|hiragana|katakana|kanji_name)>([^<]+)<\/\1>/g;
+  const tagRegex = /<(radical|kanji|vocabulary|kana_vocabulary|hiragana|katakana|kanji_name|reading)>([^<]+)<\/\1>/g;
   
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;

@@ -25,15 +25,17 @@
   align-items: center;
   gap: 30px;
   margin-bottom: 40px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #e0e0e0;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: white;
 }
 
 .subject-detail-character {
   font-size: 120px;
   font-weight: bold;
   line-height: 1;
-  color: #333;
+  color: white;
   min-width: 140px;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
@@ -44,6 +46,14 @@
   gap: 10px;
 }
 
+.subject-detail-primary-meaning {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: capitalize;
+}
+
 .subject-detail-type {
   font-size: 18px;
   font-weight: 600;
@@ -52,9 +62,13 @@
 }
 
 .subject-detail-level {
-  font-size: 16px;
-  color: #007bff;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
 }
 
 .subject-detail-content {
@@ -62,6 +76,7 @@
   flex-direction: column;
   gap: 30px;
 }
+
 
 .detail-section {
   background: #f9f9f9;
@@ -83,51 +98,72 @@
   gap: 10px;
 }
 
-.meaning-item,
-.reading-item {
+.meaning-type-label {
+  display: block;
+  font-size: 14px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.primary-meaning-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0f172a;
+  text-transform: capitalize;
+}
+
+.alternative-meaning-text {
+  font-size: 18px;
+  color: #334155;
+  text-transform: capitalize;
+}
+
+/* Readings Layout */
+.kanji-readings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.vocab-readings-grid {
+  display: block;
+}
+
+.reading-type-label {
+  font-size: 14px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.reading-items-inline {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  background: white;
-  border-radius: 4px;
-  border: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.meaning-item.primary,
-.reading-item.primary {
-  background: #e7f3ff;
-  border-color: #007bff;
-}
-
-.meaning-text,
-.reading-text {
-  font-weight: 500;
-  color: #333;
-  flex: 1;
+.reading-inline-text {
+  font-size: 24px;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  color: #0f172a;
 }
 
-.reading-type {
-  font-size: 12px;
-  color: #999;
-  background: #f0f0f0;
-  padding: 2px 8px;
-  border-radius: 3px;
+.reading-inline-text.primary {
+  font-weight: bold;
 }
 
-.badge {
-  font-size: 12px;
-  background: #e0e0e0;
-  color: #666;
-  padding: 4px 10px;
-  border-radius: 12px;
-  white-space: nowrap;
+.reading-inline-text.secondary {
+  color: #475569;
 }
 
-.badge.primary {
-  background: #007bff;
-  color: white;
+.reading-inline-text.none {
+  font-size: 16px;
+  color: #94a3b8;
+  font-family: inherit;
 }
 
 .parts-of-speech {
@@ -248,39 +284,44 @@
 }
 
 /* Tag-specific colors */
-.mnemonic-tag-radical {
-  background-color: #ffd4d4;
-  color: #b71c1c;
+.mnemonic-text mark.mnemonic-tag-radical {
+  background-color: var(--color-wk-radical);
+  color: #fff;
 }
 
-.mnemonic-tag-kanji {
-  background-color: #fff3cd;
-  color: #856404;
+.mnemonic-text mark.mnemonic-tag-kanji {
+  background-color: var(--color-wk-kanji);
+  color: #fff;
 }
 
-.mnemonic-tag-vocabulary {
-  background-color: #d1ecf1;
-  color: #0c5460;
+.mnemonic-text mark.mnemonic-tag-vocabulary {
+  background-color: var(--color-wk-vocabulary);
+  color: #fff;
 }
 
-.mnemonic-tag-kana_vocabulary {
-  background-color: #d4edda;
-  color: #155724;
+.mnemonic-text mark.mnemonic-tag-kana_vocabulary {
+  background-color: var(--color-wk-vocabulary);
+  color: #fff;
 }
 
-.mnemonic-tag-hiragana {
+.mnemonic-text mark.mnemonic-tag-hiragana {
   background-color: #e7d4f5;
   color: #5a21a8;
 }
 
-.mnemonic-tag-katakana {
+.mnemonic-text mark.mnemonic-tag-katakana {
   background-color: #fce4ec;
   color: #880e4f;
 }
 
-.mnemonic-tag-kanji_name {
+.mnemonic-text mark.mnemonic-tag-kanji_name {
   background-color: #f0f4c3;
   color: #827717;
+}
+
+.mnemonic-text mark.mnemonic-tag-reading {
+  background-color: #555555;
+  color: #ffffff;
 }
 
 /* Hover effect for better UX */
@@ -298,5 +339,23 @@
 
   .subject-detail-character {
     font-size: 80px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .primary-meaning-text,
+  .reading-inline-text {
+    color: #f8fafc;
+  }
+
+  .alternative-meaning-text,
+  .reading-inline-text.secondary {
+    color: #cbd5e1;
+  }
+
+  .meaning-type-label,
+  .reading-type-label {
+    color: #94a3b8;
   }
 }

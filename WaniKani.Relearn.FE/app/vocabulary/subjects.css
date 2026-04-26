@@ -1,6 +1,6 @@
 .subjects-container {
   padding: 20px;
-  max-width: 75%;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -20,10 +20,12 @@
 }
 
 .subjects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 40px;
+  justify-content: center;
+  align-items: stretch;
 }
 .subject-card-vocabulary {
     background: rgb(170, 0, 255);
@@ -51,7 +53,6 @@
   }
 
   .subjects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 12px;
   }
 }
@@ -72,7 +73,6 @@
   }
 
   .subjects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 10px;
   }
 }

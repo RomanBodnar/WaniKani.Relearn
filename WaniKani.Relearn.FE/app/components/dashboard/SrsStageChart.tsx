@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 import type { SrsDistributionItem } from '~/types/dashboard';
 
 interface Props {
@@ -15,15 +15,17 @@ export function SrsStageChart({ data, dataKey, color, title }: Props) {
       <div className="h-[250px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
-            <XAxis dataKey="stageGroup" stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 12 }} axisLine={false} tickLine={false} />
-            <YAxis stroke="#94a3b8" tick={{ fill: '#94a3b8', fontSize: 12 }} axisLine={false} tickLine={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid-color)" vertical={false} />
+            <XAxis dataKey="stage" stroke="var(--chart-axis-color)" tick={{ fill: 'var(--chart-axis-color)', fontSize: 12 }} axisLine={false} tickLine={false} />
+            <YAxis stroke="var(--chart-axis-color)" tick={{ fill: 'var(--chart-axis-color)', fontSize: 12 }} axisLine={false} tickLine={false} />
             <Tooltip 
-              contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px', color: '#f8fafc' }}
-              itemStyle={{ color: '#f8fafc' }}
-              cursor={{ fill: '#334155', opacity: 0.4 }}
+              contentStyle={{ backgroundColor: 'var(--chart-tooltip-bg)', border: '1px solid var(--chart-tooltip-border)', borderRadius: '8px', color: 'var(--chart-tooltip-text)' }}
+              itemStyle={{ color: 'var(--chart-tooltip-text)' }}
+              cursor={{ fill: 'var(--chart-grid-color)', opacity: 0.4 }}
             />
-            <Bar dataKey={dataKey} fill={color} radius={[4, 4, 0, 0]} />
+            <Bar dataKey={dataKey} fill={color} radius={[4, 4, 0, 0]}>
+              <LabelList dataKey={dataKey} position="top" fill="var(--chart-axis-color)" fontSize={12} formatter={(val: number) => val > 0 ? val : ''} />
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>

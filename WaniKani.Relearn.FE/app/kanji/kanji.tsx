@@ -1,5 +1,5 @@
-import type { Route } from "../+types/root";
-import { useSubjects } from "~/hooks/useSubjects";
+import type { Route } from "./+types/kanji";
+import { fetchSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import "./subjects.css";
@@ -11,38 +11,50 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Kanji() {
-  const { data: subjects, isLoading, error } = useSubjects("kanji");
+export async function clientLoader() {
+  return await fetchSubjects("kanji");
+}
 
+export function HydrateFallback() {
   return (
     <div className="subjects-container">
       <h1 className="subjects-title">Kanji</h1>
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <>
-          <p className="subjects-subtitle">
-            {subjects && subjects.length > 0
-              ? `Total: ${subjects.length} kanji`
-              : "No kanji data available"}
-          </p>
+      <LoadingSpinner />
+    </div>
+  );
+}
 
-          {error ? (
-            <div className="subjects-empty">
-              <p role="alert" className="error-message">{error.message}</p>
-            </div>
-          ) : subjects && subjects.length > 0 ? (
-            <div className="subjects-grid">
-              {subjects.map((subject) => (
-                <SubjectCard key={subject.Id} subject={subject} variant="kanji"/>
-              ))}
-            </div>
-          ) : (
-            <div className="subjects-empty">
-              <p>No kanji data available</p>
-            </div>
-          )}
-        </>
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  return (
+    <div className="subjects-container">
+      <h1 className="subjects-title">Kanji</h1>
+      <div className="subjects-empty">
+        <p role="alert" className="error-message">{error instanceof Error ? error.message : String(error)}</p>
+      </div>
+    </div>
+  );
+}
+
+export default function Kanji({ loaderData: subjects }: Route.ComponentProps) {
+  return (
+    <div className="subjects-container">
+      <h1 className="subjects-title">Kanji</h1>
+      <p className="subjects-subtitle">
+        {subjects && subjects.length > 0
+          ? `Total: ${subjects.length} kanji`
+          : "No kanji data available"}
+      </p>
+
+      {subjects && subjects.length > 0 ? (
+        <div className="subjects-grid">
+          {subjects.map((subject) => (
+            <SubjectCard key={subject.Id} subject={subject} variant="kanji" />
+          ))}
+        </div>
+      ) : (
+        <div className="subjects-empty">
+          <p>No kanji data available</p>
+        </div>
       )}
     </div>
   );

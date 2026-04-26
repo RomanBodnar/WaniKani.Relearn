@@ -3,7 +3,7 @@
  */
 
 export interface SrsDistributionItem {
-  stageGroup: string;
+  stage: string;
   radicals: number;
   kanji: number;
   vocabulary: number;

@@ -1,4 +1,6 @@
-export const stubDashboardData = {
+import type { DashboardSummary } from '~/types/dashboard';
+
+export const stubDashboardData: DashboardSummary = {
   srsDistribution: [
     {
       stageGroup: "Apprentice", 

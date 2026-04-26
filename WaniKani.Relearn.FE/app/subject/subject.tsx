@@ -91,6 +91,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
   const { subject, componentSubjects, amalgamationSubjects } = loaderData as unknown as SubjectDetailData;
   const navigate = useNavigate();
+  const primaryMeaning = subject.Meanings?.find(m => m.Primary)?.Meaning || subject.Meanings?.[0]?.Meaning || "";
 
   return (
     <div className="subject-detail-container">
@@ -102,10 +103,15 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         ← Back
       </button>
 
-      <div className="subject-detail-header">
+      <div 
+        className="subject-detail-header"
+        style={{ backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})` }}
+      >
         <div className="subject-detail-character japanese-text">{subject.Characters}</div>
         <div className="subject-detail-info">
-          <span className="subject-detail-type">{subject.Object}</span>
+          {primaryMeaning && (
+            <span className="subject-detail-primary-meaning">{primaryMeaning}</span>
+          )}
           {subject.Level !== undefined && (
             <span className="subject-detail-level">Level {subject.Level}</span>
           )}
@@ -113,52 +119,104 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
       </div>
 
       <div className="subject-detail-content">
-        {/* Meanings Section */}
-        {subject.Meanings && subject.Meanings.length > 0 && (
+        {/* Meanings & Mnemonic Section */}
+        {(subject.Meanings?.length || subject.MeaningMnemonic) ? (
           <section className="detail-section">
             <h2>Meanings</h2>
-            <div className="meanings-list">
-              {subject.Meanings.map((meaning, idx) => (
-                <div
-                  key={idx}
-                  className={`meaning-item ${
-                    meaning.Primary ? "primary" : "secondary"
-                  }`}
-                >
-                  <span className="meaning-text">{meaning.Meaning}</span>
-                  {meaning.Primary && (
-                    <span className="badge primary">Primary</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
 
-        {/* Readings Section */}
-        {subject.Readings && subject.Readings.length > 0 && (
+            {subject.Meanings && subject.Meanings.length > 0 && (
+              <div className="meanings-layout mb-6">
+                {subject.Meanings.filter(m => m.Primary).length > 0 && (
+                  <div className="primary-meanings">
+                    <span className="meaning-type-label">Primary</span>
+                    <span className="primary-meaning-text">
+                      {subject.Meanings.filter(m => m.Primary).map(m => m.Meaning).join(', ')}
+                    </span>
+                  </div>
+                )}
+                {subject.Meanings.filter(m => !m.Primary).length > 0 && (
+                  <div className="alternative-meanings mt-4">
+                    <span className="meaning-type-label">Alternatives</span>
+                    <span className="alternative-meaning-text">
+                      {subject.Meanings.filter(m => !m.Primary).map(m => m.Meaning).join(', ')}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {subject.MeaningMnemonic && (
+              <div className="mnemonic-sub-section" style={{ marginTop: subject.Meanings?.length ? '20px' : '0' }}>
+                <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Meaning Mnemonic</h3>
+                <p className="mnemonic-text">{parseMnemonics(subject.MeaningMnemonic)}</p>
+              </div>
+            )}
+          </section>
+        ) : null}
+
+        {/* Readings & Mnemonic Section */}
+        {(subject.Readings?.length || subject.ReadingMnemonic) ? (
           <section className="detail-section">
             <h2>Readings</h2>
-            <div className="readings-list">
-              {subject.Readings.map((reading, idx) => (
-                <div
-                  key={idx}
-                  className={`reading-item ${
-                    reading.Primary ? "primary" : "secondary"
-                  }`}
-                >
-                  <span className="reading-text">{reading.Reading}</span>
-                  {reading.Type && (
-                    <span className="reading-type">{reading.Type}</span>
-                  )}
-                  {reading.Primary && (
-                    <span className="badge primary">Primary</span>
-                  )}
-                </div>
-              ))}
-            </div>
+
+            {subject.Readings && subject.Readings.length > 0 && (
+              <div className="readings-layout mb-6">
+                {subject.Object === 'kanji' ? (
+                  <div className="kanji-readings-grid">
+                    <div className="reading-column">
+                      <h3 className="reading-type-label">On'yomi</h3>
+                      <div className="reading-items-inline">
+                        {subject.Readings.filter(r => r.Type === 'onyomi').length > 0 
+                          ? subject.Readings.filter(r => r.Type === 'onyomi').map((r, i) => (
+                              <span key={`on-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ))
+                          : <span className="reading-inline-text none">None</span>}
+                      </div>
+                    </div>
+                    <div className="reading-column">
+                      <h3 className="reading-type-label">Kun'yomi</h3>
+                      <div className="reading-items-inline">
+                        {subject.Readings.filter(r => r.Type === 'kunyomi').length > 0 
+                          ? subject.Readings.filter(r => r.Type === 'kunyomi').map((r, i) => (
+                              <span key={`kun-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ))
+                          : <span className="reading-inline-text none">None</span>}
+                      </div>
+                    </div>
+                    <div className="reading-column">
+                      <h3 className="reading-type-label">Nanori</h3>
+                      <div className="reading-items-inline">
+                        {subject.Readings.filter(r => r.Type === 'nanori').length > 0 
+                          ? subject.Readings.filter(r => r.Type === 'nanori').map((r, i) => (
+                              <span key={`nan-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ))
+                          : <span className="reading-inline-text none">None</span>}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="vocab-readings-grid">
+                    <div className="reading-column">
+                      <h3 className="reading-type-label">Reading</h3>
+                      <div className="reading-items-inline">
+                        {subject.Readings.map((r, i) => (
+                          <span key={`voc-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {subject.ReadingMnemonic && (
+              <div className="mnemonic-sub-section" style={{ marginTop: subject.Readings?.length ? '20px' : '0' }}>
+                <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Reading Mnemonic</h3>
+                <p className="mnemonic-text">{parseMnemonics(subject.ReadingMnemonic)}</p>
+              </div>
+            )}
           </section>
-        )}
+        ) : null}
 
         {/* Parts of Speech */}
         {subject.PartsOfSpeech && subject.PartsOfSpeech.length > 0 && (
@@ -171,22 +229,6 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                 </span>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* Meaning Mnemonic */}
-        {subject.MeaningMnemonic && (
-          <section className="detail-section mnemonic-section">
-            <h2>Meaning Mnemonic</h2>
-            <p className="mnemonic-text">{parseMnemonics(subject.MeaningMnemonic)}</p>
-          </section>
-        )}
-
-        {/* Reading Mnemonic */}
-        {subject.ReadingMnemonic && (
-          <section className="detail-section mnemonic-section">
-            <h2>Reading Mnemonic</h2>
-            <p className="mnemonic-text">{parseMnemonics(subject.ReadingMnemonic)}</p>
           </section>
         )}
 
