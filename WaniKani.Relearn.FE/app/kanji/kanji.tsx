@@ -2,6 +2,8 @@ import type { Route } from "./+types/kanji";
 import { fetchSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { LevelFilter, type LevelRange } from "../components/LevelFilter";
+import React, { useState, useMemo } from "react";
 import "./subjects.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -36,24 +38,40 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 }
 
 export default function Kanji({ loaderData: subjects }: Route.ComponentProps) {
+  const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
+
+  const filteredSubjects = useMemo(() => {
+    if (!subjects) return [];
+    if (!selectedRange) return subjects;
+    return subjects.filter(
+      (s) => s.Level !== undefined && s.Level >= selectedRange[0] && s.Level <= selectedRange[1]
+    );
+  }, [subjects, selectedRange]);
+
   return (
     <div className="subjects-container">
       <h1 className="subjects-title">Kanji</h1>
+      
+      <LevelFilter 
+        selectedRange={selectedRange} 
+        onRangeChange={setSelectedRange} 
+      />
+
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0
-          ? `Total: ${subjects.length} kanji`
+          ? `Showing ${filteredSubjects.length} of ${subjects.length} kanji`
           : "No kanji data available"}
       </p>
 
-      {subjects && subjects.length > 0 ? (
+      {filteredSubjects.length > 0 ? (
         <div className="subjects-grid">
-          {subjects.map((subject) => (
+          {filteredSubjects.map((subject) => (
             <SubjectCard key={subject.Id} subject={subject} variant="kanji" />
           ))}
         </div>
       ) : (
         <div className="subjects-empty">
-          <p>No kanji data available</p>
+          <p>No kanji data matches the selected level range.</p>
         </div>
       )}
     </div>

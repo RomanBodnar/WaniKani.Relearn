@@ -1,0 +1,69 @@
+.level-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-button {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+}
+
+.filter-button.active {
+  background: var(--color-wk-kanji);
+  color: white;
+  border-color: var(--color-wk-kanji);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode overrides if needed */
+:global(.dark) .level-filter-container {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:global(.dark) .filter-button {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+:global(.dark) .filter-button:hover {
+  background: #475569;
+}
+
+:global(.dark) .filter-button.active {
+  background: var(--color-wk-kanji);
+  color: white;
+}
