@@ -35,8 +35,8 @@ public record Assignment
     /// <summary>
     /// Timestamp when the subject is resurrected and placed back in the user's review queue.
     /// </summary>
-    [JsonPropertyName("ressurected_at")]
-    public DateTime? RessurectedAt { get; init; }
+    [JsonPropertyName("resurrected_at")]
+    public DateTime? ResurrectedAt { get; init; }
 
     /// <summary>
     /// The current SRS stage interval. The interval range is determined by the related subject's spaced repetition system.
