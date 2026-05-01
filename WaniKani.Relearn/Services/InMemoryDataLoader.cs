@@ -3,7 +3,7 @@
 namespace WaniKani.Relearn.Services;
 
 public class InMemoryDataLoader(
-    StaticFileDataAccess staticFileDataAccess,
+    IDataAccess staticFileDataAccess,
     SubjectCache subjectCache,
     ILogger<InMemoryDataLoader> logger) : IHostedService
 {

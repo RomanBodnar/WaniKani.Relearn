@@ -13,7 +13,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddHostedService<InMemoryDataLoader>();
         services.AddSingleton<SubjectCache>();
-        services.AddSingleton<StaticFileDataAccess>();
+        services.AddSingleton<IDataAccess, StaticFileDataAccess>();
         return services;
     }
 

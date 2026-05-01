@@ -1,9 +1,9 @@
 using WaniKani.Relearn;
 using WaniKani.Relearn.Extensions;
 
-internal class Program
+public class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -15,9 +15,6 @@ internal class Program
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
             .AddInMemoryCollection(new Dictionary<string, string?>
             {
-                ["WaniKani:Api"] = "https://api.wanikani.com/v2/",
-                ["WaniKani:AccessToken"] = "a31b5b14-24cb-482a-8c93-ca6a17e3fa08",
-                ["WaniKani:Revision"] = "20170710",
                 ["StaticFiles:Path"] = Path.Combine(env.ContentRootPath, "static")
             });
 
@@ -58,11 +55,8 @@ internal class Program
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.UseHttpsRedirection();
         app.MapControllers();
