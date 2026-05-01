@@ -9,12 +9,6 @@ public record KanaVocabulary : Subject
     public IReadOnlyCollection<ContextSentence> ContextSentences { get; init; }
 
     /// <summary>
-    /// The subject's meaning mnemonic.
-    /// </summary>
-    [JsonPropertyName("meaning_mnemonic")]
-    public string MeaningMnemonic { get; init; }
-
-    /// <summary>
     /// Parts of speech.
     /// </summary>
     [JsonPropertyName("parts_of_speech")]

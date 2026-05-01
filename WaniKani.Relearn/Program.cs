@@ -40,7 +40,6 @@ internal class Program
 
         var services = builder.Services;
         var configuration = builder.Configuration;
-
         services
             .AddDataAccess()
             .AddServices()

@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.WebUtilities;
+using static System.Math;
 namespace WaniKani.Relearn;
 
 public interface IWaniKaniClient
@@ -9,8 +10,7 @@ public interface IWaniKaniClient
 }
 
 public class WaniKaniClient(
-    HttpClient httpClient
-) : IWaniKaniClient
+    HttpClient httpClient) : IWaniKaniClient
 {
     public async Task<string> GetByUrl(string url)
     {

@@ -6,7 +6,7 @@ namespace WaniKani.Relearn.Model.Subjects;
 
 public class SubjectsService(
     ISubjectsApi subjectsApi,
-    StaticFileDataAccess staticFileDataAccess,
+    IDataAccess dataAccess,
     IWaniKaniClient wanikaniClient,
     ILogger<SubjectsService> logger
 )
@@ -23,7 +23,7 @@ public class SubjectsService(
         try
         {
             var levels = level is not null ? [level.Value] : Enumerable.Range(1, 60).ToArray();
-            return await staticFileDataAccess.GetAllSubjects<T>(levels);
+            return await dataAccess.GetAllSubjects<T>(levels);
         }
         catch (FileNotFoundException)
         {
@@ -33,7 +33,7 @@ public class SubjectsService(
             var subjectsByLevel = subjects.GroupBy(s => s.Data.Level).ToDictionary(g => g.Key, g => g.ToList());
             foreach (var item in subjectsByLevel)
             {
-                await staticFileDataAccess.SaveSubjectsForLevel(item.Key, item.Value);
+                await dataAccess.SaveSubjectsForLevel(item.Key, item.Value);
             }
             return subjects.ToList();
         }

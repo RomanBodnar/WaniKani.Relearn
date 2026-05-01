@@ -6,7 +6,7 @@ public record Kanji : Subject
     /// An array of numeric identifiers for the vocabulary that have the kanji as a component.
     /// </summary>
     [JsonPropertyName("amalgamation_subject_ids")] 
-    public IReadOnlyCollection<int> AmalgationSubjectIds { get; init; }
+    public IReadOnlyCollection<int> AmalgationSubjectIds { get; init; } = [];
 
     /// <summary>
     /// An array of numeric identifiers for the radicals that make up this kanji. 
@@ -14,7 +14,7 @@ public record Kanji : Subject
     /// unlock this subject's assignment.
     /// </summary>
     [JsonPropertyName("component_subject_ids")] 
-    public IReadOnlyCollection<int> ComponentSubjectIds { get; init; }
+    public IReadOnlyCollection<int> ComponentSubjectIds { get; init; } = [];
 
     /// <summary>
     /// Meaning hint for the kanji.
@@ -32,17 +32,17 @@ public record Kanji : Subject
     /// The kanji's reading mnemonic.
     /// </summary>
     [JsonPropertyName("reading_mnemonic")] 
-    public string ReadingMnemonic { get; init; }
+    public required string ReadingMnemonic { get; init; }
 
     /// <summary>
     /// Selected readings for the kanji. See table below for the object structure.
     /// </summary>
     [JsonPropertyName("readings")] 
-    public IReadOnlyCollection<KanjiReading> Readings { get; init; }
+    public IReadOnlyCollection<KanjiReading> Readings { get; init; } = [];
 
     /// <summary>
     /// An array of numeric identifiers for kanji which are visually similar to the kanji in question.
     /// </summary>
-    [JsonPropertyName("visually_similar_subject_ids")] 
-    public IReadOnlyCollection<int> VisuallySimilarSubjectIds { get; init; }
+    [JsonPropertyName("visually_similar_subject_ids")]
+    public IReadOnlyCollection<int> VisuallySimilarSubjectIds { get; init; } = [];
 }

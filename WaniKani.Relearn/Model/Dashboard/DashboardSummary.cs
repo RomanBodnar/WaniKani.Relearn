@@ -2,7 +2,7 @@
 
 public class DashboardSummary
 {
-    public List<SrsDistributionItem> SrsDistribution { get; init; }
-    public LessonsReadySummary LessonsReady { get; init; }
-    public ReviewsReadySummary ReviewsAwaiting { get; init; }
+    public required List<SrsDistributionItem> SrsDistribution { get; init; }
+    public required LessonsReadySummary LessonsReady { get; init; }
+    public required ReviewsReadySummary ReviewsAwaiting { get; init; }
 }

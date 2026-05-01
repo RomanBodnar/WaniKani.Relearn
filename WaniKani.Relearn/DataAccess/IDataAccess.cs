@@ -4,8 +4,6 @@ namespace WaniKani.Relearn.DataAccess;
 
 public interface IDataAccess
 {
-    Task<List<SingleResource<Radical>>> GetAllRadicals(params int[] levels);
-    Task<List<SingleResource<Kanji>>> GetAllKanji(params int[] levels);
-    Task<List<SingleResource<Vocabulary>>> GetAllVocabulary(params int[] levels);
-    Task<List<SingleResource<KanaVocabulary>>> GetAllKanaVocabulary(params int[] levels);
+    Task<List<SingleResource<T>>> GetAllSubjects<T>(params int[] levels) where T : Subject;
+    Task SaveSubjectsForLevel<T>(int level, IEnumerable<SingleResource<T>> subjects) where T : Subject;
 }

@@ -10,19 +10,19 @@ public class StaticFileDataAccess(
     {
         if (typeof(T) == typeof(Kanji))
         {
-            return await GetAllKanji(levels) as List<SingleResource<T>>;
+            return await GetAllKanji(levels) as List<SingleResource<T>> ?? [];
         }
         else if (typeof(T) == typeof(Radical))
         {
-            return await GetAllRadicals(levels) as List<SingleResource<T>>;
+            return await GetAllRadicals(levels) as List<SingleResource<T>> ?? [];
         }
         else if (typeof(T) == typeof(Vocabulary))
         {
-            return await GetAllVocabulary(levels) as List<SingleResource<T>>;
+            return await GetAllVocabulary(levels) as List<SingleResource<T>> ?? [];
         }
         else if (typeof(T) == typeof(KanaVocabulary))
         {
-            return await GetAllKanaVocabulary(levels) as List<SingleResource<T>>;
+            return await GetAllKanaVocabulary(levels) as List<SingleResource<T>> ?? [];
         }
         else
         {
@@ -136,50 +136,6 @@ public class StaticFileDataAccess(
         return subjects;
     }
 
-    public async Task<string> GetKanjiForLevel(int level)
-    {
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kanji-{level}.json");
-        if (!File.Exists(path))
-        {
-            throw new FileNotFoundException($"File not found: {path}");
-        }
-
-        return await File.ReadAllTextAsync(path);
-    }
-
-    public async Task<string> GetVocabularyForLevel(int level)
-    {
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"vocabulary-{level}.json");
-        if (!File.Exists(path))
-        {
-            throw new FileNotFoundException($"File not found: {path}");
-        }
-
-        return await File.ReadAllTextAsync(path);
-    }
-
-    public async Task<string> GetRadicalsForLevel(int level)
-    {
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"radicals-{level}.json");
-        if (!File.Exists(path))
-        {
-            throw new FileNotFoundException($"File not found: {path}");
-        }
-
-        return await File.ReadAllTextAsync(path);
-    }
-
-    public async Task<string> GetKanaVocabularyForLevel(int level)
-    {
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kana_vocabulary-{level}.json");
-        if (!File.Exists(path))
-        {
-            throw new FileNotFoundException($"File not found: {path}");
-        }
-
-        return await File.ReadAllTextAsync(path);
-    }
-
     public async Task SaveSubjectsForLevel<T>(int level, IEnumerable<SingleResource<T>> subjects) where T : Subject
     {
         string prefix = typeof(T).Name.ToLower() + "-";
@@ -189,34 +145,6 @@ public class StaticFileDataAccess(
         }
         var json = JsonConvert.SerializeObject(subjects, Formatting.Indented);
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"{prefix}{level}.json");
-        await File.WriteAllTextAsync(path, json);
-    }
-
-    public async Task SaveKanjiForLevel(int level, IEnumerable<SingleResource<Subject>> kanji)
-    {
-        var json = JsonConvert.SerializeObject(kanji, Formatting.Indented);
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kanji-{level}.json");
-        await File.WriteAllTextAsync(path, json);
-    }
-
-    public async Task SaveVocabularyForLevel(int level, IEnumerable<SingleResource<Subject>> vocabulary)
-    {
-        var json = JsonConvert.SerializeObject(vocabulary, Formatting.Indented);
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"vocabulary-{level}.json");
-        await File.WriteAllTextAsync(path, json);
-    }
-
-    public async Task SaveRadicalsForLevel(int level, IEnumerable<SingleResource<Subject>> radicals)
-    {
-        var json = JsonConvert.SerializeObject(radicals, Formatting.Indented);
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"radical-{level}.json");
-        await File.WriteAllTextAsync(path, json);
-    }
-
-    public async Task SaveKanaVocabularyForLevel(int level, IEnumerable<SingleResource<Subject>> kanaVocabulary)
-    {
-        var json = JsonConvert.SerializeObject(kanaVocabulary, Formatting.Indented);
-        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"kana_vocabulary-{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
 }

@@ -21,7 +21,7 @@ public class AssignmentsController(
         //{
         //    queryParams.SubjectTypes = subjectTypes?.Select(st => st.ToSnakeCaseString()).ToArray() ?? null;
         //}
-
+        var a = await waniKaniClient.GetByUrl("assignments?immediately_available_for_review=true");
         var assignments = await assignmentApi.GetAssignments(query);
         return Ok(assignments);
     }

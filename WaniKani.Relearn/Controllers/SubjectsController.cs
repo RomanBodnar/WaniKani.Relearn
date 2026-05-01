@@ -40,10 +40,10 @@ public class SubjectsController(
         {
             return new JsonResult(subject!.Data switch
             {
-                Kanji kanji => kanjiMapper.Map(subject.CopyAs<Kanji>()),
-                Vocabulary vocab => vocabularyMapper.Map(subject.CopyAs<Vocabulary>()),
-                Radical radical => radicalMapper.Map(subject.CopyAs<Radical>()),
-                KanaVocabulary kanaVocab => vocabularyMapper.Map(subject.CopyAs<KanaVocabulary>()),
+                Kanji => kanjiMapper.Map(subject.CopyAs<Kanji>()),
+                Radical => radicalMapper.Map(subject.CopyAs<Radical>()),
+                Vocabulary  => vocabularyMapper.Map(subject.CopyAs<Vocabulary>()),
+                KanaVocabulary => vocabularyMapper.Map(subject.CopyAs<KanaVocabulary>()),
                 _ => throw new InvalidOperationException("Unknown subject type")
             });
         }

@@ -4,7 +4,7 @@ namespace WaniKani.Relearn.Controllers
 {
     [Route("dashboard")]
     [ApiController]
-    public class DasboardController(
+    public class DashboardController(
         IDashboardService dashboardService) : ControllerBase
     {
         [HttpGet("summary")]

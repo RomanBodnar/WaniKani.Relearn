@@ -3,13 +3,13 @@
 public abstract record Subject
 {
     [JsonPropertyName("auxiliary_meanings")]
-    public IReadOnlyCollection<AuxiliaryMeaning> AuxiliaryMeanings { get; init; }
+    public IReadOnlyCollection<AuxiliaryMeaning> AuxiliaryMeanings { get; init; } = [];
 
     /// <summary>
     /// The UTF-8 characters for the subject, including kanji and hiragana.
     /// </summary>
     [JsonPropertyName("characters")]
-    public string Characters { get; init; }
+    public string? Characters { get; init; }
 
     /// <summary>
     /// Timestamp when the subject was created.
@@ -21,7 +21,7 @@ public abstract record Subject
     /// A URL pointing to the page on wanikani.com that provides detailed information about this subject.
     /// </summary>
     [JsonPropertyName("document_url")]
-    public string DocumentUrl { get; init; }
+    public required string DocumentUrl { get; init; }
 
     /// <summary>
     /// Timestamp when the subject was hidden, indicating associated assignments will no longer 
@@ -47,20 +47,20 @@ public abstract record Subject
     /// The subject's meaning mnemonic.
     /// </summary>
     [JsonPropertyName("meaning_mnemonic")]
-    public string MeaningMnemonic { get; init; }
+    public required string MeaningMnemonic { get; init; }
 
     /// <summary>
     /// The subject meanings.
     /// </summary>
     [JsonPropertyName("meanings")]
-    public IReadOnlyCollection<MeaningObject> Meanings { get; init; }
+    public IReadOnlyCollection<MeaningObject> Meanings { get; init; } = [];
 
     /// <summary>
     /// The string that is used when generating the document URL for the subject. 
     /// Radicals use their meaning, downcased. Kanji and vocabulary use their characters.
     /// </summary>
     [JsonPropertyName("slug")]
-    public string Slug { get; init; }
+    public required string Slug { get; init; }
 
     /// <summary>
     /// Unique identifier of the associated spaced_repetition_system.

@@ -27,7 +27,7 @@ public record LessonSummary
     /// Collection of unique identifiers for subjects.
     /// </summary>
     [JsonPropertyName("subject_ids")]
-    public IReadOnlyCollection<int> SubjectIds { get; init; }
+    public IReadOnlyCollection<int> SubjectIds { get; init; } = [];
 
     /// <summary>
     /// When the paired subject_ids are available for lessons. Always beginning of the current hour when the API endpoint is accessed.
@@ -42,7 +42,7 @@ public record ReviewSummary
     /// Collection of unique identifiers for subjects.
     /// </summary>
     [JsonPropertyName("subject_ids")]
-    public IReadOnlyCollection<int> SubjectIds { get; init; }
+    public IReadOnlyCollection<int> SubjectIds { get; init; } = [];
 
     /// <summary>
     /// When the paired subject_ids are available for reviews. All timestamps are the top of an hour.
