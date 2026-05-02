@@ -74,11 +74,6 @@ public static class ServiceCollectionExtensions
             .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
             .AddHttpMessageHandler<HttpLoggingHandler>();
 
-        services
-            .AddRefitClient<IReviewsApi>(refitSettings)
-            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
-            .AddHttpMessageHandler<HttpLoggingHandler>();
-
         return services;
     }
 

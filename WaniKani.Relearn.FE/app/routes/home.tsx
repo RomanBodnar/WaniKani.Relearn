@@ -4,7 +4,6 @@ import { useDashboardData } from "../hooks/useDashboardData";
 import { SrsStageChart } from "../components/dashboard/SrsStageChart";
 import { SrsStageStackedChart } from "../components/dashboard/SrsStageStackedChart";
 import { CurrentQueueStackedChart } from "../components/dashboard/CurrentQueueStackedChart";
-import { UpcomingReviewsChart } from "../components/dashboard/UpcomingReviewsChart";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -64,7 +63,7 @@ export default function Home() {
     return <DashboardSkeleton error={error} />;
   }
 
-  const { srsDistribution, reviewsAwaiting, upcomingReviews = [], lessonsReady } = dashboardData;
+  const { srsDistribution, reviewsAwaiting, lessonsReady } = dashboardData;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -76,10 +75,6 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <CurrentQueueStackedChart data={reviewsAwaiting} title="Awaiting Reviews" />
         <CurrentQueueStackedChart data={lessonsReady} title="Ready to Study (Lessons)" />
-      </div>
-
-      <div className="mb-8">
-        <UpcomingReviewsChart data={upcomingReviews} />
       </div>
 
       <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">SRS Progress</h2>

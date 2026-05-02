@@ -27,9 +27,7 @@ public class DashboardService(
         AssignmentsQuery query = new()
         {
             Burned = false,
-            Unlocked = true
-            //AvailableBefore = DateTimeOffset.UtcNow.ToString("O"),
-            //ImmediatelyAvailableForReview = true,
+            Unlocked = true,
         };
         var assignments = await assignmentApi.GetAssignments(query);
         var reviews = assignments.Data.Where(x => x.Data.AvailableAt is not null);
@@ -137,10 +135,5 @@ public class DashboardService(
                 }
             });
         return lessonSummary;
-    }
-
-    public List<object> GetUpcomingReview(List<SingleResource<Assignment>> assignements)
-    {
-        throw new NotImplementedException();
     }
 }
