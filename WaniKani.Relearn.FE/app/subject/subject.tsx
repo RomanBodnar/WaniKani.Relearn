@@ -26,7 +26,7 @@ async function fetchSubjectById(id: number | string): Promise<Subject | null> {
   return transformSubject(data);
 }
 
-export async function loader({ params }: Route.LoaderArgs) {
+export async function clientLoader({ params }: Route.ClientLoaderArgs) {
   const id = params.id;
   if (!id) {
     throw new Response("Subject ID not found", { status: 404 });

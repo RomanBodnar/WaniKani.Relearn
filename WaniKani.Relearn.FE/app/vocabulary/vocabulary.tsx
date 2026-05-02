@@ -17,15 +17,6 @@ export async function clientLoader() {
   return await fetchSubjects("vocabulary");
 }
 
-export function HydrateFallback() {
-  return (
-    <div className="subjects-container">
-      <h1 className="subjects-title">Vocabulary</h1>
-      <LoadingSpinner />
-    </div>
-  );
-}
-
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   return (
     <div className="subjects-container">
@@ -51,10 +42,10 @@ export default function Vocabulary({ loaderData: subjects }: Route.ComponentProp
   return (
     <div className="subjects-container">
       <h1 className="subjects-title">Vocabulary</h1>
-      
-      <LevelFilter 
-        selectedRange={selectedRange} 
-        onRangeChange={setSelectedRange} 
+
+      <LevelFilter
+        selectedRange={selectedRange}
+        onRangeChange={setSelectedRange}
       />
 
       <p className="subjects-subtitle">

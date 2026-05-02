@@ -2,7 +2,7 @@ import type { Route } from "../+types/root";
 import { API_ENDPOINTS } from "~/config/api";
 import type { AssignmentsResponse } from "~/types/assignments";
 
-export async function loader( {params}: Route.LoaderArgs) {
+export async function clientLoader( {params}: Route.ClientLoaderArgs) {
     const response = await fetch(`${API_ENDPOINTS.assignments}?subjectTypes=Kanji`);
     return response.json() as Promise<AssignmentsResponse>;
 }

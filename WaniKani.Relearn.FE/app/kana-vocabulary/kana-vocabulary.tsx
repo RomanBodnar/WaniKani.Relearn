@@ -17,14 +17,7 @@ export async function clientLoader() {
   return await fetchSubjects("kana_vocabulary");
 }
 
-export function HydrateFallback() {
-  return (
-    <div className="subjects-container">
-      <h1 className="subjects-title">Kana Vocabulary</h1>
-      <LoadingSpinner />
-    </div>
-  );
-}
+
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   return (

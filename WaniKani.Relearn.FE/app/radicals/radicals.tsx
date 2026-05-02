@@ -17,14 +17,7 @@ export async function clientLoader() {
   return await fetchSubjects("radical");
 }
 
-export function HydrateFallback() {
-  return (
-    <div className="subjects-container">
-      <h1 className="subjects-title">Radicals</h1>
-      <LoadingSpinner />
-    </div>
-  );
-}
+
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   return (
