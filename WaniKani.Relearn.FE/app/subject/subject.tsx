@@ -5,6 +5,7 @@ import { API_ENDPOINTS } from "~/config/api";
 import { transformSubject } from "~/utils/transformSubject";
 import type { SubjectDetailData } from "~/types/subject";
 import { parseMnemonics } from "~/utils/parseMnemonics";
+import { createGrammarSlug } from "~/utils/grammar";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -224,9 +225,9 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
             <h2>Parts of Speech</h2>
             <div className="parts-of-speech">
               {subject.PartsOfSpeech.map((pos, idx) => (
-                <span key={idx} className="pos-tag">
+                <Link key={idx} to={`/grammar/${createGrammarSlug(pos)}`} className="pos-tag" style={{ textDecoration: 'none' }}>
                   {pos}
-                </span>
+                </Link>
               ))}
             </div>
           </section>

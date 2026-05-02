@@ -30,7 +30,7 @@ public class SubjectsController(
             _ => throw new ArgumentOutOfRangeException(nameof(type), "Invalid subject type")
         };
 
-        return new JsonResult(result);
+        return Ok(result);
     }
 
     [HttpGet("{id:int}")]
@@ -38,7 +38,7 @@ public class SubjectsController(
     {
         if(subjectCache.TryGet(id, out var subject))
         {
-            return new JsonResult(subject!.Data switch
+            return Ok(subject!.Data switch
             {
                 Kanji => kanjiMapper.Map(subject.CopyAs<Kanji>()),
                 Radical => radicalMapper.Map(subject.CopyAs<Radical>()),
