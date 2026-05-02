@@ -7,4 +7,5 @@ export interface SubjectDetailData {
   subject: Subject;
   componentSubjects: Array<{ id: number; characters: string }>;
   amalgamationSubjects: Array<{ id: number; characters: string }>;
+  visuallySimilarSubjects: Array<{ id: number; characters: string }>;
 }

@@ -32,10 +32,10 @@ export default function Grammar({ loaderData }: Route.ComponentProps) {
       <div className="grammar-detail-header">
         <button
           className="back-button header-back-button"
-          onClick={() => navigate(-1)}
-          aria-label="Go back"
+          onClick={() => navigate("/grammar")}
+          aria-label="Go back to grammar topics"
         >
-          ← Back
+          ←
         </button>
         <h1>{article.title}</h1>
       </div>
@@ -71,10 +71,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       <div className="grammar-detail-header" style={{ backgroundColor: '#ff5e5e' }}>
         <button
           className="back-button header-back-button"
-          onClick={() => navigate(-1)}
-          aria-label="Go back"
+          onClick={() => navigate("/grammar")}
+          aria-label="Go back to grammar topics"
         >
-          ← Back
+          ←
         </button>
         <h1>Grammar Topic Not Found</h1>
       </div>

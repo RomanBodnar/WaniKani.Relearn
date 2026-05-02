@@ -22,7 +22,7 @@ public record KanjiResponse
     public int SpacedRepetitionSystemId { get; init; }
 
     // Kanji specific properties
-    public IReadOnlyCollection<int> AmalgationSubjectIds { get; init; }
+    public IReadOnlyCollection<int> AmalgamationSubjectIds { get; init; }
     public IReadOnlyCollection<int> ComponentSubjectIds { get; init; }
     public string? MeaningHint { get; init; }
     public string? ReadingHint { get; init; }

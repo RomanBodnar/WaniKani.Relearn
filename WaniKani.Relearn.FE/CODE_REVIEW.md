@@ -130,8 +130,8 @@ console.log(assignments);
 ### 8. Typos and Naming Issues
 **Location:**
 1. `app/assignments/assignments.tsx` line 13: Component named `Assingnements` (misspelled)
-2. `app/hooks/Subject.ts` line 18: `AmalgationSubjectIds` (should be `AmalgamationSubjectIds`)
-3. `app/subject/subject.tsx` line 83: `AmalgationSubjectIds` (same typo)
+2. `app/hooks/Subject.ts` line 18: `AmalgamationSubjectIds` (should be `AmalgamationSubjectIds`)
+3. `app/subject/subject.tsx` line 83: `AmalgamationSubjectIds` (same typo)
 
 **Recommendation:** Rename component to `Assignments` and fix the property name to match the correct spelling.
 

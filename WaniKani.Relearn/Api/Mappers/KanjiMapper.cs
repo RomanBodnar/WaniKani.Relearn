@@ -17,7 +17,7 @@ public partial class KanjiMapper
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.Meanings), nameof(KanjiResponse.Meanings))]
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.Slug), nameof(KanjiResponse.Slug))]
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.SpacedRepetitionSystemId), nameof(KanjiResponse.SpacedRepetitionSystemId))]
-    [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.AmalgationSubjectIds), nameof(KanjiResponse.AmalgationSubjectIds))]
+    [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.AmalgamationSubjectIds), nameof(KanjiResponse.AmalgamationSubjectIds))]
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.ComponentSubjectIds), nameof(KanjiResponse.ComponentSubjectIds))]
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.MeaningHint), nameof(KanjiResponse.MeaningHint))]
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.ReadingHint), nameof(KanjiResponse.ReadingHint))]

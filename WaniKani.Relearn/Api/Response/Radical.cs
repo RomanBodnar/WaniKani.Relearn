@@ -22,6 +22,6 @@ public record RadicalResponse
     public int SpacedRepetitionSystemId { get; init; }
 
     // Radical specific properties
-    public IReadOnlyCollection<int> AmalgationSubjectIds { get; init; }
+    public IReadOnlyCollection<int> AmalgamationSubjectIds { get; init; }
     public IReadOnlyCollection<CharacterImage> CharacterImages { get; init; }
 }

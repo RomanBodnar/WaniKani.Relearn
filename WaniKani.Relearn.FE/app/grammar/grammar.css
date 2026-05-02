@@ -9,25 +9,36 @@
 }
 
 .grammar-detail-header {
-  background-color: var(--color-wk-vocabulary); /* use vocabulary purple as default grammar color, or could define a new one */
+  background-color: var(--color-wk-vocabulary);
   color: white;
-  padding: 40px 20px;
+  padding: 40px;
   border-radius: 12px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .header-back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: rgba(255, 255, 255, 0.8) !important;
-  margin: 0 !important;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  background: transparent;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  margin: -40px 0 -40px -40px;
+  padding: 0 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .header-back-button:hover {
-  color: white !important;
+  color: #ffffff;
 }
 
 .grammar-detail-header h1 {

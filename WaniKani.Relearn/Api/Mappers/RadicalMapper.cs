@@ -17,7 +17,7 @@ public partial class RadicalMapper
     [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.Meanings), nameof(RadicalResponse.Meanings))]
     [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.Slug), nameof(RadicalResponse.Slug))]
     [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.SpacedRepetitionSystemId), nameof(RadicalResponse.SpacedRepetitionSystemId))]
-    [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.AmalgationSubjectIds), nameof(RadicalResponse.AmalgationSubjectIds))]
+    [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.AmalgamationSubjectIds), nameof(RadicalResponse.AmalgamationSubjectIds))]
     [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.CharacterImages), nameof(RadicalResponse.CharacterImages))]
     public partial RadicalResponse Map(SingleResource<Radical> resource);
 }

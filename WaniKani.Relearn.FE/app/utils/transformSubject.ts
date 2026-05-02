@@ -31,6 +31,7 @@ interface RawSubjectData {
   contextSentences?: Array<{ en: string; ja: string }>;
   pronunciationAudios?: Array<{ url: string; content_type: string; metadata: unknown }>;
   amalgamationSubjectIds?: number[];
+  visuallySimilarSubjectIds?: number[];
   characterImages?: Array<{ url: string; content_type: string; metadata: unknown }>;
 }
 
@@ -67,6 +68,7 @@ export function transformSubject(apiSubject: RawSubjectData): Subject {
     ContextSentences: apiSubject.contextSentences,
     PronunciationAudios: apiSubject.pronunciationAudios,
     AmalgamationSubjectIds: apiSubject.amalgamationSubjectIds,
+    VisuallySimilarSubjectIds: apiSubject.visuallySimilarSubjectIds,
     CharacterImages: apiSubject.characterImages,
   };
 }

@@ -1,4 +1,4 @@
-﻿namespace WaniKani.Relearn;
+namespace WaniKani.Relearn;
 
 public record Kanji : Subject
 {
@@ -6,7 +6,7 @@ public record Kanji : Subject
     /// An array of numeric identifiers for the vocabulary that have the kanji as a component.
     /// </summary>
     [JsonPropertyName("amalgamation_subject_ids")] 
-    public IReadOnlyCollection<int> AmalgationSubjectIds { get; init; } = [];
+    public IReadOnlyCollection<int> AmalgamationSubjectIds { get; init; } = [];
 
     /// <summary>
     /// An array of numeric identifiers for the radicals that make up this kanji. 

@@ -78,10 +78,27 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
       );
     }
 
+    const visuallySimilarSubjects: Array<{ id: number; characters: string }> = [];
+    if (subject.VisuallySimilarSubjectIds && subject.VisuallySimilarSubjectIds.length > 0) {
+      const similarPromises = subject.VisuallySimilarSubjectIds.map((simId) =>
+        fetchSubjectById(simId)
+      );
+      const results = await Promise.all(similarPromises);
+      visuallySimilarSubjects.push(
+        ...results
+          .filter((result) => result !== null)
+          .map((result) => ({
+            id: result!.Id,
+            characters: result!.Characters,
+          }))
+      );
+    }
+
     return {
       subject,
       componentSubjects,
       amalgamationSubjects,
+      visuallySimilarSubjects,
     };
   } catch (error) {
     console.error("Failed to fetch subject:", error);
@@ -90,9 +107,18 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
 }
 
 export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
-  const { subject, componentSubjects, amalgamationSubjects } = loaderData as unknown as SubjectDetailData;
+  const { subject, componentSubjects, amalgamationSubjects, visuallySimilarSubjects } = loaderData as unknown as SubjectDetailData;
   const navigate = useNavigate();
   const primaryMeaning = subject.Meanings?.find(m => m.Primary)?.Meaning || subject.Meanings?.[0]?.Meaning || "";
+
+  // Map subject type to its list route
+  const subjectListRoutes: Record<string, string> = {
+    kanji: "/kanji",
+    radical: "/radicals",
+    vocabulary: "/vocabulary",
+    kana_vocabulary: "/kana-vocabulary",
+  };
+  const backPath = subjectListRoutes[subject.Object] || "/";
 
   return (
     <div className="subject-detail-container">
@@ -112,18 +138,17 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {subject.Characters}
       </div>
 
-      <button
-        className="back-button"
-        onClick={() => navigate(-1)}
-        aria-label="Go back"
-      >
-        ← Back
-      </button>
-
       <div
         className="subject-detail-header"
         style={{ backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})` }}
       >
+        <button
+          className="back-button"
+          onClick={() => navigate(backPath)}
+          aria-label="Go back"
+        >
+          ←
+        </button>
         <div className="subject-detail-character japanese-text">{subject.Characters}</div>
         <div className="subject-detail-info">
           {primaryMeaning && (
@@ -286,8 +311,10 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {amalgamationSubjects && amalgamationSubjects.length > 0 && (
           <section className="detail-section">
             <h2>
-              Used In (
-              {subject.AmalgamationSubjectIds?.length || 0})
+              {subject.Object === 'kanji' && 'Found in Vocabulary'}
+              {subject.Object === 'radical' && 'Used in Kanji'}
+              {subject.Object !== 'kanji' && subject.Object !== 'radical' && 'Used In'}
+              {' '}({subject.AmalgamationSubjectIds?.length || 0})
             </h2>
             <div className="subject-links">
               {amalgamationSubjects.map((amal) => (
@@ -305,6 +332,24 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                     +{subject.AmalgamationSubjectIds.length - 20} more
                   </span>
                 )}
+            </div>
+          </section>
+        )}
+
+        {/* Visually Similar Kanji */}
+        {visuallySimilarSubjects && visuallySimilarSubjects.length > 0 && (
+          <section className="detail-section">
+            <h2>Visually Similar ({visuallySimilarSubjects.length})</h2>
+            <div className="subject-links">
+              {visuallySimilarSubjects.map((sim) => (
+                <Link
+                  key={sim.id}
+                  to={`/subject/${sim.id}`}
+                  className="subject-link"
+                >
+                  {sim.characters}
+                </Link>
+              ))}
             </div>
           </section>
         )}
