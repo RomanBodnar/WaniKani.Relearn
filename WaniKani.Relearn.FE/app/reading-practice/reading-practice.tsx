@@ -1,5 +1,5 @@
 import type { Route } from "./+types/reading-practice";
-import { useState, useMemo, useEffect, useRef, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { fetchSentences, useReadingSentences, saveBookmark, loadBookmark, clearBookmark } from "~/hooks/useReadingSentences";
 import { ReadingSentenceCard } from "./ReadingSentenceCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -45,10 +45,8 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   }), [selectedRange]);
 
   const {
-    sentences, loadMore, loadUpToPage, hasMore, isLoading, totalCount, page
+    sentences, page, totalPages, totalCount, isLoading, goToPage
   } = useReadingSentences(initialData, filters);
-
-  const loaderRef = useRef<HTMLDivElement>(null);
 
   // Load bookmark on mount
   useEffect(() => {
@@ -58,35 +56,17 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
     }
   }, []);
 
-  // Infinite scroll observer
-  useEffect(() => {
-    if (!loaderRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && hasMore && !isLoading) {
-          loadMore();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(loaderRef.current);
-    return () => observer.disconnect();
-  }, [hasMore, isLoading, loadMore]);
-
-  // Handle bookmark interaction: update bookmark as user progresses
+  // Update bookmark as user interacts with cards
   const handleCardInteract = useCallback((sentenceIndex: number) => {
-    const currentPage = Math.floor(sentenceIndex / 10) + 1;
     const bm: ReadingBookmark = {
-      page: currentPage,
+      page,
       sentenceIndex,
       minLevel: filters.minLevel,
       maxLevel: filters.maxLevel,
       timestamp: new Date().toISOString(),
     };
     saveBookmark(bm);
-  }, [filters.minLevel, filters.maxLevel]);
+  }, [page, filters.minLevel, filters.maxLevel]);
 
   // Resume from bookmark
   const handleResume = useCallback(async () => {
@@ -100,8 +80,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
       setSelectedRange(range);
     }
 
-    // Load up to the bookmarked page
-    await loadUpToPage(bookmark.page);
+    await goToPage(bookmark.page);
     setHasResumed(true);
     setBookmark(null);
 
@@ -110,17 +89,19 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
       const el = document.getElementById(`sentence-${bookmark.sentenceIndex}`);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
-        // Brief highlight effect
         el.style.boxShadow = "0 0 0 3px rgba(0, 170, 255, 0.4)";
         setTimeout(() => { el.style.boxShadow = ""; }, 2000);
       }
     }, 300);
-  }, [bookmark, loadUpToPage]);
+  }, [bookmark, goToPage]);
 
   const handleDismissBookmark = () => {
     clearBookmark();
     setBookmark(null);
   };
+
+  // Build page number buttons
+  const pageNumbers = buildPageNumbers(page, totalPages);
 
   return (
     <div className="reading-practice-container">
@@ -161,34 +142,105 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
 
       <p className="reading-practice-count">
         {sentences && sentences.length > 0
-          ? `Showing ${sentences.length} of ${totalCount} sentences`
+          ? `${totalCount} sentences · Page ${page} of ${totalPages}`
           : isLoading ? "Loading…" : "No sentences available"}
       </p>
 
       {/* Sentence cards */}
-      {sentences.length > 0 ? (
+      {isLoading ? (
+        <div className="reading-loader">
+          <LoadingSpinner />
+        </div>
+      ) : sentences.length > 0 ? (
         <div className="sentence-cards-list">
           {sentences.map((sentence, idx) => (
             <ReadingSentenceCard
-              key={`${sentence.ja}-${idx}`}
+              key={`${page}-${idx}`}
               sentence={sentence}
               index={idx}
               onInteract={handleCardInteract}
             />
           ))}
         </div>
-      ) : !isLoading && (
+      ) : (
         <div className="sentence-card" style={{ textAlign: "center", padding: "40px" }}>
           <p style={{ color: "#64748b" }}>No sentences match the selected level range.</p>
         </div>
       )}
 
-      {/* Infinite scroll trigger */}
-      {hasMore && (
-        <div ref={loaderRef} className="reading-loader">
-          {isLoading && <LoadingSpinner />}
-        </div>
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <nav className="pagination" aria-label="Sentence pages">
+          <button
+            className="pagination-btn pagination-prev"
+            onClick={() => goToPage(page - 1)}
+            disabled={page <= 1 || isLoading}
+            aria-label="Previous page"
+          >
+            ← Prev
+          </button>
+
+          <div className="pagination-pages">
+            {pageNumbers.map((p, i) =>
+              p === "…" ? (
+                <span key={`ellipsis-${i}`} className="pagination-ellipsis">…</span>
+              ) : (
+                <button
+                  key={p}
+                  className={`pagination-btn pagination-num ${p === page ? "active" : ""}`}
+                  onClick={() => goToPage(p as number)}
+                  disabled={isLoading}
+                  aria-current={p === page ? "page" : undefined}
+                >
+                  {p}
+                </button>
+              )
+            )}
+          </div>
+
+          <button
+            className="pagination-btn pagination-next"
+            onClick={() => goToPage(page + 1)}
+            disabled={page >= totalPages || isLoading}
+            aria-label="Next page"
+          >
+            Next →
+          </button>
+        </nav>
       )}
     </div>
   );
+}
+
+/**
+ * Builds an array of page numbers with ellipsis for large page counts.
+ * Always shows first, last, and a window around the current page.
+ * Example: [1, "…", 4, 5, 6, "…", 20]
+ */
+function buildPageNumbers(current: number, total: number): (number | "…")[] {
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+
+  const pages: (number | "…")[] = [];
+  const windowSize = 1; // pages around current
+
+  // Always include page 1
+  pages.push(1);
+
+  const rangeStart = Math.max(2, current - windowSize);
+  const rangeEnd = Math.min(total - 1, current + windowSize);
+
+  if (rangeStart > 2) pages.push("…");
+
+  for (let i = rangeStart; i <= rangeEnd; i++) {
+    pages.push(i);
+  }
+
+  if (rangeEnd < total - 1) pages.push("…");
+
+  // Always include last page
+  pages.push(total);
+
+  return pages;
 }

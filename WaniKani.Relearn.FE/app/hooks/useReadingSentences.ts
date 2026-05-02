@@ -3,10 +3,11 @@ import { API_ENDPOINTS } from "~/config/api";
 import type { ReadingSentence, PaginatedSentences, ReadingBookmark } from "~/types/reading";
 
 const BOOKMARK_KEY = "reading-practice-bookmark";
+const PER_PAGE = 10;
 
 export async function fetchSentences(
   page: number = 1,
-  perPage: number = 10,
+  perPage: number = PER_PAGE,
   minLevel?: number,
   maxLevel?: number
 ): Promise<PaginatedSentences> {
@@ -62,14 +63,16 @@ export function useReadingSentences(
   const [isLoading, setIsLoading] = useState(false);
   const [totalCount, setTotalCount] = useState(initialData.totalCount || 0);
 
-  // Reset when filters change
+  const totalPages = Math.max(1, Math.ceil(totalCount / PER_PAGE));
+
+  // Refetch when filters change — reset to page 1
   useEffect(() => {
     let isMounted = true;
 
     const refetch = async () => {
       setIsLoading(true);
       try {
-        const result = await fetchSentences(1, 10, filters.minLevel, filters.maxLevel);
+        const result = await fetchSentences(1, PER_PAGE, filters.minLevel, filters.maxLevel);
         if (isMounted) {
           setSentences(result.data || []);
           setPage(1);
@@ -86,47 +89,22 @@ export function useReadingSentences(
     return () => { isMounted = false; };
   }, [filters.minLevel, filters.maxLevel]);
 
-  const hasMore = sentences.length < totalCount;
-
-  const loadMore = useCallback(async () => {
-    if (isLoading || !hasMore) return;
+  const goToPage = useCallback(async (targetPage: number) => {
+    if (targetPage < 1 || targetPage > totalPages || isLoading) return;
     setIsLoading(true);
     try {
-      const nextPage = page + 1;
-      const result = await fetchSentences(nextPage, 10, filters.minLevel, filters.maxLevel);
-      setSentences(prev => [...prev, ...(result.data || [])]);
+      const result = await fetchSentences(targetPage, PER_PAGE, filters.minLevel, filters.maxLevel);
+      setSentences(result.data || []);
       setPage(result.page);
       setTotalCount(result.totalCount);
+      // Scroll to top of sentence list
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       console.error(err);
     } finally {
       setIsLoading(false);
     }
-  }, [isLoading, hasMore, page, filters.minLevel, filters.maxLevel]);
+  }, [totalPages, isLoading, filters.minLevel, filters.maxLevel]);
 
-  /**
-   * Load sentences up to a specific page (used for bookmark resume).
-   * Fetches pages 1..targetPage and merges all results.
-   */
-  const loadUpToPage = useCallback(async (targetPage: number) => {
-    setIsLoading(true);
-    try {
-      const allSentences: ReadingSentence[] = [];
-      for (let p = 1; p <= targetPage; p++) {
-        const result = await fetchSentences(p, 10, filters.minLevel, filters.maxLevel);
-        allSentences.push(...(result.data || []));
-        if (p === targetPage) {
-          setTotalCount(result.totalCount);
-        }
-      }
-      setSentences(allSentences);
-      setPage(targetPage);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [filters.minLevel, filters.maxLevel]);
-
-  return { sentences, loadMore, loadUpToPage, hasMore, isLoading, totalCount, page };
+  return { sentences, page, totalPages, totalCount, isLoading, goToPage };
 }
