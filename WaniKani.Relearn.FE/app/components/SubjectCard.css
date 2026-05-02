@@ -7,8 +7,8 @@
 
 .subject-card {
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 12px;
+  padding: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   display: flex;
@@ -27,7 +27,7 @@
 }
 
 .subject-card-character {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
   margin-bottom: 12px;
   line-height: 1;
@@ -39,14 +39,14 @@
 }
 
 .subject-card-meaning {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: rgba(252, 252, 252, 0.754);
   margin-bottom: 8px;
 }
 
 .subject-card-reading {
-  font-size: 14px;
+  font-size: 16px;
   color: #ffffff;
   margin-bottom: 8px;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
