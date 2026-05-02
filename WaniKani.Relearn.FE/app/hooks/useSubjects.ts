@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Subject } from "./Subject";
 import { transformSubject } from "~/utils/transformSubject";
+import { API_BASE_URL } from "~/config/api";
 
 export type SubjectType = "radical" | "kanji" | "vocabulary" | "kana_vocabulary";
 
@@ -28,7 +29,6 @@ export async function fetchSubjects(
   };
 
   const queryType = typeMap[subjectType];
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5138";
   const response = await fetch(`${API_BASE_URL}/api/subjects/${queryType}`);
 
   if (!response.ok) {
@@ -58,7 +58,6 @@ export function useSubjects(subjectType: SubjectType): UseSubjectsResult {
           kana_vocabulary: "KanaVocabulary",
         };
         const queryType = typeMap[subjectType];
-        const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5138";
         const response = await fetch(
           `${API_BASE_URL}/api/subjects/${queryType}`,
           { signal: controller.signal }

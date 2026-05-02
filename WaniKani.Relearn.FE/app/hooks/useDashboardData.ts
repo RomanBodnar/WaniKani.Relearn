@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { DashboardSummary } from "~/types/dashboard";
+import { API_BASE_URL } from "~/config/api";
 
 interface UseDashboardDataResult {
   data: DashboardSummary | null;
@@ -17,7 +18,6 @@ export function useDashboardData(): UseDashboardDataResult {
       try {
         setIsLoading(true);
         setError(null);
-          const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5138";
         const response = await fetch(`${API_BASE_URL}/dashboard/summary`);
         if (!response.ok) {
           throw new Error(`Failed to fetch dashboard data: ${response.statusText}`);

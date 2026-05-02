@@ -7,14 +7,6 @@ const NavigationBar = () => {
             <ul>
                 <li>
                     <NavLink
-                        to="/assignments"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                    >
-                        Assignments
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
                         to="/kanji"
                         className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                     >
@@ -37,7 +29,7 @@ const NavigationBar = () => {
                         Kana vocabulary
                     </NavLink>
                 </li>
-                 <li>
+                <li>
                     <NavLink
                         to="/radicals"
                         className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
