@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Didact+Gothic&family=Klee+One:wght@400;600&family=Potta+One:wght@400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rampart+One&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Didact+Gothic&family=Klee+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @theme {
   --font-sans: "Didact Gothic", "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-jp: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
   --font-klee: "Klee One", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-potta: "Potta One", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 html,

@@ -96,6 +96,22 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
 
   return (
     <div className="subject-detail-container">
+      {/* Background Side Decorations */}
+      <div
+        className="subject-side-decoration subject-side-decoration-left"
+        style={{ '--char-count': subject.Characters.length } as React.CSSProperties}
+        aria-hidden="true"
+      >
+        {subject.Characters}
+      </div>
+      <div
+        className="subject-side-decoration subject-side-decoration-right"
+        style={{ '--char-count': subject.Characters.length } as React.CSSProperties}
+        aria-hidden="true"
+      >
+        {subject.Characters}
+      </div>
+
       <button
         className="back-button"
         onClick={() => navigate(-1)}
@@ -104,7 +120,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         ← Back
       </button>
 
-      <div 
+      <div
         className="subject-detail-header"
         style={{ backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})` }}
       >
@@ -167,30 +183,30 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                     <div className="reading-column">
                       <h3 className="reading-type-label">On'yomi</h3>
                       <div className="reading-items-inline">
-                        {subject.Readings.filter(r => r.Type === 'onyomi').length > 0 
+                        {subject.Readings.filter(r => r.Type === 'onyomi').length > 0
                           ? subject.Readings.filter(r => r.Type === 'onyomi').map((r, i) => (
-                              <span key={`on-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                            ))
+                            <span key={`on-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                          ))
                           : <span className="reading-inline-text none">None</span>}
                       </div>
                     </div>
                     <div className="reading-column">
                       <h3 className="reading-type-label">Kun'yomi</h3>
                       <div className="reading-items-inline">
-                        {subject.Readings.filter(r => r.Type === 'kunyomi').length > 0 
+                        {subject.Readings.filter(r => r.Type === 'kunyomi').length > 0
                           ? subject.Readings.filter(r => r.Type === 'kunyomi').map((r, i) => (
-                              <span key={`kun-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                            ))
+                            <span key={`kun-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                          ))
                           : <span className="reading-inline-text none">None</span>}
                       </div>
                     </div>
                     <div className="reading-column">
                       <h3 className="reading-type-label">Nanori</h3>
                       <div className="reading-items-inline">
-                        {subject.Readings.filter(r => r.Type === 'nanori').length > 0 
+                        {subject.Readings.filter(r => r.Type === 'nanori').length > 0
                           ? subject.Readings.filter(r => r.Type === 'nanori').map((r, i) => (
-                              <span key={`nan-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                            ))
+                            <span key={`nan-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                          ))
                           : <span className="reading-inline-text none">None</span>}
                       </div>
                     </div>
