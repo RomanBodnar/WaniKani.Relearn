@@ -20,8 +20,10 @@ public class Program
 
         builder.Services.AddCors(options =>
         {
-            options.AddPolicy("localhost", policy => policy
-                .WithOrigins("http://localhost:3000")
+            var allowedOrigins = builder.Configuration.GetSection("AllowedCorsOrigins").Get<string[]>() ?? Array.Empty<string>();
+            
+            options.AddPolicy("FrontendPolicy", policy => policy
+                .WithOrigins(allowedOrigins)
                 .AllowAnyMethod()
                 .AllowAnyHeader());
         });
@@ -59,8 +61,8 @@ public class Program
         app.UseSwaggerUI();
 
         app.UseHttpsRedirection();
+        app.UseCors("FrontendPolicy");
         app.MapControllers();
-        app.UseCors("localhost");
 
         app.Run();
     }
