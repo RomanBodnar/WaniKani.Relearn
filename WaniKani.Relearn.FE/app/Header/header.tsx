@@ -5,10 +5,10 @@ import NavigationBar from "~/components/NavigationBar";
 const Header = () => {
     return (
         <div className="header-container">
-            <header>
-                <span className="header-logo">
+            <header className="header-card">
+                <div className="header-logo">
                     <Link to="/">WaniKani: Relearn</Link>
-                </span>
+                </div>
                 <NavigationBar/>
             </header>  
         </div>
