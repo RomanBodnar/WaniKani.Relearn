@@ -14,6 +14,9 @@ public static class ServiceCollectionExtensions
         services.AddHostedService<InMemoryDataLoader>();
         services.AddSingleton<SubjectCache>();
         services.AddSingleton<IDataAccess, StaticFileDataAccess>();
+        services.AddSingleton<SentenceCache>();
+        services.AddSingleton<SentenceExtractor>();
+        
         return services;
     }
 

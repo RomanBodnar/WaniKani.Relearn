@@ -45,6 +45,14 @@ const NavigationBar = () => {
                         Grammar
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink
+                        to="/reading-practice"
+                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                    >
+                        Reading
+                    </NavLink>
+                </li>
             </ul>
         </nav>
     );

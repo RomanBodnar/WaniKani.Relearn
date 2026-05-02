@@ -39,26 +39,6 @@ export const stubDashboardData: DashboardSummary = {
     kanji: 10,
     vocabulary: 20
   },
-  upcomingReviews: [
-    {
-      timeLabel: "Next Hour",
-      radicals: 2,
-      kanji: 5,
-      vocabulary: 10
-    },
-    {
-      timeLabel: "Next 24 Hours",
-      radicals: 10,
-      kanji: 15,
-      vocabulary: 30
-    },
-    {
-      timeLabel: "Next 7 Days",
-      radicals: 40,
-      kanji: 80,
-      vocabulary: 120
-    }
-  ],
   lessonsReady: {
     total: 17,
     radicals: 2,

@@ -23,16 +23,8 @@ export interface LessonsReadySummary {
   vocabulary: number;
 }
 
-export interface UpcomingReviewsSummary {
-  timeLabel: string;
-  radicals: number;
-  kanji: number;
-  vocabulary: number;
-}
-
 export interface DashboardSummary {
   srsDistribution: SrsDistributionItem[];
   reviewsAwaiting: ReviewsReadySummary;
-  upcomingReviews: UpcomingReviewsSummary[];
   lessonsReady: LessonsReadySummary;
 }

@@ -9,5 +9,6 @@ export default [
     route("/kana-vocabulary", "./kana-vocabulary/kana-vocabulary.tsx"),
     route("/subject/:id", "./subject/subject.tsx"),
     route("/grammar/:id", "./grammar/grammar.tsx"),
-    route("/grammar", "./grammar/grammar-index.tsx")
+    route("/grammar", "./grammar/grammar-index.tsx"),
+    route("/reading-practice", "./reading-practice/reading-practice.tsx")
 ] satisfies RouteConfig;

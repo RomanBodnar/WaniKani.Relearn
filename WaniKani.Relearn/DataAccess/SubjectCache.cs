@@ -1,5 +1,4 @@
-using System.Collections.Concurrent;
-using WaniKani.Relearn.Api.Response;
+﻿using System.Collections.Concurrent;
 using WaniKani.Relearn.Model.Assignments;
 
 namespace WaniKani.Relearn.DataAccess;
@@ -22,21 +21,31 @@ public class SubjectCache
     public PageResult<SingleResource<Subject>> GetSubjects(SubjectType type, int? page, int? perPage, int? minLevel = null, int? maxLevel = null)
     {
         var query = _subjects.Values.Where(x => x.Data.GetType().Name == type.ToString());
-        
+
         if (minLevel.HasValue)
             query = query.Where(x => x.Data.Level >= minLevel.Value);
-            
+
         if (maxLevel.HasValue)
             query = query.Where(x => x.Data.Level <= maxLevel.Value);
 
         var count = query.Count();
-        
+
         var subjects = query
             .OrderBy(x => x.Data.Level)
             .ThenBy(x => x.Id)
             .Skip(((page ?? 1) - 1) * (perPage ?? 100))
             .Take(perPage ?? 100);
-            
+
         return new PageResult<SingleResource<Subject>>(subjects, page ?? 1, perPage ?? 100, count);
+    }
+
+    public IEnumerable<SingleResource<Subject>> GetAllOfType(string typeName)
+    {
+        return _subjects.Values.Where(x => x.Data.GetType().Name == typeName);
+    }
+    public SingleResource<Subject>? FindByCharacters(string characters, string typeName)
+    {
+        return _subjects.Values.FirstOrDefault(x =>
+            x.Data.GetType().Name == typeName && x.Data.Characters == characters);
     }
 }

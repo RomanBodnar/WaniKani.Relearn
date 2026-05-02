@@ -5,6 +5,9 @@ namespace WaniKani.Relearn.Services;
 public class InMemoryDataLoader(
     IDataAccess staticFileDataAccess,
     SubjectCache subjectCache,
+    SentenceCache sentenceCache,
+    SentenceExtractor sentenceExtractor,
+    IConfiguration configuration,
     ILogger<InMemoryDataLoader> logger) : IHostedService
 {
     public async Task StartAsync(CancellationToken cancellationToken)
@@ -33,6 +36,14 @@ public class InMemoryDataLoader(
         }
         logger.LogInformation("Finished loading {KanjiCount} kanji, {VocabCount} vocabulary, {RadicalCount} radicals, and {KanaVocabCount} kana vocabulary into cache.",
             kanji.Count, vocabulary.Count, radicals.Count, kanaVocabulary.Count);
+
+        if (!Directory.GetFiles(configuration["StaticFiles:Path"]!, "context-sentences-*.json").Any())
+        {
+            sentenceExtractor.ExtractSentences();
+            logger.LogInformation("Extracted context sentences to static files.");
+        }
+        sentenceCache.LoadFromFiles();
+        logger.LogInformation("Loaded {Count} reading practice sentences.", sentenceCache.Count);
     }
 
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;

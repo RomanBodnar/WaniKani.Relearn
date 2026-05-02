@@ -9,4 +9,5 @@ export const API_ENDPOINTS = {
   subjects: (type: string) => `${API_BASE_URL}/api/subjects/${type}`,
   subjectById: (id: string | number) => `${API_BASE_URL}/api/subjects/${id}`,
   assignments: `${API_BASE_URL}/assignments`,
+  readingSentences: `${API_BASE_URL}/api/reading-practice/sentences`,
 } as const;
