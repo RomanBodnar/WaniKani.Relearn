@@ -44,14 +44,6 @@ public class SubjectsController(
     {
         if (subjectCache.TryGet(id, out var subject))
         {
-            if(subject!.Data is Radical radical && radical.Characters is null)
-            {
-                var newRadical = await subjectsApi.GetSubject<Radical>(id);
-                if (newRadical is not null)
-                {
-                    return Ok(radicalMapper.Map(newRadical));
-                }
-            }
             return Ok(subject!.Data switch
             {
                 Kanji => kanjiMapper.Map(subject.CopyAs<Kanji>()),
