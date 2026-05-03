@@ -18,9 +18,13 @@ public class SubjectCache
         return _subjects.TryGetValue(id, out subject);
     }
 
-    public PageResult<SingleResource<Subject>> GetSubjects(SubjectType type, int? page, int? perPage, int? minLevel = null, int? maxLevel = null)
+    public PageResult<SingleResource<Subject>> GetSubjects(SubjectType[] types, int? page, int? perPage, int? minLevel = null, int? maxLevel = null)
     {
-        var query = _subjects.Values.Where(x => x.Data.GetType().Name == type.ToString());
+        var query = _subjects.Values
+            .Where(x => types
+                .Select(t => t.ToString())
+                .Contains(x.Data.GetType().Name)
+            );
 
         if (minLevel.HasValue)
             query = query.Where(x => x.Data.Level >= minLevel.Value);

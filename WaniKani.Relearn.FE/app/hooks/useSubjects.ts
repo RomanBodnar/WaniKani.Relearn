@@ -19,18 +19,25 @@ export async function fetchSubjects(
   minLevel?: number,
   maxLevel?: number
 ): Promise<PaginatedSubjects> {
-  const typeMap: Record<SubjectType, string> = {
-    radical: "Radical",
-    kanji: "Kanji",
-    vocabulary: "Vocabulary",
-    kana_vocabulary: "KanaVocabulary",
+  const typeMap: Record<SubjectType, string[]> = {
+    radical: ["Radical"],
+    kanji: ["Kanji"],
+    vocabulary: ["Vocabulary", "KanaVocabulary"],
+    kana_vocabulary: ["KanaVocabulary"],
   };
 
-  const queryType = typeMap[subjectType];
-  let url = `${API_BASE_URL}/api/subjects/${queryType}?page=${page}&perPage=${perPage}`;
-  if (minLevel !== undefined) url += `&minLevel=${minLevel}`;
-  if (maxLevel !== undefined) url += `&maxLevel=${maxLevel}`;
-  
+  const queryTypes = typeMap[subjectType] || [];
+  const params = new URLSearchParams();
+
+  queryTypes.forEach(t => params.append('types', t));
+  params.set('page', String(page));
+  params.set('perPage', String(perPage));
+
+  if (minLevel !== undefined) params.set('minLevel', String(minLevel));
+  if (maxLevel !== undefined) params.set('maxLevel', String(maxLevel));
+
+  const url = `${API_BASE_URL}/api/subjects?${params.toString()}`;
+
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -38,7 +45,7 @@ export async function fetchSubjects(
   }
 
   const apiData = await response.json();
-  
+
   let subjectsData: any[] = [];
   let resultPage = page;
   let resultPerPage = perPage;
@@ -63,7 +70,7 @@ export async function fetchSubjects(
 }
 
 export function useInfiniteSubjects(
-  initialData: PaginatedSubjects, 
+  initialData: PaginatedSubjects,
   subjectType: SubjectType,
   filters: { minLevel?: number; maxLevel?: number } = {}
 ) {
@@ -75,12 +82,12 @@ export function useInfiniteSubjects(
   // Reset when filters change
   useEffect(() => {
     let isMounted = true;
-    
+
     // Skip reset for the initial mount if it matches initialData
     // Actually, it's safer to just fetch if filters are provided, 
     // but the initialData already has page 1 for the default view.
     // However, if the user starts with a filter, clientLoader might need to know.
-    
+
     const resetAndFetch = async () => {
       setIsLoading(true);
       try {
@@ -98,7 +105,7 @@ export function useInfiniteSubjects(
     };
 
     resetAndFetch();
-    
+
     return () => { isMounted = false; };
   }, [subjectType, filters.minLevel, filters.maxLevel]);
 

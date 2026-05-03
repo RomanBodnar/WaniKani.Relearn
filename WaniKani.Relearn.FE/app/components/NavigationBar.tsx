@@ -23,14 +23,6 @@ const NavigationBar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/kana-vocabulary"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                    >
-                        Kana vocabulary
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
                         to="/radicals"
                         className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
                     >

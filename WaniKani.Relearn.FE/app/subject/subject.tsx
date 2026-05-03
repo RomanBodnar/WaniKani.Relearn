@@ -116,7 +116,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
     kanji: "/kanji",
     radical: "/radicals",
     vocabulary: "/vocabulary",
-    kana_vocabulary: "/kana-vocabulary",
+    kana_vocabulary: "/vocabulary",
   };
   const backPath = subjectListRoutes[subject.Object] || "/";
 
