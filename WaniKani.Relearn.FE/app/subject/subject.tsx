@@ -63,8 +63,8 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
     const amalgamationSubjects: Array<{ id: number; characters: string }> = [];
     if (subject.AmalgamationSubjectIds && subject.AmalgamationSubjectIds.length > 0) {
       // Limit to first 20 for performance
-      const limitedIds = subject.AmalgamationSubjectIds.slice(0, 20);
-      const amalgamationPromises = limitedIds.map((amalgamationId) =>
+      // const limitedIds = subject.AmalgamationSubjectIds.slice(0, 20);
+      const amalgamationPromises = subject.AmalgamationSubjectIds.map((amalgamationId) =>
         fetchSubjectById(amalgamationId)
       );
       const results = await Promise.all(amalgamationPromises);
@@ -292,7 +292,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {/* Component Subject IDs */}
         {componentSubjects && componentSubjects.length > 0 && (
           <section className="detail-section">
-            <h2>Components</h2>
+            <h2>Radical components</h2>
             <div className="subject-links">
               {componentSubjects.map((comp) => (
                 <Link
@@ -326,12 +326,6 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   {amal.characters}
                 </Link>
               ))}
-              {subject.AmalgamationSubjectIds &&
-                subject.AmalgamationSubjectIds.length > 20 && (
-                  <span className="more-indicator">
-                    +{subject.AmalgamationSubjectIds.length - 20} more
-                  </span>
-                )}
             </div>
           </section>
         )}
@@ -339,7 +333,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {/* Visually Similar Kanji */}
         {visuallySimilarSubjects && visuallySimilarSubjects.length > 0 && (
           <section className="detail-section">
-            <h2>Visually Similar ({visuallySimilarSubjects.length})</h2>
+            <h2>Visually Similar Kanji</h2>
             <div className="subject-links">
               {visuallySimilarSubjects.map((sim) => (
                 <Link

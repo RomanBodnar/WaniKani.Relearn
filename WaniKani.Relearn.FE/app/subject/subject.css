@@ -256,6 +256,7 @@
 }
 
 .subject-link {
+  padding: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +270,8 @@
   border: 2px solid #007bff;
   border-radius: 8px;
   transition: all 0.2s ease;
-  font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Noto Serif JP", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 300;
 }
 
 .subject-link:hover {
