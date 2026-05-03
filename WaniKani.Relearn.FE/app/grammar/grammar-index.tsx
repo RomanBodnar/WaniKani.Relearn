@@ -1,6 +1,7 @@
 import type { Route } from "../+types/root";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { grammarArticles } from "./grammarData";
+import "../subject/subject.css";
 import "./grammar.css";
 
 export function meta() {
@@ -11,16 +12,21 @@ export function meta() {
 }
 
 export default function GrammarIndex() {
-  const navigate = useNavigate();
-
   return (
     <div className="grammar-detail-container">
-      <div className="grammar-detail-header" style={{ backgroundColor: '#2196F3' }}>
-        <h1>Grammar Topics</h1>
+      {/* Hero header card — no back button on the index page */}
+      <div className="subject-detail-header">
+        <div className="subject-char-bubble grammar-bubble">
+          <span className="subject-detail-character japanese-text">文法</span>
+        </div>
+        <div className="subject-detail-info">
+          <span className="subject-type-badge grammar-type-badge">Reference</span>
+          <h1 className="subject-detail-primary-meaning">Grammar Topics</h1>
+        </div>
       </div>
 
       <div className="grammar-detail-content">
-        <section className="detail-section related-topics" style={{ marginTop: 0, paddingTop: 0, borderTop: 'none' }}>
+        <section className="detail-section" style={{ marginTop: 0, paddingTop: 0, borderTop: 'none' }}>
           <h2>Available Topics</h2>
           <div className="grammar-cards-grid">
             {Object.values(grammarArticles).map(a => (

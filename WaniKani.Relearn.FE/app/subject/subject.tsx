@@ -138,24 +138,46 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {subject.Characters}
       </div>
 
-      <div
-        className="subject-detail-header"
-        style={{ backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})` }}
-      >
+      {/* Back navigation row */}
+      <div className="subject-nav-row">
         <button
           className="back-button"
           onClick={() => navigate(backPath)}
           aria-label="Go back"
         >
-          ←
+          <span className="back-arrow">←</span>
+          <span className="back-label">Back</span>
         </button>
-        <div className="subject-detail-character japanese-text">{subject.Characters}</div>
+      </div>
+
+      {/* Hero header card */}
+      <div className="subject-detail-header">
+        {/* Accent character bubble */}
+        <div
+          className="subject-char-bubble"
+          style={{
+            backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})`,
+            '--char-count': subject.Characters.length,
+          } as React.CSSProperties}
+        >
+          <span className="subject-detail-character japanese-text">{subject.Characters}</span>
+        </div>
+
+        {/* Title + metadata */}
         <div className="subject-detail-info">
+          <span
+            className="subject-type-badge"
+            style={{ color: `var(--color-wk-${subject.Object.replace('_', '-')})` }}
+          >
+            {subject.Object.replace('_', ' ')}
+          </span>
           {primaryMeaning && (
-            <span className="subject-detail-primary-meaning">{primaryMeaning}</span>
+            <h1 className="subject-detail-primary-meaning">{primaryMeaning}</h1>
           )}
           {subject.Level !== undefined && (
-            <span className="subject-detail-level">Level {subject.Level}</span>
+            <div className="subject-meta-row">
+              <span className="subject-meta-chip">Level {subject.Level}</span>
+            </div>
           )}
         </div>
       </div>
