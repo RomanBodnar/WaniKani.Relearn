@@ -37,13 +37,19 @@
     transform: scale(0.98);
 }
 
-/* Active state */
+/* Active state base */
 .nav-link.active {
     background-color: #f9fafb; /* Gray 50 */
     color: #111827; /* Gray 900 */
-    border-color: #e5e7eb; /* Gray 200 */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
+
+/* Category-specific border colors */
+.nav-link-kanji:hover, .nav-link-kanji.active { border-color: var(--color-wk-kanji); }
+.nav-link-vocabulary:hover, .nav-link-vocabulary.active { border-color: var(--color-wk-vocabulary); }
+.nav-link-radicals:hover, .nav-link-radicals.active { border-color: var(--color-wk-radical); }
+.nav-link-grammar:hover, .nav-link-grammar.active { border-color: var(--color-wk-grammar); }
+.nav-link-reading:hover, .nav-link-reading.active { border-color: var(--color-wk-reading); }
 
 @media (prefers-color-scheme: dark) {
     .nav-link {
@@ -56,7 +62,6 @@
     .nav-link.active {
         background-color: #1e293b;
         color: #f8fafc;
-        border-color: #475569;
     }
 }
 

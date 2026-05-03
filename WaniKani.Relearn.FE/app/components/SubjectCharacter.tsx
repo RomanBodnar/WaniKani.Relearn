@@ -38,9 +38,9 @@ export function SubjectCharacter({ subject, className }: SubjectCharacterProps) 
       <img
         src={slugToLocalUrl[subject.Slug]}
         alt={subject.Slug}
-        className={`${combinedClassName} subject-character-img subject-character-svg local-radical-img`}
+        className={`${combinedClassName} subject-character-img subject-character-svg local-radical-img`.trim()}
         style={{
-          filter: "invert(1) brightness(100)",
+          filter: "brightness(0) invert(1)",
         }}
       />
     );
@@ -55,9 +55,9 @@ export function SubjectCharacter({ subject, className }: SubjectCharacterProps) 
       <img
         src={svgImage.url}
         alt={subject.Slug || "radical"}
-        className={`${combinedClassName} subject-character-img subject-character-svg`}
+        className={`${combinedClassName} subject-character-img subject-character-svg`.trim()}
         style={{
-          filter: "invert(1) brightness(100)",
+          filter: "brightness(0) invert(1)",
         }}
       />
     );

@@ -362,28 +362,101 @@ img.subject-detail-character {
 }
 
 .subject-link {
-  padding: 5px;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-width: 60px;
-  height: 60px;
-  font-size: 32px;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
+  min-width: 80px;
+  width: fit-content;
   background: white;
-  border: 2px solid #007bff;
-  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-decoration: none;
+  overflow: hidden;
   transition: all 0.2s ease;
-  font-family: "Noto Serif JP", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
-  font-weight: 300;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 6px;
 }
 
 .subject-link:hover {
-  background: #e7f3ff;
-  border-color: #0056b3;
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+.subject-link-char-box {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+.subject-link-char-box span {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.subject-character-svg {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1 !important;
+}
+
+.subject-link-info {
+  padding: 8px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  text-align: center;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.subject-link-reading {
+  font-size: 15px;
+  color: #334155;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.subject-link-meaning {
+  font-size: 13px;
+  color: #64748b;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  line-height: 1.2;
+}
+
+@media (prefers-color-scheme: dark) {
+  .subject-link {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .subject-link-reading {
+    color: #cbd5e1;
+  }
+
+  .subject-link-meaning {
+    color: #94a3b8;
+  }
 }
 
 .more-indicator {

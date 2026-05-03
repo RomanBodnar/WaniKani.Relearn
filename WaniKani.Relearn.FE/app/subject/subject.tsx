@@ -45,60 +45,31 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
     const subject = transformSubject(apiData);
 
     // Fetch related subjects (components and amalgamations) in parallel for performance
-    const componentSubjects: Array<{ id: number; characters: string }> = [];
+    const componentSubjects: Subject[] = [];
     if (subject.ComponentSubjectIds && subject.ComponentSubjectIds.length > 0) {
       const componentPromises = subject.ComponentSubjectIds.map((componentId) =>
         fetchSubjectById(componentId)
       );
       const results = await Promise.all(componentPromises);
-      componentSubjects.push(
-        ...results
-          .filter((result) => result !== null)
-          .map((result) => ({
-            id: result!.Id,
-            characters: result!.Characters,
-            CharacterImages: result!.CharacterImages,
-            slug: result!.Slug,
-          }))
-      );
+      componentSubjects.push(...results.filter((result): result is Subject => result !== null));
     }
 
-    const amalgamationSubjects: Array<{ id: number; characters: string }> = [];
+    const amalgamationSubjects: Subject[] = [];
     if (subject.AmalgamationSubjectIds && subject.AmalgamationSubjectIds.length > 0) {
-      // Limit to first 20 for performance
-      // const limitedIds = subject.AmalgamationSubjectIds.slice(0, 20);
       const amalgamationPromises = subject.AmalgamationSubjectIds.map((amalgamationId) =>
         fetchSubjectById(amalgamationId)
       );
       const results = await Promise.all(amalgamationPromises);
-      amalgamationSubjects.push(
-        ...results
-          .filter((result) => result !== null)
-          .map((result) => ({
-            id: result!.Id,
-            characters: result!.Characters,
-            CharacterImages: result!.CharacterImages,
-            slug: result!.Slug,
-          }))
-      );
+      amalgamationSubjects.push(...results.filter((result): result is Subject => result !== null));
     }
 
-    const visuallySimilarSubjects: Array<{ id: number; characters: string }> = [];
+    const visuallySimilarSubjects: Subject[] = [];
     if (subject.VisuallySimilarSubjectIds && subject.VisuallySimilarSubjectIds.length > 0) {
       const similarPromises = subject.VisuallySimilarSubjectIds.map((simId) =>
         fetchSubjectById(simId)
       );
       const results = await Promise.all(similarPromises);
-      visuallySimilarSubjects.push(
-        ...results
-          .filter((result) => result !== null)
-          .map((result) => ({
-            id: result!.Id,
-            characters: result!.Characters,
-            CharacterImages: result!.CharacterImages,
-            slug: result!.Slug,
-          }))
-      );
+      visuallySimilarSubjects.push(...results.filter((result): result is Subject => result !== null));
     }
 
     return {
@@ -330,17 +301,30 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           <section className="detail-section">
             <h2>Radical components</h2>
             <div className="subject-links">
-              {componentSubjects.map((comp) => (
-                <Link
-                  key={comp.id}
-                  to={`/subject/${comp.id}`}
-                  className="subject-link"
-                >
-                  <SubjectCharacter
-                    subject={{ Characters: comp.characters, CharacterImages: comp.CharacterImages, Slug: comp.slug }}
-                  />
-                </Link>
-              ))}
+              {componentSubjects.map((comp) => {
+                const meaning = comp.Meanings?.find(m => m.Primary)?.Meaning || comp.Meanings?.[0]?.Meaning || "";
+                const reading = comp.Readings?.find(r => r.Primary)?.Reading || comp.Readings?.[0]?.Reading || "";
+                return (
+                  <Link
+                    key={comp.Id}
+                    to={`/subject/${comp.Id}`}
+                    className="subject-link"
+                  >
+                    <div
+                      className="subject-link-char-box"
+                      style={{ backgroundColor: `var(--color-wk-${comp.Object.replace('_', '-')})` }}
+                    >
+                      <SubjectCharacter
+                        subject={{ Characters: comp.Characters, CharacterImages: comp.CharacterImages, Slug: comp.Slug }}
+                      />
+                    </div>
+                    <div className="subject-link-info">
+                      {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
+                      <div className="subject-link-meaning">{meaning}</div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         )}
@@ -355,17 +339,30 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
               {' '}({subject.AmalgamationSubjectIds?.length || 0})
             </h2>
             <div className="subject-links">
-              {amalgamationSubjects.map((amal) => (
-                <Link
-                  key={amal.id}
-                  to={`/subject/${amal.id}`}
-                  className="subject-link"
-                >
-                  <SubjectCharacter
-                    subject={{ Characters: amal.characters, CharacterImages: amal.CharacterImages, Slug: amal.slug }}
-                  />
-                </Link>
-              ))}
+              {amalgamationSubjects.map((amal) => {
+                const meaning = amal.Meanings?.find(m => m.Primary)?.Meaning || amal.Meanings?.[0]?.Meaning || "";
+                const reading = amal.Readings?.find(r => r.Primary)?.Reading || amal.Readings?.[0]?.Reading || "";
+                return (
+                  <Link
+                    key={amal.Id}
+                    to={`/subject/${amal.Id}`}
+                    className="subject-link"
+                  >
+                    <div
+                      className="subject-link-char-box"
+                      style={{ backgroundColor: `var(--color-wk-${amal.Object.replace('_', '-')})` }}
+                    >
+                      <SubjectCharacter
+                        subject={{ Characters: amal.Characters, CharacterImages: amal.CharacterImages, Slug: amal.Slug }}
+                      />
+                    </div>
+                    <div className="subject-link-info">
+                      {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
+                      <div className="subject-link-meaning">{meaning}</div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         )}
@@ -375,17 +372,30 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           <section className="detail-section">
             <h2>Visually Similar Kanji</h2>
             <div className="subject-links">
-              {visuallySimilarSubjects.map((sim) => (
-                <Link
-                  key={sim.id}
-                  to={`/subject/${sim.id}`}
-                  className="subject-link"
-                >
-                  <SubjectCharacter
-                    subject={{ Characters: sim.characters, CharacterImages: sim.CharacterImages, Slug: sim.slug }}
-                  />
-                </Link>
-              ))}
+              {visuallySimilarSubjects.map((sim) => {
+                const meaning = sim.Meanings?.find(m => m.Primary)?.Meaning || sim.Meanings?.[0]?.Meaning || "";
+                const reading = sim.Readings?.find(r => r.Primary)?.Reading || sim.Readings?.[0]?.Reading || "";
+                return (
+                  <Link
+                    key={sim.Id}
+                    to={`/subject/${sim.Id}`}
+                    className="subject-link"
+                  >
+                    <div
+                      className="subject-link-char-box"
+                      style={{ backgroundColor: `var(--color-wk-${sim.Object.replace('_', '-')})` }}
+                    >
+                      <SubjectCharacter
+                        subject={{ Characters: sim.Characters, CharacterImages: sim.CharacterImages, Slug: sim.Slug }}
+                      />
+                    </div>
+                    <div className="subject-link-info">
+                      {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
+                      <div className="subject-link-meaning">{meaning}</div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         )}

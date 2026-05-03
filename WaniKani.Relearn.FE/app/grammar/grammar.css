@@ -8,6 +8,23 @@
   gap: 20px;
 }
 
+.grammar-header {
+  margin-bottom: 32px;
+}
+
+.grammar-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.grammar-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+}
+
 /* Grammar bubble uses the vocabulary purple */
 .grammar-bubble {
   background-color: var(--color-wk-vocabulary) !important;
@@ -120,4 +137,37 @@ a.pos-tag:hover {
   padding: 4px 8px;
   border-radius: 2px;
   letter-spacing: 0.5px;
+}
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .grammar-title {
+    color: #f1f5f9;
+  }
+
+  .grammar-subtitle {
+    color: #94a3b8;
+  }
+
+  .grammar-card {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .grammar-card-title {
+    color: #f1f5f9;
+  }
+
+  .grammar-card-snippet {
+    color: #94a3b8;
+  }
+
+  .grammar-card-link:hover .grammar-card {
+    border-color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .pos-tag {
+    background-color: #334155;
+    color: #94a3b8;
+  }
 }

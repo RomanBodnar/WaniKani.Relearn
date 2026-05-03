@@ -41,6 +41,8 @@ body {
   --color-wk-kanji: rgb(230, 0, 170);
   --color-wk-vocabulary: rgb(170, 0, 255);
   --color-wk-kana-vocabulary: rgb(170, 0, 255);
+  --color-wk-grammar: rgb(34, 197, 94); /* Vibrant Green */
+  --color-wk-reading: rgb(234, 179, 8); /* Vibrant Yellow */
 
   --chart-axis-color: #64748b;
   --chart-grid-color: #cbd5e1;

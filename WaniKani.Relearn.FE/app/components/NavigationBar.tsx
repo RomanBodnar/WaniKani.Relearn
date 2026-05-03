@@ -8,7 +8,7 @@ const NavigationBar = () => {
                 <li>
                     <NavLink
                         to="/kanji"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                        className={({ isActive }) => `nav-link nav-link-kanji ${isActive ? "active" : ""}`}
                     >
                         Kanji
                     </NavLink>
@@ -16,7 +16,7 @@ const NavigationBar = () => {
                 <li>
                     <NavLink
                         to="/vocabulary"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                        className={({ isActive }) => `nav-link nav-link-vocabulary ${isActive ? "active" : ""}`}
                     >
                         Vocabulary
                     </NavLink>
@@ -24,7 +24,7 @@ const NavigationBar = () => {
                 <li>
                     <NavLink
                         to="/radicals"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                        className={({ isActive }) => `nav-link nav-link-radicals ${isActive ? "active" : ""}`}
                     >
                         Radicals
                     </NavLink>
@@ -32,7 +32,7 @@ const NavigationBar = () => {
                 <li>
                     <NavLink
                         to="/grammar"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                        className={({ isActive }) => `nav-link nav-link-grammar ${isActive ? "active" : ""}`}
                     >
                         Grammar
                     </NavLink>
@@ -40,7 +40,7 @@ const NavigationBar = () => {
                 <li>
                     <NavLink
                         to="/reading-practice"
-                        className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                        className={({ isActive }) => `nav-link nav-link-reading ${isActive ? "active" : ""}`}
                     >
                         Reading
                     </NavLink>

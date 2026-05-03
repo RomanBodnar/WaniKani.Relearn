@@ -15,14 +15,11 @@ export default function GrammarIndex() {
   return (
     <div className="grammar-detail-container">
       {/* Hero header card — no back button on the index page */}
-      <div className="subject-detail-header">
-        <div className="subject-char-bubble grammar-bubble">
-          <span className="subject-detail-character japanese-text">文法</span>
-        </div>
-        <div className="subject-detail-info">
-          <span className="subject-type-badge grammar-type-badge">Reference</span>
-          <h1 className="subject-detail-primary-meaning">Grammar Topics</h1>
-        </div>
+      <div className="grammar-header">
+        <h1 className="grammar-title">Grammar Reference</h1>
+        <p className="grammar-subtitle">
+          Explore and learn about Japanese parts of speech, particles, and common grammar patterns.
+        </p>
       </div>
 
       <div className="grammar-detail-content">
