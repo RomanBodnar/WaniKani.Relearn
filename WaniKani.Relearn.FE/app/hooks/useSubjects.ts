@@ -69,24 +69,54 @@ export async function fetchSubjects(
   };
 }
 
+
+// Simple singleton cache to preserve subjects list state between navigations
+const subjectCache = new Map<string, { subjects: Subject[], page: number, totalCount: number }>();
+
+function getCacheKey(subjectType: SubjectType, filters: { minLevel?: number; maxLevel?: number }) {
+  return `${subjectType}-${filters.minLevel || 0}-${filters.maxLevel || 0}`;
+}
+
 export function useInfiniteSubjects(
   initialData: PaginatedSubjects,
   subjectType: SubjectType,
   filters: { minLevel?: number; maxLevel?: number } = {}
 ) {
-  const [subjects, setSubjects] = useState<Subject[]>(initialData.data || []);
-  const [page, setPage] = useState(initialData.page || 1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [totalCount, setTotalCount] = useState(initialData.totalCount || 0);
+  const cacheKey = getCacheKey(subjectType, filters);
+  const cached = subjectCache.get(cacheKey);
 
-  // Reset when filters change
+  // Initialize from cache if available, otherwise from initialData
+  const [subjects, setSubjects] = useState<Subject[]>(() => {
+    if (cached) return cached.subjects;
+    return initialData.data || [];
+  });
+  
+  const [page, setPage] = useState(() => {
+    if (cached) return cached.page;
+    return initialData.page || 1;
+  });
+
+  const [totalCount, setTotalCount] = useState(() => {
+    if (cached) return cached.totalCount;
+    return initialData.totalCount || 0;
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Update cache whenever subjects, page or totalCount changes
+  useEffect(() => {
+    subjectCache.set(cacheKey, { subjects, page, totalCount });
+  }, [cacheKey, subjects, page, totalCount]);
+
+  // Reset when filters change, but skip if we already have cached data for these filters
   useEffect(() => {
     let isMounted = true;
 
-    // Skip reset for the initial mount if it matches initialData
-    // Actually, it's safer to just fetch if filters are provided, 
-    // but the initialData already has page 1 for the default view.
-    // However, if the user starts with a filter, clientLoader might need to know.
+    // Check if the current state matches the cache for these filters
+    const currentCached = subjectCache.get(cacheKey);
+    if (currentCached && subjects === currentCached.subjects && subjects.length > 0) {
+      return;
+    }
 
     const resetAndFetch = async () => {
       setIsLoading(true);
@@ -107,7 +137,7 @@ export function useInfiniteSubjects(
     resetAndFetch();
 
     return () => { isMounted = false; };
-  }, [subjectType, filters.minLevel, filters.maxLevel]);
+  }, [subjectType, filters.minLevel, filters.maxLevel, cacheKey]);
 
   const hasMore = subjects.length < totalCount;
 
@@ -117,7 +147,10 @@ export function useInfiniteSubjects(
     try {
       const nextPage = page + 1;
       const result = await fetchSubjects(subjectType, nextPage, 100, filters.minLevel, filters.maxLevel);
-      setSubjects(prev => [...prev, ...(result.data || [])]);
+      setSubjects(prev => {
+        const newSubjects = [...prev, ...(result.data || [])];
+        return newSubjects;
+      });
       setPage(result.page);
       setTotalCount(result.totalCount);
     } catch (err) {

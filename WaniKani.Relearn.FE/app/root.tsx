@@ -37,7 +37,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         {children}
-        <ScrollRestoration />
+        <ScrollRestoration
+          getKey={(location) => {
+            const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice"];
+            if (pathsToPreserve.includes(location.pathname)) {
+              return location.pathname;
+            }
+            return location.key;
+          }}
+        />
         <Scripts />
       </body>
     </html>
