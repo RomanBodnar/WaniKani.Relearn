@@ -58,6 +58,7 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
             id: result!.Id,
             characters: result!.Characters,
             CharacterImages: result!.CharacterImages,
+            slug: result!.Slug,
           }))
       );
     }
@@ -77,6 +78,7 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
             id: result!.Id,
             characters: result!.Characters,
             CharacterImages: result!.CharacterImages,
+            slug: result!.Slug,
           }))
       );
     }
@@ -94,6 +96,7 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
             id: result!.Id,
             characters: result!.Characters,
             CharacterImages: result!.CharacterImages,
+            slug: result!.Slug,
           }))
       );
     }
@@ -169,7 +172,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           } as React.CSSProperties}
         >
           <SubjectCharacter
-            subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages }}
+            subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages, Slug: subject.Slug }}
             className="subject-detail-character japanese-text"
           />
         </div>
@@ -334,7 +337,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   className="subject-link"
                 >
                   <SubjectCharacter
-                    subject={{ Characters: comp.characters, CharacterImages: comp.CharacterImages }}
+                    subject={{ Characters: comp.characters, CharacterImages: comp.CharacterImages, Slug: comp.slug }}
                   />
                 </Link>
               ))}
@@ -359,7 +362,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   className="subject-link"
                 >
                   <SubjectCharacter
-                    subject={{ Characters: amal.characters, CharacterImages: amal.CharacterImages }}
+                    subject={{ Characters: amal.characters, CharacterImages: amal.CharacterImages, Slug: amal.slug }}
                   />
                 </Link>
               ))}
@@ -379,7 +382,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   className="subject-link"
                 >
                   <SubjectCharacter
-                    subject={{ Characters: sim.characters, CharacterImages: sim.CharacterImages }}
+                    subject={{ Characters: sim.characters, CharacterImages: sim.CharacterImages, Slug: sim.slug }}
                   />
                 </Link>
               ))}

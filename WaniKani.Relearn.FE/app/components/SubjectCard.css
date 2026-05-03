@@ -32,6 +32,10 @@
   margin-bottom: 12px;
   line-height: 1;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .subject-card-content {
@@ -77,6 +81,7 @@
 
   .subject-card-character {
     font-size: 24px;
+    height: 24px;
   }
 
   .subject-card-meaning {

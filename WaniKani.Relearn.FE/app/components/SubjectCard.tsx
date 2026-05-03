@@ -16,7 +16,7 @@ export const SubjectCard = ({ subject, variant }: SubjectCardProps) => {
     <Link to={`/subject/${subject.Id}`} className="subject-card-link">
       <div className={`subject-card ${variant ? `subject-card-${variant}` : ''}`}>
         <div className="subject-card-character japanese-text">
-          <SubjectCharacter subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages }} />
+          <SubjectCharacter subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages, Slug: subject.Slug }} />
         </div>
         <div className="subject-card-content">
         {primaryMeaning && (
