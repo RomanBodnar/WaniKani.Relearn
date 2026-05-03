@@ -1,5 +1,6 @@
 import type { Route } from "./+types/reading-practice";
 import { useState, useMemo, useEffect, useCallback } from "react";
+import { useSearchParams } from "react-router";
 import { fetchSentences, useReadingSentences, saveBookmark, loadBookmark, clearBookmark } from "~/hooks/useReadingSentences";
 import { ReadingSentenceCard } from "./ReadingSentenceCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -14,8 +15,10 @@ export function meta() {
   ];
 }
 
-export async function clientLoader() {
-  return await fetchSentences(1, 10);
+export async function clientLoader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
+  const page = Math.max(1, parseInt(url.searchParams.get("page") ?? "1", 10));
+  return await fetchSentences(page, 10);
 }
 
 export function ErrorBoundary() {
@@ -38,15 +41,32 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
   const [bookmark, setBookmark] = useState<ReadingBookmark | null>(null);
   const [hasResumed, setHasResumed] = useState(false);
+  const [, setSearchParams] = useSearchParams();
 
   const filters = useMemo(() => ({
     minLevel: selectedRange?.[0],
     maxLevel: selectedRange?.[1]
   }), [selectedRange]);
 
+  // Sync page changes to the URL search param
+  const syncPage = useCallback((newPage: number) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        if (newPage <= 1) {
+          next.delete("page");
+        } else {
+          next.set("page", String(newPage));
+        }
+        return next;
+      },
+      { replace: false }
+    );
+  }, [setSearchParams]);
+
   const {
     sentences, page, totalPages, totalCount, isLoading, goToPage
-  } = useReadingSentences(initialData, filters);
+  } = useReadingSentences(initialData, filters, syncPage);
 
   // Load bookmark on mount
   useEffect(() => {

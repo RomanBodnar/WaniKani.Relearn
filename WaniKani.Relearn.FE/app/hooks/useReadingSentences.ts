@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { API_ENDPOINTS } from "~/config/api";
 import type { ReadingSentence, PaginatedSentences, ReadingBookmark } from "~/types/reading";
 
@@ -56,7 +56,8 @@ export function clearBookmark(): void {
 
 export function useReadingSentences(
   initialData: PaginatedSentences,
-  filters: { minLevel?: number; maxLevel?: number } = {}
+  filters: { minLevel?: number; maxLevel?: number } = {},
+  onPageChange?: (page: number) => void
 ) {
   const [sentences, setSentences] = useState<ReadingSentence[]>(initialData.data || []);
   const [page, setPage] = useState(initialData.page || 1);
@@ -65,8 +66,18 @@ export function useReadingSentences(
 
   const totalPages = Math.max(1, Math.ceil(totalCount / PER_PAGE));
 
-  // Refetch when filters change — reset to page 1
+  // Track the previous filter values so we only refetch when filters actually change.
+  // Using a value-comparison ref is Strict-Mode-safe: on mount prev === current, so
+  // it skips every time regardless of how many times the effect is invoked.
+  const prevFilters = useRef({ minLevel: filters.minLevel, maxLevel: filters.maxLevel });
+
   useEffect(() => {
+    const prev = prevFilters.current;
+    if (prev.minLevel === filters.minLevel && prev.maxLevel === filters.maxLevel) {
+      return; // no real change — skip (initial mount or Strict Mode re-run)
+    }
+    prevFilters.current = { minLevel: filters.minLevel, maxLevel: filters.maxLevel };
+
     let isMounted = true;
 
     const refetch = async () => {
@@ -77,6 +88,7 @@ export function useReadingSentences(
           setSentences(result.data || []);
           setPage(1);
           setTotalCount(result.totalCount);
+          onPageChange?.(1);
         }
       } catch (err) {
         console.error(err);
@@ -97,6 +109,7 @@ export function useReadingSentences(
       setSentences(result.data || []);
       setPage(result.page);
       setTotalCount(result.totalCount);
+      onPageChange?.(result.page);
       // Scroll to top of sentence list
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
@@ -104,7 +117,7 @@ export function useReadingSentences(
     } finally {
       setIsLoading(false);
     }
-  }, [totalPages, isLoading, filters.minLevel, filters.maxLevel]);
+  }, [totalPages, isLoading, filters.minLevel, filters.maxLevel, onPageChange]);
 
   return { sentences, page, totalPages, totalCount, isLoading, goToPage };
 }
