@@ -1,5 +1,6 @@
 import type { Subject } from "~/hooks/Subject";
 import { Link } from "react-router";
+import { SubjectCharacter } from "./SubjectCharacter";
 import "./SubjectCard.css";
 
 interface SubjectCardProps {
@@ -14,7 +15,9 @@ export const SubjectCard = ({ subject, variant }: SubjectCardProps) => {
   return (
     <Link to={`/subject/${subject.Id}`} className="subject-card-link">
       <div className={`subject-card ${variant ? `subject-card-${variant}` : ''}`}>
-        <div className="subject-card-character japanese-text">{subject.Characters}</div>
+        <div className="subject-card-character japanese-text">
+          <SubjectCharacter subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages }} />
+        </div>
         <div className="subject-card-content">
         {primaryMeaning && (
           <div className="subject-card-meaning">

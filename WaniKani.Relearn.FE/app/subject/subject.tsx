@@ -6,6 +6,7 @@ import { transformSubject } from "~/utils/transformSubject";
 import type { SubjectDetailData } from "~/types/subject";
 import { parseMnemonics } from "~/utils/parseMnemonics";
 import { createGrammarSlug } from "~/utils/grammar";
+import { SubjectCharacter } from "~/components/SubjectCharacter";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -56,6 +57,7 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
           .map((result) => ({
             id: result!.Id,
             characters: result!.Characters,
+            CharacterImages: result!.CharacterImages,
           }))
       );
     }
@@ -74,6 +76,7 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
           .map((result) => ({
             id: result!.Id,
             characters: result!.Characters,
+            CharacterImages: result!.CharacterImages,
           }))
       );
     }
@@ -90,6 +93,7 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
           .map((result) => ({
             id: result!.Id,
             characters: result!.Characters,
+            CharacterImages: result!.CharacterImages,
           }))
       );
     }
@@ -123,20 +127,24 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
   return (
     <div className="subject-detail-container">
       {/* Background Side Decorations */}
-      <div
-        className="subject-side-decoration subject-side-decoration-left"
-        style={{ '--char-count': subject.Characters.length } as React.CSSProperties}
-        aria-hidden="true"
-      >
-        {subject.Characters}
-      </div>
-      <div
-        className="subject-side-decoration subject-side-decoration-right"
-        style={{ '--char-count': subject.Characters.length } as React.CSSProperties}
-        aria-hidden="true"
-      >
-        {subject.Characters}
-      </div>
+      {subject.Characters && (
+        <div
+          className="subject-side-decoration subject-side-decoration-left"
+          style={{ '--char-count': subject.Characters.length } as React.CSSProperties}
+          aria-hidden="true"
+        >
+          {subject.Characters}
+        </div>
+      )}
+      {subject.Characters && (
+        <div
+          className="subject-side-decoration subject-side-decoration-right"
+          style={{ '--char-count': subject.Characters.length } as React.CSSProperties}
+          aria-hidden="true"
+        >
+          {subject.Characters}
+        </div>
+      )}
 
       {/* Back navigation row */}
       <div className="subject-nav-row">
@@ -157,10 +165,13 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           className="subject-char-bubble"
           style={{
             backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})`,
-            '--char-count': subject.Characters.length,
+            '--char-count': subject.Characters?.length || 1,
           } as React.CSSProperties}
         >
-          <span className="subject-detail-character japanese-text">{subject.Characters}</span>
+          <SubjectCharacter
+            subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages }}
+            className="subject-detail-character japanese-text"
+          />
         </div>
 
         {/* Title + metadata */}
@@ -322,7 +333,9 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   to={`/subject/${comp.id}`}
                   className="subject-link"
                 >
-                  {comp.characters}
+                  <SubjectCharacter
+                    subject={{ Characters: comp.characters, CharacterImages: comp.CharacterImages }}
+                  />
                 </Link>
               ))}
             </div>
@@ -345,7 +358,9 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   to={`/subject/${amal.id}`}
                   className="subject-link"
                 >
-                  {amal.characters}
+                  <SubjectCharacter
+                    subject={{ Characters: amal.characters, CharacterImages: amal.CharacterImages }}
+                  />
                 </Link>
               ))}
             </div>
@@ -363,7 +378,9 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                   to={`/subject/${sim.id}`}
                   className="subject-link"
                 >
-                  {sim.characters}
+                  <SubjectCharacter
+                    subject={{ Characters: sim.characters, CharacterImages: sim.CharacterImages }}
+                  />
                 </Link>
               ))}
             </div>

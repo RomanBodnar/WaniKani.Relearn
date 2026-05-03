@@ -1,10 +1,9 @@
-
 export interface Subject {
   Id: number;
   Object: string;
   Url: string;
   DataUpdatedAt: string;
-  Characters: string;
+  Characters: string | null;
   Meanings: Array<{
     Meaning: string;
     Primary: boolean;

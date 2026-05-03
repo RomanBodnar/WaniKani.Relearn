@@ -8,7 +8,7 @@ interface RawSubjectData {
   object: string;
   url: string;
   dataUpdatedAt: string;
-  characters: string;
+  characters: string | null;
   meanings?: Array<{
     meaning: string;
     primary: boolean;

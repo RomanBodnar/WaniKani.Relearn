@@ -5,7 +5,7 @@ import type { Subject } from "~/hooks/Subject";
  */
 export interface SubjectDetailData {
   subject: Subject;
-  componentSubjects: Array<{ id: number; characters: string }>;
-  amalgamationSubjects: Array<{ id: number; characters: string }>;
-  visuallySimilarSubjects: Array<{ id: number; characters: string }>;
+  componentSubjects: Array<{ id: number; characters: string | null; CharacterImages?: any[] }>;
+  amalgamationSubjects: Array<{ id: number; characters: string | null; CharacterImages?: any[] }>;
+  visuallySimilarSubjects: Array<{ id: number; characters: string | null; CharacterImages?: any[] }>;
 }
