@@ -13,6 +13,7 @@ public class Program
         builder.Configuration
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+            .AddEnvironmentVariables()
             .AddInMemoryCollection(new Dictionary<string, string?>
             {
                 ["StaticFiles:Path"] = Path.Combine(env.ContentRootPath, "static")
