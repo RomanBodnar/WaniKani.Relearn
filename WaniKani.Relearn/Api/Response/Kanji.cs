@@ -29,4 +29,6 @@ public record KanjiResponse
     public string ReadingMnemonic { get; init; }
     public IReadOnlyCollection<KanjiReading> Readings { get; init; }
     public IReadOnlyCollection<int> VisuallySimilarSubjectIds { get; init; }
+    public string? JlptLevel { get; init; }
+    public string? JoyoGrade { get; init; }
 }
