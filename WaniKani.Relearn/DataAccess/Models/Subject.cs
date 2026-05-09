@@ -1,6 +1,6 @@
 namespace WaniKani.Relearn.DataAccess.Models;
 
-public class Subject
+public record Subject
 {
     // SingleResource properties
     public int Id { get; init; }

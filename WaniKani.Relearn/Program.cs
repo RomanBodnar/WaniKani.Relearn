@@ -44,6 +44,7 @@ public class Program
             .AddDataAccess()
             .AddServices()
             .AddMappers()
+            .AddDataAccessMappers()
             //.AddHttpLogging()
             .AddCustomHttpLogging()
             .AddRefitClients(configuration);

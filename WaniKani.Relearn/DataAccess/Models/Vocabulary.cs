@@ -1,6 +1,6 @@
 namespace WaniKani.Relearn.DataAccess.Models;
 
-public class Vocabulary : Subject
+public record Vocabulary : Subject
 {
     public IReadOnlyCollection<int> ComponentSubjectIds { get; init; } = [];
     public IReadOnlyCollection<ContextSentence> ContextSentences { get; init; } = [];

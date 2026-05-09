@@ -1,6 +1,6 @@
 namespace WaniKani.Relearn.DataAccess.Models;
 
-public class Kanji : Subject
+public record Kanji : Subject
 {
     public IReadOnlyCollection<int> AmalgamationSubjectIds { get; init; } = [];
     public IReadOnlyCollection<int> ComponentSubjectIds { get; init; } = [];

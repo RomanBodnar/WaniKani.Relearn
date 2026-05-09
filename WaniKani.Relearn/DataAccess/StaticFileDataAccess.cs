@@ -147,4 +147,13 @@ public class StaticFileDataAccess(
         string path = Path.Combine(configuration["StaticFiles:Path"]!, $"{prefix}{level}.json");
         await File.WriteAllTextAsync(path, json);
     }
+
+    public async Task SaveSubjects<T>(IEnumerable<T> subjects) where T : DataAccess.Models.Subject
+    {
+        string prefix = typeof(T).Name.ToLower();
+
+        var json = JsonConvert.SerializeObject(subjects, Formatting.Indented);
+        string path = Path.Combine(configuration["StaticFiles:Path"]!, $"subjects-{prefix}.json");
+        await File.WriteAllTextAsync(path, json);
+    }
 }
