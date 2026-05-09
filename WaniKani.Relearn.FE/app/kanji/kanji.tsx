@@ -3,6 +3,8 @@ import { fetchSubjects, useInfiniteSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
+import { JLPTFilter, type JlptLevel } from "../components/JLPTFilter";
+import { JoyoFilter, type JoyoGrade } from "../components/JoyoFilter";
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import "./subjects.css";
 
@@ -17,8 +19,6 @@ export async function clientLoader() {
   return await fetchSubjects("kanji");
 }
 
-
-
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   return (
     <div className="subjects-container">
@@ -32,6 +32,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
 export default function Kanji({ loaderData: initialData }: Route.ComponentProps) {
   const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
+  const [selectedJlpt, setSelectedJlpt] = useState<JlptLevel>(null);
+  const [selectedJoyo, setSelectedJoyo] = useState<JoyoGrade>(null);
   
   const filters = useMemo(() => ({
     minLevel: selectedRange?.[0],
@@ -41,26 +43,36 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
   const { subjects, loadMore, hasMore, isLoading, totalCount } = useInfiniteSubjects(initialData, "kanji", filters);
   const loaderRef = useRef<HTMLDivElement>(null);
 
-  // Use a ref for the observer to avoid constant re-binding
+  const filteredSubjects = useMemo(() => {
+    return subjects.filter(subject => {
+      if (selectedJlpt && subject.JlptLevel !== selectedJlpt) return false;
+      if (selectedJoyo && subject.JoyoGrade !== selectedJoyo) return false;
+      return true;
+    });
+  }, [subjects, selectedJlpt, selectedJoyo]);
+
   useEffect(() => {
     if (!loaderRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // We check isLoading here but we need to ensure we have the current value.
-        // However, the observer callback closure will have the value from when it was created.
-        // Re-creating the observer when isLoading changes is actually standard, 
-        // but we need to make sure it doesn't trigger a loop.
         if (entries[0].isIntersecting && hasMore && !isLoading) {
           loadMore();
         }
       },
-      { threshold: 0.1 } // Lower threshold to trigger earlier
+      { threshold: 0.1 }
     );
 
     observer.observe(loaderRef.current);
     return () => observer.disconnect();
   }, [hasMore, isLoading, loadMore]);
+
+  // If filtering on frontend hides items, we might need to load more
+  useEffect(() => {
+    if (filteredSubjects.length < 20 && hasMore && !isLoading) {
+      // loadMore(); // Auto-loading more can cause infinite loops or rapid requests, keep it simple for now
+    }
+  }, [filteredSubjects, hasMore, isLoading, loadMore]);
 
   return (
     <div className="subjects-container">
@@ -71,27 +83,37 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
         onRangeChange={setSelectedRange} 
       />
 
+      <JLPTFilter 
+        selectedLevel={selectedJlpt} 
+        onLevelChange={setSelectedJlpt} 
+      />
+
+      <JoyoFilter 
+        selectedGrade={selectedJoyo} 
+        onGradeChange={setSelectedJoyo} 
+      />
+
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0
-          ? `Showing ${subjects.length} of ${totalCount} kanji`
+          ? `Showing ${filteredSubjects.length} of ${totalCount} kanji${filteredSubjects.length !== subjects.length ? ' (filtered)' : ''}`
           : isLoading ? "Loading..." : "No kanji data available"}
       </p>
 
-      {subjects.length > 0 ? (
+      {filteredSubjects.length > 0 ? (
         <div className="subjects-grid">
-          {subjects.map((subject) => (
+          {filteredSubjects.map((subject) => (
             <SubjectCard key={subject.Id} subject={subject} variant="kanji" />
           ))}
         </div>
       ) : !isLoading && (
         <div className="subjects-empty">
-          <p>No kanji data matches the selected level range.</p>
+          <p>No kanji data matches the selected filters.</p>
         </div>
       )}
 
       {hasMore && (
         <div ref={loaderRef} className="subjects-loader flex justify-center p-8">
-          {isLoading && <LoadingSpinner />}
+          {isLoading ? <LoadingSpinner /> : <div className="loader-trigger" style={{ height: '20px' }} />}
         </div>
       )}
     </div>

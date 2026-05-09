@@ -33,6 +33,8 @@ interface RawSubjectData {
   amalgamationSubjectIds?: number[];
   visuallySimilarSubjectIds?: number[];
   characterImages?: Array<{ url: string; content_type: string; metadata: unknown }>;
+  jlptLevel?: string;
+  joyoGrade?: string;
 }
 
 /**
@@ -70,5 +72,7 @@ export function transformSubject(apiSubject: RawSubjectData): Subject {
     AmalgamationSubjectIds: apiSubject.amalgamationSubjectIds,
     VisuallySimilarSubjectIds: apiSubject.visuallySimilarSubjectIds,
     CharacterImages: apiSubject.characterImages,
+    JlptLevel: apiSubject.jlptLevel,
+    JoyoGrade: apiSubject.joyoGrade,
   };
 }

@@ -28,4 +28,6 @@ export interface Subject {
   AmalgamationSubjectIds?: number[];
   VisuallySimilarSubjectIds?: number[];
   CharacterImages?: Array<{ url: string; content_type: string; metadata: unknown }>;
+  JlptLevel?: string;
+  JoyoGrade?: string;
 }
