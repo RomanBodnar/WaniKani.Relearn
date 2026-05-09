@@ -48,7 +48,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./WaniKani.Relearn
           push: true
           tags: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.version }}
           # This caches layers in the GitHub Actions runner to speed up subsequent builds
