@@ -27,6 +27,14 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    public static IServiceCollection AddDataAccessMappers(this IServiceCollection services)
+    {
+        services.AddTransient<DataAccess.Mappers.KanjiMapper>();
+        services.AddTransient<DataAccess.Mappers.VocabularyMapper>();
+        services.AddTransient<DataAccess.Mappers.RadicalMapper>();
+        return services;
+    }
+
     public static IServiceCollection AddMappers(this IServiceCollection services)
     {
         services.AddScoped<KanjiMapper>();
