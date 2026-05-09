@@ -21,6 +21,20 @@ jobs:
       id-token: 'write'
 
     steps:
+      - name: Validate and Sanitize Version
+        id: version_check
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          
+          # 1. Validation: Ensure it looks like a version (e.g., v1.2.3 or 1.2.3)
+          # This regex allows a leading 'v', numbers, and dots.
+          if [[ ! $VERSION =~ ^v?[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Invalid version format. Please use format like v1.2.3 or 1.2.3"
+            exit 1
+          fi
+          
+          echo "tag=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -51,7 +65,7 @@ jobs:
           context: ./WaniKani.Relearn
           file: ./WaniKani.Relearn/Dockerfile
           push: true
-          tags: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.version }}
+          tags: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ steps.version_check.outputs.tag }}
           # This caches layers in the GitHub Actions runner to speed up subsequent builds
           cache-from: type=gha
           cache-to: type=gha,mode=max

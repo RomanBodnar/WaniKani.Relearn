@@ -23,6 +23,25 @@ jobs:
       id-token: 'write'
 
     steps:
+      - name: Validate and Sanitize Version
+        id: version_check
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          
+          # 1. Validation: Ensure it looks like a version (e.g., v1.2.3 or 1.2.3)
+          # This regex allows a leading 'v', numbers, and dots.
+          if [[ ! $VERSION =~ ^v?[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Invalid version format. Please use format like v1.2.3 or 1.2.3"
+            exit 1
+          fi
+
+          # 2. Sanitization: Create a label-friendly version (no dots, lowercase)
+          # v1.1.2 -> v1-1-2
+          CLEAN_VER=$(echo "$VERSION" | tr '.' '-' | tr '[:upper:]' '[:lower:]')
+          
+          echo "tag=$VERSION" >> $GITHUB_OUTPUT
+          echo "label=$CLEAN_VER" >> $GITHUB_OUTPUT
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -39,9 +58,9 @@ jobs:
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy $SERVICE_NAME \
-            --image=$REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ github.event.inputs.version }} \
+            --image=$REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:${{ steps.version_check.outputs.tag }} \
             --region=$REGION \
             --platform=managed \
             --allow-unauthenticated \
-            --labels=managed-by=github-actions,version=${{ github.event.inputs.version }} \
+            --labels=managed-by=github-actions,version=${{ steps.version_check.outputs.label }} \
             --quiet
