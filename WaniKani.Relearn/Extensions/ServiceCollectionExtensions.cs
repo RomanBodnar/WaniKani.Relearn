@@ -31,6 +31,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddTransient<DataAccess.Mappers.KanjiMapper>();
         services.AddTransient<DataAccess.Mappers.VocabularyMapper>();
+        services.AddTransient<DataAccess.Mappers.KanaVocabularyMapper>();
         services.AddTransient<DataAccess.Mappers.RadicalMapper>();
         return services;
     }

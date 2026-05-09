@@ -25,4 +25,8 @@ public partial class KanjiMapper
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.Readings), nameof(KanjiResponse.Readings))]
     [MapProperty(nameof(SingleResource<Kanji>.Data) + "." + nameof(Kanji.VisuallySimilarSubjectIds), nameof(KanjiResponse.VisuallySimilarSubjectIds))]
     public partial KanjiResponse Map(SingleResource<Kanji> resource);
+
+    [MapProperty(nameof(DataAccess.Models.Kanji.WaniKaniApiUrl), nameof(KanjiResponse.Url))]
+    [MapProperty(nameof(DataAccess.Models.Kanji.WaniKaniDocumentUrl), nameof(KanjiResponse.DocumentUrl))]
+    public partial KanjiResponse Map(DataAccess.Models.Kanji kanji);
 }

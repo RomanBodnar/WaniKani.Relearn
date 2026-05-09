@@ -28,13 +28,12 @@ public class SubjectsController(
         }
         var pageResult = subjectCache.GetSubjects(types, page, perPage, minLevel, maxLevel);
 
-        var mapped = pageResult.Data.Select<SingleResource<Subject>, object>(resource => resource.Data switch
+        var mapped = pageResult.Data.Select<DataAccess.Models.Subject, object>(resource => resource switch
         {
-            Kanji => kanjiMapper.Map(resource.CopyAs<Kanji>()),
-            Radical => radicalMapper.Map(resource.CopyAs<Radical>()),
-            Vocabulary => vocabularyMapper.Map(resource.CopyAs<Vocabulary>()),
-            KanaVocabulary => vocabularyMapper.Map(resource.CopyAs<KanaVocabulary>()),
-            _ => throw new InvalidOperationException($"Unknown subject type: {resource.Data.GetType().Name}")
+            DataAccess.Models.Kanji => kanjiMapper.Map(resource as DataAccess.Models.Kanji),
+            DataAccess.Models.Radical => radicalMapper.Map(resource as DataAccess.Models.Radical),
+            DataAccess.Models.Vocabulary => vocabularyMapper.Map(resource as DataAccess.Models.Vocabulary),
+            _ => throw new InvalidOperationException($"Unknown subject type: {resource.GetType().Name}")
         });
         return Ok(new PageResult<object>(mapped, pageResult.Page, pageResult.PerPage, pageResult.TotalCount));
     }
@@ -44,12 +43,11 @@ public class SubjectsController(
     {
         if (subjectCache.TryGet(id, out var subject))
         {
-            return Ok(subject!.Data switch
+            return Ok(subject switch
             {
-                Kanji => kanjiMapper.Map(subject.CopyAs<Kanji>()),
-                Radical => radicalMapper.Map(subject.CopyAs<Radical>()),
-                Vocabulary => vocabularyMapper.Map(subject.CopyAs<Vocabulary>()),
-                KanaVocabulary => vocabularyMapper.Map(subject.CopyAs<KanaVocabulary>()),
+                DataAccess.Models.Kanji => kanjiMapper.Map(subject as DataAccess.Models.Kanji),
+                DataAccess.Models.Radical => radicalMapper.Map(subject as DataAccess.Models.Radical),
+                DataAccess.Models.Vocabulary => vocabularyMapper.Map(subject as DataAccess.Models.Vocabulary),
                 _ => throw new InvalidOperationException("Unknown subject type")
             });
         }

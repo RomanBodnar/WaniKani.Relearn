@@ -20,4 +20,8 @@ public partial class RadicalMapper
     [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.AmalgamationSubjectIds), nameof(RadicalResponse.AmalgamationSubjectIds))]
     [MapProperty(nameof(SingleResource<Radical>.Data) + "." + nameof(Radical.CharacterImages), nameof(RadicalResponse.CharacterImages))]
     public partial RadicalResponse Map(SingleResource<Radical> resource);
+
+    [MapProperty(nameof(DataAccess.Models.Radical.WaniKaniApiUrl), nameof(RadicalResponse.Url))]
+    [MapProperty(nameof(DataAccess.Models.Radical.WaniKaniDocumentUrl), nameof(RadicalResponse.DocumentUrl))]
+    public partial RadicalResponse Map(DataAccess.Models.Radical radical);
 }

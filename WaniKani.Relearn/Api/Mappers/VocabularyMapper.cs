@@ -40,4 +40,9 @@ public partial class VocabularyMapper
     [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.PartsOfSpeech), nameof(VocabularyResponse.PartsOfSpeech))]
     [MapProperty(nameof(SingleResource<KanaVocabulary>.Data) + "." + nameof(KanaVocabulary.PronunciationAudios), nameof(VocabularyResponse.PronunciationAudios))]
     public partial VocabularyResponse Map(SingleResource<KanaVocabulary> resource);
+
+
+    [MapProperty(nameof(DataAccess.Models.Vocabulary.WaniKaniApiUrl), nameof(VocabularyResponse.Url))]
+    [MapProperty(nameof(DataAccess.Models.Vocabulary.WaniKaniDocumentUrl), nameof(VocabularyResponse.DocumentUrl))]
+    public partial VocabularyResponse Map(DataAccess.Models.Vocabulary vocabulary);
 }

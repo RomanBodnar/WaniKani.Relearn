@@ -56,12 +56,39 @@ public class StaticFileDataAccess(
         return subjects;
     }
 
+    public async Task<List<DataAccess.Models.Kanji>> GetKanji()
+    {
+        string path = "subjects-kanji.json";
+        var rawJson = await File.ReadAllTextAsync(Path.Combine(configuration["StaticFiles:Path"]!, path));
+        var subjects = JsonConvert.DeserializeObject<List<DataAccess.Models.Kanji>>(rawJson)
+            ?.ToList() ?? [];
+        return subjects;
+    }
+
+    public async Task<List<DataAccess.Models.Radical>> GetRadicals()
+    {
+        string path = "subjects-radical.json";
+        var rawJson = await File.ReadAllTextAsync(Path.Combine(configuration["StaticFiles:Path"]!, path));
+        var subjects = JsonConvert.DeserializeObject<List<DataAccess.Models.Radical>>(rawJson)
+            ?.ToList() ?? [];
+        return subjects;
+    }
+
+    public async Task<List<DataAccess.Models.Vocabulary>> GetVocabulary()
+    {
+        string path = "subjects-vocabulary.json";
+        var rawJson = await File.ReadAllTextAsync(Path.Combine(configuration["StaticFiles:Path"]!, path));
+        var subjects = JsonConvert.DeserializeObject<List<DataAccess.Models.Vocabulary>>(rawJson)
+            ?.ToList() ?? [];
+        return subjects;
+    }
     public async Task<List<SingleResource<Kanji>>> GetAllKanji(params int[] levels)
     {
         string prefix = "kanji-";
         levels = levels is not [] ? levels : Enumerable.Range(1, 60).ToArray();
 
-        string[] paths = levels
+        string[] paths = //["subjects-kanji.json"];
+        levels
             .Select(level => Path.Combine(configuration["StaticFiles:Path"]!, $"{prefix}{level}.json"))
             .ToArray();
         var fileReadTasks = paths.Select(async path =>
