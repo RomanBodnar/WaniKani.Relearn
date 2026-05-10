@@ -114,28 +114,100 @@
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .settings-title {
+  html:not(.light):not(.dark) .settings-title {
     color: #f8fafc;
   }
 
-  .settings-card {
+  html:not(.light):not(.dark) .settings-card {
     background: #1e293b;
     border-color: #334155;
   }
 
-  .settings-row {
+  html:not(.light):not(.dark) .settings-row {
     border-top-color: #334155;
   }
 
-  .settings-label {
+  html:not(.light):not(.dark) .settings-label {
     color: #f8fafc;
   }
 
-  .settings-description {
+  html:not(.light):not(.dark) .settings-description {
     color: #94a3b8;
   }
 
-  .toggle-slider {
+  html:not(.light):not(.dark) .toggle-slider {
     background-color: #475569;
   }
+}
+
+.dark .settings-title {
+  color: #f8fafc;
+}
+
+.dark .settings-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark .settings-row {
+  border-top-color: #334155;
+}
+
+.dark .settings-label {
+  color: #f8fafc;
+}
+
+.dark .settings-description {
+  color: #94a3b8;
+}
+
+.dark .toggle-slider {
+  background-color: #475569;
+}
+
+/* Theme Selector */
+.theme-selector {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.dark .theme-selector {
+  background: #0f172a;
+}
+
+.theme-option {
+  flex: 1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.theme-option:hover {
+  color: #0f172a;
+}
+
+.dark .theme-option:hover {
+  color: #f8fafc;
+}
+
+.theme-option.active {
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .theme-option.active {
+  background: #334155;
+  color: #f8fafc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }

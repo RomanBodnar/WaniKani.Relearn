@@ -14,10 +14,20 @@ body {
   @apply bg-white dark:bg-gray-950;
 
   @media (prefers-color-scheme: dark) {
+    &:not(.light):not(.dark) {
+      color-scheme: dark;
+    }
+  }
+
+  &.dark {
     color-scheme: dark;
   }
 
   background-color: rgb(250, 250, 250);
+}
+
+.dark body {
+  background-color: var(--color-gray-950);
 }
 
 .brand-accent-strip {
@@ -63,13 +73,21 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light):not(.dark) {
     --chart-axis-color: #94a3b8;
     --chart-grid-color: #334155;
     --chart-tooltip-bg: #1e293b;
     --chart-tooltip-border: #334155;
     --chart-tooltip-text: #f8fafc;
   }
+}
+
+:root.dark {
+  --chart-axis-color: #94a3b8;
+  --chart-grid-color: #334155;
+  --chart-tooltip-bg: #1e293b;
+  --chart-tooltip-border: #334155;
+  --chart-tooltip-text: #f8fafc;
 }
 
 .chart-card {

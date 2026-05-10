@@ -1,7 +1,7 @@
 .navigation ul {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 4px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -18,30 +18,34 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8px 16px;
-    color: #4b5563; /* Gray 600 */
-    border-radius: 6px;
-    font-size: 1.1rem;
-    font-weight: 500;
+    padding: 6px 12px;
+    color: #64748b;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
     transition: all 0.2s ease;
     border: 1px solid transparent;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
-    background-color: #f3f4f6; /* Gray 100 */
-    color: #111827; /* Gray 900 */
+    background-color: #f1f5f9;
+    color: #1e293b;
 }
 
-/* Subtle click effect */
 .nav-link:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 
-/* Active state base */
 .nav-link.active {
-    background-color: #f9fafb; /* Gray 50 */
-    color: #111827; /* Gray 900 */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    color: #1e293b;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .nav-link.active {
+    background-color: #0f172a;
+    color: #f8fafc;
 }
 
 /* Category-specific border colors */
@@ -52,36 +56,41 @@
 .nav-link-reading:hover, .nav-link-reading.active { border-color: var(--color-wk-reading); }
 
 @media (prefers-color-scheme: dark) {
+    html:not(.light):not(.dark) .nav-link { color: #94a3b8; }
+    html:not(.light):not(.dark) .nav-link:hover { background-color: #334155; color: #f8fafc; }
+}
+
+.dark .nav-link { color: #94a3b8; }
+.dark .nav-link:hover { background-color: #334155; color: #f8fafc; }
+
+/* Responsive */
+@media(max-width: 1024px) {
     .nav-link {
-        color: #94a3b8;
-    }
-    .nav-link:hover {
-        background-color: #334155;
-        color: #f8fafc;
-    }
-    .nav-link.active {
-        background-color: #1e293b;
-        color: #f8fafc;
+        padding: 6px 8px;
+        font-size: 0.85rem;
     }
 }
 
-/* Media Query */
-@media(max-width: 768px) {
-    .navigation ul {
-        flex-wrap: wrap;
-        justify-content: center;
+@media(max-width: 850px) {
+    .navigation, .navigation ul {
         width: 100%;
-        gap: 8px;
-    }
-    
-    .navigation li {
-        flex: 1 1 calc(50% - 8px);
     }
 
+    .navigation ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    
     .nav-link {
         width: 100%;
-        padding: 10px 12px;
-        font-size: 1rem;
-        box-sizing: border-box;
+        padding: 8px 4px;
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .navigation ul {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

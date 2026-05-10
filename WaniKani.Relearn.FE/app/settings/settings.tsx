@@ -20,6 +20,26 @@ export default function Settings() {
         <div className="settings-group">
           <h2 className="settings-group-title">Appearance</h2>
 
+          <div className="settings-row" onClick={(e) => e.preventDefault()}>
+            <div className="settings-row-text">
+              <span className="settings-label">App Theme</span>
+              <span className="settings-description">
+                Switch between light and dark modes
+              </span>
+            </div>
+            <div className="theme-selector">
+              {(["light", "dark", "system"] as const).map((t) => (
+                <button
+                  key={t}
+                  className={`theme-option ${settings.theme === t ? "active" : ""}`}
+                  onClick={() => updateSetting("theme", t)}
+                >
+                  {t.charAt(0).toUpperCase() + t.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <label className="settings-row" htmlFor="toggle-watermarks">
             <div className="settings-row-text">
               <span className="settings-label">Floating Watermarks</span>
