@@ -90,13 +90,21 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
   const { subjects, loadMore, hasMore, isLoading, totalCount } = useInfiniteSubjects(initialData, "kanji", filters);
   const loaderRef = useRef<HTMLDivElement>(null);
 
+  const searchQuery = searchParams.get("q")?.toLowerCase() || "";
+
   const filteredSubjects = useMemo(() => {
     return subjects.filter(subject => {
       if (selectedJlpt.length > 0 && (!subject.JlptLevel || !selectedJlpt.includes(subject.JlptLevel))) return false;
       if (selectedJoyo.length > 0 && (!subject.JoyoGrade || !selectedJoyo.includes(subject.JoyoGrade))) return false;
+      if (searchQuery) {
+        const matchesMeanings = subject.Meanings?.some(m => m.Meaning.toLowerCase().includes(searchQuery));
+        if (!matchesMeanings) {
+          return false;
+        }
+      }
       return true;
     });
-  }, [subjects, selectedJlpt, selectedJoyo]);
+  }, [subjects, selectedJlpt, selectedJoyo, searchQuery]);
 
   useEffect(() => {
     if (!loaderRef.current) return;
@@ -167,7 +175,7 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
         </div>
       )}
 
-      {hasMore && (
+      {hasMore && !searchQuery && (
         <div ref={loaderRef} className="subjects-loader flex justify-center p-8">
           {isLoading ? <LoadingSpinner /> : <div className="loader-trigger" style={{ height: '20px' }} />}
         </div>

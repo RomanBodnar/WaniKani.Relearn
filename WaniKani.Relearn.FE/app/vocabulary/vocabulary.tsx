@@ -69,6 +69,20 @@ export default function Vocabulary({ loaderData: initialData }: Route.ComponentP
   const { subjects, loadMore, hasMore, isLoading, totalCount } = useInfiniteSubjects(initialData, "vocabulary", filters);
   const loaderRef = useRef<HTMLDivElement>(null);
 
+  const searchQuery = searchParams.get("q")?.toLowerCase() || "";
+
+  const filteredSubjects = useMemo(() => {
+    return subjects.filter(subject => {
+      if (searchQuery) {
+        const matchesMeanings = subject.Meanings?.some(m => m.Meaning.toLowerCase().includes(searchQuery));
+        if (!matchesMeanings) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [subjects, searchQuery]);
+
   useEffect(() => {
     if (!loaderRef.current) return;
 
@@ -96,23 +110,23 @@ export default function Vocabulary({ loaderData: initialData }: Route.ComponentP
 
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0
-          ? `Showing ${subjects.length} of ${totalCount} vocabulary words`
+          ? `Showing ${filteredSubjects.length} of ${totalCount} vocabulary words${filteredSubjects.length !== subjects.length ? ' (filtered)' : ''}`
           : isLoading ? "Loading..." : "No vocabulary data available"}
       </p>
 
-      {subjects.length > 0 ? (
+      {filteredSubjects.length > 0 ? (
         <div className="subjects-grid">
-          {subjects.map((subject) => (
+          {filteredSubjects.map((subject) => (
             <SubjectCard key={subject.Id} subject={subject} variant="vocabulary" />
           ))}
         </div>
       ) : !isLoading && (
         <div className="subjects-empty">
-          <p>No vocabulary data matches the selected level range.</p>
+          <p>No vocabulary data matches the selected filters.</p>
         </div>
       )}
 
-      {hasMore && (
+      {hasMore && !searchQuery && (
         <div ref={loaderRef} className="subjects-loader flex justify-center p-8">
           {isLoading && <LoadingSpinner />}
         </div>

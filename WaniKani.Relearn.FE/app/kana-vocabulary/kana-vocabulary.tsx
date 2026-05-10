@@ -69,6 +69,20 @@ export default function KanaVocabulary({ loaderData: initialData }: Route.Compon
   const { subjects, loadMore, hasMore, isLoading, totalCount } = useInfiniteSubjects(initialData, "kana_vocabulary", filters);
   const loaderRef = useRef<HTMLDivElement>(null);
 
+  const searchQuery = searchParams.get("q")?.toLowerCase() || "";
+
+  const filteredSubjects = useMemo(() => {
+    return subjects.filter(subject => {
+      if (searchQuery) {
+        const matchesMeanings = subject.Meanings?.some(m => m.Meaning.toLowerCase().includes(searchQuery));
+        if (!matchesMeanings) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [subjects, searchQuery]);
+
   useEffect(() => {
     if (!loaderRef.current) return;
 
@@ -96,23 +110,23 @@ export default function KanaVocabulary({ loaderData: initialData }: Route.Compon
 
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0
-          ? `Showing ${subjects.length} of ${totalCount} kana vocabulary items`
+          ? `Showing ${filteredSubjects.length} of ${totalCount} kana vocabulary items${filteredSubjects.length !== subjects.length ? ' (filtered)' : ''}`
           : isLoading ? "Loading..." : "No kana vocabulary data available"}
       </p>
 
-      {subjects.length > 0 ? (
+      {filteredSubjects.length > 0 ? (
         <div className="subjects-grid">
-          {subjects.map((subject) => (
+          {filteredSubjects.map((subject) => (
             <SubjectCard key={subject.Id} subject={subject} variant="vocabulary" />
           ))}
         </div>
       ) : !isLoading && (
         <div className="subjects-empty">
-          <p>No kana vocabulary data matches the selected level range.</p>
+          <p>No kana vocabulary data matches the selected filters.</p>
         </div>
       )}
 
-      {hasMore && (
+      {hasMore && !searchQuery && (
         <div ref={loaderRef} className="subjects-loader flex justify-center p-8">
           {isLoading && <LoadingSpinner />}
         </div>
