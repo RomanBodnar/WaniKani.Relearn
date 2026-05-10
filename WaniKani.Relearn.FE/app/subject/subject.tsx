@@ -7,6 +7,7 @@ import type { SubjectDetailData } from "~/types/subject";
 import { parseMnemonics } from "~/utils/parseMnemonics";
 import { createGrammarSlug } from "~/utils/grammar";
 import { SubjectCharacter } from "~/components/SubjectCharacter";
+import { ScrollReveal } from "~/components/ScrollReveal";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -170,234 +171,248 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
       <div className="subject-detail-content">
         {/* Meanings & Mnemonic Section */}
         {(subject.Meanings?.length || subject.MeaningMnemonic) ? (
-          <section className="detail-section">
-            <h2>Meanings</h2>
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>Meanings</h2>
 
-            {subject.Meanings && subject.Meanings.length > 0 && (
-              <div className="meanings-layout mb-6">
-                {subject.Meanings.filter(m => m.Primary).length > 0 && (
-                  <div className="primary-meanings">
-                    <span className="meaning-type-label">Primary</span>
-                    <span className="primary-meaning-text">
-                      {subject.Meanings.filter(m => m.Primary).map(m => m.Meaning).join(', ')}
-                    </span>
-                  </div>
-                )}
-                {subject.Meanings.filter(m => !m.Primary).length > 0 && (
-                  <div className="alternative-meanings mt-4">
-                    <span className="meaning-type-label">Alternatives</span>
-                    <span className="alternative-meaning-text">
-                      {subject.Meanings.filter(m => !m.Primary).map(m => m.Meaning).join(', ')}
-                    </span>
-                  </div>
-                )}
-              </div>
-            )}
+              {subject.Meanings && subject.Meanings.length > 0 && (
+                <div className="meanings-layout mb-6">
+                  {subject.Meanings.filter(m => m.Primary).length > 0 && (
+                    <div className="primary-meanings">
+                      <span className="meaning-type-label">Primary</span>
+                      <span className="primary-meaning-text">
+                        {subject.Meanings.filter(m => m.Primary).map(m => m.Meaning).join(', ')}
+                      </span>
+                    </div>
+                  )}
+                  {subject.Meanings.filter(m => !m.Primary).length > 0 && (
+                    <div className="alternative-meanings mt-4">
+                      <span className="meaning-type-label">Alternatives</span>
+                      <span className="alternative-meaning-text">
+                        {subject.Meanings.filter(m => !m.Primary).map(m => m.Meaning).join(', ')}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
 
-            {subject.MeaningMnemonic && (
-              <div className="mnemonic-sub-section" style={{ marginTop: subject.Meanings?.length ? '20px' : '0' }}>
-                <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Meaning Mnemonic</h3>
-                <p className="mnemonic-text">{parseMnemonics(subject.MeaningMnemonic)}</p>
-              </div>
-            )}
-          </section>
+              {subject.MeaningMnemonic && (
+                <div className="mnemonic-sub-section" style={{ marginTop: subject.Meanings?.length ? '20px' : '0' }}>
+                  <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Meaning Mnemonic</h3>
+                  <p className="mnemonic-text">{parseMnemonics(subject.MeaningMnemonic)}</p>
+                </div>
+              )}
+            </section>
+          </ScrollReveal>
         ) : null}
 
         {/* Readings & Mnemonic Section */}
         {(subject.Readings?.length || subject.ReadingMnemonic) ? (
-          <section className="detail-section">
-            <h2>Readings</h2>
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>Readings</h2>
 
-            {subject.Readings && subject.Readings.length > 0 && (
-              <div className="readings-layout mb-6">
-                {subject.Object === 'kanji' ? (
-                  <div className="kanji-readings-grid">
-                    <div className="reading-column">
-                      <h3 className="reading-type-label">On'yomi</h3>
-                      <div className="reading-items-inline">
-                        {subject.Readings.filter(r => r.Type === 'onyomi').length > 0
-                          ? subject.Readings.filter(r => r.Type === 'onyomi').map((r, i) => (
-                            <span key={`on-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                          ))
-                          : <span className="reading-inline-text none">None</span>}
+              {subject.Readings && subject.Readings.length > 0 && (
+                <div className="readings-layout mb-6">
+                  {subject.Object === 'kanji' ? (
+                    <div className="kanji-readings-grid">
+                      <div className="reading-column">
+                        <h3 className="reading-type-label">On'yomi</h3>
+                        <div className="reading-items-inline">
+                          {subject.Readings.filter(r => r.Type === 'onyomi').length > 0
+                            ? subject.Readings.filter(r => r.Type === 'onyomi').map((r, i) => (
+                              <span key={`on-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ))
+                            : <span className="reading-inline-text none">None</span>}
+                        </div>
+                      </div>
+                      <div className="reading-column">
+                        <h3 className="reading-type-label">Kun'yomi</h3>
+                        <div className="reading-items-inline">
+                          {subject.Readings.filter(r => r.Type === 'kunyomi').length > 0
+                            ? subject.Readings.filter(r => r.Type === 'kunyomi').map((r, i) => (
+                              <span key={`kun-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ))
+                            : <span className="reading-inline-text none">None</span>}
+                        </div>
+                      </div>
+                      <div className="reading-column">
+                        <h3 className="reading-type-label">Nanori</h3>
+                        <div className="reading-items-inline">
+                          {subject.Readings.filter(r => r.Type === 'nanori').length > 0
+                            ? subject.Readings.filter(r => r.Type === 'nanori').map((r, i) => (
+                              <span key={`nan-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ))
+                            : <span className="reading-inline-text none">None</span>}
+                        </div>
                       </div>
                     </div>
-                    <div className="reading-column">
-                      <h3 className="reading-type-label">Kun'yomi</h3>
-                      <div className="reading-items-inline">
-                        {subject.Readings.filter(r => r.Type === 'kunyomi').length > 0
-                          ? subject.Readings.filter(r => r.Type === 'kunyomi').map((r, i) => (
-                            <span key={`kun-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                          ))
-                          : <span className="reading-inline-text none">None</span>}
+                  ) : (
+                    <div className="vocab-readings-grid">
+                      <div className="reading-column">
+                        <h3 className="reading-type-label">Reading</h3>
+                        <div className="reading-items-inline">
+                          {subject.Readings.map((r, i) => (
+                            <span key={`voc-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="reading-column">
-                      <h3 className="reading-type-label">Nanori</h3>
-                      <div className="reading-items-inline">
-                        {subject.Readings.filter(r => r.Type === 'nanori').length > 0
-                          ? subject.Readings.filter(r => r.Type === 'nanori').map((r, i) => (
-                            <span key={`nan-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                          ))
-                          : <span className="reading-inline-text none">None</span>}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="vocab-readings-grid">
-                    <div className="reading-column">
-                      <h3 className="reading-type-label">Reading</h3>
-                      <div className="reading-items-inline">
-                        {subject.Readings.map((r, i) => (
-                          <span key={`voc-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
+                  )}
+                </div>
+              )}
 
-            {subject.ReadingMnemonic && (
-              <div className="mnemonic-sub-section" style={{ marginTop: subject.Readings?.length ? '20px' : '0' }}>
-                <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Reading Mnemonic</h3>
-                <p className="mnemonic-text">{parseMnemonics(subject.ReadingMnemonic)}</p>
-              </div>
-            )}
-          </section>
+              {subject.ReadingMnemonic && (
+                <div className="mnemonic-sub-section" style={{ marginTop: subject.Readings?.length ? '20px' : '0' }}>
+                  <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Reading Mnemonic</h3>
+                  <p className="mnemonic-text">{parseMnemonics(subject.ReadingMnemonic)}</p>
+                </div>
+              )}
+            </section>
+          </ScrollReveal>
         ) : null}
 
         {/* Parts of Speech */}
         {subject.PartsOfSpeech && subject.PartsOfSpeech.length > 0 && (
-          <section className="detail-section">
-            <h2>Parts of Speech</h2>
-            <div className="parts-of-speech">
-              {subject.PartsOfSpeech.map((pos, idx) => (
-                <Link key={idx} to={`/grammar/${createGrammarSlug(pos)}`} className="pos-tag" style={{ textDecoration: 'none' }}>
-                  {pos}
-                </Link>
-              ))}
-            </div>
-          </section>
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>Parts of Speech</h2>
+              <div className="parts-of-speech">
+                {subject.PartsOfSpeech.map((pos, idx) => (
+                  <Link key={idx} to={`/grammar/${createGrammarSlug(pos)}`} className="pos-tag" style={{ textDecoration: 'none' }}>
+                    {pos}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
         )}
 
         {/* Context Sentences */}
         {subject.ContextSentences && subject.ContextSentences.length > 0 && (
-          <section className="detail-section">
-            <h2>Context Sentences</h2>
-            <div className="context-sentences">
-              {subject.ContextSentences.map((sentence, idx) => (
-                <div key={idx} className="context-sentence">
-                  <p className="sentence-ja">{sentence.ja}</p>
-                  <p className="sentence-en">{sentence.en}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>Context Sentences</h2>
+              <div className="context-sentences">
+                {subject.ContextSentences.map((sentence, idx) => (
+                  <div key={idx} className="context-sentence">
+                    <p className="sentence-ja">{sentence.ja}</p>
+                    <p className="sentence-en">{sentence.en}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
         )}
 
         {/* Component Subject IDs */}
         {componentSubjects && componentSubjects.length > 0 && (
-          <section className="detail-section">
-            <h2>Radical components</h2>
-            <div className="subject-links">
-              {componentSubjects.map((comp) => {
-                const meaning = comp.Meanings?.find(m => m.Primary)?.Meaning || comp.Meanings?.[0]?.Meaning || "";
-                const reading = comp.Readings?.find(r => r.Primary)?.Reading || comp.Readings?.[0]?.Reading || "";
-                return (
-                  <Link
-                    key={comp.Id}
-                    to={`/subject/${comp.Id}`}
-                    className="subject-link"
-                  >
-                    <div
-                      className="subject-link-char-box"
-                      style={{ backgroundColor: `var(--color-wk-${comp.Object.replace('_', '-')})` }}
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>Radical components</h2>
+              <div className="subject-links">
+                {componentSubjects.map((comp) => {
+                  const meaning = comp.Meanings?.find(m => m.Primary)?.Meaning || comp.Meanings?.[0]?.Meaning || "";
+                  const reading = comp.Readings?.find(r => r.Primary)?.Reading || comp.Readings?.[0]?.Reading || "";
+                  return (
+                    <Link
+                      key={comp.Id}
+                      to={`/subject/${comp.Id}`}
+                      className="subject-link"
                     >
-                      <SubjectCharacter
-                        subject={{ Characters: comp.Characters, CharacterImages: comp.CharacterImages, Slug: comp.Slug }}
-                      />
-                    </div>
-                    <div className="subject-link-info">
-                      {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
-                      <div className="subject-link-meaning">{meaning}</div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
+                      <div
+                        className="subject-link-char-box"
+                        style={{ backgroundColor: `var(--color-wk-${comp.Object.replace('_', '-')})` }}
+                      >
+                        <SubjectCharacter
+                          subject={{ Characters: comp.Characters, CharacterImages: comp.CharacterImages, Slug: comp.Slug }}
+                        />
+                      </div>
+                      <div className="subject-link-info">
+                        {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
+                        <div className="subject-link-meaning">{meaning}</div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          </ScrollReveal>
         )}
 
         {/* Amalgamation Subjects */}
         {amalgamationSubjects && amalgamationSubjects.length > 0 && (
-          <section className="detail-section">
-            <h2>
-              {subject.Object === 'kanji' && 'Found in Vocabulary'}
-              {subject.Object === 'radical' && 'Used in Kanji'}
-              {subject.Object !== 'kanji' && subject.Object !== 'radical' && 'Used In'}
-              {' '}({subject.AmalgamationSubjectIds?.length || 0})
-            </h2>
-            <div className="subject-links">
-              {amalgamationSubjects.map((amal) => {
-                const meaning = amal.Meanings?.find(m => m.Primary)?.Meaning || amal.Meanings?.[0]?.Meaning || "";
-                const reading = amal.Readings?.find(r => r.Primary)?.Reading || amal.Readings?.[0]?.Reading || "";
-                return (
-                  <Link
-                    key={amal.Id}
-                    to={`/subject/${amal.Id}`}
-                    className="subject-link"
-                  >
-                    <div
-                      className="subject-link-char-box"
-                      style={{ backgroundColor: `var(--color-wk-${amal.Object.replace('_', '-')})` }}
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>
+                {subject.Object === 'kanji' && 'Found in Vocabulary'}
+                {subject.Object === 'radical' && 'Used in Kanji'}
+                {subject.Object !== 'kanji' && subject.Object !== 'radical' && 'Used In'}
+                {' '}({subject.AmalgamationSubjectIds?.length || 0})
+              </h2>
+              <div className="subject-links">
+                {amalgamationSubjects.map((amal) => {
+                  const meaning = amal.Meanings?.find(m => m.Primary)?.Meaning || amal.Meanings?.[0]?.Meaning || "";
+                  const reading = amal.Readings?.find(r => r.Primary)?.Reading || amal.Readings?.[0]?.Reading || "";
+                  return (
+                    <Link
+                      key={amal.Id}
+                      to={`/subject/${amal.Id}`}
+                      className="subject-link"
                     >
-                      <SubjectCharacter
-                        subject={{ Characters: amal.Characters, CharacterImages: amal.CharacterImages, Slug: amal.Slug }}
-                      />
-                    </div>
-                    <div className="subject-link-info">
-                      {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
-                      <div className="subject-link-meaning">{meaning}</div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
+                      <div
+                        className="subject-link-char-box"
+                        style={{ backgroundColor: `var(--color-wk-${amal.Object.replace('_', '-')})` }}
+                      >
+                        <SubjectCharacter
+                          subject={{ Characters: amal.Characters, CharacterImages: amal.CharacterImages, Slug: amal.Slug }}
+                        />
+                      </div>
+                      <div className="subject-link-info">
+                        {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
+                        <div className="subject-link-meaning">{meaning}</div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          </ScrollReveal>
         )}
 
         {/* Visually Similar Kanji */}
         {visuallySimilarSubjects && visuallySimilarSubjects.length > 0 && (
-          <section className="detail-section">
-            <h2>Visually Similar Kanji</h2>
-            <div className="subject-links">
-              {visuallySimilarSubjects.map((sim) => {
-                const meaning = sim.Meanings?.find(m => m.Primary)?.Meaning || sim.Meanings?.[0]?.Meaning || "";
-                const reading = sim.Readings?.find(r => r.Primary)?.Reading || sim.Readings?.[0]?.Reading || "";
-                return (
-                  <Link
-                    key={sim.Id}
-                    to={`/subject/${sim.Id}`}
-                    className="subject-link"
-                  >
-                    <div
-                      className="subject-link-char-box"
-                      style={{ backgroundColor: `var(--color-wk-${sim.Object.replace('_', '-')})` }}
+          <ScrollReveal>
+            <section className="detail-section">
+              <h2>Visually Similar Kanji</h2>
+              <div className="subject-links">
+                {visuallySimilarSubjects.map((sim) => {
+                  const meaning = sim.Meanings?.find(m => m.Primary)?.Meaning || sim.Meanings?.[0]?.Meaning || "";
+                  const reading = sim.Readings?.find(r => r.Primary)?.Reading || sim.Readings?.[0]?.Reading || "";
+                  return (
+                    <Link
+                      key={sim.Id}
+                      to={`/subject/${sim.Id}`}
+                      className="subject-link"
                     >
-                      <SubjectCharacter
-                        subject={{ Characters: sim.Characters, CharacterImages: sim.CharacterImages, Slug: sim.Slug }}
-                      />
-                    </div>
-                    <div className="subject-link-info">
-                      {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
-                      <div className="subject-link-meaning">{meaning}</div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
+                      <div
+                        className="subject-link-char-box"
+                        style={{ backgroundColor: `var(--color-wk-${sim.Object.replace('_', '-')})` }}
+                      >
+                        <SubjectCharacter
+                          subject={{ Characters: sim.Characters, CharacterImages: sim.CharacterImages, Slug: sim.Slug }}
+                        />
+                      </div>
+                      <div className="subject-link-info">
+                        {reading && <div className="subject-link-reading japanese-text">{reading}</div>}
+                        <div className="subject-link-meaning">{meaning}</div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          </ScrollReveal>
         )}
       </div>
     </div>

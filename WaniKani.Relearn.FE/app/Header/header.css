@@ -90,6 +90,29 @@
     }
 }
 
+.header-settings-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: #94a3b8;
+    border-radius: 6px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.header-settings-link:hover {
+    color: #475569;
+    background-color: #f1f5f9;
+}
+
+@media (prefers-color-scheme: dark) {
+    .header-settings-link:hover {
+        color: #f8fafc;
+        background-color: #334155;
+    }
+}
+
 @media(max-width: 768px) {
     .header-card {
         flex-direction: column;

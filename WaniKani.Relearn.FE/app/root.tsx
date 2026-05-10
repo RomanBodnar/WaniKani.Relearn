@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import Header from "./Header/header";
 import { LoadingSpinner } from "./components/LoadingSpinner";
+import { AppSettingsProvider } from "./hooks/useAppSettings";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -35,6 +36,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <AppSettingsProvider>
+        <div className="brand-accent-strip" aria-hidden="true" />
         <Header />
         {children}
         <ScrollRestoration
@@ -47,6 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }}
         />
         <Scripts />
+        </AppSettingsProvider>
       </body>
     </html>
   );

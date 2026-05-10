@@ -10,7 +10,7 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,12 +18,29 @@
   cursor: pointer;
   color: white;
   flex: 1;
+  position: relative;
+  overflow: hidden;
 }
 
+.subject-card-radical { background-color: var(--color-wk-radical); }
+.subject-card-kanji { background-color: var(--color-wk-kanji); }
+.subject-card-vocabulary { background-color: var(--color-wk-vocabulary); }
+
 .subject-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-  border-color: #007bff;
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.subject-card-radical:hover {
+  box-shadow: 0 10px 20px -5px rgba(0, 170, 255, 0.4), 0 0 15px 0 rgba(0, 170, 255, 0.2);
+}
+
+.subject-card-kanji:hover {
+  box-shadow: 0 10px 20px -5px rgba(230, 0, 170, 0.4), 0 0 15px 0 rgba(230, 0, 170, 0.2);
+}
+
+.subject-card-vocabulary:hover {
+  box-shadow: 0 10px 20px -5px rgba(170, 0, 255, 0.4), 0 0 15px 0 rgba(170, 0, 255, 0.2);
 }
 
 .subject-card-character {

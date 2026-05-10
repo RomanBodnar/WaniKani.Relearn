@@ -3,6 +3,7 @@ import { fetchSubjects, useInfiniteSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
+import { FloatingWatermarks } from "../components/FloatingWatermarks";
 import { useSearchParams } from "react-router";
 import React, { useMemo, useEffect, useRef, useCallback } from "react";
 import "./subjects.css";
@@ -101,6 +102,7 @@ export default function KanaVocabulary({ loaderData: initialData }: Route.Compon
 
   return (
     <div className="subjects-container">
+      <FloatingWatermarks chars={["あ", "か", "さ", "た", "な", "は", "ま", "や"]} />
       <h1 className="subjects-title">Kana Vocabulary</h1>
       
       <LevelFilter 

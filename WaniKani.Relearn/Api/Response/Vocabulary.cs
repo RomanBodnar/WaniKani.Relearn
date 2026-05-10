@@ -22,10 +22,10 @@ public record VocabularyResponse
     public int SpacedRepetitionSystemId { get; init; }
 
     // Vocabulary specific properties
-    public IReadOnlyCollection<int> ComponentSubjectIds { get; init; }
-    public IReadOnlyCollection<ContextSentence> ContextSentences { get; init; }
-    public string ReadingMnemonic { get; init; }
-    public IReadOnlyCollection<string> PartsOfSpeech { get; init; }
-    public IReadOnlyCollection<PronunciationAudio> PronunciationAudios { get; init; }
-    public IReadOnlyCollection<VocabularyReading> Readings { get; init; }
+    public IReadOnlyCollection<int>? ComponentSubjectIds { get; init; }
+    public IReadOnlyCollection<ContextSentence> ContextSentences { get; init; } = [];
+    public string? ReadingMnemonic { get; init; }
+    public IReadOnlyCollection<string> PartsOfSpeech { get; init; } = [];
+    public IReadOnlyCollection<PronunciationAudio> PronunciationAudios { get; init; } = [];
+    public IReadOnlyCollection<VocabularyReading>? Readings { get; init; } = [];
 }

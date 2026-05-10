@@ -5,6 +5,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import { JLPTFilter, type JlptLevel } from "../components/JLPTFilter";
 import { JoyoFilter, type JoyoGrade } from "../components/JoyoFilter";
+import { FloatingWatermarks } from "../components/FloatingWatermarks";
 import { useSearchParams } from "react-router";
 import React, { useMemo, useEffect, useRef, useCallback } from "react";
 import "./subjects.css";
@@ -131,6 +132,7 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
 
   return (
     <div className="subjects-container">
+      <FloatingWatermarks />
       <h1 className="subjects-title">Kanji</h1>
       
       <div className="flex flex-row flex-nowrap items-center gap-x-4 gap-y-2 mb-8 p-2 px-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto"

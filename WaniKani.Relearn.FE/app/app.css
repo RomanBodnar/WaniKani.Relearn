@@ -20,6 +20,17 @@ body {
   background-color: rgb(250, 250, 250);
 }
 
+.brand-accent-strip {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--color-wk-radical),
+    var(--color-wk-kanji),
+    var(--color-wk-vocabulary)
+  );
+  flex-shrink: 0;
+}
+
 /* Japanese text styling */
 .japanese-text {
   font-family: var(--font-jp);
