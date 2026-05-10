@@ -8,6 +8,7 @@ import { parseMnemonics } from "~/utils/parseMnemonics";
 import { createGrammarSlug } from "~/utils/grammar";
 import { SubjectCharacter } from "~/components/SubjectCharacter";
 import { ScrollReveal } from "~/components/ScrollReveal";
+import { ParallaxBubble } from "~/components/ParallaxBubble";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -136,18 +137,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
       {/* Hero header card */}
       <div className="subject-detail-header">
         {/* Accent character bubble */}
-        <div
-          className="subject-char-bubble"
-          style={{
-            backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})`,
-            '--char-count': subject.Characters?.length || 1,
-          } as React.CSSProperties}
-        >
-          <SubjectCharacter
-            subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages, Slug: subject.Slug }}
-            className="subject-detail-character japanese-text"
-          />
-        </div>
+        <ParallaxBubble subject={subject} />
 
         {/* Title + metadata */}
         <div className="subject-detail-info">
