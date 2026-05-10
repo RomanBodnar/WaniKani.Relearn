@@ -83,49 +83,59 @@ export function useInfiniteSubjects(
   filters: { minLevel?: number; maxLevel?: number } = {}
 ) {
   const cacheKey = getCacheKey(subjectType, filters);
-  const cached = subjectCache.get(cacheKey);
+  
+  const [currentKey, setCurrentKey] = useState(cacheKey);
 
   // Initialize from cache if available, otherwise from initialData
   const [subjects, setSubjects] = useState<Subject[]>(() => {
+    const cached = subjectCache.get(cacheKey);
     if (cached) return cached.subjects;
     return initialData.data || [];
   });
   
   const [page, setPage] = useState(() => {
+    const cached = subjectCache.get(cacheKey);
     if (cached) return cached.page;
     return initialData.page || 1;
   });
 
   const [totalCount, setTotalCount] = useState(() => {
+    const cached = subjectCache.get(cacheKey);
     if (cached) return cached.totalCount;
     return initialData.totalCount || 0;
   });
 
   const [isLoading, setIsLoading] = useState(false);
 
-  // Update cache whenever subjects, page or totalCount changes
   useEffect(() => {
-    subjectCache.set(cacheKey, { subjects, page, totalCount });
-  }, [cacheKey, subjects, page, totalCount]);
+    if (cacheKey === currentKey) return;
 
-  // Reset when filters change, but skip if we already have cached data for these filters
-  useEffect(() => {
-    let isMounted = true;
-
-    // Check if the current state matches the cache for these filters
-    const currentCached = subjectCache.get(cacheKey);
-    if (currentCached && subjects === currentCached.subjects && subjects.length > 0) {
+    const cached = subjectCache.get(cacheKey);
+    if (cached) {
+      setSubjects(cached.subjects);
+      setPage(cached.page);
+      setTotalCount(cached.totalCount);
+      setCurrentKey(cacheKey);
       return;
     }
 
-    const resetAndFetch = async () => {
+    let isMounted = true;
+    const fetchNewFilters = async () => {
       setIsLoading(true);
+      setSubjects([]); // Clear previous data while loading
       try {
         const result = await fetchSubjects(subjectType, 1, 100, filters.minLevel, filters.maxLevel);
         if (isMounted) {
           setSubjects(result.data || []);
           setPage(1);
           setTotalCount(result.totalCount);
+          setCurrentKey(cacheKey);
+          
+          subjectCache.set(cacheKey, { 
+            subjects: result.data || [], 
+            page: 1, 
+            totalCount: result.totalCount 
+          });
         }
       } catch (err) {
         console.error(err);
@@ -133,11 +143,18 @@ export function useInfiniteSubjects(
         if (isMounted) setIsLoading(false);
       }
     };
-
-    resetAndFetch();
+    
+    fetchNewFilters();
 
     return () => { isMounted = false; };
-  }, [subjectType, filters.minLevel, filters.maxLevel, cacheKey]);
+  }, [cacheKey, currentKey, subjectType, filters.minLevel, filters.maxLevel]);
+
+  // Update cache whenever we load more data (but only if the keys match)
+  useEffect(() => {
+    if (currentKey === cacheKey && subjects.length > 0) {
+      subjectCache.set(cacheKey, { subjects, page, totalCount });
+    }
+  }, [cacheKey, currentKey, subjects, page, totalCount]);
 
   const hasMore = subjects.length < totalCount;
 

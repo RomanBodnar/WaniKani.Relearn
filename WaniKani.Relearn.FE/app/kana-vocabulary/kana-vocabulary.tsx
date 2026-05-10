@@ -3,7 +3,8 @@ import { fetchSubjects, useInfiniteSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router";
+import React, { useMemo, useEffect, useRef, useCallback } from "react";
 import "./subjects.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -13,11 +14,18 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function clientLoader() {
-  return await fetchSubjects("kana_vocabulary");
+export async function clientLoader({ request }: { request: Request }) {
+  const url = new URL(request.url);
+  const minLevel = url.searchParams.get("minLevel");
+  const maxLevel = url.searchParams.get("maxLevel");
+  return await fetchSubjects(
+    "kana_vocabulary",
+    1,
+    100,
+    minLevel ? parseInt(minLevel, 10) : undefined,
+    maxLevel ? parseInt(maxLevel, 10) : undefined
+  );
 }
-
-
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   return (
@@ -31,7 +39,27 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 }
 
 export default function KanaVocabulary({ loaderData: initialData }: Route.ComponentProps) {
-  const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selectedRange: LevelRange = useMemo(() => {
+    const min = searchParams.get("minLevel");
+    const max = searchParams.get("maxLevel");
+    return min && max ? [parseInt(min, 10), parseInt(max, 10)] : null;
+  }, [searchParams]);
+
+  const handleRangeChange = useCallback((range: LevelRange) => {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev);
+      if (range) {
+        next.set("minLevel", String(range[0]));
+        next.set("maxLevel", String(range[1]));
+      } else {
+        next.delete("minLevel");
+        next.delete("maxLevel");
+      }
+      return next;
+    }, { replace: true });
+  }, [setSearchParams]);
   
   const filters = useMemo(() => ({
     minLevel: selectedRange?.[0],
@@ -63,7 +91,7 @@ export default function KanaVocabulary({ loaderData: initialData }: Route.Compon
       
       <LevelFilter 
         selectedRange={selectedRange} 
-        onRangeChange={setSelectedRange} 
+        onRangeChange={handleRangeChange} 
       />
 
       <p className="subjects-subtitle">

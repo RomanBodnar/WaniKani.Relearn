@@ -5,7 +5,8 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import { JLPTFilter, type JlptLevel } from "../components/JLPTFilter";
 import { JoyoFilter, type JoyoGrade } from "../components/JoyoFilter";
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router";
+import React, { useMemo, useEffect, useRef, useCallback } from "react";
 import "./subjects.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -15,8 +16,17 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function clientLoader() {
-  return await fetchSubjects("kanji");
+export async function clientLoader({ request }: { request: Request }) {
+  const url = new URL(request.url);
+  const minLevel = url.searchParams.get("minLevel");
+  const maxLevel = url.searchParams.get("maxLevel");
+  return await fetchSubjects(
+    "kanji",
+    1,
+    100,
+    minLevel ? parseInt(minLevel, 10) : undefined,
+    maxLevel ? parseInt(maxLevel, 10) : undefined
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
@@ -31,9 +41,46 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 }
 
 export default function Kanji({ loaderData: initialData }: Route.ComponentProps) {
-  const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
-  const [selectedJlpt, setSelectedJlpt] = useState<JlptLevel>(null);
-  const [selectedJoyo, setSelectedJoyo] = useState<JoyoGrade>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selectedRange: LevelRange = useMemo(() => {
+    const min = searchParams.get("minLevel");
+    const max = searchParams.get("maxLevel");
+    return min && max ? [parseInt(min, 10), parseInt(max, 10)] : null;
+  }, [searchParams]);
+
+  const selectedJlpt = searchParams.getAll("jlpt");
+  const selectedJoyo = searchParams.getAll("joyo");
+
+  const updateFilters = useCallback((updates: Record<string, string | string[] | null>) => {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev);
+      Object.entries(updates).forEach(([key, value]) => {
+        next.delete(key);
+        if (Array.isArray(value)) {
+          value.forEach(v => next.append(key, v));
+        } else if (value !== null) {
+          next.set(key, value);
+        }
+      });
+      return next;
+    }, { replace: true });
+  }, [setSearchParams]);
+
+  const handleRangeChange = (range: LevelRange) => {
+    updateFilters({ 
+      minLevel: range ? String(range[0]) : null, 
+      maxLevel: range ? String(range[1]) : null 
+    });
+  };
+
+  const handleJlptChange = (levels: string[]) => {
+    updateFilters({ jlpt: levels.length > 0 ? levels : null });
+  };
+
+  const handleJoyoChange = (grades: string[]) => {
+    updateFilters({ joyo: grades.length > 0 ? grades : null });
+  };
   
   const filters = useMemo(() => ({
     minLevel: selectedRange?.[0],
@@ -45,8 +92,8 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
 
   const filteredSubjects = useMemo(() => {
     return subjects.filter(subject => {
-      if (selectedJlpt && subject.JlptLevel !== selectedJlpt) return false;
-      if (selectedJoyo && subject.JoyoGrade !== selectedJoyo) return false;
+      if (selectedJlpt.length > 0 && (!subject.JlptLevel || !selectedJlpt.includes(subject.JlptLevel))) return false;
+      if (selectedJoyo.length > 0 && (!subject.JoyoGrade || !selectedJoyo.includes(subject.JoyoGrade))) return false;
       return true;
     });
   }, [subjects, selectedJlpt, selectedJoyo]);
@@ -78,20 +125,29 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
     <div className="subjects-container">
       <h1 className="subjects-title">Kanji</h1>
       
-      <LevelFilter 
-        selectedRange={selectedRange} 
-        onRangeChange={setSelectedRange} 
-      />
+      <div className="flex flex-row flex-nowrap items-center gap-x-4 gap-y-2 mb-8 p-2 px-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto"
+           style={{ margin: "0 0 24px 0" }}>
+        <div className="kanji-filter-wrapper">
+          <LevelFilter 
+            selectedRange={selectedRange} 
+            onRangeChange={handleRangeChange} 
+          />
+        </div>
 
-      <JLPTFilter 
-        selectedLevel={selectedJlpt} 
-        onLevelChange={setSelectedJlpt} 
-      />
+        <div className="kanji-filter-wrapper">
+          <JLPTFilter 
+            selectedLevels={selectedJlpt} 
+            onLevelsChange={handleJlptChange} 
+          />
+        </div>
 
-      <JoyoFilter 
-        selectedGrade={selectedJoyo} 
-        onGradeChange={setSelectedJoyo} 
-      />
+        <div className="kanji-filter-wrapper">
+          <JoyoFilter 
+            selectedGrades={selectedJoyo} 
+            onGradesChange={handleJoyoChange} 
+          />
+        </div>
+      </div>
 
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0
