@@ -1,4 +1,5 @@
 import React, { useRef, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { SubjectCharacter } from "./SubjectCharacter";
 
 interface ParallaxBubbleProps {
@@ -13,6 +14,7 @@ interface ParallaxBubbleProps {
 export const ParallaxBubble = ({ subject }: ParallaxBubbleProps) => {
   const bubbleRef = useRef<HTMLDivElement>(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!bubbleRef.current) return;
@@ -35,26 +37,45 @@ export const ParallaxBubble = ({ subject }: ParallaxBubbleProps) => {
     setRotate({ x: 0, y: 0 });
   }, []);
 
+  const handleClick = useCallback(() => {
+    if (isAnimating || subject.Object === 'radical') return;
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 1000);
+  }, [isAnimating, subject.Object]);
+
+  const isRadical = subject.Object === 'radical';
+
   return (
     <div
       ref={bubbleRef}
-      className="subject-char-bubble"
+      className={`subject-char-bubble ${isAnimating ? 'animating' : ''} ${isRadical ? 'is-radical' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
       style={{
         backgroundColor: `var(--color-wk-${subject.Object.replace('_', '-')})`,
         '--char-count': subject.Characters?.length || 1,
         transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+        cursor: isRadical ? 'default' : 'pointer'
       } as React.CSSProperties}
     >
-      <SubjectCharacter
-        subject={{ 
-          Characters: subject.Characters, 
-          CharacterImages: subject.CharacterImages, 
-          Slug: subject.Slug 
-        }}
-        className="subject-detail-character japanese-text"
-      />
+      <div style={{ opacity: isAnimating ? 0 : 1, transition: 'opacity 0.1s' }}>
+        <SubjectCharacter
+          subject={{ 
+            Characters: subject.Characters, 
+            CharacterImages: subject.CharacterImages, 
+            Slug: subject.Slug 
+          }}
+          className="subject-detail-character japanese-text"
+        />
+      </div>
+      
+      {isAnimating && subject.Characters && createPortal(
+        <div className="subject-char-jump-out">
+          {subject.Characters}
+        </div>,
+        document.body
+      )}
     </div>
   );
 };

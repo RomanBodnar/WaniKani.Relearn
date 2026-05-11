@@ -110,6 +110,40 @@
   transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
   animation: subject-bubble-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
   animation-delay: 0.1s;
+  cursor: pointer;
+}
+
+.subject-char-jump-out {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rampart One", cursive;
+  font-size: 120px; /* Use a fixed base size and scale from there */
+  color: white;
+  pointer-events: none;
+  z-index: 9999;
+  text-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.4),
+    0 0 80px rgba(0, 0, 0, 0.4);
+  will-change: transform, opacity;
+  animation: char-jump-out 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes char-jump-out {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-5deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.5) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(8) rotate(10deg);
+  }
 }
 
 /* Inner glow for glassmorphism */
