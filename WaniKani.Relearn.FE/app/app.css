@@ -71,6 +71,9 @@ body {
   --chart-tooltip-bg: #ffffff;
   --chart-tooltip-border: #e2e8f0;
   --chart-tooltip-text: #0f172a;
+
+  --color-pink-hot: #FE3365;
+  --color-pink-hot-light: #F6A8D2;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,19 +1,20 @@
 .search-page {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 12px 20px 20px 20px;
   min-height: 60vh;
 }
 
 .search-page-header {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .search-page-title {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: #0f172a;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
 }
 
 .search-page-query {
@@ -30,7 +31,7 @@
 .search-page-input-wrapper {
   position: relative;
   max-width: 560px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .search-page-input {

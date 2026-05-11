@@ -38,22 +38,28 @@
 }
 
 .nav-link.active {
-    background-color: white;
-    color: #1e293b;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #1e293b;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .dark .nav-link.active {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: #f8fafc;
+    color: #0f172a;
 }
 
-/* Category-specific border colors */
-.nav-link-kanji:hover, .nav-link-kanji.active { border-color: var(--color-wk-kanji); }
-.nav-link-vocabulary:hover, .nav-link-vocabulary.active { border-color: var(--color-wk-vocabulary); }
-.nav-link-radicals:hover, .nav-link-radicals.active { border-color: var(--color-wk-radical); }
-.nav-link-grammar:hover, .nav-link-grammar.active { border-color: var(--color-wk-grammar); }
-.nav-link-reading:hover, .nav-link-reading.active { border-color: var(--color-wk-reading); }
+/* Category-specific active styles */
+.nav-link-kanji.active { background-color: var(--color-wk-kanji); border-color: var(--color-wk-kanji); color: white; }
+.nav-link-vocabulary.active { background-color: var(--color-wk-vocabulary); border-color: var(--color-wk-vocabulary); color: white; }
+.nav-link-radicals.active { background-color: var(--color-wk-radical); border-color: var(--color-wk-radical); color: white; }
+.nav-link-grammar.active { background-color: var(--color-wk-grammar); border-color: var(--color-wk-grammar); color: white; }
+.nav-link-reading.active { background-color: var(--color-wk-reading); border-color: var(--color-wk-reading); color: white; }
+
+.nav-link-kanji:hover:not(.active) { border-color: var(--color-wk-kanji); color: var(--color-wk-kanji); }
+.nav-link-vocabulary:hover:not(.active) { border-color: var(--color-wk-vocabulary); color: var(--color-wk-vocabulary); }
+.nav-link-radicals:hover:not(.active) { border-color: var(--color-wk-radical); color: var(--color-wk-radical); }
+.nav-link-grammar:hover:not(.active) { border-color: var(--color-wk-grammar); color: var(--color-wk-grammar); }
+.nav-link-reading:hover:not(.active) { border-color: var(--color-wk-reading); color: var(--color-wk-reading); }
 
 @media (prefers-color-scheme: dark) {
     html:not(.light):not(.dark) .nav-link { color: #94a3b8; }
