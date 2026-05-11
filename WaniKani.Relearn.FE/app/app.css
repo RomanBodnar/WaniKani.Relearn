@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Didact+Gothic&family=Klee+One:wght@400;600&family=Potta+One:wght@400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Bungee&family=Didact+Gothic&family=Klee+One:wght@400;600&family=Potta+One:wght@400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rampart+One&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,6 +7,7 @@
   --font-jp: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
   --font-klee: "Klee One", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
   --font-potta: "Potta One", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --font-yusei: "Yusei Magic", "Inter", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }
 
 html,
@@ -32,12 +33,10 @@ body {
 
 .brand-accent-strip {
   height: 4px;
-  background: linear-gradient(
-    to right,
-    var(--color-wk-radical),
-    var(--color-wk-kanji),
-    var(--color-wk-vocabulary)
-  );
+  background: linear-gradient(to right,
+      var(--color-wk-radical),
+      var(--color-wk-kanji),
+      var(--color-wk-vocabulary));
   flex-shrink: 0;
 }
 
@@ -62,8 +61,10 @@ body {
   --color-wk-kanji: rgb(230, 0, 170);
   --color-wk-vocabulary: rgb(170, 0, 255);
   --color-wk-kana-vocabulary: rgb(170, 0, 255);
-  --color-wk-grammar: rgb(34, 197, 94); /* Vibrant Green */
-  --color-wk-reading: rgb(234, 179, 8); /* Vibrant Yellow */
+  --color-wk-grammar: rgb(34, 197, 94);
+  /* Vibrant Green */
+  --color-wk-reading: rgb(234, 179, 8);
+  /* Vibrant Yellow */
 
   --chart-axis-color: #64748b;
   --chart-grid-color: #cbd5e1;

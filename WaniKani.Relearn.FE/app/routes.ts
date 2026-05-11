@@ -10,5 +10,6 @@ export default [
     route("/grammar/:id", "./grammar/grammar.tsx"),
     route("/grammar", "./grammar/grammar-index.tsx"),
     route("/reading-practice", "./reading-practice/reading-practice.tsx"),
+    route("/search", "./search/search.tsx"),
     route("/settings", "./settings/settings.tsx")
 ] satisfies RouteConfig;
