@@ -10,7 +10,7 @@ import { useSearchParams } from "react-router";
 import React, { useMemo, useEffect, useRef, useCallback } from "react";
 import "./subjects.css";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Kanji | BonPom" },
     { name: "description", content: "Browse and review kanji characters" },
@@ -69,9 +69,9 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
   }, [setSearchParams]);
 
   const handleRangeChange = (range: LevelRange) => {
-    updateFilters({ 
-      minLevel: range ? String(range[0]) : null, 
-      maxLevel: range ? String(range[1]) : null 
+    updateFilters({
+      minLevel: range ? String(range[0]) : null,
+      maxLevel: range ? String(range[1]) : null
     });
   };
 
@@ -82,7 +82,7 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
   const handleJoyoChange = (grades: string[]) => {
     updateFilters({ joyo: grades.length > 0 ? grades : null });
   };
-  
+
   const filters = useMemo(() => ({
     minLevel: selectedRange?.[0],
     maxLevel: selectedRange?.[1]
@@ -134,29 +134,29 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
     <div className="subjects-container">
       <FloatingWatermarks />
       <h1 className="subjects-title">Kanji</h1>
-      
+
       <div className="flex flex-row flex-nowrap items-center gap-x-4 gap-y-2 mb-8 p-2 px-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto"
-           style={{ margin: "0 0 24px 0" }}>
+        style={{ margin: "0 0 24px 0" }}>
         <div className="kanji-filter-wrapper">
-          <LevelFilter 
-            selectedRange={selectedRange} 
-            onRangeChange={handleRangeChange} 
+          <LevelFilter
+            selectedRange={selectedRange}
+            onRangeChange={handleRangeChange}
           />
         </div>
 
         <div className="kanji-filter-wrapper">
-          <JLPTFilter 
-            selectedLevels={selectedJlpt} 
-            onLevelsChange={handleJlptChange} 
+          <JLPTFilter
+            selectedLevels={selectedJlpt}
+            onLevelsChange={handleJlptChange}
           />
         </div>
 
-        <div className="kanji-filter-wrapper">
+        {/* <div className="kanji-filter-wrapper">
           <JoyoFilter 
             selectedGrades={selectedJoyo} 
             onGradesChange={handleJoyoChange} 
           />
-        </div>
+        </div> */}
       </div>
 
       <p className="subjects-subtitle">
