@@ -7,8 +7,8 @@ import { CurrentQueueStackedChart } from "../components/dashboard/CurrentQueueSt
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "WaniKani:Relearn Dashboard" },
-    { name: "description", content: "Your WaniKani progress dashboard" },
+    { title: "BonPom Dashboard" },
+    { name: "description", content: "Your BonPom progress dashboard" },
   ];
 }
 

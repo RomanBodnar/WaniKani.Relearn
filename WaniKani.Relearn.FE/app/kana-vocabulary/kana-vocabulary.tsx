@@ -8,7 +8,7 @@ import "./subjects.css";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Kana Vocabulary | WaniKani:Relearn" },
+    { title: "Kana Vocabulary | BonPom" },
     { name: "description", content: "Browse and review kana vocabulary" },
   ];
 }

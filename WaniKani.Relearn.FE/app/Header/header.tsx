@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header-container">
             <header className="header-card">
                 <div className="header-logo">
-                    <Link to="/">WaniKani: Relearn</Link>
+                    <Link to="/">BonPom</Link>
                 </div>
                 <NavigationBar/>
             </header>  

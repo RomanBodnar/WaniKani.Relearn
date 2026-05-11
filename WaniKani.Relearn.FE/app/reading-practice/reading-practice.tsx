@@ -10,7 +10,7 @@ import "./reading-practice.css";
 
 export function meta() {
   return [
-    { title: "Reading Practice | WaniKani:Relearn" },
+    { title: "Reading Practice | BonPom" },
     { name: "description", content: "Practice reading Japanese sentences from WaniKani vocabulary" },
   ];
 }

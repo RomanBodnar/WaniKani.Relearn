@@ -8,7 +8,7 @@ import "./subjects.css";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Kanji | WaniKani:Relearn" },
+    { title: "Kanji | BonPom" },
     { name: "description", content: "Browse and review kanji characters" },
   ];
 }
