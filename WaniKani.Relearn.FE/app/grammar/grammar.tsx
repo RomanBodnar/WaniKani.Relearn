@@ -7,7 +7,7 @@ import "./grammar.css";
 
 export function meta({ params }: Route.MetaArgs) {
   const article = grammarArticles[params.id as string];
-  const title = article ? `${article.title} - Grammar | WaniKani:Relearn` : "Grammar Article Not Found";
+  const title = article ? `${article.title} - Grammar | BonPom` : "Grammar Article Not Found";
   return [
     { title },
     { name: "description", content: article?.content || "Grammar reference" },

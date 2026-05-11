@@ -6,7 +6,7 @@ import "./grammar.css";
 
 export function meta() {
   return [
-    { title: "Grammar Topics | WaniKani:Relearn" },
+    { title: "Grammar Topics | BonPom" },
     { name: "description", content: "Index of all Japanese grammar parts of speech." },
   ];
 }

@@ -26,7 +26,7 @@ const Header = () => {
             <header className="header-card">
                 <div className="header-main-row">
                     <div className="header-logo">
-                        <Link to="/">WaniKani: Relearn</Link>
+                        <Link to="/">BonPom</Link>
                     </div>
                     
                     <NavigationBar />

@@ -10,7 +10,7 @@ import "./subjects.css";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Radicals | WaniKani:Relearn" },
+    { title: "Radicals | BonPom" },
     { name: "description", content: "Browse and review radical components" },
   ];
 }
