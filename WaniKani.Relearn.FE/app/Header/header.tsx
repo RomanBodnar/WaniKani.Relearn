@@ -10,6 +10,7 @@ const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(!!query);
     const [inputValue, setInputValue] = useState(query);
     const inputRef = useRef<HTMLInputElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const debounceRef = useRef<ReturnType<typeof setTimeout>>();
 
     // Sync input value when URL query changes (e.g. back/forward navigation)
@@ -23,6 +24,25 @@ const Header = () => {
         if (isSearchOpen) {
             inputRef.current?.focus();
         }
+    }, [isSearchOpen]);
+    
+    // Close search when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setIsSearchOpen(false);
+            }
+        };
+
+        if (isSearchOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
     }, [isSearchOpen]);
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +81,7 @@ const Header = () => {
     };
 
     return (
-        <div className="header-container">
+        <div className="header-container" ref={containerRef}>
             <header className="header-card">
                 <div className="header-main-row">
                     <div className="header-logo">
