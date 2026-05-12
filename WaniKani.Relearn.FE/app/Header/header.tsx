@@ -91,19 +91,17 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            {isSearchOpen && (
-                <div className="header-search-row">
-                    <input
-                        ref={inputRef}
-                        type="text"
-                        placeholder="Search..."
-                        value={inputValue}
-                        onChange={handleSearchChange}
-                        onKeyDown={handleKeyDown}
-                        className="search-input"
-                    />
-                </div>
-            )}
+            <div className={`header-search-row ${isSearchOpen ? 'open' : ''}`}>
+                <input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="Search..."
+                    value={inputValue}
+                    onChange={handleSearchChange}
+                    onKeyDown={handleKeyDown}
+                    className="search-input"
+                />
+            </div>
         </div>
     );
 };
