@@ -1,13 +1,8 @@
-import { Link } from "react-router";
 import type { Route } from "./+types/home";
-import { fetchSubjects } from "../hooks/useSubjects";
 import "./home.css";
 import {
   SearchHero,
-  NavigationHub,
-  DailySpotlight,
-  BrowseGrid,
-  HomeDivider
+  NavigationHub
 } from "../components/home/HomeSections";
 
 export function meta({ }: Route.MetaArgs) {
@@ -17,29 +12,8 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 
-export async function clientLoader() {
-  // Fetch some diverse data for the home page
-  const [kanji, vocab] = await Promise.all([
-    fetchSubjects("kanji", 1, 50),
-    fetchSubjects("vocabulary", 1, 50)
-  ]);
+export default function Home() {
 
-  // Pick a random subject for the spotlight
-  const allLoaded = [...kanji.data, ...vocab.data];
-  const spotlightIndex = Math.floor(Math.random() * allLoaded.length);
-  const spotlight = allLoaded[spotlightIndex];
-
-  // Pick some subjects for the browse grid
-  const browse = allLoaded.slice(0, 12).sort(() => Math.random() - 0.5);
-
-  return {
-    spotlight,
-    browse
-  };
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
-  const { spotlight, browse } = loaderData;
 
   return (
     <div className="home-page">
