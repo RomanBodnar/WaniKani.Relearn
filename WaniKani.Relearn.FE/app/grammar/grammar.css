@@ -40,6 +40,10 @@
   gap: 30px;
 }
 
+.grammar-detail-container .detail-section {
+  border-left: none;
+}
+
 
 .grammar-description {
   font-size: 1.1rem;
