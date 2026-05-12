@@ -23,21 +23,19 @@ export default function GrammarIndex() {
       </div>
 
       <div className="grammar-detail-content">
-        <section className="detail-section" style={{ marginTop: 0, paddingTop: 0, borderTop: 'none' }}>
-          <h2>Available Topics</h2>
-          <div className="grammar-cards-grid">
-            {Object.values(grammarArticles).map(a => (
-              <Link key={a.id} to={`/grammar/${a.id}`} className="grammar-card-link">
-                <div className="grammar-card">
-                  <h3 className="grammar-card-title">{a.title}</h3>
-                  <p className="grammar-card-snippet">
-                    {a.content.length > 120 ? `${a.content.substring(0, 120)}...` : a.content}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <h2 className="grammar-section-title">Available Topics</h2>
+        <div className="grammar-cards-grid">
+          {Object.values(grammarArticles).map(a => (
+            <Link key={a.id} to={`/grammar/${a.id}`} className="grammar-card-link">
+              <div className="grammar-card">
+                <h3 className="grammar-card-title">{a.title}</h3>
+                <p className="grammar-card-snippet">
+                  {a.content.length > 120 ? `${a.content.substring(0, 120)}...` : a.content}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
