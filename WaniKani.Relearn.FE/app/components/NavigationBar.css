@@ -21,8 +21,9 @@
     padding: 6px 12px;
     color: #64748b;
     border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
     transition: all 0.2s ease;
     border: 1px solid transparent;
     white-space: nowrap;
@@ -73,7 +74,7 @@
 @media(max-width: 1024px) {
     .nav-link {
         padding: 6px 8px;
-        font-size: 0.85rem;
+        font-size: 1.05rem;
     }
 }
 
@@ -91,7 +92,7 @@
     .nav-link {
         width: 100%;
         padding: 8px 4px;
-        font-size: 0.8rem;
+        font-size: 0.95rem;
     }
 }
 

@@ -33,6 +33,11 @@ export const SearchHero = () => {
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </div>
+        <button type="submit" className="home-search-submit-btn" aria-label="Search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
       </form>
     </section>
   );

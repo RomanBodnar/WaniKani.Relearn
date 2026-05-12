@@ -193,7 +193,15 @@ export default function Search({ loaderData }: Route.ComponentProps) {
         )}
       </div>
 
-      <div className="search-page-input-wrapper">
+      <form 
+        className="search-page-input-wrapper"
+        onSubmit={(e) => {
+          e.preventDefault();
+          // The query is already synced via onChange, but we can ensure it's trimmed or trigger a refetch if needed.
+          // In this reactive implementation, we don't strictly need to do anything here, 
+          // but form submission is good for accessibility and provides a clear "Submit" action.
+        }}
+      >
         <input
           ref={inputRef}
           type="text"
@@ -205,7 +213,12 @@ export default function Search({ loaderData }: Route.ComponentProps) {
         <svg className="search-page-input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
         </svg>
-      </div>
+        <button type="submit" className="search-page-submit-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+      </form>
 
       {!normalizedQuery ? (
         <div className="search-prompt">

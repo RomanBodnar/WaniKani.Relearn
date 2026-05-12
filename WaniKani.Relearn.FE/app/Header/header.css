@@ -123,9 +123,14 @@
     border-color: #fbcfe8;
 }
 
+.header-search-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 .search-input {
     width: 100%;
-    padding: 6px 14px;
+    padding: 6px 44px 6px 14px;
     /* Slightly smaller padding to ensure height stability */
     border: 1px solid #e2e8f0;
     border-radius: 8px;
@@ -145,6 +150,33 @@
     border-color: var(--color-wk-kanji);
     background-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(230, 0, 170, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.header-search-submit-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: var(--color-wk-kanji);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.header-search-submit-btn:hover {
+    background-color: #f000b0;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.header-search-submit-btn:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 /* Dark Mode Support */

@@ -36,7 +36,7 @@
 
 .search-page-input {
   width: 100%;
-  padding: 14px 20px 14px 48px;
+  padding: 14px 60px 14px 48px;
   border: 2px solid #e2e8f0;
   border-radius: 16px;
   font-size: 1.05rem;
@@ -70,6 +70,43 @@
 .search-page-input:focus ~ .search-page-input-icon,
 .search-page-input-wrapper:focus-within .search-page-input-icon {
   color: var(--color-wk-kanji);
+}
+
+.search-page-submit-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-wk-kanji);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(230, 0, 170, 0.2);
+}
+
+.search-page-submit-btn:hover {
+  background-color: #f000b0;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 12px rgba(230, 0, 170, 0.3);
+}
+
+.search-page-submit-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.search-page-submit-btn svg {
+  transition: transform 0.2s;
+}
+
+.search-page-submit-btn:hover svg {
+  transform: translateX(2px);
 }
 
 /* Section groups */
@@ -335,6 +372,13 @@
 
   .search-page-input {
     font-size: 0.95rem;
-    padding: 12px 16px 12px 44px;
+    padding: 12px 52px 12px 44px;
+  }
+
+  .search-page-submit-btn {
+    width: 38px;
+    height: 38px;
+    right: 4px;
+    border-radius: 10px;
   }
 }

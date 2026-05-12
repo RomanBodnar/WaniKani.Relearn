@@ -4,6 +4,7 @@ import { SubjectCard } from "../components/SubjectCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import { FloatingWatermarks } from "../components/FloatingWatermarks";
+import { ErrorDisplay } from "../components/ErrorDisplay";
 import { useSearchParams } from "react-router";
 import React, { useMemo, useEffect, useRef, useCallback } from "react";
 import "./subjects.css";
@@ -32,9 +33,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   return (
     <div className="subjects-container">
       <h1 className="subjects-title">Radicals</h1>
-      <div className="subjects-empty">
-        <p role="alert" className="error-message">Error loading data</p>
-      </div>
+      <ErrorDisplay 
+        title="Error loading data" 
+        description="Make sure the back-end API is running and accessible."
+      />
     </div>
   );
 }

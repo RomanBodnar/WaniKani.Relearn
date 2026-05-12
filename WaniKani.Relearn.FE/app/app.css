@@ -25,6 +25,7 @@ body {
   }
 
   background-color: rgb(250, 250, 250);
+  scrollbar-gutter: stable both-edges;
 }
 
 .dark body {

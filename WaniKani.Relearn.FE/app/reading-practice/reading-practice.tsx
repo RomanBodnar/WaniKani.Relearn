@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router";
 import { fetchSentences, useReadingSentences, saveBookmark, loadBookmark, clearBookmark } from "~/hooks/useReadingSentences";
 import { ReadingSentenceCard } from "./ReadingSentenceCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { ErrorDisplay } from "../components/ErrorDisplay";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import type { ReadingBookmark } from "~/types/reading";
 import "./reading-practice.css";
@@ -27,12 +28,10 @@ export function ErrorBoundary() {
       <div className="reading-practice-header">
         <h1 className="reading-practice-title">Reading Practice</h1>
       </div>
-      <div className="sentence-card" style={{ textAlign: "center", padding: "40px" }}>
-        <p role="alert" style={{ color: "#ef4444", fontWeight: 600 }}>Error loading sentences</p>
-        <p style={{ color: "#64748b", fontSize: 14 }}>
-          Make sure the back-end reading practice API is running.
-        </p>
-      </div>
+      <ErrorDisplay 
+        title="Error loading sentences" 
+        description="Make sure the back-end reading practice API is running."
+      />
     </div>
   );
 }
