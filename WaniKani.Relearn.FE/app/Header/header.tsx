@@ -71,19 +71,6 @@ const Header = () => {
                     <NavigationBar />
 
                     <div className="header-actions">
-                        {isSearchOpen && (
-                            <div className="header-search-inline">
-                                <input
-                                    ref={inputRef}
-                                    type="text"
-                                    placeholder="Search..."
-                                    value={inputValue}
-                                    onChange={handleSearchChange}
-                                    onKeyDown={handleKeyDown}
-                                    className="search-input"
-                                />
-                            </div>
-                        )}
                         <button
                             className={`header-action-button ${isSearchOpen ? 'active' : ''}`}
                             onClick={toggleSearch}
@@ -103,8 +90,20 @@ const Header = () => {
                         </Link>
                     </div>
                 </div>
-
             </header>
+            {isSearchOpen && (
+                <div className="header-search-row">
+                    <input
+                        ref={inputRef}
+                        type="text"
+                        placeholder="Search..."
+                        value={inputValue}
+                        onChange={handleSearchChange}
+                        onKeyDown={handleKeyDown}
+                        className="search-input"
+                    />
+                </div>
+            )}
         </div>
     );
 };
