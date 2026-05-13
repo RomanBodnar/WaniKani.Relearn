@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import Header from "./Header/header";
 import { LoadingSpinner } from "./components/LoadingSpinner";
+import Footer from "./components/Footer";
 import { AppSettingsProvider } from "./hooks/useAppSettings";
 
 export const links: Route.LinksFunction = () => [
@@ -39,7 +40,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <AppSettingsProvider>
         <div className="brand-accent-strip" aria-hidden="true" />
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
+        <Footer />
         <ScrollRestoration
           getKey={(location) => {
             const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice", "/search"];

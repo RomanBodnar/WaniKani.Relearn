@@ -24,9 +24,6 @@ export default function Home() {
 
 
 
-      <div className="mt-20 text-center opacity-50 text-sm">
-        <p>© 2026 bonpom. All characters jump out.</p>
-      </div>
     </div>
   );
 }
