@@ -29,10 +29,12 @@
 
 .subject-card-kanji {
   color: var(--color-wk-kanji);
+  background-color: var(--color-off-white);
 }
 
 .subject-card-vocabulary {
   color: var(--color-wk-vocabulary);
+  background-color: var(--color-off-white);
 }
 
 .subject-card:hover {
