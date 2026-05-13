@@ -33,14 +33,18 @@ export function SubjectCharacter({ subject, className }: SubjectCharacterProps) 
   }
 
   // Check if we have a local image for this slug
+  // https://codepen.io/sosuke/pen/Pjoqqp
   if (subject.Slug && slugToLocalUrl[subject.Slug]) {
+    const blueColorMatrix = "invert(47%) sepia(86%) saturate(2202%) hue-rotate(172deg) brightness(101%) contrast(106%)";
+    const whiteColorMatrix = "brightness(0) invert(1)";
+
     return (
       <img
         src={slugToLocalUrl[subject.Slug]}
         alt={subject.Slug}
         className={`${combinedClassName} subject-character-img subject-character-svg local-radical-img`.trim()}
         style={{
-          filter: "brightness(0) invert(1)",
+          filter: combinedClassName.indexOf("subject-detail-character") >= 0 ? whiteColorMatrix : blueColorMatrix,
         }}
       />
     );
