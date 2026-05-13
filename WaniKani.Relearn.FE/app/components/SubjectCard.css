@@ -22,9 +22,18 @@
   overflow: hidden;
 }
 
-.subject-card-radical { background-color: var(--color-wk-radical); }
-.subject-card-kanji { background-color: var(--color-wk-kanji); }
-.subject-card-vocabulary { background-color: var(--color-wk-vocabulary); }
+.subject-card-radical {
+  color: var(--color-wk-radical);
+  background-color: var(--color-off-white);
+}
+
+.subject-card-kanji {
+  color: var(--color-wk-kanji);
+}
+
+.subject-card-vocabulary {
+  color: var(--color-wk-vocabulary);
+}
 
 .subject-card:hover {
   transform: translateY(-4px);
@@ -62,13 +71,13 @@
 .subject-card-meaning {
   font-size: 18px;
   font-weight: 500;
-  color: rgba(252, 252, 252, 0.754);
+  color: #64748b;
   margin-bottom: 8px;
 }
 
 .subject-card-reading {
   font-size: 16px;
-  color: #ffffff;
+  color: #64748b;
   margin-bottom: 8px;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
 }

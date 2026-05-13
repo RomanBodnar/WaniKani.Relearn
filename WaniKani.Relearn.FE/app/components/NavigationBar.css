@@ -30,7 +30,6 @@
 }
 
 .nav-link:hover {
-    background-color: #f1f5f9;
     color: #1e293b;
 }
 
@@ -50,25 +49,79 @@
 }
 
 /* Category-specific active styles */
-.nav-link-kanji.active { background-color: var(--color-wk-kanji); border-color: var(--color-wk-kanji); color: white; }
-.nav-link-vocabulary.active { background-color: var(--color-wk-vocabulary); border-color: var(--color-wk-vocabulary); color: white; }
-.nav-link-radicals.active { background-color: var(--color-wk-radical); border-color: var(--color-wk-radical); color: white; }
-.nav-link-grammar.active { background-color: var(--color-wk-grammar); border-color: var(--color-wk-grammar); color: white; }
-.nav-link-reading.active { background-color: var(--color-wk-reading); border-color: var(--color-wk-reading); color: white; }
-
-.nav-link-kanji:hover:not(.active) { border-color: var(--color-wk-kanji); color: var(--color-wk-kanji); }
-.nav-link-vocabulary:hover:not(.active) { border-color: var(--color-wk-vocabulary); color: var(--color-wk-vocabulary); }
-.nav-link-radicals:hover:not(.active) { border-color: var(--color-wk-radical); color: var(--color-wk-radical); }
-.nav-link-grammar:hover:not(.active) { border-color: var(--color-wk-grammar); color: var(--color-wk-grammar); }
-.nav-link-reading:hover:not(.active) { border-color: var(--color-wk-reading); color: var(--color-wk-reading); }
-
-@media (prefers-color-scheme: dark) {
-    html:not(.light):not(.dark) .nav-link { color: #94a3b8; }
-    html:not(.light):not(.dark) .nav-link:hover { background-color: #334155; color: #f8fafc; }
+.nav-link-kanji.active {
+    color: var(--color-wk-kanji);
+    border-color: var(--color-wk-kanji);
+    background-color: white;
 }
 
-.dark .nav-link { color: #94a3b8; }
-.dark .nav-link:hover { background-color: #334155; color: #f8fafc; }
+.nav-link-vocabulary.active {
+    color: var(--color-wk-vocabulary);
+    border-color: var(--color-wk-vocabulary);
+    background-color: white;
+}
+
+.nav-link-radicals.active {
+    color: var(--color-wk-radical);
+    border-color: var(--color-wk-radical);
+    background-color: white;
+}
+
+.nav-link-grammar.active {
+    color: var(--color-wk-grammar);
+    border-color: var(--color-wk-grammar);
+    background-color: white;
+}
+
+.nav-link-reading.active {
+    color: var(--color-wk-reading);
+    border-color: var(--color-wk-reading);
+    background-color: white;
+}
+
+.nav-link-kanji:hover:not(.active) {
+    border-color: var(--color-wk-kanji);
+}
+
+.nav-link-vocabulary:hover:not(.active) {
+    border-color: var(--color-wk-vocabulary);
+    color: var(--color-wk-vocabulary);
+}
+
+.nav-link-radicals:hover:not(.active) {
+    border-color: var(--color-wk-radical);
+    color: var(--color-wk-radical);
+}
+
+.nav-link-grammar:hover:not(.active) {
+    border-color: var(--color-wk-grammar);
+    color: var(--color-wk-grammar);
+}
+
+.nav-link-reading:hover:not(.active) {
+    border-color: var(--color-wk-reading);
+    color: var(--color-wk-reading);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.light):not(.dark) .nav-link {
+        color: #94a3b8;
+    }
+
+    html:not(.light):not(.dark) .nav-link:hover {
+        background-color: #334155;
+        color: #f8fafc;
+    }
+}
+
+.dark .nav-link {
+    color: #94a3b8;
+}
+
+.dark .nav-link:hover {
+    background-color: #334155;
+    color: #f8fafc;
+}
 
 /* Responsive */
 @media(max-width: 1024px) {
@@ -79,7 +132,9 @@
 }
 
 @media(max-width: 850px) {
-    .navigation, .navigation ul {
+
+    .navigation,
+    .navigation ul {
         width: 100%;
     }
 
@@ -88,7 +143,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 4px;
     }
-    
+
     .nav-link {
         width: 100%;
         padding: 8px 4px;

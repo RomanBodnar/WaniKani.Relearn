@@ -27,11 +27,11 @@ Object.entries(localRadicalImages).forEach(([path, url]) => {
 
 export function SubjectCharacter({ subject, className }: SubjectCharacterProps) {
   const combinedClassName = `${className || ""}`.trim();
-  
+
   if (subject.Characters) {
     return <span className={combinedClassName}>{subject.Characters}</span>;
   }
-  
+
   // Check if we have a local image for this slug
   if (subject.Slug && slugToLocalUrl[subject.Slug]) {
     return (
@@ -45,7 +45,7 @@ export function SubjectCharacter({ subject, className }: SubjectCharacterProps) 
       />
     );
   }
-  
+
   const svgImage = subject.CharacterImages?.find(
     (img) => img.content_type === "image/svg+xml" && img.metadata?.inline_styles === true
   );

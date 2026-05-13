@@ -13,7 +13,7 @@ interface SearchData {
   vocabulary: PaginatedSubjects;
 }
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Search | BonPom" },
     { name: "description", content: "Search across all subjects" },
@@ -192,33 +192,6 @@ export default function Search({ loaderData }: Route.ComponentProps) {
           </p>
         )}
       </div>
-
-      <form 
-        className="search-page-input-wrapper"
-        onSubmit={(e) => {
-          e.preventDefault();
-          // The query is already synced via onChange, but we can ensure it's trimmed or trigger a refetch if needed.
-          // In this reactive implementation, we don't strictly need to do anything here, 
-          // but form submission is good for accessibility and provides a clear "Submit" action.
-        }}
-      >
-        <input
-          ref={inputRef}
-          type="text"
-          value={query}
-          onChange={handleInputChange}
-          placeholder="Search by character, meaning, or reading…"
-          className="search-page-input"
-        />
-        <svg className="search-page-input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-        </svg>
-        <button type="submit" className="search-page-submit-btn" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </button>
-      </form>
 
       {!normalizedQuery ? (
         <div className="search-prompt">

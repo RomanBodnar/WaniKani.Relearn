@@ -8,6 +8,7 @@
   --font-klee: "Klee One", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
   --font-potta: "Potta One", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
   --font-yusei: "Yusei Magic", "Inter", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --pill-text-color: #475569;
 }
 
 html,
@@ -72,7 +73,7 @@ main {
   --color-wk-kana-vocabulary: rgb(170, 0, 255);
   --color-wk-grammar: rgb(34, 197, 94);
   /* Vibrant Green */
-  --color-wk-reading: rgb(234, 179, 8);
+  --color-wk-reading: rgb(249, 195, 32);
   /* Vibrant Yellow */
 
   --chart-axis-color: #64748b;
@@ -83,6 +84,8 @@ main {
 
   --color-pink-hot: #FE3365;
   --color-pink-hot-light: #F6A8D2;
+
+  --color-off-white: #f8fafc;
 }
 
 @media (prefers-color-scheme: dark) {
