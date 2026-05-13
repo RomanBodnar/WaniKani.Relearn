@@ -137,8 +137,7 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
       <FloatingWatermarks />
       <h1 className="subjects-title">Kanji</h1>
 
-      <div className="flex flex-row flex-nowrap items-center gap-x-4 gap-y-2 mb-8 p-2 px-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-x-auto"
-        style={{ margin: "0 0 24px 0" }}>
+      <div className="level-filter-container">
         <div className="kanji-filter-wrapper">
           <LevelFilter
             selectedRange={selectedRange}

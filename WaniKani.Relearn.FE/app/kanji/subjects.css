@@ -77,32 +77,14 @@
   }
 }
 
-.kanji-filter-wrapper .level-filter-container {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-}
-
-.kanji-filter-wrapper .filter-button {
-  padding: 4px 10px;
-  font-size: 13px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.kanji-filter-wrapper .filter-label {
-  font-size: 13px;
-  margin-right: 4px;
-  white-space: nowrap;
-  flex-shrink: 0;
+.kanji-filter-wrapper {
+  display: contents;
 }
 
 .kanji-filter-wrapper .level-filter-container {
-  gap: 8px; /* reduce gap between label and options */
+  display: contents !important;
 }
 
 .kanji-filter-wrapper .filter-options {
-  gap: 4px; /* reduce gap between buttons */
   flex-wrap: nowrap !important;
 }
