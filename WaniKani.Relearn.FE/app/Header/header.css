@@ -119,6 +119,27 @@
     border-color: var(--color-pink-hot-light);
 }
 
+.header-login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--color-pink-hot);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-left: 4px;
+}
+
+.header-login-button:hover {
+    background-color: #e62e5c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(254, 51, 101, 0.2);
+}
+
 .header-search-input-wrapper {
     position: relative;
     width: 100%;
