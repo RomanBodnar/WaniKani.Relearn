@@ -40,6 +40,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
   const [bookmark, setBookmark] = useState<ReadingBookmark | null>(null);
   const [hasResumed, setHasResumed] = useState(false);
+  const [focusModeIndex, setFocusModeIndex] = useState<number | null>(null);
   const [, setSearchParams] = useSearchParams();
 
   const filters = useMemo(() => ({
@@ -87,6 +88,13 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
     saveBookmark(bm);
   }, [page, filters.minLevel, filters.maxLevel]);
 
+  // Update bookmark when focus mode changes
+  useEffect(() => {
+    if (focusModeIndex !== null) {
+      handleCardInteract(focusModeIndex);
+    }
+  }, [focusModeIndex, handleCardInteract]);
+
   // Resume from bookmark
   const handleResume = useCallback(async () => {
     if (!bookmark) return;
@@ -117,6 +125,27 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   const handleDismissBookmark = () => {
     clearBookmark();
     setBookmark(null);
+  };
+
+  // Focus Mode Handlers
+  const handleNextFocus = async () => {
+    if (focusModeIndex === null) return;
+    if (focusModeIndex < sentences.length - 1) {
+      setFocusModeIndex(focusModeIndex + 1);
+    } else if (page < totalPages) {
+      await goToPage(page + 1);
+      setFocusModeIndex(0);
+    }
+  };
+
+  const handlePrevFocus = async () => {
+    if (focusModeIndex === null) return;
+    if (focusModeIndex > 0) {
+      setFocusModeIndex(focusModeIndex - 1);
+    } else if (page > 1) {
+      await goToPage(page - 1);
+      setFocusModeIndex(9); // Previous pages are always full (10 items), so last index is 9
+    }
   };
 
   // Build page number buttons
@@ -154,10 +183,12 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
         </div>
       )}
 
-      <LevelFilter
-        selectedRange={selectedRange}
-        onRangeChange={setSelectedRange}
-      />
+      <div className="reading-practice-controls">
+        <LevelFilter
+          selectedRange={selectedRange}
+          onRangeChange={setSelectedRange}
+        />
+      </div>
 
       <p className="reading-practice-count">
         {sentences && sentences.length > 0
@@ -178,6 +209,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
               sentence={sentence}
               index={idx}
               onInteract={handleCardInteract}
+              onFocus={setFocusModeIndex}
             />
           ))}
         </div>
@@ -226,6 +258,46 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
             Next →
           </button>
         </nav>
+      )}
+
+      {/* Focus Mode Modal */}
+      {focusModeIndex !== null && sentences[focusModeIndex] && (
+        <div className="focus-modal-overlay" onClick={(e) => {
+          if (e.target === e.currentTarget) setFocusModeIndex(null);
+        }}>
+          <div className="focus-modal-content">
+            <button className="focus-modal-close" onClick={() => setFocusModeIndex(null)} aria-label="Close focus mode">
+              ✕
+            </button>
+            <div className="focus-modal-body">
+              <ReadingSentenceCard
+                key={`focus-${page}-${focusModeIndex}`}
+                sentence={sentences[focusModeIndex]}
+                index={focusModeIndex}
+                onInteract={handleCardInteract}
+              />
+            </div>
+            <div className="focus-modal-controls">
+              <button 
+                className="resume-btn resume-btn-secondary" 
+                onClick={handlePrevFocus} 
+                disabled={focusModeIndex === 0 && page === 1}
+              >
+                ← Previous
+              </button>
+              <span className="focus-modal-counter">
+                {(page - 1) * 10 + focusModeIndex + 1} / {totalCount}
+              </span>
+              <button 
+                className="resume-btn resume-btn-primary" 
+                onClick={handleNextFocus} 
+                disabled={focusModeIndex === sentences.length - 1 && page === totalPages}
+              >
+                Next →
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

@@ -364,6 +364,121 @@
   user-select: none;
 }
 
+/* ===== Focus Mode ===== */
+.focus-mode-btn {
+  margin-left: auto;
+}
+
+.reading-practice-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.focus-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.focus-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* roughly half width on very large screens, but responsive */
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: modal-scale-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1200px) {
+  .focus-modal-content {
+    max-width: 50vw;
+  }
+}
+
+@keyframes modal-scale-in {
+  from { transform: scale(0.95) translateY(10px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.focus-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.focus-modal-close:hover {
+  opacity: 1;
+}
+
+.focus-modal-body {
+  /* Override the sentence card styles to look better in focus mode */
+}
+
+.focus-modal-body .sentence-card {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.focus-modal-body .sentence-ja {
+  font-size: 32px;
+  line-height: 1.6;
+}
+
+.focus-modal-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.focus-modal-controls .resume-btn {
+  background: white;
+  color: #0f172a;
+  border-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.focus-modal-controls .resume-btn:hover:not(:disabled) {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.focus-modal-controls .resume-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.focus-modal-counter {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   .reading-practice-container {
@@ -454,7 +569,7 @@
   }
 
   .sentence-input:focus {
-    border-color: #00aaff;
+    border-color: var(--color-kanji-block);
     background: #1e293b;
   }
 

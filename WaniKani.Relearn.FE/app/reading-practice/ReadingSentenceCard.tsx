@@ -8,9 +8,11 @@ interface ReadingSentenceCardProps {
   index: number;
   /** Called when the user interacts with this card (for bookmark updates) */
   onInteract?: (index: number) => void;
+  /** Called to enter focus mode for this specific sentence */
+  onFocus?: (index: number) => void;
 }
 
-export function ReadingSentenceCard({ sentence, index, onInteract }: ReadingSentenceCardProps) {
+export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: ReadingSentenceCardProps) {
   const [userInput, setUserInput] = useState("");
   const [isRevealed, setIsRevealed] = useState(false);
 
@@ -87,6 +89,16 @@ export function ReadingSentenceCard({ sentence, index, onInteract }: ReadingSent
         >
           {isRevealed ? "✓ Translation" : "👁 Show Translation"}
         </button>
+
+        {onFocus && (
+          <button
+            type="button"
+            className="sentence-reveal-btn focus-btn"
+            onClick={() => onFocus(index)}
+          >
+            ⛶ Focus Mode
+          </button>
+        )}
 
         {isRevealed && (
           <p className="sentence-en">{sentence.en}</p>
