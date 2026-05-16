@@ -101,7 +101,7 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
   const backPath = subjectListRoutes[subject.Object] || "/";
 
   return (
-    <div className="subject-detail-container">
+    <div className={`subject-detail-container subject-detail-${subject.Object.replace('_', '-')}`}>
       {/* Background Side Decorations */}
       {subject.Characters && (
         <div
@@ -143,7 +143,6 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         <div className="subject-detail-info">
           <span
             className="subject-type-badge"
-            style={{ color: `var(--color-wk-${subject.Object.replace('_', '-')})` }}
           >
             {subject.Object.replace('_', ' ')}
           </span>
@@ -299,7 +298,9 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
         {componentSubjects && componentSubjects.length > 0 && (
           <ScrollReveal>
             <section className="detail-section">
-              <h2>Radical components</h2>
+              <h2>
+                {subject.Object.includes('vocabulary') ? 'Kanji Composition' : 'Radical components'}
+              </h2>
               <div className="subject-links">
                 {componentSubjects.map((comp) => {
                   const meaning = comp.Meanings?.find(m => m.Primary)?.Meaning || comp.Meanings?.[0]?.Meaning || "";

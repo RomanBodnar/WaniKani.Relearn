@@ -109,7 +109,7 @@
 }
 
 .toggle-input:focus-visible + .toggle-slider {
-  box-shadow: 0 0 0 3px rgba(230, 0, 170, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 109, 0, 0.2);
 }
 
 /* Dark mode */

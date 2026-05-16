@@ -24,11 +24,11 @@
 
 /* Grammar bubble uses the vocabulary purple */
 .grammar-bubble {
-  background-color: var(--color-wk-vocabulary) !important;
+  background-color: var(--color-grammar-block) !important;
 }
 
 .grammar-type-badge {
-  color: var(--color-wk-vocabulary) !important;
+  color: var(--color-grammar-text) !important;
 }
 
 .grammar-detail-content {
@@ -64,9 +64,10 @@
 
 /* Inherit these from general styles if possible, else define them here */
 .pos-tag {
+  border-color: var(--color-grammar-block);
   display: inline-block;
   background-color: #f0f0f0;
-  color: #555;
+  color: var(--color-grammar-text);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -79,7 +80,7 @@
 }
 
 a.pos-tag:hover {
-  background-color: var(--color-wk-vocabulary, #aa00ff);
+  background-color: var(--color-grammar-block);
   color: white;
 }
 

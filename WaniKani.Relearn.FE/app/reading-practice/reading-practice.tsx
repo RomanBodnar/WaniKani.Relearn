@@ -108,7 +108,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
       const el = document.getElementById(`sentence-${bookmark.sentenceIndex}`);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
-        el.style.boxShadow = "0 0 0 3px rgba(0, 170, 255, 0.4)";
+        el.style.boxShadow = "0 0 0 3px rgba(41, 98, 255, 0.4)";
         setTimeout(() => { el.style.boxShadow = ""; }, 2000);
       }
     }, 300);

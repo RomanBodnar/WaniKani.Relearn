@@ -44,6 +44,7 @@ export function SubjectCharacter({ subject, className }: SubjectCharacterProps) 
         alt={subject.Slug}
         className={`${combinedClassName} subject-character-img subject-character-svg local-radical-img`.trim()}
         style={{
+          strokeWidth: "5px",
           filter: combinedClassName.indexOf("subject-detail-character") >= 0 ? whiteColorMatrix : blueColorMatrix,
         }}
       />

@@ -34,8 +34,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: linear-gradient(135deg, rgba(0, 170, 255, 0.08), rgba(170, 0, 255, 0.08));
-  border: 1px solid rgba(0, 170, 255, 0.25);
+  background: linear-gradient(135deg, rgba(41, 98, 255, 0.08), rgba(0, 200, 83, 0.08));
+  border: 1px solid rgba(41, 98, 255, 0.25);
   border-radius: 12px;
   padding: 16px 20px;
   margin-bottom: 24px;
@@ -87,13 +87,13 @@
 }
 
 .resume-btn-primary {
-  background: linear-gradient(135deg, #00aaff, #aa00ff);
+  background: linear-gradient(135deg, var(--color-radical-block), var(--color-vocabulary-block));
   color: white;
 }
 
 .resume-btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(41, 98, 255, 0.3);
 }
 
 .resume-btn-secondary {
@@ -229,7 +229,7 @@
 .sentence-input:focus {
   border-color: #00aaff;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.1);
 }
 
 /* ===== Show Translation Toggle ===== */
@@ -341,10 +341,10 @@
 }
 
 .pagination-btn.active {
-  background: linear-gradient(135deg, #00aaff, #aa00ff);
+  background: linear-gradient(135deg, var(--color-radical-block), var(--color-vocabulary-block));
   border-color: transparent;
   color: white;
-  box-shadow: 0 2px 8px rgba(0, 170, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(41, 98, 255, 0.3);
 }
 
 .pagination-prev,
@@ -406,8 +406,8 @@
   }
 
   .resume-banner {
-    background: linear-gradient(135deg, rgba(0, 170, 255, 0.1), rgba(170, 0, 255, 0.1));
-    border-color: rgba(0, 170, 255, 0.2);
+  background: linear-gradient(135deg, rgba(41, 98, 255, 0.1), rgba(0, 200, 83, 0.1));
+  border-color: rgba(41, 98, 255, 0.2);
   }
 
   .resume-banner-title {

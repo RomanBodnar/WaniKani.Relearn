@@ -18,7 +18,7 @@
 }
 
 .search-page-query {
-  color: var(--color-wk-kanji);
+  color: var(--color-kanji-text);
 }
 
 .search-page-subtitle {
@@ -243,8 +243,8 @@
   }
 
   html:not(.light):not(.dark) .search-page-input:focus {
-    border-color: var(--color-wk-kanji);
-    box-shadow: 0 0 0 4px rgba(230, 0, 170, 0.15);
+    border-color: var(--color-kanji-text);
+    box-shadow: 0 0 0 4px rgba(255, 109, 0, 0.15);
   }
 
   html:not(.light):not(.dark) .search-empty-title,
@@ -271,8 +271,8 @@
 }
 
 .dark .search-page-input:focus {
-  border-color: var(--color-wk-kanji);
-  box-shadow: 0 0 0 4px rgba(230, 0, 170, 0.15);
+  border-color: var(--color-kanji-text);
+  box-shadow: 0 0 0 4px rgba(255, 109, 0, 0.15);
 }
 
 .dark .search-empty-title,

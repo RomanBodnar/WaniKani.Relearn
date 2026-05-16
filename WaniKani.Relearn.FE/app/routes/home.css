@@ -30,7 +30,7 @@
 
 .home-hero-logo {
   font-family: var(--font-yusei);
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 800;
   color: #FE3365;
   letter-spacing: 0.15em;
@@ -140,7 +140,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -165,10 +165,21 @@
   letter-spacing: 0.05em;
 }
 
-.hub-radicals { background-color: var(--color-wk-radical); }
-.hub-kanji { background-color: var(--color-wk-kanji); }
-.hub-vocabulary { background-color: var(--color-wk-vocabulary); }
-.hub-grammar { background-color: var(--color-wk-grammar); }
+.hub-radicals {
+  background-color: var(--color-wk-radical);
+}
+
+.hub-kanji {
+  background-color: var(--color-wk-kanji);
+}
+
+.hub-vocabulary {
+  background-color: var(--color-wk-vocabulary);
+}
+
+.hub-grammar {
+  background-color: var(--color-wk-grammar);
+}
 
 /* --- Daily Spotlight --- */
 .home-section-title {
@@ -191,7 +202,7 @@
   border-radius: 24px;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s;
 }
 
@@ -284,9 +295,24 @@
 }
 
 @media (max-width: 768px) {
-  .home-hero-logo { font-size: 3.5rem; }
-  .spotlight-card { flex-direction: column; }
-  .spotlight-char-box { flex: 0 0 120px; font-size: 3rem; }
-  .spotlight-meaning { font-size: 1.75rem; }
-  .home-page { padding-top: 20px; }
+  .home-hero-logo {
+    font-size: 3rem;
+  }
+
+  .spotlight-card {
+    flex-direction: column;
+  }
+
+  .spotlight-char-box {
+    flex: 0 0 120px;
+    font-size: 3rem;
+  }
+
+  .spotlight-meaning {
+    font-size: 1.75rem;
+  }
+
+  .home-page {
+    padding-top: 20px;
+  }
 }

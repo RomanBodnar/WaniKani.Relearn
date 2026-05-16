@@ -44,9 +44,9 @@ main {
 .brand-accent-strip {
   height: 4px;
   background: linear-gradient(to right,
-      var(--color-wk-radical),
-      var(--color-wk-kanji),
-      var(--color-wk-vocabulary));
+      var(--color-radical-line),
+      var(--color-kanji-line),
+      var(--color-vocabulary-line));
   flex-shrink: 0;
 }
 
@@ -67,13 +67,18 @@ main {
 }
 
 :root {
-  --color-wk-radical: rgb(0, 170, 255);
-  --color-wk-kanji: rgb(230, 0, 170);
-  --color-wk-vocabulary: rgb(170, 0, 255);
-  --color-wk-kana-vocabulary: rgb(170, 0, 255);
-  --color-wk-grammar: rgb(34, 197, 94);
+  --color-wk-radical: var(--color-radical-block);
+  --color-wk-kanji: var(--color-kanji-block);
+  --color-wk-vocabulary: var(--color-vocabulary-block);
+  --color-wk-kana-vocabulary: var(--color-vocabulary-block);
+  --color-wk-grammar: #00B4D8;
+  --color-grammar-block: #00B4D8;
+  --color-grammar-text: #0077B6;
+  /* rgb(34, 197, 94);*/
   /* Vibrant Green */
-  --color-wk-reading: rgb(249, 195, 32);
+  --color-wk-reading: #5E17EB;
+  --color-reading-text: #5E17EB;
+  --color-reading-block: #8A3FFC;
   /* Vibrant Yellow */
 
   --chart-axis-color: #64748b;
@@ -86,6 +91,59 @@ main {
   --color-pink-hot-light: #F6A8D2;
 
   --color-off-white: #f8fafc;
+
+  /* --color-radical: #3B3C95;
+  --color-kanji: #FF8241;
+  --color-vocabulary: #26A053;
+
+  --color-radical-1: #81C19A;
+  --color-kanji-1: #EDC520;
+  --color-vocabulary-1: #3B3C95; */
+
+  --color-radical-text: #004BFF;
+  --color-kanji-text: #D34E00;
+  --color-vocabulary-text: #008542;
+
+
+  /*
+  For the Kanji block gradient seen in Image 2, 
+  you can transition smoothly from #FF6D00 at the top to #FF3D00 at the bottom 
+  to give it that same premium depth your current purple block has.
+
+
+  The vertical accent lines on the left side of the sections (like "Meanings" and "Radical components") look incredible. Since they are purely decorative structural lines, you can use the absolute brightest versions of your colors here:
+
+Radical Line: #3D5AFE (Electric Cyan-Blue)
+
+Kanji Line: #FF6A00 (Pure Neon Orange)
+
+Vocabulary Line: #00E676 (Acid Green)
+  */
+  --color-radical-block: #2962FF;
+  --color-kanji-block: #FF6D00;
+  --color-vocabulary-block: #00C853;
+
+  --color-radical-line: #3D5AFE;
+  --color-kanji-line: #FF6A00;
+  --color-vocabulary-line: #00E676;
+
+  /*
+  --color-success: #26A053;
+  --color-error: #E73832;
+*/
+
+  /*
+
+    to consider
+    #FF8241 -- orange
+    #26A053 -- green
+    #EDC520 -- yellow-y
+    #3B3C95 -- deep blue
+    #E73832 -- bright red
+    #D7307C -- pinkish purple
+    #81C19A -- minty green 
+    #F54927 -- orange-y
+  */
 }
 
 @media (prefers-color-scheme: dark) {

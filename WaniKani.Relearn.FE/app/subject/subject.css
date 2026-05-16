@@ -195,6 +195,11 @@ img.subject-detail-character {
   animation-delay: 0.25s;
 }
 
+.subject-detail-radical .subject-type-badge { color: var(--color-radical-text); }
+.subject-detail-kanji .subject-type-badge { color: var(--color-kanji-text); }
+.subject-detail-vocabulary .subject-type-badge,
+.subject-detail-kana-vocabulary .subject-type-badge { color: var(--color-vocabulary-text); }
+
 .subject-detail-primary-meaning {
   font-size: 36px;
   font-weight: 700;
@@ -293,10 +298,15 @@ img.subject-detail-character {
 
 .detail-section {
   background: #f9f9f9;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid var(--color-kanji-line); /* Default */
   padding: 20px;
   border-radius: 4px;
 }
+
+.subject-detail-radical .detail-section { border-left-color: var(--color-radical-line); }
+.subject-detail-kanji .detail-section { border-left-color: var(--color-kanji-line); }
+.subject-detail-vocabulary .detail-section { border-left-color: var(--color-vocabulary-line); }
+.subject-detail-kana-vocabulary .detail-section { border-left-color: var(--color-vocabulary-line); }
 
 .detail-section h2 {
   margin: 0 0 15px 0;
@@ -395,7 +405,7 @@ img.subject-detail-character {
 }
 
 .mnemonic-section {
-  border-left-color: #ff9800;
+  border-left-color: var(--color-kanji-line);
 }
 
 .mnemonic-text {

@@ -23,17 +23,17 @@
 }
 
 .subject-card-radical {
-  color: var(--color-wk-radical);
+  color: var(--color-radical-text);
   background-color: var(--color-off-white);
 }
 
 .subject-card-kanji {
-  color: var(--color-wk-kanji);
+  color: var(--color-kanji-text);
   background-color: var(--color-off-white);
 }
 
 .subject-card-vocabulary {
-  color: var(--color-wk-vocabulary);
+  color: var(--color-vocabulary-text);
   background-color: var(--color-off-white);
 }
 
@@ -43,15 +43,15 @@
 }
 
 .subject-card-radical:hover {
-  box-shadow: 0 10px 20px -5px rgba(0, 170, 255, 0.4), 0 0 15px 0 rgba(0, 170, 255, 0.2);
+  box-shadow: 0 10px 20px -5px rgba(41, 98, 255, 0.4), 0 0 15px 0 rgba(41, 98, 255, 0.2);
 }
 
 .subject-card-kanji:hover {
-  box-shadow: 0 10px 20px -5px rgba(230, 0, 170, 0.4), 0 0 15px 0 rgba(230, 0, 170, 0.2);
+  box-shadow: 0 10px 20px -5px rgba(255, 109, 0, 0.4), 0 0 15px 0 rgba(255, 109, 0, 0.2);
 }
 
 .subject-card-vocabulary:hover {
-  box-shadow: 0 10px 20px -5px rgba(170, 0, 255, 0.4), 0 0 15px 0 rgba(170, 0, 255, 0.2);
+  box-shadow: 0 10px 20px -5px rgba(0, 200, 83, 0.4), 0 0 15px 0 rgba(0, 200, 83, 0.2);
 }
 
 .subject-card-character {
