@@ -99,7 +99,7 @@
   height: 100px;
   padding: 0 20px;
   border-radius: 24px;
-  box-shadow: 
+  box-shadow:
     0 10px 30px -10px rgba(0, 0, 0, 0.3),
     inset 0 0 0 1px rgba(255, 255, 255, 0.2),
     inset 0 4px 10px rgba(255, 255, 255, 0.3);
@@ -120,11 +120,12 @@
   align-items: center;
   justify-content: center;
   font-family: "Rampart One", cursive;
-  font-size: 120px; /* Use a fixed base size and scale from there */
+  font-size: 120px;
+  /* Use a fixed base size and scale from there */
   color: white;
   pointer-events: none;
   z-index: 9999;
-  text-shadow: 
+  text-shadow:
     0 0 40px rgba(255, 255, 255, 0.4),
     0 0 80px rgba(0, 0, 0, 0.4);
   will-change: transform, opacity;
@@ -136,10 +137,12 @@
     opacity: 0;
     transform: scale(0.5) rotate(-5deg);
   }
+
   15% {
     opacity: 1;
     transform: scale(1.5) rotate(0deg);
   }
+
   100% {
     opacity: 0;
     transform: scale(8) rotate(10deg);
@@ -164,7 +167,8 @@
   white-space: nowrap;
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateZ(30px); /* Lift character off the bubble background */
+  transform: translateZ(30px);
+  /* Lift character off the bubble background */
 }
 
 
@@ -195,10 +199,18 @@ img.subject-detail-character {
   animation-delay: 0.25s;
 }
 
-.subject-detail-radical .subject-type-badge { color: var(--color-radical-text); }
-.subject-detail-kanji .subject-type-badge { color: var(--color-kanji-text); }
+.subject-detail-radical .subject-type-badge {
+  color: var(--color-radical-text);
+}
+
+.subject-detail-kanji .subject-type-badge {
+  color: var(--color-kanji-text);
+}
+
 .subject-detail-vocabulary .subject-type-badge,
-.subject-detail-kana-vocabulary .subject-type-badge { color: var(--color-vocabulary-text); }
+.subject-detail-kana-vocabulary .subject-type-badge {
+  color: var(--color-vocabulary-text);
+}
 
 .subject-detail-primary-meaning {
   font-size: 36px;
@@ -298,15 +310,27 @@ img.subject-detail-character {
 
 .detail-section {
   background: #f9f9f9;
-  border-left: 4px solid var(--color-kanji-line); /* Default */
+  border-left: 4px solid var(--color-kanji-line);
+  /* Default */
   padding: 20px;
   border-radius: 4px;
 }
 
-.subject-detail-radical .detail-section { border-left-color: var(--color-radical-line); }
-.subject-detail-kanji .detail-section { border-left-color: var(--color-kanji-line); }
-.subject-detail-vocabulary .detail-section { border-left-color: var(--color-vocabulary-line); }
-.subject-detail-kana-vocabulary .detail-section { border-left-color: var(--color-vocabulary-line); }
+.subject-detail-radical .detail-section {
+  border-left-color: var(--color-radical-line);
+}
+
+.subject-detail-kanji .detail-section {
+  border-left-color: var(--color-kanji-line);
+}
+
+.subject-detail-vocabulary .detail-section {
+  border-left-color: var(--color-vocabulary-line);
+}
+
+.subject-detail-kana-vocabulary .detail-section {
+  border-left-color: var(--color-vocabulary-line);
+}
 
 .detail-section h2 {
   margin: 0 0 15px 0;
@@ -637,6 +661,10 @@ img.subject-detail-character {
   color: #ffffff;
 }
 
+.mnemonic-text mark.mnemonic-tag-em {
+  font-style: italic;
+}
+
 /* Hover effect for better UX */
 .mnemonic-text mark:hover {
   transform: scale(1.05);
@@ -645,6 +673,7 @@ img.subject-detail-character {
 
 
 @media (prefers-color-scheme: dark) {
+
   html:not(.light):not(.dark) .primary-meaning-text,
   html:not(.light):not(.dark) .reading-inline-text {
     color: #f8fafc;
@@ -725,21 +754,49 @@ img.subject-detail-character {
 
 /* Entrance Animations */
 @keyframes subject-header-fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes subject-bubble-pop {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes subject-info-slide-in {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes subject-meta-fade-up {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
