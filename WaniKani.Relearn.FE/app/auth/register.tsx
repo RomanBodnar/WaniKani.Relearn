@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router";
 import { useActionState } from "react";
-import axios from "axios";
 import { API_ENDPOINTS } from "~/config/api";
 import "./auth.css";
 
@@ -14,7 +13,19 @@ export default function Register() {
             const password = formData.get("password") as string;
 
             try {
-                await axios.post(API_ENDPOINTS.register, { username, email, password });
+                const response = await fetch(API_ENDPOINTS.register, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Registration failed with status: ${response.status}`);
+                }
+
                 navigate("/login");
                 return null;
             } catch (error) {

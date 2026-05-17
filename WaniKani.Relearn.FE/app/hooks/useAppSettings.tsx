@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, use, useState, useEffect, type ReactNode } from "react";
 
 interface AppSettings {
   floatingWatermarks: boolean;
@@ -38,7 +38,7 @@ const AppSettingsContext = createContext<AppSettingsContextValue>({
   updateSetting: () => {},
 });
 
-export const useAppSettings = () => useContext(AppSettingsContext);
+export const useAppSettings = () => use(AppSettingsContext);
 
 export const AppSettingsProvider = ({ children }: { children: ReactNode }) => {
   const [settings, setSettings] = useState<AppSettings>(DEFAULT_SETTINGS);

@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router";
 import { useActionState } from "react";
-import axios from "axios";
 import { API_ENDPOINTS } from "~/config/api";
 import "./auth.css";
 
@@ -13,7 +12,19 @@ export default function Login() {
             const password = formData.get("password") as string;
 
             try {
-                await axios.post(API_ENDPOINTS.login, { email, password });
+                const response = await fetch(API_ENDPOINTS.login, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Login failed with status: ${response.status}`);
+                }
+
                 navigate("/");
                 return null;
             } catch (error) {

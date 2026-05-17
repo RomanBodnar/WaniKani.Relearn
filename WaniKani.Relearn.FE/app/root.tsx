@@ -13,14 +13,12 @@ import Header from "./Header/header";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import Footer from "./components/Footer";
 import { AppSettingsProvider } from "./hooks/useAppSettings";
-import axios from "axios";
 
 export async function clientLoader({ request }: Route.ClientLoaderArgs) {
   const isLoggedIn = typeof document !== 'undefined' ? document.cookie.includes("X-User-Claims=") : false;
   return { isLoggedIn };
 }
 
-axios.defaults.withCredentials = true;
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
