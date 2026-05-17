@@ -1,0 +1,9 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "https://wanikani-service-897393916251.europe-west1.run.app/api/:path*"
+        }
+    ]
+}

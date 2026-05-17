@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router";
 import { useActionState } from "react";
 import axios from "axios";
+import { API_ENDPOINTS } from "~/config/api";
 import "./auth.css";
 
 export default function Login() {
@@ -10,9 +11,9 @@ export default function Login() {
         async (prevState: string | null, formData: FormData) => {
             const email = formData.get("email") as string;
             const password = formData.get("password") as string;
-            
+
             try {
-                await axios.post("/auth/login", { email, password });
+                await axios.post(API_ENDPOINTS.login, { email, password });
                 navigate("/");
                 return null;
             } catch (error) {
@@ -28,43 +29,43 @@ export default function Login() {
             <div className="auth-card">
                 <h1 className="auth-title">Log in</h1>
                 <p className="auth-subtitle">Welcome back to bonpom</p>
-                
+
                 {error && <div className="auth-error">{error}</div>}
-                
+
                 <form className="auth-form" action={submitAction}>
                     <div className="auth-input-group">
                         <label htmlFor="email">Email</label>
-                        <input 
-                            type="email" 
-                            id="email" 
+                        <input
+                            type="email"
+                            id="email"
                             name="email"
-                            required 
+                            required
                             placeholder="Enter your email"
                             disabled={isPending}
                         />
                     </div>
-                    
+
                     <div className="auth-input-group">
                         <label htmlFor="password">Password</label>
-                        <input 
-                            type="password" 
-                            id="password" 
+                        <input
+                            type="password"
+                            id="password"
                             name="password"
-                            required 
+                            required
                             placeholder="Enter your password"
                             disabled={isPending}
                         />
                     </div>
-                    
-                    <button 
-                        type="submit" 
+
+                    <button
+                        type="submit"
                         className={`auth-submit-btn ${isPending ? 'loading' : ''}`}
                         disabled={isPending}
                     >
                         {isPending ? "Logging in..." : "Log in"}
                     </button>
                 </form>
-                
+
                 <div className="auth-footer">
                     Don't have an account? <Link to="/register">Sign up</Link>
                 </div>

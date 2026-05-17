@@ -1,4 +1,4 @@
-import { Link, useNavigate, useSearchParams } from "react-router";
+import { Link, useNavigate, useSearchParams, useRouteLoaderData } from "react-router";
 import { useState, useRef, useEffect } from "react";
 import "./header.css";
 import NavigationBar from "~/components/NavigationBar";
@@ -9,6 +9,12 @@ const Header = () => {
     const query = searchParams.get("q") || "";
     const [isSearchOpen, setIsSearchOpen] = useState(!!query);
     const [inputValue, setInputValue] = useState(query);
+    
+    // Use data from root loader instead of checking document.cookie
+    // This solves the hydration mismatch and flicker on refresh
+    const rootData = useRouteLoaderData("root") as { isLoggedIn: boolean } | undefined;
+    const isLoggedIn = rootData?.isLoggedIn || false;
+    
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const debounceRef = useRef<ReturnType<typeof setTimeout>>();
@@ -25,7 +31,7 @@ const Header = () => {
             inputRef.current?.focus();
         }
     }, [isSearchOpen]);
-    
+
     // Close search when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -108,14 +114,23 @@ const Header = () => {
                                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                             </svg>
                         </Link>
-                        
-                        <Link to="/login" className="header-login-button" aria-label="Log in" title="Log in">
-                            Log in
-                        </Link>
+
+                        {isLoggedIn ? (
+                            <Link to="/profile" className="header-action-button" aria-label="Profile" title="Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </Link>
+                        ) : (
+                            <Link to="/login" className="header-login-button" aria-label="Log in" title="Log in">
+                                Log in
+                            </Link>
+                        )}
                     </div>
                 </div>
             </header>
-            <form 
+            <form
                 className={`header-search-row ${isSearchOpen ? 'open' : ''}`}
                 onSubmit={(e) => {
                     e.preventDefault();

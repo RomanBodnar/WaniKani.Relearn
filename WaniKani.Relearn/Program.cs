@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using WaniKani.Relearn;
 using WaniKani.Relearn.Extensions;
 
@@ -26,7 +27,8 @@ public class Program
             options.AddPolicy("FrontendPolicy", policy => policy
                 .WithOrigins(allowedOrigins)
                 .AllowAnyMethod()
-                .AllowAnyHeader());
+                .AllowAnyHeader()
+                .AllowCredentials());
         });
 
         builder.Services.AddControllers().AddJsonOptions(options =>
@@ -56,11 +58,34 @@ public class Program
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
         });
 
+        builder.Services
+            .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.Cookie.Name = "BonPomAuth";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.SameSite = SameSiteMode.Lax;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;// Requires HTTPS
+                options.LoginPath = "/auth/login";
+                options.LogoutPath = "/auth/logout";
+    
+                // Stop .NET from trying to redirect API calls to a login page
+                options.Events.OnRedirectToLogin = context =>
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    return Task.CompletedTask;
+                };
+            });
+
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         app.UseSwagger();
         app.UseSwaggerUI();
+
+        app.UseAuthentication();
+        app.UseAuthorization();
 
         app.UseHttpsRedirection();
         app.UseCors("FrontendPolicy");

@@ -13,6 +13,15 @@ import Header from "./Header/header";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import Footer from "./components/Footer";
 import { AppSettingsProvider } from "./hooks/useAppSettings";
+import axios from "axios";
+
+export async function loader({ request }: Route.LoaderArgs) {
+  const cookieHeader = request.headers.get("Cookie");
+  const isLoggedIn = cookieHeader ? cookieHeader.includes("X-User-Claims=") : false;
+  return { isLoggedIn };
+}
+
+axios.defaults.withCredentials = true;
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -38,22 +47,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <AppSettingsProvider>
-        <div className="brand-accent-strip" aria-hidden="true" />
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
-        <ScrollRestoration
-          getKey={(location) => {
-            const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice", "/search"];
-            if (pathsToPreserve.includes(location.pathname)) {
-              return location.pathname;
-            }
-            return location.key;
-          }}
-        />
-        <Scripts />
+          <div className="brand-accent-strip" aria-hidden="true" />
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+          <ScrollRestoration
+            getKey={(location) => {
+              const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice", "/search"];
+              if (pathsToPreserve.includes(location.pathname)) {
+                return location.pathname;
+              }
+              return location.key;
+            }}
+          />
+          <Scripts />
         </AppSettingsProvider>
       </body>
     </html>
