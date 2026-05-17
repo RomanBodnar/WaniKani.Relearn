@@ -15,9 +15,8 @@ import Footer from "./components/Footer";
 import { AppSettingsProvider } from "./hooks/useAppSettings";
 import axios from "axios";
 
-export async function loader({ request }: Route.LoaderArgs) {
-  const cookieHeader = request.headers.get("Cookie");
-  const isLoggedIn = cookieHeader ? cookieHeader.includes("X-User-Claims=") : false;
+export async function clientLoader({ request }: Route.ClientLoaderArgs) {
+  const isLoggedIn = typeof document !== 'undefined' ? document.cookie.includes("X-User-Claims=") : false;
   return { isLoggedIn };
 }
 
