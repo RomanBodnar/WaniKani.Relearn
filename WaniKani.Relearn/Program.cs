@@ -43,7 +43,7 @@ public class Program
         var services = builder.Services;
         var configuration = builder.Configuration;
         services
-            .AddDataAccess()
+            .AddDataAccess(configuration)
             .AddServices()
             .AddMappers()
             .AddDataAccessMappers()

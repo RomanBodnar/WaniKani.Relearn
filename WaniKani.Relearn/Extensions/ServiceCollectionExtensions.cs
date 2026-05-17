@@ -1,4 +1,6 @@
+using Google.Cloud.Firestore;
 using WaniKani.Relearn.Api.Mappers;
+using WaniKani.Relearn.Auth.Data;
 using WaniKani.Relearn.DataAccess;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Model.Reviews;
@@ -9,14 +11,28 @@ namespace WaniKani.Relearn.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddDataAccess(this IServiceCollection services)
+    public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {
+        var projectId = configuration["Firebase:ProjectId"];
+        var databaseId = configuration["Firebase:DatabaseId"];
+
         services.AddHostedService<InMemoryDataLoader>();
         services.AddSingleton<SubjectCache>();
         services.AddSingleton<IDataAccess, StaticFileDataAccess>();
         services.AddSingleton<SentenceCache>();
         services.AddSingleton<SentenceExtractor>();
         
+        services.AddSingleton<FirestoreDb>(provider =>
+        {
+            // Automatically uses Application Default Credentials (ADC)
+            var builder = new FirestoreDbBuilder
+            {
+                ProjectId = projectId,
+                DatabaseId = databaseId
+            };
+            return builder.Build();
+        });
+
         return services;
     }
 
@@ -24,6 +40,8 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<SubjectsService>();
         services.AddScoped<IDashboardService, DashboardService>();
+        services.AddTransient<IPasswordHasher, PasswordHasher>();
+        services.AddTransient<IUserService, UserService>();
         return services;
     }
 
