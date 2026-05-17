@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useRevalidator } from "react-router";
 import { useActionState } from "react";
 import { API_ENDPOINTS } from "~/config/api";
 import "./auth.css";
 
 export default function Login() {
     const navigate = useNavigate();
+    const { revalidate } = useRevalidator();
 
     const [error, submitAction, isPending] = useActionState(
         async (prevState: string | null, formData: FormData) => {
@@ -25,6 +26,7 @@ export default function Login() {
                     throw new Error(`Login failed with status: ${response.status}`);
                 }
 
+                revalidate();
                 navigate("/");
                 return null;
             } catch (error) {
