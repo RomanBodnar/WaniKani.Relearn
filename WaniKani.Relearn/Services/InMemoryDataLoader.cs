@@ -1,4 +1,6 @@
-﻿using WaniKani.Relearn.DataAccess;
+﻿using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Subjects.Data;
+using WaniKani.Relearn.Subjects.Data.Mappers;
 
 namespace WaniKani.Relearn.Services;
 
@@ -10,7 +12,7 @@ public class InMemoryDataLoader(
     IConfiguration configuration,
     ILogger<InMemoryDataLoader> logger,
     
-    DataAccess.Mappers.KanjiMapper kanjiMapper
+    KanjiMapper kanjiMapper
     ) : IHostedService
 {
     public async Task StartAsync(CancellationToken cancellationToken)
@@ -79,7 +81,7 @@ public class InMemoryDataLoader(
 
         var levels = Enumerable.Range(1, 60).ToArray();
         var kanji = await staticFileDataAccess.GetAllSubjects<Kanji>(levels);
-        var result = new List<DataAccess.Models.Kanji>();
+        var result = new List<Subjects.Data.Models.Kanji>();
         List<string> notFound = [];
         foreach (var k in kanji)
         {

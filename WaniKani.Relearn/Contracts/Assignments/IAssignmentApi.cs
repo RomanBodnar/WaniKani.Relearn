@@ -1,6 +1,6 @@
-﻿using Refit;
+﻿using WaniKani.Relearn.Contracts.Resources;
 
-namespace WaniKani.Relearn;
+namespace WaniKani.Relearn.Contracts.Assignments;
 
 public interface IAssignmentApi
 {

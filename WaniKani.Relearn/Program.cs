@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using WaniKani.Relearn;
+using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Extensions;
+
+namespace WaniKani.Relearn;
 
 public class Program
 {

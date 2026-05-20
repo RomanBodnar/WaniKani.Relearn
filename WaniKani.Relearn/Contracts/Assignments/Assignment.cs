@@ -1,4 +1,4 @@
-﻿namespace WaniKani.Relearn;
+﻿namespace WaniKani.Relearn.Contracts.Assignments;
 
 public record Assignment
 {

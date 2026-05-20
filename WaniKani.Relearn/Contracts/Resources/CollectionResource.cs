@@ -1,4 +1,4 @@
-﻿namespace WaniKani.Relearn;
+﻿namespace WaniKani.Relearn.Contracts.Resources;
 
 // check 
 public interface IResource<out T>

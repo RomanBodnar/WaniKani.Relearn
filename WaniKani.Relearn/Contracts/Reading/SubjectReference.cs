@@ -1,4 +1,4 @@
-namespace WaniKani.Relearn.Model.Reading;
+namespace WaniKani.Relearn.Contracts.Reading;
 
 public record SubjectReference
 {

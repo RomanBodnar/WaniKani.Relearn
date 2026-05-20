@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WaniKani.Relearn.Auth;
+namespace WaniKani.Relearn.Auth.Api;
 
 public record class RegisterUserRequest(
     [Required]

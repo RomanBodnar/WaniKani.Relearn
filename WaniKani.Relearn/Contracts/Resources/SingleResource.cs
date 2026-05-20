@@ -1,4 +1,6 @@
-﻿namespace WaniKani.Relearn;
+﻿using WaniKani.Relearn.Contracts.Subjects;
+
+namespace WaniKani.Relearn.Contracts.Resources;
 
 public class SingleResource<T> : IResource<T>
 {

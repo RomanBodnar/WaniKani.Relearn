@@ -1,4 +1,4 @@
-﻿namespace WaniKani.Relearn;
+﻿namespace WaniKani.Relearn.Contracts.Resources;
 
 public static class Resources
 {

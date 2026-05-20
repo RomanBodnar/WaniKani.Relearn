@@ -2,11 +2,9 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using WaniKani.Relearn.Auth.Data;
 
-namespace WaniKani.Relearn.Auth;
+namespace WaniKani.Relearn.Auth.Api;
 
 [Route("api/auth")]
 [ApiController]
@@ -84,10 +82,10 @@ public class AuthController(
 
         // Send this info safely to React in the JSON body
         return Ok(new { 
-            isAuthenticated = true, 
-            username = username,
-            email = email,
-            roles = roles // e.g., ["Admin", "Manager"]
+            isAuthenticated = true,
+            username,
+            email,
+            roles // e.g., ["Admin", "Manager"]
         });
     }
 }

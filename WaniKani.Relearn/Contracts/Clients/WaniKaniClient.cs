@@ -1,7 +1,8 @@
-using Newtonsoft.Json;
 using Microsoft.AspNetCore.WebUtilities;
-using static System.Math;
-namespace WaniKani.Relearn;
+using WaniKani.Relearn.Contracts.Assignments;
+using WaniKani.Relearn.Contracts.Resources;
+
+namespace WaniKani.Relearn.Contracts.Clients;
 
 public interface IWaniKaniClient
 {

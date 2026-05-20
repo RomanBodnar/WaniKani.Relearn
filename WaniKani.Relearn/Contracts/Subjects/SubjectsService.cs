@@ -1,8 +1,9 @@
-using Newtonsoft.Json;
-using WaniKani.Relearn.DataAccess;
-using WaniKani.Relearn.Model.Assignments;
+using WaniKani.Relearn.Contracts.Assignments;
+using WaniKani.Relearn.Contracts.Clients;
+using WaniKani.Relearn.Contracts.Resources;
+using WaniKani.Relearn.Subjects.Data;
 
-namespace WaniKani.Relearn.Model.Subjects;
+namespace WaniKani.Relearn.Contracts.Subjects;
 
 public class SubjectsService(
     ISubjectsApi subjectsApi,

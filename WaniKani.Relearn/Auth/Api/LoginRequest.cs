@@ -1,4 +1,4 @@
-namespace WaniKani.Relearn.Auth;
+namespace WaniKani.Relearn.Auth.Api;
 
 public record class LoginRequest(
     string Email,

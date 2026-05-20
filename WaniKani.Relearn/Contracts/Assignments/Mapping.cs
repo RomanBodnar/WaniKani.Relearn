@@ -1,6 +1,4 @@
-using System;
-
-namespace WaniKani.Relearn.Model.Assignments;
+namespace WaniKani.Relearn.Contracts.Assignments;
 
 public static class Mapping
 {

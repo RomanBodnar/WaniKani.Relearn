@@ -1,4 +1,4 @@
-﻿namespace WaniKani.Relearn.Model.Reviews;
+﻿namespace WaniKani.Relearn.Contracts.Reviews;
 
 public record Summary
 {

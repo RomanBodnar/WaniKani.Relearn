@@ -1,4 +1,6 @@
-﻿namespace WaniKani.Relearn.Model.Reviews;
+﻿using WaniKani.Relearn.Contracts.Resources;
+
+namespace WaniKani.Relearn.Contracts.Reviews;
 
 public interface ISummaryApi
 {

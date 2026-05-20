@@ -1,4 +1,6 @@
-namespace WaniKani.Relearn;
+using WaniKani.Relearn.Contracts.Resources;
+
+namespace WaniKani.Relearn.Contracts.Subjects;
 
 public interface ISubjectsApi
 {

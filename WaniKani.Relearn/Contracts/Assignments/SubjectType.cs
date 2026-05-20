@@ -1,4 +1,4 @@
-namespace WaniKani.Relearn.Model.Assignments;
+namespace WaniKani.Relearn.Contracts.Assignments;
 
 [Flags]
 public enum SubjectType

@@ -1,11 +1,11 @@
 using Google.Cloud.Firestore;
-using WaniKani.Relearn.Api.Mappers;
 using WaniKani.Relearn.Auth.Data;
-using WaniKani.Relearn.DataAccess;
+using WaniKani.Relearn.Contracts.Assignments;
+using WaniKani.Relearn.Contracts.Reviews;
+using WaniKani.Relearn.Contracts.Subjects;
 using WaniKani.Relearn.Http;
-using WaniKani.Relearn.Model.Reviews;
-using WaniKani.Relearn.Model.Subjects;
 using WaniKani.Relearn.Services;
+using WaniKani.Relearn.Subjects.Data;
 
 namespace WaniKani.Relearn.Extensions;
 
@@ -22,7 +22,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<SentenceCache>();
         services.AddSingleton<SentenceExtractor>();
         
-        services.AddSingleton<FirestoreDb>(provider =>
+        services.AddSingleton<FirestoreDb>(_ =>
         {
             // Automatically uses Application Default Credentials (ADC)
             var builder = new FirestoreDbBuilder
@@ -39,7 +39,6 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddScoped<SubjectsService>();
-        services.AddScoped<IDashboardService, DashboardService>();
         services.AddTransient<IPasswordHasher, PasswordHasher>();
         services.AddTransient<IUserService, UserService>();
         return services;
@@ -47,19 +46,18 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddDataAccessMappers(this IServiceCollection services)
     {
-        services.AddTransient<DataAccess.Mappers.KanjiMapper>();
-        services.AddTransient<DataAccess.Mappers.VocabularyMapper>();
-        services.AddTransient<DataAccess.Mappers.KanaVocabularyMapper>();
-        services.AddTransient<DataAccess.Mappers.RadicalMapper>();
+        services.AddTransient<Subjects.Data.Mappers.KanjiMapper>();
+        services.AddTransient<Subjects.Data.Mappers.VocabularyMapper>();
+        services.AddTransient<Subjects.Data.Mappers.KanaVocabularyMapper>();
+        services.AddTransient<Subjects.Data.Mappers.RadicalMapper>();
         return services;
     }
 
     public static IServiceCollection AddMappers(this IServiceCollection services)
     {
-        services.AddScoped<KanjiMapper>();
-        services.AddScoped<VocabularyMapper>();
-        services.AddScoped<RadicalMapper>();
-        services.AddScoped<KanaVocabularyMapper>();
+        services.AddScoped<Subjects.Api.Mappers.KanjiMapper>();
+        services.AddScoped<Subjects.Api.Mappers.VocabularyMapper>();
+        services.AddScoped<Subjects.Api.Mappers.RadicalMapper>();
         return services;
     }
 

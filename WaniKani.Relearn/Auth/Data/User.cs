@@ -1,7 +1,6 @@
-using System;
 using Google.Cloud.Firestore;
 
-namespace WaniKani.Relearn;
+namespace WaniKani.Relearn.Auth.Data;
 
 [FirestoreData]
 public class User

@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api/Mappers/" />
     <Folder Include="Auth/" />
-    <Folder Include="DataAccess/Mappers/" />
     <Folder Include="Http\" />
     <Folder Include="static/" />
     <Folder Include="static\" />
