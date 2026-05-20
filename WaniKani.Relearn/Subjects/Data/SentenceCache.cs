@@ -1,11 +1,11 @@
 using Newtonsoft.Json;
-using WaniKani.Relearn.Contracts.Reading;
+using WaniKani.Relearn.Subjects.Data.Models.Reading;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
 public class SentenceCache(IConfiguration configuration)
 {
-    private List<ReadingSentence> _sentences = new();
+    private List<ReadingSentence> _sentences = [];
 
     public void LoadFromFiles()
     {

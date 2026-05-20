@@ -1,8 +1,8 @@
 using Newtonsoft.Json;
 using WaniKani.Relearn.Contracts.Assignments;
-using WaniKani.Relearn.Contracts.Reading;
 using WaniKani.Relearn.Contracts.Resources;
 using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Subjects.Data.Models.Reading;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
@@ -73,7 +73,7 @@ public class SentenceExtractor(
             result.Add((
                  sentence.Ja,
                  sentence.En,
-                 vocab.Level,
+                 vocab.WaniKaniLevel,
                  new SubjectReference { SubjectId = vocab.Id, Characters = vocab.Characters! }
              ));
         }

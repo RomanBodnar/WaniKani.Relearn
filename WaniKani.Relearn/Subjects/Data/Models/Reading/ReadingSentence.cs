@@ -1,4 +1,4 @@
-namespace WaniKani.Relearn.Contracts.Reading;
+namespace WaniKani.Relearn.Subjects.Data.Models.Reading;
 
 public record ReadingSentence
 {

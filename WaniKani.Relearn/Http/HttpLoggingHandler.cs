@@ -13,18 +13,11 @@ public class HttpLoggingHandlerOptions
     public string[]? SensitiveHeaderNames { get; set; } = ["Authorization", "X-API-Key"];
 }
 
-public class HttpLoggingHandler : DelegatingHandler
+public class HttpLoggingHandler(
+    ILogger<HttpLoggingHandler> logger,
+    IOptions<HttpLoggingHandlerOptions>? options = null) : DelegatingHandler
 {
-    private readonly ILogger<HttpLoggingHandler> _logger;
-    private readonly HttpLoggingHandlerOptions _options;
-
-    public HttpLoggingHandler(
-        ILogger<HttpLoggingHandler> logger,
-        IOptions<HttpLoggingHandlerOptions>? options = null)
-    {
-        _logger = logger;
-        _options = options?.Value ?? new HttpLoggingHandlerOptions();
-    }
+    private readonly HttpLoggingHandlerOptions _options = options?.Value ?? new HttpLoggingHandlerOptions();
 
     protected override async Task<HttpResponseMessage> SendAsync(
         HttpRequestMessage request,
@@ -44,7 +37,7 @@ public class HttpLoggingHandler : DelegatingHandler
         catch (Exception ex)
         {
             stopwatch.Stop();
-            _logger.LogError(
+            logger.LogError(
                 ex,
                 "[{Id}] Request failed after {ElapsedMs}ms: {Method} {Uri}",
                 id,
@@ -57,7 +50,7 @@ public class HttpLoggingHandler : DelegatingHandler
 
     private void LogRequest(Guid id, HttpRequestMessage request)
     {
-        _logger.LogInformation(
+        logger.LogInformation(
             "[{Id}] {Method} {Uri}",
             id,
             request.Method,
@@ -71,7 +64,7 @@ public class HttpLoggingHandler : DelegatingHandler
 
     private void LogResponse(Guid id, HttpResponseMessage response, Stopwatch stopwatch)
     {
-        _logger.LogInformation(
+        logger.LogInformation(
             "[{Id}] Response: {StatusCode} in {ElapsedMs}ms",
             id,
             (int)response.StatusCode,
@@ -92,6 +85,6 @@ public class HttpLoggingHandler : DelegatingHandler
                 .Where(h => !sensitiveNames.Contains(h.Key, StringComparer.OrdinalIgnoreCase))
                 .Select(h => $"{h.Key}={string.Join(",", h.Value)}"));
 
-        _logger.LogInformation("[{Id}] {Type} Headers: {Headers}", id, type, headerLog);
+        logger.LogInformation("[{Id}] {Type} Headers: {Headers}", id, type, headerLog);
     }
 }

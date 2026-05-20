@@ -28,15 +28,15 @@ public class SubjectCache
             );
 
         if (minLevel.HasValue)
-            query = query.Where(x => x.Level >= minLevel.Value);
+            query = query.Where(x => x.WaniKaniLevel >= minLevel.Value);
 
         if (maxLevel.HasValue)
-            query = query.Where(x => x.Level <= maxLevel.Value);
+            query = query.Where(x => x.WaniKaniLevel <= maxLevel.Value);
 
         var count = query.Count();
 
         var subjects = query
-            .OrderBy(x => x.Level)
+            .OrderBy(x => x.WaniKaniLevel)
             .ThenBy(x => x.Id)
             .Skip(((page ?? 1) - 1) * (perPage ?? 100))
             .Take(perPage ?? 100);
