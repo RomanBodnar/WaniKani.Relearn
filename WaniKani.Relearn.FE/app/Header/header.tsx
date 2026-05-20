@@ -1,4 +1,4 @@
-import { Link, useNavigate, useSearchParams, useRouteLoaderData } from "react-router";
+import { Link, useNavigate, useSearchParams, useRouteLoaderData, useLocation } from "react-router";
 import { useState, useRef, useEffect } from "react";
 import "./header.css";
 import NavigationBar from "~/components/NavigationBar";
@@ -9,6 +9,7 @@ const Header = () => {
     const query = searchParams.get("q") || "";
     const [isSearchOpen, setIsSearchOpen] = useState(!!query);
     const [inputValue, setInputValue] = useState(query);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
     // Use data from root loader instead of checking document.cookie
     // This solves the hydration mismatch and flicker on refresh
@@ -24,6 +25,12 @@ const Header = () => {
         setInputValue(query);
         if (query) setIsSearchOpen(true);
     }, [query]);
+
+    // Close mobile menu on navigation
+    const location = useLocation();
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [location.pathname]);
 
     // Focus input when search opens
     useEffect(() => {
@@ -50,6 +57,45 @@ const Header = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [isSearchOpen]);
+
+    // Swipe detection for mobile menu
+    useEffect(() => {
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        };
+
+        const handleTouchEnd = (e: TouchEvent) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            
+            const dx = touchEndX - touchStartX;
+            const dy = touchEndY - touchStartY;
+            
+            // Ignore mostly vertical swipes
+            if (Math.abs(dy) > Math.abs(dx) + 20) return;
+            
+            // Swipe Left (open menu) if starting near right edge
+            if (dx < -50 && touchStartX > window.innerWidth - 40) {
+                setIsMobileMenuOpen(true);
+            }
+            // Swipe Right (close menu)
+            else if (dx > 50 && isMobileMenuOpen) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('touchstart', handleTouchStart, { passive: true });
+        window.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+        return () => {
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchend', handleTouchEnd);
+        };
+    }, [isMobileMenuOpen]);
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value;
@@ -94,7 +140,25 @@ const Header = () => {
                         <Link to="/">bonpom</Link>
                     </div>
 
-                    <NavigationBar />
+                    <div className={`mobile-drawer-overlay ${isMobileMenuOpen ? 'open' : ''}`} onClick={() => setIsMobileMenuOpen(false)} />
+                    <div className={`header-nav-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
+                        <div className="mobile-drawer-header">
+                            <span className="mobile-drawer-title">Menu</span>
+                            <button className="mobile-drawer-close" onClick={() => setIsMobileMenuOpen(false)}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            </button>
+                        </div>
+                        <NavigationBar />
+                        <div className="mobile-drawer-footer">
+                            <Link to="/settings" className="mobile-drawer-footer-link" aria-label="Settings">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>
+                                <span>Settings</span>
+                            </Link>
+                        </div>
+                    </div>
 
                     <div className="header-actions">
                         <button
@@ -108,7 +172,7 @@ const Header = () => {
                             </svg>
                         </button>
 
-                        <Link to="/settings" className="header-action-button" aria-label="Settings" title="Settings">
+                        <Link to="/settings" className="header-action-button header-settings-desktop" aria-label="Settings" title="Settings">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <circle cx="12" cy="12" r="3" />
                                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
@@ -127,6 +191,14 @@ const Header = () => {
                                 Log in
                             </Link>
                         )}
+
+                        <button 
+                            className="header-hamburger-button"
+                            onClick={() => setIsMobileMenuOpen(true)}
+                            aria-label="Open Menu"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                        </button>
                     </div>
                 </div>
             </header>
