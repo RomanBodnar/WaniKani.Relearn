@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router";
 import type { ReadingSentence } from "~/types/reading";
+import { SubjectPreviewModal } from "~/components/SubjectPreviewModal";
 
 interface ReadingSentenceCardProps {
   sentence: ReadingSentence;
@@ -15,6 +15,14 @@ interface ReadingSentenceCardProps {
 export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: ReadingSentenceCardProps) {
   const [userInput, setUserInput] = useState("");
   const [isRevealed, setIsRevealed] = useState(false);
+  const [activeSubject, setActiveSubject] = useState<{ id: number; element: HTMLElement } | null>(null);
+
+  const handlePillClick = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
+    setActiveSubject({
+      id,
+      element: e.currentTarget
+    });
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
@@ -40,13 +48,14 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
           <div className="sentence-tags-group">
             <span className="sentence-tags-label">Vocab</span>
             {sentence.sourceVocabulary.map((vocab) => (
-              <Link
+              <button
+                type="button"
                 key={`vocab-${vocab.subjectId}`}
-                to={`/subject/${vocab.subjectId}`}
+                onClick={(e) => handlePillClick(e, vocab.subjectId)}
                 className="sentence-tag sentence-tag-vocab"
               >
                 {vocab.characters}
-              </Link>
+              </button>
             ))}
           </div>
         )}
@@ -56,17 +65,26 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
           <div className="sentence-tags-group">
             <span className="sentence-tags-label">Kanji</span>
             {sentence.kanjiInSentence.map((kanji) => (
-              <Link
+              <button
+                type="button"
                 key={`kanji-${kanji.subjectId}`}
-                to={`/subject/${kanji.subjectId}`}
+                onClick={(e) => handlePillClick(e, kanji.subjectId)}
                 className="sentence-tag sentence-tag-kanji"
               >
                 {kanji.characters}
-              </Link>
+              </button>
             ))}
           </div>
         )}
       </div>
+
+      {activeSubject !== null && (
+        <SubjectPreviewModal
+          subjectId={activeSubject.id}
+          anchorElement={activeSubject.element}
+          onClose={() => setActiveSubject(null)}
+        />
+      )}
 
       {/* Translation input */}
       <div className="sentence-input-wrapper">

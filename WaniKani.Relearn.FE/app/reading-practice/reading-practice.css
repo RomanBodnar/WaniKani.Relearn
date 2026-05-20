@@ -181,9 +181,11 @@
   gap: 4px;
   padding: 4px 10px;
   border-radius: 6px;
+  border: none;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
   transition: all 0.2s ease;
   font-family: var(--font-jp);
 }
