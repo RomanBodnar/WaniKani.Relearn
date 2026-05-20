@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { ReadingSentence } from "~/types/reading";
-import { SubjectPreviewModal } from "~/components/SubjectPreviewModal";
+import { SubjectPreviewInline } from "~/components/SubjectPreviewInline";
 
 interface ReadingSentenceCardProps {
   sentence: ReadingSentence;
@@ -15,13 +15,32 @@ interface ReadingSentenceCardProps {
 export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: ReadingSentenceCardProps) {
   const [userInput, setUserInput] = useState("");
   const [isRevealed, setIsRevealed] = useState(false);
-  const [activeSubject, setActiveSubject] = useState<{ id: number; element: HTMLElement } | null>(null);
+  const [activeSubjectId, setActiveSubjectId] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+  const closingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (closingTimeoutRef.current) clearTimeout(closingTimeoutRef.current);
+    };
+  }, []);
 
   const handlePillClick = (e: React.MouseEvent<HTMLButtonElement>, id: number) => {
-    setActiveSubject({
-      id,
-      element: e.currentTarget
-    });
+    if (activeSubjectId === id) {
+      setIsClosing(true);
+      closingTimeoutRef.current = setTimeout(() => {
+        setIsClosing(false);
+        setActiveSubjectId(null);
+        closingTimeoutRef.current = null;
+      }, 300); // matches the 0.3s CSS transition duration
+    } else {
+      if (closingTimeoutRef.current) {
+        clearTimeout(closingTimeoutRef.current);
+        closingTimeoutRef.current = null;
+      }
+      setIsClosing(false);
+      setActiveSubjectId(id);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,16 +66,18 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
         {sentence.sourceVocabulary && sentence.sourceVocabulary.length > 0 && (
           <div className="sentence-tags-group">
             <span className="sentence-tags-label">Vocab</span>
-            {sentence.sourceVocabulary.map((vocab) => (
-              <button
-                type="button"
-                key={`vocab-${vocab.subjectId}`}
-                onClick={(e) => handlePillClick(e, vocab.subjectId)}
-                className="sentence-tag sentence-tag-vocab"
-              >
-                {vocab.characters}
-              </button>
-            ))}
+            <div className="sentence-tags-pills">
+              {sentence.sourceVocabulary.map((vocab) => (
+                <button
+                  type="button"
+                  key={`vocab-${vocab.subjectId}`}
+                  onClick={(e) => handlePillClick(e, vocab.subjectId)}
+                  className={`sentence-tag sentence-tag-vocab ${activeSubjectId === vocab.subjectId ? 'active' : ''}`}
+                >
+                  {vocab.characters}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
@@ -64,25 +85,26 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
         {sentence.kanjiInSentence && sentence.kanjiInSentence.length > 0 && (
           <div className="sentence-tags-group">
             <span className="sentence-tags-label">Kanji</span>
-            {sentence.kanjiInSentence.map((kanji) => (
-              <button
-                type="button"
-                key={`kanji-${kanji.subjectId}`}
-                onClick={(e) => handlePillClick(e, kanji.subjectId)}
-                className="sentence-tag sentence-tag-kanji"
-              >
-                {kanji.characters}
-              </button>
-            ))}
+            <div className="sentence-tags-pills">
+              {sentence.kanjiInSentence.map((kanji) => (
+                <button
+                  type="button"
+                  key={`kanji-${kanji.subjectId}`}
+                  onClick={(e) => handlePillClick(e, kanji.subjectId)}
+                  className={`sentence-tag sentence-tag-kanji ${activeSubjectId === kanji.subjectId ? 'active' : ''}`}
+                >
+                  {kanji.characters}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
 
-      {activeSubject !== null && (
-        <SubjectPreviewModal
-          subjectId={activeSubject.id}
-          anchorElement={activeSubject.element}
-          onClose={() => setActiveSubject(null)}
+      {activeSubjectId !== null && (
+        <SubjectPreviewInline
+          subjectId={activeSubjectId}
+          isClosing={isClosing}
         />
       )}
 

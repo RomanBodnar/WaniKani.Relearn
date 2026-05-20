@@ -154,16 +154,15 @@
 /* ===== Subject Tags ===== */
 .sentence-tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
 .sentence-tags-group {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .sentence-tags-label {
@@ -172,7 +171,17 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #94a3b8;
-  margin-right: 2px;
+  width: 44px;
+  text-align: right;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.sentence-tags-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
 }
 
 .sentence-tag {
@@ -190,9 +199,23 @@
   font-family: var(--font-jp);
 }
 
-.sentence-tag:hover {
+.sentence-tag:hover:not(.active) {
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sentence-tag.active {
+  transform: scale(1.05);
+  position: relative;
+  z-index: 10;
+}
+
+.sentence-tag-vocab.active {
+  box-shadow: 0 4px 10px -2px var(--color-wk-vocabulary);
+}
+
+.sentence-tag-kanji.active {
+  box-shadow: 0 4px 10px -2px var(--color-wk-kanji);
 }
 
 .sentence-tag-vocab {

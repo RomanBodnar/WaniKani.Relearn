@@ -9,6 +9,7 @@ public class UserService(
 {
     public async Task CreateUser(string username, string email, string password)
     {
+        
         string userId = "user_" + Guid.CreateVersion7().ToString("N");
         var userDoc = firestore.Collection("users").Document(userId);
         var credentialsDoc = firestore.Collection("user-credentials").Document(userId);
@@ -32,16 +33,28 @@ public class UserService(
         await credentialsDoc.SetAsync(userCredentials);
     }
 
-    public Task<User?> GetUserByUsername(string username)
+    public async Task<User?> GetUserByUsername(string username)
     {
-        // Implement logic to retrieve user by username from database.
-        throw new NotImplementedException();
+        var query = firestore
+            .Collection("users")
+            .WhereEqualTo("Username", username)
+            .Limit(1);
+        var snapshot = await query.GetSnapshotAsync();
+        var document = snapshot.Documents.FirstOrDefault();
+        if (document == null) return null;
+        return document.ConvertTo<User>();
     }
 
-    public Task<User?> GetUserByEmail(string email)
+    public async Task<User?> GetUserByEmail(string email)
     {
-        // Implement logic to retrieve user by email from database.
-        throw new NotImplementedException();
+        var query = firestore
+            .Collection("users")
+            .WhereEqualTo("Email", email)
+            .Limit(1);
+        var snapshot = await query.GetSnapshotAsync();
+        var document = snapshot.Documents.FirstOrDefault();
+        if (document == null) return null;
+        return document.ConvertTo<User>();
     }
 
     public async Task<bool> ValidateUserCredentials(string usernameOrEmail, string password)
