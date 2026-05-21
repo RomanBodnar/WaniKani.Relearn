@@ -74,6 +74,42 @@
     color: #94a3b8;
 }
 
+.auth-password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-password-wrapper input {
+    width: 100%;
+    padding-right: 44px; /* Make room for the toggle icon */
+}
+
+.auth-password-toggle {
+    position: absolute;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.auth-password-toggle:hover {
+    color: #1e293b;
+    background-color: #f1f5f9;
+}
+
+.dark .auth-password-toggle:hover {
+    color: #f8fafc;
+    background-color: #334155;
+}
+
 .auth-submit-btn {
     background-color: var(--color-pink-hot, #FE3365);
     color: white;
@@ -173,6 +209,17 @@
     background-color: rgba(220, 38, 38, 0.1);
     color: #fca5a5;
     border-color: rgba(220, 38, 38, 0.2);
+}
+
+.field-error {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.dark .field-error {
+    color: #fca5a5;
 }
 
 @media (max-width: 480px) {

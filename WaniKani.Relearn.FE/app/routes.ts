@@ -13,5 +13,6 @@ export default [
     route("/search", "./search/search.tsx"),
     route("/settings", "./settings/settings.tsx"),
     route("/login", "./auth/login.tsx"),
-    route("/register", "./auth/register.tsx")
+    route("/register", "./auth/register.tsx"),
+    route("/profile", "./profile/profile.tsx")
 ] satisfies RouteConfig;

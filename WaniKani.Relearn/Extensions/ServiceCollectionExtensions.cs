@@ -39,8 +39,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddScoped<SubjectsService>();
-        services.AddTransient<IPasswordHasher, PasswordHasher>();
-        services.AddTransient<IUserService, UserService>();
+
         return services;
     }
 

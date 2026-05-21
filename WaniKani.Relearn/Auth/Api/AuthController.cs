@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using System.Text;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using WaniKani.Relearn.Auth.Data;
@@ -9,54 +10,59 @@ namespace WaniKani.Relearn.Auth.Api;
 [Route("api/auth")]
 [ApiController]
 public class AuthController(
-    IUserService userService
+    IUserService userService,
+    IValidator<RegisterUserRequest> registerValidator
 ) : ControllerBase
 {
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
-        if (request.Email.Contains("@"))
+        if (!ModelState.IsValid)
         {
-            var isValid = await userService.ValidateUserCredentials(request.Email, request.Password);
-            if (!isValid) {
-                return Unauthorized(new { message = "Invalid email or password" });
-            }
-            // This is a placeholder for the actual login logic.
-            // In a real application, you would validate the user's credentials and issue a token or set a cookie.
-            var claims = new List<Claim> { 
-                new Claim(ClaimTypes.Email, request.Email),
-                new Claim(ClaimTypes.Role, "User")
-            };
-            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var principal = new ClaimsPrincipal(identity);
+            return BadRequest(ModelState);
+        }
 
-            // 3. This automatically issues the encrypted cookie to React
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-            
-            // 4. Set up the Public Claims Cookie for React (HttpOnly = false)
-            string jsonClaims = Convert.ToBase64String(
-                                    Encoding.UTF8.GetBytes(
-                                        JsonSerializer.Serialize(claims)));
-            Response.Cookies.Append("X-User-Claims", jsonClaims, new CookieOptions
-            {
-                HttpOnly = false, // <-- Crucial: JS needs to read this
-                Secure = true,
-                SameSite = SameSiteMode.Lax,
-                // Expires = DateTimeOffset.UtcNow.AddMinutes(15) // Keep synced with session lifetime
-            });
-        
-        return Ok(new { message = "Logged in successfully" });
-        }
-        else
+        var isValid = await userService.ValidateUserCredentials(request.Email, request.Password);
+        if (!isValid)
         {
-            return BadRequest("Invalid email format.");
+            return Unauthorized(new { message = "Invalid email or password" });
         }
+        var user = await userService.GetUserByEmail(request.Email);
+        if (user is null)
+        {        
+            return new ObjectResult(new { message = "User not found" }) { StatusCode = StatusCodes.Status500InternalServerError }; 
+        }
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.Email, user.Email),
+            new(ClaimTypes.Name, user.Username),
+            new(ClaimTypes.Role, "User")
+        };
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+
+        // 3. This automatically issues the encrypted cookie to React
+        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+        // 4. Set up the Public Claims Cookie for React (HttpOnly = false)
+        string jsonClaims = Convert.ToBase64String(
+            Encoding.UTF8.GetBytes(
+                JsonSerializer.Serialize(claims)));
+        Response.Cookies.Append("X-User-Claims", jsonClaims, new CookieOptions
+        {
+            HttpOnly = false, // <-- Crucial: JS needs to read this
+            Secure = true,
+            SameSite = SameSiteMode.Lax,
+            // Expires = DateTimeOffset.UtcNow.AddMinutes(15) // Keep synced with session lifetime
+        });
+
+        return Ok(new { message = "Logged in successfully" });
     }
 
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);  
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         Response.Cookies.Delete("X-User-Claims");
         return Ok(new { message = "Logged out" });
     }
@@ -64,10 +70,12 @@ public class AuthController(
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterUserRequest request)
     {
-        await userService.CreateUser(request.Username, request.Email, request.Password);
+        if ( (await registerValidator.ValidateAsync(request)) is { IsValid: false } validationResult)
+        {
+            return BadRequest(validationResult.Errors);
+        }
 
-        // This is a placeholder for the actual registration logic.
-        // In a real application, you would create a new user account.
+        await userService.CreateUser(request.Username, request.Email, request.Password);
         return Ok(new { message = "User registered successfully" });
     }
 
@@ -81,7 +89,8 @@ public class AuthController(
         var username = User.Identity?.Name;
 
         // Send this info safely to React in the JSON body
-        return Ok(new { 
+        return Ok(new
+        {
             isAuthenticated = true,
             username,
             email,

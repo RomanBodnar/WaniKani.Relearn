@@ -1,6 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace WaniKani.Relearn.Auth.Api;
 
-public record class LoginRequest(
+public record  LoginRequest(
+    [Required]
+    [EmailAddress]
     string Email,
+    [Required]
     string Password
 );

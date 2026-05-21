@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using WaniKani.Relearn.Auth;
 using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Extensions;
 
@@ -45,6 +46,7 @@ public class Program
         var services = builder.Services;
         var configuration = builder.Configuration;
         services
+            .AddAuthApi()
             .AddDataAccess(configuration)
             .AddServices()
             .AddMappers()

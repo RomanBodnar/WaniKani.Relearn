@@ -1,0 +1,119 @@
+.profile-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 80px);
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-pink-hot, #FE3365);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    box-shadow: 0 4px 12px rgba(254, 51, 101, 0.25);
+}
+
+.profile-title {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-data-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-data-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.profile-data-value {
+    font-size: 1.15rem;
+    color: #0f172a;
+    font-weight: 500;
+    padding: 12px 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Dark Mode Support */
+.dark .profile-card {
+    background-color: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.dark .profile-header {
+    border-bottom-color: #334155;
+}
+
+.dark .profile-title {
+    color: #f8fafc;
+}
+
+.dark .profile-data-group label {
+    color: #94a3b8;
+}
+
+.dark .profile-data-value {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+@media (max-width: 600px) {
+    .profile-card {
+        padding: 24px;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+}

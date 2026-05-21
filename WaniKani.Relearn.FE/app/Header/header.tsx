@@ -1,7 +1,8 @@
-import { Link, useNavigate, useSearchParams, useRouteLoaderData, useLocation } from "react-router";
+import { Link, useNavigate, useSearchParams, useRouteLoaderData, useLocation, useRevalidator } from "react-router";
 import { useState, useRef, useEffect } from "react";
 import "./header.css";
 import NavigationBar from "~/components/NavigationBar";
+import { API_ENDPOINTS } from "~/config/api";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -10,6 +11,8 @@ const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(!!query);
     const [inputValue, setInputValue] = useState(query);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+    const { revalidate } = useRevalidator();
     
     // Use data from root loader instead of checking document.cookie
     // This solves the hydration mismatch and flicker on refresh
@@ -26,11 +29,23 @@ const Header = () => {
         if (query) setIsSearchOpen(true);
     }, [query]);
 
-    // Close mobile menu on navigation
+    // Close mobile and profile menus on navigation
     const location = useLocation();
     useEffect(() => {
         setIsMobileMenuOpen(false);
+        setIsProfileMenuOpen(false);
     }, [location.pathname]);
+
+    const handleLogout = async () => {
+        try {
+            await fetch(API_ENDPOINTS.logout, { method: 'POST', credentials: 'include' });
+            revalidate();
+            navigate('/login');
+            setIsProfileMenuOpen(false);
+        } catch (error) {
+            console.error("Logout failed", error);
+        }
+    };
 
     // Focus input when search opens
     useEffect(() => {
@@ -180,12 +195,34 @@ const Header = () => {
                         </Link>
 
                         {isLoggedIn ? (
-                            <Link to="/profile" className="header-action-button" aria-label="Profile" title="Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                                    <circle cx="12" cy="7" r="4" />
-                                </svg>
-                            </Link>
+                            <div className="header-profile-menu-container">
+                                <button 
+                                    className={`header-action-button ${isProfileMenuOpen ? 'active' : ''}`}
+                                    onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
+                                    aria-label="Profile Menu" 
+                                    title="Profile Menu"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                </button>
+                                
+                                {isProfileMenuOpen && (
+                                    <>
+                                        <div className="profile-menu-backdrop" onClick={() => setIsProfileMenuOpen(false)} />
+                                        <div className="profile-dropdown-menu">
+                                            <Link to="/profile" className="profile-dropdown-item" onClick={() => setIsProfileMenuOpen(false)}>
+                                                View Profile
+                                            </Link>
+                                            <div className="profile-dropdown-divider" />
+                                            <button className="profile-dropdown-item text-danger" onClick={handleLogout}>
+                                                Log out
+                                            </button>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
                         ) : (
                             <Link to="/login" className="header-login-button" aria-label="Log in" title="Log in">
                                 Log in
