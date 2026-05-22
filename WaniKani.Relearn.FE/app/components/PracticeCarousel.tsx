@@ -72,10 +72,7 @@ export default function PracticeCarousel({ subjects, variant, initialIndex = 0 }
         {subjects.map((subject, index) => {
           const offset = index - currentIndex;
           const absOffset = Math.abs(offset);
-          
-          // Coverflow math with true 3D depth
-          const translateX = offset * 300; // Adjusted to 300px horizontal spread
-          const translateZ = -absOffset * 250; // Push side cards back to prevent 3D clipping and provide natural scale
+          // Coverflow math with CSS variables for responsive design
           const rotateY = offset === 0 ? 0 : offset > 0 ? -35 : 35; // 35 degrees tilt
           const zIndex = 100 - absOffset;
           const opacity = Math.max(1 - absOffset * 0.4, 0); // Drops to 0 at offset 3, keeping 2 cards visible per side
@@ -86,7 +83,7 @@ export default function PracticeCarousel({ subjects, variant, initialIndex = 0 }
               className="practice-carousel-item"
               onClick={() => setCurrentIndex(index)}
               style={{
-                transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
+                transform: `translateX(calc(var(--carousel-spread) * ${offset})) translateZ(calc(var(--carousel-depth) * ${-absOffset})) rotateY(${rotateY}deg)`,
                 zIndex,
                 opacity,
                 pointerEvents: opacity === 0 ? 'none' : 'auto'

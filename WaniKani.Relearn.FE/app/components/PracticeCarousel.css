@@ -1,4 +1,8 @@
 .practice-carousel-container {
+  --carousel-spread: 300px;
+  --carousel-depth: 250px;
+  --carousel-item-width: 360px;
+  --carousel-item-height: 460px;
   position: relative;
   width: 100%;
   height: 520px;
@@ -23,8 +27,8 @@
 
 .practice-carousel-item {
   position: absolute;
-  width: 360px;
-  height: 460px;
+  width: var(--carousel-item-width);
+  height: var(--carousel-item-height);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform-style: preserve-3d;
   display: flex;
@@ -67,6 +71,16 @@
 
 .practice-carousel-arrow-right {
   right: 16px;
+}
+
+@media (max-width: 768px) {
+  .practice-carousel-container {
+    --carousel-spread: 160px;
+    --carousel-depth: 200px;
+    --carousel-item-width: 280px;
+    --carousel-item-height: 380px;
+    height: 420px;
+  }
 }
 
 /* Hide arrows on mobile */
