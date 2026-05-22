@@ -16,7 +16,11 @@ import { AppSettingsProvider } from "./hooks/useAppSettings";
 import { BookmarksProvider } from "./hooks/useBookmarks";
 
 export async function clientLoader({ request }: Route.ClientLoaderArgs) {
-  const isLoggedIn = typeof document !== 'undefined' ? document.cookie.includes("X-User-Claims=") : false;
+  let isLoggedIn = false;
+  if (typeof document !== 'undefined') {
+    const claims = document.cookie.split('; ').find(row => row.startsWith('X-User-Claims='));
+    isLoggedIn = !!claims && claims.split('=')[1] !== '';
+  }
   return { isLoggedIn };
 }
 

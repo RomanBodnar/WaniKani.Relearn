@@ -11,6 +11,7 @@ interface BookmarksContextType {
     removeBookmark: (subjectId: number) => Promise<void>;
     isBookmarked: (subjectId: number) => boolean;
     fetchBookmarks: () => Promise<void>;
+    isLoggedIn: boolean;
 }
 
 const BookmarksContext = createContext<BookmarksContextType | undefined>(undefined);
@@ -18,6 +19,8 @@ const BookmarksContext = createContext<BookmarksContextType | undefined>(undefin
 export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
     const [bookmarks, setBookmarks] = useState<Subject[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const rootData = useRouteLoaderData("root") as { isLoggedIn: boolean } | undefined;
+    const isLoggedIn = rootData?.isLoggedIn || false;
 
     const fetchBookmarks = useCallback(async () => {
         try {
@@ -52,7 +55,8 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
     }, [fetchBookmarks]);
 
     const addBookmark = async (subject: Subject) => {
-        const isLoggedIn = typeof document !== 'undefined' ? document.cookie.includes("X-User-Claims=") : false;
+        const claims = typeof document !== 'undefined' ? document.cookie.split('; ').find(row => row.startsWith('X-User-Claims=')) : null;
+        const isLoggedIn = !!claims && claims.split('=')[1] !== '';
         if (!isLoggedIn) return;
 
         // Optimistic update
@@ -78,7 +82,8 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const removeBookmark = async (subjectId: number) => {
-        const isLoggedIn = typeof document !== 'undefined' ? document.cookie.includes("X-User-Claims=") : false;
+        const claims = typeof document !== 'undefined' ? document.cookie.split('; ').find(row => row.startsWith('X-User-Claims=')) : null;
+        const isLoggedIn = !!claims && claims.split('=')[1] !== '';
         if (!isLoggedIn) return;
 
         // Optimistic update
@@ -111,7 +116,15 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
     };
 
     return (
-        <BookmarksContext.Provider value={{ bookmarks, isLoading, addBookmark, removeBookmark, isBookmarked, fetchBookmarks }}>
+        <BookmarksContext.Provider value={{ 
+            bookmarks, 
+            isLoading, 
+            addBookmark, 
+            removeBookmark, 
+            isBookmarked,
+            fetchBookmarks,
+            isLoggedIn
+        }}>
             {children}
         </BookmarksContext.Provider>
     );

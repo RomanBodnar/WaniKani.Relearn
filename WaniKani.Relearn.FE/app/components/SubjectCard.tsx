@@ -13,7 +13,7 @@ interface SubjectCardProps {
 export const SubjectCard = ({ subject, variant, onClick }: SubjectCardProps) => {
   const primaryMeaning = subject.Meanings?.find((m) => m.Primary);
   const primaryReading = subject.Readings?.find((r) => r.Primary);
-  const { isBookmarked, addBookmark, removeBookmark } = useBookmarks();
+  const { isBookmarked, addBookmark, removeBookmark, isLoggedIn } = useBookmarks();
 
   const bookmarked = isBookmarked(subject.Id);
 
@@ -34,25 +34,27 @@ export const SubjectCard = ({ subject, variant, onClick }: SubjectCardProps) => 
       onClick={onClick ? (e) => { e.preventDefault(); onClick(e, subject); } : undefined}
     >
       <div className={`subject-card ${variant ? `subject-card-${variant}` : ''} ${bookmarked ? 'bookmarked-card' : ''}`}>
-        <button 
-          className={`subject-bookmark-btn ${bookmarked ? 'bookmarked' : ''}`}
-          onClick={handleBookmarkClick}
-          aria-label={bookmarked ? "Remove from My Box" : "Add to My Box"}
-        >
-          {bookmarked ? (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-          ) : (
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-          )}
-          <span className="subject-bookmark-tooltip">
-            {bookmarked ? "Remove from My Box" : "Add to My Box"}
-          </span>
-        </button>
+        {isLoggedIn && (
+          <button 
+            className={`subject-bookmark-btn ${bookmarked ? 'bookmarked' : ''}`}
+            onClick={handleBookmarkClick}
+            aria-label={bookmarked ? "Remove from My Box" : "Add to My Box"}
+          >
+            {bookmarked ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            )}
+            <span className="subject-bookmark-tooltip">
+              {bookmarked ? "Remove from My Box" : "Add to My Box"}
+            </span>
+          </button>
+        )}
         <div className="subject-card-character japanese-text">
           <SubjectCharacter subject={{ Characters: subject.Characters, CharacterImages: subject.CharacterImages, Slug: subject.Slug }} />
         </div>

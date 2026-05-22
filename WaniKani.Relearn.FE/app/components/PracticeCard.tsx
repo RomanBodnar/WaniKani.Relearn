@@ -19,7 +19,7 @@ interface PracticeCardProps {
 export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) => {
   const [fullData, setFullData] = useState<Subject | null>(subjectCache.get(subject.Id) || null);
   const [isLoading, setIsLoading] = useState(false);
-  const { isBookmarked, addBookmark, removeBookmark } = useBookmarks();
+  const { isBookmarked, addBookmark, removeBookmark, isLoggedIn } = useBookmarks();
 
   const bookmarked = isBookmarked(subject.Id);
 
@@ -68,22 +68,24 @@ export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) 
 
   return (
     <div className={`practice-card ${variant ? `practice-card-${variant}` : ''} ${bookmarked ? 'bookmarked-card' : ''}`}>
-      <button 
-        className={`subject-bookmark-btn ${bookmarked ? 'bookmarked' : ''}`}
-        onClick={handleBookmarkClick}
-        aria-label={bookmarked ? "Remove from My Box" : "Add to My Box"}
-      >
-        {bookmarked ? (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        ) : (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        )}
-      </button>
+      {isLoggedIn && (
+        <button 
+          className={`subject-bookmark-btn ${bookmarked ? 'bookmarked' : ''}`}
+          onClick={handleBookmarkClick}
+          aria-label={bookmarked ? "Remove from My Box" : "Add to My Box"}
+        >
+          {bookmarked ? (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          )}
+        </button>
+      )}
 
       <div className="practice-card-top">
         <div className="practice-card-character japanese-text">
