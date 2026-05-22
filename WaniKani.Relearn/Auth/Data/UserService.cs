@@ -69,4 +69,14 @@ public class UserService(
         var credentials = document.ConvertTo<UserCredentials>();   
         return passwordHasher.VerifyPassword(password, credentials.PasswordHash);
     }
+
+    public async Task<User?> GetUserById(string userId, CancellationToken cancellation = default)
+    {
+        var userDocRef = firestore.Collection("users").Document(userId);
+        var userSnapshot = await userDocRef.GetSnapshotAsync(cancellation);
+        if (!userSnapshot.Exists) return null;
+        
+        return userSnapshot.ConvertTo<User>();
+    }
+
 }
