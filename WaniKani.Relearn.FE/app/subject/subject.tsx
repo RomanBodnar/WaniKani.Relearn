@@ -149,9 +149,9 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           {primaryMeaning && (
             <h1 className="subject-detail-primary-meaning">{primaryMeaning}</h1>
           )}
-          {subject.Level !== undefined && (
+          {subject.WaniKaniLevel !== undefined && (
             <div className="subject-meta-row">
-              <span className="subject-meta-chip">Level {subject.Level}</span>
+              <span className="subject-meta-chip">Level {subject.WaniKaniLevel}</span>
             </div>
           )}
         </div>

@@ -15,4 +15,7 @@ export const API_ENDPOINTS = {
   login: `${API_BASE_URL}/api/auth/login`,
   logout: `${API_BASE_URL}/api/auth/logout`,
   authMe: `${API_BASE_URL}/api/auth/me`,
+
+  bookmarks: `${API_BASE_URL}/api/user/subjects`,
+  bookmarkSubject: (id: string | number) => `${API_BASE_URL}/api/user/subjects/${id}`,
 } as const;

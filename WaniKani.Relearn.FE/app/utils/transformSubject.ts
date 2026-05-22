@@ -41,31 +41,46 @@ interface RawSubjectData {
  * Transforms API response (snake_case/lowercase) to match Subject interface (PascalCase)
  * Handles both top-level and nested property name conversions
  */
-export function transformSubject(apiSubject: RawSubjectData): Subject {
+export function transformSubject(apiSubject: any): Subject {
+  const id = apiSubject.id ?? apiSubject.Id ?? (apiSubject.subjectId ? parseInt(apiSubject.subjectId, 10) : undefined) ?? (apiSubject.SubjectId ? parseInt(apiSubject.SubjectId, 10) : undefined);
+  
   return {
-    Id: apiSubject.id,
-    Object: apiSubject.object,
-    Url: apiSubject.url,
-    DataUpdatedAt: apiSubject.dataUpdatedAt,
-    Characters: apiSubject.characters,
-    Meanings: apiSubject.meanings?.map((m) => ({
-      Meaning: m.meaning,
-      Primary: m.primary,
-      AcceptedAnswer: m.accepted_answer,
-    })) || [],
-    Readings: apiSubject.readings?.map((r) => ({
-      Reading: r.reading,
-      Primary: r.primary,
-      AcceptedAnswer: r.accepted_answer,
-      Type: r.type,
-    })) || [],
-    Level: apiSubject.level,
-    LessonPosition: apiSubject.lessonPosition,
-    MeaningMnemonic: apiSubject.meaningMnemonic,
-    ReadingMnemonic: apiSubject.readingMnemonic,
-    PartsOfSpeech: apiSubject.partsOfSpeech,
-    Slug: apiSubject.slug,
-    SpacedRepetitionSystemId: apiSubject.spacedRepetitionSystemId,
+    Id: id,
+    Object: apiSubject.object ?? apiSubject.Object ?? apiSubject.type ?? apiSubject.Type,
+    Url: apiSubject.url ?? apiSubject.Url,
+    DataUpdatedAt: apiSubject.dataUpdatedAt ?? apiSubject.DataUpdatedAt,
+    Characters: apiSubject.characters ?? apiSubject.Characters,
+    Meanings: (apiSubject.meanings || apiSubject.Meanings)?.map((m: any) => ({
+      Meaning: m.meaning ?? m.Meaning,
+      Primary: m.primary ?? m.Primary,
+      AcceptedAnswer: m.accepted_answer ?? m.AcceptedAnswer,
+    })) || (
+      (apiSubject.meaning || apiSubject.Meaning) ? [{
+        Meaning: apiSubject.meaning || apiSubject.Meaning,
+        Primary: true,
+        AcceptedAnswer: true
+      }] : []
+    ),
+    Readings: (apiSubject.readings || apiSubject.Readings)?.map((r: any) => ({
+      Reading: r.reading ?? r.Reading,
+      Primary: r.primary ?? r.Primary,
+      AcceptedAnswer: r.accepted_answer ?? r.AcceptedAnswer,
+      Type: r.type ?? r.Type,
+    })) || (
+      (apiSubject.reading || apiSubject.Reading) ? [{
+        Reading: apiSubject.reading || apiSubject.Reading,
+        Primary: true,
+        AcceptedAnswer: true,
+        Type: 'primary'
+      }] : []
+    ),
+    Level: apiSubject.level ?? apiSubject.Level,
+    LessonPosition: apiSubject.lessonPosition ?? apiSubject.LessonPosition,
+    MeaningMnemonic: apiSubject.meaningMnemonic ?? apiSubject.MeaningMnemonic,
+    ReadingMnemonic: apiSubject.readingMnemonic ?? apiSubject.ReadingMnemonic,
+    PartsOfSpeech: apiSubject.partsOfSpeech ?? apiSubject.PartsOfSpeech,
+    Slug: apiSubject.slug ?? apiSubject.Slug,
+    SpacedRepetitionSystemId: apiSubject.spacedRepetitionSystemId ?? apiSubject.SpacedRepetitionSystemId,
     ComponentSubjectIds: apiSubject.componentSubjectIds,
     ContextSentences: apiSubject.contextSentences,
     PronunciationAudios: apiSubject.pronunciationAudios,

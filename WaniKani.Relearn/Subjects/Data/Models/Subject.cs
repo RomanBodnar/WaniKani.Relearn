@@ -22,6 +22,6 @@ public record Subject
     // Subject base properties
     public DateTime CreatedAt { get; init; }
     public DateTime? HiddenAt { get; init; }
-    public int WaniKaniLevel { get; init; }   
+    public int Level { get; init; }   
     public int SpacedRepetitionSystemId { get; init; }
 }

@@ -17,7 +17,7 @@ public partial class VocabularyMapper
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.CreatedAt), nameof(DataAccessVocabulary.CreatedAt))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.DocumentUrl), nameof(DataAccessVocabulary.WaniKaniDocumentUrl))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.HiddenAt), nameof(DataAccessVocabulary.HiddenAt))]
-    [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.Level), nameof(DataAccessVocabulary.WaniKaniLevel))]
+    [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.Level), nameof(DataAccessVocabulary.Level))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.MeaningMnemonic), nameof(DataAccessVocabulary.MeaningMnemonic))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.Meanings), nameof(DataAccessVocabulary.Meanings))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(Vocabulary.Slug), nameof(DataAccessVocabulary.Slug))]

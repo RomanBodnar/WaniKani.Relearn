@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { API_ENDPOINTS } from "~/config/api";
 import { type Subject } from "~/hooks/Subject";
 import { transformSubject } from "~/utils/transformSubject";
+import { useBookmarks } from "~/hooks/useBookmarks";
 import "./SubjectPreviewInline.css";
 
 interface SubjectPreviewInlineProps {
@@ -14,6 +15,7 @@ export function SubjectPreviewInline({ subjectId, isClosing }: SubjectPreviewInl
   const [subject, setSubject] = useState<Subject | null>(null);
   const [loading, setLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const { isBookmarked, addBookmark, removeBookmark } = useBookmarks();
 
   useEffect(() => {
     // Wait for the next frame to trigger the CSS transition
@@ -70,8 +72,21 @@ export function SubjectPreviewInline({ subjectId, isClosing }: SubjectPreviewInl
           </div>
 
           <div className="subject-preview-actions-row">
-            <button className="subject-preview-add-btn-small" type="button">
-              + My Box
+            <button 
+              className={`subject-preview-add-btn-small ${subject && isBookmarked(subject.Id) ? 'bookmarked' : ''}`} 
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (!subject) return;
+                if (isBookmarked(subject.Id)) {
+                  removeBookmark(subject.Id);
+                } else {
+                  addBookmark(subject);
+                }
+              }}
+            >
+              {subject && isBookmarked(subject.Id) ? '- My Box' : '+ My Box'}
             </button>
             <Link to={`/subject/${subject.Id}`} className="subject-preview-full-link" title="View Full Details">
               View Full Details &rarr;

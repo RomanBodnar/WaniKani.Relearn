@@ -1,0 +1,147 @@
+.practice-card {
+  width: 100%;
+  height: 100%;
+  background: var(--color-surface, #ffffff);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.practice-card-kanji { border-color: var(--color-kanji-block, #f43f5e); }
+.practice-card-radical { border-color: var(--color-radical-block, #3b82f6); }
+.practice-card-vocabulary { border-color: var(--color-vocabulary-block, #a855f7); }
+
+.practice-card.bookmarked-card {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.practice-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: var(--color-surface, #ffffff);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.practice-card-character {
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--color-text, #0f172a);
+  line-height: 1;
+}
+
+.practice-card-kanji .practice-card-top { background: color-mix(in srgb, var(--color-kanji-block) 10%, transparent); color: var(--color-kanji-block); }
+.practice-card-radical .practice-card-top { background: color-mix(in srgb, var(--color-radical-block) 10%, transparent); color: var(--color-radical-block); }
+.practice-card-vocabulary .practice-card-top { background: color-mix(in srgb, var(--color-vocabulary-block) 10%, transparent); color: var(--color-vocabulary-block); }
+
+.practice-card-kanji .practice-card-character { color: var(--color-kanji-block); }
+.practice-card-radical .practice-card-character { color: var(--color-radical-block); }
+.practice-card-vocabulary .practice-card-character { color: var(--color-vocabulary-block); }
+
+.practice-card-content {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.practice-card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.practice-card-section-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin: 0;
+  font-weight: 600;
+}
+
+.practice-card-section-text {
+  font-size: 20px;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.practice-card-loading {
+  font-size: 13px;
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+  padding: 16px;
+}
+
+.practice-card-footer {
+  padding: 16px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.practice-card-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background: var(--color-text, #0f172a);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.practice-card-btn:hover {
+  background: #334155;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.practice-card .subject-bookmark-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface, #ffffff);
+  border: 1px solid #e2e8f0;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.practice-card .subject-bookmark-btn:hover {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.practice-card .subject-bookmark-btn.bookmarked {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #ef4444;
+}
+
+.practice-card .subject-bookmark-btn.bookmarked:hover {
+  background: #fee2e2;
+}

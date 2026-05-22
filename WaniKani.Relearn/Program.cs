@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using WaniKani.Relearn.Auth;
 using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Extensions;
+using WaniKani.Relearn.Subjects;
 
 namespace WaniKani.Relearn;
 
@@ -47,6 +48,7 @@ public class Program
         var configuration = builder.Configuration;
         services
             .AddAuthApi()
+            .AddSubjectsApi()
             .AddDataAccess(configuration)
             .AddServices()
             .AddMappers()

@@ -13,7 +13,7 @@ public partial class KanaVocabularyMapper
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.Characters), nameof(DataAccessVocabulary.Characters))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.CreatedAt), nameof(DataAccessVocabulary.CreatedAt))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.HiddenAt), nameof(DataAccessVocabulary.HiddenAt))]
-    [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.Level), nameof(DataAccessVocabulary.WaniKaniLevel))]
+    [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.Level), nameof(DataAccessVocabulary.Level))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.MeaningMnemonic), nameof(DataAccessVocabulary.MeaningMnemonic))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.Meanings), nameof(DataAccessVocabulary.Meanings))]
     [MapProperty(nameof(SingleResource<>.Data) + "." + nameof(KanaVocabulary.Slug), nameof(DataAccessVocabulary.Slug))]

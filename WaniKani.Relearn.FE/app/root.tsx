@@ -13,6 +13,7 @@ import Header from "./Header/header";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import Footer from "./components/Footer";
 import { AppSettingsProvider } from "./hooks/useAppSettings";
+import { BookmarksProvider } from "./hooks/useBookmarks";
 
 export async function clientLoader({ request }: Route.ClientLoaderArgs) {
   const isLoggedIn = typeof document !== 'undefined' ? document.cookie.includes("X-User-Claims=") : false;
@@ -44,22 +45,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <AppSettingsProvider>
-          <div className="brand-accent-strip" aria-hidden="true" />
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-          <ScrollRestoration
-            getKey={(location) => {
-              const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice", "/search"];
-              if (pathsToPreserve.includes(location.pathname)) {
-                return location.pathname;
-              }
-              return location.key;
-            }}
-          />
-          <Scripts />
+          <BookmarksProvider>
+            <div className="brand-accent-strip" aria-hidden="true" />
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
+            <ScrollRestoration
+              getKey={(location) => {
+                const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice", "/search"];
+                if (pathsToPreserve.includes(location.pathname)) {
+                  return location.pathname;
+                }
+                return location.key;
+              }}
+            />
+            <Scripts />
+          </BookmarksProvider>
         </AppSettingsProvider>
       </body>
     </html>

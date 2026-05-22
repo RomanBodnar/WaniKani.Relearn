@@ -73,7 +73,7 @@ public class SentenceExtractor(
             result.Add((
                  sentence.Ja,
                  sentence.En,
-                 vocab.WaniKaniLevel,
+                 vocab.Level,
                  new SubjectReference { SubjectId = vocab.Id, Characters = vocab.Characters! }
              ));
         }

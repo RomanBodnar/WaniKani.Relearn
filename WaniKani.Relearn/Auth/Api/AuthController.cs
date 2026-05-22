@@ -34,6 +34,7 @@ public class AuthController(
         }
         var claims = new List<Claim>
         {
+            new(ClaimTypes.NameIdentifier, user.UserId),
             new(ClaimTypes.Email, user.Email),
             new(ClaimTypes.Name, user.Username),
             new(ClaimTypes.Role, "User")
