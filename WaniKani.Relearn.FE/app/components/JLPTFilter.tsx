@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LevelFilter.css";
 
 export type JlptLevel = string;
@@ -33,9 +33,22 @@ export const JLPTFilter: React.FC<JLPTFilterProps> = ({
     }
   };
 
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const getActiveLabel = () => {
+    if (selectedLevels.length === 0) return "All JLPT";
+    if (selectedLevels.length === 1) return selectedLevels[0];
+    return `${selectedLevels.length} selected`;
+  };
+
   return (
-    <div className="level-filter-container">
-      <span className="filter-label">JLPT:</span>
+    <div className={`level-filter-container filter-group ${isExpanded ? "expanded" : ""}`}>
+      <button className="filter-label filter-toggle" onClick={() => setIsExpanded(!isExpanded)}>
+        JLPT: <span className="mobile-active-label">{getActiveLabel()}</span>
+        <svg className="filter-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
       <div className="filter-options">
         {LEVELS.map((level) => {
           const isActive = level.value === null 

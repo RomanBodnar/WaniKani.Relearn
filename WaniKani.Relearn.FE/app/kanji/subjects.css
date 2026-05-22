@@ -80,11 +80,3 @@
 .kanji-filter-wrapper {
   display: contents;
 }
-
-.kanji-filter-wrapper .level-filter-container {
-  display: contents !important;
-}
-
-.kanji-filter-wrapper .filter-options {
-  flex-wrap: nowrap !important;
-}

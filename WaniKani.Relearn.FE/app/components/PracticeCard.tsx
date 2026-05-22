@@ -95,14 +95,26 @@ export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) 
         {meanings.length > 0 && (
           <div className="practice-card-section">
             <h4 className="practice-card-section-title">Meanings</h4>
-            <p className="practice-card-section-text">{meanings.map(m => m.Meaning).join(', ')}</p>
+            <p className="practice-card-section-text">
+              {meanings.map((m, i) => (
+                <span key={`meaning-${i}`} className={`practice-inline-text ${m.Primary ? 'primary' : 'secondary'}`}>
+                  {m.Meaning}{i < meanings.length - 1 ? ', ' : ''}
+                </span>
+              ))}
+            </p>
           </div>
         )}
 
         {readings.length > 0 && (
           <div className="practice-card-section">
             <h4 className="practice-card-section-title">Readings</h4>
-            <p className="practice-card-section-text japanese-text">{readings.map(r => r.Reading).join(', ')}</p>
+            <p className="practice-card-section-text japanese-text">
+              {readings.map((r, i) => (
+                <span key={`reading-${i}`} className={`practice-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>
+                  {r.Reading}{i < readings.length - 1 ? ', ' : ''}
+                </span>
+              ))}
+            </p>
           </div>
         )}
 

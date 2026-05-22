@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LevelFilter.css";
 
 export type LevelRange = [number, number] | null;
@@ -28,9 +28,17 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
     return range[0] === selectedRange[0] && range[1] === selectedRange[1];
   };
 
+  const [isExpanded, setIsExpanded] = useState(false);
+  const activeLabel = RANGES.find((r) => isSelected(r.value))?.label || "All Levels";
+
   return (
-    <div className="level-filter-container">
-      <span className="filter-label">Levels:</span>
+    <div className={`level-filter-container filter-group ${isExpanded ? "expanded" : ""}`}>
+      <button className="filter-label filter-toggle" onClick={() => setIsExpanded(!isExpanded)}>
+        Levels: <span className="mobile-active-label">{activeLabel}</span>
+        <svg className="filter-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
       <div className="filter-options">
         {RANGES.map((range) => (
           <button
