@@ -2,6 +2,7 @@ import type { Route } from "./+types/kanji";
 import { fetchSubjects, useInfiniteSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import PracticeCarousel from "../components/PracticeCarousel";
+import { ToggleSwitch } from "../components/ToggleSwitch";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import { JLPTFilter, type JlptLevel } from "../components/JLPTFilter";
@@ -198,16 +199,20 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
               </span>
             </h2>
             <div style={{ width: '1px', height: '24px', background: '#cbd5e1', margin: '0 8px' }}></div>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '14px', fontWeight: '500', color: '#64748b' }}>
-              <input type="checkbox" checked={isPracticeMode} onChange={(e) => setIsPracticeMode(e.target.checked)} style={{ accentColor: 'var(--color-kanji-block)', width: '16px', height: '16px', cursor: 'pointer' }} />
-              Practice Mode
-            </label>
+            <ToggleSwitch 
+              checked={isPracticeMode} 
+              onChange={setIsPracticeMode} 
+              label="Practice Mode" 
+              color="var(--color-kanji-block)" 
+            />
           </div>
           {isBoxOpen && (
             isPracticeMode ? (
-              <PracticeCarousel subjects={kanjiBookmarks} variant="kanji" initialIndex={practiceStartIndex} />
+              <div key="practice-mode" className="mode-transition-enter">
+                <PracticeCarousel subjects={kanjiBookmarks} variant="kanji" initialIndex={practiceStartIndex} />
+              </div>
             ) : (
-              <div className="subjects-grid my-box-grid" style={{ justifyContent: 'flex-start' }}>
+              <div key="grid-mode" className="subjects-grid my-box-grid mode-transition-enter" style={{ justifyContent: 'flex-start' }}>
                 {kanjiBookmarks.map((subject, index) => (
                   <SubjectCard 
                     key={subject.Id} 

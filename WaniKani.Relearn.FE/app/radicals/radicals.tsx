@@ -2,6 +2,7 @@ import type { Route } from "./+types/radicals";
 import { fetchSubjects, useInfiniteSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import PracticeCarousel from "../components/PracticeCarousel";
+import { ToggleSwitch } from "../components/ToggleSwitch";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import { ErrorDisplay } from "../components/ErrorDisplay";
@@ -151,16 +152,20 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
               </span>
             </h2>
             <div style={{ width: '1px', height: '24px', background: '#cbd5e1', margin: '0 8px' }}></div>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '14px', fontWeight: '500', color: '#64748b' }}>
-              <input type="checkbox" checked={isPracticeMode} onChange={(e) => setIsPracticeMode(e.target.checked)} style={{ accentColor: 'var(--color-radical-block)', width: '16px', height: '16px', cursor: 'pointer' }} />
-              Practice Mode
-            </label>
+            <ToggleSwitch 
+              checked={isPracticeMode} 
+              onChange={setIsPracticeMode} 
+              label="Practice Mode" 
+              color="var(--color-radical-block)" 
+            />
           </div>
           {isBoxOpen && (
             isPracticeMode ? (
-              <PracticeCarousel subjects={radicalBookmarks} variant="radical" initialIndex={practiceStartIndex} />
+              <div key="practice-mode" className="mode-transition-enter">
+                <PracticeCarousel subjects={radicalBookmarks} variant="radical" initialIndex={practiceStartIndex} />
+              </div>
             ) : (
-              <div className="subjects-grid my-box-grid" style={{ justifyContent: 'flex-start' }}>
+              <div key="grid-mode" className="subjects-grid my-box-grid mode-transition-enter" style={{ justifyContent: 'flex-start' }}>
                 {radicalBookmarks.map((subject, index) => (
                   <SubjectCard 
                     key={subject.Id} 

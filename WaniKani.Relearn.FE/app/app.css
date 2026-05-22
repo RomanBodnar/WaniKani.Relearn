@@ -175,6 +175,15 @@ Vocabulary Line: #00E676 (Acid Green)
   margin-top: -12px;
 }
 
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.mode-transition-enter {
+  animation: fadeInScale 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
 @media (max-width: 600px) {
   .my-box-grid {
     max-height: 520px;
