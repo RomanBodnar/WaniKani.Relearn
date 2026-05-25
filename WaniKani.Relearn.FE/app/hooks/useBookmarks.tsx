@@ -20,9 +20,18 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
     const [bookmarks, setBookmarks] = useState<Subject[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const rootData = useRouteLoaderData("root") as { isLoggedIn: boolean } | undefined;
-    const isLoggedIn = rootData?.isLoggedIn || false;
+    const [isLoggedInState, setIsLoggedInState] = useState(rootData?.isLoggedIn || false);
+
+    useEffect(() => {
+        setIsLoggedInState(rootData?.isLoggedIn || false);
+    }, [rootData?.isLoggedIn]);
 
     const fetchBookmarks = useCallback(async () => {
+        if (!rootData?.isLoggedIn) {
+            setIsLoading(false);
+            return;
+        }
+
         try {
             const response = await fetch(API_ENDPOINTS.bookmarks, {
                 credentials: 'include'
@@ -30,7 +39,6 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
 
             if (response.ok) {
                 const apiData = await response.json();
-                console.log("Bookmarks API Response:", apiData);
                 
                 let subjectsData: any[] = [];
                 if (Array.isArray(apiData)) {
@@ -40,6 +48,12 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
                 }
                 
                 setBookmarks(subjectsData.map(transformSubject));
+            } else if (response.status === 401 || response.status === 403) {
+                console.error("Session expired or unauthorized");
+                setIsLoggedInState(false);
+                if (typeof document !== 'undefined') {
+                    document.cookie = "X-User-Claims=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                }
             } else {
                 console.error("Failed to fetch bookmarks");
             }
@@ -48,16 +62,14 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
         } finally {
             setIsLoading(false);
         }
-    }, []);
+    }, [rootData?.isLoggedIn]);
 
     useEffect(() => {
         fetchBookmarks();
     }, [fetchBookmarks]);
 
     const addBookmark = async (subject: Subject) => {
-        const claims = typeof document !== 'undefined' ? document.cookie.split('; ').find(row => row.startsWith('X-User-Claims=')) : null;
-        const isLoggedIn = !!claims && claims.split('=')[1] !== '';
-        if (!isLoggedIn) return;
+        if (!isLoggedInState) return;
 
         // Optimistic update
         setBookmarks(prev => {
@@ -72,6 +84,12 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
             });
 
             if (!response.ok) {
+                if (response.status === 401 || response.status === 403) {
+                    setIsLoggedInState(false);
+                    if (typeof document !== 'undefined') {
+                        document.cookie = "X-User-Claims=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    }
+                }
                 throw new Error("Failed to add bookmark");
             }
         } catch (error) {
@@ -82,9 +100,7 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const removeBookmark = async (subjectId: number) => {
-        const claims = typeof document !== 'undefined' ? document.cookie.split('; ').find(row => row.startsWith('X-User-Claims=')) : null;
-        const isLoggedIn = !!claims && claims.split('=')[1] !== '';
-        if (!isLoggedIn) return;
+        if (!isLoggedInState) return;
 
         // Optimistic update
         let removedSubject: Subject | undefined;
@@ -100,6 +116,12 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
             });
 
             if (!response.ok) {
+                if (response.status === 401 || response.status === 403) {
+                    setIsLoggedInState(false);
+                    if (typeof document !== 'undefined') {
+                        document.cookie = "X-User-Claims=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    }
+                }
                 throw new Error("Failed to remove bookmark");
             }
         } catch (error) {
@@ -123,7 +145,7 @@ export const BookmarksProvider = ({ children }: { children: ReactNode }) => {
             removeBookmark, 
             isBookmarked,
             fetchBookmarks,
-            isLoggedIn
+            isLoggedIn: isLoggedInState
         }}>
             {children}
         </BookmarksContext.Provider>

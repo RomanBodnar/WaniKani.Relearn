@@ -84,6 +84,7 @@ public class StaticFileDataAccess(
             ?.ToList() ?? [];
         return subjects;
     }
+    
     public async Task<List<SingleResource<Kanji>>> GetAllKanji(params int[] levels)
     {
         string prefix = "kanji-";

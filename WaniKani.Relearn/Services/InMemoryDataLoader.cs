@@ -18,16 +18,11 @@ public class InMemoryDataLoader(
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         logger.LogInformation("Starting in-memory data loader...");
-        var kanji = (await staticFileDataAccess.GetKanji());//.Select(x => kanjiMapper.Map(x));
+        var kanji = await staticFileDataAccess.GetKanji();
 
-        var vocabulary = (await staticFileDataAccess.GetVocabulary());//.Select(x => vocabularyMapper.Map(x));
-                                                                      //var kanaVocabulary = (await staticFileDataAccess.GetAllSubjects<KanaVocabulary>()).Select(x => kanaVocabularyMapper.Map(x));
+        var vocabulary = await staticFileDataAccess.GetVocabulary();
 
-        // await staticFileDataAccess.SaveSubjects(vocabulary.Concat(kanaVocabulary).OrderBy(x => x.Id));
-
-        var radicals = (await staticFileDataAccess.GetRadicals());//.Select(x => radicalMapper.Map(x));
-       // await staticFileDataAccess.SaveSubjects(radicals);
-
+        var radicals = await staticFileDataAccess.GetRadicals();
 
         foreach (var kanjiSubject in kanji)
         {
@@ -41,10 +36,7 @@ public class InMemoryDataLoader(
         {
             subjectCache.AddOrUpdate(radical);
         }
-        //foreach (var kana in kanaVocabulary)
-        //{
-        //    subjectCache.AddOrUpdate(kana);
-        //}
+
         logger.LogInformation("Finished loading {KanjiCount} kanji, {VocabCount} vocabulary, {RadicalCount} radicals into cache.",
             kanji.Count, vocabulary.Count, radicals.Count);
 
@@ -54,6 +46,7 @@ public class InMemoryDataLoader(
             logger.LogInformation("Extracted context sentences to static files.");
         }
         sentenceCache.LoadFromFiles();
+        // await sentenceExtractor.ExtractSentencesAsync();
         logger.LogInformation("Loaded {Count} reading practice sentences.", sentenceCache.Count);
         //await UpdateKanjis();
     }

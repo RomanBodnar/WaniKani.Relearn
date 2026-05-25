@@ -19,6 +19,13 @@ public class SubjectCache
         return _subjects.TryGetValue(id, out subject);
     }
 
+    public int GetIdByCharacters(string characters)
+    {
+        var subject = _subjects.Values.FirstOrDefault(
+            x => x.Characters == characters && x.Object is "vocabulary" or "kana_vocabulary");
+        return subject?.Id ?? 0;
+    }
+
     public PageResult<Subject> GetSubjects(SubjectType[] types, int? page, int? perPage, int? minLevel = null, int? maxLevel = null)
     {
         var query = _subjects.Values

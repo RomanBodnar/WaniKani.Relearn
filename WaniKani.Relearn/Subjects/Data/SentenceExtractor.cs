@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Contracts.Resources;
 using WaniKani.Relearn.Contracts.Subjects;
@@ -10,6 +11,45 @@ public class SentenceExtractor(
     SubjectCache subjectCache,
     IConfiguration configuration)
 {
+    public async Task ExtractSentencesAsync()
+    {
+        using StreamReader file = File.OpenText("../context-sentences-processed.json");
+        await using JsonTextReader reader = new JsonTextReader(file);
+        var jArray = (JArray)await JToken.ReadFromAsync(reader);
+        var sentences = jArray.ToObject<List<ReadingSentence>>() ?? [];
+        var byLevel = sentences.GroupBy(s => s.Level);
+        foreach (var levelGroup in byLevel)
+        {
+            foreach (var sentence in levelGroup)
+            {
+                var morphemes = sentence.Morphemes;
+                foreach (var morpheme in morphemes)
+                {
+                    var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
+                    if(subjectId == 0)
+                    {
+                        // Try orth as fallback
+                        subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
+                    }
+                    
+                    if (subjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
+                    {
+                        morpheme.SubjectId = subjectId;
+                        subjectCache.TryGet(subjectId, out var subject);
+                        sentence.SourceVocabulary.Add(new SubjectReference
+                        {
+                            SubjectId = subjectId,
+                            Characters = subject?.Characters ?? morpheme.Lemma 
+                        });
+                    }
+                }
+            }
+            var path = Path.Combine($"context-sentences-{levelGroup.Key}.json");
+            var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);
+            await File.WriteAllTextAsync(path, json);
+        }
+    }
+
     public void ExtractSentences()
     {
         var raw = new List<(string Ja, string En, int Level, SubjectReference Source)>();

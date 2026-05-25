@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router";
 import type { ReadingSentence } from "~/types/reading";
 import { SubjectPreviewInline } from "~/components/SubjectPreviewInline";
 
@@ -58,7 +59,26 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
       <span className="sentence-card-level">Lv. {sentence.level}</span>
 
       {/* Japanese sentence */}
-      <p className="sentence-ja">{sentence.ja}</p>
+      <p className="sentence-ja">
+        {sentence.morphemes && sentence.morphemes.length > 0 ? (
+          sentence.morphemes.map((morpheme, mIdx) => {
+            if (morpheme.subjectId !== null) {
+              return (
+                <Link
+                  key={`morpheme-${mIdx}-${morpheme.subjectId}`}
+                  to={`/subject/${morpheme.subjectId}`}
+                  className="morpheme-link"
+                >
+                  {morpheme.surface}
+                </Link>
+              );
+            }
+            return <span key={`morpheme-${mIdx}`}>{morpheme.surface}</span>;
+          })
+        ) : (
+          sentence.ja
+        )}
+      </p>
 
       {/* Subject tags */}
       <div className="sentence-tags">
