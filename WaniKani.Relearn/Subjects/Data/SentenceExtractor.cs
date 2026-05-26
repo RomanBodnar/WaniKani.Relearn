@@ -34,23 +34,31 @@ public class SentenceExtractor(
                     {
                         // Handle suru verb in katakana by looking at previous morpheme
                         // todo: handle suru verbs that are not in the dictionary
+                        // todo: handle standalone スル //by looking at next morpheme
                         var prevMorpheme = morphemes[i - 1];
+                        if (prevMorpheme.Pos1.En == "particle" || prevMorpheme.Pos1.En == "suffix"
+                            || prevMorpheme.Pos1.En == "auxiliary verb"
+                            || prevMorpheme.Pos1.En == "助数詞" // Skip if previous morpheme is a counter, which can sometimes be followed by スル in non-suru verb contexts
+                            || (prevMorpheme.Pos1.En == "名詞" && prevMorpheme.Pos2.En == "数")) // Skip if previous morpheme is a numeral noun, which can sometimes be followed by スル in non-suru verb contexts
+                        {
+                            i++;
+                            continue;
+                        }
                         var combinedCharacters = prevMorpheme.Lemma + "する";
                         morpheme.CombinedForm = combinedCharacters;
 
                         var suruVerbSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
-                        if (suruVerbSubjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != suruVerbSubjectId))
+                        if (suruVerbSubjectId != 0)
                         {
                             morpheme.SubjectId = suruVerbSubjectId;
-                            subjectCache.TryGet(suruVerbSubjectId, out var subject);
-                            sentence.SourceVocabulary.Add(new SubjectReference
+                            if (sentence.SourceVocabulary.All(s => s.SubjectId != suruVerbSubjectId))
                             {
-                                SubjectId = suruVerbSubjectId,
-                                Characters = combinedCharacters
-                            });
-                            // Remove the previous morpheme since it's now part of the combined verb
-                            // morphemes.RemoveAt(i - 1);
-                            // i--; // Move back index to account for removed morpheme
+                                sentence.SourceVocabulary.Add(new SubjectReference
+                                {
+                                    SubjectId = suruVerbSubjectId,
+                                    Characters = combinedCharacters
+                                });
+                            }
                         }
                         i++;
                         continue; // Skip further processing for this morpheme since it's already matched as suru verb
@@ -65,6 +73,7 @@ public class SentenceExtractor(
                             var prevMorpheme = morphemes[i - 1];
                             if (prevMorpheme.Pos1.En == "particle")
                             {
+                                i++;
                                 continue;
                             }
                             var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
@@ -72,18 +81,17 @@ public class SentenceExtractor(
                             morpheme.CombinedForm = combinedCharacters;
 
                             var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
-                            if (nounWithSuffixSubjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != nounWithSuffixSubjectId))
+                            if (nounWithSuffixSubjectId != 0)
                             {
                                 morpheme.SubjectId = nounWithSuffixSubjectId;
-                                subjectCache.TryGet(nounWithSuffixSubjectId, out var subject);
-                                sentence.SourceVocabulary.Add(new SubjectReference
+                                if (sentence.SourceVocabulary.All(s => s.SubjectId != nounWithSuffixSubjectId))
                                 {
-                                    SubjectId = nounWithSuffixSubjectId,
-                                    Characters = combinedCharacters
-                                });
-                                // Remove the previous morpheme since it's now part of the combined particle
-                                // morphemes.RemoveAt(i - 1);
-                                // i--; // Move back index to account for removed morpheme
+                                    sentence.SourceVocabulary.Add(new SubjectReference
+                                    {
+                                        SubjectId = nounWithSuffixSubjectId,
+                                        Characters = combinedCharacters
+                                    });
+                                }
                             }
                         }
                         i++;
@@ -97,15 +105,18 @@ public class SentenceExtractor(
                         subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
                     }
                     
-                    if (subjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
+                    if (subjectId != 0)
                     {
                         morpheme.SubjectId = subjectId;
                         subjectCache.TryGet(subjectId, out var subject);
-                        sentence.SourceVocabulary.Add(new SubjectReference
+                        if (sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
                         {
-                            SubjectId = subjectId,
-                            Characters = subject?.Characters ?? morpheme.Lemma 
-                        });
+                            sentence.SourceVocabulary.Add(new SubjectReference
+                            {
+                                SubjectId = subjectId,
+                                Characters = subject?.Characters ?? morpheme.Lemma 
+                            });
+                        }
                     }
 
                     i++;

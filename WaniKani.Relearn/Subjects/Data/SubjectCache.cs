@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Globalization;
+using System.Text;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Subjects.Data.Models;
 
@@ -24,13 +25,15 @@ public class SubjectCache
     {
         var subject = _subjects.Values.FirstOrDefault(
             x => 
+            x.Object is "vocabulary" or "kana_vocabulary" 
+            &&
             string.Compare(
-                x.Characters, 
-                characters, 
+                x.Characters?.Normalize(NormalizationForm.FormKD) ?? "", 
+                characters.Normalize(NormalizationForm.FormKD), 
                 CultureInfo.InvariantCulture, 
                 CompareOptions.IgnoreNonSpace) == 0 
-            && x.Object is "vocabulary" or "kana_vocabulary");
-        return subject?.Id ?? 0;
+             );
+        return subject?.Id ?? 0;        
     }
 
     public PageResult<Subject> GetSubjects(SubjectType[] types, int? page, int? perPage, int? minLevel = null, int? maxLevel = null)

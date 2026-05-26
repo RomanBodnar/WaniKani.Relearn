@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router";
 import type { ReadingSentence } from "~/types/reading";
 import { SubjectPreviewInline } from "~/components/SubjectPreviewInline";
 
@@ -54,16 +53,18 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
     onInteract?.(index);
   };
 
+  const morphemes = sentence.morphemes;
+
   return (
     <div className="sentence-card" id={`sentence-${index}`}>
       <span className="sentence-card-level">Lv. {sentence.level}</span>
 
       {/* Japanese sentence */}
       <p className="sentence-ja">
-        {sentence.morphemes && sentence.morphemes.length > 0 ? (
-          sentence.morphemes.map((morpheme, mIdx) => {
-            const previousMorpheme = mIdx > 0 ? sentence.morphemes[mIdx - 1] : null;
-            const nextMorpheme = mIdx < sentence.morphemes.length - 1 ? sentence.morphemes[mIdx + 1] : null;
+        {morphemes && morphemes.length > 0 ? (
+          morphemes.map((morpheme, mIdx) => {
+            const previousMorpheme = mIdx > 0 ? morphemes[mIdx - 1] : null;
+            const nextMorpheme = mIdx < morphemes.length - 1 ? morphemes[mIdx + 1] : null;
 
             // Skip rendering this morpheme if it's already part of a combined form in the next morpheme
             if (nextMorpheme?.combinedForm !== null) {
@@ -73,28 +74,33 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
             // Case 1: combinedForm is not null and subjectId is not null
             if (morpheme.combinedForm !== null && morpheme.subjectId !== null) {
               const previousSurface = previousMorpheme?.surface || '';
+              const isActive = activeSubjectId === morpheme.subjectId;
               return (
-                <Link
+                <button
+                  type="button"
                   key={`morpheme-${mIdx}-${morpheme.subjectId}`}
-                  to={`/subject/${morpheme.subjectId}`}
-                  className="morpheme-link"
+                  onClick={(e) => handlePillClick(e, morpheme.subjectId!)}
+                  className={`morpheme-link ${isActive ? 'active' : ''}`}
                 >
                   {previousSurface}{morpheme.surface}
-                </Link>
+                </button>
               );
             }
 
             // Case 2: combinedForm is not null, subjectId is null, but previous morpheme has subjectId
-            if (morpheme.combinedForm !== null && morpheme.subjectId === null && previousMorpheme?.subjectId !== null) {
+            if (morpheme.combinedForm !== null && morpheme.subjectId === null && previousMorpheme && previousMorpheme.subjectId !== null) {
               const previousSurface = previousMorpheme.surface;
+              const subjectId = previousMorpheme.subjectId;
+              const isActive = activeSubjectId === subjectId;
               return (
-                <Link
-                  key={`morpheme-${mIdx}-${previousMorpheme.subjectId}`}
-                  to={`/subject/${previousMorpheme.subjectId}`}
-                  className="morpheme-link"
+                <button
+                  type="button"
+                  key={`morpheme-${mIdx}-${subjectId}`}
+                  onClick={(e) => handlePillClick(e, subjectId)}
+                  className={`morpheme-link ${isActive ? 'active' : ''}`}
                 >
                   {previousSurface}{morpheme.surface}
-                </Link>
+                </button>
               );
             }
 
@@ -113,14 +119,16 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
 
             // Default case: morpheme has subjectId (original logic)
             if (morpheme.subjectId !== null) {
+              const isActive = activeSubjectId === morpheme.subjectId;
               return (
-                <Link
+                <button
+                  type="button"
                   key={`morpheme-${mIdx}-${morpheme.subjectId}`}
-                  to={`/subject/${morpheme.subjectId}`}
-                  className="morpheme-link"
+                  onClick={(e) => handlePillClick(e, morpheme.subjectId!)}
+                  className={`morpheme-link ${isActive ? 'active' : ''}`}
                 >
                   {morpheme.surface}
-                </Link>
+                </button>
               );
             }
 
