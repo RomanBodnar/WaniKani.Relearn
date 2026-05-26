@@ -23,8 +23,82 @@ public class SentenceExtractor(
             foreach (var sentence in levelGroup)
             {
                 var morphemes = sentence.Morphemes;
-                foreach (var morpheme in morphemes)
+
+                int i = 0;
+                while(i < morphemes.Count)
                 {
+                    var morpheme = morphemes[i];
+                    // if (morpheme.Lemma == "する" && i > 0)
+                    // {
+                    //     // Handle suru verb by looking at previous morpheme
+                    //     var prevMorpheme = morphemes[i - 1];
+                    //     var combined = prevMorpheme.Lemma + morpheme.Lemma;
+                    //     var subjectId = subjectCache.GetIdByCharacters(combined);
+                    //     if (subjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
+                    //     {
+                    //         morpheme.SubjectId = subjectId;
+                    //         subjectCache.TryGet(subjectId, out var subject);
+                    //         sentence.SourceVocabulary.Add(new SubjectReference
+                    //         {
+                    //             SubjectId = subjectId,
+                    //             Characters = subject?.Characters ?? combined
+                    //         });
+                    //         // Remove the previous morpheme since it's now part of the combined verb
+                    //         morphemes.RemoveAt(i - 1);
+                    //         i--; // Move back index to account for removed morpheme
+                    //     }
+                    // }
+                    if(morpheme.LemmaReading == "スル" && i > 0)
+                    {
+                        // Handle suru verb in katakana by looking at previous morpheme
+                        // todo: handle suru verbs that are not in the dictionary
+                        var prevMorpheme = morphemes[i - 1];
+                        var combined = prevMorpheme.Lemma + "する";
+                        var suruVerbSubjectId = subjectCache.GetIdByCharacters(combined);
+                        if (suruVerbSubjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != suruVerbSubjectId))
+                        {
+                            morpheme.SubjectId = suruVerbSubjectId;
+                            subjectCache.TryGet(suruVerbSubjectId, out var subject);
+                            sentence.SourceVocabulary.Add(new SubjectReference
+                            {
+                                SubjectId = suruVerbSubjectId,
+                                Characters = combined
+                            });
+                            // Remove the previous morpheme since it's now part of the combined verb
+                            // morphemes.RemoveAt(i - 1);
+                            // i--; // Move back index to account for removed morpheme
+                        }
+                        i++;
+                        continue; // Skip further processing for this morpheme since it's already matched as suru verb
+                    }
+                    if(morpheme.Pos1.En == "suffix")
+                    {
+                        // todo: handle more suffixes like ちゃん, くん, etc by looking at previous morpheme
+                        // todo: handle subjects with suffix not in dictionaries
+                        // Handle suffixes by looking at previous morpheme
+                        if (i > 0)
+                        {
+                            var prevMorpheme = morphemes[i - 1];
+                            var combined = prevMorpheme.Lemma + morpheme.Lemma;
+                            var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combined);
+                            if (nounWithSuffixSubjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != nounWithSuffixSubjectId))
+                            {
+                                morpheme.SubjectId = nounWithSuffixSubjectId;
+                                subjectCache.TryGet(nounWithSuffixSubjectId, out var subject);
+                                sentence.SourceVocabulary.Add(new SubjectReference
+                                {
+                                    SubjectId = nounWithSuffixSubjectId,
+                                    Characters = combined
+                                });
+                                // Remove the previous morpheme since it's now part of the combined particle
+                                // morphemes.RemoveAt(i - 1);
+                                // i--; // Move back index to account for removed morpheme
+                            }
+                        }
+                        i++;
+                        continue; // Skip further processing for this morpheme since it's already matched as noun with suffix
+                    }
+                    
                     var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
                     if(subjectId == 0)
                     {
@@ -42,7 +116,30 @@ public class SentenceExtractor(
                             Characters = subject?.Characters ?? morpheme.Lemma 
                         });
                     }
+
+                    i++;
                 }
+
+                // foreach (var morpheme in morphemes)
+                // {
+                //     var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
+                //     if(subjectId == 0)
+                //     {
+                //         // Try orth as fallback
+                //         subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
+                //     }
+                    
+                //     if (subjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
+                //     {
+                //         morpheme.SubjectId = subjectId;
+                //         subjectCache.TryGet(subjectId, out var subject);
+                //         sentence.SourceVocabulary.Add(new SubjectReference
+                //         {
+                //             SubjectId = subjectId,
+                //             Characters = subject?.Characters ?? morpheme.Lemma 
+                //         });
+                //     }
+                // }
             }
             var path = Path.Combine($"context-sentences-{levelGroup.Key}.json");
             var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);

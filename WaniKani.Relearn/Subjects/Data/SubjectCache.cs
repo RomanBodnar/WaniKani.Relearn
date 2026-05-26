@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Globalization;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Subjects.Data.Models;
 
@@ -22,7 +23,13 @@ public class SubjectCache
     public int GetIdByCharacters(string characters)
     {
         var subject = _subjects.Values.FirstOrDefault(
-            x => x.Characters == characters && x.Object is "vocabulary" or "kana_vocabulary");
+            x => 
+            string.Compare(
+                x.Characters, 
+                characters, 
+                CultureInfo.InvariantCulture, 
+                CompareOptions.IgnoreNonSpace) == 0 
+            && x.Object is "vocabulary" or "kana_vocabulary");
         return subject?.Id ?? 0;
     }
 

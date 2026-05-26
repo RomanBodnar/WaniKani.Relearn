@@ -699,6 +699,10 @@
         "Characters": "二"
       },
       {
+        "SubjectId": 2474,
+        "Characters": "二つ"
+      },
+      {
         "SubjectId": 2506,
         "Characters": "川"
       },
@@ -749,7 +753,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2474,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -3268,8 +3272,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2488,
+        "Characters": "三人"
       },
       {
         "SubjectId": 4885,
@@ -3326,7 +3330,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2488,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -4698,8 +4702,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2488,
+        "Characters": "三人"
       }
     ],
     "KanjiInSentence": [
@@ -4834,7 +4838,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2488,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -10023,10 +10027,6 @@
         "Characters": "十"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 2467,
         "Characters": "一"
       }
@@ -10109,7 +10109,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -11759,10 +11759,6 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 4885,
         "Characters": "居る"
       }
@@ -11797,7 +11793,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -11942,10 +11938,6 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2868,
         "Characters": "有る"
       }
@@ -11980,7 +11972,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -12127,10 +12119,6 @@
       {
         "SubjectId": 2486,
         "Characters": "三"
-      },
-      {
-        "SubjectId": 2475,
-        "Characters": "人"
       },
       {
         "SubjectId": 6653,
@@ -12445,7 +12433,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -14712,6 +14700,10 @@
       {
         "SubjectId": 2467,
         "Characters": "一"
+      },
+      {
+        "SubjectId": 2468,
+        "Characters": "一つ"
       }
     ],
     "KanjiInSentence": [
@@ -14744,7 +14736,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2468,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -15223,6 +15215,10 @@
       {
         "SubjectId": 2469,
         "Characters": "七"
+      },
+      {
+        "SubjectId": 2470,
+        "Characters": "七つ"
       }
     ],
     "KanjiInSentence": [
@@ -15295,7 +15291,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2470,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -16526,6 +16522,10 @@
         "Characters": "三"
       },
       {
+        "SubjectId": 2487,
+        "Characters": "三つ"
+      },
+      {
         "SubjectId": 2868,
         "Characters": "有る"
       }
@@ -16604,7 +16604,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2487,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -19772,8 +19772,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2488,
+        "Characters": "三人"
       },
       {
         "SubjectId": 4885,
@@ -19854,7 +19854,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2488,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",

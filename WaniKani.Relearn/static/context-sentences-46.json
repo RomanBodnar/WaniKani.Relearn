@@ -2224,6 +2224,10 @@
         "Characters": "言葉"
       },
       {
+        "SubjectId": 7476,
+        "Characters": "教科書"
+      },
+      {
         "SubjectId": 2697,
         "Characters": "見る"
       },
@@ -2238,10 +2242,6 @@
       {
         "SubjectId": 2670,
         "Characters": "気"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -2492,7 +2492,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7476,
         "surface": "書",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -2662,7 +2662,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -8226,8 +8226,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2541,
-        "Characters": "日"
+        "SubjectId": 7563,
+        "Characters": "三日"
       },
       {
         "SubjectId": 2542,
@@ -8240,10 +8240,6 @@
       {
         "SubjectId": 3585,
         "Characters": "感じ"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -8344,7 +8340,7 @@
         }
       },
       {
-        "SubjectId": 2541,
+        "SubjectId": 7563,
         "surface": "日",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -8546,7 +8542,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -8613,10 +8609,6 @@
       {
         "SubjectId": 4270,
         "Characters": "現在"
-      },
-      {
-        "SubjectId": 2520,
-        "Characters": "中"
       },
       {
         "SubjectId": 5075,
@@ -8739,7 +8731,7 @@
         }
       },
       {
-        "SubjectId": 2520,
+        "SubjectId": null,
         "surface": "中",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -10123,10 +10115,6 @@
         "Characters": "新しい"
       },
       {
-        "SubjectId": 2520,
-        "Characters": "中"
-      },
-      {
         "SubjectId": 6724,
         "Characters": "旨い"
       },
@@ -10357,7 +10345,7 @@
         }
       },
       {
-        "SubjectId": 2520,
+        "SubjectId": null,
         "surface": "中",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -10576,6 +10564,10 @@
       {
         "SubjectId": 3320,
         "Characters": "勉強"
+      },
+      {
+        "SubjectId": 3886,
+        "Characters": "勉強する"
       },
       {
         "SubjectId": 9188,
@@ -10964,7 +10956,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3886,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -13911,6 +13903,10 @@
         "Characters": "姫"
       },
       {
+        "SubjectId": 6830,
+        "Characters": "姫様"
+      },
+      {
         "SubjectId": 3778,
         "Characters": "猫"
       },
@@ -13975,7 +13971,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 6830,
         "surface": "様",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -14152,10 +14148,6 @@
         "Characters": "有名"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 3714,
         "Characters": "私"
       },
@@ -14238,7 +14230,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -18306,10 +18298,6 @@
         "Characters": "どれ"
       },
       {
-        "SubjectId": 2547,
-        "Characters": "水"
-      },
-      {
         "SubjectId": 3192,
         "Characters": "飲む"
       },
@@ -18566,7 +18554,7 @@
         }
       },
       {
-        "SubjectId": 2547,
+        "SubjectId": null,
         "surface": "水",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -19170,10 +19158,6 @@
       {
         "SubjectId": 6999,
         "Characters": "猿真似"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -19232,7 +19216,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -22177,10 +22161,6 @@
         "Characters": "数"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 2838,
         "Characters": "言う"
       },
@@ -22427,7 +22407,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -25344,6 +25324,10 @@
         "Characters": "練習"
       },
       {
+        "SubjectId": 3905,
+        "Characters": "練習する"
+      },
+      {
         "SubjectId": 4885,
         "Characters": "居る"
       }
@@ -25654,7 +25638,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3905,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -26138,10 +26122,6 @@
         "Characters": "俺"
       },
       {
-        "SubjectId": 3038,
-        "Characters": "所"
-      },
-      {
         "SubjectId": 4885,
         "Characters": "居る"
       },
@@ -26292,7 +26272,7 @@
         }
       },
       {
-        "SubjectId": 3038,
+        "SubjectId": null,
         "surface": "所",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -27892,10 +27872,6 @@
         "Characters": "陶芸"
       },
       {
-        "SubjectId": 7669,
-        "Characters": "用"
-      },
-      {
         "SubjectId": 7061,
         "Characters": "粘土"
       }
@@ -28172,7 +28148,7 @@
         }
       },
       {
-        "SubjectId": 7669,
+        "SubjectId": null,
         "surface": "用",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -28379,10 +28355,6 @@
         "Characters": "保存"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 2908,
         "Characters": "前"
       },
@@ -28513,7 +28485,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -34155,10 +34127,6 @@
         "Characters": "日本"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 3341,
         "Characters": "全員"
       },
@@ -34559,7 +34527,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -35656,6 +35624,10 @@
       {
         "SubjectId": 5980,
         "Characters": "廃止"
+      },
+      {
+        "SubjectId": 6142,
+        "Characters": "廃止する"
       }
     ],
     "KanjiInSentence": [
@@ -35924,7 +35896,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 6142,
         "surface": "さ",
         "conjugation_type": "サ行変格",
         "conjugation_form": "未然形-サ",
@@ -36031,6 +36003,10 @@
       {
         "SubjectId": 2475,
         "Characters": "人"
+      },
+      {
+        "SubjectId": 4365,
+        "Characters": "人達"
       },
       {
         "SubjectId": 2583,
@@ -36289,7 +36265,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4365,
         "surface": "達",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -36883,10 +36859,6 @@
       {
         "SubjectId": 4153,
         "Characters": "達人"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -37281,7 +37253,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -39065,10 +39037,6 @@
         "Characters": "四"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2477,
         "Characters": "一人"
       },
@@ -39183,7 +39151,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -40199,10 +40167,6 @@
         "Characters": "大人"
       },
       {
-        "SubjectId": 2670,
-        "Characters": "気"
-      },
-      {
         "SubjectId": 4753,
         "Characters": "子供"
       },
@@ -40781,7 +40745,7 @@
         }
       },
       {
-        "SubjectId": 2670,
+        "SubjectId": null,
         "surface": "げ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -44768,10 +44732,6 @@
         "Characters": "証言"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 2781,
         "Characters": "何"
       }
@@ -44928,7 +44888,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -48382,10 +48342,6 @@
         "Characters": "綿"
       },
       {
-        "SubjectId": 7669,
-        "Characters": "用"
-      },
-      {
         "SubjectId": 9211,
         "Characters": "どこ"
       },
@@ -48440,7 +48396,7 @@
         }
       },
       {
-        "SubjectId": 7669,
+        "SubjectId": null,
         "surface": "用",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -48818,8 +48774,8 @@
         "Characters": "吸収"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
+        "SubjectId": 4763,
+        "Characters": "吸収する"
       },
       {
         "SubjectId": 3714,
@@ -48946,7 +48902,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": 4763,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -50081,10 +50037,6 @@
         "Characters": "あそこ"
       },
       {
-        "SubjectId": 2954,
-        "Characters": "家"
-      },
-      {
         "SubjectId": 3324,
         "Characters": "息子"
       },
@@ -50211,7 +50163,7 @@
         }
       },
       {
-        "SubjectId": 2954,
+        "SubjectId": null,
         "surface": "家",
         "conjugation_type": "*",
         "conjugation_form": "*",

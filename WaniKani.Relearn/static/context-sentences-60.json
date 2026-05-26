@@ -702,10 +702,6 @@
         "Characters": "首班"
       },
       {
-        "SubjectId": 2579,
-        "Characters": "生"
-      },
-      {
         "SubjectId": 4903,
         "Characters": "占める"
       },
@@ -808,7 +804,7 @@
         }
       },
       {
-        "SubjectId": 2579,
+        "SubjectId": null,
         "surface": "生",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -5932,10 +5928,6 @@
       {
         "SubjectId": 2907,
         "Characters": "社長"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -6070,7 +6062,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -9617,6 +9609,10 @@
         "Characters": "出版"
       },
       {
+        "SubjectId": 5508,
+        "Characters": "出版する"
+      },
+      {
         "SubjectId": 8458,
         "Characters": "感慨"
       },
@@ -9817,7 +9813,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5508,
         "surface": "さ",
         "conjugation_type": "サ行変格",
         "conjugation_form": "未然形-サ",
@@ -10379,10 +10375,6 @@
         "Characters": "もう"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 2614,
         "Characters": "止める"
       }
@@ -10453,7 +10445,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -12538,10 +12530,6 @@
         "Characters": "二"
       },
       {
-        "SubjectId": 2569,
-        "Characters": "本"
-      },
-      {
         "SubjectId": 5652,
         "Characters": "灰皿"
       }
@@ -12640,7 +12628,7 @@
         }
       },
       {
-        "SubjectId": 2569,
+        "SubjectId": null,
         "surface": "本",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -12889,10 +12877,6 @@
         "Characters": "分泌"
       },
       {
-        "SubjectId": 2541,
-        "Characters": "日"
-      },
-      {
         "SubjectId": 4885,
         "Characters": "居る"
       }
@@ -12979,7 +12963,7 @@
         }
       },
       {
-        "SubjectId": 2541,
+        "SubjectId": null,
         "surface": "日",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -13228,20 +13212,12 @@
         "Characters": "泌尿器"
       },
       {
-        "SubjectId": 3532,
-        "Characters": "器"
-      },
-      {
         "SubjectId": 3230,
         "Characters": "病気"
       },
       {
         "SubjectId": 7628,
         "Characters": "入院"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       },
       {
         "SubjectId": 3082,
@@ -13306,7 +13282,7 @@
         }
       },
       {
-        "SubjectId": 3532,
+        "SubjectId": null,
         "surface": "器",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -13408,7 +13384,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -13545,14 +13521,6 @@
         "Characters": "温泉"
       },
       {
-        "SubjectId": 8747,
-        "Characters": "湯"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 3082,
         "Characters": "事"
       },
@@ -13623,7 +13591,7 @@
         }
       },
       {
-        "SubjectId": 8747,
+        "SubjectId": null,
         "surface": "湯",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -13769,7 +13737,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -14717,6 +14685,10 @@
       {
         "SubjectId": 2804,
         "Characters": "音"
+      },
+      {
+        "SubjectId": 8998,
+        "Characters": "苛々する"
       }
     ],
     "KanjiInSentence": [
@@ -14953,7 +14925,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 8998,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -15016,6 +14988,10 @@
       {
         "SubjectId": 4402,
         "Characters": "手続き"
+      },
+      {
+        "SubjectId": 8998,
+        "Characters": "苛々する"
       }
     ],
     "KanjiInSentence": [
@@ -15140,7 +15116,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 8998,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -16034,16 +16010,8 @@
         "Characters": "赤痢"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 6910,
         "Characters": "細菌"
-      },
-      {
-        "SubjectId": 7539,
-        "Characters": "性"
       }
     ],
     "KanjiInSentence": [
@@ -16148,7 +16116,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -16210,7 +16178,7 @@
         }
       },
       {
-        "SubjectId": 7539,
+        "SubjectId": null,
         "surface": "性",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -17901,6 +17869,10 @@
         "Characters": "人"
       },
       {
+        "SubjectId": 4365,
+        "Characters": "人達"
+      },
+      {
         "SubjectId": 2775,
         "Characters": "行く"
       }
@@ -18001,7 +17973,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4365,
         "surface": "たち",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -18754,6 +18726,10 @@
         "Characters": "謹賀新年"
       },
       {
+        "SubjectId": 4591,
+        "Characters": "年賀状"
+      },
+      {
         "SubjectId": 7475,
         "Characters": "新年"
       },
@@ -18816,7 +18792,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4591,
         "surface": "状",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -20395,6 +20371,10 @@
         "Characters": "被害"
       },
       {
+        "SubjectId": 4487,
+        "Characters": "被害者"
+      },
+      {
         "SubjectId": 4876,
         "Characters": "本当"
       }
@@ -20463,7 +20443,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4487,
         "surface": "者",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -23506,10 +23486,6 @@
         "Characters": "日本"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2938,
         "Characters": "以外"
       },
@@ -23788,7 +23764,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -24390,10 +24366,6 @@
       {
         "SubjectId": 3842,
         "Characters": "政治"
-      },
-      {
-        "SubjectId": 2954,
-        "Characters": "家"
       }
     ],
     "KanjiInSentence": [
@@ -24460,7 +24432,7 @@
         }
       },
       {
-        "SubjectId": 2954,
+        "SubjectId": null,
         "surface": "家",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -25114,10 +25086,6 @@
         "Characters": "冥王星"
       },
       {
-        "SubjectId": 2915,
-        "Characters": "星"
-      },
-      {
         "SubjectId": 7399,
         "Characters": "軌道"
       },
@@ -25132,10 +25100,6 @@
       {
         "SubjectId": 2467,
         "Characters": "一"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       },
       {
         "SubjectId": 7691,
@@ -25240,7 +25204,7 @@
         }
       },
       {
-        "SubjectId": 2915,
+        "SubjectId": null,
         "surface": "星",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -25472,7 +25436,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -25627,8 +25591,8 @@
         "Characters": "冥王星"
       },
       {
-        "SubjectId": 2915,
-        "Characters": "星"
+        "SubjectId": 3032,
+        "Characters": "学者"
       },
       {
         "SubjectId": 3413,
@@ -25637,10 +25601,6 @@
       {
         "SubjectId": 2542,
         "Characters": "月"
-      },
-      {
-        "SubjectId": 2541,
-        "Characters": "日"
       },
       {
         "SubjectId": 3136,
@@ -25721,7 +25681,7 @@
         }
       },
       {
-        "SubjectId": 2915,
+        "SubjectId": null,
         "surface": "星",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -25805,7 +25765,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3032,
         "surface": "者",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -26063,7 +26023,7 @@
         }
       },
       {
-        "SubjectId": 2541,
+        "SubjectId": null,
         "surface": "日",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -26200,10 +26160,6 @@
         "Characters": "冥王星"
       },
       {
-        "SubjectId": 2915,
-        "Characters": "星"
-      },
-      {
         "SubjectId": 2931,
         "Characters": "理由"
       },
@@ -26286,7 +26242,7 @@
         }
       },
       {
-        "SubjectId": 2915,
+        "SubjectId": null,
         "surface": "星",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -31810,8 +31766,8 @@
         "Characters": "留学"
       },
       {
-        "SubjectId": 2579,
-        "Characters": "生"
+        "SubjectId": 4059,
+        "Characters": "留学生"
       },
       {
         "SubjectId": 2754,
@@ -31936,7 +31892,7 @@
         }
       },
       {
-        "SubjectId": 2579,
+        "SubjectId": 4059,
         "surface": "生",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -33330,10 +33286,6 @@
         "Characters": "有名"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 8433,
         "Characters": "太鼓"
       },
@@ -33522,7 +33474,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -35000,10 +34952,6 @@
         "Characters": "征服"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 7686,
         "Characters": "語る"
       },
@@ -35200,7 +35148,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -36073,10 +36021,6 @@
         "Characters": "斗"
       },
       {
-        "SubjectId": 3005,
-        "Characters": "君"
-      },
-      {
         "SubjectId": 3194,
         "Characters": "漢字"
       },
@@ -36173,7 +36117,7 @@
         }
       },
       {
-        "SubjectId": 3005,
+        "SubjectId": null,
         "surface": "くん",
         "conjugation_type": "*",
         "conjugation_form": "*",

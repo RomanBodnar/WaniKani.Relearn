@@ -5965,8 +5965,8 @@
         "Characters": "四"
       },
       {
-        "SubjectId": 2541,
-        "Characters": "日"
+        "SubjectId": 2563,
+        "Characters": "四日"
       }
     ],
     "KanjiInSentence": [
@@ -6145,7 +6145,7 @@
         }
       },
       {
-        "SubjectId": 2541,
+        "SubjectId": 2563,
         "surface": "日",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -6591,8 +6591,8 @@
         "Characters": "外国"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2887,
+        "Characters": "外国人"
       },
       {
         "SubjectId": 8697,
@@ -6773,7 +6773,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2887,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -6952,6 +6952,10 @@
       {
         "SubjectId": 2467,
         "Characters": "一"
+      },
+      {
+        "SubjectId": 2468,
+        "Characters": "一つ"
       }
     ],
     "KanjiInSentence": [
@@ -7120,7 +7124,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2468,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -10954,10 +10958,6 @@
       {
         "SubjectId": 2639,
         "Characters": "母"
-      },
-      {
-        "SubjectId": 2475,
-        "Characters": "人"
       }
     ],
     "KanjiInSentence": [
@@ -11152,7 +11152,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -13427,10 +13427,6 @@
       {
         "SubjectId": 2714,
         "Characters": "主に"
-      },
-      {
-        "SubjectId": 2475,
-        "Characters": "人"
       }
     ],
     "KanjiInSentence": [
@@ -13599,7 +13595,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -14461,6 +14457,10 @@
         "Characters": "大人"
       },
       {
+        "SubjectId": 9233,
+        "Characters": "バイキング"
+      },
+      {
         "SubjectId": 2776,
         "Characters": "行う"
       },
@@ -14577,7 +14577,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9233,
         "surface": "ハイキング",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -20076,8 +20076,8 @@
         "Characters": "何"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2782,
+        "Characters": "何人"
       }
     ],
     "KanjiInSentence": [
@@ -20206,7 +20206,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2782,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -23358,10 +23358,6 @@
         "Characters": "有名"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2742,
         "Characters": "会う"
       },
@@ -23412,7 +23408,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -25763,10 +25759,6 @@
         "Characters": "日本"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2476,
         "Characters": "二人"
       },
@@ -25837,7 +25829,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -29851,10 +29843,6 @@
       {
         "SubjectId": 2653,
         "Characters": "先生"
-      },
-      {
-        "SubjectId": 2475,
-        "Characters": "人"
       }
     ],
     "KanjiInSentence": [
@@ -30023,7 +30011,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -31251,10 +31239,6 @@
       {
         "SubjectId": 2826,
         "Characters": "来年"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -31437,7 +31421,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -33262,10 +33246,6 @@
         "Characters": "外国"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2604,
         "Characters": "友人"
       },
@@ -33398,7 +33378,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -33591,10 +33571,6 @@
         "Characters": "外国"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 8678,
         "Characters": "沢山"
       },
@@ -33747,7 +33723,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -33886,10 +33862,6 @@
       {
         "SubjectId": 2775,
         "Characters": "行く"
-      },
-      {
-        "SubjectId": 2475,
-        "Characters": "人"
       },
       {
         "SubjectId": 3252,
@@ -34140,7 +34112,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -35179,8 +35151,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2488,
+        "Characters": "三人"
       },
       {
         "SubjectId": 2477,
@@ -35283,7 +35255,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2488,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -38822,10 +38794,6 @@
       {
         "SubjectId": 2907,
         "Characters": "社長"
-      },
-      {
-        "SubjectId": 2520,
-        "Characters": "中"
       }
     ],
     "KanjiInSentence": [
@@ -38906,7 +38874,7 @@
         }
       },
       {
-        "SubjectId": 2520,
+        "SubjectId": null,
         "surface": "中",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -40877,10 +40845,6 @@
       {
         "SubjectId": 2909,
         "Characters": "午前"
-      },
-      {
-        "SubjectId": 2520,
-        "Characters": "中"
       }
     ],
     "KanjiInSentence": [
@@ -40921,7 +40885,7 @@
         }
       },
       {
-        "SubjectId": 2520,
+        "SubjectId": null,
         "surface": "中",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -47415,10 +47379,6 @@
         "Characters": "お茶"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2913,
         "Characters": "午後"
       },
@@ -47473,7 +47433,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -47885,10 +47845,6 @@
       {
         "SubjectId": 2619,
         "Characters": "牛"
-      },
-      {
-        "SubjectId": 7669,
-        "Characters": "用"
       }
     ],
     "KanjiInSentence": [
@@ -48057,7 +48013,7 @@
         }
       },
       {
-        "SubjectId": 7669,
+        "SubjectId": null,
         "surface": "用",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -49997,8 +49953,8 @@
         "Characters": "山"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
+        "SubjectId": 9233,
+        "Characters": "バイキング"
       },
       {
         "SubjectId": 2958,
@@ -50091,7 +50047,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9233,
         "surface": "ハイキング",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -50113,7 +50069,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -56091,10 +56047,6 @@
       {
         "SubjectId": 2602,
         "Characters": "大切"
-      },
-      {
-        "SubjectId": 9180,
-        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -56395,7 +56347,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -56647,12 +56599,20 @@
         "Characters": "一"
       },
       {
+        "SubjectId": 2468,
+        "Characters": "一つ"
+      },
+      {
         "SubjectId": 3443,
         "Characters": "代わり"
       },
       {
         "SubjectId": 2526,
         "Characters": "五"
+      },
+      {
+        "SubjectId": 2525,
+        "Characters": "五つ"
       },
       {
         "SubjectId": 2824,
@@ -56915,7 +56875,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2468,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -57013,7 +56973,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2525,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -57100,12 +57060,12 @@
         "Characters": "日本"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2539,
         "Characters": "上手"
+      },
+      {
+        "SubjectId": 2475,
+        "Characters": "人"
       },
       {
         "SubjectId": 2754,
@@ -57174,7 +57134,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -57304,7 +57264,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2475,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -57654,6 +57614,10 @@
         "Characters": "一"
       },
       {
+        "SubjectId": 2468,
+        "Characters": "一つ"
+      },
+      {
         "SubjectId": 2706,
         "Characters": "足りる"
       },
@@ -57736,7 +57700,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2468,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -59042,10 +59006,6 @@
         "Characters": "年"
       },
       {
-        "SubjectId": 2579,
-        "Characters": "生"
-      },
-      {
         "SubjectId": 3252,
         "Characters": "成る"
       }
@@ -59278,7 +59238,7 @@
         }
       },
       {
-        "SubjectId": 2579,
+        "SubjectId": null,
         "surface": "生",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -62352,10 +62312,6 @@
       {
         "SubjectId": 3714,
         "Characters": "私"
-      },
-      {
-        "SubjectId": 2475,
-        "Characters": "人"
       }
     ],
     "KanjiInSentence": [
@@ -62446,7 +62402,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -63581,8 +63537,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
+        "SubjectId": 2488,
+        "Characters": "三人"
       },
       {
         "SubjectId": 2513,
@@ -63837,7 +63793,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 2488,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -64392,10 +64348,6 @@
       {
         "SubjectId": 3413,
         "Characters": "年"
-      },
-      {
-        "SubjectId": 2579,
-        "Characters": "生"
       }
     ],
     "KanjiInSentence": [
@@ -64592,7 +64544,7 @@
         }
       },
       {
-        "SubjectId": 2579,
+        "SubjectId": null,
         "surface": "生",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -64677,6 +64629,10 @@
       {
         "SubjectId": 2467,
         "Characters": "一"
+      },
+      {
+        "SubjectId": 2468,
+        "Characters": "一つ"
       }
     ],
     "KanjiInSentence": [
@@ -64709,7 +64665,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2468,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -66888,6 +66844,10 @@
       {
         "SubjectId": 2467,
         "Characters": "一"
+      },
+      {
+        "SubjectId": 2468,
+        "Characters": "一つ"
       }
     ],
     "KanjiInSentence": [
@@ -67086,7 +67046,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2468,
         "surface": "つ",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -69850,10 +69810,6 @@
         "Characters": "大体"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2824,
         "Characters": "来る"
       }
@@ -69926,7 +69882,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -71363,10 +71319,6 @@
       {
         "SubjectId": 2725,
         "Characters": "号"
-      },
-      {
-        "SubjectId": 2709,
-        "Characters": "車"
       }
     ],
     "KanjiInSentence": [
@@ -71513,7 +71465,7 @@
         }
       },
       {
-        "SubjectId": 2709,
+        "SubjectId": null,
         "surface": "車",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -71785,8 +71737,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2541,
-        "Characters": "日"
+        "SubjectId": 7563,
+        "Characters": "三日"
       },
       {
         "SubjectId": 2668,
@@ -71835,7 +71787,7 @@
         }
       },
       {
-        "SubjectId": 2541,
+        "SubjectId": 7563,
         "surface": "日",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -73302,10 +73254,6 @@
         "Characters": "四"
       },
       {
-        "SubjectId": 2475,
-        "Characters": "人"
-      },
-      {
         "SubjectId": 2821,
         "Characters": "兄弟"
       }
@@ -73606,7 +73554,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": null,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -75049,8 +74997,8 @@
         "Characters": "三"
       },
       {
-        "SubjectId": 2711,
-        "Characters": "世"
+        "SubjectId": 2713,
+        "Characters": "三世"
       }
     ],
     "KanjiInSentence": [
@@ -75245,7 +75193,7 @@
         }
       },
       {
-        "SubjectId": 2711,
+        "SubjectId": 2713,
         "surface": "世",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -83019,10 +82967,6 @@
         "Characters": "出社"
       },
       {
-        "SubjectId": 9180,
-        "Characters": "する"
-      },
-      {
         "SubjectId": 2908,
         "Characters": "前"
       },
@@ -83073,7 +83017,7 @@
         }
       },
       {
-        "SubjectId": 9180,
+        "SubjectId": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -85997,6 +85941,10 @@
         "Characters": "万"
       },
       {
+        "SubjectId": 7462,
+        "Characters": "万人"
+      },
+      {
         "SubjectId": 2475,
         "Characters": "人"
       },
@@ -86119,7 +86067,7 @@
         }
       },
       {
-        "SubjectId": 2475,
+        "SubjectId": 7462,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
@@ -86159,7 +86107,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2475,
         "surface": "人",
         "conjugation_type": "*",
         "conjugation_form": "*",
