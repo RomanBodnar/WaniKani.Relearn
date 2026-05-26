@@ -22,39 +22,23 @@ public class SentenceExtractor(
         {
             foreach (var sentence in levelGroup)
             {
+                // todo: handle 助数詞可能(counter) where a lemma is not in katakana an there is numeral in front, and other non-translated POS
                 var morphemes = sentence.Morphemes;
 
                 int i = 0;
                 while(i < morphemes.Count)
                 {
                     var morpheme = morphemes[i];
-                    // if (morpheme.Lemma == "する" && i > 0)
-                    // {
-                    //     // Handle suru verb by looking at previous morpheme
-                    //     var prevMorpheme = morphemes[i - 1];
-                    //     var combined = prevMorpheme.Lemma + morpheme.Lemma;
-                    //     var subjectId = subjectCache.GetIdByCharacters(combined);
-                    //     if (subjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
-                    //     {
-                    //         morpheme.SubjectId = subjectId;
-                    //         subjectCache.TryGet(subjectId, out var subject);
-                    //         sentence.SourceVocabulary.Add(new SubjectReference
-                    //         {
-                    //             SubjectId = subjectId,
-                    //             Characters = subject?.Characters ?? combined
-                    //         });
-                    //         // Remove the previous morpheme since it's now part of the combined verb
-                    //         morphemes.RemoveAt(i - 1);
-                    //         i--; // Move back index to account for removed morpheme
-                    //     }
-                    // }
+                    // handle masu verbs
                     if(morpheme.LemmaReading == "スル" && i > 0)
                     {
                         // Handle suru verb in katakana by looking at previous morpheme
                         // todo: handle suru verbs that are not in the dictionary
                         var prevMorpheme = morphemes[i - 1];
-                        var combined = prevMorpheme.Lemma + "する";
-                        var suruVerbSubjectId = subjectCache.GetIdByCharacters(combined);
+                        var combinedCharacters = prevMorpheme.Lemma + "する";
+                        morpheme.CombinedForm = combinedCharacters;
+
+                        var suruVerbSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
                         if (suruVerbSubjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != suruVerbSubjectId))
                         {
                             morpheme.SubjectId = suruVerbSubjectId;
@@ -62,7 +46,7 @@ public class SentenceExtractor(
                             sentence.SourceVocabulary.Add(new SubjectReference
                             {
                                 SubjectId = suruVerbSubjectId,
-                                Characters = combined
+                                Characters = combinedCharacters
                             });
                             // Remove the previous morpheme since it's now part of the combined verb
                             // morphemes.RemoveAt(i - 1);
@@ -73,14 +57,21 @@ public class SentenceExtractor(
                     }
                     if(morpheme.Pos1.En == "suffix")
                     {
-                        // todo: handle more suffixes like ちゃん, くん, etc by looking at previous morpheme
+                        // todo: handle special case suffixes like ちゃん, くん, etc by looking at previous morpheme
                         // todo: handle subjects with suffix not in dictionaries
                         // Handle suffixes by looking at previous morpheme
                         if (i > 0)
                         {
                             var prevMorpheme = morphemes[i - 1];
-                            var combined = prevMorpheme.Lemma + morpheme.Lemma;
-                            var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combined);
+                            if (prevMorpheme.Pos1.En == "particle")
+                            {
+                                continue;
+                            }
+                            var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
+
+                            morpheme.CombinedForm = combinedCharacters;
+
+                            var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
                             if (nounWithSuffixSubjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != nounWithSuffixSubjectId))
                             {
                                 morpheme.SubjectId = nounWithSuffixSubjectId;
@@ -88,7 +79,7 @@ public class SentenceExtractor(
                                 sentence.SourceVocabulary.Add(new SubjectReference
                                 {
                                     SubjectId = nounWithSuffixSubjectId,
-                                    Characters = combined
+                                    Characters = combinedCharacters
                                 });
                                 // Remove the previous morpheme since it's now part of the combined particle
                                 // morphemes.RemoveAt(i - 1);
@@ -119,27 +110,6 @@ public class SentenceExtractor(
 
                     i++;
                 }
-
-                // foreach (var morpheme in morphemes)
-                // {
-                //     var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
-                //     if(subjectId == 0)
-                //     {
-                //         // Try orth as fallback
-                //         subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
-                //     }
-                    
-                //     if (subjectId != 0 && sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
-                //     {
-                //         morpheme.SubjectId = subjectId;
-                //         subjectCache.TryGet(subjectId, out var subject);
-                //         sentence.SourceVocabulary.Add(new SubjectReference
-                //         {
-                //             SubjectId = subjectId,
-                //             Characters = subject?.Characters ?? morpheme.Lemma 
-                //         });
-                //     }
-                // }
             }
             var path = Path.Combine($"context-sentences-{levelGroup.Key}.json");
             var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);

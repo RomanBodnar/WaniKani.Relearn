@@ -16,6 +16,8 @@ public record Morpheme
 {
     public int? SubjectId { get; set; }
 
+    public string? CombinedForm { get; set; }
+
     [JsonProperty("surface")]
     public string Surface { get; init; }
     [JsonProperty("conjugation_type")]

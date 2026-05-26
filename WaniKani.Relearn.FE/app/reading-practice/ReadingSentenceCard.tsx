@@ -62,6 +62,56 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
       <p className="sentence-ja">
         {sentence.morphemes && sentence.morphemes.length > 0 ? (
           sentence.morphemes.map((morpheme, mIdx) => {
+            const previousMorpheme = mIdx > 0 ? sentence.morphemes[mIdx - 1] : null;
+            const nextMorpheme = mIdx < sentence.morphemes.length - 1 ? sentence.morphemes[mIdx + 1] : null;
+
+            // Skip rendering this morpheme if it's already part of a combined form in the next morpheme
+            if (nextMorpheme?.combinedForm !== null) {
+              return null;
+            }
+
+            // Case 1: combinedForm is not null and subjectId is not null
+            if (morpheme.combinedForm !== null && morpheme.subjectId !== null) {
+              const previousSurface = previousMorpheme?.surface || '';
+              return (
+                <Link
+                  key={`morpheme-${mIdx}-${morpheme.subjectId}`}
+                  to={`/subject/${morpheme.subjectId}`}
+                  className="morpheme-link"
+                >
+                  {previousSurface}{morpheme.surface}
+                </Link>
+              );
+            }
+
+            // Case 2: combinedForm is not null, subjectId is null, but previous morpheme has subjectId
+            if (morpheme.combinedForm !== null && morpheme.subjectId === null && previousMorpheme?.subjectId !== null) {
+              const previousSurface = previousMorpheme.surface;
+              return (
+                <Link
+                  key={`morpheme-${mIdx}-${previousMorpheme.subjectId}`}
+                  to={`/subject/${previousMorpheme.subjectId}`}
+                  className="morpheme-link"
+                >
+                  {previousSurface}{morpheme.surface}
+                </Link>
+              );
+            }
+
+            // Case 3: combinedForm is not null, but both current and previous morphemes have null subjectId
+            if (morpheme.combinedForm !== null && morpheme.subjectId === null && (!previousMorpheme || previousMorpheme.subjectId === null)) {
+              const previousSurface = previousMorpheme?.surface || '';
+              return (
+                <span
+                  key={`morpheme-${mIdx}`}
+                  className="morpheme-link morpheme-link-missing"
+                >
+                  {previousSurface}{morpheme.surface}
+                </span>
+              );
+            }
+
+            // Default case: morpheme has subjectId (original logic)
             if (morpheme.subjectId !== null) {
               return (
                 <Link
@@ -73,6 +123,8 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
                 </Link>
               );
             }
+
+            // Plain morpheme with no linking
             return <span key={`morpheme-${mIdx}`}>{morpheme.surface}</span>;
           })
         ) : (

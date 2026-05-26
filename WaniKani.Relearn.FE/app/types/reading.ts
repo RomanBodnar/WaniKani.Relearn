@@ -10,6 +10,7 @@ export interface PartOfSpeech {
 
 export interface Morpheme {
   subjectId: number | null;
+  combinedForm: string | null;
   surface: string;
   conjugationType: string;
   conjugationForm: string;
