@@ -3,14 +3,135 @@ using Newtonsoft.Json.Linq;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Contracts.Resources;
 using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Subjects.Data.Models;
 using WaniKani.Relearn.Subjects.Data.Models.Reading;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
+// todo: fix クリスマス、どうする
+// todo:しなく - suru + nai
+// todo: fix ない processing
+// をするんだ -- する after を
 public class SentenceExtractor(
     SubjectCache subjectCache,
     IConfiguration configuration)
 {
+    public void ProcessMorphemesInSentence(ReadingSentence sentence)
+    {
+        // todo: handle 助数詞可能(counter) where a lemma is not in katakana an there is numeral in front, and other non-translated POS
+        var morphemes = sentence.Morphemes;
+
+        int i = 0;
+        while (i < morphemes.Count)
+        {
+            var morpheme = morphemes[i];
+            // handle masu verbs?
+            //    "lemma_reading": "マス",
+            //"lemma": "ます",
+            if ((morpheme.Lemma == "ます" || morpheme.LemmaReading == "マス") && i > 0)
+            {
+                var prevMorpheme = morphemes[i - 1];
+                var verbVocabForm = prevMorpheme.Lemma;
+                morpheme.CombinedForm = verbVocabForm;
+
+                var verbSubjectId = subjectCache.GetIdByCharacters(verbVocabForm);
+                if (verbSubjectId != 0)
+                {
+                    morpheme.SubjectId = verbSubjectId;
+                    AddSubjectToSourceVocabulary(verbSubjectId, verbVocabForm);
+                }
+                i++;
+                continue;
+            }
+            if (morpheme.LemmaReading == "スル" && i > 0)
+            {
+                // Handle suru verb in katakana by looking at previous morpheme
+                // todo: handle suru verbs that are not in the dictionary
+                // todo: handle standalone スル //by looking at next morpheme
+                var prevMorpheme = morphemes[i - 1];
+                if (prevMorpheme.Pos1.En == "particle"
+                    || prevMorpheme.Pos1.En == "suffix"
+                    || prevMorpheme.Pos1.En == "auxiliary verb"
+                    || prevMorpheme.Pos1.En == "助数詞" // Skip if previous morpheme is a counter, which can sometimes be followed by スル in non-suru verb contexts
+                    || (prevMorpheme.Pos1.En == "名詞" && prevMorpheme.Pos2.En == "数")) // Skip if previous morpheme is a numeral noun, which can sometimes be followed by スル in non-suru verb contexts
+                {
+                    var suruId = subjectCache.GetIdByCharacters("する");
+                    morpheme.SubjectId = suruId;
+
+                    AddSubjectToSourceVocabulary(suruId, "する");
+                    i++;
+                    continue;
+                }
+                var combinedCharacters = prevMorpheme.Lemma + "する";
+                morpheme.CombinedForm = combinedCharacters;
+
+                var suruVerbSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
+                if (suruVerbSubjectId != 0)
+                {
+                    morpheme.SubjectId = suruVerbSubjectId;
+                    AddSubjectToSourceVocabulary(suruVerbSubjectId, combinedCharacters);
+                }
+                i++;
+                continue; // Skip further processing for this morpheme since it's already matched as suru verb
+            }
+            if (morpheme.Pos1.En == "suffix")
+            {
+                // todo: handle special case suffixes like ちゃん, くん, etc by looking at previous morpheme
+                // todo: handle subjects with suffix not in dictionaries
+                // Handle suffixes by looking at previous morpheme
+                if (i > 0)
+                {
+                    var prevMorpheme = morphemes[i - 1];
+                    if (prevMorpheme.Pos1.En == "particle")
+                    {
+                        i++;
+                        continue;
+                    }
+                    var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
+
+                    morpheme.CombinedForm = combinedCharacters;
+
+                    var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
+                    if (nounWithSuffixSubjectId != 0)
+                    {
+                        morpheme.SubjectId = nounWithSuffixSubjectId;
+
+                        AddSubjectToSourceVocabulary(nounWithSuffixSubjectId, combinedCharacters);
+                    }
+                }
+                i++;
+                continue; // Skip further processing for this morpheme since it's already matched as noun with suffix
+            }
+
+            var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
+            if (subjectId == 0)
+            {
+                // Try orth as fallback
+                subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
+            }
+
+            if (subjectId != 0)
+            {
+                morpheme.SubjectId = subjectId;
+                subjectCache.TryGet(subjectId, out var subject);
+                AddSubjectToSourceVocabulary(subjectId, morpheme.Lemma, subject);
+            }
+
+            i++;
+        }
+        void AddSubjectToSourceVocabulary(int subjectId, string characters, Models.Subject? subject = null)
+        {
+            if (sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
+            {
+                sentence.SourceVocabulary.Add(new SubjectReference
+                {
+                    SubjectId = subjectId,
+                    Characters = subject?.Characters ?? characters
+                });
+            }
+        }
+    }
+
     public async Task ExtractSentencesAsync()
     {
         using StreamReader file = File.OpenText("../context-sentences-processed.json");
@@ -22,105 +143,7 @@ public class SentenceExtractor(
         {
             foreach (var sentence in levelGroup)
             {
-                // todo: handle 助数詞可能(counter) where a lemma is not in katakana an there is numeral in front, and other non-translated POS
-                var morphemes = sentence.Morphemes;
-
-                int i = 0;
-                while(i < morphemes.Count)
-                {
-                    var morpheme = morphemes[i];
-                    // handle masu verbs
-                    if(morpheme.LemmaReading == "スル" && i > 0)
-                    {
-                        // Handle suru verb in katakana by looking at previous morpheme
-                        // todo: handle suru verbs that are not in the dictionary
-                        // todo: handle standalone スル //by looking at next morpheme
-                        var prevMorpheme = morphemes[i - 1];
-                        if (prevMorpheme.Pos1.En == "particle" || prevMorpheme.Pos1.En == "suffix"
-                            || prevMorpheme.Pos1.En == "auxiliary verb"
-                            || prevMorpheme.Pos1.En == "助数詞" // Skip if previous morpheme is a counter, which can sometimes be followed by スル in non-suru verb contexts
-                            || (prevMorpheme.Pos1.En == "名詞" && prevMorpheme.Pos2.En == "数")) // Skip if previous morpheme is a numeral noun, which can sometimes be followed by スル in non-suru verb contexts
-                        {
-                            i++;
-                            continue;
-                        }
-                        var combinedCharacters = prevMorpheme.Lemma + "する";
-                        morpheme.CombinedForm = combinedCharacters;
-
-                        var suruVerbSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
-                        if (suruVerbSubjectId != 0)
-                        {
-                            morpheme.SubjectId = suruVerbSubjectId;
-                            if (sentence.SourceVocabulary.All(s => s.SubjectId != suruVerbSubjectId))
-                            {
-                                sentence.SourceVocabulary.Add(new SubjectReference
-                                {
-                                    SubjectId = suruVerbSubjectId,
-                                    Characters = combinedCharacters
-                                });
-                            }
-                        }
-                        i++;
-                        continue; // Skip further processing for this morpheme since it's already matched as suru verb
-                    }
-                    if(morpheme.Pos1.En == "suffix")
-                    {
-                        // todo: handle special case suffixes like ちゃん, くん, etc by looking at previous morpheme
-                        // todo: handle subjects with suffix not in dictionaries
-                        // Handle suffixes by looking at previous morpheme
-                        if (i > 0)
-                        {
-                            var prevMorpheme = morphemes[i - 1];
-                            if (prevMorpheme.Pos1.En == "particle")
-                            {
-                                i++;
-                                continue;
-                            }
-                            var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
-
-                            morpheme.CombinedForm = combinedCharacters;
-
-                            var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
-                            if (nounWithSuffixSubjectId != 0)
-                            {
-                                morpheme.SubjectId = nounWithSuffixSubjectId;
-                                if (sentence.SourceVocabulary.All(s => s.SubjectId != nounWithSuffixSubjectId))
-                                {
-                                    sentence.SourceVocabulary.Add(new SubjectReference
-                                    {
-                                        SubjectId = nounWithSuffixSubjectId,
-                                        Characters = combinedCharacters
-                                    });
-                                }
-                            }
-                        }
-                        i++;
-                        continue; // Skip further processing for this morpheme since it's already matched as noun with suffix
-                    }
-                    
-                    var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
-                    if(subjectId == 0)
-                    {
-                        // Try orth as fallback
-                        subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
-                    }
-                    
-                    if (subjectId != 0)
-                    {
-                        morpheme.SubjectId = subjectId;
-                        subjectCache.TryGet(subjectId, out var subject);
-                        if (sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
-                        {
-                            sentence.SourceVocabulary.Add(new SubjectReference
-                            {
-                                SubjectId = subjectId,
-                                Characters = subject?.Characters ?? morpheme.Lemma 
-                            });
-                        }
-                    }
-
-                    i++;
-                }
+                ProcessMorphemesInSentence(sentence);
             }
             var path = Path.Combine($"context-sentences-{levelGroup.Key}.json");
             var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);

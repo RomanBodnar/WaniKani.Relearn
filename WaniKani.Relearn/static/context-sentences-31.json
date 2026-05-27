@@ -103,7 +103,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4276,
         "CombinedForm": null,
         "surface": "妨害",
         "conjugation_type": "*",
@@ -278,7 +278,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4276,
         "CombinedForm": null,
         "surface": "妨害",
         "conjugation_type": "*",
@@ -569,7 +569,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4276,
         "CombinedForm": null,
         "surface": "妨害",
         "conjugation_type": "*",
@@ -994,7 +994,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4276,
         "CombinedForm": null,
         "surface": "妨害",
         "conjugation_type": "*",
@@ -1422,7 +1422,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5337,
         "CombinedForm": null,
         "surface": "照らし",
         "conjugation_type": "五段-サ行",
@@ -1803,7 +1803,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9198,
         "CombinedForm": null,
         "surface": "この",
         "conjugation_type": "*",
@@ -1860,7 +1860,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5337,
         "CombinedForm": null,
         "surface": "照らす",
         "conjugation_type": "五段-サ行",
@@ -2033,7 +2033,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5337,
         "CombinedForm": null,
         "surface": "照らし",
         "conjugation_type": "五段-サ行",
@@ -2281,7 +2281,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "ましょう",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "意志推量形",
@@ -2528,7 +2528,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5337,
         "CombinedForm": null,
         "surface": "照らし",
         "conjugation_type": "五段-サ行",
@@ -2774,7 +2774,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -3324,8 +3324,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 9260,
+        "CombinedForm": "貰う",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -3817,7 +3817,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5402,
         "CombinedForm": null,
         "surface": "鼻詰まり",
         "conjugation_type": "*",
@@ -3916,8 +3916,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 5263,
+        "CombinedForm": "眠る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -4000,7 +4000,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5402,
         "CombinedForm": null,
         "surface": "鼻詰まり",
         "conjugation_type": "*",
@@ -4160,8 +4160,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2598,
+        "CombinedForm": "分かる",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -4336,7 +4336,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5402,
         "CombinedForm": null,
         "surface": "鼻詰まり",
         "conjugation_type": "*",
@@ -4435,8 +4435,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -4566,7 +4566,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5403,
         "CombinedForm": null,
         "surface": "思い詰める",
         "conjugation_type": "下一段-マ行",
@@ -4863,6 +4863,10 @@
         "Characters": "成る"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 2868,
         "Characters": "有る"
       }
@@ -4903,7 +4907,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5403,
         "CombinedForm": null,
         "surface": "思い詰め",
         "conjugation_type": "下一段-マ行",
@@ -5237,8 +5241,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "たりする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -5256,7 +5260,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3082,
         "CombinedForm": null,
         "surface": "こと",
         "conjugation_type": "*",
@@ -5634,7 +5638,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5403,
         "CombinedForm": null,
         "surface": "思い詰め",
         "conjugation_type": "下一段-マ行",
@@ -5710,8 +5714,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -5796,6 +5800,10 @@
       {
         "SubjectId": 2602,
         "Characters": "大切"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 3098,
@@ -5930,7 +5938,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5403,
         "CombinedForm": null,
         "surface": "思い詰め",
         "conjugation_type": "下一段-マ行",
@@ -6268,8 +6276,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -6287,7 +6295,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3082,
         "CombinedForm": null,
         "surface": "こと",
         "conjugation_type": "*",
@@ -6562,7 +6570,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5404,
         "CombinedForm": null,
         "surface": "見詰める",
         "conjugation_type": "下一段-マ行",
@@ -6780,7 +6788,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5404,
         "CombinedForm": null,
         "surface": "見詰める",
         "conjugation_type": "下一段-マ行",
@@ -7123,7 +7131,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5404,
         "CombinedForm": null,
         "surface": "見詰め",
         "conjugation_type": "下一段-マ行",
@@ -7555,7 +7563,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2489,
         "CombinedForm": null,
         "surface": "上",
         "conjugation_type": "*",
@@ -7730,7 +7738,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5404,
         "CombinedForm": null,
         "surface": "見詰め",
         "conjugation_type": "下一段-マ行",
@@ -7891,7 +7899,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5405,
         "CombinedForm": null,
         "surface": "雄犬",
         "conjugation_type": "*",
@@ -8254,7 +8262,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5405,
         "CombinedForm": null,
         "surface": "雄犬",
         "conjugation_type": "*",
@@ -8380,8 +8388,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3252,
+        "CombinedForm": "成る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -8650,7 +8658,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5405,
         "CombinedForm": null,
         "surface": "雄犬",
         "conjugation_type": "*",
@@ -9079,7 +9087,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5405,
         "CombinedForm": null,
         "surface": "雄犬",
         "conjugation_type": "*",
@@ -9255,7 +9263,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "れる",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -9464,7 +9472,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5406,
         "CombinedForm": null,
         "surface": "絶やす",
         "conjugation_type": "五段-サ行",
@@ -9763,7 +9771,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5406,
         "CombinedForm": null,
         "surface": "絶やさ",
         "conjugation_type": "五段-サ行",
@@ -10191,7 +10199,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5406,
         "CombinedForm": null,
         "surface": "絶やさ",
         "conjugation_type": "五段-サ行",
@@ -10621,7 +10629,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5406,
         "CombinedForm": null,
         "surface": "絶やし",
         "conjugation_type": "五段-サ行",
@@ -10697,8 +10705,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3252,
+        "CombinedForm": "成る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -11296,7 +11304,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5407,
         "CombinedForm": "緊張する",
         "surface": "する",
         "conjugation_type": "サ行変格",
@@ -11578,7 +11586,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5407,
         "CombinedForm": "緊張する",
         "surface": "し",
         "conjugation_type": "サ行変格",
@@ -11697,7 +11705,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5407,
         "CombinedForm": "緊張する",
         "surface": "し",
         "conjugation_type": "サ行変格",
@@ -11834,8 +11842,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 7597,
+        "CombinedForm": "震える",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -12093,7 +12101,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5407,
         "CombinedForm": "緊張する",
         "surface": "し",
         "conjugation_type": "サ行変格",
@@ -12150,8 +12158,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -12361,7 +12369,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5408,
         "CombinedForm": null,
         "surface": "融合",
         "conjugation_type": "*",
@@ -12503,7 +12511,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "生み出す",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -12748,7 +12756,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5408,
         "CombinedForm": null,
         "surface": "融合",
         "conjugation_type": "*",
@@ -13123,7 +13131,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5408,
         "CombinedForm": null,
         "surface": "融合",
         "conjugation_type": "*",
@@ -13317,8 +13325,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -13605,7 +13613,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5408,
         "CombinedForm": null,
         "surface": "融合",
         "conjugation_type": "*",
@@ -13704,8 +13712,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2914,
+        "CombinedForm": "思う",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -13926,7 +13934,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5409,
         "CombinedForm": null,
         "surface": "融資",
         "conjugation_type": "*",
@@ -14011,7 +14019,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -14164,7 +14172,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5409,
         "CombinedForm": null,
         "surface": "融資",
         "conjugation_type": "*",
@@ -14492,7 +14500,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5409,
         "CombinedForm": null,
         "surface": "融資",
         "conjugation_type": "*",
@@ -14656,8 +14664,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 5003,
+        "CombinedForm": "掛かる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -14753,7 +14761,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5409,
         "CombinedForm": null,
         "surface": "融資",
         "conjugation_type": "*",
@@ -15054,7 +15062,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5410,
         "CombinedForm": null,
         "surface": "離れる",
         "conjugation_type": "下一段-ラ行",
@@ -15295,7 +15303,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5410,
         "CombinedForm": null,
         "surface": "離れ",
         "conjugation_type": "下一段-ラ行",
@@ -15485,7 +15493,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5410,
         "CombinedForm": null,
         "surface": "離れる",
         "conjugation_type": "下一段-ラ行",
@@ -15629,6 +15637,10 @@
         "Characters": "一人暮らし"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 3082,
         "Characters": "事"
       },
@@ -15727,7 +15739,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5410,
         "CombinedForm": null,
         "surface": "離れ",
         "conjugation_type": "下一段-ラ行",
@@ -15807,8 +15819,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -16178,7 +16190,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5411,
         "CombinedForm": null,
         "surface": "離婚",
         "conjugation_type": "*",
@@ -16357,7 +16369,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5411,
         "CombinedForm": null,
         "surface": "離婚",
         "conjugation_type": "*",
@@ -16542,7 +16554,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5411,
         "CombinedForm": null,
         "surface": "離婚",
         "conjugation_type": "*",
@@ -16971,7 +16983,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5411,
         "CombinedForm": null,
         "surface": "離婚",
         "conjugation_type": "*",
@@ -17376,7 +17388,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5411,
         "CombinedForm": null,
         "surface": "離婚",
         "conjugation_type": "*",
@@ -17910,7 +17922,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5412,
         "CombinedForm": null,
         "surface": "分離",
         "conjugation_type": "*",
@@ -18051,8 +18063,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2598,
+        "CombinedForm": "分かる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -18239,7 +18251,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5412,
         "CombinedForm": null,
         "surface": "分離",
         "conjugation_type": "*",
@@ -18531,7 +18543,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5412,
         "CombinedForm": null,
         "surface": "分離",
         "conjugation_type": "*",
@@ -18756,8 +18768,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3817,
+        "CombinedForm": "取る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -19170,7 +19182,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2542,
         "CombinedForm": null,
         "surface": "月",
         "conjugation_type": "*",
@@ -19315,7 +19327,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5412,
         "CombinedForm": null,
         "surface": "分離",
         "conjugation_type": "*",
@@ -19533,7 +19545,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5413,
         "CombinedForm": null,
         "surface": "印鑑",
         "conjugation_type": "*",
@@ -19908,7 +19920,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5413,
         "CombinedForm": null,
         "surface": "印鑑",
         "conjugation_type": "*",
@@ -20161,7 +20173,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5413,
         "CombinedForm": null,
         "surface": "印鑑",
         "conjugation_type": "*",
@@ -20351,8 +20363,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3252,
+        "CombinedForm": "成る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -20513,7 +20525,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5413,
         "CombinedForm": null,
         "surface": "印鑑",
         "conjugation_type": "*",
@@ -20715,7 +20727,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9202,
         "CombinedForm": null,
         "surface": "ない",
         "conjugation_type": "助動詞-ナイ",
@@ -20917,7 +20929,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5414,
         "CombinedForm": null,
         "surface": "壊れる",
         "conjugation_type": "下一段-ラ行",
@@ -21101,7 +21113,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5414,
         "CombinedForm": null,
         "surface": "壊れ",
         "conjugation_type": "下一段-ラ行",
@@ -21539,7 +21551,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5414,
         "CombinedForm": null,
         "surface": "壊れ",
         "conjugation_type": "下一段-ラ行",
@@ -21961,7 +21973,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5414,
         "CombinedForm": null,
         "surface": "壊れ",
         "conjugation_type": "下一段-ラ行",
@@ -22292,7 +22304,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5415,
         "CombinedForm": null,
         "surface": "壊れ物",
         "conjugation_type": "*",
@@ -22553,7 +22565,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5415,
         "CombinedForm": null,
         "surface": "壊れ物",
         "conjugation_type": "*",
@@ -22850,7 +22862,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3130,
         "CombinedForm": null,
         "surface": "持っ",
         "conjugation_type": "五段-タ行",
@@ -22981,7 +22993,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5415,
         "CombinedForm": null,
         "surface": "壊れ物",
         "conjugation_type": "*",
@@ -23417,7 +23429,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5415,
         "CombinedForm": null,
         "surface": "壊れ物",
         "conjugation_type": "*",
@@ -23780,7 +23792,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5416,
         "CombinedForm": null,
         "surface": "既に",
         "conjugation_type": "*",
@@ -23917,8 +23929,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -24181,7 +24193,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5416,
         "CombinedForm": null,
         "surface": "既に",
         "conjugation_type": "*",
@@ -24276,8 +24288,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -24419,7 +24431,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5416,
         "CombinedForm": null,
         "surface": "既に",
         "conjugation_type": "*",
@@ -24491,8 +24503,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連体形-一般",
@@ -24926,7 +24938,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5416,
         "CombinedForm": null,
         "surface": "既に",
         "conjugation_type": "*",
@@ -25037,7 +25049,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "てる",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -25238,7 +25250,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5417,
         "CombinedForm": null,
         "surface": "既存",
         "conjugation_type": "*",
@@ -25491,7 +25503,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5417,
         "CombinedForm": null,
         "surface": "既存",
         "conjugation_type": "*",
@@ -25923,7 +25935,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5417,
         "CombinedForm": null,
         "surface": "既存",
         "conjugation_type": "*",
@@ -26286,7 +26298,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5417,
         "CombinedForm": null,
         "surface": "既存",
         "conjugation_type": "*",
@@ -26652,7 +26664,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5418,
         "CombinedForm": null,
         "surface": "既決",
         "conjugation_type": "*",
@@ -26801,7 +26813,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5418,
         "CombinedForm": null,
         "surface": "既決",
         "conjugation_type": "*",
@@ -27053,7 +27065,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5418,
         "CombinedForm": null,
         "surface": "既決",
         "conjugation_type": "*",
@@ -27255,8 +27267,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -27343,7 +27355,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5418,
         "CombinedForm": null,
         "surface": "既決",
         "conjugation_type": "*",
@@ -27633,7 +27645,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5419,
         "CombinedForm": null,
         "surface": "普通",
         "conjugation_type": "*",
@@ -27748,7 +27760,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5419,
         "CombinedForm": null,
         "surface": "普通",
         "conjugation_type": "*",
@@ -27989,7 +28001,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5419,
         "CombinedForm": null,
         "surface": "普通",
         "conjugation_type": "*",
@@ -28303,7 +28315,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5419,
         "CombinedForm": null,
         "surface": "普通",
         "conjugation_type": "*",
@@ -28615,8 +28627,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -28704,7 +28716,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5420,
         "CombinedForm": null,
         "surface": "普段",
         "conjugation_type": "*",
@@ -29013,7 +29025,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5420,
         "CombinedForm": null,
         "surface": "普段",
         "conjugation_type": "*",
@@ -29207,6 +29219,10 @@
         "Characters": "電話"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 9202,
         "Characters": "ない"
       },
@@ -29289,7 +29305,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5420,
         "CombinedForm": null,
         "surface": "普段",
         "conjugation_type": "*",
@@ -29377,8 +29393,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "未然形-一般",
@@ -29533,8 +29549,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3624,
+        "CombinedForm": "謝る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -29777,7 +29793,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5421,
         "CombinedForm": null,
         "surface": "編ん",
         "conjugation_type": "五段-マ行",
@@ -30056,7 +30072,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5421,
         "CombinedForm": null,
         "surface": "編む",
         "conjugation_type": "五段-マ行",
@@ -30273,7 +30289,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5421,
         "CombinedForm": null,
         "surface": "編ん",
         "conjugation_type": "五段-マ行",
@@ -30952,7 +30968,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5421,
         "CombinedForm": null,
         "surface": "編ん",
         "conjugation_type": "五段-マ行",
@@ -31224,7 +31240,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5422,
         "CombinedForm": null,
         "surface": "編集",
         "conjugation_type": "*",
@@ -31651,7 +31667,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5422,
         "CombinedForm": null,
         "surface": "編集",
         "conjugation_type": "*",
@@ -31712,8 +31728,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3468,
+        "CombinedForm": "回す",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -32100,7 +32116,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5422,
         "CombinedForm": null,
         "surface": "編集",
         "conjugation_type": "*",
@@ -32302,8 +32318,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -32436,7 +32452,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5423,
         "CombinedForm": null,
         "surface": "編者",
         "conjugation_type": "*",
@@ -32665,7 +32681,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5423,
         "CombinedForm": null,
         "surface": "編者",
         "conjugation_type": "*",
@@ -32764,8 +32780,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2914,
+        "CombinedForm": "思う",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -32853,7 +32869,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5423,
         "CombinedForm": null,
         "surface": "編者",
         "conjugation_type": "*",
@@ -32938,7 +32954,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -33081,8 +33097,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -33261,7 +33277,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5423,
         "CombinedForm": null,
         "surface": "編者",
         "conjugation_type": "*",
@@ -34719,6 +34735,10 @@
         "Characters": "大臣"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 9192,
         "Characters": "それ"
       },
@@ -35164,8 +35184,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -35278,7 +35298,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7498,
         "CombinedForm": null,
         "surface": "僕",
         "conjugation_type": "*",
@@ -35559,7 +35579,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5426,
         "CombinedForm": null,
         "surface": "華やか",
         "conjugation_type": "*",
@@ -35872,7 +35892,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5426,
         "CombinedForm": null,
         "surface": "華やか",
         "conjugation_type": "*",
@@ -36140,7 +36160,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5426,
         "CombinedForm": null,
         "surface": "華やか",
         "conjugation_type": "*",
@@ -36680,7 +36700,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5426,
         "CombinedForm": null,
         "surface": "華やか",
         "conjugation_type": "*",
@@ -36936,7 +36956,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5427,
         "CombinedForm": null,
         "surface": "中華",
         "conjugation_type": "*",
@@ -37299,7 +37319,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5427,
         "CombinedForm": null,
         "surface": "中華",
         "conjugation_type": "*",
@@ -37651,6 +37671,10 @@
         "Characters": "味"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 9202,
         "Characters": "ない"
       },
@@ -37715,7 +37739,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5427,
         "CombinedForm": null,
         "surface": "中華",
         "conjugation_type": "*",
@@ -38270,8 +38294,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "がする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "未然形-一般",
@@ -38448,7 +38472,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5427,
         "CombinedForm": null,
         "surface": "中華",
         "conjugation_type": "*",
@@ -38726,7 +38750,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5427,
         "CombinedForm": null,
         "surface": "中華",
         "conjugation_type": "*",
@@ -38753,7 +38777,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2923,
         "CombinedForm": null,
         "surface": "食べ",
         "conjugation_type": "下一段-バ行",
@@ -38994,7 +39018,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5428,
         "CombinedForm": "地下街",
         "surface": "街",
         "conjugation_type": "*",
@@ -39151,7 +39175,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5428,
         "CombinedForm": "地下街",
         "surface": "街",
         "conjugation_type": "*",
@@ -39408,7 +39432,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5428,
         "CombinedForm": "地下街",
         "surface": "街",
         "conjugation_type": "*",
@@ -39637,6 +39661,10 @@
         "Characters": "ない"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 4885,
         "Characters": "居る"
       },
@@ -39766,7 +39794,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5428,
         "CombinedForm": "地下街",
         "surface": "街",
         "conjugation_type": "*",
@@ -40021,8 +40049,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -40325,7 +40353,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5429,
         "CombinedForm": null,
         "surface": "豪華",
         "conjugation_type": "*",
@@ -40842,7 +40870,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5429,
         "CombinedForm": null,
         "surface": "豪華",
         "conjugation_type": "*",
@@ -40964,8 +40992,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 9260,
+        "CombinedForm": "貰う",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -41117,7 +41145,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5429,
         "CombinedForm": null,
         "surface": "豪華",
         "conjugation_type": "*",
@@ -41382,7 +41410,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5432,
         "CombinedForm": null,
         "surface": "鑑定",
         "conjugation_type": "*",
@@ -41566,7 +41594,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -41635,6 +41663,10 @@
       {
         "SubjectId": 3831,
         "Characters": "専門"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 4885,
@@ -41776,7 +41808,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5432,
         "CombinedForm": null,
         "surface": "鑑定",
         "conjugation_type": "*",
@@ -41860,8 +41892,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -41917,8 +41949,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -42034,7 +42066,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5432,
         "CombinedForm": null,
         "surface": "鑑定",
         "conjugation_type": "*",
@@ -42164,7 +42196,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5432,
         "CombinedForm": null,
         "surface": "鑑定",
         "conjugation_type": "*",
@@ -42906,7 +42938,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5432,
         "CombinedForm": null,
         "surface": "鑑定",
         "conjugation_type": "*",
@@ -43235,7 +43267,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5433,
         "CombinedForm": null,
         "surface": "除く",
         "conjugation_type": "五段-カ行",
@@ -43602,7 +43634,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5433,
         "CombinedForm": null,
         "surface": "除い",
         "conjugation_type": "五段-カ行",
@@ -43844,7 +43876,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5433,
         "CombinedForm": null,
         "surface": "除け",
         "conjugation_type": "五段-カ行",
@@ -44147,7 +44179,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5433,
         "CombinedForm": null,
         "surface": "除く",
         "conjugation_type": "五段-カ行",
@@ -44208,7 +44240,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2963,
         "CombinedForm": null,
         "surface": "紙",
         "conjugation_type": "*",
@@ -44417,6 +44449,10 @@
         "Characters": "週末"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 3714,
         "Characters": "私"
       },
@@ -44499,7 +44535,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5434,
         "CombinedForm": null,
         "surface": "掃除",
         "conjugation_type": "*",
@@ -44541,8 +44577,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -44752,7 +44788,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5434,
         "CombinedForm": null,
         "surface": "掃除",
         "conjugation_type": "*",
@@ -45050,7 +45086,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5434,
         "CombinedForm": null,
         "surface": "掃除",
         "conjugation_type": "*",
@@ -45595,7 +45631,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5434,
         "CombinedForm": null,
         "surface": "掃除",
         "conjugation_type": "*",
@@ -45741,7 +45777,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5435,
         "CombinedForm": null,
         "surface": "除外",
         "conjugation_type": "*",
@@ -45863,8 +45899,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 9260,
+        "CombinedForm": "貰う",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -46116,7 +46152,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5435,
         "CombinedForm": null,
         "surface": "除外",
         "conjugation_type": "*",
@@ -46444,7 +46480,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5435,
         "CombinedForm": null,
         "surface": "除外",
         "conjugation_type": "*",
@@ -46696,7 +46732,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5435,
         "CombinedForm": null,
         "surface": "除外",
         "conjugation_type": "*",
@@ -47139,7 +47175,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5436,
         "CombinedForm": null,
         "surface": "尋ねる",
         "conjugation_type": "下一段-ナ行",
@@ -47268,8 +47304,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2914,
+        "CombinedForm": "思う",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -47407,7 +47443,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5436,
         "CombinedForm": null,
         "surface": "尋ねる",
         "conjugation_type": "下一段-ナ行",
@@ -47866,7 +47902,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5436,
         "CombinedForm": null,
         "surface": "尋ねる",
         "conjugation_type": "下一段-ナ行",
@@ -48187,7 +48223,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5436,
         "CombinedForm": null,
         "surface": "尋ね",
         "conjugation_type": "下一段-ナ行",
@@ -48859,7 +48895,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5437,
         "CombinedForm": null,
         "surface": "尋問",
         "conjugation_type": "*",
@@ -48902,7 +48938,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -49048,7 +49084,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5437,
         "CombinedForm": null,
         "surface": "尋問",
         "conjugation_type": "*",
@@ -49132,7 +49168,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3862,
         "CombinedForm": null,
         "surface": "証人",
         "conjugation_type": "*",
@@ -49330,7 +49366,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9202,
         "CombinedForm": null,
         "surface": "ない",
         "conjugation_type": "助動詞-ナイ",
@@ -49599,7 +49635,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5437,
         "CombinedForm": null,
         "surface": "尋問",
         "conjugation_type": "*",
@@ -49828,7 +49864,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5437,
         "CombinedForm": null,
         "surface": "尋問",
         "conjugation_type": "*",
@@ -50080,7 +50116,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5437,
         "CombinedForm": null,
         "surface": "尋問",
         "conjugation_type": "*",
@@ -50255,8 +50291,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4627,
+        "CombinedForm": "導く",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -50376,7 +50412,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5438,
         "CombinedForm": null,
         "surface": "幾ら",
         "conjugation_type": "*",
@@ -50487,7 +50523,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5438,
         "CombinedForm": null,
         "surface": "幾ら",
         "conjugation_type": "*",
@@ -50697,7 +50733,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5438,
         "CombinedForm": null,
         "surface": "幾ら",
         "conjugation_type": "*",
@@ -50811,8 +50847,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -50993,8 +51029,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3167,
+        "CombinedForm": "終わる",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -51127,7 +51163,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5438,
         "CombinedForm": null,
         "surface": "幾ら",
         "conjugation_type": "*",
@@ -51283,8 +51319,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 7857,
+        "CombinedForm": "頂く",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -51608,7 +51644,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5439,
         "CombinedForm": "幾つ",
         "surface": "つ",
         "conjugation_type": "*",
@@ -51967,7 +52003,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5439,
         "CombinedForm": "幾つ",
         "surface": "つ",
         "conjugation_type": "*",
@@ -52047,8 +52083,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -52218,7 +52254,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5439,
         "CombinedForm": "幾つ",
         "surface": "つ",
         "conjugation_type": "*",
@@ -52360,7 +52396,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5440,
         "CombinedForm": "幾何学",
         "surface": "学",
         "conjugation_type": "*",
@@ -52776,7 +52812,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5440,
         "CombinedForm": "幾何学",
         "surface": "学",
         "conjugation_type": "*",
@@ -53079,7 +53115,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5440,
         "CombinedForm": "幾何学",
         "surface": "学",
         "conjugation_type": "*",
@@ -53361,8 +53397,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3088,
+        "CombinedForm": "使う",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -53536,7 +53572,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5440,
         "CombinedForm": "幾何学",
         "surface": "学",
         "conjugation_type": "*",
@@ -53979,7 +54015,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5441,
         "CombinedForm": null,
         "surface": "廊下",
         "conjugation_type": "*",
@@ -54171,7 +54207,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5441,
         "CombinedForm": null,
         "surface": "廊下",
         "conjugation_type": "*",
@@ -54472,7 +54508,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5441,
         "CombinedForm": null,
         "surface": "廊下",
         "conjugation_type": "*",
@@ -54920,7 +54956,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5441,
         "CombinedForm": null,
         "surface": "廊下",
         "conjugation_type": "*",
@@ -55450,7 +55486,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5442,
         "CombinedForm": null,
         "surface": "画廊",
         "conjugation_type": "*",
@@ -55653,7 +55689,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5442,
         "CombinedForm": null,
         "surface": "画廊",
         "conjugation_type": "*",
@@ -55806,7 +55842,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5442,
         "CombinedForm": null,
         "surface": "画廊",
         "conjugation_type": "*",
@@ -56041,7 +56077,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5442,
         "CombinedForm": null,
         "surface": "画廊",
         "conjugation_type": "*",
@@ -56235,8 +56271,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2491,
+        "CombinedForm": "上がる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -56677,7 +56713,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5443,
         "CombinedForm": null,
         "surface": "掃く",
         "conjugation_type": "五段-カ行",
@@ -57075,7 +57111,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5443,
         "CombinedForm": null,
         "surface": "掃く",
         "conjugation_type": "五段-カ行",
@@ -57412,7 +57448,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4330,
         "CombinedForm": null,
         "surface": "会議",
         "conjugation_type": "*",
@@ -57492,7 +57528,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5443,
         "CombinedForm": null,
         "surface": "掃い",
         "conjugation_type": "五段-カ行",
@@ -57775,7 +57811,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5443,
         "CombinedForm": null,
         "surface": "掃き",
         "conjugation_type": "五段-カ行",
@@ -58220,7 +58256,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5444,
         "CombinedForm": null,
         "surface": "泥",
         "conjugation_type": "*",
@@ -58431,7 +58467,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5444,
         "CombinedForm": null,
         "surface": "泥",
         "conjugation_type": "*",
@@ -59026,7 +59062,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5444,
         "CombinedForm": null,
         "surface": "泥",
         "conjugation_type": "*",
@@ -59212,7 +59248,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5444,
         "CombinedForm": null,
         "surface": "泥",
         "conjugation_type": "*",
@@ -59254,7 +59290,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2937,
         "CombinedForm": null,
         "surface": "付け",
         "conjugation_type": "下一段-カ行",
@@ -59289,7 +59325,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "てる",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -59394,7 +59430,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2937,
         "CombinedForm": null,
         "surface": "付け",
         "conjugation_type": "下一段-カ行",
@@ -59413,8 +59449,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2937,
+        "CombinedForm": "付ける",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -59555,6 +59591,10 @@
         "Characters": "努力"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 2612,
         "Characters": "方"
       },
@@ -59619,7 +59659,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5444,
         "CombinedForm": null,
         "surface": "泥",
         "conjugation_type": "*",
@@ -60272,8 +60312,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -60566,7 +60606,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5445,
         "CombinedForm": null,
         "surface": "泥水",
         "conjugation_type": "*",
@@ -60746,7 +60786,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5445,
         "CombinedForm": null,
         "surface": "泥水",
         "conjugation_type": "*",
@@ -61018,7 +61058,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5445,
         "CombinedForm": null,
         "surface": "泥水",
         "conjugation_type": "*",
@@ -62137,7 +62177,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5445,
         "CombinedForm": null,
         "surface": "泥水",
         "conjugation_type": "*",
@@ -62403,7 +62443,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5446,
         "CombinedForm": null,
         "surface": "棒",
         "conjugation_type": "*",
@@ -62479,7 +62519,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5446,
         "CombinedForm": null,
         "surface": "棒",
         "conjugation_type": "*",
@@ -62563,7 +62603,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5446,
         "CombinedForm": null,
         "surface": "棒",
         "conjugation_type": "*",
@@ -62622,6 +62662,10 @@
       {
         "SubjectId": 2811,
         "Characters": "工作"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -62686,7 +62730,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5446,
         "CombinedForm": null,
         "surface": "棒",
         "conjugation_type": "*",
@@ -62827,8 +62871,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -62847,7 +62891,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -62984,7 +63028,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5446,
         "CombinedForm": null,
         "surface": "棒",
         "conjugation_type": "*",
@@ -63248,6 +63292,10 @@
       {
         "SubjectId": 2587,
         "Characters": "立てる"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -63338,7 +63386,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5446,
         "CombinedForm": null,
         "surface": "棒",
         "conjugation_type": "*",
@@ -63479,8 +63527,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "しよう",
         "conjugation_type": "サ行変格",
         "conjugation_form": "意志推量形",
@@ -63627,7 +63675,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5447,
         "CombinedForm": null,
         "surface": "驚く",
         "conjugation_type": "五段-カ行",
@@ -63693,6 +63741,10 @@
       {
         "SubjectId": 5447,
         "Characters": "驚く"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -63768,7 +63820,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5447,
         "CombinedForm": null,
         "surface": "驚く",
         "conjugation_type": "五段-カ行",
@@ -63829,8 +63881,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -63849,7 +63901,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -64410,7 +64462,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5447,
         "CombinedForm": null,
         "surface": "驚い",
         "conjugation_type": "五段-カ行",
@@ -64621,7 +64673,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4946,
         "CombinedForm": null,
         "surface": "フグ",
         "conjugation_type": "*",
@@ -64815,7 +64867,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5447,
         "CombinedForm": null,
         "surface": "驚い",
         "conjugation_type": "五段-カ行",
@@ -65269,7 +65321,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5448,
         "CombinedForm": null,
         "surface": "驚嘆",
         "conjugation_type": "*",
@@ -65522,7 +65574,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5448,
         "CombinedForm": null,
         "surface": "驚嘆",
         "conjugation_type": "*",
@@ -65602,8 +65654,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -65905,7 +65957,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5448,
         "CombinedForm": null,
         "surface": "驚嘆",
         "conjugation_type": "*",
@@ -65948,7 +66000,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -66093,7 +66145,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5448,
         "CombinedForm": null,
         "surface": "驚嘆",
         "conjugation_type": "*",
@@ -66454,6 +66506,10 @@
         "Characters": "止める"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 9202,
         "Characters": "ない"
       }
@@ -66566,7 +66622,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5449,
         "CombinedForm": null,
         "surface": "嘆く",
         "conjugation_type": "五段-カ行",
@@ -66695,8 +66751,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "未然形-一般",
@@ -66906,7 +66962,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5449,
         "CombinedForm": null,
         "surface": "嘆く",
         "conjugation_type": "五段-カ行",
@@ -67757,7 +67813,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5449,
         "CombinedForm": null,
         "surface": "嘆い",
         "conjugation_type": "五段-カ行",
@@ -67922,7 +67978,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5449,
         "CombinedForm": null,
         "surface": "嘆い",
         "conjugation_type": "五段-カ行",
@@ -68184,7 +68240,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5449,
         "CombinedForm": null,
         "surface": "嘆く",
         "conjugation_type": "五段-カ行",
@@ -68487,7 +68543,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5450,
         "CombinedForm": null,
         "surface": "嘆息",
         "conjugation_type": "*",
@@ -69074,7 +69130,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5450,
         "CombinedForm": null,
         "surface": "嘆息",
         "conjugation_type": "*",
@@ -69487,7 +69543,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5450,
         "CombinedForm": null,
         "surface": "嘆息",
         "conjugation_type": "*",
@@ -70191,7 +70247,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5450,
         "CombinedForm": null,
         "surface": "嘆息",
         "conjugation_type": "*",
@@ -70540,7 +70596,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5451,
         "CombinedForm": "感嘆符",
         "surface": "符",
         "conjugation_type": "*",
@@ -70723,8 +70779,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3088,
+        "CombinedForm": "使う",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -70946,7 +71002,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5451,
         "CombinedForm": "感嘆符",
         "surface": "符",
         "conjugation_type": "*",
@@ -71068,8 +71124,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -71184,7 +71240,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5451,
         "CombinedForm": "感嘆符",
         "surface": "符",
         "conjugation_type": "*",
@@ -71791,7 +71847,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5451,
         "CombinedForm": "感嘆符",
         "surface": "符",
         "conjugation_type": "*",
@@ -72056,7 +72112,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5452,
         "CombinedForm": null,
         "surface": "倉庫",
         "conjugation_type": "*",
@@ -72357,7 +72413,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5452,
         "CombinedForm": null,
         "surface": "倉庫",
         "conjugation_type": "*",
@@ -72731,7 +72787,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5452,
         "CombinedForm": null,
         "surface": "倉庫",
         "conjugation_type": "*",
@@ -73172,7 +73228,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5452,
         "CombinedForm": null,
         "surface": "倉庫",
         "conjugation_type": "*",
@@ -73587,8 +73643,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -74164,8 +74220,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -74943,7 +74999,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5454,
         "CombinedForm": null,
         "surface": "子孫",
         "conjugation_type": "*",
@@ -75063,7 +75119,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5454,
         "CombinedForm": null,
         "surface": "子孫",
         "conjugation_type": "*",
@@ -75610,7 +75666,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5454,
         "CombinedForm": null,
         "surface": "子孫",
         "conjugation_type": "*",
@@ -75745,6 +75801,10 @@
       {
         "SubjectId": 2781,
         "Characters": "何"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 4885,
@@ -75906,7 +75966,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5454,
         "CombinedForm": null,
         "surface": "子孫",
         "conjugation_type": "*",
@@ -76081,8 +76141,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -76248,8 +76308,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2914,
+        "CombinedForm": "思う",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -76363,7 +76423,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5455,
         "CombinedForm": null,
         "surface": "孫",
         "conjugation_type": "*",
@@ -76576,8 +76636,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3252,
+        "CombinedForm": "成る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -76684,7 +76744,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5455,
         "CombinedForm": null,
         "surface": "孫",
         "conjugation_type": "*",
@@ -77107,7 +77167,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5455,
         "CombinedForm": null,
         "surface": "孫",
         "conjugation_type": "*",
@@ -77675,7 +77735,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5455,
         "CombinedForm": null,
         "surface": "孫",
         "conjugation_type": "*",
@@ -78046,7 +78106,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5456,
         "CombinedForm": null,
         "surface": "巣",
         "conjugation_type": "*",
@@ -78249,7 +78309,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5456,
         "CombinedForm": null,
         "surface": "巣",
         "conjugation_type": "*",
@@ -78854,7 +78914,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5456,
         "CombinedForm": null,
         "surface": "巣",
         "conjugation_type": "*",
@@ -79193,8 +79253,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -79578,7 +79638,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5456,
         "CombinedForm": null,
         "surface": "巣",
         "conjugation_type": "*",
@@ -79789,7 +79849,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5457,
         "CombinedForm": null,
         "surface": "巣立ち",
         "conjugation_type": "*",
@@ -80080,6 +80140,10 @@
       {
         "SubjectId": 2908,
         "Characters": "前"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -80315,7 +80379,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5457,
         "CombinedForm": null,
         "surface": "巣立ち",
         "conjugation_type": "*",
@@ -80357,8 +80421,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -80493,6 +80557,10 @@
       {
         "SubjectId": 2513,
         "Characters": "子"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 3038,
@@ -80824,7 +80892,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2697,
         "CombinedForm": null,
         "surface": "み",
         "conjugation_type": "上一段-マ行",
@@ -80976,7 +81044,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5457,
         "CombinedForm": null,
         "surface": "巣立ち",
         "conjugation_type": "*",
@@ -81018,8 +81086,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -81141,6 +81209,10 @@
       {
         "SubjectId": 7361,
         "Characters": "蟹"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 3082,
@@ -81404,7 +81476,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5457,
         "CombinedForm": null,
         "surface": "巣立ち",
         "conjugation_type": "*",
@@ -81446,8 +81518,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -81861,7 +81933,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5458,
         "CombinedForm": null,
         "surface": "ハチの巣",
         "conjugation_type": "*",
@@ -82251,7 +82323,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5458,
         "CombinedForm": null,
         "surface": "ハチの巣",
         "conjugation_type": "*",
@@ -82568,7 +82640,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5458,
         "CombinedForm": null,
         "surface": "ハチの巣",
         "conjugation_type": "*",
@@ -83119,7 +83191,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5458,
         "CombinedForm": null,
         "surface": "ハチの巣",
         "conjugation_type": "*",
@@ -83324,7 +83396,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2639,
         "CombinedForm": null,
         "surface": "母",
         "conjugation_type": "*",
@@ -85346,7 +85418,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5460,
         "CombinedForm": null,
         "surface": "帯",
         "conjugation_type": "*",
@@ -85925,7 +85997,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5460,
         "CombinedForm": null,
         "surface": "帯",
         "conjugation_type": "*",
@@ -86151,7 +86223,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -86735,7 +86807,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5461,
         "CombinedForm": null,
         "surface": "地帯",
         "conjugation_type": "*",
@@ -86943,7 +87015,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5461,
         "CombinedForm": null,
         "surface": "地帯",
         "conjugation_type": "*",
@@ -87122,8 +87194,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -87258,7 +87330,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5461,
         "CombinedForm": null,
         "surface": "地帯",
         "conjugation_type": "*",
@@ -87578,7 +87650,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4885,
         "CombinedForm": null,
         "surface": "い",
         "conjugation_type": "上一段-ア行",
@@ -87597,8 +87669,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -87854,7 +87926,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5461,
         "CombinedForm": null,
         "surface": "地帯",
         "conjugation_type": "*",
@@ -87996,7 +88068,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "れる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -88117,7 +88189,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5462,
         "CombinedForm": null,
         "surface": "直径",
         "conjugation_type": "*",
@@ -88320,7 +88392,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5462,
         "CombinedForm": null,
         "surface": "直径",
         "conjugation_type": "*",
@@ -88580,7 +88652,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5462,
         "CombinedForm": null,
         "surface": "直径",
         "conjugation_type": "*",
@@ -88958,6 +89030,10 @@
       {
         "SubjectId": 5013,
         "Characters": "巨大"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -88988,7 +89064,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5462,
         "CombinedForm": null,
         "surface": "直径",
         "conjugation_type": "*",
@@ -89304,8 +89380,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -89362,7 +89438,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "仕舞う",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -89498,7 +89574,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5463,
         "CombinedForm": null,
         "surface": "半径",
         "conjugation_type": "*",
@@ -89655,7 +89731,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5463,
         "CombinedForm": null,
         "surface": "半径",
         "conjugation_type": "*",
@@ -89884,8 +89960,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -90019,7 +90095,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5463,
         "CombinedForm": null,
         "surface": "半径",
         "conjugation_type": "*",
@@ -90458,7 +90534,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5463,
         "CombinedForm": null,
         "surface": "半径",
         "conjugation_type": "*",
@@ -90759,6 +90835,10 @@
         "Characters": "怪我"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 2475,
         "Characters": "人"
       },
@@ -90833,8 +90913,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -91019,7 +91099,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5465,
         "CombinedForm": "救急車",
         "surface": "車",
         "conjugation_type": "*",
@@ -91080,8 +91160,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4648,
+        "CombinedForm": "呼ぶ",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -91211,7 +91291,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5465,
         "CombinedForm": "救急車",
         "surface": "車",
         "conjugation_type": "*",
@@ -91579,7 +91659,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5465,
         "CombinedForm": "救急車",
         "surface": "車",
         "conjugation_type": "*",
@@ -92206,7 +92286,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5465,
         "CombinedForm": "救急車",
         "surface": "車",
         "conjugation_type": "*",
@@ -92572,7 +92652,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5465,
         "CombinedForm": "救急車",
         "surface": "車",
         "conjugation_type": "*",
@@ -92863,7 +92943,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5466,
         "CombinedForm": null,
         "surface": "救う",
         "conjugation_type": "五段-ワア行",
@@ -93023,8 +93103,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -93264,7 +93344,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5466,
         "CombinedForm": null,
         "surface": "救い",
         "conjugation_type": "五段-ワア行",
@@ -93283,8 +93363,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 5466,
+        "CombinedForm": "救う",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -93443,7 +93523,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5466,
         "CombinedForm": null,
         "surface": "救っ",
         "conjugation_type": "五段-ワア行",
@@ -93595,7 +93675,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3714,
         "CombinedForm": null,
         "surface": "私",
         "conjugation_type": "*",
@@ -93730,6 +93810,10 @@
       {
         "SubjectId": 3082,
         "Characters": "事"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 4885,
@@ -93916,7 +94000,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5466,
         "CombinedForm": null,
         "surface": "救う",
         "conjugation_type": "五段-ワア行",
@@ -94038,8 +94122,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -94095,8 +94179,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -94169,6 +94253,10 @@
       {
         "SubjectId": 7574,
         "Characters": "作業"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -94237,7 +94325,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5467,
         "CombinedForm": null,
         "surface": "散る",
         "conjugation_type": "五段-ラ行",
@@ -94416,8 +94504,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "しよう",
         "conjugation_type": "サ行変格",
         "conjugation_form": "意志推量形",
@@ -94635,7 +94723,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5467,
         "CombinedForm": null,
         "surface": "散っ",
         "conjugation_type": "五段-ラ行",
@@ -94837,8 +94925,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3418,
+        "CombinedForm": "出来る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -94979,7 +95067,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5467,
         "CombinedForm": null,
         "surface": "散り",
         "conjugation_type": "五段-ラ行",
@@ -95150,8 +95238,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2824,
+        "CombinedForm": "来る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -95342,7 +95430,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5467,
         "CombinedForm": null,
         "surface": "散る",
         "conjugation_type": "五段-ラ行",
@@ -95892,7 +95980,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5468,
         "CombinedForm": null,
         "surface": "散歩",
         "conjugation_type": "*",
@@ -96029,8 +96117,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -96148,7 +96236,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5468,
         "CombinedForm": null,
         "surface": "散歩",
         "conjugation_type": "*",
@@ -96416,7 +96504,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -96475,6 +96563,10 @@
         "Characters": "散歩"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 2958,
         "Characters": "時"
       }
@@ -96507,7 +96599,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5468,
         "CombinedForm": null,
         "surface": "散歩",
         "conjugation_type": "*",
@@ -96549,8 +96641,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -96691,7 +96783,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "持ち歩く",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -96800,7 +96892,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5468,
         "CombinedForm": null,
         "surface": "散歩",
         "conjugation_type": "*",
@@ -97358,7 +97450,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5469,
         "CombinedForm": null,
         "surface": "解散",
         "conjugation_type": "*",
@@ -97589,6 +97681,10 @@
       {
         "SubjectId": 2602,
         "Characters": "大切"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -97834,7 +97930,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5469,
         "CombinedForm": null,
         "surface": "解散",
         "conjugation_type": "*",
@@ -98131,8 +98227,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -98414,7 +98510,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5469,
         "CombinedForm": null,
         "surface": "解散",
         "conjugation_type": "*",
@@ -98547,7 +98643,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5470,
         "CombinedForm": null,
         "surface": "粉",
         "conjugation_type": "*",
@@ -98685,7 +98781,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5470,
         "CombinedForm": null,
         "surface": "粉",
         "conjugation_type": "*",
@@ -98880,7 +98976,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "仕上がる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -98956,7 +99052,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5470,
         "CombinedForm": null,
         "surface": "粉",
         "conjugation_type": "*",
@@ -99444,7 +99540,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5470,
         "CombinedForm": null,
         "surface": "粉",
         "conjugation_type": "*",
@@ -99635,7 +99731,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5471,
         "CombinedForm": null,
         "surface": "麦粉",
         "conjugation_type": "*",
@@ -100005,7 +100101,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5471,
         "CombinedForm": null,
         "surface": "麦粉",
         "conjugation_type": "*",
@@ -100104,8 +100200,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -100200,6 +100296,10 @@
       {
         "SubjectId": 9221,
         "Characters": "パン"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 2923,
@@ -100322,7 +100422,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5471,
         "CombinedForm": null,
         "surface": "麦粉",
         "conjugation_type": "*",
@@ -100528,8 +100628,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -100863,7 +100963,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5471,
         "CombinedForm": null,
         "surface": "麦粉",
         "conjugation_type": "*",
@@ -101270,8 +101370,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -101435,7 +101535,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5472,
         "CombinedForm": "花粉症",
         "surface": "症",
         "conjugation_type": "*",
@@ -101538,8 +101638,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 9260,
+        "CombinedForm": "貰う",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -101718,7 +101818,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5472,
         "CombinedForm": "花粉症",
         "surface": "症",
         "conjugation_type": "*",
@@ -101944,7 +102044,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5472,
         "CombinedForm": "花粉症",
         "surface": "症",
         "conjugation_type": "*",
@@ -102262,7 +102362,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5472,
         "CombinedForm": "花粉症",
         "surface": "症",
         "conjugation_type": "*",
@@ -102661,6 +102761,10 @@
         "Characters": "粉"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 3107,
         "Characters": "物"
       }
@@ -102776,7 +102880,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5473,
         "CombinedForm": "粉状",
         "surface": "状",
         "conjugation_type": "*",
@@ -102818,8 +102922,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -102926,6 +103030,10 @@
       {
         "SubjectId": 5470,
         "Characters": "粉"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -103036,7 +103144,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5473,
         "CombinedForm": "粉状",
         "surface": "状",
         "conjugation_type": "*",
@@ -103078,8 +103186,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -103174,7 +103282,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "振り掛ける",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -103220,6 +103328,10 @@
       {
         "SubjectId": 5470,
         "Characters": "粉"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 2795,
@@ -103428,7 +103540,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5470,
         "CombinedForm": null,
         "surface": "粉",
         "conjugation_type": "*",
@@ -103451,7 +103563,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5473,
         "CombinedForm": "粉状",
         "surface": "状",
         "conjugation_type": "*",
@@ -103493,8 +103605,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -103912,6 +104024,10 @@
         "Characters": "粉"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 2914,
         "Characters": "思う"
       },
@@ -104166,7 +104282,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5473,
         "CombinedForm": "粉状",
         "surface": "状",
         "conjugation_type": "*",
@@ -104250,8 +104366,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "にする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -104546,8 +104662,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2598,
+        "CombinedForm": "分かる",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -104749,7 +104865,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5475,
         "CombinedForm": null,
         "surface": "山脈",
         "conjugation_type": "*",
@@ -104848,8 +104964,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -104964,7 +105080,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5475,
         "CombinedForm": null,
         "surface": "山脈",
         "conjugation_type": "*",
@@ -105212,8 +105328,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -105340,7 +105456,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5475,
         "CombinedForm": null,
         "surface": "山脈",
         "conjugation_type": "*",
@@ -105667,8 +105783,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -105783,7 +105899,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5475,
         "CombinedForm": null,
         "surface": "山脈",
         "conjugation_type": "*",
@@ -105981,8 +106097,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -106054,7 +106170,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5477,
         "CombinedForm": null,
         "surface": "野菜",
         "conjugation_type": "*",
@@ -106206,8 +106322,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2805,
+        "CombinedForm": "作る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -106409,7 +106525,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5477,
         "CombinedForm": null,
         "surface": "野菜",
         "conjugation_type": "*",
@@ -106734,7 +106850,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5477,
         "CombinedForm": null,
         "surface": "野菜",
         "conjugation_type": "*",
@@ -106776,7 +106892,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3252,
         "CombinedForm": null,
         "surface": "なり",
         "conjugation_type": "五段-ラ行",
@@ -107119,7 +107235,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5477,
         "CombinedForm": null,
         "surface": "野菜",
         "conjugation_type": "*",
@@ -107192,7 +107308,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "られる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -107310,7 +107426,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5478,
         "CombinedForm": null,
         "surface": "菜食",
         "conjugation_type": "*",
@@ -107428,6 +107544,10 @@
         "Characters": "出来る"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 4885,
         "Characters": "居る"
       }
@@ -107528,7 +107648,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5478,
         "CombinedForm": null,
         "surface": "菜食",
         "conjugation_type": "*",
@@ -107604,8 +107724,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -107661,8 +107781,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -107742,7 +107862,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5478,
         "CombinedForm": null,
         "surface": "菜食",
         "conjugation_type": "*",
@@ -108005,7 +108125,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5478,
         "CombinedForm": null,
         "surface": "菜食",
         "conjugation_type": "*",
@@ -108222,8 +108342,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3252,
+        "CombinedForm": "成る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -108416,7 +108536,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3252,
         "CombinedForm": null,
         "surface": "なる",
         "conjugation_type": "五段-ラ行",
@@ -108496,8 +108616,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -108561,7 +108681,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5479,
         "CombinedForm": null,
         "surface": "貨物",
         "conjugation_type": "*",
@@ -108768,7 +108888,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5479,
         "CombinedForm": null,
         "surface": "貨物",
         "conjugation_type": "*",
@@ -109063,7 +109183,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5479,
         "CombinedForm": null,
         "surface": "貨物",
         "conjugation_type": "*",
@@ -109390,7 +109510,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5479,
         "CombinedForm": null,
         "surface": "貨物",
         "conjugation_type": "*",
@@ -109482,7 +109602,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5479,
         "CombinedForm": null,
         "surface": "貨物",
         "conjugation_type": "*",
@@ -109612,7 +109732,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5479,
         "CombinedForm": null,
         "surface": "貨物",
         "conjugation_type": "*",
@@ -109696,8 +109816,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -109815,7 +109935,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5480,
         "CombinedForm": null,
         "surface": "通貨",
         "conjugation_type": "*",
@@ -110010,7 +110130,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5480,
         "CombinedForm": null,
         "surface": "通貨",
         "conjugation_type": "*",
@@ -110124,8 +110244,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -110201,7 +110321,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5480,
         "CombinedForm": null,
         "surface": "通貨",
         "conjugation_type": "*",
@@ -110327,8 +110447,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 7588,
+        "CombinedForm": "変わる",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -110374,6 +110494,10 @@
       {
         "SubjectId": 2881,
         "Characters": "国"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 3088,
@@ -110599,7 +110723,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5480,
         "CombinedForm": null,
         "surface": "通貨",
         "conjugation_type": "*",
@@ -110641,8 +110765,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "とする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -110751,8 +110875,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -110859,7 +110983,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5481,
         "CombinedForm": null,
         "surface": "大陸",
         "conjugation_type": "*",
@@ -111158,7 +111282,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5481,
         "CombinedForm": null,
         "surface": "大陸",
         "conjugation_type": "*",
@@ -111394,8 +111518,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -111529,7 +111653,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5481,
         "CombinedForm": null,
         "surface": "大陸",
         "conjugation_type": "*",
@@ -111954,7 +112078,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5481,
         "CombinedForm": null,
         "surface": "大陸",
         "conjugation_type": "*",
@@ -112386,7 +112510,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5482,
         "CombinedForm": null,
         "surface": "陸軍",
         "conjugation_type": "*",
@@ -112814,7 +112938,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5482,
         "CombinedForm": null,
         "surface": "陸軍",
         "conjugation_type": "*",
@@ -113254,7 +113378,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5482,
         "CombinedForm": null,
         "surface": "陸軍",
         "conjugation_type": "*",
@@ -113633,7 +113757,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5482,
         "CombinedForm": null,
         "surface": "陸軍",
         "conjugation_type": "*",
@@ -114332,7 +114456,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5483,
         "CombinedForm": null,
         "surface": "似",
         "conjugation_type": "上一段-ナ行",
@@ -114566,7 +114690,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5483,
         "CombinedForm": null,
         "surface": "似",
         "conjugation_type": "上一段-ナ行",
@@ -114892,7 +115016,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5483,
         "CombinedForm": null,
         "surface": "似",
         "conjugation_type": "上一段-ナ行",
@@ -115006,7 +115130,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4885,
         "CombinedForm": null,
         "surface": "い",
         "conjugation_type": "上一段-ア行",
@@ -115192,7 +115316,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5483,
         "CombinedForm": null,
         "surface": "似",
         "conjugation_type": "上一段-ナ行",
@@ -115331,6 +115455,10 @@
       {
         "SubjectId": 2670,
         "Characters": "気"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -115406,7 +115534,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5483,
         "CombinedForm": null,
         "surface": "似る",
         "conjugation_type": "上一段-ナ行",
@@ -115702,7 +115830,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9202,
         "CombinedForm": null,
         "surface": "ない",
         "conjugation_type": "形容詞",
@@ -115763,8 +115891,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "がする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "終止形-一般",
@@ -115955,7 +116083,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5485,
         "CombinedForm": null,
         "surface": "平均",
         "conjugation_type": "*",
@@ -116281,7 +116409,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5485,
         "CombinedForm": null,
         "surface": "平均",
         "conjugation_type": "*",
@@ -116365,8 +116493,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2557,
+        "CombinedForm": "出る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -116564,7 +116692,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5485,
         "CombinedForm": null,
         "surface": "平均",
         "conjugation_type": "*",
@@ -116962,7 +117090,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5485,
         "CombinedForm": null,
         "surface": "平均",
         "conjugation_type": "*",
@@ -117206,7 +117334,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3719,
         "CombinedForm": null,
         "surface": "約",
         "conjugation_type": "*",
@@ -117416,7 +117544,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5486,
         "CombinedForm": null,
         "surface": "均等",
         "conjugation_type": "*",
@@ -117606,6 +117734,10 @@
         "Characters": "平ら"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 3714,
         "Characters": "私"
       },
@@ -117791,7 +117923,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5486,
         "CombinedForm": null,
         "surface": "均等",
         "conjugation_type": "*",
@@ -117863,8 +117995,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -118234,7 +118366,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5486,
         "CombinedForm": null,
         "surface": "均等",
         "conjugation_type": "*",
@@ -118380,6 +118512,10 @@
       {
         "SubjectId": 2600,
         "Characters": "分"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 2599,
@@ -118659,8 +118795,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "とする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -118697,7 +118833,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5486,
         "CombinedForm": null,
         "surface": "均等",
         "conjugation_type": "*",
@@ -118754,8 +118890,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2599,
+        "CombinedForm": "分ける",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -118809,6 +118945,10 @@
       {
         "SubjectId": 4073,
         "Characters": "取れる"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 4885,
@@ -118892,7 +119032,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5487,
         "CombinedForm": null,
         "surface": "均整",
         "conjugation_type": "*",
@@ -119010,8 +119150,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -119149,7 +119289,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5487,
         "CombinedForm": null,
         "surface": "均整",
         "conjugation_type": "*",
@@ -119573,7 +119713,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5487,
         "CombinedForm": null,
         "surface": "均整",
         "conjugation_type": "*",
@@ -120403,7 +120543,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5487,
         "CombinedForm": null,
         "surface": "均整",
         "conjugation_type": "*",
@@ -120502,7 +120642,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3819,
         "CombinedForm": null,
         "surface": "作品",
         "conjugation_type": "*",
@@ -120743,7 +120883,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5488,
         "CombinedForm": null,
         "surface": "墓",
         "conjugation_type": "*",
@@ -120873,8 +121013,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -121172,8 +121312,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2824,
+        "CombinedForm": "来る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -121242,6 +121382,10 @@
       {
         "SubjectId": 5434,
         "Characters": "掃除"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -121424,7 +121568,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5488,
         "CombinedForm": null,
         "surface": "墓",
         "conjugation_type": "*",
@@ -121508,8 +121652,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -121528,7 +121672,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -121701,7 +121845,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5488,
         "CombinedForm": null,
         "surface": "墓",
         "conjugation_type": "*",
@@ -122201,7 +122345,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5489,
         "CombinedForm": null,
         "surface": "墓地",
         "conjugation_type": "*",
@@ -122560,7 +122704,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5489,
         "CombinedForm": null,
         "surface": "墓地",
         "conjugation_type": "*",
@@ -122683,7 +122827,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "いらっしゃる",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "命令形",
@@ -123079,7 +123223,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5489,
         "CombinedForm": null,
         "surface": "墓地",
         "conjugation_type": "*",
@@ -123396,7 +123540,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5489,
         "CombinedForm": null,
         "surface": "墓地",
         "conjugation_type": "*",
@@ -123730,7 +123874,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2504,
         "CombinedForm": null,
         "surface": "山",
         "conjugation_type": "*",
@@ -125687,7 +125831,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5491,
         "CombinedForm": null,
         "surface": "富む",
         "conjugation_type": "五段-マ行",
@@ -126081,7 +126225,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5491,
         "CombinedForm": null,
         "surface": "富ん",
         "conjugation_type": "五段-マ行",
@@ -126293,7 +126437,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5491,
         "CombinedForm": null,
         "surface": "富ん",
         "conjugation_type": "五段-マ行",
@@ -126601,8 +126745,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -126782,7 +126926,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5492,
         "CombinedForm": null,
         "surface": "富",
         "conjugation_type": "*",
@@ -126934,8 +127078,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -127025,7 +127169,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4198,
         "CombinedForm": null,
         "surface": "得",
         "conjugation_type": "下一段-ア行",
@@ -127097,7 +127241,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5492,
         "CombinedForm": null,
         "surface": "富",
         "conjugation_type": "*",
@@ -127263,7 +127407,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5492,
         "CombinedForm": null,
         "surface": "富",
         "conjugation_type": "*",
@@ -127552,7 +127696,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5492,
         "CombinedForm": null,
         "surface": "富",
         "conjugation_type": "*",
@@ -127969,7 +128113,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5492,
         "CombinedForm": null,
         "surface": "富",
         "conjugation_type": "*",
@@ -128197,8 +128341,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -128391,7 +128535,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5492,
         "CombinedForm": null,
         "surface": "富",
         "conjugation_type": "*",
@@ -128921,7 +129065,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 4885,
         "CombinedForm": null,
         "surface": "いる",
         "conjugation_type": "上一段-ア行",
@@ -129068,7 +129212,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5493,
         "CombinedForm": null,
         "surface": "富裕",
         "conjugation_type": "*",
@@ -129379,7 +129523,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5493,
         "CombinedForm": null,
         "surface": "富裕",
         "conjugation_type": "*",
@@ -129823,7 +129967,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5493,
         "CombinedForm": null,
         "surface": "富裕",
         "conjugation_type": "*",
@@ -130437,7 +130581,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5493,
         "CombinedForm": null,
         "surface": "富裕",
         "conjugation_type": "*",
@@ -130785,7 +130929,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5494,
         "CombinedForm": null,
         "surface": "道徳",
         "conjugation_type": "*",
@@ -130888,8 +131032,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -131134,7 +131278,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5494,
         "CombinedForm": null,
         "surface": "道徳",
         "conjugation_type": "*",
@@ -131256,8 +131400,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2971,
+        "CombinedForm": "教える",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -131475,7 +131619,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5494,
         "CombinedForm": null,
         "surface": "道徳",
         "conjugation_type": "*",
@@ -131635,7 +131779,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3252,
         "CombinedForm": null,
         "surface": "なる",
         "conjugation_type": "五段-ラ行",
@@ -131914,7 +132058,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5494,
         "CombinedForm": null,
         "surface": "道徳",
         "conjugation_type": "*",
@@ -132136,7 +132280,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5495,
         "CombinedForm": null,
         "surface": "徳川",
         "conjugation_type": "*",
@@ -132386,7 +132530,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5495,
         "CombinedForm": null,
         "surface": "徳川",
         "conjugation_type": "*",
@@ -132639,7 +132783,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5495,
         "CombinedForm": null,
         "surface": "徳川",
         "conjugation_type": "*",
@@ -133128,7 +133272,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5495,
         "CombinedForm": null,
         "surface": "徳川",
         "conjugation_type": "*",
@@ -133311,8 +133455,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -133670,7 +133814,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2775,
         "CombinedForm": null,
         "surface": "行っ",
         "conjugation_type": "五段-カ行",
@@ -134079,8 +134223,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 9260,
+        "CombinedForm": "貰う",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -135172,7 +135316,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5497,
         "CombinedForm": null,
         "surface": "探す",
         "conjugation_type": "五段-サ行",
@@ -135405,7 +135549,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5497,
         "CombinedForm": null,
         "surface": "探し",
         "conjugation_type": "五段-サ行",
@@ -135577,7 +135721,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5497,
         "CombinedForm": null,
         "surface": "探し",
         "conjugation_type": "五段-サ行",
@@ -136282,7 +136426,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2707,
         "CombinedForm": null,
         "surface": "足",
         "conjugation_type": "*",
@@ -136400,7 +136544,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5497,
         "CombinedForm": null,
         "surface": "探し",
         "conjugation_type": "五段-サ行",
@@ -136575,7 +136719,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2597,
         "CombinedForm": null,
         "surface": "半分",
         "conjugation_type": "*",
@@ -136655,7 +136799,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2692,
         "CombinedForm": null,
         "surface": "男",
         "conjugation_type": "*",
@@ -136843,7 +136987,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5498,
         "CombinedForm": null,
         "surface": "探究",
         "conjugation_type": "*",
@@ -137471,7 +137615,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5498,
         "CombinedForm": null,
         "surface": "探究",
         "conjugation_type": "*",
@@ -137775,7 +137919,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5498,
         "CombinedForm": null,
         "surface": "探究",
         "conjugation_type": "*",
@@ -138421,7 +138565,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5498,
         "CombinedForm": null,
         "surface": "探究",
         "conjugation_type": "*",
@@ -138520,7 +138664,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5498,
         "CombinedForm": null,
         "surface": "探究",
         "conjugation_type": "*",
@@ -138673,7 +138817,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 5499,
         "CombinedForm": null,
         "surface": "探偵",
         "conjugation_type": "*",
@@ -138937,7 +139081,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5499,
         "CombinedForm": null,
         "surface": "探偵",
         "conjugation_type": "*",
@@ -138998,8 +139142,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3252,
+        "CombinedForm": "成る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -139277,7 +139421,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5499,
         "CombinedForm": null,
         "surface": "探偵",
         "conjugation_type": "*",
@@ -139693,7 +139837,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5499,
         "CombinedForm": null,
         "surface": "探偵",
         "conjugation_type": "*",
@@ -140101,6 +140245,10 @@
       {
         "SubjectId": 4828,
         "Characters": "捜査"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       }
     ],
     "KanjiInSentence": [
@@ -140234,7 +140382,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5500,
         "CombinedForm": null,
         "surface": "内偵",
         "conjugation_type": "*",
@@ -140299,8 +140447,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "する",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連体形-一般",
@@ -140571,7 +140719,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5500,
         "CombinedForm": null,
         "surface": "内偵",
         "conjugation_type": "*",
@@ -140974,7 +141122,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5500,
         "CombinedForm": null,
         "surface": "内偵",
         "conjugation_type": "*",
@@ -141093,7 +141241,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -141288,7 +141436,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5500,
         "CombinedForm": null,
         "surface": "内偵",
         "conjugation_type": "*",
@@ -141537,7 +141685,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5702,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "下一段-ラ行",
@@ -142045,7 +142193,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5702,
         "CombinedForm": null,
         "surface": "恐れる",
         "conjugation_type": "下一段-ラ行",
@@ -142064,7 +142212,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3082,
         "CombinedForm": null,
         "surface": "こと",
         "conjugation_type": "*",
@@ -142106,7 +142254,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9202,
         "CombinedForm": null,
         "surface": "ない",
         "conjugation_type": "形容詞",
@@ -142317,7 +142465,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5702,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "下一段-ラ行",
@@ -142767,7 +142915,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5702,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "下一段-ラ行",
@@ -142961,7 +143109,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5703,
         "CombinedForm": null,
         "surface": "迷わす",
         "conjugation_type": "五段-サ行",
@@ -143158,6 +143306,10 @@
         "Characters": "相手"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 9202,
         "Characters": "ない"
       }
@@ -143228,7 +143380,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5703,
         "CombinedForm": null,
         "surface": "迷わす",
         "conjugation_type": "五段-サ行",
@@ -143323,8 +143475,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "はする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "未然形-一般",
@@ -143391,8 +143543,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "だする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "す",
         "conjugation_type": "文語サ行変格",
         "conjugation_form": "終止形-一般",
@@ -143564,7 +143716,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5703,
         "CombinedForm": null,
         "surface": "迷わす",
         "conjugation_type": "五段-サ行",
@@ -144087,7 +144239,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5703,
         "CombinedForm": null,
         "surface": "迷わす",
         "conjugation_type": "五段-サ行",
@@ -144439,7 +144591,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5704,
         "CombinedForm": null,
         "surface": "積む",
         "conjugation_type": "五段-マ行",
@@ -144908,7 +145060,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5704,
         "CombinedForm": null,
         "surface": "積ん",
         "conjugation_type": "五段-マ行",
@@ -145581,7 +145733,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5704,
         "CombinedForm": null,
         "surface": "積み",
         "conjugation_type": "五段-マ行",
@@ -145940,7 +146092,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5704,
         "CombinedForm": null,
         "surface": "積ま",
         "conjugation_type": "五段-マ行",
@@ -146211,7 +146363,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5705,
         "CombinedForm": "主催する",
         "surface": "する",
         "conjugation_type": "サ行変格",
@@ -146599,7 +146751,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5705,
         "CombinedForm": "主催する",
         "surface": "する",
         "conjugation_type": "サ行変格",
@@ -147017,7 +147169,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5705,
         "CombinedForm": "主催する",
         "surface": "し",
         "conjugation_type": "サ行変格",
@@ -147306,8 +147458,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2914,
+        "CombinedForm": "思う",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -147683,7 +147835,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5705,
         "CombinedForm": "主催する",
         "surface": "し",
         "conjugation_type": "サ行変格",
@@ -148156,7 +148308,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5706,
         "CombinedForm": "催促する",
         "surface": "する",
         "conjugation_type": "サ行変格",
@@ -148531,7 +148683,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5706,
         "CombinedForm": "催促する",
         "surface": "し",
         "conjugation_type": "サ行変格",
@@ -148879,7 +149031,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5706,
         "CombinedForm": "催促する",
         "surface": "さ",
         "conjugation_type": "サ行変格",
@@ -149203,7 +149355,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5706,
         "CombinedForm": "催促する",
         "surface": "する",
         "conjugation_type": "サ行変格",
@@ -149298,8 +149450,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -149717,8 +149869,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 9260,
+        "CombinedForm": "貰う",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -151737,7 +151889,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3055,
         "CombinedForm": null,
         "surface": "道",
         "conjugation_type": "*",
@@ -151991,7 +152143,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 2747,
         "CombinedForm": null,
         "surface": "同じ",
         "conjugation_type": "*",
@@ -152239,7 +152391,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7660,
         "CombinedForm": null,
         "surface": "恐らく",
         "conjugation_type": "*",
@@ -152372,8 +152524,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2914,
+        "CombinedForm": "思う",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -152483,7 +152635,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7660,
         "CombinedForm": null,
         "surface": "恐らく",
         "conjugation_type": "*",
@@ -152704,7 +152856,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 7660,
         "CombinedForm": null,
         "surface": "恐らく",
         "conjugation_type": "*",
@@ -152945,7 +153097,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7660,
         "CombinedForm": null,
         "surface": "恐らく",
         "conjugation_type": "*",
@@ -153400,7 +153552,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7720,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "*",
@@ -153499,8 +153651,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -153592,7 +153744,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 7720,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "*",
@@ -153729,7 +153881,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 3082,
         "CombinedForm": null,
         "surface": "こと",
         "conjugation_type": "*",
@@ -153953,8 +154105,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2775,
+        "CombinedForm": "行く",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -154099,7 +154251,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7720,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "*",
@@ -154217,7 +154369,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 5896,
         "CombinedForm": null,
         "surface": "彼",
         "conjugation_type": "*",
@@ -154469,7 +154621,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 7720,
         "CombinedForm": null,
         "surface": "恐れ",
         "conjugation_type": "*",
@@ -154530,8 +154682,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -154581,6 +154733,10 @@
       {
         "SubjectId": 5446,
         "Characters": "棒"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 9202,
@@ -154706,8 +154862,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "をする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -154814,6 +154970,10 @@
       {
         "SubjectId": 5446,
         "Characters": "棒"
+      },
+      {
+        "SubjectId": 9180,
+        "Characters": "する"
       },
       {
         "SubjectId": 3316,
@@ -154947,8 +155107,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "とする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -155544,7 +155704,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 6030,
         "CombinedForm": null,
         "surface": "彼女",
         "conjugation_type": "*",
@@ -155770,7 +155930,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 8686,
         "CombinedForm": null,
         "surface": "華道",
         "conjugation_type": "*",
@@ -155989,7 +156149,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 8686,
         "CombinedForm": null,
         "surface": "華道",
         "conjugation_type": "*",
@@ -156092,8 +156252,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 3097,
+        "CombinedForm": "始める",
         "surface": "まし",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "連用形-一般",
@@ -156306,7 +156466,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 8686,
         "CombinedForm": null,
         "surface": "華道",
         "conjugation_type": "*",
@@ -156405,8 +156565,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -156522,7 +156682,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 8686,
         "CombinedForm": null,
         "surface": "華道",
         "conjugation_type": "*",
@@ -156991,7 +157151,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 8722,
         "CombinedForm": null,
         "surface": "華美",
         "conjugation_type": "*",
@@ -157339,7 +157499,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 8722,
         "CombinedForm": null,
         "surface": "華美",
         "conjugation_type": "*",
@@ -157720,7 +157880,7 @@
     ],
     "Morphemes": [
       {
-        "SubjectId": null,
+        "SubjectId": 8722,
         "CombinedForm": null,
         "surface": "華美",
         "conjugation_type": "*",
@@ -158112,6 +158272,10 @@
         "Characters": "地域"
       },
       {
+        "SubjectId": 9180,
+        "Characters": "する"
+      },
+      {
         "SubjectId": 2869,
         "Characters": "有名"
       },
@@ -158349,8 +158513,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": "とする",
+        "SubjectId": 9180,
+        "CombinedForm": null,
         "surface": "し",
         "conjugation_type": "サ行変格",
         "conjugation_form": "連用形-一般",
@@ -158459,7 +158623,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 8722,
         "CombinedForm": null,
         "surface": "華美",
         "conjugation_type": "*",
@@ -160482,8 +160646,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -161011,8 +161175,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 4885,
+        "CombinedForm": "居る",
         "surface": "ませ",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "未然形-一般",
@@ -161161,7 +161325,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9063,
         "CombinedForm": null,
         "surface": "雄",
         "conjugation_type": "*",
@@ -161497,7 +161661,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9063,
         "CombinedForm": null,
         "surface": "雄",
         "conjugation_type": "*",
@@ -161704,7 +161868,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9063,
         "CombinedForm": null,
         "surface": "雄",
         "conjugation_type": "*",
@@ -161964,7 +162128,7 @@
       },
       {
         "SubjectId": null,
-        "CombinedForm": null,
+        "CombinedForm": "為る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -162136,7 +162300,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9076,
         "CombinedForm": null,
         "surface": "豊富",
         "conjugation_type": "*",
@@ -162231,8 +162395,8 @@
         }
       },
       {
-        "SubjectId": null,
-        "CombinedForm": null,
+        "SubjectId": 2868,
+        "CombinedForm": "有る",
         "surface": "ます",
         "conjugation_type": "助動詞-マス",
         "conjugation_form": "終止形-一般",
@@ -162434,7 +162598,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9076,
         "CombinedForm": null,
         "surface": "豊富",
         "conjugation_type": "*",
@@ -162697,7 +162861,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9076,
         "CombinedForm": null,
         "surface": "豊富",
         "conjugation_type": "*",
@@ -163022,7 +163186,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9366,
         "CombinedForm": null,
         "surface": "貯める",
         "conjugation_type": "下一段-マ行",
@@ -163588,7 +163752,7 @@
         }
       },
       {
-        "SubjectId": null,
+        "SubjectId": 9366,
         "CombinedForm": null,
         "surface": "貯める",
         "conjugation_type": "下一段-マ行",
