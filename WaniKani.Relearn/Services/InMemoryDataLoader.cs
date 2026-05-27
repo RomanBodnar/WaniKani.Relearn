@@ -46,7 +46,7 @@ public class InMemoryDataLoader(
             logger.LogInformation("Extracted context sentences to static files.");
         }
         sentenceCache.LoadFromFiles();
-        await sentenceExtractor.ExtractSentencesAsync();
+        // await sentenceExtractor.ExtractSentencesAsync();
         logger.LogInformation("Loaded {Count} reading practice sentences.", sentenceCache.Count);
         //await UpdateKanjis();
     }
