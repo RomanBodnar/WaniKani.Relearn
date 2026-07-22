@@ -25,7 +25,7 @@ body {
     color-scheme: dark;
   }
 
-  background-color: rgb(250, 250, 250);
+  background-color: #FAF9F6;
   scrollbar-gutter: stable both-edges;
   display: flex;
   flex-direction: column;
@@ -90,7 +90,7 @@ main {
   --color-pink-hot: #FE3365;
   --color-pink-hot-light: #F6A8D2;
 
-  --color-off-white: #f8fafc;
+  --color-off-white: #FAF9F6;
 
   /* --color-radical: #3B3C95;
   --color-kanji: #FF8241;

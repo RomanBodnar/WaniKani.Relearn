@@ -1,12 +1,43 @@
-import type { Route } from "../+types/root";
-import { Link, useNavigate } from "react-router";
-import { grammarArticles } from "./grammarData";
+import type { Route } from "./+types/grammar";
+import { Link, useNavigate, useParams } from "react-router";
+import { grammarArticles, type GrammarArticle } from "./grammarData";
 import "../subject/subject.css";
 import "./grammar.css";
 
+/**
+ * Flexible article finder supporting exact IDs, kebab-case, case-insensitive, and slug variations.
+ */
+export function findArticle(id?: string): GrammarArticle | null {
+  if (!id) return null;
+
+  // 1. Direct key match
+  if (grammarArticles[id]) return grammarArticles[id];
+
+  // 2. Normalized kebab-case key match (replace underscores/spaces with hyphens, lowercase)
+  const normalizedKey = id.toLowerCase().trim().replace(/[\s_]+/g, "-");
+  if (grammarArticles[normalizedKey]) return grammarArticles[normalizedKey];
+
+  // 3. Match by article id property (case-insensitive)
+  const articles = Object.values(grammarArticles);
+  const matchedById = articles.find(
+    (a) => a.id.toLowerCase() === normalizedKey || a.id.toLowerCase() === id.toLowerCase()
+  );
+  if (matchedById) return matchedById;
+
+  // 4. Fuzzy fallback match (id or title contains key)
+  const fuzzyMatch = articles.find(
+    (a) =>
+      a.id.toLowerCase().includes(normalizedKey) ||
+      normalizedKey.includes(a.id.toLowerCase()) ||
+      a.title.toLowerCase().includes(normalizedKey)
+  );
+  if (fuzzyMatch) return fuzzyMatch;
+
+  return null;
+}
 
 export function meta({ params }: Route.MetaArgs) {
-  const article = grammarArticles[params.id as string];
+  const article = findArticle(params.id);
   const title = article ? `${article.title} - Grammar | BonPom` : "Grammar Article Not Found";
   return [
     { title },
@@ -15,8 +46,7 @@ export function meta({ params }: Route.MetaArgs) {
 }
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
-  const id = params.id;
-  const article = id ? grammarArticles[id] : null;
+  const article = findArticle(params.id);
   
   if (!article) {
     throw new Response("Grammar article not found", { status: 404 });
@@ -25,20 +55,26 @@ export function clientLoader({ params }: Route.ClientLoaderArgs) {
   return { article };
 }
 
-/** Extract the Japanese characters inside the parentheses of a grammar title, e.g. "Noun (名詞)" → "名詞" */
+/** Extract Japanese characters inside parentheses of a grammar title, e.g. "Noun (名詞)" → "名詞" */
 function extractJapanese(title: string): string {
   const match = title.match(/[（(]([^）)]+)[）)]/);
   return match ? match[1] : "文";
 }
 
-/** Strip the parenthetical from the title for a clean display name, e.g. "Noun (名詞)" → "Noun" */
+/** Strip parenthetical from title for a clean display name, e.g. "Noun (名詞)" → "Noun" */
 function stripParenthetical(title: string): string {
   return title.replace(/\s*[（(][^）)]+[）)]\s*/, "").trim();
 }
 
 export default function Grammar({ loaderData }: Route.ComponentProps) {
-  const { article } = loaderData as unknown as { article: typeof grammarArticles[keyof typeof grammarArticles] };
+  const routeParams = useParams();
+  const article = (loaderData as any)?.article || findArticle(routeParams.id);
   const navigate = useNavigate();
+
+  if (!article) {
+    return <TopicNotFound />;
+  }
+
   const japaneseSymbol = extractJapanese(article.title);
   const displayTitle = stripParenthetical(article.title);
 
@@ -73,33 +109,68 @@ export default function Grammar({ loaderData }: Route.ComponentProps) {
 
       <div className="grammar-detail-content">
         <section className="detail-section">
-          <h2>Definition</h2>
+          <h2>Overview & Explanation</h2>
           <p className="grammar-description">{article.content}</p>
         </section>
 
-        <section className="detail-section related-topics">
-          <h2>More Topics</h2>
-          <div className="parts-of-speech">
-            {Object.values(grammarArticles)
-              .filter(a => a.id !== article.id)
-              .map(a => (
-                <Link key={a.id} to={`/grammar/${a.id}`} className="pos-tag">
-                  {a.title.split(' ')[0]} {/* Just show the English part for brevity in tags */}
-                </Link>
-            ))}
-          </div>
-        </section>
+        {article.tofuguUrls && article.tofuguUrls.length > 0 && (
+          <section className="detail-section tofugu-reference-section">
+            <h2>Deep-Dive Reference on Tofugu</h2>
+            <div className="tofugu-links-container">
+              {article.tofuguUrls.map((ref, idx) => (
+                <a
+                  key={idx}
+                  href={ref.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tofugu-ref-card"
+                >
+                  <div className="tofugu-ref-header">
+                    <span className="tofugu-badge">Tofugu Guide</span>
+                    <span className="tofugu-external-icon">↗</span>
+                  </div>
+                  <h3 className="tofugu-ref-title">{ref.title}</h3>
+                  <span className="tofugu-ref-url">{ref.url}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {(() => {
+          const sameGroupArticles = Object.values(grammarArticles).filter(
+            a => a.id !== article.id && article.group && a.group === article.group
+          );
+          const sameSectionArticles = Object.values(grammarArticles).filter(
+            a => a.id !== article.id && article.section && a.section === article.section
+          );
+          const relatedList = sameGroupArticles.length > 0 ? sameGroupArticles : sameSectionArticles;
+
+          if (relatedList.length === 0) return null;
+
+          return (
+            <section className="detail-section related-topics">
+              <h2>{article.group ? `Related in ${article.group}` : "Related Topics"}</h2>
+              <div className="parts-of-speech">
+                {relatedList.map(a => (
+                  <Link key={a.id} to={`/grammar/${a.id}`} className="pos-tag">
+                    {stripParenthetical(a.title)}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
       </div>
     </div>
   );
 }
 
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+function TopicNotFound() {
   const navigate = useNavigate();
 
   return (
     <div className="grammar-detail-container">
-      {/* Back navigation row */}
       <div className="subject-nav-row">
         <button
           className="back-button"
@@ -111,7 +182,6 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         </button>
       </div>
 
-      {/* Hero header card */}
       <div className="subject-detail-header">
         <div className="subject-char-bubble grammar-bubble">
           <span className="subject-detail-character japanese-text">文</span>
@@ -123,18 +193,22 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       </div>
 
       <div className="grammar-detail-content">
-        <p>Sorry, we don't have an article for this part of speech yet.</p>
+        <p>Sorry, we don't have an article for this grammar topic yet.</p>
         <section className="detail-section related-topics mt-8">
           <h2>Available Topics</h2>
           <div className="parts-of-speech">
             {Object.values(grammarArticles).map(a => (
-                <Link key={a.id} to={`/grammar/${a.id}`} className="pos-tag">
-                  {a.title.split(' ')[0]}
-                </Link>
+              <Link key={a.id} to={`/grammar/${a.id}`} className="pos-tag">
+                {stripParenthetical(a.title)}
+              </Link>
             ))}
           </div>
         </section>
       </div>
     </div>
   );
+}
+
+export function ErrorBoundary() {
+  return <TopicNotFound />;
 }

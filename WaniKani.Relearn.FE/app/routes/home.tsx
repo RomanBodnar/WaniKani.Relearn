@@ -1,30 +1,28 @@
 import type { Route } from "./+types/home";
 import "./home.css";
 import {
-  SearchHero,
-  NavigationHub
+  ReadingHeroHeader,
+  LiveSentenceDemo,
+  QuickLevelSelector,
+  FeatureShowcaseGrid,
+  HomeDivider
 } from "../components/home/HomeSections";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "bonpom | Learn Japanese" },
-    { name: "description", content: "A modern way to learn Kanji, Vocabulary, and Grammar." },
+    { title: "bonpom | Japanese Reading Practice" },
+    { name: "description", content: "Master Japanese reading comprehension with real WaniKani context sentences, interactive breakdowns, and instant item lookup." },
   ];
 }
 
 export default function Home() {
-
-
   return (
     <div className="home-page">
-      <SearchHero />
-
-
-      <NavigationHub />
-
-
-
+      <ReadingHeroHeader />
+      <LiveSentenceDemo />
+      <HomeDivider />
+      <QuickLevelSelector />
+      <FeatureShowcaseGrid />
     </div>
   );
 }
-
