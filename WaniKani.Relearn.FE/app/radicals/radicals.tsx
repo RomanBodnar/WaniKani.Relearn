@@ -2,6 +2,7 @@ import type { Route } from "./+types/radicals";
 import { fetchSubjects, useInfiniteSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "../components/SubjectCard";
 import PracticeCarousel from "../components/PracticeCarousel";
+import { SubjectPreviewModal } from "../components/SubjectPreviewModal";
 import { ToggleSwitch } from "../components/ToggleSwitch";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
@@ -50,6 +51,7 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
   const [isBoxOpen, setIsBoxOpen] = useState(true);
   const [isPracticeMode, setIsPracticeMode] = useState(false);
   const [practiceStartIndex, setPracticeStartIndex] = useState(0);
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
 
   useEffect(() => {
     fetchBookmarks();
@@ -116,6 +118,30 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
     observer.observe(loaderRef.current);
     return () => observer.disconnect();
   }, [hasMore, isLoading, loadMore]);
+
+  // Preview Mode Handlers
+  const handleNextPreview = useCallback(() => {
+    if (previewIndex === null) return;
+    const nextIdx = previewIndex + 1;
+    if (nextIdx < filteredSubjects.length) {
+      setPreviewIndex(nextIdx);
+      if (nextIdx >= filteredSubjects.length - 2 && hasMore && !isLoading) {
+        loadMore();
+      }
+    } else if (hasMore && !isLoading) {
+      loadMore();
+      setPreviewIndex(nextIdx);
+    }
+  }, [previewIndex, filteredSubjects.length, hasMore, isLoading, loadMore]);
+
+  const handlePrevPreview = useCallback(() => {
+    if (previewIndex === null || previewIndex <= 0) return;
+    setPreviewIndex(previewIndex - 1);
+  }, [previewIndex]);
+
+  const handleClosePreview = useCallback(() => {
+    setPreviewIndex(null);
+  }, []);
 
   return (
     <div className="subjects-container">
@@ -185,8 +211,13 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
 
       {filteredSubjects.length > 0 ? (
         <div className="subjects-grid">
-          {filteredSubjects.map((subject) => (
-            <SubjectCard key={subject.Id} subject={subject} variant="radical" />
+          {filteredSubjects.map((subject, index) => (
+            <SubjectCard
+              key={subject.Id}
+              subject={subject}
+              variant="radical"
+              onClick={() => setPreviewIndex(index)}
+            />
           ))}
         </div>
       ) : !isLoading && (
@@ -199,6 +230,20 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
         <div ref={loaderRef} className="subjects-loader flex justify-center p-8">
           {isLoading && <LoadingSpinner />}
         </div>
+      )}
+
+      {previewIndex !== null && filteredSubjects[previewIndex] && (
+        <SubjectPreviewModal
+          subject={filteredSubjects[previewIndex]}
+          variant="radical"
+          currentIndex={previewIndex}
+          totalCount={filteredSubjects.length}
+          onNext={handleNextPreview}
+          onPrev={handlePrevPreview}
+          onClose={handleClosePreview}
+          hasNext={previewIndex < filteredSubjects.length - 1 || hasMore}
+          hasPrev={previewIndex > 0}
+        />
       )}
     </div>
   );
