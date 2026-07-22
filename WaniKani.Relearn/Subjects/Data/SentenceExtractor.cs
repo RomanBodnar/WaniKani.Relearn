@@ -8,117 +8,292 @@ using WaniKani.Relearn.Subjects.Data.Models.Reading;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
-// todo: fix クリスマス、どうする
 // todo:しなく - suru + nai
 // todo: fix ない processing
 // をするんだ -- する after を
+
+// してしまった
+// 二ですç
 public class SentenceExtractor(
     SubjectCache subjectCache,
     IConfiguration configuration)
 {
     public void ProcessMorphemesInSentence(ReadingSentence sentence)
     {
-        // todo: handle 助数詞可能(counter) where a lemma is not in katakana an there is numeral in front, and other non-translated POS
         var morphemes = sentence.Morphemes;
 
         int i = 0;
         while (i < morphemes.Count)
         {
             var morpheme = morphemes[i];
-            // handle masu verbs?
-            //    "lemma_reading": "マス",
-            //"lemma": "ます",
-            if ((morpheme.Lemma == "ます" || morpheme.LemmaReading == "マス") && i > 0)
+
+            // 0. Look-ahead check for numeric morphemes followed by a counter
+            if (IsNumeric(morpheme))
+            {
+                int k = i + 1;
+                while (k < morphemes.Count && IsNumeric(morphemes[k]))
+                {
+                    k++;
+                }
+                if (k < morphemes.Count && IsCounter(morphemes[k]))
+                {
+                    // This number is part of a number-counter phrase.
+                    // Do not link it or add to vocabulary.
+                    i++;
+                    continue;
+                }
+            }
+
+            // 1. Counter (助数詞) processing
+            var isCounter = IsCounter(morpheme);
+            if (isCounter && i > 0)
+            {
+                // Scan backwards to collect all consecutive numeric morphemes
+                var numberParts = new List<string>();
+                int j = i - 1;
+                while (j >= 0)
+                {
+                    var m = morphemes[j];
+                    if (IsNumeric(m))
+                    {
+                        numberParts.Add(m.Surface);
+                        j--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (numberParts.Count > 0)
+                {
+                    numberParts.Reverse();
+                    var combinedPrefix = string.Concat(numberParts);
+                    var combinedFormLemma = combinedPrefix + morpheme.Lemma;
+                    var combinedFormOrth = combinedPrefix + morpheme.Orth;
+
+                    // Clean up the preceding numbers from vocabulary since they are part of the counter phrase
+                    for (int k = i - 1; k > j; k--)
+                    {
+                        var numMorpheme = morphemes[k];
+                        if (numMorpheme.SubjectId.HasValue)
+                        {
+                            int numId = numMorpheme.SubjectId.Value;
+                            sentence.SourceVocabulary.RemoveAll(x => x.SubjectId == numId);
+                            numMorpheme.SubjectId = null;
+                        }
+                    }
+
+                    // Try to link the combined number+counter (e.g. 七つ)
+                    if (TryLinkSubject(morpheme, combinedFormLemma) || TryLinkSubject(morpheme, combinedFormOrth))
+                    {
+                        morpheme.CombinedForm = combinedPrefix + morpheme.Surface;
+                        i++;
+                        continue;
+                    }
+
+                    // If combined form is not found in cache, check if we should link the counter itself.
+                    // The counter must not contain Kanji (like 匹, 本) when preceded by a number.
+                    bool counterContainsKanji = (morpheme.Lemma ?? "").Any(c => c >= '\u4E00' && c <= '\u9FFF')
+                                                || (morpheme.Orth ?? "").Any(c => c >= '\u4E00' && c <= '\u9FFF');
+                    
+                    if (!counterContainsKanji)
+                    {
+                        TryLinkSubject(morpheme, morpheme.Lemma);
+                    }
+
+                    // Set CombinedForm so they are visually unified
+                    morpheme.CombinedForm = combinedPrefix + morpheme.Surface;
+                    i++;
+                    continue;
+                }
+            }
+
+            // 2. Auxiliary Verb (助動詞) processing (e.g. ます, ない, たい, た)
+            var isAuxiliary = (morpheme.Pos1.En == "auxiliary verb" 
+                              || morpheme.Pos1.Ja == "助動詞"
+                              || morpheme.Lemma == "ます" 
+                              || morpheme.Lemma == "たい" 
+                              || morpheme.Lemma == "ない" 
+                              || morpheme.Lemma == "た" 
+                              || morpheme.LemmaReading == "マス" 
+                              || morpheme.LemmaReading == "ナイ" 
+                              || morpheme.LemmaReading == "タイ" 
+                              || morpheme.LemmaReading == "タ")
+                              && morpheme.Lemma != "です"
+                              && morpheme.LemmaReading != "デス";
+            if (isAuxiliary && i > 0)
             {
                 var prevMorpheme = morphemes[i - 1];
-                var verbVocabForm = prevMorpheme.Lemma;
-                morpheme.CombinedForm = verbVocabForm;
-
-                var verbSubjectId = subjectCache.GetIdByCharacters(verbVocabForm);
-                if (verbSubjectId != 0)
+                if (prevMorpheme.SubjectId != null && prevMorpheme.SubjectId != 0)
                 {
-                    morpheme.SubjectId = verbSubjectId;
-                    AddSubjectToSourceVocabulary(verbSubjectId, verbVocabForm);
+                    morpheme.SubjectId = prevMorpheme.SubjectId;
+                    morpheme.CombinedForm = prevMorpheme.CombinedForm ?? prevMorpheme.Lemma;
+                }
+                else if (prevMorpheme.CombinedForm != null)
+                {
+                    morpheme.CombinedForm = prevMorpheme.CombinedForm;
+                }
+                else
+                {
+                    // Fallback to look up previous morpheme's Lemma directly in the cache
+                    var parentLemma = prevMorpheme.Lemma;
+                    if (TryLinkSubject(morpheme, parentLemma))
+                    {
+                        morpheme.CombinedForm = parentLemma;
+                    }
                 }
                 i++;
                 continue;
             }
+
+            // 3. Suru Verb (サ変助動詞 / サ行変格) processing
             if (morpheme.LemmaReading == "スル" && i > 0)
             {
-                // Handle suru verb in katakana by looking at previous morpheme
-                // todo: handle suru verbs that are not in the dictionary
-                // todo: handle standalone スル //by looking at next morpheme
                 var prevMorpheme = morphemes[i - 1];
-                if (prevMorpheme.Pos1.En == "particle"
-                    || prevMorpheme.Pos1.En == "suffix"
-                    || prevMorpheme.Pos1.En == "auxiliary verb"
-                    || prevMorpheme.Pos1.En == "助数詞" // Skip if previous morpheme is a counter, which can sometimes be followed by スル in non-suru verb contexts
-                    || (prevMorpheme.Pos1.En == "名詞" && prevMorpheme.Pos2.En == "数")) // Skip if previous morpheme is a numeral noun, which can sometimes be followed by スル in non-suru verb contexts
-                {
-                    var suruId = subjectCache.GetIdByCharacters("する");
-                    morpheme.SubjectId = suruId;
 
-                    AddSubjectToSourceVocabulary(suruId, "する");
-                    i++;
-                    continue;
-                }
-                var combinedCharacters = prevMorpheme.Lemma + "する";
-                morpheme.CombinedForm = combinedCharacters;
-
-                var suruVerbSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
-                if (suruVerbSubjectId != 0)
+                // Check "noun + を + する" -> combined to noun + "する"
+                if (i > 1 && (prevMorpheme.Lemma == "を" || prevMorpheme.Surface == "を") && (prevMorpheme.Pos1.En == "particle" || prevMorpheme.Pos1.Ja == "助詞"))
                 {
-                    morpheme.SubjectId = suruVerbSubjectId;
-                    AddSubjectToSourceVocabulary(suruVerbSubjectId, combinedCharacters);
-                }
-                i++;
-                continue; // Skip further processing for this morpheme since it's already matched as suru verb
-            }
-            if (morpheme.Pos1.En == "suffix")
-            {
-                // todo: handle special case suffixes like ちゃん, くん, etc by looking at previous morpheme
-                // todo: handle subjects with suffix not in dictionaries
-                // Handle suffixes by looking at previous morpheme
-                if (i > 0)
-                {
-                    var prevMorpheme = morphemes[i - 1];
-                    if (prevMorpheme.Pos1.En == "particle")
+                    var nounMorpheme = morphemes[i - 2];
+                    var combinedCharacters = nounMorpheme.Lemma + "する";
+                    if (TryLinkSubject(morpheme, combinedCharacters))
                     {
+                        morpheme.CombinedForm = combinedCharacters;
                         i++;
                         continue;
                     }
-                    var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
+                }
 
+                // Check if Noun + する exists in cache (dictionary check takes precedence)
+                var combinedSuruCharacters = prevMorpheme.Lemma + "する";
+                if (TryLinkSubject(morpheme, combinedSuruCharacters))
+                {
+                    morpheme.CombinedForm = combinedSuruCharacters;
+                    i++;
+                    continue;
+                }
+
+                // If not in cache, check if this is a standalone "する" based on POS tags
+                var isPrevStandaloneTrigger = prevMorpheme.Pos1.En == "particle" 
+                                              || prevMorpheme.Pos1.Ja == "助詞"
+                                              || prevMorpheme.Pos1.En == "suffix" 
+                                              || prevMorpheme.Pos1.Ja == "接尾辞"
+                                              || prevMorpheme.Pos1.En == "auxiliary verb" 
+                                              || prevMorpheme.Pos1.Ja == "助動詞"
+                                              || prevMorpheme.Pos1.En == "助数詞" 
+                                              || prevMorpheme.Pos1.Ja == "助数詞"
+                                              || (prevMorpheme.Pos1.En == "noun" && prevMorpheme.Pos2.En == "number")
+                                              || (prevMorpheme.Pos1.Ja == "名詞" && prevMorpheme.Pos2.Ja == "数");
+
+                var isPrevVerbalNoun = prevMorpheme.Pos2.Ja == "サ変接続" 
+                                       || prevMorpheme.Pos2.En == "verbal"
+                                       || prevMorpheme.Pos1.En == "verbal noun"
+                                       || prevMorpheme.Pos1.Ja == "サ変名詞";
+
+                if (isPrevStandaloneTrigger || !isPrevVerbalNoun)
+                {
+                    TryLinkSubject(morpheme, "する");
+                    i++;
+                    continue;
+                }
+
+                // Fallback for suru verbs not in WaniKani: link to the base noun
+                if (TryLinkSubject(morpheme, prevMorpheme.Lemma))
+                {
+                    morpheme.CombinedForm = prevMorpheme.Lemma;
+                }
+                else
+                {
+                    // Final fallback: link to "する" itself
+                    TryLinkSubject(morpheme, "する");
+                }
+                i++;
+                continue;
+            }
+
+            // 4. Suffix (接尾辞) processing
+            var isSuffix = morpheme.Pos1.En == "suffix" || morpheme.Pos1.Ja == "接尾辞";
+            if (isSuffix && i > 0)
+            {
+                var prevMorpheme = morphemes[i - 1];
+                var isPrevParticle = prevMorpheme.Pos1.En == "particle" || prevMorpheme.Pos1.Ja == "助詞";
+                if (isPrevParticle)
+                {
+                    i++;
+                    continue;
+                }
+                
+                var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
+                if (TryLinkSubject(morpheme, combinedCharacters))
+                {
                     morpheme.CombinedForm = combinedCharacters;
-
-                    var nounWithSuffixSubjectId = subjectCache.GetIdByCharacters(combinedCharacters);
-                    if (nounWithSuffixSubjectId != 0)
+                }
+                else
+                {
+                    // Fallback for suffix not in WaniKani: link to the base noun
+                    if (TryLinkSubject(morpheme, prevMorpheme.Lemma))
                     {
-                        morpheme.SubjectId = nounWithSuffixSubjectId;
-
-                        AddSubjectToSourceVocabulary(nounWithSuffixSubjectId, combinedCharacters);
+                        morpheme.CombinedForm = prevMorpheme.Lemma;
                     }
                 }
                 i++;
-                continue; // Skip further processing for this morpheme since it's already matched as noun with suffix
+                continue;
             }
 
-            var subjectId = subjectCache.GetIdByCharacters(morpheme.Lemma);
-            if (subjectId == 0)
+            // 5. Standard dictionary/cache lookup
+            if (!TryLinkSubject(morpheme, morpheme.Lemma))
             {
-                // Try orth as fallback
-                subjectId = subjectCache.GetIdByCharacters(morpheme.Orth);
-            }
-
-            if (subjectId != 0)
-            {
-                morpheme.SubjectId = subjectId;
-                subjectCache.TryGet(subjectId, out var subject);
-                AddSubjectToSourceVocabulary(subjectId, morpheme.Lemma, subject);
+                TryLinkSubject(morpheme, morpheme.Orth);
             }
 
             i++;
         }
+
+        // --- Helper local functions ---
+
+        bool IsNumeric(Morpheme m)
+        {
+            return m.Pos2.En == "数" 
+                   || m.Pos2.Ja == "数" 
+                   || m.Pos1.En == "number" 
+                   || m.Pos1.Ja == "数" 
+                   || m.Surface.All(IsDigitOrNumeral);
+        }
+
+        bool IsCounter(Morpheme m)
+        {
+            return m.Pos1.Ja == "助数詞" 
+                   || m.Pos2.Ja == "助数詞" 
+                   || m.Pos2.Ja == "助数詞可能" 
+                   || m.Pos1.En == "助数詞"
+                   || m.Pos1.En == "counter"
+                   || m.Pos2.En == "counter";
+        }
+
+        bool TryLinkSubject(Morpheme m, string? characters)
+        {
+            if (string.IsNullOrEmpty(characters)) return false;
+            var subjectId = subjectCache.GetIdByCharacters(characters);
+            if (subjectId != 0)
+            {
+                m.SubjectId = subjectId;
+                subjectCache.TryGet(subjectId, out var subject);
+                AddSubjectToSourceVocabulary(subjectId, characters, subject);
+                return true;
+            }
+            return false;
+        }
+
+        bool IsDigitOrNumeral(char c)
+        {
+            return (c >= '0' && c <= '9') 
+                   || (c >= '０' && c <= '９')
+                   || c == '一' || c == '二' || c == '三' || c == '四' || c == '五' 
+                   || c == '六' || c == '七' || c == '八' || c == '九' || c == '十' 
+                   || c == '百' || c == '千' || c == '万' || c == '億';
+        }
+
         void AddSubjectToSourceVocabulary(int subjectId, string characters, Models.Subject? subject = null)
         {
             if (sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
