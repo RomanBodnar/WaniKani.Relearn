@@ -1,58 +1,17 @@
-import { useState, useMemo, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router";
 import type { Route } from "./+types/search";
 import type { Subject } from "~/hooks/Subject";
-import { fetchSubjects, type SubjectType, type PaginatedSubjects } from "~/hooks/useSubjects";
+import { searchSubjects } from "~/hooks/useSubjects";
 import { SubjectCard } from "~/components/SubjectCard";
 import { LoadingSpinner } from "~/components/LoadingSpinner";
 import "./search.css";
-
-interface SearchData {
-  radicals: PaginatedSubjects;
-  kanji: PaginatedSubjects;
-  vocabulary: PaginatedSubjects;
-}
 
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Search | BonPom" },
     { name: "description", content: "Search across all subjects" },
   ];
-}
-
-export async function clientLoader(): Promise<SearchData> {
-  const [radicals, kanji, vocabulary] = await Promise.all([
-    fetchSubjects("radical", 1, 500),
-    fetchSubjects("kanji", 1, 500),
-    fetchSubjects("vocabulary", 1, 500),
-  ]);
-  return { radicals, kanji, vocabulary };
-}
-
-function getVariant(objectType: string): "radical" | "kanji" | "vocabulary" {
-  switch (objectType?.toLowerCase()) {
-    case "radical": return "radical";
-    case "kanji": return "kanji";
-    default: return "vocabulary";
-  }
-}
-
-function matchesQuery(subject: Subject, query: string): boolean {
-  if (!query) return false;
-
-  // Match by characters
-  if (subject.Characters?.toLowerCase().includes(query)) return true;
-
-  // Match by meanings
-  if (subject.Meanings?.some(m => m.Meaning.toLowerCase().includes(query))) return true;
-
-  // Match by readings
-  if (subject.Readings?.some(r => r.Reading.toLowerCase().includes(query))) return true;
-
-  // Match by slug
-  if (subject.Slug?.toLowerCase().includes(query)) return true;
-
-  return false;
 }
 
 interface SearchSectionProps {
@@ -81,99 +40,71 @@ function SearchSection({ title, badge, variant, subjects }: SearchSectionProps) 
   );
 }
 
-export default function Search({ loaderData }: Route.ComponentProps) {
-  const { radicals, kanji, vocabulary } = loaderData as SearchData;
-  const [searchParams, setSearchParams] = useSearchParams();
+export default function Search() {
+  const [searchParams] = useSearchParams();
   const query = searchParams.get("q") || "";
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Load more data in the background
-  const [allRadicals, setAllRadicals] = useState<Subject[]>(radicals.data);
-  const [allKanji, setAllKanji] = useState<Subject[]>(kanji.data);
-  const [allVocabulary, setAllVocabulary] = useState<Subject[]>(vocabulary.data);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [searchResults, setSearchResults] = useState<Subject[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
 
-  // Background-load remaining pages for each type
-  const loadAllPages = useCallback(async (type: SubjectType, initial: PaginatedSubjects): Promise<Subject[]> => {
-    const all = [...initial.data];
-    let currentPage = initial.page;
-    const totalPages = Math.ceil(initial.totalCount / initial.perPage);
-
-    while (currentPage < totalPages) {
-      currentPage++;
-      const result = await fetchSubjects(type, currentPage, 500);
-      all.push(...result.data);
-    }
-    return all;
-  }, []);
+  const normalizedQuery = query.trim();
 
   useEffect(() => {
-    let cancelled = false;
-    const loadRemaining = async () => {
-      const hasMoreRadicals = radicals.data.length < radicals.totalCount;
-      const hasMoreKanji = kanji.data.length < kanji.totalCount;
-      const hasMoreVocab = vocabulary.data.length < vocabulary.totalCount;
+    if (!normalizedQuery) {
+      setSearchResults([]);
+      setIsSearching(false);
+      return;
+    }
 
-      if (!hasMoreRadicals && !hasMoreKanji && !hasMoreVocab) return;
+    let isMounted = true;
+    setIsSearching(true);
+    setSearchError(null);
 
-      setIsLoadingMore(true);
+    const performSearch = async () => {
       try {
-        const [r, k, v] = await Promise.all([
-          hasMoreRadicals ? loadAllPages("radical", radicals) : Promise.resolve(radicals.data),
-          hasMoreKanji ? loadAllPages("kanji", kanji) : Promise.resolve(kanji.data),
-          hasMoreVocab ? loadAllPages("vocabulary", vocabulary) : Promise.resolve(vocabulary.data),
-        ]);
-        if (!cancelled) {
-          setAllRadicals(r);
-          setAllKanji(k);
-          setAllVocabulary(v);
+        const result = await searchSubjects(normalizedQuery);
+        if (isMounted) {
+          setSearchResults(result.data || []);
         }
-      } catch (err) {
-        console.error("Failed to load all subjects for search:", err);
+      } catch (err: any) {
+        if (isMounted) {
+          console.error("Search error:", err);
+          setSearchError(err.message || "Search failed");
+          setSearchResults([]);
+        }
       } finally {
-        if (!cancelled) setIsLoadingMore(false);
+        if (isMounted) {
+          setIsSearching(false);
+        }
       }
     };
-    loadRemaining();
-    return () => { cancelled = true; };
-  }, [radicals, kanji, vocabulary, loadAllPages]);
 
-  // Focus input on mount
+    const timer = setTimeout(performSearch, 200);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timer);
+    };
+  }, [normalizedQuery]);
+
+  // Focus input on mount if needed
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value;
-    setSearchParams(prev => {
-      const next = new URLSearchParams(prev);
-      if (val) {
-        next.set("q", val);
-      } else {
-        next.delete("q");
-      }
-      return next;
-    }, { replace: true });
-  };
+  const filteredRadicals = searchResults.filter(
+    (s) => s.Object?.toLowerCase() === "radical"
+  );
+  const filteredKanji = searchResults.filter(
+    (s) => s.Object?.toLowerCase() === "kanji"
+  );
+  const filteredVocabulary = searchResults.filter(
+    (s) => s.Object?.toLowerCase() === "vocabulary" || s.Object?.toLowerCase() === "kana_vocabulary"
+  );
 
-  const normalizedQuery = query.toLowerCase().trim();
-
-  const filteredRadicals = useMemo(() => {
-    if (!normalizedQuery) return [];
-    return allRadicals.filter(s => matchesQuery(s, normalizedQuery));
-  }, [allRadicals, normalizedQuery]);
-
-  const filteredKanji = useMemo(() => {
-    if (!normalizedQuery) return [];
-    return allKanji.filter(s => matchesQuery(s, normalizedQuery));
-  }, [allKanji, normalizedQuery]);
-
-  const filteredVocabulary = useMemo(() => {
-    if (!normalizedQuery) return [];
-    return allVocabulary.filter(s => matchesQuery(s, normalizedQuery));
-  }, [allVocabulary, normalizedQuery]);
-
-  const totalResults = filteredRadicals.length + filteredKanji.length + filteredVocabulary.length;
+  const totalResults = searchResults.length;
 
   return (
     <div className="search-page">
@@ -185,10 +116,9 @@ export default function Search({ loaderData }: Route.ComponentProps) {
             "Search"
           )}
         </h1>
-        {normalizedQuery && (
+        {normalizedQuery && !isSearching && (
           <p className="search-page-subtitle">
             {totalResults} result{totalResults !== 1 ? "s" : ""} found across all subjects
-            {isLoadingMore && " (still loading more data…)"}
           </p>
         )}
       </div>
@@ -203,6 +133,11 @@ export default function Search({ loaderData }: Route.ComponentProps) {
             Type a character, meaning, or reading to search across radicals, kanji, and vocabulary.
           </p>
         </div>
+      ) : isSearching ? (
+        <div className="search-loading">
+          <LoadingSpinner />
+          <p>Searching subjects...</p>
+        </div>
       ) : totalResults === 0 ? (
         <div className="search-empty">
           <svg className="search-empty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -210,7 +145,7 @@ export default function Search({ loaderData }: Route.ComponentProps) {
           </svg>
           <p className="search-empty-title">No results found</p>
           <p className="search-empty-description">
-            No subjects match "{query}". Try a different search term.
+            {searchError ? searchError : `No subjects match "${query}". Try a different search term.`}
           </p>
         </div>
       ) : (

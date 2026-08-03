@@ -21,7 +21,7 @@ const Header = () => {
     
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-    const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+    const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // Sync input value when URL query changes (e.g. back/forward navigation)
     useEffect(() => {

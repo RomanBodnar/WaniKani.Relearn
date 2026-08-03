@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using System.Globalization;
 using System.Text;
 using WaniKani.Relearn.Contracts.Assignments;
@@ -19,6 +19,11 @@ public class SubjectCache
     public bool TryGet(int id, out Subject? subject)
     {
         return _subjects.TryGetValue(id, out subject);
+    }
+
+    public IEnumerable<Subject> GetAll()
+    {
+        return _subjects.Values;
     }
 
     public int GetIdByCharacters(string characters)

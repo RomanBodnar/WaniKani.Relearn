@@ -9,6 +9,7 @@ using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Services;
 using WaniKani.Relearn.Subjects.Data;
+using WaniKani.Relearn.Subjects.Services;
 
 namespace WaniKani.Relearn.Extensions;
 
@@ -56,6 +57,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddScoped<SubjectsService>();
+        services.AddSingleton<SubjectSearchService>();
 
         return services;
     }
