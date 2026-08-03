@@ -6,7 +6,7 @@
 }
 
 .subject-card {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -19,6 +19,7 @@
   color: white;
   flex: 1;
   position: relative;
+  background-color: white;
 }
 
 .subject-bookmark-btn {
@@ -95,8 +96,8 @@
 
 .subject-card-radical {
   color: var(--color-radical-text);
-  background-color: var(--color-off-white);
-  border-color: #e0e0e0;
+  background-color: white;
+  border-color: #e2e8f0;
 }
 
 .subject-card-radical.bookmarked-card {
@@ -105,8 +106,8 @@
 
 .subject-card-kanji {
   color: var(--color-kanji-text);
-  background-color: var(--color-off-white);
-  border-color: #e0e0e0;
+  background-color: white;
+  border-color: #e2e8f0;
 }
 
 .subject-card-kanji.bookmarked-card {
@@ -115,12 +116,20 @@
 
 .subject-card-vocabulary {
   color: var(--color-vocabulary-text);
-  background-color: var(--color-off-white);
-  border-color: #e0e0e0;
+  background-color: white;
+  border-color: #e2e8f0;
 }
 
 .subject-card-vocabulary.bookmarked-card {
   border-color: var(--color-vocabulary-block);
+}
+
+.dark .subject-card,
+.dark .subject-card-radical,
+.dark .subject-card-kanji,
+.dark .subject-card-vocabulary {
+  background-color: #1e293b;
+  border-color: #334155;
 }
 
 .subject-card:hover {

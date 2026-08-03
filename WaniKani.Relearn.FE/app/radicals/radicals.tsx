@@ -148,10 +148,14 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
       <FloatingWatermarks chars={["一", "人", "大", "力", "口", "土", "山", "火"]} />
       <h1 className="subjects-title">Radicals</h1>
       
-      <LevelFilter 
-        selectedRange={selectedRange} 
-        onRangeChange={handleRangeChange} 
-      />
+      <div className="level-filter-container">
+        <div className="kanji-filter-wrapper">
+          <LevelFilter 
+            selectedRange={selectedRange} 
+            onRangeChange={handleRangeChange} 
+          />
+        </div>
+      </div>
 
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0

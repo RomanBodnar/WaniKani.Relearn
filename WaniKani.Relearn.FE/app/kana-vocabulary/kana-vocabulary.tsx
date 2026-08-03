@@ -105,10 +105,14 @@ export default function KanaVocabulary({ loaderData: initialData }: Route.Compon
       <FloatingWatermarks chars={["あ", "か", "さ", "た", "な", "は", "ま", "や"]} />
       <h1 className="subjects-title">Kana Vocabulary</h1>
       
-      <LevelFilter 
-        selectedRange={selectedRange} 
-        onRangeChange={handleRangeChange} 
-      />
+      <div className="level-filter-container">
+        <div className="kanji-filter-wrapper">
+          <LevelFilter 
+            selectedRange={selectedRange} 
+            onRangeChange={handleRangeChange} 
+          />
+        </div>
+      </div>
 
       <p className="subjects-subtitle">
         {subjects && subjects.length > 0

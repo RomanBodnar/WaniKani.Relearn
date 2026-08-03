@@ -4,7 +4,7 @@ import { essentialGrammarArticles } from "./essential-grammar";
 import { specialExpressionsArticles } from "./special-expressions";
 import { advancedTopicsArticles } from "./advanced-topics";
 
-// Standard 32 tags / categories for tag filtering & backwards compatibility
+// Standard tag article files
 import { nounArticle } from "./noun";
 import { pronounArticle } from "./pronoun";
 import { stateOfBeingArticle } from "./state-of-being";
@@ -26,17 +26,11 @@ import { adverbArticle } from "./adverb";
 import { politeFormArticle } from "./polite-form";
 import { teFormArticle } from "./te-form";
 import { potentialFormArticle } from "./potential-form";
-import { conditionalsArticle } from "./conditionals";
 import { mustHaveToArticle } from "./must-have-to";
-import { desireSuggestionsArticle } from "./desire-suggestions";
-import { definingDescribingArticle } from "./defining-describing";
-import { givingReceivingArticle } from "./giving-receiving";
-import { makingRequestsArticle } from "./making-requests";
 import { numeralArticle } from "./numeral";
 import { counterArticle } from "./counter";
 import { suffixArticle } from "./suffix";
 import { prefixArticle } from "./prefix";
-import { expressionArticle } from "./expression";
 
 export const tagArticles: GrammarArticle[] = [
   nounArticle,
@@ -60,17 +54,11 @@ export const tagArticles: GrammarArticle[] = [
   politeFormArticle,
   teFormArticle,
   potentialFormArticle,
-  conditionalsArticle,
   mustHaveToArticle,
-  desireSuggestionsArticle,
-  definingDescribingArticle,
-  givingReceivingArticle,
-  makingRequestsArticle,
   numeralArticle,
   counterArticle,
   suffixArticle,
   prefixArticle,
-  expressionArticle,
 ];
 
 // Full 1-to-1 Tae Kim Guide Chapter Topics List

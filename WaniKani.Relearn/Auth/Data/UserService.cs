@@ -11,7 +11,7 @@ public class UserService(
 {
     public async Task CreateUser(string username, string email, string password)
     {
-        string userId = "user_" + Guid.CreateVersion7().ToString("N");
+        string userId = "usr_" + Guid.CreateVersion7().ToString("N");
 
         var userEntity = new UserEntity
         {
