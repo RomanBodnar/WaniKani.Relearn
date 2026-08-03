@@ -27,6 +27,7 @@ public class SubjectEntity
     public ICollection<RadicalCharacterImageEntity> RadicalCharacterImages { get; set; } = [];
     public ICollection<SubjectRelationshipEntity> ParentRelationships { get; set; } = [];
     public ICollection<SubjectRelationshipEntity> ChildRelationships { get; set; } = [];
+    public ICollection<ContextSentenceEntity> ContextSentences { get; set; } = [];
 }
 
 public class SubjectMeaningEntity
@@ -110,8 +111,8 @@ public class VocabularyPronunciationAudioEntity
     public required string Gender { get; set; }
     public int SourceId { get; set; }
     public required string Pronunciation { get; set; }
-    public required string VoiceActorId { get; set; }
-    public required string VoiceActorName { get; set; }
+    public string? VoiceActorId { get; set; }
+    public string? VoiceActorName { get; set; }
     public string? VoiceDescription { get; set; }
 
     public SubjectEntity? Subject { get; set; }

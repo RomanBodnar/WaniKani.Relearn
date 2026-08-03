@@ -1,26 +1,27 @@
-using Google.Cloud.Firestore;
+using Microsoft.EntityFrameworkCore;
+using WaniKani.Relearn.Data;
+using WaniKani.Relearn.Data.Entities;
 
 namespace WaniKani.Relearn.Auth.Data;
 
 public class UserService(
-    FirestoreDb firestore, 
+    BonpomDbContext dbContext, 
     IPasswordHasher passwordHasher) 
     : IUserService
 {
     public async Task CreateUser(string username, string email, string password)
     {
         string userId = "user_" + Guid.CreateVersion7().ToString("N");
-        var userDoc = firestore.Collection("users").Document(userId);
-        var credentialsDoc = firestore.Collection("user-credentials").Document(userId);
 
-        var user = new User
+        var userEntity = new UserEntity
         {
-            UserId = userId,
+            Id = userId,
             Username = username,
-            Email = email
+            Email = email,
+            CreatedAt = DateTime.UtcNow
         };
 
-        var userCredentials = new UserCredentials
+        var credentialsEntity = new UserCredentialsEntity
         {
             UserId = userId,
             Email = email,
@@ -28,55 +29,68 @@ public class UserService(
             CreatedAt = DateTime.UtcNow,
             PasswordLastChanged = DateTime.UtcNow
         };
-        await userDoc.SetAsync(user);
-        await credentialsDoc.SetAsync(userCredentials);
+
+        dbContext.Users.Add(userEntity);
+        dbContext.UserCredentials.Add(credentialsEntity);
+        await dbContext.SaveChangesAsync();
     }
 
     public async Task<User?> GetUserByUsername(string username, CancellationToken cancellation = default)
     {
-        var query = firestore
-            .Collection("users")
-            .WhereEqualTo("Username", username)
-            .Limit(1);
-        var snapshot = await query.GetSnapshotAsync(cancellation);
-        var document = snapshot.Documents.FirstOrDefault();
-        if (document == null) return null;
-        return document.ConvertTo<User>();
+        var userEntity = await dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Username == username, cancellation);
+
+        if (userEntity == null) return null;
+
+        return new User
+        {
+            UserId = userEntity.Id,
+            Username = userEntity.Username,
+            Email = userEntity.Email
+        };
     }
 
     public async Task<User?> GetUserByEmail(string email, CancellationToken cancellation = default)
     {
-        var query = firestore
-            .Collection("users")
-            .WhereEqualTo("Email", email)
-            .Limit(1);
-        var snapshot = await query.GetSnapshotAsync(cancellation);
-        var document = snapshot.Documents.FirstOrDefault();
-        if (document == null) return null;
-        return document.ConvertTo<User>();
+        var userEntity = await dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Email == email, cancellation);
+
+        if (userEntity == null) return null;
+
+        return new User
+        {
+            UserId = userEntity.Id,
+            Username = userEntity.Username,
+            Email = userEntity.Email
+        };
     }
 
     public async Task<bool> ValidateUserCredentials(string usernameOrEmail, string password)
     {
-        var credentialsQuery = await firestore
-            .Collection("user-credentials")
-            .WhereEqualTo("Email", usernameOrEmail)
-            .Limit(1)
-            .GetSnapshotAsync();
-        var document = credentialsQuery.Documents.FirstOrDefault();
-        if (document == null) return false;
+        var credentials = await dbContext.UserCredentials
+            .AsNoTracking()
+            .FirstOrDefaultAsync(uc => uc.Email == usernameOrEmail || (uc.User != null && uc.User.Username == usernameOrEmail));
 
-        var credentials = document.ConvertTo<UserCredentials>();   
+        if (credentials == null) return false;
+
         return passwordHasher.VerifyPassword(password, credentials.PasswordHash);
     }
 
     public async Task<User?> GetUserById(string userId, CancellationToken cancellation = default)
     {
-        var userDocRef = firestore.Collection("users").Document(userId);
-        var userSnapshot = await userDocRef.GetSnapshotAsync(cancellation);
-        if (!userSnapshot.Exists) return null;
-        
-        return userSnapshot.ConvertTo<User>();
-    }
+        var userEntity = await dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Id == userId, cancellation);
 
+        if (userEntity == null) return null;
+
+        return new User
+        {
+            UserId = userEntity.Id,
+            Username = userEntity.Username,
+            Email = userEntity.Email
+        };
+    }
 }

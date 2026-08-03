@@ -1,8 +1,11 @@
 using Google.Cloud.Firestore;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using WaniKani.Relearn.Auth.Data;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Contracts.Reviews;
 using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Services;
 using WaniKani.Relearn.Subjects.Data;
@@ -16,9 +19,23 @@ public static class ServiceCollectionExtensions
         var projectId = configuration["Firebase:ProjectId"];
         var databaseId = configuration["Firebase:DatabaseId"];
 
+        var rawConnectionString = configuration.GetConnectionString("DefaultConnection")
+                                  ?? configuration["DATABASE_URL"]
+                                  ?? configuration["POSTGRESQL_URL"];
+
+        var builder = new NpgsqlConnectionStringBuilder(rawConnectionString);
+        var dbPassword = configuration["DB_PASSWORD"] ?? configuration["DATABASE_PASSWORD"];
+        if (!string.IsNullOrWhiteSpace(dbPassword))
+        {
+            builder.Password = dbPassword;
+        }
+
+        services.AddDbContext<BonpomDbContext>(options =>
+            options.UseNpgsql(builder.ConnectionString));
+
         services.AddHostedService<InMemoryDataLoader>();
         services.AddSingleton<SubjectCache>();
-        services.AddSingleton<IDataAccess, StaticFileDataAccess>();
+        services.AddScoped<IDataAccess, SubjectDataAccess>();
         services.AddSingleton<SentenceCache>();
         services.AddSingleton<SentenceExtractor>();
         

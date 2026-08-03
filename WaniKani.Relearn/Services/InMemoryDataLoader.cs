@@ -1,28 +1,30 @@
-﻿using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Contracts.Subjects;
 using WaniKani.Relearn.Subjects.Data;
 using WaniKani.Relearn.Subjects.Data.Mappers;
 
 namespace WaniKani.Relearn.Services;
 
 public class InMemoryDataLoader(
-    IDataAccess staticFileDataAccess,
     SubjectCache subjectCache,
     SentenceCache sentenceCache,
     SentenceExtractor sentenceExtractor,
     IConfiguration configuration,
     ILogger<InMemoryDataLoader> logger,
-    
+    IServiceScopeFactory scopeFactory,
     KanjiMapper kanjiMapper
     ) : IHostedService
 {
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         logger.LogInformation("Starting in-memory data loader...");
-        var kanji = await staticFileDataAccess.GetKanji();
+        using var scope = scopeFactory.CreateScope();
+        var dataAccess = scope.ServiceProvider.GetRequiredService<IDataAccess>();
 
-        var vocabulary = await staticFileDataAccess.GetVocabulary();
+        var kanji = await dataAccess.GetKanji();
 
-        var radicals = await staticFileDataAccess.GetRadicals();
+        var vocabulary = await dataAccess.GetVocabulary();
+
+        var radicals = await dataAccess.GetRadicals();
 
         foreach (var kanjiSubject in kanji)
         {
@@ -51,7 +53,7 @@ public class InMemoryDataLoader(
         //await UpdateKanjis();
     }
 
-    private async Task UpdateKanjis()
+    private async Task UpdateKanjis(IDataAccess dataAccess)
     {
         var n5kanji1 = "一,七,万,三,上,下,中,九,二,五,人,今,休,何,先,入,八,六,円,出,前,北,十,千,午,半,南,友,右,名,四,国,土,外,大,天,女,子,学,小,山,川,左,年,後,日,時,書,月,木,本,来,東,校,母,毎,気,水,火,父,生,男,白,百,聞,行,西,見,話,語,読,車,金,長,間,雨,電,食,高";
         var n4kanji1 = "貸,質,持,不,世,主,事,京,仕,代,以,会,住,体,作,使,借,元,兄,公,写,冬,切,別,力,勉,動,医,去,口,古,台,同,味,品,員,問,図,地,堂,場,売,夏,夕,多,夜,妹,姉,始,字,安,室,家,少,屋,工,帰,広,店,度,建,弟,強,待,心,思,急,悪,意,手,教,文,料,新,方,旅,族,早,明,映,春,昼,曜,有,服,朝,業,楽,歌,止,正,歩,死,注,洋,海,漢,牛,物,特,犬,理,用,田,町,画,界,病,発,目,真,着,知,研,社,私,秋,究,空,立,答,紙,終,習,考,者,肉,自,色,花,英,茶,親,言,計,試,買,赤,走,起,足,転,近,送,通,週,運,道,重,野,銀,開,院,集,青,音,題,風,飯,飲,館,駅,験,魚,鳥,黒";
@@ -73,7 +75,7 @@ public class InMemoryDataLoader(
         var n1 = n1kanji1.Split(",").Concat(n1kanji2.Split(" ")).ToHashSet();
 
         var levels = Enumerable.Range(1, 60).ToArray();
-        var kanji = await staticFileDataAccess.GetAllSubjects<Kanji>(levels);
+        var kanji = await dataAccess.GetAllSubjects<Kanji>(levels);
         var result = new List<Subjects.Data.Models.Kanji>();
         List<string> notFound = [];
         foreach (var k in kanji)
@@ -122,7 +124,7 @@ public class InMemoryDataLoader(
         notFound.AddRange(n1);
         
         File.WriteAllLines("notfound.txt", notFound);
-        await staticFileDataAccess.SaveSubjects(result);
+        await dataAccess.SaveSubjects(result);
 
     }
 

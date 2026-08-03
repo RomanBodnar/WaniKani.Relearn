@@ -70,19 +70,19 @@ public record PronunciationAudioMetadata
     /// A unique ID belonging to the voice actor.
     /// </summary>
     [JsonPropertyName("voice_actor_id")]
-    public string VoiceActorId {get;}
+    public string VoiceActorId { get; init; }
 
     /// <summary>
     /// Humanized name of the voice actor.
     /// </summary>
     [JsonPropertyName("voice_actor_name")]
-    public string VoiceActorName {get;}
+    public string VoiceActorName { get; init; }
 
     /// <summary>
     /// Description of the voice.
     /// </summary>
     [JsonPropertyName("voice_description")]
-    public string VoiceDescription {get;}
+    public string VoiceDescription { get; init; }
 }
 
 public record VocabularyReading

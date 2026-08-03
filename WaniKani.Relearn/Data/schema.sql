@@ -1,5 +1,5 @@
 -- =============================================================================
--- WaniKani Relearn - Complete PostgreSQL Database Schema
+-- Bonpom - Complete PostgreSQL Database Schema
 -- =============================================================================
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -126,8 +126,8 @@ CREATE TABLE IF NOT EXISTS vocabulary_pronunciation_audios (
     gender VARCHAR(20) NOT NULL,
     source_id INT NOT NULL,
     pronunciation VARCHAR(255) NOT NULL,
-    voice_actor_id VARCHAR(100) NOT NULL,
-    voice_actor_name VARCHAR(255) NOT NULL,
+    voice_actor_id VARCHAR(100) NULL,
+    voice_actor_name VARCHAR(255) NULL,
     voice_description TEXT NULL
 );
 

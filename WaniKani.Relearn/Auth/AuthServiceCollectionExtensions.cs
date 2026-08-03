@@ -22,8 +22,8 @@ public static class AuthServiceCollectionExtensions
     public static IServiceCollection AddAuthData(this IServiceCollection services)
     {
         services.AddTransient<IPasswordHasher, PasswordHasher>();
-        services.AddTransient<IUserReader, UserService>();
-        services.AddTransient<IUserService, UserService>();
+        services.AddScoped<IUserReader, UserService>();
+        services.AddScoped<IUserService, UserService>();
         return services;
     }
 }
