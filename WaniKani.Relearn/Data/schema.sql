@@ -188,6 +188,7 @@ CREATE TABLE IF NOT EXISTS sentence_morphemes (
     sentence_id BIGINT NOT NULL REFERENCES context_sentences(id) ON DELETE CASCADE,
     sequence_order INT NOT NULL,
     subject_id INT NULL REFERENCES subjects(id) ON DELETE SET NULL,
+    combined_form VARCHAR(255) NULL,
     surface VARCHAR(255) NOT NULL,
     lemma VARCHAR(255) NULL,
     lemma_reading VARCHAR(255) NULL,

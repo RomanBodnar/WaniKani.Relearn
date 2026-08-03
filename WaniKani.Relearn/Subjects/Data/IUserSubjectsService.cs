@@ -1,5 +1,7 @@
-using Google.Cloud.Firestore;
+using Microsoft.EntityFrameworkCore;
 using WaniKani.Relearn.Auth.Data;
+using WaniKani.Relearn.Data;
+using WaniKani.Relearn.Data.Entities;
 using WaniKani.Relearn.Subjects.Data.Exceptions;
 using WaniKani.Relearn.Subjects.Data.Models;
 
@@ -17,7 +19,7 @@ public interface IUserSubjectsService
 public class UserSubjectsService(
     IUserReader userReader,
     SubjectCache subjectCache,
-    FirestoreDb firestore
+    BonpomDbContext dbContext
 ) : IUserSubjectsService
 {
     public async Task<UserStudyItem> BookmarkSubjectForUser(string userId, int subjectId)
@@ -30,34 +32,43 @@ public class UserSubjectsService(
 
         if (!subjectCache.TryGet(subjectId, out var subject))
         {
-            // Optionally, you could implement a fallback to fetch the subject from an external API here
             throw new SubjectNotFoundException(subjectId);
         }
 
-        var studyItemsCollection = firestore.Collection("users").Document(userId).Collection("study-items");
-        var studyItemDoc = studyItemsCollection.Document(subjectId.ToString());
-        
+        var existing = await dbContext.UserMyBoxItems
+            .FirstOrDefaultAsync(b => b.UserId == userId && b.SubjectId == subjectId);
+
+        if (existing == null)
+        {
+            existing = new UserMyBoxEntity
+            {
+                UserId = userId,
+                SubjectId = subjectId,
+                BookmarkedAt = DateTime.UtcNow
+            };
+            dbContext.UserMyBoxItems.Add(existing);
+            await dbContext.SaveChangesAsync();
+        }
+
         var studyItem = new UserStudyItem
         {
             SubjectId = subjectId.ToString(),
             Type = subject.Object,
             Characters = subject.Characters,
             Slug = subject.Slug,
-            Meaning = subject.Meanings.FirstOrDefault(x => x.Primary)?.Meaning ?? string.Empty,
-            BookmarkedAt = DateTime.UtcNow
+            Meaning = subject.Meanings.FirstOrDefault(x => x != null && x.Primary)?.Meaning ?? string.Empty,
+            BookmarkedAt = existing.BookmarkedAt
         };
 
         if (subject is Kanji kanji)
         {
-            studyItem.Reading = kanji.Readings.FirstOrDefault(x => x.Primary)?.Reading;
+            studyItem.Reading = kanji.Readings.FirstOrDefault(x => x != null && x.Primary)?.Reading;
         } 
         else if (subject is Vocabulary vocabulary)
         {
-            studyItem.Reading = vocabulary.Readings.FirstOrDefault(x => x.Primary)?.Reading;
+            studyItem.Reading = vocabulary.Readings.FirstOrDefault(x => x != null && x.Primary)?.Reading;
         }
     
-        await studyItemDoc.SetAsync(studyItem);
-
         return studyItem;
     }
 
@@ -69,9 +80,39 @@ public class UserSubjectsService(
             throw new UserNotFoundException(userId);
         }
 
-        var studyItemsCollection = firestore.Collection("users").Document(userId).Collection("study-items");
-        var snapshot = await studyItemsCollection.GetSnapshotAsync();
-        var studyItems = snapshot.Documents.Select(doc => doc.ConvertTo<UserStudyItem>()).ToList();
+        var bookmarks = await dbContext.UserMyBoxItems
+            .AsNoTracking()
+            .Where(b => b.UserId == userId)
+            .ToListAsync();
+
+        var studyItems = new List<UserStudyItem>();
+        foreach (var b in bookmarks)
+        {
+            if (subjectCache.TryGet(b.SubjectId, out var subject))
+            {
+                var item = new UserStudyItem
+                {
+                    SubjectId = b.SubjectId.ToString(),
+                    Type = subject.Object,
+                    Characters = subject.Characters,
+                    Slug = subject.Slug,
+                    Meaning = subject.Meanings.FirstOrDefault(x => x != null && x.Primary)?.Meaning ?? string.Empty,
+                    BookmarkedAt = b.BookmarkedAt
+                };
+
+                if (subject is Kanji kanji)
+                {
+                    item.Reading = kanji.Readings.FirstOrDefault(x => x != null && x.Primary)?.Reading;
+                } 
+                else if (subject is Vocabulary vocabulary)
+                {
+                    item.Reading = vocabulary.Readings.FirstOrDefault(x => x != null && x.Primary)?.Reading;
+                }
+
+                studyItems.Add(item);
+            }
+        }
+
         return studyItems;
     }
 
@@ -83,8 +124,13 @@ public class UserSubjectsService(
             throw new UserNotFoundException(userId);
         }
 
-        var studyItemsCollection = firestore.Collection("users").Document(userId).Collection("study-items");
-        var studyItemDoc = studyItemsCollection.Document(subjectId.ToString());
-        await studyItemDoc.DeleteAsync();
+        var existing = await dbContext.UserMyBoxItems
+            .FirstOrDefaultAsync(b => b.UserId == userId && b.SubjectId == subjectId);
+
+        if (existing != null)
+        {
+            dbContext.UserMyBoxItems.Remove(existing);
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

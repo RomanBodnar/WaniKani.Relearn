@@ -1,4 +1,3 @@
-using Google.Cloud.Firestore;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using WaniKani.Relearn.Auth.Data;
@@ -9,6 +8,7 @@ using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Services;
 using WaniKani.Relearn.Subjects.Data;
+using WaniKani.Relearn.Subjects.Services;
 
 namespace WaniKani.Relearn.Extensions;
 
@@ -16,9 +16,6 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {
-        var projectId = configuration["Firebase:ProjectId"];
-        var databaseId = configuration["Firebase:DatabaseId"];
-
         var rawConnectionString = configuration.GetConnectionString("DefaultConnection")
                                   ?? configuration["DATABASE_URL"]
                                   ?? configuration["POSTGRESQL_URL"];
@@ -38,17 +35,6 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IDataAccess, SubjectDataAccess>();
         services.AddSingleton<SentenceCache>();
         services.AddSingleton<SentenceExtractor>();
-        
-        services.AddSingleton<FirestoreDb>(_ =>
-        {
-            // Automatically uses Application Default Credentials (ADC)
-            var builder = new FirestoreDbBuilder
-            {
-                ProjectId = projectId,
-                DatabaseId = databaseId
-            };
-            return builder.Build();
-        });
 
         return services;
     }
@@ -56,6 +42,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services.AddScoped<SubjectsService>();
+        services.AddSingleton<SubjectSearchService>();
 
         return services;
     }

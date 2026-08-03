@@ -69,6 +69,49 @@ export async function fetchSubjects(
   };
 }
 
+export async function searchSubjects(
+  query: string,
+  subjectType?: SubjectType,
+  page: number = 1,
+  perPage: number = 100
+): Promise<PaginatedSubjects> {
+  const params = new URLSearchParams();
+  params.set('q', query);
+  params.set('page', String(page));
+  params.set('perPage', String(perPage));
+
+  if (subjectType) {
+    const typeMap: Record<SubjectType, string[]> = {
+      radical: ["Radical"],
+      kanji: ["Kanji"],
+      vocabulary: ["Vocabulary", "KanaVocabulary"],
+      kana_vocabulary: ["KanaVocabulary"],
+    };
+    const queryTypes = typeMap[subjectType] || [];
+    queryTypes.forEach(t => params.append('types', t));
+  }
+
+  const url = `${API_BASE_URL}/api/subjects/search?${params.toString()}`;
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Failed to search subjects with query "${query}"`);
+  }
+
+  const apiData = await response.json();
+  const subjectsData: any[] = apiData.data || apiData.Data || [];
+  const resultPage = apiData.page || apiData.Page || page;
+  const resultPerPage = apiData.perPage || apiData.PerPage || perPage;
+  const totalCount = apiData.totalCount || apiData.TotalCount || subjectsData.length;
+
+  return {
+    data: subjectsData.map(transformSubject),
+    page: resultPage,
+    perPage: resultPerPage,
+    totalCount: totalCount
+  };
+}
+
 
 // Simple singleton cache to preserve subjects list state between navigations
 const subjectCache = new Map<string, { subjects: Subject[], page: number, totalCount: number }>();
