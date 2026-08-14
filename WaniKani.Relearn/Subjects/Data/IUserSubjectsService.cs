@@ -30,7 +30,8 @@ public class UserSubjectsService(
             throw new UserNotFoundException(userId);
         }
 
-        if (!subjectCache.TryGet(subjectId, out var subject))
+        var subject = await subjectCache.TryGetAsync(subjectId);
+        if (subject == null)
         {
             throw new SubjectNotFoundException(subjectId);
         }
@@ -88,7 +89,8 @@ public class UserSubjectsService(
         var studyItems = new List<UserStudyItem>();
         foreach (var b in bookmarks)
         {
-            if (subjectCache.TryGet(b.SubjectId, out var subject))
+            var subject = await subjectCache.TryGetAsync(b.SubjectId);
+            if (subject != null)
             {
                 var item = new UserStudyItem
                 {

@@ -57,6 +57,58 @@
   font-size: 0.875rem;
 }
 
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.825rem;
+}
+
+.footer-legal-link {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal-link:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+.footer-link-divider {
+  color: #cbd5e1;
+}
+
+.footer-legal-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #64748b;
+  font-size: 0.825rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-legal-button:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+.dark .footer-legal-link,
+.dark .footer-legal-button {
+  color: #94a3b8;
+}
+
+.dark .footer-legal-link:hover,
+.dark .footer-legal-button:hover {
+  color: #f8fafc;
+}
+
+.dark .footer-link-divider {
+  color: #475569;
+}
+
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   html:not(.light):not(.dark) .footer {

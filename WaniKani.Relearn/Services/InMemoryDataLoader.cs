@@ -44,12 +44,12 @@ public class InMemoryDataLoader(
 
         if (!Directory.GetFiles(configuration["StaticFiles:Path"]!, "context-sentences-*.json").Any())
         {
-            sentenceExtractor.ExtractSentences();
+            await sentenceExtractor.ExtractSentencesAsync();
             logger.LogInformation("Extracted context sentences to static files.");
         }
-        sentenceCache.LoadFromFiles();
+        await sentenceCache.LoadFromFilesAsync();
         //await sentenceExtractor.ExtractSentencesAsync();
-        logger.LogInformation("Loaded {Count} reading practice sentences.", sentenceCache.Count);
+        logger.LogInformation("Loaded {Count} reading practice sentences.", await sentenceCache.GetCountAsync());
         //await UpdateKanjis();
     }
 

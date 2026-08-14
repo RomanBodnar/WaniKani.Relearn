@@ -29,7 +29,7 @@ public class SubjectsController(
         {
             return BadRequest("At least one subject type must be specified.");
         }
-        var pageResult = subjectCache.GetSubjects(types, page, perPage, minLevel, maxLevel);
+        var pageResult = await subjectCache.GetSubjectsAsync(types, page, perPage, minLevel, maxLevel);
 
         var mapped = pageResult.Data.Select<Subject, object>(resource => resource switch
         {
@@ -54,7 +54,7 @@ public class SubjectsController(
             return Ok(new PageResult<object>([], page ?? 1, perPage ?? 100, 0));
         }
 
-        var results = searchService.Search(q, types);
+        var results = await searchService.SearchAsync(q, types);
         var list = results.ToList();
         var totalCount = list.Count;
 
@@ -76,7 +76,8 @@ public class SubjectsController(
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetSubjectById([FromRoute] int id)
     {
-        if (subjectCache.TryGet(id, out var subject))
+        var subject = await subjectCache.TryGetAsync(id);
+        if (subject != null)
         {
             return Ok(subject switch
             {

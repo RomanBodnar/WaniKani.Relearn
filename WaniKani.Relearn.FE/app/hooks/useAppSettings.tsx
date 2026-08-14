@@ -10,7 +10,7 @@ interface AppSettingsContextValue {
   updateSetting: <K extends keyof AppSettings>(key: K, value: AppSettings[K]) => void;
 }
 
-const STORAGE_KEY = "wk-relearn-settings";
+const STORAGE_KEY = "bonpom_settings";
 
 const DEFAULT_SETTINGS: AppSettings = {
   floatingWatermarks: true,

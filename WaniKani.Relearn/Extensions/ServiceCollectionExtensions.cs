@@ -30,7 +30,7 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<BonpomDbContext>(options =>
             options.UseNpgsql(builder.ConnectionString));
 
-        services.AddHostedService<InMemoryDataLoader>();
+
         services.AddSingleton<SubjectCache>();
         services.AddScoped<IDataAccess, SubjectDataAccess>();
         services.AddSingleton<SentenceCache>();

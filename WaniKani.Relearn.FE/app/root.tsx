@@ -38,6 +38,8 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+import { CookieConsentBanner } from "./components/CookieConsentBanner";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -56,6 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               {children}
             </main>
             <Footer />
+            <CookieConsentBanner />
             <ScrollRestoration
               getKey={(location) => {
                 const pathsToPreserve = ["/radicals", "/kanji", "/vocabulary", "/grammar", "/reading-practice", "/search"];

@@ -149,12 +149,10 @@ export default function Radicals({ loaderData: initialData }: Route.ComponentPro
       <h1 className="subjects-title">Radicals</h1>
       
       <div className="level-filter-container">
-        <div className="kanji-filter-wrapper">
-          <LevelFilter 
-            selectedRange={selectedRange} 
-            onRangeChange={handleRangeChange} 
-          />
-        </div>
+        <LevelFilter 
+          selectedRange={selectedRange} 
+          onRangeChange={handleRangeChange} 
+        />
       </div>
 
       <p className="subjects-subtitle">

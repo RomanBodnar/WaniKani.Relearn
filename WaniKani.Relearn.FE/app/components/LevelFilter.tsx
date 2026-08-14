@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LevelFilter.css";
 
 export type LevelRange = [number, number] | null;
@@ -8,48 +8,182 @@ interface LevelFilterProps {
   onRangeChange: (range: LevelRange) => void;
 }
 
-const RANGES: { label: string; value: LevelRange }[] = [
-  { label: "All Levels", value: null },
-  { label: "1-10", value: [1, 10] },
-  { label: "11-20", value: [11, 20] },
-  { label: "21-30", value: [21, 30] },
-  { label: "31-40", value: [31, 40] },
-  { label: "41-50", value: [41, 50] },
-  { label: "51-60", value: [51, 60] },
+const DECADES = [
+  { label: "1-10", min: 1, max: 10 },
+  { label: "11-20", min: 11, max: 20 },
+  { label: "21-30", min: 21, max: 30 },
+  { label: "31-40", min: 31, max: 40 },
+  { label: "41-50", min: 41, max: 50 },
+  { label: "51-60", min: 51, max: 60 },
 ];
 
 export const LevelFilter: React.FC<LevelFilterProps> = ({
   selectedRange,
   onRangeChange,
 }) => {
-  const isSelected = (range: LevelRange) => {
-    if (range === null) return selectedRange === null;
-    if (selectedRange === null) return false;
-    return range[0] === selectedRange[0] && range[1] === selectedRange[1];
+  // Determine if a single level is selected
+  const isSingleLevel = selectedRange !== null && selectedRange[0] === selectedRange[1];
+  const activeSingleLevel = isSingleLevel ? selectedRange[0] : null;
+
+  // Determine active decade group based on selected range
+  const activeDecadeIndex = selectedRange !== null
+    ? DECADES.findIndex(d => selectedRange[0] >= d.min && selectedRange[1] <= d.max)
+    : -1;
+
+  // State to track which decade group tab is currently expanded/active
+  const [activeDecade, setActiveDecade] = useState<number | null>(
+    activeDecadeIndex !== -1 ? activeDecadeIndex : null
+  );
+
+  useEffect(() => {
+    if (activeDecadeIndex !== -1) {
+      setActiveDecade(activeDecadeIndex);
+    }
+  }, [activeDecadeIndex]);
+
+  // Handle decade tab click
+  const handleDecadeClick = (index: number) => {
+    const decade = DECADES[index];
+    if (activeDecade === index && selectedRange !== null && selectedRange[0] === decade.min && selectedRange[1] === decade.max) {
+      // Toggle off if already full decade selected -> reset to All
+      onRangeChange(null);
+      setActiveDecade(null);
+    } else {
+      setActiveDecade(index);
+      onRangeChange([decade.min, decade.max]);
+    }
   };
 
-  const [isExpanded, setIsExpanded] = useState(false);
-  const activeLabel = RANGES.find((r) => isSelected(r.value))?.label || "All Levels";
+  // Handle individual level pill click
+  const handleSingleLevelClick = (level: number) => {
+    if (activeSingleLevel === level) {
+      // Toggle back to full decade range or reset
+      const decade = DECADES[activeDecade ?? 0];
+      onRangeChange([decade.min, decade.max]);
+    } else {
+      onRangeChange([level, level]);
+    }
+  };
+
+  // Handle direct select dropdown change
+  const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const val = e.target.value;
+    if (val === "all") {
+      onRangeChange(null);
+      setActiveDecade(null);
+    } else if (val.startsWith("decade-")) {
+      const idx = parseInt(val.replace("decade-", ""), 10);
+      const decade = DECADES[idx];
+      setActiveDecade(idx);
+      onRangeChange([decade.min, decade.max]);
+    } else {
+      const levelNum = parseInt(val, 10);
+      const decIdx = DECADES.findIndex(d => levelNum >= d.min && levelNum <= d.max);
+      setActiveDecade(decIdx !== -1 ? decIdx : null);
+      onRangeChange([levelNum, levelNum]);
+    }
+  };
+
+  // Get active dropdown value string
+  const getDropdownValue = () => {
+    if (selectedRange === null) return "all";
+    if (isSingleLevel) return String(selectedRange[0]);
+    if (activeDecadeIndex !== -1) return `decade-${activeDecadeIndex}`;
+    return "all";
+  };
 
   return (
-    <div className={`level-filter-container filter-group ${isExpanded ? "expanded" : ""}`}>
-      <button className="filter-label filter-toggle" onClick={() => setIsExpanded(!isExpanded)}>
-        Levels: <span className="mobile-active-label">{activeLabel}</span>
-        <svg className="filter-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
-      <div className="filter-options">
-        {RANGES.map((range) => (
+    <div className="level-filter-group">
+      <div className="level-filter-row">
+        <span className="filter-label">LEVELS:</span>
+
+        <div className="filter-options">
+          {/* All Levels Button */}
           <button
-            key={range.label}
-            className={`filter-button ${isSelected(range.value) ? "active" : ""}`}
-            onClick={() => onRangeChange(range.value)}
+            type="button"
+            className={`filter-button ${selectedRange === null ? "active" : ""}`}
+            onClick={() => {
+              onRangeChange(null);
+              setActiveDecade(null);
+            }}
           >
-            {range.label}
+            All Levels
           </button>
-        ))}
+
+          {/* Decade Range Tabs */}
+          {DECADES.map((d, idx) => {
+            const isDecadeActive = activeDecade === idx;
+            const isFullRangeSelected = selectedRange !== null && selectedRange[0] === d.min && selectedRange[1] === d.max;
+            return (
+              <button
+                key={d.label}
+                type="button"
+                className={`filter-button decade-button ${isDecadeActive ? "decade-active" : ""} ${isFullRangeSelected ? "active" : ""}`}
+                onClick={() => handleDecadeClick(idx)}
+              >
+                {d.label}
+              </button>
+            );
+          })}
+
+          {/* Quick Direct Level Selector Dropdown */}
+          <div className="level-select-wrapper">
+            <select
+              className="level-select-dropdown"
+              value={getDropdownValue()}
+              onChange={handleDropdownChange}
+              aria-label="Select Individual Level"
+            >
+              <option value="all">Select Level...</option>
+              <optgroup label="Decade Ranges">
+                {DECADES.map((d, idx) => (
+                  <option key={`dec-${d.label}`} value={`decade-${idx}`}>
+                    Levels {d.label}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Individual Levels (1 - 60)">
+                {Array.from({ length: 60 }, (_, i) => i + 1).map((lvl) => (
+                  <option key={`lvl-${lvl}`} value={String(lvl)}>
+                    Level {lvl}
+                  </option>
+                ))}
+              </optgroup>
+            </select>
+          </div>
+        </div>
       </div>
+
+      {/* Sub-row for selecting individual levels when a decade group is active */}
+      {activeDecade !== null && (
+        <div className="sub-levels-row">
+          <span className="sub-levels-label">
+            Select Level ({DECADES[activeDecade].label}):
+          </span>
+          <div className="sub-levels-options">
+            <button
+              type="button"
+              className={`sub-level-button ${selectedRange !== null && selectedRange[0] === DECADES[activeDecade].min && selectedRange[1] === DECADES[activeDecade].max ? "active" : ""}`}
+              onClick={() => onRangeChange([DECADES[activeDecade].min, DECADES[activeDecade].max])}
+            >
+              All {DECADES[activeDecade].label}
+            </button>
+            {Array.from(
+              { length: DECADES[activeDecade].max - DECADES[activeDecade].min + 1 },
+              (_, i) => DECADES[activeDecade].min + i
+            ).map((lvl) => (
+              <button
+                key={`sub-lvl-${lvl}`}
+                type="button"
+                className={`sub-level-button ${activeSingleLevel === lvl ? "active" : ""}`}
+                onClick={() => handleSingleLevelClick(lvl)}
+              >
+                {lvl}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

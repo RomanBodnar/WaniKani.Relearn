@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Subjects.Data;
@@ -8,7 +9,7 @@ namespace WaniKani.Relearn.Subjects.Services;
 
 public class SubjectSearchService(SubjectCache subjectCache, ILogger<SubjectSearchService> logger)
 {
-    public IEnumerable<Subject> Search(string query, SubjectType[]? types = null, int? page = null, int? perPage = null)
+    public async ValueTask<IEnumerable<Subject>> SearchAsync(string query, SubjectType[]? types = null, int? page = null, int? perPage = null)
     {
         if (string.IsNullOrWhiteSpace(query))
         {
@@ -19,7 +20,7 @@ public class SubjectSearchService(SubjectCache subjectCache, ILogger<SubjectSear
         var sw = Stopwatch.StartNew();
         var normalizedQuery = query.Trim().ToLowerInvariant();
 
-        var subjects = subjectCache.GetAll();
+        var subjects = await subjectCache.GetAllAsync();
         var initialCount = subjects.Count();
 
         if (types is { Length: > 0 })

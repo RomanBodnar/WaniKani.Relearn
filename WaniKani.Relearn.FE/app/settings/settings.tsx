@@ -1,5 +1,7 @@
 import type { Route } from "./+types/settings";
 import { useAppSettings } from "~/hooks/useAppSettings";
+import { WaniKaniTokenForm } from "~/components/WaniKaniTokenForm";
+import { ToggleSwitch } from "~/components/ToggleSwitch";
 import "./settings.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -40,25 +42,29 @@ export default function Settings() {
             </div>
           </div>
 
-          <label className="settings-row" htmlFor="toggle-watermarks">
+          <div
+            className="settings-row"
+            onClick={() => updateSetting("floatingWatermarks", !settings.floatingWatermarks)}
+          >
             <div className="settings-row-text">
               <span className="settings-label">Floating Watermarks</span>
               <span className="settings-description">
                 Show drifting kanji characters in the background on list pages
               </span>
             </div>
-            <div className="toggle-wrapper">
-              <input
-                id="toggle-watermarks"
-                type="checkbox"
-                className="toggle-input"
+            <div onClick={(e) => e.stopPropagation()}>
+              <ToggleSwitch
                 checked={settings.floatingWatermarks}
-                onChange={(e) => updateSetting("floatingWatermarks", e.target.checked)}
+                onChange={(checked) => updateSetting("floatingWatermarks", checked)}
+                color="var(--color-wk-kanji, #ff6d00)"
               />
-              <span className="toggle-slider" />
             </div>
-          </label>
+          </div>
         </div>
+      </div>
+
+      <div style={{ marginTop: "24px" }}>
+        <WaniKaniTokenForm />
       </div>
     </div>
   );

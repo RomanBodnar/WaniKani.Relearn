@@ -18,4 +18,7 @@ export const API_ENDPOINTS = {
 
   bookmarks: `${API_BASE_URL}/api/user/subjects`,
   bookmarkSubject: (id: string | number) => `${API_BASE_URL}/api/user/subjects/${id}`,
+
+  wanikaniToken: `${API_BASE_URL}/api/account/wanikani-token`,
+  wanikaniStatus: `${API_BASE_URL}/api/account/wanikani-status`,
 } as const;

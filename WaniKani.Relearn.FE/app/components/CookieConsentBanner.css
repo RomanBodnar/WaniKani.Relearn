@@ -1,0 +1,107 @@
+/* Cookie Consent Banner Styles */
+
+.cookie-banner-wrapper {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2.5rem);
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px);
+  z-index: 999;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .cookie-banner-wrapper {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: #334155;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.cookie-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .cookie-banner-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.cookie-banner-text-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cookie-banner-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.cookie-banner-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #334155;
+  margin: 0;
+}
+
+.dark .cookie-banner-text {
+  color: #cbd5e1;
+}
+
+.cookie-banner-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 0.35rem;
+}
+
+.dark .cookie-banner-link {
+  color: #60a5fa;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .cookie-banner-actions {
+    justify-content: flex-end;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

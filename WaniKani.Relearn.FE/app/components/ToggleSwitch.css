@@ -41,3 +41,8 @@
   transform: translateX(22px);
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.1);
 }
+
+.dark .toggle-switch:not(.checked) {
+  background: #334155;
+}
+

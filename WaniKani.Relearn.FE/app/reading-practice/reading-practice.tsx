@@ -183,7 +183,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
         </div>
       )}
 
-      <div className="reading-practice-controls">
+      <div className="level-filter-container">
         <LevelFilter
           selectedRange={selectedRange}
           onRangeChange={setSelectedRange}

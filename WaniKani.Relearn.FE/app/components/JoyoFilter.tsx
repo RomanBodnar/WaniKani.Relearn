@@ -36,7 +36,7 @@ export const JoyoFilter: React.FC<JoyoFilterProps> = ({
   };
 
   return (
-    <div className="level-filter-container">
+    <div className="level-filter-row joyo-filter-row">
       <span className="filter-label">Jouyou:</span>
       <div className="filter-options">
         {GRADES.map((grade) => {
@@ -47,6 +47,7 @@ export const JoyoFilter: React.FC<JoyoFilterProps> = ({
           return (
             <button
               key={grade.label}
+              type="button"
               className={`filter-button ${isActive ? "active" : ""}`}
               onClick={() => handleToggle(grade.value)}
             >

@@ -7,12 +7,12 @@ namespace WaniKani.Relearn.Subjects.Api;
 public class ReadingPracticeController(SentenceCache sentenceCache) : ControllerBase
 {
     [HttpGet("sentences")]
-    public IActionResult GetSentences(
+    public async Task<IActionResult> GetSentences(
         [FromQuery] int? minLevel = null,
         [FromQuery] int? maxLevel = null,
         [FromQuery] int? page = null,
         [FromQuery] int? perPage = null)
     {
-        return Ok(sentenceCache.GetSentences(page, perPage, minLevel, maxLevel));
+        return Ok(await sentenceCache.GetSentencesAsync(page, perPage, minLevel, maxLevel));
     }
 }

@@ -14,5 +14,7 @@ export default [
     route("/settings", "./settings/settings.tsx"),
     route("/login", "./auth/login.tsx"),
     route("/register", "./auth/register.tsx"),
-    route("/profile", "./profile/profile.tsx")
+    route("/profile", "./profile/profile.tsx"),
+    route("/cookies-policy", "./cookies-policy/cookies-policy.tsx"),
+    route("/technology-list", "./technology-list/technology-list.tsx")
 ] satisfies RouteConfig;

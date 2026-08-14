@@ -171,19 +171,14 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
       <h1 className="subjects-title">Kanji</h1>
 
       <div className="level-filter-container">
-        <div className="kanji-filter-wrapper">
-          <LevelFilter
-            selectedRange={selectedRange}
-            onRangeChange={handleRangeChange}
-          />
-        </div>
-
-        <div className="kanji-filter-wrapper">
-          <JLPTFilter
-            selectedLevels={selectedJlpt}
-            onLevelsChange={handleJlptChange}
-          />
-        </div>
+        <LevelFilter
+          selectedRange={selectedRange}
+          onRangeChange={handleRangeChange}
+        />
+        <JLPTFilter
+          selectedLevels={selectedJlpt}
+          onLevelsChange={handleJlptChange}
+        />
       </div>
 
       <p className="subjects-subtitle">

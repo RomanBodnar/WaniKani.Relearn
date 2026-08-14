@@ -5,6 +5,8 @@ using WaniKani.Relearn.Contracts.Resources;
 using WaniKani.Relearn.Contracts.Subjects;
 using WaniKani.Relearn.Subjects.Data.Models;
 using WaniKani.Relearn.Subjects.Data.Models.Reading;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
@@ -19,6 +21,11 @@ public class SentenceExtractor(
     IConfiguration configuration)
 {
     public void ProcessMorphemesInSentence(ReadingSentence sentence)
+    {
+        ProcessMorphemesInSentenceAsync(sentence).GetAwaiter().GetResult();
+    }
+
+    public async Task ProcessMorphemesInSentenceAsync(ReadingSentence sentence)
     {
         var morphemes = sentence.Morphemes;
 
@@ -85,7 +92,7 @@ public class SentenceExtractor(
                     }
 
                     // Try to link the combined number+counter (e.g. 七つ)
-                    if (TryLinkSubject(morpheme, combinedFormLemma) || TryLinkSubject(morpheme, combinedFormOrth))
+                    if (await TryLinkSubjectAsync(morpheme, combinedFormLemma) || await TryLinkSubjectAsync(morpheme, combinedFormOrth))
                     {
                         morpheme.CombinedForm = combinedPrefix + morpheme.Surface;
                         i++;
@@ -99,7 +106,7 @@ public class SentenceExtractor(
                     
                     if (!counterContainsKanji)
                     {
-                        TryLinkSubject(morpheme, morpheme.Lemma);
+                        await TryLinkSubjectAsync(morpheme, morpheme.Lemma);
                     }
 
                     // Set CombinedForm so they are visually unified
@@ -138,7 +145,7 @@ public class SentenceExtractor(
                 {
                     // Fallback to look up previous morpheme's Lemma directly in the cache
                     var parentLemma = prevMorpheme.Lemma;
-                    if (TryLinkSubject(morpheme, parentLemma))
+                    if (await TryLinkSubjectAsync(morpheme, parentLemma))
                     {
                         morpheme.CombinedForm = parentLemma;
                     }
@@ -157,7 +164,7 @@ public class SentenceExtractor(
                 {
                     var nounMorpheme = morphemes[i - 2];
                     var combinedCharacters = nounMorpheme.Lemma + "する";
-                    if (TryLinkSubject(morpheme, combinedCharacters))
+                    if (await TryLinkSubjectAsync(morpheme, combinedCharacters))
                     {
                         morpheme.CombinedForm = combinedCharacters;
                         i++;
@@ -167,7 +174,7 @@ public class SentenceExtractor(
 
                 // Check if Noun + する exists in cache (dictionary check takes precedence)
                 var combinedSuruCharacters = prevMorpheme.Lemma + "する";
-                if (TryLinkSubject(morpheme, combinedSuruCharacters))
+                if (await TryLinkSubjectAsync(morpheme, combinedSuruCharacters))
                 {
                     morpheme.CombinedForm = combinedSuruCharacters;
                     i++;
@@ -193,20 +200,20 @@ public class SentenceExtractor(
 
                 if (isPrevStandaloneTrigger || !isPrevVerbalNoun)
                 {
-                    TryLinkSubject(morpheme, "する");
+                    await TryLinkSubjectAsync(morpheme, "する");
                     i++;
                     continue;
                 }
 
                 // Fallback for suru verbs not in WaniKani: link to the base noun
-                if (TryLinkSubject(morpheme, prevMorpheme.Lemma))
+                if (await TryLinkSubjectAsync(morpheme, prevMorpheme.Lemma))
                 {
                     morpheme.CombinedForm = prevMorpheme.Lemma;
                 }
                 else
                 {
                     // Final fallback: link to "する" itself
-                    TryLinkSubject(morpheme, "する");
+                    await TryLinkSubjectAsync(morpheme, "する");
                 }
                 i++;
                 continue;
@@ -225,14 +232,14 @@ public class SentenceExtractor(
                 }
                 
                 var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
-                if (TryLinkSubject(morpheme, combinedCharacters))
+                if (await TryLinkSubjectAsync(morpheme, combinedCharacters))
                 {
                     morpheme.CombinedForm = combinedCharacters;
                 }
                 else
                 {
                     // Fallback for suffix not in WaniKani: link to the base noun
-                    if (TryLinkSubject(morpheme, prevMorpheme.Lemma))
+                    if (await TryLinkSubjectAsync(morpheme, prevMorpheme.Lemma))
                     {
                         morpheme.CombinedForm = prevMorpheme.Lemma;
                     }
@@ -242,9 +249,9 @@ public class SentenceExtractor(
             }
 
             // 5. Standard dictionary/cache lookup
-            if (!TryLinkSubject(morpheme, morpheme.Lemma))
+            if (!await TryLinkSubjectAsync(morpheme, morpheme.Lemma))
             {
-                TryLinkSubject(morpheme, morpheme.Orth);
+                await TryLinkSubjectAsync(morpheme, morpheme.Orth);
             }
 
             i++;
@@ -271,14 +278,14 @@ public class SentenceExtractor(
                    || m.Pos2.En == "counter";
         }
 
-        bool TryLinkSubject(Morpheme m, string? characters)
+        async Task<bool> TryLinkSubjectAsync(Morpheme m, string? characters)
         {
             if (string.IsNullOrEmpty(characters)) return false;
-            var subjectId = subjectCache.GetIdByCharacters(characters);
+            var subjectId = await subjectCache.GetIdByCharactersAsync(characters);
             if (subjectId != 0)
             {
                 m.SubjectId = subjectId;
-                subjectCache.TryGet(subjectId, out var subject);
+                var subject = await subjectCache.TryGetAsync(subjectId);
                 AddSubjectToSourceVocabulary(subjectId, characters, subject);
                 return true;
             }
@@ -307,10 +314,10 @@ public class SentenceExtractor(
         }
     }
 
-    public async Task ExtractSentencesAsync()
+    public async Task ExtractProcessedSentencesAsync()
     {
         using StreamReader file = File.OpenText("../context-sentences-processed.json");
-        await using JsonTextReader reader = new JsonTextReader(file);
+        using JsonTextReader reader = new JsonTextReader(file);
         var jArray = (JArray)await JToken.ReadFromAsync(reader);
         var sentences = jArray.ToObject<List<ReadingSentence>>() ?? [];
         var byLevel = sentences.GroupBy(s => s.Level);
@@ -318,7 +325,7 @@ public class SentenceExtractor(
         {
             foreach (var sentence in levelGroup)
             {
-                ProcessMorphemesInSentence(sentence);
+                await ProcessMorphemesInSentenceAsync(sentence);
             }
             var path = Path.Combine($"context-sentences-{levelGroup.Key}.json");
             var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);
@@ -326,37 +333,51 @@ public class SentenceExtractor(
         }
     }
 
-    public void ExtractSentences()
+    public async Task ExtractSentencesAsync()
     {
         var raw = new List<(string Ja, string En, int Level, SubjectReference Source)>();
-        var vocabulary = subjectCache.GetAllOfType(SubjectType.Vocabulary.ToSnakeCaseString())
-            .Concat(subjectCache.GetAllOfType(SubjectType.KanaVocabulary.ToSnakeCaseString()));
+        var vocabulary = (await subjectCache.GetAllOfTypeAsync(SubjectType.Vocabulary.ToSnakeCaseString()))
+            .Concat(await subjectCache.GetAllOfTypeAsync(SubjectType.KanaVocabulary.ToSnakeCaseString()));
 
         foreach (var resource in vocabulary)
         {
             var sentences = GetSentence((Models.Vocabulary)resource);
             raw.AddRange(sentences);
         }
-        var grouped = raw.GroupBy(x => x.Ja).Select(g => new ReadingSentence
+        
+        var grouped = raw.GroupBy(x => x.Ja).Select(g => new
         {
             Ja = g.Key,
             En = g.First().En,
             Level = g.Min(x => x.Level),
             SourceVocabulary = g.Select(x => x.Source).DistinctBy(x => x.SubjectId).ToList(),
-            KanjiInSentence = ExtractKanji(g.Key)
         }).ToList();
 
-        var byLevel = grouped.GroupBy(s => s.Level);
+        var sentencesList = new List<ReadingSentence>();
+        foreach (var item in grouped)
+        {
+            var kanjiInSentence = await ExtractKanjiAsync(item.Ja);
+            sentencesList.Add(new ReadingSentence
+            {
+                Ja = item.Ja,
+                En = item.En,
+                Level = item.Level,
+                SourceVocabulary = item.SourceVocabulary,
+                KanjiInSentence = kanjiInSentence
+            });
+        }
+
+        var byLevel = sentencesList.GroupBy(s => s.Level);
         foreach (var levelGroup in byLevel)
         {
             var path = Path.Combine(configuration["StaticFiles:Path"]!,
                 $"context-sentences-{levelGroup.Key}.json");
             var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);
-            File.WriteAllText(path, json);
+            await File.WriteAllTextAsync(path, json);
         }
     }
 
-    private List<SubjectReference> ExtractKanji(string ja)
+    private async Task<List<SubjectReference>> ExtractKanjiAsync(string ja)
     {
         var result = new List<SubjectReference>();
         var seen = new HashSet<char>();
@@ -364,7 +385,7 @@ public class SentenceExtractor(
         {
             if (ch < '\u4E00' || ch > '\u9FFF' || !seen.Add(ch)) continue;
             // Look up kanji subject by characters match
-            var kanjiSubject = subjectCache.FindByCharacters(ch.ToString(), SubjectType.Kanji);
+            var kanjiSubject = await subjectCache.FindByCharactersAsync(ch.ToString(), SubjectType.Kanji);
             if (kanjiSubject != null)
             {
                 result.Add(new SubjectReference
