@@ -1,4 +1,5 @@
 using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Subjects.Data;
 using WaniKani.Relearn.Subjects.Data.Mappers;
 
@@ -42,15 +43,10 @@ public class InMemoryDataLoader(
         logger.LogInformation("Finished loading {KanjiCount} kanji, {VocabCount} vocabulary, {RadicalCount} radicals into cache.",
             kanji.Count, vocabulary.Count, radicals.Count);
 
-        if (!Directory.GetFiles(configuration["StaticFiles:Path"]!, "context-sentences-*.json").Any())
-        {
-            await sentenceExtractor.ExtractSentencesAsync();
-            logger.LogInformation("Extracted context sentences to static files.");
-        }
-        await sentenceCache.LoadFromFilesAsync();
-        //await sentenceExtractor.ExtractSentencesAsync();
-        logger.LogInformation("Loaded {Count} reading practice sentences.", await sentenceCache.GetCountAsync());
-        //await UpdateKanjis();
+        var dbContext = scope.ServiceProvider.GetRequiredService<BonpomDbContext>();
+        await sentenceExtractor.ExtractAndSaveToDbAsync(dbContext);
+        sentenceCache.LoadFromDb(dbContext);
+        logger.LogInformation("Loaded {Count} reading practice sentences from DB into cache.", sentenceCache.Count);
     }
 
     private async Task UpdateKanjis(IDataAccess dataAccess)

@@ -21,4 +21,9 @@ export const API_ENDPOINTS = {
 
   wanikaniToken: `${API_BASE_URL}/api/account/wanikani-token`,
   wanikaniStatus: `${API_BASE_URL}/api/account/wanikani-status`,
+
+  markPracticedSentence: (id: string | number) => `${API_BASE_URL}/api/reading-practice/sentences/${id}/practiced`,
+  unmarkPracticedSentence: (id: string | number) => `${API_BASE_URL}/api/reading-practice/sentences/${id}/practiced`,
+  readingBookmark: `${API_BASE_URL}/api/reading-practice/bookmark`,
+  hideSentence: (id: string | number) => `${API_BASE_URL}/api/reading-practice/sentences/${id}/hide`,
 } as const;

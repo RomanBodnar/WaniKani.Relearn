@@ -25,13 +25,18 @@ export interface Morpheme {
 }
 
 export interface ReadingSentence {
+  id: number;
   ja: string;
   en: string;
   level: number;
   sourceVocabulary: SubjectReference[];
   kanjiInSentence: SubjectReference[];
   morphemes?: Morpheme[];
+  isPracticed?: boolean;
+  isHidden?: boolean;
 }
+
+export type SentenceStatusFilter = "all" | "unpracticed" | "practiced";
 
 export interface PaginatedSentences {
   data: ReadingSentence[];

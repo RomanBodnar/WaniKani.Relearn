@@ -10,9 +10,17 @@ interface ReadingSentenceCardProps {
   onInteract?: (index: number) => void;
   /** Called to enter focus mode for this specific sentence */
   onFocus?: (index: number) => void;
+  /** Called to toggle practiced state */
+  onTogglePracticed?: (sentenceId: number, currentlyPracticed: boolean) => void;
 }
 
-export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: ReadingSentenceCardProps) {
+export function ReadingSentenceCard({
+  sentence,
+  index,
+  onInteract,
+  onFocus,
+  onTogglePracticed
+}: ReadingSentenceCardProps) {
   const [userInput, setUserInput] = useState("");
   const [isRevealed, setIsRevealed] = useState(false);
   const [activeSubjectId, setActiveSubjectId] = useState<number | null>(null);
@@ -56,8 +64,20 @@ export function ReadingSentenceCard({ sentence, index, onInteract, onFocus }: Re
   const morphemes = sentence.morphemes;
 
   return (
-    <div className="sentence-card" id={`sentence-${index}`}>
-      <span className="sentence-card-level">Lv. {sentence.level}</span>
+    <div className={`sentence-card ${sentence.isPracticed ? "practiced-card" : ""}`} id={`sentence-${index}`}>
+      <div className="sentence-card-header">
+        <span className="sentence-card-level">Lv. {sentence.level}</span>
+        {onTogglePracticed && (
+          <button
+            type="button"
+            className={`practiced-toggle-btn ${sentence.isPracticed ? "is-practiced" : ""}`}
+            onClick={() => onTogglePracticed(sentence.id, !!sentence.isPracticed)}
+            title={sentence.isPracticed ? "Unmark sentence as practiced" : "Mark sentence as practiced"}
+          >
+            {sentence.isPracticed ? "✓ Practiced" : "+ Mark as Practiced"}
+          </button>
+        )}
+      </div>
 
       {/* Japanese sentence */}
       <p className="sentence-ja">

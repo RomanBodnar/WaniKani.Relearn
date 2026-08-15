@@ -116,6 +116,22 @@ public class SubjectCache(IServiceScopeFactory scopeFactory)
         return _subjects.Values.Where(x => x.Object == typeName);
     }
 
+    public bool TryGet(int id, out Subject? subject)
+    {
+        return _subjects.TryGetValue(id, out subject);
+    }
+
+    public IEnumerable<Subject> GetAllOfType(string typeName)
+    {
+        return _subjects.Values.Where(x => x.Object == typeName);
+    }
+
+    public Subject? FindByCharacters(string characters, SubjectType typeName)
+    {
+        return _subjects.Values.FirstOrDefault(x =>
+            x.Object == typeName.ToSnakeCaseString() && x.Characters == characters);
+    }
+
     public async ValueTask<Subject?> FindByCharactersAsync(string characters, SubjectType typeName)
     {
         await EnsureLoadedAsync();

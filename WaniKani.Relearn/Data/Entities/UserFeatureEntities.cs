@@ -47,3 +47,18 @@ public class UserTranslationAttemptEntity
     public UserEntity? User { get; set; }
     public ContextSentenceEntity? Sentence { get; set; }
 }
+
+/// <summary>
+/// User's persistent Reading Practice bookmark ("Continue from" state).
+/// </summary>
+public class UserReadingBookmarkEntity
+{
+    public required string UserId { get; set; }
+    public int Page { get; set; }
+    public int SentenceIndex { get; set; }
+    public int? MinLevel { get; set; }
+    public int? MaxLevel { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+    public UserEntity? User { get; set; }
+}

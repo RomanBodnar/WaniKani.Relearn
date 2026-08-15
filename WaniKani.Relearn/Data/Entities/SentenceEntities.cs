@@ -7,6 +7,8 @@ public class ContextSentenceEntity
     public required string Ja { get; set; }
     public required string En { get; set; }
     public int Level { get; set; } = 1;
+    public DateTime? HiddenAt { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
     public SubjectEntity? Subject { get; set; }

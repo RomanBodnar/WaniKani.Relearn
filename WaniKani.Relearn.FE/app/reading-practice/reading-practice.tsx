@@ -1,12 +1,18 @@
 import type { Route } from "./+types/reading-practice";
 import { useState, useMemo, useEffect, useCallback } from "react";
-import { useSearchParams } from "react-router";
-import { fetchSentences, useReadingSentences, saveBookmark, loadBookmark, clearBookmark } from "~/hooks/useReadingSentences";
+import { useSearchParams, useRouteLoaderData } from "react-router";
+import {
+  fetchSentences,
+  useReadingSentences,
+  saveBookmarkAsync,
+  loadBookmarkAsync,
+  clearBookmarkAsync
+} from "~/hooks/useReadingSentences";
 import { ReadingSentenceCard } from "./ReadingSentenceCard";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { ErrorDisplay } from "../components/ErrorDisplay";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
-import type { ReadingBookmark } from "~/types/reading";
+import type { ReadingBookmark, SentenceStatusFilter } from "~/types/reading";
 import "./reading-practice.css";
 
 export function meta() {
@@ -19,7 +25,10 @@ export function meta() {
 export async function clientLoader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const page = Math.max(1, parseInt(url.searchParams.get("page") ?? "1", 10));
-  return await fetchSentences(page, 10);
+  const status = (url.searchParams.get("status") as SentenceStatusFilter) || "unpracticed";
+  const minLevel = url.searchParams.get("minLevel") ? parseInt(url.searchParams.get("minLevel")!, 10) : undefined;
+  const maxLevel = url.searchParams.get("maxLevel") ? parseInt(url.searchParams.get("maxLevel")!, 10) : undefined;
+  return await fetchSentences(page, 10, minLevel, maxLevel, status);
 }
 
 export function ErrorBoundary() {
@@ -37,16 +46,22 @@ export function ErrorBoundary() {
 }
 
 export default function ReadingPractice({ loaderData: initialData }: Route.ComponentProps) {
+  const rootData = useRouteLoaderData("root") as { isLoggedIn: boolean } | undefined;
+  const isLoggedIn = rootData?.isLoggedIn || false;
+
   const [selectedRange, setSelectedRange] = useState<LevelRange>(null);
   const [bookmark, setBookmark] = useState<ReadingBookmark | null>(null);
   const [hasResumed, setHasResumed] = useState(false);
   const [focusModeIndex, setFocusModeIndex] = useState<number | null>(null);
-  const [, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const statusFilter = (searchParams.get("status") as SentenceStatusFilter) || "unpracticed";
 
   const filters = useMemo(() => ({
     minLevel: selectedRange?.[0],
-    maxLevel: selectedRange?.[1]
-  }), [selectedRange]);
+    maxLevel: selectedRange?.[1],
+    status: statusFilter
+  }), [selectedRange, statusFilter]);
 
   // Sync page changes to the URL search param
   const syncPage = useCallback((newPage: number) => {
@@ -64,17 +79,32 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
     );
   }, [setSearchParams]);
 
+  const handleStatusFilterChange = (newStatus: SentenceStatusFilter) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        if (newStatus === "unpracticed") {
+          next.delete("status");
+        } else {
+          next.set("status", newStatus);
+        }
+        next.delete("page");
+        return next;
+      },
+      { replace: false }
+    );
+  };
+
   const {
-    sentences, page, totalPages, totalCount, isLoading, goToPage
+    sentences, page, totalPages, totalCount, isLoading, goToPage, togglePracticed
   } = useReadingSentences(initialData, filters, syncPage);
 
   // Load bookmark on mount
   useEffect(() => {
-    const saved = loadBookmark();
-    if (saved) {
-      setBookmark(saved);
-    }
-  }, []);
+    loadBookmarkAsync(isLoggedIn).then(saved => {
+      if (saved) setBookmark(saved);
+    });
+  }, [isLoggedIn]);
 
   // Update bookmark as user interacts with cards
   const handleCardInteract = useCallback((sentenceIndex: number) => {
@@ -85,8 +115,8 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
       maxLevel: filters.maxLevel,
       timestamp: new Date().toISOString(),
     };
-    saveBookmark(bm);
-  }, [page, filters.minLevel, filters.maxLevel]);
+    saveBookmarkAsync(bm, isLoggedIn);
+  }, [page, filters.minLevel, filters.maxLevel, isLoggedIn]);
 
   // Update bookmark when focus mode changes
   useEffect(() => {
@@ -99,7 +129,6 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   const handleResume = useCallback(async () => {
     if (!bookmark) return;
 
-    // Apply bookmark filters if they differ
     if (bookmark.minLevel !== undefined || bookmark.maxLevel !== undefined) {
       const range: LevelRange = (bookmark.minLevel && bookmark.maxLevel)
         ? [bookmark.minLevel, bookmark.maxLevel]
@@ -111,7 +140,6 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
     setHasResumed(true);
     setBookmark(null);
 
-    // Scroll to the sentence after data loads
     setTimeout(() => {
       const el = document.getElementById(`sentence-${bookmark.sentenceIndex}`);
       if (el) {
@@ -123,8 +151,12 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   }, [bookmark, goToPage]);
 
   const handleDismissBookmark = () => {
-    clearBookmark();
+    clearBookmarkAsync(isLoggedIn);
     setBookmark(null);
+  };
+
+  const handleTogglePracticedCard = (sentenceId: number, currentlyPracticed: boolean) => {
+    togglePracticed(sentenceId, currentlyPracticed, isLoggedIn);
   };
 
   // Focus Mode Handlers
@@ -144,11 +176,10 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
       setFocusModeIndex(focusModeIndex - 1);
     } else if (page > 1) {
       await goToPage(page - 1);
-      setFocusModeIndex(9); // Previous pages are always full (10 items), so last index is 9
+      setFocusModeIndex(9);
     }
   };
 
-  // Build page number buttons
   const pageNumbers = buildPageNumbers(page, totalPages);
 
   return (
@@ -183,11 +214,42 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
         </div>
       )}
 
-      <div className="level-filter-container">
+      {/* Practice controls: Level filter & Status filter tabs */}
+      <div className="reading-practice-controls">
         <LevelFilter
           selectedRange={selectedRange}
           onRangeChange={setSelectedRange}
         />
+
+        <div className="status-filter-tabs" role="tablist" aria-label="Sentence practice filter">
+          <button
+            type="button"
+            className={`status-tab ${statusFilter === "unpracticed" ? "active" : ""}`}
+            onClick={() => handleStatusFilterChange("unpracticed")}
+            role="tab"
+            aria-selected={statusFilter === "unpracticed"}
+          >
+            Unpracticed
+          </button>
+          <button
+            type="button"
+            className={`status-tab ${statusFilter === "practiced" ? "active" : ""}`}
+            onClick={() => handleStatusFilterChange("practiced")}
+            role="tab"
+            aria-selected={statusFilter === "practiced"}
+          >
+            Practiced
+          </button>
+          <button
+            type="button"
+            className={`status-tab ${statusFilter === "all" ? "active" : ""}`}
+            onClick={() => handleStatusFilterChange("all")}
+            role="tab"
+            aria-selected={statusFilter === "all"}
+          >
+            All Sentences
+          </button>
+        </div>
       </div>
 
       <p className="reading-practice-count">
@@ -205,17 +267,22 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
         <div className="sentence-cards-list">
           {sentences.map((sentence, idx) => (
             <ReadingSentenceCard
-              key={`${page}-${idx}`}
+              key={`${page}-${sentence.id || idx}`}
               sentence={sentence}
               index={idx}
               onInteract={handleCardInteract}
               onFocus={setFocusModeIndex}
+              onTogglePracticed={handleTogglePracticedCard}
             />
           ))}
         </div>
       ) : (
         <div className="sentence-card" style={{ textAlign: "center", padding: "40px" }}>
-          <p style={{ color: "#64748b" }}>No sentences match the selected level range.</p>
+          {statusFilter === "practiced" ? (
+            <p style={{ color: "#64748b" }}>You haven't marked any sentences as practiced yet in this level range.</p>
+          ) : (
+            <p style={{ color: "#64748b" }}>No sentences match the selected filters.</p>
+          )}
         </div>
       )}
 
@@ -275,6 +342,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
                 sentence={sentences[focusModeIndex]}
                 index={focusModeIndex}
                 onInteract={handleCardInteract}
+                onTogglePracticed={handleTogglePracticedCard}
               />
             </div>
             <div className="focus-modal-controls">
@@ -303,20 +371,14 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
   );
 }
 
-/**
- * Builds an array of page numbers with ellipsis for large page counts.
- * Always shows first, last, and a window around the current page.
- * Example: [1, "…", 4, 5, 6, "…", 20]
- */
 function buildPageNumbers(current: number, total: number): (number | "…")[] {
   if (total <= 7) {
     return Array.from({ length: total }, (_, i) => i + 1);
   }
 
   const pages: (number | "…")[] = [];
-  const windowSize = 1; // pages around current
+  const windowSize = 1;
 
-  // Always include page 1
   pages.push(1);
 
   const rangeStart = Math.max(2, current - windowSize);
@@ -330,7 +392,6 @@ function buildPageNumbers(current: number, total: number): (number | "…")[] {
 
   if (rangeEnd < total - 1) pages.push("…");
 
-  // Always include last page
   pages.push(total);
 
   return pages;

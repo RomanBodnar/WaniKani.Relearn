@@ -1,8 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Contracts.Resources;
 using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Data;
+using WaniKani.Relearn.Data.Entities;
 using WaniKani.Relearn.Subjects.Data.Models;
 using WaniKani.Relearn.Subjects.Data.Models.Reading;
 using System.Threading.Tasks;
@@ -10,22 +13,11 @@ using System.IO;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
-// todo:しなく - suru + nai
-// todo: fix ない processing
-// をするんだ -- する after を
-
-// してしまった
-// 二ですç
 public class SentenceExtractor(
     SubjectCache subjectCache,
     IConfiguration configuration)
 {
     public void ProcessMorphemesInSentence(ReadingSentence sentence)
-    {
-        ProcessMorphemesInSentenceAsync(sentence).GetAwaiter().GetResult();
-    }
-
-    public async Task ProcessMorphemesInSentenceAsync(ReadingSentence sentence)
     {
         var morphemes = sentence.Morphemes;
 
@@ -92,7 +84,7 @@ public class SentenceExtractor(
                     }
 
                     // Try to link the combined number+counter (e.g. 七つ)
-                    if (await TryLinkSubjectAsync(morpheme, combinedFormLemma) || await TryLinkSubjectAsync(morpheme, combinedFormOrth))
+                    if (TryLinkSubject(morpheme, combinedFormLemma) || TryLinkSubject(morpheme, combinedFormOrth))
                     {
                         morpheme.CombinedForm = combinedPrefix + morpheme.Surface;
                         i++;
@@ -106,205 +98,110 @@ public class SentenceExtractor(
                     
                     if (!counterContainsKanji)
                     {
-                        await TryLinkSubjectAsync(morpheme, morpheme.Lemma);
-                    }
-
-                    // Set CombinedForm so they are visually unified
-                    morpheme.CombinedForm = combinedPrefix + morpheme.Surface;
-                    i++;
-                    continue;
-                }
-            }
-
-            // 2. Auxiliary Verb (助動詞) processing (e.g. ます, ない, たい, た)
-            var isAuxiliary = (morpheme.Pos1.En == "auxiliary verb" 
-                              || morpheme.Pos1.Ja == "助動詞"
-                              || morpheme.Lemma == "ます" 
-                              || morpheme.Lemma == "たい" 
-                              || morpheme.Lemma == "ない" 
-                              || morpheme.Lemma == "た" 
-                              || morpheme.LemmaReading == "マス" 
-                              || morpheme.LemmaReading == "ナイ" 
-                              || morpheme.LemmaReading == "タイ" 
-                              || morpheme.LemmaReading == "タ")
-                              && morpheme.Lemma != "です"
-                              && morpheme.LemmaReading != "デス";
-            if (isAuxiliary && i > 0)
-            {
-                var prevMorpheme = morphemes[i - 1];
-                if (prevMorpheme.SubjectId != null && prevMorpheme.SubjectId != 0)
-                {
-                    morpheme.SubjectId = prevMorpheme.SubjectId;
-                    morpheme.CombinedForm = prevMorpheme.CombinedForm ?? prevMorpheme.Lemma;
-                }
-                else if (prevMorpheme.CombinedForm != null)
-                {
-                    morpheme.CombinedForm = prevMorpheme.CombinedForm;
-                }
-                else
-                {
-                    // Fallback to look up previous morpheme's Lemma directly in the cache
-                    var parentLemma = prevMorpheme.Lemma;
-                    if (await TryLinkSubjectAsync(morpheme, parentLemma))
-                    {
-                        morpheme.CombinedForm = parentLemma;
-                    }
-                }
-                i++;
-                continue;
-            }
-
-            // 3. Suru Verb (サ変助動詞 / サ行変格) processing
-            if (morpheme.LemmaReading == "スル" && i > 0)
-            {
-                var prevMorpheme = morphemes[i - 1];
-
-                // Check "noun + を + する" -> combined to noun + "する"
-                if (i > 1 && (prevMorpheme.Lemma == "を" || prevMorpheme.Surface == "を") && (prevMorpheme.Pos1.En == "particle" || prevMorpheme.Pos1.Ja == "助詞"))
-                {
-                    var nounMorpheme = morphemes[i - 2];
-                    var combinedCharacters = nounMorpheme.Lemma + "する";
-                    if (await TryLinkSubjectAsync(morpheme, combinedCharacters))
-                    {
-                        morpheme.CombinedForm = combinedCharacters;
+                        morpheme.SubjectId = null;
                         i++;
                         continue;
                     }
                 }
-
-                // Check if Noun + する exists in cache (dictionary check takes precedence)
-                var combinedSuruCharacters = prevMorpheme.Lemma + "する";
-                if (await TryLinkSubjectAsync(morpheme, combinedSuruCharacters))
-                {
-                    morpheme.CombinedForm = combinedSuruCharacters;
-                    i++;
-                    continue;
-                }
-
-                // If not in cache, check if this is a standalone "する" based on POS tags
-                var isPrevStandaloneTrigger = prevMorpheme.Pos1.En == "particle" 
-                                              || prevMorpheme.Pos1.Ja == "助詞"
-                                              || prevMorpheme.Pos1.En == "suffix" 
-                                              || prevMorpheme.Pos1.Ja == "接尾辞"
-                                              || prevMorpheme.Pos1.En == "auxiliary verb" 
-                                              || prevMorpheme.Pos1.Ja == "助動詞"
-                                              || prevMorpheme.Pos1.En == "助数詞" 
-                                              || prevMorpheme.Pos1.Ja == "助数詞"
-                                              || (prevMorpheme.Pos1.En == "noun" && prevMorpheme.Pos2.En == "number")
-                                              || (prevMorpheme.Pos1.Ja == "名詞" && prevMorpheme.Pos2.Ja == "数");
-
-                var isPrevVerbalNoun = prevMorpheme.Pos2.Ja == "サ変接続" 
-                                       || prevMorpheme.Pos2.En == "verbal"
-                                       || prevMorpheme.Pos1.En == "verbal noun"
-                                       || prevMorpheme.Pos1.Ja == "サ変名詞";
-
-                if (isPrevStandaloneTrigger || !isPrevVerbalNoun)
-                {
-                    await TryLinkSubjectAsync(morpheme, "する");
-                    i++;
-                    continue;
-                }
-
-                // Fallback for suru verbs not in WaniKani: link to the base noun
-                if (await TryLinkSubjectAsync(morpheme, prevMorpheme.Lemma))
-                {
-                    morpheme.CombinedForm = prevMorpheme.Lemma;
-                }
-                else
-                {
-                    // Final fallback: link to "する" itself
-                    await TryLinkSubjectAsync(morpheme, "する");
-                }
-                i++;
-                continue;
             }
 
-            // 4. Suffix (接尾辞) processing
-            var isSuffix = morpheme.Pos1.En == "suffix" || morpheme.Pos1.Ja == "接尾辞";
-            if (isSuffix && i > 0)
+            // 2. Aux verbal prefix verb processing (お, ご, 御 prefix)
+            if (i < morphemes.Count - 1)
             {
-                var prevMorpheme = morphemes[i - 1];
-                var isPrevParticle = prevMorpheme.Pos1.En == "particle" || prevMorpheme.Pos1.Ja == "助詞";
-                if (isPrevParticle)
+                var nextMorpheme = morphemes[i + 1];
+                if ((morpheme.Surface == "お" || morpheme.Surface == "ご" || morpheme.Surface == "御") &&
+                    morpheme.Pos1.Ja == "接頭辞")
                 {
-                    i++;
-                    continue;
-                }
-                
-                var combinedCharacters = prevMorpheme.Lemma + morpheme.Lemma;
-                if (await TryLinkSubjectAsync(morpheme, combinedCharacters))
-                {
-                    morpheme.CombinedForm = combinedCharacters;
-                }
-                else
-                {
-                    // Fallback for suffix not in WaniKani: link to the base noun
-                    if (await TryLinkSubjectAsync(morpheme, prevMorpheme.Lemma))
+                    var combinedFormLemma = morpheme.Surface + nextMorpheme.Lemma;
+                    var combinedFormOrth = morpheme.Surface + nextMorpheme.Orth;
+
+                    if (TryLinkSubject(nextMorpheme, combinedFormLemma) || TryLinkSubject(nextMorpheme, combinedFormOrth))
                     {
-                        morpheme.CombinedForm = prevMorpheme.Lemma;
+                        nextMorpheme.CombinedForm = morpheme.Surface + nextMorpheme.Surface;
+                        morpheme.SubjectId = null;
+                        i += 2;
+                        continue;
                     }
                 }
-                i++;
-                continue;
             }
 
-            // 5. Standard dictionary/cache lookup
-            if (!await TryLinkSubjectAsync(morpheme, morpheme.Lemma))
+            // 3. Multi-morpheme look-ahead (Compound Words / Idioms)
+            bool compoundFound = false;
+            for (int len = 3; len >= 2; len--)
             {
-                await TryLinkSubjectAsync(morpheme, morpheme.Orth);
+                if (i + len <= morphemes.Count)
+                {
+                    var slice = morphemes.GetRange(i, len);
+                    var combinedSurface = string.Concat(slice.Select(m => m.Surface));
+                    var combinedLemma = string.Concat(slice.Select(m => m.Lemma));
+                    var combinedOrth = string.Concat(slice.Select(m => m.Orth));
+
+                    // Try matching the combined string
+                    if (TryLinkSubject(morpheme, combinedSurface) ||
+                        TryLinkSubject(morpheme, combinedLemma) ||
+                        TryLinkSubject(morpheme, combinedOrth))
+                    {
+                        morpheme.CombinedForm = combinedSurface;
+
+                        // Null out subject IDs of the absorbed morphemes
+                        for (int k = 1; k < len; k++)
+                        {
+                            slice[k].SubjectId = null;
+                        }
+
+                        i += len;
+                        compoundFound = true;
+                        break;
+                    }
+                }
+            }
+
+            if (compoundFound) continue;
+
+            // 4. Single morpheme processing
+            // Prioritize noun forms for 名詞
+            if (morpheme.Pos1.Ja == "名詞")
+            {
+                if (TryLinkSubject(morpheme, morpheme.Surface) ||
+                    TryLinkSubject(morpheme, morpheme.Orth) ||
+                    TryLinkSubject(morpheme, morpheme.Lemma))
+                {
+                    i++;
+                    continue;
+                }
+            }
+            else
+            {
+                // Prioritize lemma (dictionary form) for verbs, adjectives, etc.
+                if (TryLinkSubject(morpheme, morpheme.Lemma) ||
+                    TryLinkSubject(morpheme, morpheme.Orth) ||
+                    TryLinkSubject(morpheme, morpheme.Surface))
+                {
+                    i++;
+                    continue;
+                }
             }
 
             i++;
         }
 
-        // --- Helper local functions ---
+        // Post-processing pass: Sync vocabulary tags with matched morphemes
+        var matchedSubjectIds = morphemes
+            .Where(m => m.SubjectId.HasValue)
+            .Select(m => m.SubjectId!.Value)
+            .ToHashSet();
 
-        bool IsNumeric(Morpheme m)
+        foreach (var subjectId in matchedSubjectIds)
         {
-            return m.Pos2.En == "数" 
-                   || m.Pos2.Ja == "数" 
-                   || m.Pos1.En == "number" 
-                   || m.Pos1.Ja == "数" 
-                   || m.Surface.All(IsDigitOrNumeral);
-        }
-
-        bool IsCounter(Morpheme m)
-        {
-            return m.Pos1.Ja == "助数詞" 
-                   || m.Pos2.Ja == "助数詞" 
-                   || m.Pos2.Ja == "助数詞可能" 
-                   || m.Pos1.En == "助数詞"
-                   || m.Pos1.En == "counter"
-                   || m.Pos2.En == "counter";
-        }
-
-        async Task<bool> TryLinkSubjectAsync(Morpheme m, string? characters)
-        {
-            if (string.IsNullOrEmpty(characters)) return false;
-            var subjectId = await subjectCache.GetIdByCharactersAsync(characters);
-            if (subjectId != 0)
+            if (!sentence.SourceVocabulary.Any(v => v.SubjectId == subjectId))
             {
-                m.SubjectId = subjectId;
-                var subject = await subjectCache.TryGetAsync(subjectId);
-                AddSubjectToSourceVocabulary(subjectId, characters, subject);
-                return true;
-            }
-            return false;
-        }
+                var subject = subjectCache.TryGet(subjectId, out var sub) ? sub : null;
+                var characters = subject?.Characters ?? "";
+                if (string.IsNullOrEmpty(characters) && subject is Models.Vocabulary vocab)
+                {
+                    characters = vocab.Characters ?? "";
+                }
 
-        bool IsDigitOrNumeral(char c)
-        {
-            return (c >= '0' && c <= '9') 
-                   || (c >= '０' && c <= '９')
-                   || c == '一' || c == '二' || c == '三' || c == '四' || c == '五' 
-                   || c == '六' || c == '七' || c == '八' || c == '九' || c == '十' 
-                   || c == '百' || c == '千' || c == '万' || c == '億';
-        }
-
-        void AddSubjectToSourceVocabulary(int subjectId, string characters, Models.Subject? subject = null)
-        {
-            if (sentence.SourceVocabulary.All(s => s.SubjectId != subjectId))
-            {
                 sentence.SourceVocabulary.Add(new SubjectReference
                 {
                     SubjectId = subjectId,
@@ -314,78 +211,162 @@ public class SentenceExtractor(
         }
     }
 
-    public async Task ExtractProcessedSentencesAsync()
+    public async Task ExtractAndSaveToDbAsync(BonpomDbContext dbContext)
     {
-        using StreamReader file = File.OpenText("../context-sentences-processed.json");
-        using JsonTextReader reader = new JsonTextReader(file);
-        var jArray = (JArray)await JToken.ReadFromAsync(reader);
-        var sentences = jArray.ToObject<List<ReadingSentence>>() ?? [];
-        var byLevel = sentences.GroupBy(s => s.Level);
-        foreach (var levelGroup in byLevel)
+        if (await dbContext.SentenceSubjectReferences.AnyAsync())
         {
-            foreach (var sentence in levelGroup)
+            return;
+        }
+
+        var existingSentencesMap = await dbContext.ContextSentences
+            .AsNoTracking()
+            .Select(cs => new { cs.Id, cs.Ja })
+            .ToListAsync();
+
+        var existingDict = existingSentencesMap
+            .GroupBy(cs => cs.Ja)
+            .ToDictionary(g => g.Key, g => g.First().Id);
+
+        List<ReadingSentence> sentences = [];
+
+        var processedFilePath = Path.Combine(configuration["StaticFiles:Path"] ?? "", "context-sentences-processed.json");
+        if (!File.Exists(processedFilePath))
+        {
+            processedFilePath = "../context-sentences-processed.json";
+        }
+
+        if (File.Exists(processedFilePath))
+        {
+            using StreamReader file = File.OpenText(processedFilePath);
+            await using JsonTextReader reader = new JsonTextReader(file);
+            var jArray = (JArray)await JToken.ReadFromAsync(reader);
+            sentences = jArray.ToObject<List<ReadingSentence>>() ?? [];
+        }
+        else
+        {
+            var raw = new List<(string Ja, string En, int Level, SubjectReference Source)>();
+            var vocabulary = subjectCache.GetAllOfType(SubjectType.Vocabulary.ToSnakeCaseString())
+                .Concat(subjectCache.GetAllOfType(SubjectType.KanaVocabulary.ToSnakeCaseString()));
+
+            foreach (var resource in vocabulary)
             {
-                await ProcessMorphemesInSentenceAsync(sentence);
+                var sList = GetSentence((Models.Vocabulary)resource);
+                raw.AddRange(sList);
             }
-            var path = Path.Combine($"context-sentences-{levelGroup.Key}.json");
-            var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);
-            await File.WriteAllTextAsync(path, json);
-        }
-    }
 
-    public async Task ExtractSentencesAsync()
-    {
-        var raw = new List<(string Ja, string En, int Level, SubjectReference Source)>();
-        var vocabulary = (await subjectCache.GetAllOfTypeAsync(SubjectType.Vocabulary.ToSnakeCaseString()))
-            .Concat(await subjectCache.GetAllOfTypeAsync(SubjectType.KanaVocabulary.ToSnakeCaseString()));
-
-        foreach (var resource in vocabulary)
-        {
-            var sentences = GetSentence((Models.Vocabulary)resource);
-            raw.AddRange(sentences);
-        }
-        
-        var grouped = raw.GroupBy(x => x.Ja).Select(g => new
-        {
-            Ja = g.Key,
-            En = g.First().En,
-            Level = g.Min(x => x.Level),
-            SourceVocabulary = g.Select(x => x.Source).DistinctBy(x => x.SubjectId).ToList(),
-        }).ToList();
-
-        var sentencesList = new List<ReadingSentence>();
-        foreach (var item in grouped)
-        {
-            var kanjiInSentence = await ExtractKanjiAsync(item.Ja);
-            sentencesList.Add(new ReadingSentence
+            sentences = raw.GroupBy(x => x.Ja).Select(g => new ReadingSentence
             {
-                Ja = item.Ja,
-                En = item.En,
-                Level = item.Level,
-                SourceVocabulary = item.SourceVocabulary,
-                KanjiInSentence = kanjiInSentence
-            });
+                Ja = g.Key,
+                En = g.First().En,
+                Level = g.Min(x => x.Level),
+                SourceVocabulary = g.Select(x => x.Source).DistinctBy(x => x.SubjectId).ToList(),
+                KanjiInSentence = ExtractKanji(g.Key)
+            }).ToList();
         }
 
-        var byLevel = sentencesList.GroupBy(s => s.Level);
-        foreach (var levelGroup in byLevel)
+        var referencesToInsert = new List<SentenceSubjectReferenceEntity>();
+        var morphemesToInsert = new List<SentenceMorphemeEntity>();
+
+        foreach (var s in sentences)
         {
-            var path = Path.Combine(configuration["StaticFiles:Path"]!,
-                $"context-sentences-{levelGroup.Key}.json");
-            var json = JsonConvert.SerializeObject(levelGroup.ToList(), Formatting.Indented);
-            await File.WriteAllTextAsync(path, json);
+            long sentenceId;
+            if (existingDict.TryGetValue(s.Ja, out var id))
+            {
+                sentenceId = id;
+            }
+            else
+            {
+                var newEntity = new ContextSentenceEntity
+                {
+                    SubjectId = s.SourceVocabulary.FirstOrDefault()?.SubjectId,
+                    Ja = s.Ja,
+                    En = s.En,
+                    Level = s.Level
+                };
+                dbContext.ContextSentences.Add(newEntity);
+                await dbContext.SaveChangesAsync();
+                sentenceId = newEntity.Id;
+                existingDict[s.Ja] = sentenceId;
+            }
+
+            foreach (var sv in s.SourceVocabulary)
+            {
+                referencesToInsert.Add(new SentenceSubjectReferenceEntity
+                {
+                    SentenceId = sentenceId,
+                    SubjectId = sv.SubjectId,
+                    ReferenceType = "source_vocabulary"
+                });
+            }
+
+            foreach (var kj in s.KanjiInSentence)
+            {
+                referencesToInsert.Add(new SentenceSubjectReferenceEntity
+                {
+                    SentenceId = sentenceId,
+                    SubjectId = kj.SubjectId,
+                    ReferenceType = "kanji_in_sentence"
+                });
+            }
+
+            if (s.Morphemes != null)
+            {
+                int seq = 0;
+                foreach (var m in s.Morphemes)
+                {
+                    morphemesToInsert.Add(new SentenceMorphemeEntity
+                    {
+                        SentenceId = sentenceId,
+                        SequenceOrder = seq++,
+                        SubjectId = m.SubjectId,
+                        Surface = m.Surface,
+                        Lemma = m.Lemma,
+                        LemmaReading = m.LemmaReading,
+                        Orth = m.Orth,
+                        Pron = m.Pron,
+                        ConjugationType = m.ConjugationType,
+                        ConjugationForm = m.ConjugationForm,
+                        Pos1Ja = m.Pos1?.Ja,
+                        Pos1En = m.Pos1?.En,
+                        Pos2Ja = m.Pos2?.Ja,
+                        Pos2En = m.Pos2?.En,
+                        Pos3Ja = m.Pos3?.Ja,
+                        Pos3En = m.Pos3?.En,
+                        Pos4Ja = m.Pos4?.Ja,
+                        Pos4En = m.Pos4?.En,
+                    });
+                }
+            }
+        }
+
+        var distinctRefs = referencesToInsert
+            .DistinctBy(r => new { r.SentenceId, r.SubjectId, r.ReferenceType })
+            .ToList();
+
+        const int batchSize = 1000;
+        for (int i = 0; i < distinctRefs.Count; i += batchSize)
+        {
+            var batch = distinctRefs.Skip(i).Take(batchSize);
+            dbContext.SentenceSubjectReferences.AddRange(batch);
+            await dbContext.SaveChangesAsync();
+        }
+
+        for (int i = 0; i < morphemesToInsert.Count; i += batchSize)
+        {
+            var batch = morphemesToInsert.Skip(i).Take(batchSize);
+            dbContext.SentenceMorphemes.AddRange(batch);
+            await dbContext.SaveChangesAsync();
         }
     }
 
-    private async Task<List<SubjectReference>> ExtractKanjiAsync(string ja)
+    private List<SubjectReference> ExtractKanji(string ja)
     {
         var result = new List<SubjectReference>();
         var seen = new HashSet<char>();
         foreach (var ch in ja)
         {
             if (ch < '\u4E00' || ch > '\u9FFF' || !seen.Add(ch)) continue;
-            // Look up kanji subject by characters match
-            var kanjiSubject = await subjectCache.FindByCharactersAsync(ch.ToString(), SubjectType.Kanji);
+            var kanjiSubject = subjectCache.FindByCharacters(ch.ToString(), SubjectType.Kanji);
             if (kanjiSubject != null)
             {
                 result.Add(new SubjectReference
@@ -430,5 +411,32 @@ public class SentenceExtractor(
              ));
         }
         return result;
+    }
+
+    private bool TryLinkSubject(Morpheme morpheme, string query)
+    {
+        if (string.IsNullOrEmpty(query)) return false;
+
+        var subject = subjectCache.FindByCharacters(query, SubjectType.Vocabulary) ??
+                      subjectCache.FindByCharacters(query, SubjectType.KanaVocabulary);
+
+        if (subject != null)
+        {
+            morpheme.SubjectId = subject.Id;
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool IsNumeric(Morpheme morpheme)
+    {
+        return morpheme.Pos1.Ja == "名詞" && morpheme.Pos2.Ja == "数";
+    }
+
+    private static bool IsCounter(Morpheme morpheme)
+    {
+        return (morpheme.Pos1.Ja == "名詞" && morpheme.Pos2.Ja == "接尾" && morpheme.Pos3.Ja == "助数詞") ||
+               (morpheme.Pos1.Ja == "接尾辞" && morpheme.Pos2.Ja == "名詞的" && morpheme.Pos3.Ja == "助数詞");
     }
 }

@@ -170,7 +170,9 @@ CREATE TABLE IF NOT EXISTS context_sentences (
     subject_id INT NULL REFERENCES subjects(id) ON DELETE CASCADE,
     ja TEXT NOT NULL,
     en TEXT NOT NULL,
-    level INT NOT NULL DEFAULT 1
+    level INT NOT NULL DEFAULT 1,
+    hidden_at TIMESTAMP WITH TIME ZONE NULL,
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE INDEX IF NOT EXISTS idx_sentences_subject ON context_sentences(subject_id);
@@ -251,6 +253,16 @@ CREATE TABLE IF NOT EXISTS user_translation_attempts (
 
 CREATE INDEX IF NOT EXISTS idx_translation_attempts_user_sent ON user_translation_attempts(user_id, sentence_id, attempted_at DESC);
 CREATE INDEX IF NOT EXISTS idx_translation_attempts_user_time ON user_translation_attempts(user_id, attempted_at DESC);
+
+-- Feature 4: Persistent Reading Bookmark ("Continue from")
+CREATE TABLE IF NOT EXISTS user_reading_bookmarks (
+    user_id VARCHAR(36) PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+    page INT NOT NULL,
+    sentence_index INT NOT NULL,
+    min_level INT NULL,
+    max_level INT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 
 -- -----------------------------------------------------------------------------
 -- 9. USEFUL HELPER VIEWS

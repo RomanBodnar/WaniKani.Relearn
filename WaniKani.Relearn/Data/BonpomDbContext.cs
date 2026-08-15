@@ -28,6 +28,7 @@ public class BonpomDbContext : DbContext
     public DbSet<UserMyBoxEntity> UserMyBoxItems => Set<UserMyBoxEntity>();
     public DbSet<UserPracticedSentenceEntity> UserPracticedSentences => Set<UserPracticedSentenceEntity>();
     public DbSet<UserTranslationAttemptEntity> UserTranslationAttempts => Set<UserTranslationAttemptEntity>();
+    public DbSet<UserReadingBookmarkEntity> UserReadingBookmarks => Set<UserReadingBookmarkEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -263,6 +264,8 @@ public class BonpomDbContext : DbContext
             b.Property(cs => cs.Ja).HasColumnName("ja").IsRequired();
             b.Property(cs => cs.En).HasColumnName("en").IsRequired();
             b.Property(cs => cs.Level).HasColumnName("level");
+            b.Property(cs => cs.HiddenAt).HasColumnName("hidden_at");
+            b.Property(cs => cs.UpdatedAt).HasColumnName("updated_at");
 
             b.HasOne(cs => cs.Subject)
                 .WithMany(s => s.ContextSentences)
@@ -388,6 +391,23 @@ public class BonpomDbContext : DbContext
             b.HasOne(ta => ta.Sentence)
                 .WithMany(cs => cs.TranslationAttempts)
                 .HasForeignKey(ta => ta.SentenceId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<UserReadingBookmarkEntity>(b =>
+        {
+            b.ToTable("user_reading_bookmarks");
+            b.HasKey(rb => rb.UserId);
+            b.Property(rb => rb.UserId).HasColumnName("user_id").HasMaxLength(36);
+            b.Property(rb => rb.Page).HasColumnName("page");
+            b.Property(rb => rb.SentenceIndex).HasColumnName("sentence_index");
+            b.Property(rb => rb.MinLevel).HasColumnName("min_level");
+            b.Property(rb => rb.MaxLevel).HasColumnName("max_level");
+            b.Property(rb => rb.UpdatedAt).HasColumnName("updated_at");
+
+            b.HasOne(rb => rb.User)
+                .WithOne(u => u.ReadingBookmark)
+                .HasForeignKey<UserReadingBookmarkEntity>(rb => rb.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
     }

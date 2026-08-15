@@ -12,6 +12,7 @@ public class UserEntity
     public ICollection<UserMyBoxEntity> MyBoxItems { get; set; } = [];
     public ICollection<UserPracticedSentenceEntity> PracticedSentences { get; set; } = [];
     public ICollection<UserTranslationAttemptEntity> TranslationAttempts { get; set; } = [];
+    public UserReadingBookmarkEntity? ReadingBookmark { get; set; }
 }
 
 public class UserCredentialsEntity

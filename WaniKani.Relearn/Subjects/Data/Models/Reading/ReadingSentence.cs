@@ -4,12 +4,15 @@ namespace WaniKani.Relearn.Subjects.Data.Models.Reading;
 
 public record ReadingSentence
 {
+    public long Id { get; init; }
     public required string Ja { get; init; }
     public required string En { get; init; }
     public int Level { get; init; }
     public required List<SubjectReference> SourceVocabulary { get; init; }
     public required List<SubjectReference> KanjiInSentence { get; init; }
     public List<Morpheme> Morphemes { get; init; }
+    public bool IsHidden { get; init; }
+    public bool IsPracticed { get; set; }
 }
 
 public record Morpheme
