@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using WaniKani.Relearn.Auth;
+using WaniKani.Relearn.Auth.Data;
 using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Extensions;
 using WaniKani.Relearn.Subjects;
@@ -62,6 +63,11 @@ public class Program
             client.BaseAddress = new Uri(configuration["WaniKani:Api"]!);
             var accessToken = configuration["WaniKani:AccessToken"]!;
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+        });
+
+        services.AddHttpClient<WaniKaniUserSubscriptionService>(client =>
+        {
+            client.BaseAddress = new Uri(configuration["WaniKani:Api"]!);
         });
 
         builder.Services

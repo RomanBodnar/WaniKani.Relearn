@@ -62,3 +62,18 @@ public class UserReadingBookmarkEntity
 
     public UserEntity? User { get; set; }
 }
+
+public class UserWaniKaniSettingsEntity
+{
+    public required string UserId { get; set; }
+
+    public string? EncryptedWaniKaniToken { get; set; }
+
+    public int? MaxAllowedLevel { get; set; }
+
+    public DateTime? MaxAllowedLevelValidUntil { get; set; }
+
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+    public UserEntity? User { get; set; }
+}

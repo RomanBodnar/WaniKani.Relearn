@@ -5,7 +5,7 @@
 
 -- 1. Update context_sentences table
 ALTER TABLE context_sentences
-    ADD COLUMN IF NOT EXISTS hidden_at TIMESTAMP WITH TIME ZONE NULL,
+    
     ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP;
 
 -- 2. Create user_reading_bookmarks table

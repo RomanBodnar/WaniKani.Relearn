@@ -4,6 +4,7 @@ using WaniKani.Relearn.Auth.Data;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Contracts.Reviews;
 using WaniKani.Relearn.Contracts.Subjects;
+using WaniKani.Relearn.Contracts.Users;
 using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Http;
 using WaniKani.Relearn.Services;
@@ -102,6 +103,11 @@ public static class ServiceCollectionExtensions
             .AddHttpMessageHandler<HttpLoggingHandler>();
         services
             .AddRefitClient<ISubjectsApi>(refitSettings)
+            .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
+            .AddHttpMessageHandler<HttpLoggingHandler>();
+
+        services
+            .AddRefitClient<IUserApi>(refitSettings)
             .ConfigureHttpClient(c => ConfigureHttpClient(c, configuration))
             .AddHttpMessageHandler<HttpLoggingHandler>();
 
