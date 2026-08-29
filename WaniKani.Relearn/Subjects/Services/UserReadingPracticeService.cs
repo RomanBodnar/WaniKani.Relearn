@@ -120,23 +120,24 @@ public class UserReadingPracticeService(
 
     public async Task SetSentenceHiddenAsync(long sentenceId, bool isHidden, CancellationToken cancellationToken = default)
     {
-        var sentence = await dbContext.ContextSentences
-            .FirstOrDefaultAsync(s => s.Id == sentenceId, cancellationToken);
+        throw new NotImplementedException();
+        //var sentence = await dbContext.ContextSentences
+        //    .FirstOrDefaultAsync(s => s.Id == sentenceId, cancellationToken);
 
-        if (sentence != null)
-        {
-            sentence.HiddenAt = isHidden ? DateTime.UtcNow : null;
-            sentence.UpdatedAt = DateTime.UtcNow;
-            await dbContext.SaveChangesAsync(cancellationToken);
+        //if (sentence != null)
+        //{
+        //    //sentence.HiddenAt = isHidden ? DateTime.UtcNow : null;
+        //    sentence.UpdatedAt = DateTime.UtcNow;
+        //    await dbContext.SaveChangesAsync(cancellationToken);
 
-            if (isHidden)
-            {
-                sentenceCache.HideSentence(sentenceId);
-            }
-            else
-            {
-                sentenceCache.UnhideSentence(sentenceId);
-            }
-        }
+        //    if (isHidden)
+        //    {
+        //        sentenceCache.HideSentence(sentenceId);
+        //    }
+        //    else
+        //    {
+        //        sentenceCache.UnhideSentence(sentenceId);
+        //    }
+        //}
     }
 }

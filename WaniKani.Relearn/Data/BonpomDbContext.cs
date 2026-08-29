@@ -267,7 +267,6 @@ public class BonpomDbContext : DbContext
             b.Property(cs => cs.Ja).HasColumnName("ja").IsRequired();
             b.Property(cs => cs.En).HasColumnName("en").IsRequired();
             b.Property(cs => cs.Level).HasColumnName("level");
-            b.Property(cs => cs.HiddenAt).HasColumnName("hidden_at");
             b.Property(cs => cs.UpdatedAt).HasColumnName("updated_at");
 
             b.HasOne(cs => cs.Subject)

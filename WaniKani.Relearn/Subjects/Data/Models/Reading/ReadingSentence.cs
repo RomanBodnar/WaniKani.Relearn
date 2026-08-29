@@ -11,7 +11,6 @@ public record ReadingSentence
     public required List<SubjectReference> SourceVocabulary { get; init; }
     public required List<SubjectReference> KanjiInSentence { get; init; }
     public List<Morpheme> Morphemes { get; init; }
-    public bool IsHidden { get; init; }
     public bool IsPracticed { get; set; }
 }
 

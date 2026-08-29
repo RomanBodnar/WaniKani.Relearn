@@ -88,7 +88,6 @@ public class SentenceCache(SubjectCache subjectCache)
             SourceVocabulary = sourceVocab,
             KanjiInSentence = kanjiInSentence,
             Morphemes = morphemes,
-            IsHidden = entity.HiddenAt.HasValue
         };
     }
 
@@ -97,13 +96,13 @@ public class SentenceCache(SubjectCache subjectCache)
         _sentences[sentence.Id] = sentence;
     }
 
-    public void HideSentence(long sentenceId)
-    {
-        if (_sentences.TryGetValue(sentenceId, out var existing))
-        {
-            _sentences[sentenceId] = existing with { IsHidden = true };
-        }
-    }
+    //public void HideSentence(long sentenceId)
+    //{
+    //    if (_sentences.TryGetValue(sentenceId, out var existing))
+    //    {
+    //        _sentences[sentenceId] = existing with { IsHidden = true };
+    //    }
+    //}
 
     public void UnhideSentence(long sentenceId)
     {
