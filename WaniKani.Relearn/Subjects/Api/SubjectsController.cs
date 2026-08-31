@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using WaniKani.Relearn.Contracts.Assignments;
 using WaniKani.Relearn.Subjects.Api.Mappers;
 using WaniKani.Relearn.Subjects.Data;
@@ -12,6 +13,7 @@ namespace WaniKani.Relearn.Subjects.Api;
 public class SubjectsController(
     SubjectCache subjectCache,
     SubjectSearchService searchService,
+    SubjectMnemonicFilter filter,
     KanjiMapper kanjiMapper,
     VocabularyMapper vocabularyMapper,
     RadicalMapper radicalMapper) : ControllerBase
@@ -31,13 +33,12 @@ public class SubjectsController(
         }
         var pageResult = await subjectCache.GetSubjectsAsync(types, page, perPage, minLevel, maxLevel);
 
-        var mapped = pageResult.Data.Select<Subject, object>(resource => resource switch
-        {
-            Kanji => kanjiMapper.Map((Kanji)resource),
-            Radical => radicalMapper.Map((Radical)resource),
-            Vocabulary => vocabularyMapper.Map((Vocabulary)resource),
-            _ => throw new InvalidOperationException($"Unknown subject type: {resource.GetType().Name}")
-        });
+        var maxAllowedLevel = await filter.GetMaxAllowedLevelAsync(GetUserId(), GetUserWaniKaniToken());
+
+        var mapped = pageResult.Data
+            .Select(subject => filter.FilterHintsAndMnemonics(subject, maxAllowedLevel))
+            .Select<Subject, object>(MapToResponse);
+
         return Ok(new PageResult<object>(mapped, pageResult.Page, pageResult.PerPage, pageResult.TotalCount));
     }
 
@@ -62,13 +63,11 @@ public class SubjectsController(
         int take = perPage ?? 100;
         var pagedResults = list.Skip((p - 1) * take).Take(take);
 
-        var mapped = pagedResults.Select<Subject, object>(resource => resource switch
-        {
-            Kanji => kanjiMapper.Map((Kanji)resource),
-            Radical => radicalMapper.Map((Radical)resource),
-            Vocabulary => vocabularyMapper.Map((Vocabulary)resource),
-            _ => throw new InvalidOperationException($"Unknown subject type: {resource.GetType().Name}")
-        });
+        var maxAllowedLevel = await filter.GetMaxAllowedLevelAsync(GetUserId(), GetUserWaniKaniToken());
+
+        var mapped = pagedResults
+            .Select(subject => filter.FilterHintsAndMnemonics(subject, maxAllowedLevel))
+            .Select<Subject, object>(MapToResponse);
 
         return Ok(new PageResult<object>(mapped, p, take, totalCount));
     }
@@ -77,19 +76,24 @@ public class SubjectsController(
     public async Task<IActionResult> GetSubjectById([FromRoute] int id)
     {
         var subject = await subjectCache.TryGetAsync(id);
-        if (subject != null)
-        {
-            return Ok(subject switch
-            {
-                Kanji kanji => kanjiMapper.Map(kanji),
-                Radical radical => radicalMapper.Map(radical),
-                Vocabulary vocabulary => vocabularyMapper.Map(vocabulary),
-                _ => throw new InvalidOperationException("Unknown subject type")
-            });
-        }
-        else
+        if (subject == null)
         {
             return NotFound();
         }
+
+        var filteredSubject = await filter.FilterHintsAndMnemonics(subject, GetUserId(), GetUserWaniKaniToken());
+        return Ok(MapToResponse(filteredSubject));
     }
+
+    private object MapToResponse(Subject subject) => subject switch
+    {
+        Kanji kanji => kanjiMapper.Map(kanji),
+        Radical radical => radicalMapper.Map(radical),
+        Vocabulary vocabulary => vocabularyMapper.Map(vocabulary),
+        _ => throw new InvalidOperationException($"Unknown subject type: {subject.GetType().Name}")
+    };
+
+    private string? GetUserWaniKaniToken() => Request.Cookies["WK-User-Token"];
+
+    private string? GetUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier);
 }

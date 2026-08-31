@@ -15,6 +15,7 @@ public static class SubjectsServiceCollectionExtensions
     {
         services.AddTransient<IUserSubjectsService, UserSubjectsService>();
         services.AddScoped<IUserReadingPracticeService, UserReadingPracticeService>();
+        services.AddScoped<SubjectMnemonicFilter>();
         return services;
     }    
 }

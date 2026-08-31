@@ -11,6 +11,7 @@ public class BonpomDbContext : DbContext
 
     public DbSet<UserEntity> Users => Set<UserEntity>();
     public DbSet<UserCredentialsEntity> UserCredentials => Set<UserCredentialsEntity>();
+
     public DbSet<SubjectEntity> Subjects => Set<SubjectEntity>();
     public DbSet<SubjectMeaningEntity> SubjectMeanings => Set<SubjectMeaningEntity>();
     public DbSet<SubjectAuxiliaryMeaningEntity> SubjectAuxiliaryMeanings => Set<SubjectAuxiliaryMeaningEntity>();
@@ -22,6 +23,7 @@ public class BonpomDbContext : DbContext
     public DbSet<VocabularyPronunciationAudioEntity> VocabularyPronunciationAudios => Set<VocabularyPronunciationAudioEntity>();
     public DbSet<RadicalCharacterImageEntity> RadicalCharacterImages => Set<RadicalCharacterImageEntity>();
     public DbSet<SubjectRelationshipEntity> SubjectRelationships => Set<SubjectRelationshipEntity>();
+    
     public DbSet<ContextSentenceEntity> ContextSentences => Set<ContextSentenceEntity>();
     public DbSet<SentenceSubjectReferenceEntity> SentenceSubjectReferences => Set<SentenceSubjectReferenceEntity>();
     public DbSet<SentenceMorphemeEntity> SentenceMorphemes => Set<SentenceMorphemeEntity>();
@@ -29,6 +31,7 @@ public class BonpomDbContext : DbContext
     public DbSet<UserPracticedSentenceEntity> UserPracticedSentences => Set<UserPracticedSentenceEntity>();
     public DbSet<UserTranslationAttemptEntity> UserTranslationAttempts => Set<UserTranslationAttemptEntity>();
     public DbSet<UserReadingBookmarkEntity> UserReadingBookmarks => Set<UserReadingBookmarkEntity>();
+    public DbSet<UserWaniKaniSettingsEntity> UserWaniKaniSettings => Set<UserWaniKaniSettingsEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -264,7 +267,6 @@ public class BonpomDbContext : DbContext
             b.Property(cs => cs.Ja).HasColumnName("ja").IsRequired();
             b.Property(cs => cs.En).HasColumnName("en").IsRequired();
             b.Property(cs => cs.Level).HasColumnName("level");
-            b.Property(cs => cs.HiddenAt).HasColumnName("hidden_at");
             b.Property(cs => cs.UpdatedAt).HasColumnName("updated_at");
 
             b.HasOne(cs => cs.Subject)
@@ -408,6 +410,21 @@ public class BonpomDbContext : DbContext
             b.HasOne(rb => rb.User)
                 .WithOne(u => u.ReadingBookmark)
                 .HasForeignKey<UserReadingBookmarkEntity>(rb => rb.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<UserWaniKaniSettingsEntity>(b =>
+        {
+            b.ToTable("user_wanikani_settings");
+            b.HasKey(ws => ws.UserId);
+            b.Property(ws => ws.UserId).HasColumnName("user_id").HasMaxLength(36);
+            b.Property(ws => ws.EncryptedWaniKaniToken).HasColumnName("encrypted_wanikani_token");
+            b.Property(ws => ws.MaxAllowedLevel).HasColumnName("max_allowed_level");
+            b.Property(ws => ws.MaxAllowedLevelValidUntil).HasColumnName("max_allowed_level_valid_until");
+            b.Property(ws => ws.UpdatedAt).HasColumnName("updated_at");
+            b.HasOne(ws => ws.User)
+                .WithOne(u => u.WaniKaniSettings)
+                .HasForeignKey<UserWaniKaniSettingsEntity>(ws => ws.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
     }

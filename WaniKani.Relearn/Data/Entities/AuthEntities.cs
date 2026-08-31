@@ -13,6 +13,7 @@ public class UserEntity
     public ICollection<UserPracticedSentenceEntity> PracticedSentences { get; set; } = [];
     public ICollection<UserTranslationAttemptEntity> TranslationAttempts { get; set; } = [];
     public UserReadingBookmarkEntity? ReadingBookmark { get; set; }
+    public UserWaniKaniSettingsEntity? WaniKaniSettings { get; set; }
 }
 
 public class UserCredentialsEntity

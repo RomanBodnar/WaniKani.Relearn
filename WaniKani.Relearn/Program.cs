@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using WaniKani.Relearn.Account;
+using WaniKani.Relearn.Account.Data;
 using WaniKani.Relearn.Auth;
 using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Extensions;
@@ -47,6 +49,7 @@ public class Program
         var services = builder.Services;
         var configuration = builder.Configuration;
         services
+            .AddAccountManagement()
             .AddAuthApi()
             .AddSubjectsApi()
             .AddDataAccess(configuration)
@@ -62,6 +65,11 @@ public class Program
             client.BaseAddress = new Uri(configuration["WaniKani:Api"]!);
             var accessToken = configuration["WaniKani:AccessToken"]!;
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+        });
+
+        services.AddHttpClient<WaniKaniUserSubscriptionService>(client =>
+        {
+            client.BaseAddress = new Uri(configuration["WaniKani:Api"]!);
         });
 
         builder.Services
@@ -89,12 +97,12 @@ public class Program
         // Configure the HTTP request pipeline.
         app.UseSwagger();
         app.UseSwaggerUI();
+        app.UseCors("FrontendPolicy");
 
         app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseHttpsRedirection();
-        app.UseCors("FrontendPolicy");
         app.MapControllers();
 
         app.Run();
