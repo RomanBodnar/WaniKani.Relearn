@@ -219,37 +219,38 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
         <LevelFilter
           selectedRange={selectedRange}
           onRangeChange={setSelectedRange}
+          headerExtra={
+            <div className="status-filter-tabs" role="tablist" aria-label="Sentence practice filter">
+              <button
+                type="button"
+                className={`status-tab ${statusFilter === "unpracticed" ? "active" : ""}`}
+                onClick={() => handleStatusFilterChange("unpracticed")}
+                role="tab"
+                aria-selected={statusFilter === "unpracticed"}
+              >
+                Unpracticed
+              </button>
+              <button
+                type="button"
+                className={`status-tab ${statusFilter === "practiced" ? "active" : ""}`}
+                onClick={() => handleStatusFilterChange("practiced")}
+                role="tab"
+                aria-selected={statusFilter === "practiced"}
+              >
+                Practiced
+              </button>
+              <button
+                type="button"
+                className={`status-tab ${statusFilter === "all" ? "active" : ""}`}
+                onClick={() => handleStatusFilterChange("all")}
+                role="tab"
+                aria-selected={statusFilter === "all"}
+              >
+                All Sentences
+              </button>
+            </div>
+          }
         />
-
-        <div className="status-filter-tabs" role="tablist" aria-label="Sentence practice filter">
-          <button
-            type="button"
-            className={`status-tab ${statusFilter === "unpracticed" ? "active" : ""}`}
-            onClick={() => handleStatusFilterChange("unpracticed")}
-            role="tab"
-            aria-selected={statusFilter === "unpracticed"}
-          >
-            Unpracticed
-          </button>
-          <button
-            type="button"
-            className={`status-tab ${statusFilter === "practiced" ? "active" : ""}`}
-            onClick={() => handleStatusFilterChange("practiced")}
-            role="tab"
-            aria-selected={statusFilter === "practiced"}
-          >
-            Practiced
-          </button>
-          <button
-            type="button"
-            className={`status-tab ${statusFilter === "all" ? "active" : ""}`}
-            onClick={() => handleStatusFilterChange("all")}
-            role="tab"
-            aria-selected={statusFilter === "all"}
-          >
-            All Sentences
-          </button>
-        </div>
       </div>
 
       <p className="reading-practice-count">

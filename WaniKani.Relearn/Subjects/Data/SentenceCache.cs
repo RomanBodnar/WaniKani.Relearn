@@ -1,5 +1,6 @@
 using System.Collections.Concurrent;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Data.Entities;
 using WaniKani.Relearn.Subjects.Data.Models.Reading;
@@ -9,7 +10,7 @@ using System.IO;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
-public class SentenceCache(SubjectCache subjectCache)
+public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentenceExtractor)
 {
     private readonly ConcurrentDictionary<long, ReadingSentence> _sentences = new();
 
@@ -21,62 +22,54 @@ public class SentenceCache(SubjectCache subjectCache)
 
         var entities = dbContext.ContextSentences
             .AsNoTracking()
-            .AsSplitQuery()
-            .Include(cs => cs.SubjectReferences)
-                .ThenInclude(sr => sr.Subject)
-            .Include(cs => cs.Morphemes)
             .ToList();
 
         foreach (var entity in entities)
         {
             var sentence = MapEntityToReadingSentence(entity);
+            if (sentence.Morphemes.Count > 0)
+            {
+                sentenceExtractor.ProcessMorphemesInSentence(sentence);
+            }
             _sentences[sentence.Id] = sentence;
         }
     }
 
     public ReadingSentence MapEntityToReadingSentence(ContextSentenceEntity entity)
     {
-        var sourceVocab = entity.SubjectReferences
-            .Where(r => r.ReferenceType == "source_vocabulary")
-            .Select(r => new SubjectReference
+        ReadingSentence? parsed = null;
+        if (!string.IsNullOrWhiteSpace(entity.DataJson))
+        {
+            try
             {
-                SubjectId = r.SubjectId,
-                Characters = !string.IsNullOrEmpty(r.Subject?.Characters)
-                    ? r.Subject.Characters
-                    : (subjectCache.TryGet(r.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
+                parsed = JsonConvert.DeserializeObject<ReadingSentence>(entity.DataJson);
+            }
+            catch
+            {
+                // Fallback if deserialization fails
+            }
+        }
+
+        var sourceVocab = (parsed?.SourceVocabulary ?? [])
+            .Select(sv => new SubjectReference
+            {
+                SubjectId = sv.SubjectId,
+                Characters = !string.IsNullOrEmpty(sv.Characters)
+                    ? sv.Characters
+                    : (subjectCache.TryGet(sv.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
             })
-            .DistinctBy(r => r.SubjectId)
+            .DistinctBy(sv => sv.SubjectId)
             .ToList();
 
-        var kanjiInSentence = entity.SubjectReferences
-            .Where(r => r.ReferenceType == "kanji_in_sentence")
-            .Select(r => new SubjectReference
+        var kanjiInSentence = (parsed?.KanjiInSentence ?? [])
+            .Select(kj => new SubjectReference
             {
-                SubjectId = r.SubjectId,
-                Characters = !string.IsNullOrEmpty(r.Subject?.Characters)
-                    ? r.Subject.Characters
-                    : (subjectCache.TryGet(r.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
+                SubjectId = kj.SubjectId,
+                Characters = !string.IsNullOrEmpty(kj.Characters)
+                    ? kj.Characters
+                    : (subjectCache.TryGet(kj.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
             })
-            .DistinctBy(r => r.SubjectId)
-            .ToList();
-
-        var morphemes = entity.Morphemes
-            .OrderBy(m => m.SequenceOrder)
-            .Select(m => new Morpheme
-            {
-                SubjectId = m.SubjectId,
-                Surface = m.Surface,
-                Lemma = m.Lemma ?? string.Empty,
-                LemmaReading = m.LemmaReading ?? string.Empty,
-                Orth = m.Orth ?? string.Empty,
-                Pron = m.Pron ?? string.Empty,
-                ConjugationType = m.ConjugationType ?? string.Empty,
-                ConjugationForm = m.ConjugationForm ?? string.Empty,
-                Pos1 = new PosPart { Ja = m.Pos1Ja ?? string.Empty, En = m.Pos1En ?? string.Empty },
-                Pos2 = new PosPart { Ja = m.Pos2Ja ?? string.Empty, En = m.Pos2En ?? string.Empty },
-                Pos3 = new PosPart { Ja = m.Pos3Ja ?? string.Empty, En = m.Pos3En ?? string.Empty },
-                Pos4 = new PosPart { Ja = m.Pos4Ja ?? string.Empty, En = m.Pos4En ?? string.Empty },
-            })
+            .DistinctBy(kj => kj.SubjectId)
             .ToList();
 
         return new ReadingSentence
@@ -87,7 +80,8 @@ public class SentenceCache(SubjectCache subjectCache)
             Level = entity.Level,
             SourceVocabulary = sourceVocab,
             KanjiInSentence = kanjiInSentence,
-            Morphemes = morphemes,
+            Morphemes = parsed?.Morphemes ?? [],
+            IsHidden = entity.HiddenAt.HasValue
         };
     }
 

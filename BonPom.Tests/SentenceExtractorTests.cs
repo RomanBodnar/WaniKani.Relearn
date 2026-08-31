@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using WaniKani.Relearn;
 using WaniKani.Relearn.Services;
 using WaniKani.Relearn.Subjects.Data;
@@ -19,11 +20,10 @@ public class SentenceExtractorTests : IClassFixture<WebApplicationFactory<Progra
         {
             builder.ConfigureServices(services =>
             {
-                var descriptor = services.FirstOrDefault(
-                    d => d.ImplementationType == typeof(InMemoryDataLoader));
-                if (descriptor != null)
+                var hostedServices = services.Where(d => d.ServiceType == typeof(IHostedService)).ToList();
+                foreach (var hs in hostedServices)
                 {
-                    services.Remove(descriptor);
+                    services.Remove(hs);
                 }
             });
         });
@@ -88,6 +88,41 @@ public class SentenceExtractorTests : IClassFixture<WebApplicationFactory<Progra
         Assert.Single(sentence.SourceVocabulary);
         Assert.Equal(subjectId, sentence.SourceVocabulary[0].SubjectId);
         Assert.Equal("犬", sentence.SourceVocabulary[0].Characters);
+    }
+
+    [Fact]
+    public void ProcessMorphemesInSentence_WithAlcoholSentence_LinksCorrectly()
+    {
+        var id1 = 23001;
+        var id2 = 23002;
+        var id3 = 9001;
+        AddSubject(id1, "kana_vocabulary", "アルコール");
+        AddSubject(id2, "vocabulary", "作用");
+        AddSubject(id3, "vocabulary", "教える");
+
+        var sentence = new ReadingSentence
+        {
+            Ja = "アルコールの作用を教えてください。",
+            En = "Please tell me the effects of alcohol.",
+            SourceVocabulary = new List<SubjectReference>(),
+            KanjiInSentence = new List<SubjectReference>(),
+            Morphemes = new List<Morpheme>
+            {
+                new Morpheme { Surface = "アルコール", Lemma = "アルコール", Orth = "アルコール", LemmaReading = "アルコール", Pron = "アルコール", Pos1 = new PosPart { En = "noun", Ja = "名詞" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+                new Morpheme { Surface = "の", Lemma = "の", Orth = "の", LemmaReading = "ノ", Pron = "ノ", Pos1 = new PosPart { En = "particle", Ja = "助詞" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+                new Morpheme { Surface = "作用", Lemma = "作用", Orth = "作用", LemmaReading = "サヨウ", Pron = "サヨウ", Pos1 = new PosPart { En = "noun", Ja = "名詞" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+                new Morpheme { Surface = "を", Lemma = "を", Orth = "を", LemmaReading = "ヲ", Pron = "ヲ", Pos1 = new PosPart { En = "particle", Ja = "助詞" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+                new Morpheme { Surface = "教えて", Lemma = "教える", Orth = "教えて", LemmaReading = "オシエル", Pron = "オシエテ", Pos1 = new PosPart { En = "verb", Ja = "動詞" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+                new Morpheme { Surface = "ください", Lemma = "くださる", Orth = "ください", LemmaReading = "クダサル", Pron = "クダサイ", Pos1 = new PosPart { En = "verb", Ja = "動詞" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+                new Morpheme { Surface = "。", Lemma = "。", Orth = "。", LemmaReading = "。", Pron = "。", Pos1 = new PosPart { En = "punct", Ja = "補助記号" }, Pos2 = new PosPart{En="*",Ja="*"}, Pos3 = new PosPart{En="*",Ja="*"}, Pos4 = new PosPart{En="*",Ja="*"} },
+            }
+        };
+
+        _sentenceExtractor.ProcessMorphemesInSentence(sentence);
+
+        Assert.Equal(id1, sentence.Morphemes[0].SubjectId);
+        Assert.Equal(id2, sentence.Morphemes[2].SubjectId);
+        Assert.Equal(id3, sentence.Morphemes[4].SubjectId);
     }
 
     [Fact]

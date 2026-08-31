@@ -21,8 +21,34 @@
 .level-filter-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
+}
+
+.level-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.level-filter-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.level-filter-divider {
+  height: 1px;
+  background-color: #f1f5f9;
+  width: 100%;
+  margin: 2px 0;
+}
+
+.dark .level-filter-divider {
+  background-color: #334155;
 }
 
 .level-filter-row {

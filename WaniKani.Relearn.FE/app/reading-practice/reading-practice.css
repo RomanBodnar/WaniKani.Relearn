@@ -6,14 +6,14 @@
 }
 
 .reading-practice-header {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .reading-practice-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
 }
 
 .reading-practice-subtitle {
@@ -189,7 +189,6 @@
   padding: 3px;
   border-radius: 10px;
   gap: 2px;
-  margin-left: auto;
 }
 
 .status-tab {
@@ -467,9 +466,12 @@
 }
 
 .reading-practice-controls {
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .focus-modal-overlay {
@@ -637,6 +639,11 @@
 @media (prefers-color-scheme: dark) {
   .reading-practice-title {
     color: #f1f5f9;
+  }
+
+  .reading-practice-controls {
+    background: #1e293b;
+    border-color: #334155;
   }
 
   .reading-practice-subtitle,

@@ -162,7 +162,7 @@ CREATE INDEX IF NOT EXISTS idx_subject_rel_parent ON subject_relationships(paren
 CREATE INDEX IF NOT EXISTS idx_subject_rel_child ON subject_relationships(child_subject_id);
 
 -- -----------------------------------------------------------------------------
--- 7. CONTEXT SENTENCES & MORPHEMES
+-- 7. CONTEXT SENTENCES
 -- -----------------------------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS context_sentences (
@@ -171,44 +171,12 @@ CREATE TABLE IF NOT EXISTS context_sentences (
     ja TEXT NOT NULL,
     en TEXT NOT NULL,
     level INT NOT NULL DEFAULT 1,
+    data_json JSONB NULL,
     updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE INDEX IF NOT EXISTS idx_sentences_subject ON context_sentences(subject_id);
 CREATE INDEX IF NOT EXISTS idx_sentences_level ON context_sentences(level);
-
-CREATE TABLE IF NOT EXISTS sentence_subject_references (
-    sentence_id BIGINT NOT NULL REFERENCES context_sentences(id) ON DELETE CASCADE,
-    subject_id INT NOT NULL REFERENCES subjects(id) ON DELETE CASCADE,
-    reference_type VARCHAR(32) NOT NULL, -- 'source_vocabulary', 'kanji_in_sentence'
-    PRIMARY KEY (sentence_id, subject_id, reference_type)
-);
-
-CREATE TABLE IF NOT EXISTS sentence_morphemes (
-    id BIGSERIAL PRIMARY KEY,
-    sentence_id BIGINT NOT NULL REFERENCES context_sentences(id) ON DELETE CASCADE,
-    sequence_order INT NOT NULL,
-    subject_id INT NULL REFERENCES subjects(id) ON DELETE SET NULL,
-    combined_form VARCHAR(255) NULL,
-    surface VARCHAR(255) NOT NULL,
-    lemma VARCHAR(255) NULL,
-    lemma_reading VARCHAR(255) NULL,
-    orth VARCHAR(255) NULL,
-    pron VARCHAR(255) NULL,
-    conjugation_type VARCHAR(100) NULL,
-    conjugation_form VARCHAR(100) NULL,
-    pos1_ja VARCHAR(100) NULL,
-    pos1_en VARCHAR(100) NULL,
-    pos2_ja VARCHAR(100) NULL,
-    pos2_en VARCHAR(100) NULL,
-    pos3_ja VARCHAR(100) NULL,
-    pos3_en VARCHAR(100) NULL,
-    pos4_ja VARCHAR(100) NULL,
-    pos4_en VARCHAR(100) NULL
-);
-
-CREATE INDEX IF NOT EXISTS idx_morphemes_sentence ON sentence_morphemes(sentence_id, sequence_order);
-CREATE INDEX IF NOT EXISTS idx_morphemes_subject ON sentence_morphemes(subject_id);
 
 -- -----------------------------------------------------------------------------
 -- 8. USER FEATURES: MY BOX, PRACTICED SENTENCES & TRANSLATION HISTORY

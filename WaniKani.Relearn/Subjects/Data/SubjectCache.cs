@@ -10,6 +10,8 @@ namespace WaniKani.Relearn.Subjects.Data;
 public class SubjectCache(IServiceScopeFactory scopeFactory)
 {
     private readonly ConcurrentDictionary<int, Subject> _subjects = new();
+    private readonly ConcurrentDictionary<string, int> _vocabCharactersToId = new(StringComparer.Ordinal);
+    private readonly ConcurrentDictionary<(string Characters, string Type), Subject> _typeAndCharactersToSubject = new();
     private readonly SemaphoreSlim _semaphore = new(1, 1);
     private bool _isLoaded;
 
@@ -52,6 +54,21 @@ public class SubjectCache(IServiceScopeFactory scopeFactory)
     public void AddOrUpdate(Subject subject)
     {
         _subjects.AddOrUpdate(subject.Id, subject, (_, _) => subject);
+
+        if (!string.IsNullOrEmpty(subject.Characters))
+        {
+            if (subject.Object is "vocabulary" or "kana_vocabulary")
+            {
+                var normalized = subject.Characters.Normalize(NormalizationForm.FormKD);
+                _vocabCharactersToId[normalized] = subject.Id;
+            }
+
+            if (!string.IsNullOrEmpty(subject.Object))
+            {
+                _typeAndCharactersToSubject[(subject.Characters, subject.Object)] = subject;
+            }
+        }
+
         _isLoaded = true;
     }
 
@@ -67,20 +84,17 @@ public class SubjectCache(IServiceScopeFactory scopeFactory)
         return _subjects.Values;
     }
 
+    public int GetIdByCharacters(string characters)
+    {
+        if (string.IsNullOrEmpty(characters)) return 0;
+        var normalizedQuery = characters.Normalize(NormalizationForm.FormKD);
+        return _vocabCharactersToId.TryGetValue(normalizedQuery, out var id) ? id : 0;
+    }
+
     public async ValueTask<int> GetIdByCharactersAsync(string characters)
     {
         await EnsureLoadedAsync();
-        var subject = _subjects.Values.FirstOrDefault(
-            x => 
-            x.Object is "vocabulary" or "kana_vocabulary" 
-            &&
-            string.Compare(
-                x.Characters?.Normalize(NormalizationForm.FormKD) ?? "", 
-                characters.Normalize(NormalizationForm.FormKD), 
-                CultureInfo.InvariantCulture, 
-                CompareOptions.IgnoreNonSpace) == 0 
-             );
-        return subject?.Id ?? 0;        
+        return GetIdByCharacters(characters);       
     }
 
     public async ValueTask<PageResult<Subject>> GetSubjectsAsync(SubjectType[] types, int? page, int? perPage, int? minLevel = null, int? maxLevel = null)
@@ -128,14 +142,20 @@ public class SubjectCache(IServiceScopeFactory scopeFactory)
 
     public Subject? FindByCharacters(string characters, SubjectType typeName)
     {
+        if (string.IsNullOrEmpty(characters)) return null;
+        var snakeType = typeName.ToSnakeCaseString();
+        if (_typeAndCharactersToSubject.TryGetValue((characters, snakeType), out var subject))
+        {
+            return subject;
+        }
+
         return _subjects.Values.FirstOrDefault(x =>
-            x.Object == typeName.ToSnakeCaseString() && x.Characters == characters);
+            x.Object == snakeType && x.Characters == characters);
     }
 
     public async ValueTask<Subject?> FindByCharactersAsync(string characters, SubjectType typeName)
     {
         await EnsureLoadedAsync();
-        return _subjects.Values.FirstOrDefault(x =>
-            x.Object == typeName.ToSnakeCaseString() && x.Characters == characters);
+        return FindByCharacters(characters, typeName);
     }
 }

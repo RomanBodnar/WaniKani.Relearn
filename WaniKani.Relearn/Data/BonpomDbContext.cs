@@ -25,8 +25,6 @@ public class BonpomDbContext : DbContext
     public DbSet<SubjectRelationshipEntity> SubjectRelationships => Set<SubjectRelationshipEntity>();
     
     public DbSet<ContextSentenceEntity> ContextSentences => Set<ContextSentenceEntity>();
-    public DbSet<SentenceSubjectReferenceEntity> SentenceSubjectReferences => Set<SentenceSubjectReferenceEntity>();
-    public DbSet<SentenceMorphemeEntity> SentenceMorphemes => Set<SentenceMorphemeEntity>();
     public DbSet<UserMyBoxEntity> UserMyBoxItems => Set<UserMyBoxEntity>();
     public DbSet<UserPracticedSentenceEntity> UserPracticedSentences => Set<UserPracticedSentenceEntity>();
     public DbSet<UserTranslationAttemptEntity> UserTranslationAttempts => Set<UserTranslationAttemptEntity>();
@@ -257,7 +255,7 @@ public class BonpomDbContext : DbContext
                 .OnDelete(DeleteBehavior.Cascade);
         });
 
-        // 7. Context Sentences & Morphemes
+        // 7. Context Sentences
         modelBuilder.Entity<ContextSentenceEntity>(b =>
         {
             b.ToTable("context_sentences");
@@ -267,66 +265,13 @@ public class BonpomDbContext : DbContext
             b.Property(cs => cs.Ja).HasColumnName("ja").IsRequired();
             b.Property(cs => cs.En).HasColumnName("en").IsRequired();
             b.Property(cs => cs.Level).HasColumnName("level");
+            b.Property(cs => cs.DataJson).HasColumnName("data_json").HasColumnType("jsonb");
             b.Property(cs => cs.UpdatedAt).HasColumnName("updated_at");
 
             b.HasOne(cs => cs.Subject)
                 .WithMany(s => s.ContextSentences)
                 .HasForeignKey(cs => cs.SubjectId)
                 .OnDelete(DeleteBehavior.Cascade);
-        });
-
-        modelBuilder.Entity<SentenceSubjectReferenceEntity>(b =>
-        {
-            b.ToTable("sentence_subject_references");
-            b.HasKey(ssr => new { ssr.SentenceId, ssr.SubjectId, ssr.ReferenceType });
-            b.Property(ssr => ssr.SentenceId).HasColumnName("sentence_id");
-            b.Property(ssr => ssr.SubjectId).HasColumnName("subject_id");
-            b.Property(ssr => ssr.ReferenceType).HasColumnName("reference_type").HasMaxLength(32);
-
-            b.HasOne(ssr => ssr.Sentence)
-                .WithMany(cs => cs.SubjectReferences)
-                .HasForeignKey(ssr => ssr.SentenceId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            b.HasOne(ssr => ssr.Subject)
-                .WithMany()
-                .HasForeignKey(ssr => ssr.SubjectId)
-                .OnDelete(DeleteBehavior.Cascade);
-        });
-
-        modelBuilder.Entity<SentenceMorphemeEntity>(b =>
-        {
-            b.ToTable("sentence_morphemes");
-            b.HasKey(sm => sm.Id);
-            b.Property(sm => sm.Id).HasColumnName("id");
-            b.Property(sm => sm.SentenceId).HasColumnName("sentence_id");
-            b.Property(sm => sm.SequenceOrder).HasColumnName("sequence_order");
-            b.Property(sm => sm.SubjectId).HasColumnName("subject_id");
-            b.Property(sm => sm.Surface).HasColumnName("surface").HasMaxLength(255).IsRequired();
-            b.Property(sm => sm.Lemma).HasColumnName("lemma").HasMaxLength(255);
-            b.Property(sm => sm.LemmaReading).HasColumnName("lemma_reading").HasMaxLength(255);
-            b.Property(sm => sm.Orth).HasColumnName("orth").HasMaxLength(255);
-            b.Property(sm => sm.Pron).HasColumnName("pron").HasMaxLength(255);
-            b.Property(sm => sm.ConjugationType).HasColumnName("conjugation_type").HasMaxLength(100);
-            b.Property(sm => sm.ConjugationForm).HasColumnName("conjugation_form").HasMaxLength(100);
-            b.Property(sm => sm.Pos1Ja).HasColumnName("pos1_ja").HasMaxLength(100);
-            b.Property(sm => sm.Pos1En).HasColumnName("pos1_en").HasMaxLength(100);
-            b.Property(sm => sm.Pos2Ja).HasColumnName("pos2_ja").HasMaxLength(100);
-            b.Property(sm => sm.Pos2En).HasColumnName("pos2_en").HasMaxLength(100);
-            b.Property(sm => sm.Pos3Ja).HasColumnName("pos3_ja").HasMaxLength(100);
-            b.Property(sm => sm.Pos3En).HasColumnName("pos3_en").HasMaxLength(100);
-            b.Property(sm => sm.Pos4Ja).HasColumnName("pos4_ja").HasMaxLength(100);
-            b.Property(sm => sm.Pos4En).HasColumnName("pos4_en").HasMaxLength(100);
-
-            b.HasOne(sm => sm.Sentence)
-                .WithMany(cs => cs.Morphemes)
-                .HasForeignKey(sm => sm.SentenceId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            b.HasOne(sm => sm.Subject)
-                .WithMany()
-                .HasForeignKey(sm => sm.SubjectId)
-                .OnDelete(DeleteBehavior.SetNull);
         });
 
         // 8. User Features: My Box, Practiced Sentences & Translation Attempts

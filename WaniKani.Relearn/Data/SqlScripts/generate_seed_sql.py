@@ -189,14 +189,6 @@ def main():
                     sql_str(meta.get("VoiceDescription"))
                 ])
 
-            for cs in item.get("ContextSentences", []):
-                context_sentences_rows.append([
-                    sql_int(sid),
-                    sql_str(cs.get("Ja")),
-                    sql_str(cs.get("En")),
-                    sql_int(level)
-                ])
-
         # Relationships
         for child_id in item.get("AmalgamationSubjectIds", []):
             if child_id in valid_subject_ids:
@@ -207,6 +199,34 @@ def main():
         for child_id in item.get("VisuallySimilarSubjectIds", []):
             if child_id in valid_subject_ids:
                 relationships_rows.append([sql_int(sid), sql_int(child_id), sql_str("visually_similar")])
+
+    # 12. Load rich context sentences from context-sentences-*.json files
+    import glob
+    cs_files = sorted(glob.glob(os.path.join(STATIC_DIR, "context-sentences-*.json")))
+    cs_files = [f for f in cs_files if "old" not in f and "processed" not in f]
+    seen_cs_ja = set()
+
+    for fpath in cs_files:
+        with open(fpath, "r", encoding="utf-8") as fp:
+            items = json.load(fp)
+            for cs_item in items:
+                ja = cs_item.get("Ja")
+                if not ja or ja in seen_cs_ja:
+                    continue
+                seen_cs_ja.add(ja)
+
+                source_vocab = cs_item.get("SourceVocabulary") or []
+                sub_id = source_vocab[0].get("SubjectId") if source_vocab else None
+                en = cs_item.get("En", "")
+                level_val = cs_item.get("Level", 1)
+
+                context_sentences_rows.append([
+                    sql_int(sub_id),
+                    sql_str(ja),
+                    sql_str(en),
+                    sql_int(level_val),
+                    sql_json(cs_item)
+                ])
 
     print("Generating SQL statements...")
 
@@ -309,7 +329,7 @@ def main():
     sql_sections.append("\n-- 12. Context Sentences")
     sql_sections.extend(generate_batched_inserts(
         "context_sentences",
-        ["subject_id", "ja", "en", "level"],
+        ["subject_id", "ja", "en", "level", "data_json"],
         context_sentences_rows
     ))
 

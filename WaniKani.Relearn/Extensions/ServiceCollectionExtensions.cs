@@ -34,8 +34,8 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<SubjectCache>();
         services.AddScoped<IDataAccess, SubjectDataAccess>();
-        services.AddSingleton<SentenceCache>();
         services.AddSingleton<SentenceExtractor>();
+        services.AddSingleton<SentenceCache>();
 
         return services;
     }
@@ -44,6 +44,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<SubjectsService>();
         services.AddSingleton<SubjectSearchService>();
+        services.AddHostedService<InMemoryDataLoader>();
 
         return services;
     }
