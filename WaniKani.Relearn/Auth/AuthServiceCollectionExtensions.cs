@@ -1,4 +1,4 @@
-0oijusing FluentValidation;
+using FluentValidation;
 using WaniKani.Relearn.Account.Data;
 using WaniKani.Relearn.Auth.Api;
 using WaniKani.Relearn.Auth.Data;

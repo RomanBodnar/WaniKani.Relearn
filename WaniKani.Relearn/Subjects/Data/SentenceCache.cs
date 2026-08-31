@@ -80,8 +80,7 @@ public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentence
             Level = entity.Level,
             SourceVocabulary = sourceVocab,
             KanjiInSentence = kanjiInSentence,
-            Morphemes = parsed?.Morphemes ?? [],
-            IsHidden = entity.HiddenAt.HasValue
+            Morphemes = parsed?.Morphemes ?? []
         };
     }
 
