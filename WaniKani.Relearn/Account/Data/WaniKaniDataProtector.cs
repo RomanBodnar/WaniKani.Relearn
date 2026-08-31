@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 
-namespace WaniKani.Relearn.Auth.Data;
+namespace WaniKani.Relearn.Account.Data;
 
 public class WaniKaniDataProtector : IThirdPartyDataProtector
 {

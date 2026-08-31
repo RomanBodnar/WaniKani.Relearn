@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using WaniKani.Relearn.Account;
+using WaniKani.Relearn.Account.Data;
 using WaniKani.Relearn.Auth;
-using WaniKani.Relearn.Auth.Data;
 using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Extensions;
 using WaniKani.Relearn.Subjects;
@@ -48,6 +49,7 @@ public class Program
         var services = builder.Services;
         var configuration = builder.Configuration;
         services
+            .AddAccountManagement()
             .AddAuthApi()
             .AddSubjectsApi()
             .AddDataAccess(configuration)
@@ -95,12 +97,12 @@ public class Program
         // Configure the HTTP request pipeline.
         app.UseSwagger();
         app.UseSwaggerUI();
+        app.UseCors("FrontendPolicy");
 
         app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseHttpsRedirection();
-        app.UseCors("FrontendPolicy");
         app.MapControllers();
 
         app.Run();

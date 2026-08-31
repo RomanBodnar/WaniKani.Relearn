@@ -1,4 +1,5 @@
-using FluentValidation;
+0oijusing FluentValidation;
+using WaniKani.Relearn.Account.Data;
 using WaniKani.Relearn.Auth.Api;
 using WaniKani.Relearn.Auth.Data;
 
@@ -10,7 +11,7 @@ public static class AuthServiceCollectionExtensions
     {
         services.AddValidators();
         services.AddAuthData();
-        services.AddDataProtection();
+        services.AddDataProtectionServices();
         return services;
     }
 
@@ -32,13 +33,6 @@ public static class AuthServiceCollectionExtensions
     {
         services.AddDataProtection();
         services.AddTransient<IThirdPartyDataProtector, WaniKaniDataProtector>();
-        return services;
-    }
-
-    public static IServiceCollection AddAccountManagement(this IServiceCollection services)
-    {
-        services.AddTransient<IAccountManagementService, AccountManagementService>();
-        services.AddTransient<WaniKaniUserSubscriptionService>();
         return services;
     }
 }

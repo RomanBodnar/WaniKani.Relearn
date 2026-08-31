@@ -104,13 +104,13 @@ public class SentenceCache(SubjectCache subjectCache)
     //    }
     //}
 
-    public void UnhideSentence(long sentenceId)
-    {
-        if (_sentences.TryGetValue(sentenceId, out var existing))
-        {
-            _sentences[sentenceId] = existing with { IsHidden = false };
-        }
-    }
+    //public void UnhideSentence(long sentenceId)
+    //{
+    //    if (_sentences.TryGetValue(sentenceId, out var existing))
+    //    {
+    //        _sentences[sentenceId] = existing with { IsHidden = false };
+    //    }
+    //}
 
     public void RemoveSentence(long sentenceId)
     {
@@ -130,7 +130,7 @@ public class SentenceCache(SubjectCache subjectCache)
         string status = "all",
         ISet<long>? practicedSentenceIds = null)
     {
-        var query = _sentences.Values.Where(s => !s.IsHidden);
+        IEnumerable<ReadingSentence> query = _sentences.Values;
 
         if (minLevel.HasValue) query = query.Where(s => s.Level >= minLevel.Value);
         if (maxLevel.HasValue) query = query.Where(s => s.Level <= maxLevel.Value);

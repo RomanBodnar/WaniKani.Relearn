@@ -1,4 +1,6 @@
-﻿namespace WaniKani.Relearn.Auth.Data;
+﻿using WaniKani.Relearn.Account.Data;
+
+namespace WaniKani.Relearn.Auth.Data;
 
 public interface IAccountManagementService
 {

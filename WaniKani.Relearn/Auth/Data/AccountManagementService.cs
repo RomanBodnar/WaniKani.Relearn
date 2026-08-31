@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using WaniKani.Relearn.Account.Data;
 using WaniKani.Relearn.Contracts.Clients;
 using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Data.Entities;
@@ -19,7 +20,20 @@ public class AccountManagementService(
         {
             throw new UserNotFoundException(userId);
         }
-        throw new NotImplementedException();
+
+        var existingSettings = await dbContext.UserWaniKaniSettings.FirstOrDefaultAsync(x => x.UserId == userId);
+        if (existingSettings != null && !string.IsNullOrEmpty(existingSettings.EncryptedWaniKaniToken))
+        {
+            return new WaniKaniTokenStatus(
+                HasToken: true,
+                StorageType: "Database",
+                MaxAllowedLevel: existingSettings.MaxAllowedLevel);
+        }
+
+        return new WaniKaniTokenStatus(
+            HasToken: false,
+            StorageType: "None",
+            MaxAllowedLevel: 3);
     }
 
     public async Task RemoveWaniKaniToken(string userId)

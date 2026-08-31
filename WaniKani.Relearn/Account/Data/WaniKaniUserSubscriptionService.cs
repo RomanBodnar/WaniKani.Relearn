@@ -1,6 +1,6 @@
 ﻿using WaniKani.Relearn.Contracts.Users;
 
-namespace WaniKani.Relearn.Auth.Data;
+namespace WaniKani.Relearn.Account.Data;
 
 public class WaniKaniUserSubscriptionService(
     HttpClient httpClient)
