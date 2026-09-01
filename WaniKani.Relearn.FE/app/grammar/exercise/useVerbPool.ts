@@ -12,7 +12,15 @@ const ALL_DIRECTIONS: ExerciseDirection[] = [
   "present_plain_to_past_plain",
   "past_plain_to_present_plain",
   "present_polite_to_past_polite",
-  "past_polite_to_present_polite"
+  "past_polite_to_present_polite",
+  "present_plain_to_present_polite",
+  "present_polite_to_present_plain",
+  "past_plain_to_past_polite",
+  "past_polite_to_past_plain",
+  "present_plain_to_past_polite",
+  "past_polite_to_present_plain",
+  "present_polite_to_past_plain",
+  "past_plain_to_present_polite"
 ];
 
 // In-memory cache of parsed verbs across renders & navigations
@@ -127,12 +135,13 @@ export function useVerbPool() {
 
     const shuffledVerbs = shuffleArray(verbs);
     const selectedVerbs = shuffledVerbs.slice(0, Math.min(count, shuffledVerbs.length));
+    const shuffledDirections = shuffleArray(allowedDirections);
     
-    // Distribute directions evenly across selected verbs
+    // Distribute shuffled directions across selected verbs
     const questions: QuestionData[] = [];
     selectedVerbs.forEach((verb, idx) => {
-      const dirIndex = idx % allowedDirections.length;
-      const direction = allowedDirections[dirIndex];
+      const dirIndex = idx % shuffledDirections.length;
+      const direction = shuffledDirections[dirIndex];
       questions.push(createQuestion(verb, direction));
     });
 

@@ -12,7 +12,15 @@ export type ExerciseDirection =
   | "present_plain_to_past_plain"
   | "past_plain_to_present_plain"
   | "present_polite_to_past_polite"
-  | "past_polite_to_present_polite";
+  | "past_polite_to_present_polite"
+  | "present_plain_to_present_polite"
+  | "present_polite_to_present_plain"
+  | "past_plain_to_past_polite"
+  | "past_polite_to_past_plain"
+  | "present_plain_to_past_polite"
+  | "past_polite_to_present_plain"
+  | "present_polite_to_past_plain"
+  | "past_plain_to_present_polite";
 
 export interface ConjugationForms {
   presentPlain: { kanji: string; kana: string };
@@ -258,69 +266,140 @@ export function buildVerbInfo(subject: Subject): VerbInfo | null {
   };
 }
 
+interface DirectionConfig {
+  sourceKey: keyof ConjugationForms;
+  targetKey: keyof ConjugationForms;
+  sourceFormType: ConjugationFormType;
+  targetFormType: ConjugationFormType;
+  label: string;
+  description: string;
+  getRule: (verb: VerbInfo, targetKanji: string) => string;
+}
+
+const DIRECTION_CONFIGS: Record<ExerciseDirection, DirectionConfig> = {
+  present_plain_to_past_plain: {
+    sourceKey: "presentPlain",
+    targetKey: "pastPlain",
+    sourceFormType: "present_plain",
+    targetFormType: "past_plain",
+    label: "Present (Dictionary) ➔ Past (Plain)",
+    description: "Conjugate the verb to its past plain (た/だ) form.",
+    getRule: (verb) => verb.ruleExplanation.pastPlain
+  },
+  past_plain_to_present_plain: {
+    sourceKey: "pastPlain",
+    targetKey: "presentPlain",
+    sourceFormType: "past_plain",
+    targetFormType: "present_plain",
+    label: "Past (Plain) ➔ Present (Dictionary)",
+    description: "Convert the past plain verb back to its dictionary form.",
+    getRule: (verb, targetKanji) => `Dictionary form of ${targetKanji} (${verb.group} verb).`
+  },
+  present_polite_to_past_polite: {
+    sourceKey: "presentPolite",
+    targetKey: "pastPolite",
+    sourceFormType: "present_polite",
+    targetFormType: "past_polite",
+    label: "Present (ます) ➔ Past (ました)",
+    description: "Conjugate the polite present verb to polite past (ました).",
+    getRule: () => "Replace the 「ます」 ending with 「ました」."
+  },
+  past_polite_to_present_polite: {
+    sourceKey: "pastPolite",
+    targetKey: "presentPolite",
+    sourceFormType: "past_polite",
+    targetFormType: "present_polite",
+    label: "Past (ました) ➔ Present (ます)",
+    description: "Convert the polite past verb back to polite present (ます).",
+    getRule: () => "Replace the 「ました」 ending with 「ます」."
+  },
+  present_plain_to_present_polite: {
+    sourceKey: "presentPlain",
+    targetKey: "presentPolite",
+    sourceFormType: "present_plain",
+    targetFormType: "present_polite",
+    label: "Present (Dictionary) ➔ Present (ます)",
+    description: "Conjugate the dictionary form verb to polite present (ます).",
+    getRule: (verb) => verb.ruleExplanation.presentPolite
+  },
+  present_polite_to_present_plain: {
+    sourceKey: "presentPolite",
+    targetKey: "presentPlain",
+    sourceFormType: "present_polite",
+    targetFormType: "present_plain",
+    label: "Present (ます) ➔ Present (Dictionary)",
+    description: "Convert the polite present (ます) verb back to dictionary form.",
+    getRule: (verb) => `Convert the masu-stem back to dictionary ending (${verb.group} verb).`
+  },
+  past_plain_to_past_polite: {
+    sourceKey: "pastPlain",
+    targetKey: "pastPolite",
+    sourceFormType: "past_plain",
+    targetFormType: "past_polite",
+    label: "Past (Plain) ➔ Past (ました)",
+    description: "Conjugate the past plain (た/だ) verb to polite past (ました).",
+    getRule: (verb) => verb.ruleExplanation.pastPolite
+  },
+  past_polite_to_past_plain: {
+    sourceKey: "pastPolite",
+    targetKey: "pastPlain",
+    sourceFormType: "past_polite",
+    targetFormType: "past_plain",
+    label: "Past (ました) ➔ Past (Plain)",
+    description: "Convert the polite past (ました) verb to past plain (た/だ).",
+    getRule: (verb) => verb.ruleExplanation.pastPlain
+  },
+  present_plain_to_past_polite: {
+    sourceKey: "presentPlain",
+    targetKey: "pastPolite",
+    sourceFormType: "present_plain",
+    targetFormType: "past_polite",
+    label: "Present (Dictionary) ➔ Past (ました)",
+    description: "Conjugate the dictionary form verb to polite past (ました).",
+    getRule: (verb) => verb.ruleExplanation.pastPolite
+  },
+  past_polite_to_present_plain: {
+    sourceKey: "pastPolite",
+    targetKey: "presentPlain",
+    sourceFormType: "past_polite",
+    targetFormType: "present_plain",
+    label: "Past (ました) ➔ Present (Dictionary)",
+    description: "Convert the polite past (ました) verb to dictionary form.",
+    getRule: (verb) => `Convert the polite past verb back to dictionary form (${verb.group} verb).`
+  },
+  present_polite_to_past_plain: {
+    sourceKey: "presentPolite",
+    targetKey: "pastPlain",
+    sourceFormType: "present_polite",
+    targetFormType: "past_plain",
+    label: "Present (ます) ➔ Past (Plain)",
+    description: "Conjugate the polite present (ます) verb to past plain (た/だ).",
+    getRule: (verb) => verb.ruleExplanation.pastPlain
+  },
+  past_plain_to_present_polite: {
+    sourceKey: "pastPlain",
+    targetKey: "presentPolite",
+    sourceFormType: "past_plain",
+    targetFormType: "present_polite",
+    label: "Past (Plain) ➔ Present (ます)",
+    description: "Conjugate the past plain (た/だ) verb to polite present (ます).",
+    getRule: (verb) => verb.ruleExplanation.presentPolite
+  }
+};
+
 /**
  * Create a single question given a VerbInfo and a Direction
  */
 export function createQuestion(verb: VerbInfo, direction: ExerciseDirection): QuestionData {
-  let sourceFormType: ConjugationFormType;
-  let targetFormType: ConjugationFormType;
-  let directionLabel: string;
-  let directionDescription: string;
-  let promptText: string;
-  let promptReading: string;
-  let targetKanji: string;
-  let targetKana: string;
-  let ruleExplanation: string;
+  const config = DIRECTION_CONFIGS[direction] || DIRECTION_CONFIGS.present_plain_to_past_plain;
+  const sourceForm = verb.forms[config.sourceKey];
+  const targetForm = verb.forms[config.targetKey];
 
-  switch (direction) {
-    case "present_plain_to_past_plain":
-      sourceFormType = "present_plain";
-      targetFormType = "past_plain";
-      directionLabel = "Present (Dictionary) ➔ Past (Plain)";
-      directionDescription = "Conjugate the verb to its past plain (た/だ) form.";
-      promptText = verb.forms.presentPlain.kanji;
-      promptReading = verb.forms.presentPlain.kana;
-      targetKanji = verb.forms.pastPlain.kanji;
-      targetKana = verb.forms.pastPlain.kana;
-      ruleExplanation = verb.ruleExplanation.pastPlain;
-      break;
-
-    case "past_plain_to_present_plain":
-      sourceFormType = "past_plain";
-      targetFormType = "present_plain";
-      directionLabel = "Past (Plain) ➔ Present (Dictionary)";
-      directionDescription = "Convert the past plain verb back to its dictionary form.";
-      promptText = verb.forms.pastPlain.kanji;
-      promptReading = verb.forms.pastPlain.kana;
-      targetKanji = verb.forms.presentPlain.kanji;
-      targetKana = verb.forms.presentPlain.kana;
-      ruleExplanation = `Dictionary form of ${targetKanji} (${verb.group} verb).`;
-      break;
-
-    case "present_polite_to_past_polite":
-      sourceFormType = "present_polite";
-      targetFormType = "past_polite";
-      directionLabel = "Present (ます) ➔ Past (ました)";
-      directionDescription = "Conjugate the polite present verb to polite past (ました).";
-      promptText = verb.forms.presentPolite.kanji;
-      promptReading = verb.forms.presentPolite.kana;
-      targetKanji = verb.forms.pastPolite.kanji;
-      targetKana = verb.forms.pastPolite.kana;
-      ruleExplanation = "Replace the 「ます」 ending with 「ました」.";
-      break;
-
-    case "past_polite_to_present_polite":
-      sourceFormType = "past_polite";
-      targetFormType = "present_polite";
-      directionLabel = "Past (ました) ➔ Present (ます)";
-      directionDescription = "Convert the polite past verb back to polite present (ます).";
-      promptText = verb.forms.pastPolite.kanji;
-      promptReading = verb.forms.pastPolite.kana;
-      targetKanji = verb.forms.presentPolite.kanji;
-      targetKana = verb.forms.presentPolite.kana;
-      ruleExplanation = "Replace the 「ました」 ending with 「ます」.";
-      break;
-  }
+  const promptText = sourceForm.kanji;
+  const promptReading = sourceForm.kana;
+  const targetKanji = targetForm.kanji;
+  const targetKana = targetForm.kana;
+  const ruleExplanation = config.getRule(verb, targetKanji);
 
   // Accepted answers include both Kanji and pure Kana representations
   const acceptedAnswers = Array.from(new Set([targetKanji, targetKana])).filter(Boolean);
@@ -329,12 +408,12 @@ export function createQuestion(verb: VerbInfo, direction: ExerciseDirection): Qu
     id: `${verb.id}-${direction}-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
     verb,
     direction,
-    sourceFormType,
-    targetFormType,
+    sourceFormType: config.sourceFormType,
+    targetFormType: config.targetFormType,
     promptText,
     promptReading,
-    directionLabel,
-    directionDescription,
+    directionLabel: config.label,
+    directionDescription: config.description,
     acceptedAnswers,
     ruleExplanation
   };
