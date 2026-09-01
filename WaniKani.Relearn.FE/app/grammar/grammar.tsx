@@ -55,15 +55,38 @@ export function clientLoader({ params }: Route.ClientLoaderArgs) {
   return { article };
 }
 
-/** Extract Japanese characters inside parentheses of a grammar title, e.g. "Noun (名詞)" → "名詞" */
+/** Extract Japanese characters inside title or parentheses, e.g. "Noun (名詞)" → "名詞", "Declaring (「だ」)" → "だ" */
 function extractJapanese(title: string): string {
-  const match = title.match(/[（(]([^）)]+)[）)]/);
-  return match ? match[1] : "文";
+  // 1. Look for Japanese characters inside Japanese quotation marks e.g. 「だ」
+  const quoteMatch = title.match(/「([^」]+)」/);
+  if (quoteMatch && quoteMatch[1].length <= 5) {
+    return quoteMatch[1].trim();
+  }
+
+  // 2. Look for Japanese characters in parentheses e.g. (名詞)
+  const parenMatch = title.match(/[（(]([^）)]*[ぁ-んァ-ヶ一-龥々][^）)]*)[）)]/);
+  if (parenMatch) {
+    const cleaned = parenMatch[1].replace(/[「」〜~・]/g, "").trim();
+    if (cleaned.length > 0 && cleaned.length <= 5) {
+      return cleaned;
+    }
+    const firstPart = cleaned.split(/[\s/／・]/)[0];
+    if (firstPart && firstPart.length <= 5) {
+      return firstPart;
+    }
+  }
+
+  return "文";
 }
 
-/** Strip parenthetical from title for a clean display name, e.g. "Noun (名詞)" → "Noun" */
+/** Strip parenthetical Japanese suffix from title for a clean display name, e.g. "Noun (名詞)" → "Noun" */
 function stripParenthetical(title: string): string {
-  return title.replace(/\s*[（(][^）)]+[）)]\s*/, "").trim();
+  const hasJapaneseOnlyInParens = /^[ぁ-んァ-ヶ一-龥々「」〜~・\s/／]+$/;
+  const match = title.match(/[（(]([^）)]+)[）)]/);
+  if (match && hasJapaneseOnlyInParens.test(match[1].trim())) {
+    return title.replace(/\s*[（(][^）)]+[）)]\s*/, "").trim();
+  }
+  return title.trim();
 }
 
 export default function Grammar({ loaderData }: Route.ComponentProps) {
