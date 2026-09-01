@@ -29,15 +29,43 @@ export function ExerciseQuestionCard({
   const [isCorrect, setIsCorrect] = useState(false);
   const [showReading, setShowReading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Focus input when question changes
+  // Focus input when question changes (desktop only to prevent mobile viewport jump)
   useEffect(() => {
     setInputValue("");
     setHasSubmitted(false);
     setIsCorrect(false);
     setShowReading(false);
-    inputRef.current?.focus();
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
+    if (!isTouch) {
+      inputRef.current?.focus();
+    }
   }, [question.id]);
+
+  // After submitting, listen for Enter key to proceed to next question / results
+  useEffect(() => {
+    if (!hasSubmitted) return;
+
+    const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
+    if (!isTouch) {
+      nextButtonRef.current?.focus();
+    }
+
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        onNextQuestion();
+      }
+    };
+
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleGlobalKeyDown);
+    };
+  }, [hasSubmitted, onNextQuestion]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (hasSubmitted) return;
@@ -136,12 +164,11 @@ export function ExerciseQuestionCard({
             ref={inputRef}
             type="text"
             className="exercise-input"
-            placeholder="Type your conjugation in Hiragana or Kanji..."
+            placeholder="Type your answer"
             value={inputValue}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
-            disabled={hasSubmitted}
-            autoFocus
+            readOnly={hasSubmitted}
             autoComplete="off"
             autoCapitalize="off"
             spellCheck="false"
@@ -157,6 +184,7 @@ export function ExerciseQuestionCard({
             </button>
           ) : (
             <button 
+              ref={nextButtonRef}
               type="button" 
               className="exercise-next-btn"
               onClick={onNextQuestion}

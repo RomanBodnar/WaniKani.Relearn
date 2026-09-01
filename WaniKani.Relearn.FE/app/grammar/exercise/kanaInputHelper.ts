@@ -19,8 +19,8 @@ const ROMAJI_TO_HIRAGANA_MAP: Record<string, string> = {
 
   // Double chars
   ka: "か", ki: "き", ku: "く", ke: "け", ko: "こ",
-  sa: "さ", su: "す", se: "せ", so: "そ",
-  ta: "た", te: "て", to: "と",
+  sa: "さ", si: "し", su: "す", se: "せ", so: "そ",
+  ta: "た", ti: "ち", tu: "つ", te: "て", to: "と",
   na: "な", ni: "に", nu: "ぬ", ne: "ね", no: "の",
   ha: "は", hi: "ひ", fu: "ふ", he: "へ", ho: "ほ", hu: "ふ",
   ma: "ま", mi: "み", mu: "む", me: "め", mo: "も",
