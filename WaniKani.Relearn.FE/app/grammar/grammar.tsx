@@ -113,11 +113,28 @@ export default function Grammar({ loaderData }: Route.ComponentProps) {
           <p className="grammar-description">{article.content}</p>
         </section>
 
+        {["past-tense", "polite-form", "verb-basics", "godan-verb", "ichidan-verb", "suru-verb"].includes(article.id) && (
+          <section className="detail-section practice-callout-section">
+            <div className="grammar-exercise-banner">
+              <div className="exercise-banner-content">
+                <div className="exercise-banner-tag">Practice This Topic</div>
+                <h2 className="exercise-banner-title">Verb Conjugation Exercise</h2>
+                <p className="exercise-banner-desc">
+                  Practice past and present tense conjugations with 10 questions using vocabulary from your database.
+                </p>
+              </div>
+              <Link to="/grammar/exercise" className="exercise-banner-btn">
+                Start Practice →
+              </Link>
+            </div>
+          </section>
+        )}
+
         {article.tofuguUrls && article.tofuguUrls.length > 0 && (
           <section className="detail-section tofugu-reference-section">
             <h2>Deep-Dive Reference on Tofugu</h2>
             <div className="tofugu-links-container">
-              {article.tofuguUrls.map((ref, idx) => (
+              {article.tofuguUrls.map((ref: { url: string; title: string }, idx: number) => (
                 <a
                   key={idx}
                   href={ref.url}

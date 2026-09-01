@@ -75,6 +75,20 @@ export default function GrammarIndex() {
         </p>
       </div>
 
+      {/* Grammar Practice Exercises Banner */}
+      <div className="grammar-exercise-banner">
+        <div className="exercise-banner-content">
+          <div className="exercise-banner-tag">Interactive Practice</div>
+          <h2 className="exercise-banner-title">Verb Conjugation Practice</h2>
+          <p className="exercise-banner-desc">
+            Test your knowledge by conjugating verbs between Present and Past forms in both Dictionary and Polite (ます) speech. 10 questions per round.
+          </p>
+        </div>
+        <Link to="/grammar/exercise" className="exercise-banner-btn">
+          Start Exercise →
+        </Link>
+      </div>
+
       <div className="grammar-detail-content">
         {/* Controls row for Expand All / Collapse All */}
         <div className="grammar-controls-row">

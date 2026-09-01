@@ -22,6 +22,89 @@
   margin: 0;
 }
 
+/* Practice Banner */
+.grammar-exercise-banner {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grammar-exercise-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -5px rgba(124, 58, 237, 0.35);
+}
+
+.exercise-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exercise-banner-tag {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.exercise-banner-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+.exercise-banner-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 550px;
+  line-height: 1.4;
+}
+
+.exercise-banner-btn {
+  background: #ffffff;
+  color: #7c3aed;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.exercise-banner-btn:hover {
+  background: #f8fafc;
+  transform: scale(1.03);
+}
+
+@media (max-width: 640px) {
+  .grammar-exercise-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .exercise-banner-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* Grammar bubble uses the vocabulary purple */
 .grammar-bubble {
   background-color: var(--color-grammar-block) !important;
