@@ -439,15 +439,15 @@
     }
 
     .header-card {
-        padding: 10px;
+        padding: 8px 16px;
     }
 
     .header-logo {
-        margin-left: -6px;
+        margin-left: 0;
     }
 
     .header-logo a {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
 }
 
