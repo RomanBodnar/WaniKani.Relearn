@@ -28,6 +28,7 @@ export function ExerciseQuestionCard({
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [showReading, setShowReading] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -164,9 +165,11 @@ export function ExerciseQuestionCard({
             ref={inputRef}
             type="text"
             className="exercise-input"
-            placeholder="Type your answer"
+            placeholder={isFocused ? "" : "Type your answer"}
             value={inputValue}
             onChange={handleInputChange}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
             onKeyDown={handleKeyDown}
             readOnly={hasSubmitted}
             autoComplete="off"

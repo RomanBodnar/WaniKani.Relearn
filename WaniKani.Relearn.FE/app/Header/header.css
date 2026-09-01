@@ -136,6 +136,8 @@
     text-decoration: none;
     transition: all 0.2s;
     margin-left: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .header-login-button:hover {
