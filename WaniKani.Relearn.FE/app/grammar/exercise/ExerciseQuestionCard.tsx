@@ -31,6 +31,7 @@ export function ExerciseQuestionCard({
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
+  const justValidatedRef = useRef<boolean>(false);
 
   // Focus input when question changes (desktop only to prevent mobile viewport jump)
   useEffect(() => {
@@ -38,6 +39,7 @@ export function ExerciseQuestionCard({
     setHasSubmitted(false);
     setIsCorrect(false);
     setShowReading(false);
+    justValidatedRef.current = false;
     window.scrollTo({ top: 0, behavior: "instant" });
 
     const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768;
@@ -57,6 +59,7 @@ export function ExerciseQuestionCard({
 
     const handleGlobalKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Enter") {
+        if (justValidatedRef.current) return;
         e.preventDefault();
         onNextQuestion();
       }
@@ -75,14 +78,7 @@ export function ExerciseQuestionCard({
     setInputValue(converted);
   };
 
-  const handleSubmit = (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
-
-    if (hasSubmitted) {
-      onNextQuestion();
-      return;
-    }
-
+  const handleValidate = () => {
     const finalAnswer = finalizeKana(inputValue).trim();
     if (!finalAnswer) return;
 
@@ -90,17 +86,42 @@ export function ExerciseQuestionCard({
     setIsCorrect(correct);
     setHasSubmitted(true);
     setInputValue(finalAnswer);
+    justValidatedRef.current = true;
 
     onAnswerSubmitted({
       question,
       userAnswer: finalAnswer,
       isCorrect: correct
     });
+
+    // Prevent immediate double-triggering from the same Enter press
+    setTimeout(() => {
+      justValidatedRef.current = false;
+    }, 150);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!hasSubmitted) {
+      handleValidate();
+    } else if (!justValidatedRef.current) {
+      onNextQuestion();
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.nativeEvent.isComposing || e.keyCode === 229) {
+      return;
+    }
+
     if (e.key === "Enter") {
-      handleSubmit();
+      e.preventDefault();
+      if (!hasSubmitted) {
+        handleValidate();
+      } else if (!justValidatedRef.current) {
+        onNextQuestion();
+      }
     }
   };
 
@@ -159,7 +180,7 @@ export function ExerciseQuestionCard({
       </div>
 
       {/* Answer Form */}
-      <form onSubmit={handleSubmit} className="exercise-form">
+      <form onSubmit={handleFormSubmit} className="exercise-form">
         <div className={`exercise-input-group ${hasSubmitted ? (isCorrect ? "is-correct" : "is-incorrect") : ""}`}>
           <input
             ref={inputRef}
