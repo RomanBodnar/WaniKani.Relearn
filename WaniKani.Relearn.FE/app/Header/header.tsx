@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import "./header.css";
 import NavigationBar from "~/components/NavigationBar";
 import { API_ENDPOINTS } from "~/config/api";
+import { romajiToHiragana, finalizeKana } from "~/grammar/exercise/kanaInputHelper";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Header = () => {
     const query = searchParams.get("q") || "";
     const [isSearchOpen, setIsSearchOpen] = useState(!!query);
     const [inputValue, setInputValue] = useState(query);
+    const [isKanaMode, setIsKanaMode] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
     const { revalidate } = useRevalidator();
@@ -112,8 +114,15 @@ const Header = () => {
         };
     }, [isMobileMenuOpen]);
 
+    const toggleKanaMode = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setIsKanaMode(prev => !prev);
+        inputRef.current?.focus();
+    };
+
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const val = e.target.value;
+        const raw = e.target.value;
+        const val = isKanaMode ? romajiToHiragana(raw) : raw;
         setInputValue(val);
 
         // Debounce navigation to /search
@@ -128,7 +137,7 @@ const Header = () => {
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             if (debounceRef.current) clearTimeout(debounceRef.current);
-            const val = inputValue.trim();
+            const val = (isKanaMode ? finalizeKana(inputValue) : inputValue).trim();
             if (val) {
                 navigate(`/search?q=${encodeURIComponent(val)}`);
             }
@@ -243,8 +252,9 @@ const Header = () => {
                 className={`header-search-row ${isSearchOpen ? 'open' : ''}`}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (inputValue.trim()) {
-                        navigate(`/search?q=${encodeURIComponent(inputValue.trim())}`);
+                    const val = (isKanaMode ? finalizeKana(inputValue) : inputValue).trim();
+                    if (val) {
+                        navigate(`/search?q=${encodeURIComponent(val)}`);
                     }
                 }}
             >
@@ -252,17 +262,28 @@ const Header = () => {
                     <input
                         ref={inputRef}
                         type="text"
-                        placeholder="Search..."
+                        placeholder={isKanaMode ? "Search (かな)..." : "Search..."}
                         value={inputValue}
                         onChange={handleSearchChange}
                         onKeyDown={handleKeyDown}
                         className="search-input"
                     />
-                    <button type="submit" className="header-search-submit-btn" aria-label="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </button>
+                    <div className="header-search-actions">
+                        <button
+                            type="button"
+                            className={`header-search-mode-btn ${isKanaMode ? 'active-kana' : ''}`}
+                            onClick={toggleKanaMode}
+                            title={isKanaMode ? "Switch to English input (ABC)" : "Switch to Hiragana input (あ)"}
+                            aria-label={isKanaMode ? "Switch to English input" : "Switch to Hiragana input"}
+                        >
+                            {isKanaMode ? "ABC" : "あ"}
+                        </button>
+                        <button type="submit" className="header-search-submit-btn" aria-label="Search" title="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
