@@ -256,56 +256,56 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-            </header>
-            <form
-                className={`header-search-row ${isSearchOpen ? 'open' : ''}`}
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    const val = inputValue.trim();
-                    if (val) {
-                        navigate(`/search?q=${encodeURIComponent(val)}`);
-                    }
-                }}
-            >
-                <div className="header-search-input-wrapper">
-                    <input
-                        ref={inputRef}
-                        type="text"
-                        placeholder={isKanaMode ? "Search (かな / 漢字)..." : "Search..."}
-                        value={inputValue}
-                        onChange={handleImeChange}
-                        onKeyDown={onInputKeyDown}
-                        className="search-input"
-                    />
-                    <div className="header-search-actions">
-                        <button
-                            type="button"
-                            className={`header-search-mode-btn ${isKanaMode ? 'active-kana' : ''}`}
-                            onClick={onToggleKanaMode}
-                            title={isKanaMode ? "Switch to English input (ABC)" : "Switch to Hiragana input (あ)"}
-                            aria-label={isKanaMode ? "Switch to English input" : "Switch to Hiragana input"}
-                        >
-                            {isKanaMode ? "ABC" : "あ"}
-                        </button>
-                        <button type="submit" className="header-search-submit-btn" aria-label="Search" title="Search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="m9 18 6-6-6-6" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    {showCandidates && candidates.length > 0 && (
-                        <KanjiCandidateDropdown
-                            candidates={candidates}
-                            selectedIndex={selectedIndex}
-                            onSelect={(cand) => {
-                                commitCandidate(cand);
-                                inputRef.current?.focus();
-                            }}
+                <form
+                    className={`header-search-row ${isSearchOpen ? 'open' : ''}`}
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const val = inputValue.trim();
+                        if (val) {
+                            navigate(`/search?q=${encodeURIComponent(val)}`);
+                        }
+                    }}
+                >
+                    <div className="header-search-input-wrapper">
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            placeholder={isKanaMode ? "Search (かな / 漢字)..." : "Search..."}
+                            value={inputValue}
+                            onChange={handleImeChange}
+                            onKeyDown={onInputKeyDown}
+                            className="search-input"
                         />
-                    )}
-                </div>
-            </form>
+                        <div className="header-search-actions">
+                            <button
+                                type="button"
+                                className={`header-search-mode-btn ${isKanaMode ? 'active-kana' : ''}`}
+                                onClick={onToggleKanaMode}
+                                title={isKanaMode ? "Switch to English input (ABC)" : "Switch to Hiragana input (あ)"}
+                                aria-label={isKanaMode ? "Switch to English input" : "Switch to Hiragana input"}
+                            >
+                                {isKanaMode ? "ABC" : "あ"}
+                            </button>
+                            <button type="submit" className="header-search-submit-btn" aria-label="Search" title="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {showCandidates && candidates.length > 0 && (
+                            <KanjiCandidateDropdown
+                                candidates={candidates}
+                                selectedIndex={selectedIndex}
+                                onSelect={(cand) => {
+                                    commitCandidate(cand);
+                                    inputRef.current?.focus();
+                                }}
+                            />
+                        )}
+                    </div>
+                </form>
+            </header>
         </div>
     );
 };
