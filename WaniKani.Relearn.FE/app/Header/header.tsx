@@ -3,15 +3,14 @@ import { useState, useRef, useEffect } from "react";
 import "./header.css";
 import NavigationBar from "~/components/NavigationBar";
 import { API_ENDPOINTS } from "~/config/api";
-import { romajiToHiragana, finalizeKana } from "~/grammar/exercise/kanaInputHelper";
+import { useJapaneseIme } from "~/hooks/useJapaneseIme";
+import { KanjiCandidateDropdown } from "~/components/KanjiCandidateDropdown/KanjiCandidateDropdown";
 
 const Header = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const query = searchParams.get("q") || "";
     const [isSearchOpen, setIsSearchOpen] = useState(!!query);
-    const [inputValue, setInputValue] = useState(query);
-    const [isKanaMode, setIsKanaMode] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
     const { revalidate } = useRevalidator();
@@ -24,6 +23,29 @@ const Header = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const {
+        inputValue,
+        setInputValue,
+        isKanaMode,
+        toggleKanaMode,
+        candidates,
+        selectedIndex,
+        showCandidates,
+        handleInputChange: handleImeChange,
+        handleKeyDown: handleImeKeyDown,
+        commitCandidate
+    } = useJapaneseIme({
+        initialValue: query,
+        onValueChange: (val) => {
+            if (debounceRef.current) clearTimeout(debounceRef.current);
+            debounceRef.current = setTimeout(() => {
+                if (val.trim()) {
+                    navigate(`/search?q=${encodeURIComponent(val.trim())}`, { replace: true });
+                }
+            }, 300);
+        }
+    });
 
     // Sync input value when URL query changes (e.g. back/forward navigation)
     useEffect(() => {
@@ -114,37 +136,24 @@ const Header = () => {
         };
     }, [isMobileMenuOpen]);
 
-    const toggleKanaMode = (e: React.MouseEvent) => {
+    const onToggleKanaMode = (e: React.MouseEvent) => {
         e.preventDefault();
-        setIsKanaMode(prev => !prev);
+        toggleKanaMode();
         inputRef.current?.focus();
     };
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const raw = e.target.value;
-        const val = isKanaMode ? romajiToHiragana(raw) : raw;
-        setInputValue(val);
-
-        // Debounce navigation to /search
-        if (debounceRef.current) clearTimeout(debounceRef.current);
-        debounceRef.current = setTimeout(() => {
-            if (val.trim()) {
-                navigate(`/search?q=${encodeURIComponent(val.trim())}`, { replace: true });
-            }
-        }, 300);
-    };
-
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter") {
-            if (debounceRef.current) clearTimeout(debounceRef.current);
-            const val = (isKanaMode ? finalizeKana(inputValue) : inputValue).trim();
-            if (val) {
-                navigate(`/search?q=${encodeURIComponent(val)}`);
-            }
-        }
+    const onInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Escape") {
             setIsSearchOpen(false);
+            return;
         }
+
+        handleImeKeyDown(e, (committedVal) => {
+            if (debounceRef.current) clearTimeout(debounceRef.current);
+            if (committedVal) {
+                navigate(`/search?q=${encodeURIComponent(committedVal)}`);
+            }
+        });
     };
 
     const toggleSearch = () => {
@@ -252,7 +261,7 @@ const Header = () => {
                 className={`header-search-row ${isSearchOpen ? 'open' : ''}`}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    const val = (isKanaMode ? finalizeKana(inputValue) : inputValue).trim();
+                    const val = inputValue.trim();
                     if (val) {
                         navigate(`/search?q=${encodeURIComponent(val)}`);
                     }
@@ -262,17 +271,17 @@ const Header = () => {
                     <input
                         ref={inputRef}
                         type="text"
-                        placeholder={isKanaMode ? "Search (かな)..." : "Search..."}
+                        placeholder={isKanaMode ? "Search (かな / 漢字)..." : "Search..."}
                         value={inputValue}
-                        onChange={handleSearchChange}
-                        onKeyDown={handleKeyDown}
+                        onChange={handleImeChange}
+                        onKeyDown={onInputKeyDown}
                         className="search-input"
                     />
                     <div className="header-search-actions">
                         <button
                             type="button"
                             className={`header-search-mode-btn ${isKanaMode ? 'active-kana' : ''}`}
-                            onClick={toggleKanaMode}
+                            onClick={onToggleKanaMode}
                             title={isKanaMode ? "Switch to English input (ABC)" : "Switch to Hiragana input (あ)"}
                             aria-label={isKanaMode ? "Switch to English input" : "Switch to Hiragana input"}
                         >
@@ -284,6 +293,17 @@ const Header = () => {
                             </svg>
                         </button>
                     </div>
+
+                    {showCandidates && candidates.length > 0 && (
+                        <KanjiCandidateDropdown
+                            candidates={candidates}
+                            selectedIndex={selectedIndex}
+                            onSelect={(cand) => {
+                                commitCandidate(cand);
+                                inputRef.current?.focus();
+                            }}
+                        />
+                    )}
                 </div>
             </form>
         </div>
