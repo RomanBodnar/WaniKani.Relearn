@@ -6,9 +6,6 @@ export const HomeDivider = () => <hr className="home-divider" />;
 export const ReadingHeroHeader = () => {
   return (
     <section className="home-hero-section">
-      <div className="home-hero-badge">
-        <span className="badge-sparkle">✦</span> Japanese Study & Practice Companion
-      </div>
       <h1 className="home-hero-headline">
         Practice Japanese with <br />
         <span className="text-gradient">Grammar, Reading & Kanji</span>
@@ -49,15 +46,15 @@ export const CorePillarsHub = () => {
             Test and drill Japanese verb conjugations with 10-question practice rounds and instant feedback.
           </p>
           <div className="pillar-action-links">
-            <Link to="/grammar/exercise/tenses" className="pillar-sublink">
+            <Link to="/grammar/exercise/tenses" className="pillar-sublink pillar-sublink-grammar">
               <span>Past & Present Tenses</span>
               <span className="sublink-arrow">→</span>
             </Link>
-            <Link to="/grammar/exercise/te-form" className="pillar-sublink">
+            <Link to="/grammar/exercise/te-form" className="pillar-sublink pillar-sublink-grammar">
               <span>Te-Form & Continuous (〜ている)</span>
               <span className="sublink-arrow">→</span>
             </Link>
-            <Link to="/grammar" className="pillar-main-btn">
+            <Link to="/grammar" className="pillar-main-btn btn-grammar">
               Explore Grammar Guide →
             </Link>
           </div>
@@ -92,9 +89,9 @@ export const CorePillarsHub = () => {
           </p>
           <div className="pillar-action-links">
             <div className="pillar-quick-tags">
-              <Link to="/radicals" className="pillar-tag-link">Radicals</Link>
-              <Link to="/kanji" className="pillar-tag-link">Kanji</Link>
-              <Link to="/vocabulary" className="pillar-tag-link">Vocabulary</Link>
+              <Link to="/radicals" className="pillar-tag-link tag-radicals">Radicals</Link>
+              <Link to="/kanji" className="pillar-tag-link tag-kanji">Kanji</Link>
+              <Link to="/vocabulary" className="pillar-tag-link tag-vocab">Vocabulary</Link>
             </div>
             <Link to="/kanji" className="pillar-main-btn btn-kanji">
               Explore Subjects →
