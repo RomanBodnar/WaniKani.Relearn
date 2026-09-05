@@ -14,6 +14,21 @@ public record ReadingSentence
     public bool IsPracticed { get; set; }
 }
 
+/// <summary>
+/// Lightweight version of ReadingSentence without morphemes, used for in-memory caching.
+/// Morphemes are loaded on-demand from the database when needed for individual pages.
+/// </summary>
+public record ReadingSentenceSummary
+{
+    public long Id { get; init; }
+    public required string Ja { get; init; }
+    public required string En { get; init; }
+    public int Level { get; init; }
+    public required List<SubjectReference> SourceVocabulary { get; init; }
+    public required List<SubjectReference> KanjiInSentence { get; init; }
+    public bool IsPracticed { get; set; }
+}
+
 public record Morpheme
 {
     public int? SubjectId { get; set; }

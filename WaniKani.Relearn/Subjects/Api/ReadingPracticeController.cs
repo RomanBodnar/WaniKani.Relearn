@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Subjects.Data;
 using WaniKani.Relearn.Subjects.Services;
 using AuthorizeAttribute = Microsoft.AspNetCore.Authorization.AuthorizeAttribute;
@@ -11,6 +12,7 @@ namespace WaniKani.Relearn.Subjects.Api;
 [ApiController]
 public class ReadingPracticeController(
     SentenceCache sentenceCache,
+    BonpomDbContext dbContext,
     IUserReadingPracticeService userReadingPracticeService
 ) : ControllerBase
 {
@@ -30,7 +32,13 @@ public class ReadingPracticeController(
             practicedSentenceIds = await userReadingPracticeService.GetPracticedSentenceIdsAsync(userId, cancellationToken);
         }
 
-        var result = sentenceCache.GetSentences(page, perPage, minLevel, maxLevel, status, practicedSentenceIds);
+        var summaryResult = sentenceCache.GetSentences(page, perPage, minLevel, maxLevel, status, practicedSentenceIds);
+
+        // Enrich only the current page with morphemes from DB (typically ~10 sentences)
+        var enrichedData = await sentenceCache.EnrichWithMorphemesAsync(summaryResult.Data.ToList(), dbContext);
+
+        var result = new PageResult<WaniKani.Relearn.Subjects.Data.Models.Reading.ReadingSentence>(
+            enrichedData, summaryResult.Page, summaryResult.PerPage, summaryResult.TotalCount);
         return Ok(result);
     }
 

@@ -46,7 +46,7 @@ public class InMemoryDataLoader(
         var dbContext = scope.ServiceProvider.GetRequiredService<BonpomDbContext>();
         await sentenceExtractor.ExtractAndSaveToDbAsync(dbContext);
         sentenceCache.LoadFromDb(dbContext);
-        logger.LogInformation("Loaded {Count} reading practice sentences from DB into cache.", sentenceCache.Count);
+        logger.LogInformation("Loaded {Count} reading practice sentence summaries into cache (morphemes loaded on-demand).", sentenceCache.Count);
     }
 
     private async Task UpdateKanjis(IDataAccess dataAccess)

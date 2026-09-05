@@ -4,15 +4,12 @@ using Newtonsoft.Json;
 using WaniKani.Relearn.Data;
 using WaniKani.Relearn.Data.Entities;
 using WaniKani.Relearn.Subjects.Data.Models.Reading;
-using System.Threading;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace WaniKani.Relearn.Subjects.Data;
 
 public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentenceExtractor)
 {
-    private readonly ConcurrentDictionary<long, ReadingSentence> _sentences = new();
+    private readonly ConcurrentDictionary<long, ReadingSentenceSummary> _sentences = new();
 
     public int Count => _sentences.Count;
 
@@ -20,29 +17,77 @@ public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentence
     {
         _sentences.Clear();
 
-        var entities = dbContext.ContextSentences
-            .AsNoTracking()
-            .ToList();
+        // Load in batches to reduce peak memory — entity + DataJson memory is released between batches
+        const int batchSize = 2000;
+        long lastId = 0;
 
-        foreach (var entity in entities)
+        while (true)
         {
-            var sentence = MapEntityToReadingSentence(entity);
-            if (sentence.Morphemes.Count > 0)
+            var batch = dbContext.ContextSentences
+                .AsNoTracking()
+                .Where(cs => cs.Id > lastId)
+                .OrderBy(cs => cs.Id)
+                .Take(batchSize)
+                .Select(cs => new
+                {
+                    cs.Id,
+                    cs.Ja,
+                    cs.En,
+                    cs.Level,
+                    cs.DataJson
+                })
+                .ToList();
+
+            if (batch.Count == 0) break;
+
+            foreach (var entity in batch)
             {
-                sentenceExtractor.ProcessMorphemesInSentence(sentence);
+                var summary = MapEntityToSummary(entity.Id, entity.Ja, entity.En, entity.Level, entity.DataJson);
+                _sentences[summary.Id] = summary;
             }
-            _sentences[sentence.Id] = sentence;
+
+            lastId = batch[^1].Id;
         }
     }
 
-    public ReadingSentence MapEntityToReadingSentence(ContextSentenceEntity entity)
+    /// <summary>
+    /// Extracts only SourceVocabulary and KanjiInSentence from DataJson, skipping morpheme deserialization.
+    /// This is the key memory optimization — morphemes (~70-80% of per-sentence memory) are not cached.
+    /// </summary>
+    private ReadingSentenceSummary MapEntityToSummary(long id, string ja, string en, int level, string? dataJson)
     {
-        ReadingSentence? parsed = null;
-        if (!string.IsNullOrWhiteSpace(entity.DataJson))
+        List<SubjectReference> sourceVocab = [];
+        List<SubjectReference> kanjiInSentence = [];
+
+        if (!string.IsNullOrWhiteSpace(dataJson))
         {
             try
             {
-                parsed = JsonConvert.DeserializeObject<ReadingSentence>(entity.DataJson);
+                var parsed = JsonConvert.DeserializeObject<ReadingSentence>(dataJson);
+                if (parsed != null)
+                {
+                    sourceVocab = (parsed.SourceVocabulary ?? [])
+                        .Select(sv => new SubjectReference
+                        {
+                            SubjectId = sv.SubjectId,
+                            Characters = !string.IsNullOrEmpty(sv.Characters)
+                                ? sv.Characters
+                                : (subjectCache.TryGet(sv.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
+                        })
+                        .DistinctBy(sv => sv.SubjectId)
+                        .ToList();
+
+                    kanjiInSentence = (parsed.KanjiInSentence ?? [])
+                        .Select(kj => new SubjectReference
+                        {
+                            SubjectId = kj.SubjectId,
+                            Characters = !string.IsNullOrEmpty(kj.Characters)
+                                ? kj.Characters
+                                : (subjectCache.TryGet(kj.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
+                        })
+                        .DistinctBy(kj => kj.SubjectId)
+                        .ToList();
+                }
             }
             catch
             {
@@ -50,72 +95,42 @@ public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentence
             }
         }
 
-        var sourceVocab = (parsed?.SourceVocabulary ?? [])
-            .Select(sv => new SubjectReference
-            {
-                SubjectId = sv.SubjectId,
-                Characters = !string.IsNullOrEmpty(sv.Characters)
-                    ? sv.Characters
-                    : (subjectCache.TryGet(sv.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
-            })
-            .DistinctBy(sv => sv.SubjectId)
-            .ToList();
-
-        var kanjiInSentence = (parsed?.KanjiInSentence ?? [])
-            .Select(kj => new SubjectReference
-            {
-                SubjectId = kj.SubjectId,
-                Characters = !string.IsNullOrEmpty(kj.Characters)
-                    ? kj.Characters
-                    : (subjectCache.TryGet(kj.SubjectId, out var sub) ? (sub.Characters ?? string.Empty) : string.Empty)
-            })
-            .DistinctBy(kj => kj.SubjectId)
-            .ToList();
-
-        return new ReadingSentence
+        return new ReadingSentenceSummary
         {
-            Id = entity.Id,
-            Ja = entity.Ja,
-            En = entity.En,
-            Level = entity.Level,
+            Id = id,
+            Ja = ja,
+            En = en,
+            Level = level,
             SourceVocabulary = sourceVocab,
-            KanjiInSentence = kanjiInSentence,
-            Morphemes = parsed?.Morphemes ?? []
+            KanjiInSentence = kanjiInSentence
         };
     }
 
     public void AddOrUpdateSentence(ReadingSentence sentence)
     {
-        _sentences[sentence.Id] = sentence;
+        _sentences[sentence.Id] = new ReadingSentenceSummary
+        {
+            Id = sentence.Id,
+            Ja = sentence.Ja,
+            En = sentence.En,
+            Level = sentence.Level,
+            SourceVocabulary = sentence.SourceVocabulary,
+            KanjiInSentence = sentence.KanjiInSentence,
+            IsPracticed = sentence.IsPracticed
+        };
     }
-
-    //public void HideSentence(long sentenceId)
-    //{
-    //    if (_sentences.TryGetValue(sentenceId, out var existing))
-    //    {
-    //        _sentences[sentenceId] = existing with { IsHidden = true };
-    //    }
-    //}
-
-    //public void UnhideSentence(long sentenceId)
-    //{
-    //    if (_sentences.TryGetValue(sentenceId, out var existing))
-    //    {
-    //        _sentences[sentenceId] = existing with { IsHidden = false };
-    //    }
-    //}
 
     public void RemoveSentence(long sentenceId)
     {
         _sentences.TryRemove(sentenceId, out _);
     }
 
-    public bool TryGet(long sentenceId, out ReadingSentence? sentence)
+    public bool TryGet(long sentenceId, out ReadingSentenceSummary? sentence)
     {
         return _sentences.TryGetValue(sentenceId, out sentence);
     }
 
-    public PageResult<ReadingSentence> GetSentences(
+    public PageResult<ReadingSentenceSummary> GetSentences(
         int? page,
         int? perPage,
         int? minLevel = null,
@@ -123,7 +138,7 @@ public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentence
         string status = "all",
         ISet<long>? practicedSentenceIds = null)
     {
-        IEnumerable<ReadingSentence> query = _sentences.Values;
+        IEnumerable<ReadingSentenceSummary> query = _sentences.Values;
 
         if (minLevel.HasValue) query = query.Where(s => s.Level >= minLevel.Value);
         if (maxLevel.HasValue) query = query.Where(s => s.Level <= maxLevel.Value);
@@ -148,6 +163,73 @@ public class SentenceCache(SubjectCache subjectCache, SentenceExtractor sentence
             .Select(s => s with { IsPracticed = practicedSet.Contains(s.Id) })
             .ToList();
 
-        return new PageResult<ReadingSentence>(data, page ?? 1, perPage ?? 10, count);
+        return new PageResult<ReadingSentenceSummary>(data, page ?? 1, perPage ?? 10, count);
+    }
+
+    /// <summary>
+    /// Enriches a list of sentence summaries with morphemes loaded from the database on-demand.
+    /// Only loads morphemes for the given sentence IDs (typically one page worth = ~10 sentences).
+    /// </summary>
+    public async Task<List<ReadingSentence>> EnrichWithMorphemesAsync(
+        List<ReadingSentenceSummary> summaries,
+        BonpomDbContext dbContext)
+    {
+        if (summaries.Count == 0) return [];
+
+        var ids = summaries.Select(s => s.Id).ToHashSet();
+
+        var morphemeData = await dbContext.ContextSentences
+            .AsNoTracking()
+            .Where(cs => ids.Contains(cs.Id))
+            .Select(cs => new { cs.Id, cs.DataJson })
+            .ToListAsync();
+
+        var morphemesByIdDict = new Dictionary<long, List<Morpheme>>();
+        foreach (var row in morphemeData)
+        {
+            List<Morpheme> morphemes = [];
+            if (!string.IsNullOrWhiteSpace(row.DataJson))
+            {
+                try
+                {
+                    var parsed = JsonConvert.DeserializeObject<ReadingSentence>(row.DataJson);
+                    if (parsed?.Morphemes is { Count: > 0 })
+                    {
+                        morphemes = parsed.Morphemes;
+
+                        // Find the matching summary to get SourceVocabulary for ProcessMorphemesInSentence
+                        var summary = summaries.FirstOrDefault(s => s.Id == row.Id);
+                        var tempSentence = new ReadingSentence
+                        {
+                            Id = row.Id,
+                            Ja = summary?.Ja ?? "",
+                            En = summary?.En ?? "",
+                            SourceVocabulary = summary?.SourceVocabulary?.ToList() ?? [],
+                            KanjiInSentence = summary?.KanjiInSentence?.ToList() ?? [],
+                            Morphemes = morphemes
+                        };
+                        sentenceExtractor.ProcessMorphemesInSentence(tempSentence);
+                    }
+                }
+                catch
+                {
+                    // Fallback
+                }
+            }
+            morphemesByIdDict[row.Id] = morphemes;
+        }
+
+        return summaries.Select(s => new ReadingSentence
+        {
+            Id = s.Id,
+            Ja = s.Ja,
+            En = s.En,
+            Level = s.Level,
+            SourceVocabulary = s.SourceVocabulary,
+            KanjiInSentence = s.KanjiInSentence,
+            Morphemes = morphemesByIdDict.GetValueOrDefault(s.Id, []),
+            IsPracticed = s.IsPracticed
+        }).ToList();
     }
 }
+
