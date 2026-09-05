@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { fetchSubjects } from "~/hooks/useSubjects";
 import { 
   buildVerbInfo, 
@@ -8,7 +8,9 @@ import {
   type ExerciseDirection 
 } from "./conjugationEngine";
 
-const ALL_DIRECTIONS: ExerciseDirection[] = [
+export type ExerciseCategory = "tenses" | "te_form" | "all";
+
+export const TENSES_DIRECTIONS: ExerciseDirection[] = [
   "present_plain_to_past_plain",
   "past_plain_to_present_plain",
   "present_polite_to_past_polite",
@@ -21,6 +23,22 @@ const ALL_DIRECTIONS: ExerciseDirection[] = [
   "past_polite_to_present_plain",
   "present_polite_to_past_plain",
   "past_plain_to_present_polite"
+];
+
+export const TE_FORM_DIRECTIONS: ExerciseDirection[] = [
+  "dictionary_to_te_form",
+  "te_form_to_dictionary",
+  "dictionary_to_te_iru_plain",
+  "te_iru_plain_to_dictionary",
+  "dictionary_to_te_iru_polite",
+  "te_iru_polite_to_dictionary",
+  "te_form_to_te_iru_plain",
+  "te_form_to_te_iru_polite"
+];
+
+export const ALL_DIRECTIONS: ExerciseDirection[] = [
+  ...TENSES_DIRECTIONS,
+  ...TE_FORM_DIRECTIONS
 ];
 
 // In-memory cache of parsed verbs across renders & navigations
@@ -125,13 +143,22 @@ export function useVerbPool() {
   }, []);
 
   /**
-   * Generate a session of N questions (default 10)
+   * Generate a session of N questions (default 10) for the given category
    */
   const generateSession = useCallback((
     count: number = 10,
-    allowedDirections: ExerciseDirection[] = ALL_DIRECTIONS
+    category: ExerciseCategory = "tenses"
   ): QuestionData[] => {
     if (!verbs || verbs.length === 0) return [];
+
+    let allowedDirections: ExerciseDirection[];
+    if (category === "te_form") {
+      allowedDirections = TE_FORM_DIRECTIONS;
+    } else if (category === "all") {
+      allowedDirections = ALL_DIRECTIONS;
+    } else {
+      allowedDirections = TENSES_DIRECTIONS;
+    }
 
     const shuffledVerbs = shuffleArray(verbs);
     const selectedVerbs = shuffledVerbs.slice(0, Math.min(count, shuffledVerbs.length));

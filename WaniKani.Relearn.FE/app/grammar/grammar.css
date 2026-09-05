@@ -22,12 +22,25 @@
   margin: 0;
 }
 
-/* Practice Banner */
+/* Practice Banners Grid */
+.grammar-exercises-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .grammar-exercises-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .grammar-exercise-banner {
   background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
   border-radius: 16px;
   padding: 24px 28px;
-  margin-bottom: 32px;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -35,6 +48,20 @@
   gap: 20px;
   box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grammar-exercise-banner.te-form-banner {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.25);
+}
+
+.grammar-exercise-banner.te-form-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -5px rgba(2, 132, 199, 0.35);
+}
+
+.grammar-exercise-banner.te-form-banner .exercise-banner-btn {
+  color: #0284c7;
 }
 
 .grammar-exercise-banner:hover {

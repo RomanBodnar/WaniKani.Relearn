@@ -60,6 +60,138 @@
   border-radius: 20px;
 }
 
+/* Exercise Category Tabs */
+.exercise-category-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.exercise-category-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: center;
+  font-family: inherit;
+}
+
+.exercise-category-tab:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.exercise-category-tab.active {
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  color: #6d28d9;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
+}
+
+.exercise-category-tab .tab-icon {
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.exercise-category-tab .tab-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.exercise-category-tab.active .tab-title {
+  color: #6d28d9;
+}
+
+.exercise-category-tab .tab-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.exercise-category-tab.active .tab-sub {
+  color: #7c3aed;
+}
+
+@media(max-width: 600px) {
+  .exercise-category-tabs {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Dark Mode support */
+@media (prefers-color-scheme: dark) {
+  html:not(.light):not(.dark) .exercise-category-tab {
+    background: #1e293b;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+
+  html:not(.light):not(.dark) .exercise-category-tab .tab-title {
+    color: #f1f5f9;
+  }
+
+  html:not(.light):not(.dark) .exercise-category-tab:hover {
+    background: #334155;
+    border-color: #475569;
+  }
+
+  html:not(.light):not(.dark) .exercise-category-tab.active {
+    background: #311b92;
+    border-color: #7c3aed;
+    color: #e9d5ff;
+  }
+
+  html:not(.light):not(.dark) .exercise-category-tab.active .tab-title {
+    color: #f5f3ff;
+  }
+
+  html:not(.light):not(.dark) .exercise-category-tab.active .tab-sub {
+    color: #c4b5fd;
+  }
+}
+
+.dark .exercise-category-tab {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+.dark .exercise-category-tab .tab-title {
+  color: #f1f5f9;
+}
+
+.dark .exercise-category-tab:hover {
+  background: #334155;
+  border-color: #475569;
+}
+
+.dark .exercise-category-tab.active {
+  background: #311b92;
+  border-color: #7c3aed;
+  color: #e9d5ff;
+}
+
+.dark .exercise-category-tab.active .tab-title {
+  color: #f5f3ff;
+}
+
+.dark .exercise-category-tab.active .tab-sub {
+  color: #c4b5fd;
+}
+
 /* Progress bar */
 .exercise-progress-bar-container {
   width: 100%;

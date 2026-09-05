@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useParams, useSearchParams, useNavigate } from "react-router";
 import type { Route } from "./+types/grammar-exercise";
-import { useVerbPool } from "./useVerbPool";
+import { useVerbPool, type ExerciseCategory } from "./useVerbPool";
 import { ExerciseQuestionCard } from "./ExerciseQuestionCard";
 import { ExerciseResultModal, type SessionResultItem } from "./ExerciseResultModal";
 import { LoadingSpinner } from "~/components/LoadingSpinner";
@@ -9,15 +9,28 @@ import { ErrorDisplay } from "~/components/ErrorDisplay";
 import type { QuestionData } from "./conjugationEngine";
 import "./grammar-exercise.css";
 
-export function meta() {
+export function meta({ params }: Route.MetaArgs) {
+  const isTeForm = params?.type === "te-form";
+  if (isTeForm) {
+    return [
+      { title: "Te-Form & Continuous Action Practice | BonPom Grammar" },
+      { name: "description", content: "Practice Japanese Te-Form (〜て / 〜で) and expressing continuous action (〜ている / 〜ています)." }
+    ];
+  }
   return [
-    { title: "Verb Conjugation Practice | BonPom Grammar" },
+    { title: "Verb Tense Conjugation Practice | BonPom Grammar" },
     { name: "description", content: "Practice conjugating Japanese verbs between past and present forms in dictionary and polite masu forms." }
   ];
 }
 
 export default function GrammarExercise() {
+  const params = useParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+
+  const typeSlug = params.type || searchParams.get("type");
+  const activeCategory: ExerciseCategory = typeSlug === "te-form" ? "te_form" : "tenses";
+
   const { verbs, isLoading, error, generateSession } = useVerbPool();
 
   const [questions, setQuestions] = useState<QuestionData[]>([]);
@@ -25,24 +38,30 @@ export default function GrammarExercise() {
   const [sessionResults, setSessionResults] = useState<SessionResultItem[]>([]);
   const [isSessionComplete, setIsSessionComplete] = useState<boolean>(false);
 
-  // Initialize questions once verbs are loaded
+  // Initialize or re-generate questions when category or verbs change
   useEffect(() => {
-    if (verbs && verbs.length > 0 && questions.length === 0) {
-      const initialQuestions = generateSession(10);
+    if (verbs && verbs.length > 0) {
+      const initialQuestions = generateSession(10, activeCategory);
       setQuestions(initialQuestions);
       setCurrentIndex(0);
       setSessionResults([]);
       setIsSessionComplete(false);
     }
-  }, [verbs, generateSession, questions.length]);
+  }, [verbs, activeCategory, generateSession]);
+
+  const handleSelectCategory = (newCat: ExerciseCategory) => {
+    if (newCat === activeCategory) return;
+    const targetUrl = newCat === "te_form" ? "/grammar/exercise/te-form" : "/grammar/exercise/tenses";
+    navigate(targetUrl);
+  };
 
   const handleRestart = useCallback(() => {
-    const newQuestions = generateSession(10);
+    const newQuestions = generateSession(10, activeCategory);
     setQuestions(newQuestions);
     setCurrentIndex(0);
     setSessionResults([]);
     setIsSessionComplete(false);
-  }, [generateSession]);
+  }, [generateSession, activeCategory]);
 
   const handleAnswerSubmitted = useCallback((result: SessionResultItem) => {
     setSessionResults(prev => [...prev, result]);
@@ -112,6 +131,29 @@ export default function GrammarExercise() {
             </span>
           </div>
         )}
+      </div>
+
+      {/* Exercise Category Selector Tabs */}
+      <div className="exercise-category-tabs">
+        <button
+          type="button"
+          className={`exercise-category-tab ${activeCategory === "tenses" ? "active" : ""}`}
+          onClick={() => handleSelectCategory("tenses")}
+        >
+          <span className="tab-icon">🔄</span>
+          <span className="tab-title">Past & Present Tenses</span>
+          <span className="tab-sub">Plain & ます</span>
+        </button>
+
+        <button
+          type="button"
+          className={`exercise-category-tab ${activeCategory === "te_form" ? "active" : ""}`}
+          onClick={() => handleSelectCategory("te_form")}
+        >
+          <span className="tab-icon">⚡</span>
+          <span className="tab-title">Te-Form & Continuous</span>
+          <span className="tab-sub">〜て & 〜ている</span>
+        </button>
       </div>
 
       {/* Progress Bar */}

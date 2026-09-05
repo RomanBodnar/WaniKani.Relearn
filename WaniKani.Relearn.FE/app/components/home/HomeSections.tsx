@@ -7,27 +7,100 @@ export const ReadingHeroHeader = () => {
   return (
     <section className="home-hero-section">
       <div className="home-hero-badge">
-        <span className="badge-sparkle">✦</span> Japanese Reading Practice & Study Companion
+        <span className="badge-sparkle">✦</span> Japanese Study & Practice Companion
       </div>
       <h1 className="home-hero-headline">
-        Master Japanese Through <br />
-        <span className="text-gradient">Real Context Sentences</span>
+        Practice Japanese with <br />
+        <span className="text-gradient">Grammar, Reading & Kanji</span>
       </h1>
       <p className="home-hero-subtext">
-        Translate authentic Japanese sentences built from WaniKani vocabulary.
-        Explore interactive morpheme breakdowns, instant item previews, and level-by-level practice.
+        Interactive verb conjugation & Te-form practice, real sentence reading with instant word breakdowns, and comprehensive WaniKani vocabulary decks.
       </p>
       <div className="home-hero-actions">
-        <Link to="/reading-practice" className="btn-hero-primary">
-          Start Reading Practice
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+        <Link to="/grammar" className="btn-hero-primary">
+          <span className="btn-icon">⚡</span>
+          Grammar & Exercises
+        </Link>
+        <Link to="/reading-practice" className="btn-hero-secondary">
+          <span className="btn-icon">📖</span>
+          Sentence Reading
         </Link>
         <Link to="/kanji" className="btn-hero-secondary">
-          Explore Subjects
+          <span className="btn-icon">🎴</span>
+          Kanji & Vocab
         </Link>
+      </div>
+    </section>
+  );
+};
+
+export const CorePillarsHub = () => {
+  return (
+    <section className="home-pillars-section">
+      <div className="pillars-grid">
+        {/* Pillar 1: Grammar Exercises */}
+        <div className="pillar-card pillar-grammar">
+          <div className="pillar-top">
+            <span className="pillar-icon">⚡</span>
+            <span className="pillar-badge badge-grammar">Interactive Exercises</span>
+          </div>
+          <h3 className="pillar-title">Grammar & Conjugation</h3>
+          <p className="pillar-desc">
+            Test and drill Japanese verb conjugations with 10-question practice rounds and instant feedback.
+          </p>
+          <div className="pillar-action-links">
+            <Link to="/grammar/exercise/tenses" className="pillar-sublink">
+              <span>Past & Present Tenses</span>
+              <span className="sublink-arrow">→</span>
+            </Link>
+            <Link to="/grammar/exercise/te-form" className="pillar-sublink">
+              <span>Te-Form & Continuous (〜ている)</span>
+              <span className="sublink-arrow">→</span>
+            </Link>
+            <Link to="/grammar" className="pillar-main-btn">
+              Explore Grammar Guide →
+            </Link>
+          </div>
+        </div>
+
+        {/* Pillar 2: Sentence Reading */}
+        <div className="pillar-card pillar-reading">
+          <div className="pillar-top">
+            <span className="pillar-icon">📖</span>
+            <span className="pillar-badge badge-reading">Sentence Analysis</span>
+          </div>
+          <h3 className="pillar-title">Context Reading Practice</h3>
+          <p className="pillar-desc">
+            Read authentic Japanese sentences broken down by grammatical components with instant furigana and translations.
+          </p>
+          <div className="pillar-action-links">
+            <Link to="/reading-practice" className="pillar-main-btn btn-reading">
+              Start Reading Practice →
+            </Link>
+          </div>
+        </div>
+
+        {/* Pillar 3: Kanji & Vocab */}
+        <div className="pillar-card pillar-kanji">
+          <div className="pillar-top">
+            <span className="pillar-icon">🎴</span>
+            <span className="pillar-badge badge-kanji">WaniKani Library</span>
+          </div>
+          <h3 className="pillar-title">Kanji & Vocabulary Decks</h3>
+          <p className="pillar-desc">
+            Browse 60 levels of radicals, kanji, and vocabulary with instant modal previews and build your own custom study lists.
+          </p>
+          <div className="pillar-action-links">
+            <div className="pillar-quick-tags">
+              <Link to="/radicals" className="pillar-tag-link">Radicals</Link>
+              <Link to="/kanji" className="pillar-tag-link">Kanji</Link>
+              <Link to="/vocabulary" className="pillar-tag-link">Vocabulary</Link>
+            </div>
+            <Link to="/kanji" className="pillar-main-btn btn-kanji">
+              Explore Subjects →
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -50,8 +123,8 @@ export const LiveSentenceDemo = () => {
   return (
     <section className="home-demo-section">
       <div className="demo-card-header">
-        <span className="demo-card-badge">Live Interactive Preview</span>
-        <span className="demo-card-level">Lv. 10</span>
+        <span className="demo-card-badge">Interactive Sentence Breakdown</span>
+        <span className="demo-card-level">Lv. 10 Sample</span>
       </div>
       <div className="demo-card-body">
         <p className="demo-sentence-ja">
@@ -91,7 +164,7 @@ export const LiveSentenceDemo = () => {
             className={`demo-reveal-btn ${isRevealed ? "revealed" : ""}`}
             onClick={() => setIsRevealed(!isRevealed)}
           >
-            {isRevealed ? "✓ Translation" : "👁 Show Translation"}
+            {isRevealed ? "✓ Hide Translation" : "👁 Show Translation"}
           </button>
           {isRevealed && (
             <p className="demo-sentence-en">I read Japanese sentences every day.</p>
@@ -112,7 +185,7 @@ export const QuickLevelSelector = () => {
 
   return (
     <section className="home-quick-levels">
-      <h2 className="home-section-title">Jump Directly into Reading</h2>
+      <h2 className="home-section-title">Jump Directly into Reading by Level</h2>
       <div className="quick-levels-grid">
         {levelRanges.map((r) => (
           <Link
@@ -138,46 +211,46 @@ export const QuickLevelSelector = () => {
 export const FeatureShowcaseGrid = () => {
   const features = [
     {
+      icon: "⚡",
+      badge: "Interactive Practice",
+      title: "Conjugation Exercises",
+      description: "Drill verb tenses, polite speech, and Te-form continuous action (〜ている) with dynamic question generators.",
+      link: "/grammar/exercise",
+      cta: "Try Exercises",
+      colorClass: "feat-grammar"
+    },
+    {
       icon: "📖",
-      badge: "Core Learning",
-      title: "Context Reading Practice",
-      description: "Translate real WaniKani context sentences level by level with interactive morpheme popups and Focus Mode.",
+      badge: "Reading Engine",
+      title: "Morpheme Breakdowns",
+      description: "Translate real sentences with clickable words, furigana toggles, and instant grammatical role inspection.",
       link: "/reading-practice",
       cta: "Start Reading",
       colorClass: "feat-reading"
     },
     {
-      icon: "📦",
-      badge: "Personal Decks",
-      title: "My Box & 3D Practice",
-      description: "Bookmark kanji and vocabulary to your custom box and review them using the 3D coverflow card deck.",
-      link: "/kanji",
-      cta: "View My Box",
-      colorClass: "feat-kanji"
-    },
-    {
-      icon: "🔍",
-      badge: "Instant Previews",
-      title: "Item Preview Modals",
-      description: "Click any subject card across Kanji, Vocab, and Radicals pages to instantly inspect meanings, readings, and SRS levels.",
-      link: "/vocabulary",
-      cta: "Browse Items",
+      icon: "🔤",
+      badge: "Smart Typing",
+      title: "Built-In Japanese IME",
+      description: "Type Japanese anywhere in the app with automatic Romaji-to-Hiragana conversion and live Kanji candidate autocompletion.",
+      link: "/search",
+      cta: "Try Search Bar",
       colorClass: "feat-vocab"
     },
     {
-      icon: "📚",
-      badge: "Grammar Index",
-      title: "Grammar & Structure",
-      description: "Explore structured Japanese grammar explanations and reference cards categorized by proficiency.",
-      link: "/grammar",
-      cta: "Explore Grammar",
-      colorClass: "feat-grammar"
+      icon: "📦",
+      badge: "Custom Decks",
+      title: "Personal Study Lists",
+      description: "Bookmark difficult kanji and vocabulary to your personal study list for targeted review anytime.",
+      link: "/kanji",
+      cta: "Open My Box",
+      colorClass: "feat-kanji"
     }
   ];
 
   return (
     <section className="home-feature-showcase">
-      <h2 className="home-section-title">Everything You Need to Relearn Japanese</h2>
+      <h2 className="home-section-title">Explore All Features</h2>
       <div className="feature-cards-grid">
         {features.map((f) => (
           <div key={f.title} className={`feature-card ${f.colorClass}`}>

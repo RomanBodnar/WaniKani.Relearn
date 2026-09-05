@@ -7,7 +7,7 @@ export default [
     route("/kanji", "./kanji/kanji.tsx"),
     route("/vocabulary", "./vocabulary/vocabulary.tsx"),
     route("/subject/:id", "./subject/subject.tsx"),
-    route("/grammar/exercise", "./grammar/exercise/grammar-exercise.tsx"),
+    route("/grammar/exercise/:type?", "./grammar/exercise/grammar-exercise.tsx"),
     route("/grammar/:id", "./grammar/grammar.tsx"),
     route("/grammar", "./grammar/grammar-index.tsx"),
     route("/reading-practice", "./reading-practice/reading-practice.tsx"),

@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import "./home.css";
 import {
   ReadingHeroHeader,
+  CorePillarsHub,
   LiveSentenceDemo,
   QuickLevelSelector,
   FeatureShowcaseGrid,
@@ -10,8 +11,8 @@ import {
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "bonpom | Japanese Reading Practice" },
-    { name: "description", content: "Master Japanese reading comprehension with real WaniKani context sentences, interactive breakdowns, and instant item lookup." },
+    { title: "bonpom | Japanese Study & Practice Companion" },
+    { name: "description", content: "Interactive verb conjugation exercises, sentence reading practice with instant word breakdowns, and comprehensive WaniKani vocabulary decks." },
   ];
 }
 
@@ -19,8 +20,9 @@ export default function Home() {
   return (
     <div className="home-page">
       <ReadingHeroHeader />
-      <LiveSentenceDemo />
+      <CorePillarsHub />
       <HomeDivider />
+      <LiveSentenceDemo />
       <QuickLevelSelector />
       <FeatureShowcaseGrid />
     </div>

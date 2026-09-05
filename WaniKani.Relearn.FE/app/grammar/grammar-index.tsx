@@ -75,18 +75,33 @@ export default function GrammarIndex() {
         </p>
       </div>
 
-      {/* Grammar Practice Exercises Banner */}
-      <div className="grammar-exercise-banner">
-        <div className="exercise-banner-content">
-          <div className="exercise-banner-tag">Interactive Practice</div>
-          <h2 className="exercise-banner-title">Verb Conjugation Practice</h2>
-          <p className="exercise-banner-desc">
-            Test your knowledge by conjugating verbs between Present and Past forms in both Dictionary and Polite (ます) speech. 10 questions per round.
-          </p>
+      {/* Grammar Practice Exercises Grid */}
+      <div className="grammar-exercises-grid">
+        <div className="grammar-exercise-banner">
+          <div className="exercise-banner-content">
+            <div className="exercise-banner-tag">Interactive Practice</div>
+            <h2 className="exercise-banner-title">Past & Present Tenses</h2>
+            <p className="exercise-banner-desc">
+              Practice past and present tense conjugations in both Plain (辞書/た形) and Polite (ます/ました) speech.
+            </p>
+          </div>
+          <Link to="/grammar/exercise/tenses" className="exercise-banner-btn">
+            Practice Tenses →
+          </Link>
         </div>
-        <Link to="/grammar/exercise" className="exercise-banner-btn">
-          Start Exercise →
-        </Link>
+
+        <div className="grammar-exercise-banner te-form-banner">
+          <div className="exercise-banner-content">
+            <div className="exercise-banner-tag">Interactive Practice</div>
+            <h2 className="exercise-banner-title">Te-Form & Continuous</h2>
+            <p className="exercise-banner-desc">
+              Master Te-Form (〜て / 〜で) sound changes and express ongoing actions (〜ている / 〜ています).
+            </p>
+          </div>
+          <Link to="/grammar/exercise/te-form" className="exercise-banner-btn">
+            Practice Te-Form →
+          </Link>
+        </div>
       </div>
 
       <div className="grammar-detail-content">

@@ -136,17 +136,24 @@ export default function Grammar({ loaderData }: Route.ComponentProps) {
           <p className="grammar-description">{article.content}</p>
         </section>
 
-        {["past-tense", "polite-form", "verb-basics", "godan-verb", "ichidan-verb", "suru-verb"].includes(article.id) && (
+        {["past-tense", "polite-form", "verb-basics", "godan-verb", "ichidan-verb", "suru-verb", "te-form"].includes(article.id) && (
           <section className="detail-section practice-callout-section">
-            <div className="grammar-exercise-banner">
+            <div className={`grammar-exercise-banner ${article.id === "te-form" ? "te-form-banner" : ""}`}>
               <div className="exercise-banner-content">
                 <div className="exercise-banner-tag">Practice This Topic</div>
-                <h2 className="exercise-banner-title">Verb Conjugation Exercise</h2>
+                <h2 className="exercise-banner-title">
+                  {article.id === "te-form" ? "Te-Form & Continuous Action Exercise" : "Verb Conjugation Exercise"}
+                </h2>
                 <p className="exercise-banner-desc">
-                  Practice past and present tense conjugations with 10 questions using vocabulary from your database.
+                  {article.id === "te-form"
+                    ? "Practice converting verbs into Te-form (〜て) and expressing ongoing action (〜ている) with 10 interactive questions."
+                    : "Practice past and present tense conjugations with 10 questions using vocabulary from your database."}
                 </p>
               </div>
-              <Link to="/grammar/exercise" className="exercise-banner-btn">
+              <Link 
+                to={article.id === "te-form" ? "/grammar/exercise/te-form" : "/grammar/exercise/tenses"} 
+                className="exercise-banner-btn"
+              >
                 Start Practice →
               </Link>
             </div>
