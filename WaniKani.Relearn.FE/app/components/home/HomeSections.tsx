@@ -195,10 +195,10 @@ export const LiveSentenceDemo = () => {
 
 export const QuickLevelSelector = () => {
   const levelRanges = [
-    { label: "Levels 1–10", desc: "Beginner", min: 1, max: 10, color: "var(--color-vocabulary-block)" },
-    { label: "Levels 11–20", desc: "Intermediate", min: 11, max: 20, color: "var(--color-kanji-block)" },
-    { label: "Levels 21–30", desc: "Upper Inter.", min: 21, max: 30, color: "var(--color-radical-block)" },
-    { label: "Levels 31–60", desc: "Advanced", min: 31, max: 60, color: "#8A3FFC" },
+    { label: "Levels 1–10", desc: "Beginner", stage: "JLPT N5", min: 1, max: 10, color: "var(--color-vocabulary-block)" },
+    { label: "Levels 11–20", desc: "Intermediate", stage: "JLPT N4", min: 11, max: 20, color: "var(--color-kanji-block)" },
+    { label: "Levels 21–30", desc: "Upper Inter.", stage: "JLPT N3", min: 21, max: 30, color: "var(--color-radical-block)" },
+    { label: "Levels 31–60", desc: "Advanced", stage: "JLPT N2–N1", min: 31, max: 60, color: "#8A3FFC" },
   ];
 
   return (
@@ -213,8 +213,13 @@ export const QuickLevelSelector = () => {
           >
             <div className="level-pill-accent" style={{ background: r.color }} />
             <div className="level-pill-info">
-              <span className="level-pill-label">{r.label}</span>
-              <span className="level-pill-desc">{r.desc}</span>
+              <div className="level-pill-header">
+                <span className="level-pill-label">{r.label}</span>
+                <span className="level-pill-stage" style={{ color: r.color }}>
+                  {r.stage}
+                </span>
+              </div>
+              <span className="level-pill-desc">{r.desc} Reading Practice</span>
             </div>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="level-pill-arrow">
               <polyline points="9 18 15 12 9 6"></polyline>
@@ -232,7 +237,7 @@ export const FeatureShowcaseGrid = () => {
       icon: "⚡",
       badge: "Interactive Practice",
       title: "Conjugation Exercises",
-      description: "Drill verb tenses, polite speech, and Te-form continuous action (〜ている) with dynamic question generators.",
+      description: "Drill Japanese verb tenses, polite speech, and Te-form continuous action (〜ている) with 10-question practice rounds and instant feedback.",
       link: "/grammar/exercise",
       cta: "Try Exercises",
       colorClass: "feat-grammar"
@@ -241,7 +246,7 @@ export const FeatureShowcaseGrid = () => {
       icon: "📖",
       badge: "Reading Engine",
       title: "Morpheme Breakdowns",
-      description: "Translate real sentences with clickable words, furigana toggles, and instant grammatical role inspection.",
+      description: "Read real Japanese sentences with clickable word breakdowns, toggleable furigana readings, and grammatical role analysis.",
       link: "/reading-practice",
       cta: "Start Reading",
       colorClass: "feat-reading"
@@ -250,7 +255,7 @@ export const FeatureShowcaseGrid = () => {
       icon: "🔤",
       badge: "Smart Typing",
       title: "Built-In Japanese IME",
-      description: "Type Japanese anywhere in the app with automatic Romaji-to-Hiragana conversion and live Kanji candidate autocompletion.",
+      description: "Search kanji and vocabulary naturally anywhere in the app with automatic Romaji-to-Kana conversion and live candidate autocompletion.",
       link: "/search",
       cta: "Try Search Bar",
       colorClass: "feat-vocab"
@@ -259,7 +264,7 @@ export const FeatureShowcaseGrid = () => {
       icon: "📦",
       badge: "Custom Decks",
       title: "Personal Study Lists",
-      description: "Bookmark difficult kanji and vocabulary to your personal study list for targeted review anytime.",
+      description: "Bookmark difficult kanji and vocabulary directly to \"My Box\" for focused personal review sessions anytime.",
       link: "/kanji",
       cta: "Open My Box",
       colorClass: "feat-kanji"
@@ -273,7 +278,9 @@ export const FeatureShowcaseGrid = () => {
         {features.map((f) => (
           <div key={f.title} className={`feature-card ${f.colorClass}`}>
             <div className="feature-card-top">
-              <span className="feature-card-icon">{f.icon}</span>
+              <div className="feature-card-icon-wrap">
+                <span className="feature-card-icon">{f.icon}</span>
+              </div>
               <span className="feature-card-badge">{f.badge}</span>
             </div>
             <h3 className="feature-card-title">{f.title}</h3>

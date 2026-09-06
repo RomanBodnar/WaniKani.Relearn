@@ -14,6 +14,7 @@ Project Description
 - [ ] Set up logging: Choose logging framework  
 - [ ] Add rate limit handling  
 - [ ] Add global exception handling  
+- [ ] Search & IME: Add reading and English meaning autocomplete hints to KanjiCandidateDropdown items (e.g. 機器 -> きき · machine)
 
 ### In Progress
 

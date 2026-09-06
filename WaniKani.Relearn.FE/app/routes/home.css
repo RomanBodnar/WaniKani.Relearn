@@ -613,10 +613,27 @@
   flex: 1;
 }
 
+.level-pill-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  margin-bottom: 2px;
+}
+
 .level-pill-label {
   font-size: var(--font-size-base, 15px);
   font-weight: 700;
   color: #0f172a;
+}
+
+.level-pill-stage {
+  font-size: var(--font-size-xs, 11px);
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: var(--radius-xs, 6px);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid currentColor;
+  letter-spacing: 0.02em;
 }
 
 .level-pill-desc {
@@ -668,8 +685,44 @@
   justify-content: space-between;
 }
 
+.feature-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.feature-card:hover .feature-card-icon-wrap {
+  transform: scale(1.06);
+}
+
+.feat-grammar .feature-card-icon-wrap {
+  background: rgba(0, 180, 216, 0.08);
+  border-color: rgba(0, 180, 216, 0.25);
+}
+
+.feat-reading .feature-card-icon-wrap {
+  background: rgba(138, 63, 252, 0.08);
+  border-color: rgba(138, 63, 252, 0.25);
+}
+
+.feat-vocab .feature-card-icon-wrap {
+  background: rgba(0, 200, 83, 0.08);
+  border-color: rgba(0, 200, 83, 0.25);
+}
+
+.feat-kanji .feature-card-icon-wrap {
+  background: rgba(255, 109, 0, 0.08);
+  border-color: rgba(255, 109, 0, 0.25);
+}
+
 .feature-card-icon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .feature-card-badge {
@@ -847,10 +900,12 @@
 .dark .level-pill-card { background: #1e293b; border-color: #334155; }
 .dark .level-pill-label { color: #f8fafc; }
 .dark .level-pill-desc { color: #94a3b8; }
+.dark .level-pill-stage { background: rgba(255, 255, 255, 0.06); }
 
 .dark .feature-card { background: #1e293b; border-color: #334155; }
 .dark .feature-card-title { color: #f8fafc; }
 .dark .feature-card-desc { color: #94a3b8; }
+.dark .feature-card-icon-wrap { background: #0f172a; border-color: #334155; }
 
 .dark .feat-grammar .feature-card-badge { background: rgba(0, 180, 216, 0.2); color: #38bdf8; }
 .dark .feat-grammar .feature-card-link { color: #38bdf8; }

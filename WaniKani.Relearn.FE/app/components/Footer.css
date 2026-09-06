@@ -1,47 +1,95 @@
 .footer {
   background-color: white;
   border-top: 1px solid #e2e8f0;
-  padding: 20px 0 15px;
+  padding: 40px 0 24px;
   margin-top: auto;
   /* Pushes footer to bottom in a flex container */
   width: 100%;
 }
 
 .footer-container {
-  max-width: 1280px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .footer-content {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 36px;
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  max-width: 320px;
 }
 
 .footer-logo {
-  font-family: var(--font-yusei);
+  font-family: var(--font-yusei, inherit);
   font-size: 1.75rem;
   font-weight: 800;
-  color: #FE3365;
+  color: var(--color-pink-hot, #FE3365);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.9;
 }
 
 .footer-tagline {
   color: #64748b;
-  font-size: 0.95rem;
-  max-width: 400px;
+  font-size: 0.88rem;
   line-height: 1.6;
+  margin: 0;
+}
+
+.footer-nav-grid {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-title {
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  margin: 0;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav-link {
+  color: #64748b;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav-link:hover {
+  color: var(--color-pink-hot, #FE3365);
 }
 
 .footer-bottom {
@@ -49,12 +97,15 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
 }
 
 .footer-copyright {
   color: #94a3b8;
   font-size: 0.875rem;
+  margin: 0;
 }
 
 .footer-legal-links {
@@ -95,6 +146,36 @@
   text-decoration: underline;
 }
 
+/* Dark Mode */
+.dark .footer {
+  background-color: #0f172a;
+  border-color: #1e293b;
+}
+
+.dark .footer-links-title {
+  color: #f1f5f9;
+}
+
+.dark .footer-tagline {
+  color: #94a3b8;
+}
+
+.dark .footer-nav-link {
+  color: #94a3b8;
+}
+
+.dark .footer-nav-link:hover {
+  color: #ff4d7a;
+}
+
+.dark .footer-bottom {
+  border-color: #1e293b;
+}
+
+.dark .footer-copyright {
+  color: #64748b;
+}
+
 .dark .footer-legal-link,
 .dark .footer-legal-button {
   color: #94a3b8;
@@ -106,69 +187,36 @@
 }
 
 .dark .footer-link-divider {
-  color: #475569;
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  html:not(.light):not(.dark) .footer {
-    background-color: #1e293b;
-    border-color: #334155;
-  }
-
-  html:not(.light):not(.dark) .footer-links-title {
-    color: #f1f5f9;
-  }
-
-  html:not(.light):not(.dark) .footer-tagline,
-  html:not(.light):not(.dark) .footer-links a {
-    color: #94a3b8;
-  }
-
-  html:not(.light):not(.dark) .footer-bottom {
-    border-color: #334155;
-  }
-
-  html:not(.light):not(.dark) .footer-links a:hover {
-    color: #ff4d7a;
-  }
-}
-
-.dark .footer {
-  background-color: #1e293b;
-  border-color: #334155;
-}
-
-.dark .footer-links-title {
-  color: #f1f5f9;
-}
-
-.dark .footer-tagline,
-.dark .footer-links a {
-  color: #94a3b8;
-}
-
-.dark .footer-bottom {
-  border-color: #334155;
-}
-
-.dark .footer-links a:hover {
-  color: #ff4d7a;
+  color: #334155;
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .footer {
-    padding: 40px 0 20px;
+    padding: 32px 0 20px;
   }
 
   .footer-content {
     flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-nav-grid {
     gap: 32px;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .footer-bottom {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav-grid {
+    flex-direction: column;
+    gap: 20px;
   }
 }
