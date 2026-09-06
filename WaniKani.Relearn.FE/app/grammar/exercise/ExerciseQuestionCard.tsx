@@ -165,11 +165,15 @@ export function ExerciseQuestionCard({
           {question.promptReading && question.promptReading !== question.promptText && (
             <button 
               type="button" 
-              className="toggle-reading-btn"
+              className={`toggle-reading-btn ${showReading ? "active" : ""}`}
               onClick={() => setShowReading(prev => !prev)}
               title="Toggle Kana reading hint"
+              aria-pressed={showReading}
             >
-              {showReading ? question.promptReading : "Show Reading"}
+              <span className="toggle-reading-icon" aria-hidden="true">👁</span>
+              <span className="toggle-reading-text">
+                {showReading ? question.promptReading : "Show Reading"}
+              </span>
             </button>
           )}
         </div>
@@ -201,7 +205,7 @@ export function ExerciseQuestionCard({
           {!hasSubmitted ? (
             <button 
               type="submit" 
-              className="exercise-submit-btn"
+              className={`exercise-submit-btn ${inputValue.trim() ? "is-active" : ""}`}
               disabled={!inputValue.trim()}
             >
               Check
@@ -217,6 +221,11 @@ export function ExerciseQuestionCard({
             </button>
           )}
         </div>
+        {!hasSubmitted && inputValue.trim() && (
+          <div className="exercise-input-hint">
+            Press <kbd>Enter ↵</kbd> to check
+          </div>
+        )}
       </form>
 
       {/* Feedback Overlay / Section */}

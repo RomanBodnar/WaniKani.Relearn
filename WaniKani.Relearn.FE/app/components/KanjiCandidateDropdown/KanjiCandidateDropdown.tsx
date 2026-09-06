@@ -45,8 +45,8 @@ export function KanjiCandidateDropdown({
             <span className="kanji-candidate-index">{idx + 1}.</span>
             <span className="kanji-candidate-text">{candidate}</span>
           </div>
-          {idx === 0 && (
-            <span className="kanji-candidate-hint">Space / Enter ↵</span>
+          {idx === selectedIndex && (
+            <span className="kanji-candidate-hint">Enter ↵</span>
           )}
         </div>
       ))}

@@ -25,7 +25,7 @@ function SearchSection({ title, badge, variant, subjects }: SearchSectionProps) 
   if (subjects.length === 0) return null;
 
   return (
-    <section className="search-section">
+    <section className="search-section" id={`search-section-${variant}`}>
       <div className="search-section-header">
         <span className={`search-section-badge search-section-badge-${variant}`}>{badge}</span>
         <h2 className="search-section-title">{title}</h2>
@@ -153,22 +153,25 @@ export default function Search() {
           {totalResults > 0 && (
             <div className="search-stats">
               {filteredRadicals.length > 0 && (
-                <span className="search-stat-chip">
+                <a href="#search-section-radical" className="search-stat-chip">
                   <span className="search-stat-chip-dot search-stat-chip-dot-radical" />
-                  {filteredRadicals.length} radical{filteredRadicals.length !== 1 ? "s" : ""}
-                </span>
+                  <span>{filteredRadicals.length} radical{filteredRadicals.length !== 1 ? "s" : ""}</span>
+                  <span className="search-stat-chip-arrow">↓</span>
+                </a>
               )}
               {filteredKanji.length > 0 && (
-                <span className="search-stat-chip">
+                <a href="#search-section-kanji" className="search-stat-chip">
                   <span className="search-stat-chip-dot search-stat-chip-dot-kanji" />
-                  {filteredKanji.length} kanji
-                </span>
+                  <span>{filteredKanji.length} kanji</span>
+                  <span className="search-stat-chip-arrow">↓</span>
+                </a>
               )}
               {filteredVocabulary.length > 0 && (
-                <span className="search-stat-chip">
+                <a href="#search-section-vocabulary" className="search-stat-chip">
                   <span className="search-stat-chip-dot search-stat-chip-dot-vocabulary" />
-                  {filteredVocabulary.length} vocabulary
-                </span>
+                  <span>{filteredVocabulary.length} vocabulary</span>
+                  <span className="search-stat-chip-arrow">↓</span>
+                </a>
               )}
             </div>
           )}

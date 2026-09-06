@@ -111,7 +111,7 @@ export default function GrammarExercise() {
   const currentQuestion = questions[currentIndex];
   const totalQuestions = questions.length;
   const currentScore = sessionResults.filter(r => r.isCorrect).length;
-  const progressPercent = totalQuestions > 0 ? ((currentIndex + (isSessionComplete ? 1 : 0)) / totalQuestions) * 100 : 0;
+  const progressPercent = totalQuestions > 0 ? ((currentIndex + 1) / totalQuestions) * 100 : 0;
 
   return (
     <div className="grammar-exercise-container">
