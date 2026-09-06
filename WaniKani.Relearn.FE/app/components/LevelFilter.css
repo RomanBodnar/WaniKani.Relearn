@@ -108,31 +108,93 @@
   color: #f8fafc;
 }
 
+/* Scoped active color variables */
+.level-filter-container,
+.level-filter-group {
+  --filter-active-color: var(--color-kanji-block, #FF6D00);
+  --filter-active-shadow: rgba(255, 109, 0, 0.25);
+  --filter-decade-bg: #fff7ed;
+  --filter-decade-border: #fdba74;
+  --filter-decade-text: #c2410c;
+  --filter-decade-bg-dark: rgba(255, 109, 0, 0.15);
+  --filter-decade-border-dark: rgba(255, 109, 0, 0.4);
+  --filter-decade-text-dark: #ffedd5;
+}
+
+.level-filter-container.level-filter-radical,
+.level-filter-group.level-filter-radical {
+  --filter-active-color: var(--color-radical-block, #2962FF);
+  --filter-active-shadow: rgba(41, 98, 255, 0.25);
+  --filter-decade-bg: #eff6ff;
+  --filter-decade-border: #93c5fd;
+  --filter-decade-text: #1d4ed8;
+  --filter-decade-bg-dark: rgba(41, 98, 255, 0.15);
+  --filter-decade-border-dark: rgba(41, 98, 255, 0.4);
+  --filter-decade-text-dark: #bfdbfe;
+}
+
+.level-filter-container.level-filter-kanji,
+.level-filter-group.level-filter-kanji {
+  --filter-active-color: var(--color-kanji-block, #FF6D00);
+  --filter-active-shadow: rgba(255, 109, 0, 0.25);
+  --filter-decade-bg: #fff7ed;
+  --filter-decade-border: #fdba74;
+  --filter-decade-text: #c2410c;
+  --filter-decade-bg-dark: rgba(255, 109, 0, 0.15);
+  --filter-decade-border-dark: rgba(255, 109, 0, 0.4);
+  --filter-decade-text-dark: #ffedd5;
+}
+
+.level-filter-container.level-filter-vocabulary,
+.level-filter-group.level-filter-vocabulary {
+  --filter-active-color: var(--color-vocabulary-block, #00C853);
+  --filter-active-shadow: rgba(0, 200, 83, 0.25);
+  --filter-decade-bg: #f0fdf4;
+  --filter-decade-border: #86efac;
+  --filter-decade-text: #15803d;
+  --filter-decade-bg-dark: rgba(0, 200, 83, 0.15);
+  --filter-decade-border-dark: rgba(0, 200, 83, 0.4);
+  --filter-decade-text-dark: #bbf7d0;
+}
+
+.level-filter-container.level-filter-reading,
+.level-filter-group.level-filter-reading,
+.reading-practice-controls .level-filter-group {
+  --filter-active-color: var(--color-reading-block, #8A3FFC);
+  --filter-active-shadow: rgba(138, 63, 252, 0.25);
+  --filter-decade-bg: #faf5ff;
+  --filter-decade-border: #d8b4fe;
+  --filter-decade-text: #7e22ce;
+  --filter-decade-bg-dark: rgba(138, 63, 252, 0.15);
+  --filter-decade-border-dark: rgba(138, 63, 252, 0.4);
+  --filter-decade-text-dark: #f3e8ff;
+}
+
 .filter-button.active {
   background: #ffffff;
   color: #0f172a;
-  border-color: #f97316;
+  border-color: var(--filter-active-color);
   font-weight: 600;
-  box-shadow: 0 0 0 1px #f97316, 0 2px 4px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 0 0 1px var(--filter-active-color), 0 2px 4px var(--filter-active-shadow);
 }
 
 .dark .filter-button.active {
-  background: #f97316;
+  background: var(--filter-active-color);
   color: #ffffff;
-  border-color: #f97316;
-  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.3);
+  border-color: var(--filter-active-color);
+  box-shadow: 0 2px 6px var(--filter-active-shadow);
 }
 
 .decade-button.decade-active {
-  border-color: #fdba74;
-  background: #fff7ed;
-  color: #c2410c;
+  border-color: var(--filter-decade-border);
+  background: var(--filter-decade-bg);
+  color: var(--filter-decade-text);
 }
 
 .dark .decade-button.decade-active {
-  background: rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.4);
-  color: #ffedd5;
+  background: var(--filter-decade-bg-dark);
+  border-color: var(--filter-decade-border-dark);
+  color: var(--filter-decade-text-dark);
 }
 
 
@@ -197,15 +259,15 @@
 }
 
 .sub-level-button:hover {
-  border-color: #f97316;
-  color: #f97316;
+  border-color: var(--filter-active-color);
+  color: var(--filter-active-color);
 }
 
 .sub-level-button.active {
-  background: #f97316;
+  background: var(--filter-active-color);
   color: #ffffff;
-  border-color: #f97316;
-  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.25);
+  border-color: var(--filter-active-color);
+  box-shadow: 0 2px 4px var(--filter-active-shadow);
 }
 
 @keyframes fadeIn {

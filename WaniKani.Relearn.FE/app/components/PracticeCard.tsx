@@ -17,7 +17,16 @@ interface PracticeCardProps {
 }
 
 export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) => {
-  const [fullData, setFullData] = useState<Subject | null>(subjectCache.get(subject.Id) || null);
+  // If the passed subject already has meanings/readings loaded (from the list endpoint), use it immediately
+  const hasCompleteData = Boolean(
+    (subject.Meanings && subject.Meanings.length > 0) ||
+    (subject.Readings && subject.Readings.length > 0)
+  );
+
+  const [fullData, setFullData] = useState<Subject | null>(() => {
+    if (hasCompleteData) return subject;
+    return subjectCache.get(subject.Id) || null;
+  });
   const [isLoading, setIsLoading] = useState(false);
   const { isBookmarked, addBookmark, removeBookmark, isLoggedIn } = useBookmarks();
 
@@ -25,7 +34,7 @@ export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) 
 
   useEffect(() => {
     if (!isActive) return;
-    if (fullData) return; // already cached
+    if (fullData || hasCompleteData) return; // already complete or cached, prevent redundant fetch
 
     let isMounted = true;
     const fetchFullData = async () => {
@@ -49,7 +58,7 @@ export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) 
     fetchFullData();
 
     return () => { isMounted = false; };
-  }, [isActive, subject.Id, fullData]);
+  }, [isActive, subject.Id, fullData, hasCompleteData]);
 
   const handleBookmarkClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -127,7 +136,7 @@ export const PracticeCard = ({ subject, variant, isActive }: PracticeCardProps) 
           </div>
         )}
 
-        {isLoading && !fullData && (
+        {isLoading && !fullData && !hasCompleteData && (
           <div className="practice-card-loading">Loading details...</div>
         )}
       </div>

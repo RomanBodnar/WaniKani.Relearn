@@ -4,6 +4,14 @@ import { useState } from "react";
 export const HomeDivider = () => <hr className="home-divider" />;
 
 export const ReadingHeroHeader = () => {
+  const handleScrollToDemo = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const demoEl = document.getElementById("demo-sentence-section");
+    if (demoEl) {
+      demoEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <section className="home-hero-section">
       <h1 className="home-hero-headline">
@@ -15,17 +23,14 @@ export const ReadingHeroHeader = () => {
       </p>
       <div className="home-hero-actions">
         <Link to="/grammar" className="btn-hero-primary">
-          <span className="btn-icon">⚡</span>
-          Grammar & Exercises
+          Start Practicing
+          <span className="btn-hero-arrow" aria-hidden="true">→</span>
         </Link>
-        <Link to="/reading-practice" className="btn-hero-secondary">
-          <span className="btn-icon">📖</span>
-          Sentence Reading
-        </Link>
-        <Link to="/kanji" className="btn-hero-secondary">
-          <span className="btn-icon">🎴</span>
-          Kanji & Vocab
-        </Link>
+        <a href="#demo-sentence-section" onClick={handleScrollToDemo} className="btn-hero-secondary">
+          <span className="btn-icon">✨</span>
+          Try Live Demo
+          <span className="btn-hero-arrow-down" aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
   );
@@ -71,6 +76,14 @@ export const CorePillarsHub = () => {
             Read authentic Japanese sentences broken down by grammatical components with instant furigana and translations.
           </p>
           <div className="pillar-action-links">
+            <Link to="/reading-practice" className="pillar-sublink pillar-sublink-reading">
+              <span>Interactive Furigana Breakdowns</span>
+              <span className="sublink-arrow">→</span>
+            </Link>
+            <Link to="/reading-practice?minLevel=1&maxLevel=10" className="pillar-sublink pillar-sublink-reading">
+              <span>Practice by Level (JLPT & WaniKani)</span>
+              <span className="sublink-arrow">→</span>
+            </Link>
             <Link to="/reading-practice" className="pillar-main-btn btn-reading">
               Start Reading Practice →
             </Link>
@@ -88,13 +101,16 @@ export const CorePillarsHub = () => {
             Browse 60 levels of radicals, kanji, and vocabulary with instant modal previews and build your own custom study lists.
           </p>
           <div className="pillar-action-links">
-            <div className="pillar-quick-tags">
-              <Link to="/radicals" className="pillar-tag-link tag-radicals">Radicals</Link>
-              <Link to="/kanji" className="pillar-tag-link tag-kanji">Kanji</Link>
-              <Link to="/vocabulary" className="pillar-tag-link tag-vocab">Vocabulary</Link>
-            </div>
+            <Link to="/kanji" className="pillar-sublink pillar-sublink-kanji">
+              <span>Radicals & Kanji Library</span>
+              <span className="sublink-arrow">→</span>
+            </Link>
+            <Link to="/vocabulary" className="pillar-sublink pillar-sublink-kanji">
+              <span>Vocabulary Decks & "My Box"</span>
+              <span className="sublink-arrow">→</span>
+            </Link>
             <Link to="/kanji" className="pillar-main-btn btn-kanji">
-              Explore Subjects →
+              Explore All Subjects →
             </Link>
           </div>
         </div>
@@ -118,9 +134,14 @@ export const LiveSentenceDemo = () => {
   ];
 
   return (
-    <section className="home-demo-section">
+    <section id="demo-sentence-section" className="home-demo-section">
       <div className="demo-card-header">
-        <span className="demo-card-badge">Interactive Sentence Breakdown</span>
+        <div className="demo-card-header-left">
+          <span className="demo-card-badge">Interactive Sentence Breakdown</span>
+          <span className="demo-onboarding-hint">
+            <span className="hint-hand" aria-hidden="true">👆</span> Click any word for instant breakdown
+          </span>
+        </div>
         <span className="demo-card-level">Lv. 10 Sample</span>
       </div>
       <div className="demo-card-body">

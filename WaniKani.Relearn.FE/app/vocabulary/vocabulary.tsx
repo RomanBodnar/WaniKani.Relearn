@@ -148,10 +148,11 @@ export default function Vocabulary({ loaderData: initialData }: Route.ComponentP
       <FloatingWatermarks chars={["食", "話", "見", "行", "水", "時", "人", "月"]} />
       <h1 className="subjects-title">Vocabulary</h1>
 
-      <div className="level-filter-container">
+      <div className="level-filter-container level-filter-vocabulary">
         <LevelFilter
           selectedRange={selectedRange}
           onRangeChange={handleRangeChange}
+          variant="vocabulary"
         />
       </div>
 

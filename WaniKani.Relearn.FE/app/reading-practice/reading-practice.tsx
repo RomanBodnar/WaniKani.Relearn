@@ -219,6 +219,7 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
         <LevelFilter
           selectedRange={selectedRange}
           onRangeChange={setSelectedRange}
+          variant="reading"
           headerExtra={
             <div className="status-filter-tabs" role="tablist" aria-label="Sentence practice filter">
               <button

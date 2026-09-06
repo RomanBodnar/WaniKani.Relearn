@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./LevelFilter.css";
 
 export type LevelRange = [number, number] | null;
+export type LevelFilterVariant = "radical" | "kanji" | "vocabulary" | "reading";
 
 interface LevelFilterProps {
   selectedRange: LevelRange;
   onRangeChange: (range: LevelRange) => void;
   headerExtra?: React.ReactNode;
+  variant?: LevelFilterVariant;
 }
 
 const DECADES = [
@@ -22,6 +24,7 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
   selectedRange,
   onRangeChange,
   headerExtra,
+  variant = "kanji",
 }) => {
   // Determine if a single level is selected
   const isSingleLevel = selectedRange !== null && selectedRange[0] === selectedRange[1];
@@ -68,7 +71,7 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
   };
 
   return (
-    <div className="level-filter-group">
+    <div className={`level-filter-group level-filter-${variant}`}>
       {/* Render top header bar ONLY if headerExtra exists */}
       {headerExtra ? (
         <>

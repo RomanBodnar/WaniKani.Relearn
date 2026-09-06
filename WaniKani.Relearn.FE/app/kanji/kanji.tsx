@@ -170,10 +170,11 @@ export default function Kanji({ loaderData: initialData }: Route.ComponentProps)
       <FloatingWatermarks />
       <h1 className="subjects-title">Kanji</h1>
 
-      <div className="level-filter-container">
+      <div className="level-filter-container level-filter-kanji">
         <LevelFilter
           selectedRange={selectedRange}
           onRangeChange={handleRangeChange}
+          variant="kanji"
         />
         <JLPTFilter
           selectedLevels={selectedJlpt}
