@@ -101,6 +101,7 @@ export function ReadingSentenceCard({
                   key={`morpheme-${mIdx}-${morpheme.subjectId}`}
                   onClick={(e) => handlePillClick(e, morpheme.subjectId!)}
                   className={`morpheme-link ${isActive ? 'active' : ''}`}
+                  title={isActive ? "Hide breakdown" : "Click to view breakdown"}
                 >
                   {previousSurface}{morpheme.surface}
                 </button>
@@ -118,6 +119,7 @@ export function ReadingSentenceCard({
                   key={`morpheme-${mIdx}-${subjectId}`}
                   onClick={(e) => handlePillClick(e, subjectId)}
                   className={`morpheme-link ${isActive ? 'active' : ''}`}
+                  title={isActive ? "Hide breakdown" : "Click to view breakdown"}
                 >
                   {previousSurface}{morpheme.surface}
                 </button>
@@ -146,6 +148,7 @@ export function ReadingSentenceCard({
                   key={`morpheme-${mIdx}-${morpheme.subjectId}`}
                   onClick={(e) => handlePillClick(e, morpheme.subjectId!)}
                   className={`morpheme-link ${isActive ? 'active' : ''}`}
+                  title={isActive ? "Hide breakdown" : "Click to view breakdown"}
                 >
                   {morpheme.surface}
                 </button>
@@ -173,6 +176,7 @@ export function ReadingSentenceCard({
                   key={`vocab-${vocab.subjectId}`}
                   onClick={(e) => handlePillClick(e, vocab.subjectId)}
                   className={`sentence-tag sentence-tag-vocab ${activeSubjectId === vocab.subjectId ? 'active' : ''}`}
+                  title={`Inspect vocabulary: ${vocab.characters}`}
                 >
                   {vocab.characters}
                 </button>
@@ -192,6 +196,7 @@ export function ReadingSentenceCard({
                   key={`kanji-${kanji.subjectId}`}
                   onClick={(e) => handlePillClick(e, kanji.subjectId)}
                   className={`sentence-tag sentence-tag-kanji ${activeSubjectId === kanji.subjectId ? 'active' : ''}`}
+                  title={`Inspect kanji: ${kanji.characters}`}
                 >
                   {kanji.characters}
                 </button>
@@ -220,14 +225,14 @@ export function ReadingSentenceCard({
         />
       </div>
 
-      {/* Reveal translation */}
-      <div className="sentence-reveal-row">
+      {/* Action buttons row */}
+      <div className="sentence-actions-row">
         <button
           type="button"
           className={`sentence-reveal-btn ${isRevealed ? "revealed" : ""}`}
           onClick={handleRevealToggle}
         >
-          {isRevealed ? "✓ Translation" : "👁 Show Translation"}
+          {isRevealed ? "Hide Translation" : "👁 Show Translation"}
         </button>
 
         {onFocus && (
@@ -235,15 +240,20 @@ export function ReadingSentenceCard({
             type="button"
             className="sentence-reveal-btn focus-btn"
             onClick={() => onFocus(index)}
+            title="Expand in distraction-free Focus Mode"
           >
             ⛶ Focus Mode
           </button>
         )}
-
-        {isRevealed && (
-          <p className="sentence-en">{sentence.en}</p>
-        )}
       </div>
+
+      {/* Revealed Translation Box */}
+      {isRevealed && (
+        <div className="sentence-en-box">
+          <span className="sentence-en-label">English Translation</span>
+          <p className="sentence-en-text">{sentence.en}</p>
+        </div>
+      )}
     </div>
   );
 }

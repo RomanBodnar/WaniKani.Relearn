@@ -251,6 +251,22 @@ export default function ReadingPractice({ loaderData: initialData }: Route.Compo
             </div>
           }
         />
+
+        <div className="reading-practice-legend">
+          <span className="reading-legend-hint">
+            💡 Click any underlined word or tag to view morpheme breakdown & definitions
+          </span>
+          <div className="reading-legend-tags">
+            <span className="reading-legend-tag vocab">
+              <span className="legend-tag-dot vocab" />
+              Vocabulary
+            </span>
+            <span className="reading-legend-tag kanji">
+              <span className="legend-tag-dot kanji" />
+              Kanji
+            </span>
+          </div>
+        </div>
       </div>
 
       <p className="reading-practice-count">

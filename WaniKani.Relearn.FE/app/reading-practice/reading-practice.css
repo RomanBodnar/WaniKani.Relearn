@@ -259,9 +259,8 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 6px;
-  border: none;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
@@ -270,38 +269,39 @@
   font-family: var(--font-jp);
 }
 
-.sentence-tag:hover:not(.active) {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.sentence-tag.active {
-  transform: scale(1.05);
-  position: relative;
-  z-index: 10;
-}
-
-.sentence-tag-vocab.active {
-  box-shadow: 0 4px 10px -2px var(--color-wk-vocabulary);
-}
-
-.sentence-tag-kanji.active {
-  box-shadow: 0 4px 10px -2px var(--color-wk-kanji);
-}
-
 .sentence-tag-vocab {
+  background: rgba(0, 200, 83, 0.1);
+  color: #008542;
+  border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.sentence-tag-vocab:hover,
+.sentence-tag-vocab.active {
   background: var(--color-wk-vocabulary);
   color: white;
+  border-color: var(--color-wk-vocabulary);
+  box-shadow: 0 2px 8px rgba(0, 200, 83, 0.3);
+  transform: translateY(-1px);
 }
 
 .sentence-tag-kanji {
+  background: rgba(255, 109, 0, 0.1);
+  color: #d34e00;
+  border: 1px solid rgba(255, 109, 0, 0.3);
+}
+
+.sentence-tag-kanji:hover,
+.sentence-tag-kanji.active {
   background: var(--color-wk-kanji);
   color: white;
+  border-color: var(--color-wk-kanji);
+  box-shadow: 0 2px 8px rgba(255, 109, 0, 0.3);
+  transform: translateY(-1px);
 }
 
 /* ===== Translation Input ===== */
 .sentence-input-wrapper {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .sentence-input {
@@ -309,7 +309,7 @@
   padding: 12px 16px;
   font-size: 15px;
   font-family: inherit;
-  border: 2px solid #e2e8f0;
+  border: 1.5px solid #e2e8f0;
   border-radius: 8px;
   background: #f8fafc;
   color: #0f172a;
@@ -323,16 +323,16 @@
 }
 
 .sentence-input:focus {
-  border-color: #00aaff;
+  border-color: #5e17eb;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(94, 23, 235, 0.12);
 }
 
-/* ===== Show Translation Toggle ===== */
-.sentence-reveal-row {
+/* ===== Translation Actions & Reveal Box ===== */
+.sentence-actions-row {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
 }
 
 .sentence-reveal-btn {
@@ -342,10 +342,10 @@
   padding: 8px 16px;
   font-size: 13px;
   font-weight: 600;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   background: #ffffff;
-  color: #64748b;
+  color: #475569;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -354,8 +354,8 @@
 
 .sentence-reveal-btn:hover {
   background: #f1f5f9;
-  color: #334155;
-  border-color: #cbd5e1;
+  color: #0f172a;
+  border-color: #94a3b8;
 }
 
 .sentence-reveal-btn.revealed {
@@ -364,13 +364,78 @@
   color: #166534;
 }
 
-.sentence-en {
+.sentence-en-box {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-left: 3px solid #5e17eb;
+  border-radius: 6px;
+  animation: fade-in 0.25s ease-out;
+}
+
+.sentence-en-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5e17eb;
+  margin-bottom: 4px;
+}
+
+.sentence-en-text {
   font-size: 15px;
-  color: #334155;
+  color: #1e293b;
   line-height: 1.6;
   margin: 0;
-  padding-top: 8px;
-  animation: fade-in 0.3s ease-out;
+}
+
+/* ===== Reading Practice Legend ===== */
+.reading-practice-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #e2e8f0;
+  font-size: 12px;
+}
+
+.reading-legend-hint {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.reading-legend-tags {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reading-legend-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.legend-tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-tag-dot.vocab {
+  background-color: var(--color-wk-vocabulary);
+}
+
+.legend-tag-dot.kanji {
+  background-color: var(--color-wk-kanji);
 }
 
 @keyframes fade-in {
@@ -788,5 +853,42 @@
     background: rgba(34, 197, 94, 0.15);
     border-color: rgba(34, 197, 94, 0.4);
     color: #4ade80;
+  }
+
+  .sentence-en-box {
+    background: #0f172a;
+    border-left-color: #818cf8;
+  }
+
+  .sentence-en-label {
+    color: #a5b4fc;
+  }
+
+  .sentence-en-text {
+    color: #f1f5f9;
+  }
+
+  .reading-practice-legend {
+    border-top-color: #334155;
+  }
+
+  .reading-legend-hint {
+    color: #94a3b8;
+  }
+
+  .reading-legend-tag {
+    color: #cbd5e1;
+  }
+
+  .sentence-tag-vocab {
+    background: rgba(0, 200, 83, 0.15);
+    color: #4ade80;
+    border-color: rgba(0, 200, 83, 0.3);
+  }
+
+  .sentence-tag-kanji {
+    background: rgba(255, 109, 0, 0.15);
+    color: #fb923c;
+    border-color: rgba(255, 109, 0, 0.3);
   }
 }
