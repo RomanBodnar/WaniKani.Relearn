@@ -105,17 +105,27 @@ export const HomeUserDashboard = () => {
             <h3 className="dashboard-card-title">
               {readingBookmark ? "Resume Reading" : "Start Reading"}
             </h3>
+            {readingBookmark ? (
+              <div className="dashboard-reading-meta">
+                <span className="reading-meta-badge badge-page">Page {readingBookmark.page}</span>
+                {readingBookmark.minLevel && readingBookmark.maxLevel ? (
+                  <span className="reading-meta-badge badge-levels">
+                    Levels {readingBookmark.minLevel}–{readingBookmark.maxLevel}
+                  </span>
+                ) : (
+                  <span className="reading-meta-badge badge-levels">All Levels</span>
+                )}
+                {readingBookmark.sentenceIndex !== undefined && (
+                  <span className="reading-meta-badge badge-sentence">
+                    Sentence #{readingBookmark.sentenceIndex + 1}
+                  </span>
+                )}
+              </div>
+            ) : null}
             <p className="dashboard-card-desc">
-              {readingBookmark ? (
-                <>
-                  Page {readingBookmark.page}
-                  {readingBookmark.minLevel && readingBookmark.maxLevel
-                    ? ` • Levels ${readingBookmark.minLevel}–${readingBookmark.maxLevel}`
-                    : ""}
-                </>
-              ) : (
-                "Pick up authentic Japanese sentences with instant furigana breakdowns."
-              )}
+              {readingBookmark
+                ? "Pick up right where you left off in your authentic sentence reading practice."
+                : "Pick up authentic Japanese sentences with instant furigana breakdowns."}
             </p>
           </div>
 
@@ -157,13 +167,22 @@ export const HomeUserDashboard = () => {
 
           <div className="dashboard-card-footer">
             {bookmarks.length > 0 ? (
-              <a
-                href="#home-my-box-deck"
-                onClick={handleScrollToMyBox}
-                className="dashboard-action-btn btn-my-box-action"
-              >
-                Review My Box ↓
-              </a>
+              <div className="dashboard-action-group">
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("start-home-practice"))}
+                  className="dashboard-action-btn btn-my-box-action"
+                >
+                  Start Practice ⚡
+                </button>
+                <a
+                  href="#home-my-box-deck"
+                  onClick={handleScrollToMyBox}
+                  className="dashboard-sub-action-link"
+                >
+                  Browse Grid ({bookmarks.length}) ↓
+                </a>
+              </div>
             ) : (
               <Link to="/kanji" className="dashboard-action-btn btn-my-box-action">
                 Browse Kanji to Save →
@@ -182,6 +201,19 @@ export const HomeMyBoxDeck = () => {
   const [isPracticeMode, setIsPracticeMode] = useState(false);
   const [practiceStartIndex, setPracticeStartIndex] = useState(0);
   const [typeFilter, setTypeFilter] = useState<"all" | "radical" | "kanji" | "vocabulary">("all");
+
+  useEffect(() => {
+    const handleStartPractice = () => {
+      setIsBoxOpen(true);
+      setIsPracticeMode(true);
+      const deckEl = document.getElementById("home-my-box-deck");
+      if (deckEl) {
+        deckEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+    window.addEventListener("start-home-practice", handleStartPractice);
+    return () => window.removeEventListener("start-home-practice", handleStartPractice);
+  }, []);
 
   if (!isLoggedIn || bookmarks.length === 0) return null;
 

@@ -7,6 +7,14 @@ const NavigationBar = () => {
             <ul>
                 <li>
                     <NavLink
+                        to="/grammar"
+                        className={({ isActive }) => `nav-link nav-link-grammar ${isActive ? "active" : ""}`}
+                    >
+                        Grammar
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
                         to="/reading-practice"
                         className={({ isActive }) => `nav-link nav-link-reading ${isActive ? "active" : ""}`}
                     >
@@ -35,14 +43,6 @@ const NavigationBar = () => {
                         className={({ isActive }) => `nav-link nav-link-radicals ${isActive ? "active" : ""}`}
                     >
                         Radicals
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to="/grammar"
-                        className={({ isActive }) => `nav-link nav-link-grammar ${isActive ? "active" : ""}`}
-                    >
-                        Grammar
                     </NavLink>
                 </li>
             </ul>

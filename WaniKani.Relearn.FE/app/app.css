@@ -233,6 +233,13 @@ Vocabulary Line: #00E676 (Acid Green)
   @apply bg-sky-500/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-sky-500/20;
 }
 
+.subjects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
+}
+
 .my-box-grid {
   max-height: 480px;
   overflow-y: auto;
