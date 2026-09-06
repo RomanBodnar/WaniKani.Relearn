@@ -6,7 +6,7 @@ interface ParallaxBubbleProps {
   subject: {
     Characters?: string | null;
     CharacterImages?: any[];
-    Slug: string;
+    Slug?: string;
     Object: string;
   };
 }
@@ -62,7 +62,7 @@ export const ParallaxBubble = ({ subject }: ParallaxBubbleProps) => {
       <div style={{ opacity: isAnimating ? 0 : 1, transition: 'opacity 0.1s' }}>
         <SubjectCharacter
           subject={{ 
-            Characters: subject.Characters, 
+            Characters: subject.Characters ?? null, 
             CharacterImages: subject.CharacterImages, 
             Slug: subject.Slug 
           }}

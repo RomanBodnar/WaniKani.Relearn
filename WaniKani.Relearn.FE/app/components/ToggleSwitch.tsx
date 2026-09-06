@@ -19,7 +19,7 @@ export const ToggleSwitch = ({ checked, onChange, label, color }: ToggleSwitchPr
       />
       <div 
         className={`toggle-switch ${checked ? 'checked' : ''}`}
-        style={{ '--toggle-color': color || '#3b82f6' } as React.CSSProperties}
+        style={{ '--toggle-color': color || 'var(--color-pink-hot, #FE3365)' } as React.CSSProperties}
       >
         <div className="toggle-switch-thumb" />
       </div>

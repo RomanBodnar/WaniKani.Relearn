@@ -53,6 +53,27 @@
   gap: 6px;
 }
 
+.wk-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wk-token-helper-link {
+  font-size: 13px;
+  color: var(--color-pink-hot, #FE3365);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.wk-token-helper-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
 .wk-input-wrapper {
   position: relative;
   display: flex;

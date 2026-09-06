@@ -56,7 +56,7 @@ export default function Settings() {
               <ToggleSwitch
                 checked={settings.floatingWatermarks}
                 onChange={(checked) => updateSetting("floatingWatermarks", checked)}
-                color="var(--color-wk-kanji, #ff6d00)"
+                color="var(--color-pink-hot, #FE3365)"
               />
             </div>
           </div>

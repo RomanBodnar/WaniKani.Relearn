@@ -94,9 +94,19 @@ export function WaniKaniTokenForm() {
 
         <form onSubmit={handleSubmit} className="wk-form-body">
           <div className="wk-input-container">
-            <label htmlFor="wk-token-input" className="settings-label">
-              Personal Access Token
-            </label>
+            <div className="wk-label-row">
+              <label htmlFor="wk-token-input" className="settings-label">
+                Personal Access Token
+              </label>
+              <a
+                href="https://www.wanikani.com/settings/personal_access_tokens"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="wk-token-helper-link"
+              >
+                Get your token on WaniKani →
+              </a>
+            </div>
             <div className="wk-input-wrapper">
               <input
                 id="wk-token-input"

@@ -67,60 +67,6 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
     }
   };
 
-  // Handle direct select dropdown change
-  const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const val = e.target.value;
-    if (val === "all") {
-      onRangeChange(null);
-      setActiveDecade(null);
-    } else if (val.startsWith("decade-")) {
-      const idx = parseInt(val.replace("decade-", ""), 10);
-      const decade = DECADES[idx];
-      setActiveDecade(idx);
-      onRangeChange([decade.min, decade.max]);
-    } else {
-      const levelNum = parseInt(val, 10);
-      const decIdx = DECADES.findIndex(d => levelNum >= d.min && levelNum <= d.max);
-      setActiveDecade(decIdx !== -1 ? decIdx : null);
-      onRangeChange([levelNum, levelNum]);
-    }
-  };
-
-  // Get active dropdown value string
-  const getDropdownValue = () => {
-    if (selectedRange === null) return "all";
-    if (isSingleLevel) return String(selectedRange[0]);
-    if (activeDecadeIndex !== -1) return `decade-${activeDecadeIndex}`;
-    return "all";
-  };
-
-  const renderDropdown = () => (
-    <div className="level-select-wrapper">
-      <select
-        className="level-select-dropdown"
-        value={getDropdownValue()}
-        onChange={handleDropdownChange}
-        aria-label="Select Individual Level"
-      >
-        <option value="all">Select Level...</option>
-        <optgroup label="Decade Ranges">
-          {DECADES.map((d, idx) => (
-            <option key={`dec-${d.label}`} value={`decade-${idx}`}>
-              Levels {d.label}
-            </option>
-          ))}
-        </optgroup>
-        <optgroup label="Individual Levels (1 - 60)">
-          {Array.from({ length: 60 }, (_, i) => i + 1).map((lvl) => (
-            <option key={`lvl-${lvl}`} value={String(lvl)}>
-              Level {lvl}
-            </option>
-          ))}
-        </optgroup>
-      </select>
-    </div>
-  );
-
   return (
     <div className="level-filter-group">
       {/* Render top header bar ONLY if headerExtra exists */}
@@ -128,7 +74,6 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
         <>
           <div className="level-filter-header">
             <div className="level-filter-header-left">{headerExtra}</div>
-            {renderDropdown()}
           </div>
           <div className="level-filter-divider" />
         </>
@@ -166,9 +111,6 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
               </button>
             );
           })}
-
-          {/* If no headerExtra, render dropdown inline at the end of decade pills */}
-          {!headerExtra && renderDropdown()}
         </div>
       </div>
 

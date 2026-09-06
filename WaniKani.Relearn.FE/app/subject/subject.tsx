@@ -9,6 +9,7 @@ import { createGrammarSlug } from "~/utils/grammar";
 import { SubjectCharacter } from "~/components/SubjectCharacter";
 import { ScrollReveal } from "~/components/ScrollReveal";
 import { ParallaxBubble } from "~/components/ParallaxBubble";
+import { useBookmarks } from "~/hooks/useBookmarks";
 import "./subject.css";
 
 export function meta({ params }: Route.MetaArgs) {
@@ -89,6 +90,8 @@ export async function clientLoader({ params }: Route.ClientLoaderArgs) {
 export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
   const { subject, componentSubjects, amalgamationSubjects, visuallySimilarSubjects } = loaderData as unknown as SubjectDetailData;
   const navigate = useNavigate();
+  const { isBookmarked, addBookmark, removeBookmark, isLoggedIn } = useBookmarks();
+  const bookmarked = isBookmarked(subject.Id);
   const primaryMeaning = subject.Meanings?.find(m => m.Primary)?.Meaning || subject.Meanings?.[0]?.Meaning || "";
 
   // Map subject type to its list route
@@ -149,11 +152,36 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
           {primaryMeaning && (
             <h1 className="subject-detail-primary-meaning">{primaryMeaning}</h1>
           )}
-          {subject.WaniKaniLevel !== undefined && (
-            <div className="subject-meta-row">
-              <span className="subject-meta-chip">Level {subject.WaniKaniLevel}</span>
-            </div>
-          )}
+          <div className="subject-meta-row">
+            {subject.Level !== undefined && (
+              <span className="subject-meta-chip">Level {subject.Level}</span>
+            )}
+            {isLoggedIn && (
+              <button
+                type="button"
+                className={`subject-detail-bookmark-btn ${bookmarked ? 'bookmarked' : ''}`}
+                onClick={() => bookmarked ? removeBookmark(subject.Id) : addBookmark(subject)}
+                aria-label={bookmarked ? "Remove from My Box" : "Add to My Box"}
+              >
+                {bookmarked ? (
+                  <>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>In My Box</span>
+                  </>
+                ) : (
+                  <>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>Add to My Box</span>
+                  </>
+                )}
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
@@ -189,6 +217,13 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                 <div className="mnemonic-sub-section" style={{ marginTop: subject.Meanings?.length ? '20px' : '0' }}>
                   <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '10px' }}>Meaning Mnemonic</h3>
                   <p className="mnemonic-text">{parseMnemonics(subject.MeaningMnemonic)}</p>
+                  <div className="mnemonic-legend">
+                    <span className="mnemonic-legend-title">Mnemonic Key:</span>
+                    <span className="mnemonic-legend-item"><span className="legend-dot radical" />Radical</span>
+                    <span className="mnemonic-legend-item"><span className="legend-dot kanji" />Kanji</span>
+                    <span className="mnemonic-legend-item"><span className="legend-dot vocabulary" />Vocabulary</span>
+                    <span className="mnemonic-legend-item"><span className="legend-dot reading" />Reading</span>
+                  </div>
                 </div>
               )}
             </section>
@@ -209,30 +244,39 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                         <h3 className="reading-type-label">On'yomi</h3>
                         <div className="reading-items-inline">
                           {subject.Readings.filter(r => r.Type === 'onyomi').length > 0
-                            ? subject.Readings.filter(r => r.Type === 'onyomi').map((r, i) => (
-                              <span key={`on-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ? subject.Readings.filter(r => r.Type === 'onyomi').map((r, i, arr) => (
+                              <span key={`on-${i}`}>
+                                <span className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                                {i < arr.length - 1 && <span className="reading-separator">, </span>}
+                              </span>
                             ))
-                            : <span className="reading-inline-text none">None</span>}
+                            : <span className="reading-inline-text none">—</span>}
                         </div>
                       </div>
                       <div className="reading-column">
                         <h3 className="reading-type-label">Kun'yomi</h3>
                         <div className="reading-items-inline">
                           {subject.Readings.filter(r => r.Type === 'kunyomi').length > 0
-                            ? subject.Readings.filter(r => r.Type === 'kunyomi').map((r, i) => (
-                              <span key={`kun-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ? subject.Readings.filter(r => r.Type === 'kunyomi').map((r, i, arr) => (
+                              <span key={`kun-${i}`}>
+                                <span className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                                {i < arr.length - 1 && <span className="reading-separator">, </span>}
+                              </span>
                             ))
-                            : <span className="reading-inline-text none">None</span>}
+                            : <span className="reading-inline-text none">—</span>}
                         </div>
                       </div>
                       <div className="reading-column">
                         <h3 className="reading-type-label">Nanori</h3>
                         <div className="reading-items-inline">
                           {subject.Readings.filter(r => r.Type === 'nanori').length > 0
-                            ? subject.Readings.filter(r => r.Type === 'nanori').map((r, i) => (
-                              <span key={`nan-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                            ? subject.Readings.filter(r => r.Type === 'nanori').map((r, i, arr) => (
+                              <span key={`nan-${i}`}>
+                                <span className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                                {i < arr.length - 1 && <span className="reading-separator">, </span>}
+                              </span>
                             ))
-                            : <span className="reading-inline-text none">None</span>}
+                            : <span className="reading-inline-text none">—</span>}
                         </div>
                       </div>
                     </div>
@@ -241,8 +285,11 @@ export default function SubjectDetail({ loaderData }: Route.ComponentProps) {
                       <div className="reading-column">
                         <h3 className="reading-type-label">Reading</h3>
                         <div className="reading-items-inline">
-                          {subject.Readings.map((r, i) => (
-                            <span key={`voc-${i}`} className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                          {subject.Readings.map((r, i, arr) => (
+                            <span key={`voc-${i}`}>
+                              <span className={`reading-inline-text ${r.Primary ? 'primary' : 'secondary'}`}>{r.Reading}</span>
+                              {i < arr.length - 1 && <span className="reading-separator">, </span>}
+                            </span>
                           ))}
                         </div>
                       </div>
