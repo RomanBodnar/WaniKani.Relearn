@@ -1,5 +1,11 @@
 import { Link } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useBookmarks } from "~/hooks/useBookmarks";
+import { loadBookmarkAsync } from "~/hooks/useReadingSentences";
+import type { ReadingBookmark } from "~/types/reading";
+import { SubjectCard } from "../SubjectCard";
+import PracticeCarousel from "../PracticeCarousel";
+import { ToggleSwitch } from "../ToggleSwitch";
 
 export const HomeDivider = () => <hr className="home-divider" />;
 
@@ -31,6 +37,273 @@ export const ReadingHeroHeader = () => {
           Try Live Demo
           <span className="btn-hero-arrow-down" aria-hidden="true">↓</span>
         </a>
+      </div>
+    </section>
+  );
+};
+
+export const HomeUserDashboard = () => {
+  const { isLoggedIn, bookmarks } = useBookmarks();
+  const [readingBookmark, setReadingBookmark] = useState<ReadingBookmark | null>(null);
+
+  useEffect(() => {
+    if (!isLoggedIn) return;
+
+    let isMounted = true;
+    loadBookmarkAsync(true)
+      .then((b) => {
+        if (isMounted) {
+          setReadingBookmark(b);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isLoggedIn]);
+
+  if (!isLoggedIn) return null;
+
+  const radicalCount = bookmarks.filter((b) => b.Object?.toLowerCase() === "radical").length;
+  const kanjiCount = bookmarks.filter((b) => b.Object?.toLowerCase() === "kanji").length;
+  const vocabCount = bookmarks.filter(
+    (b) => b.Object?.toLowerCase() === "vocabulary" || b.Object?.toLowerCase() === "kanavocabulary"
+  ).length;
+
+  const handleScrollToMyBox = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const deckEl = document.getElementById("home-my-box-deck");
+    if (deckEl) {
+      e.preventDefault();
+      deckEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const readingParams = readingBookmark
+    ? `?page=${readingBookmark.page}${
+        readingBookmark.minLevel !== undefined && readingBookmark.minLevel !== null
+          ? `&minLevel=${readingBookmark.minLevel}`
+          : ""
+      }${
+        readingBookmark.maxLevel !== undefined && readingBookmark.maxLevel !== null
+          ? `&maxLevel=${readingBookmark.maxLevel}`
+          : ""
+      }`
+    : "";
+
+  return (
+    <section className="home-dashboard-section">
+      <div className="home-dashboard-grid">
+        {/* Card 1: Resume Reading */}
+        <div className="home-dashboard-card card-resume-reading">
+          <div className="dashboard-card-top">
+            <span className="dashboard-card-icon">📖</span>
+            <span className="dashboard-card-tag tag-reading">Reading Practice</span>
+          </div>
+
+          <div className="dashboard-card-body">
+            <h3 className="dashboard-card-title">
+              {readingBookmark ? "Resume Reading" : "Start Reading"}
+            </h3>
+            <p className="dashboard-card-desc">
+              {readingBookmark ? (
+                <>
+                  Page {readingBookmark.page}
+                  {readingBookmark.minLevel && readingBookmark.maxLevel
+                    ? ` • Levels ${readingBookmark.minLevel}–${readingBookmark.maxLevel}`
+                    : ""}
+                </>
+              ) : (
+                "Pick up authentic Japanese sentences with instant furigana breakdowns."
+              )}
+            </p>
+          </div>
+
+          <div className="dashboard-card-footer">
+            <Link
+              to={`/reading-practice${readingParams}`}
+              className="dashboard-action-btn btn-reading-action"
+            >
+              {readingBookmark ? "Continue Reading →" : "Start Reading Practice →"}
+            </Link>
+          </div>
+        </div>
+
+        {/* Card 2: My Box Summary */}
+        <div className="home-dashboard-card card-my-box">
+          <div className="dashboard-card-top">
+            <span className="dashboard-card-icon">📦</span>
+            <span className="dashboard-card-tag tag-my-box">Personal Study Box</span>
+          </div>
+
+          <div className="dashboard-card-body">
+            <h3 className="dashboard-card-title">
+              {bookmarks.length > 0
+                ? `${bookmarks.length} Saved Subject${bookmarks.length === 1 ? "" : "s"}`
+                : "My Box is Empty"}
+            </h3>
+            <p className="dashboard-card-desc">
+              {bookmarks.length > 0 ? (
+                <span className="dashboard-counts-breakdown">
+                  {radicalCount > 0 && <span className="count-tag radical-count">{radicalCount} Radicals</span>}
+                  {kanjiCount > 0 && <span className="count-tag kanji-count">{kanjiCount} Kanji</span>}
+                  {vocabCount > 0 && <span className="count-tag vocab-count">{vocabCount} Vocab</span>}
+                </span>
+              ) : (
+                "Bookmark difficult radicals, kanji, and vocabulary while studying to drill them here."
+              )}
+            </p>
+          </div>
+
+          <div className="dashboard-card-footer">
+            {bookmarks.length > 0 ? (
+              <a
+                href="#home-my-box-deck"
+                onClick={handleScrollToMyBox}
+                className="dashboard-action-btn btn-my-box-action"
+              >
+                Review My Box ↓
+              </a>
+            ) : (
+              <Link to="/kanji" className="dashboard-action-btn btn-my-box-action">
+                Browse Kanji to Save →
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const HomeMyBoxDeck = () => {
+  const { isLoggedIn, bookmarks } = useBookmarks();
+  const [isBoxOpen, setIsBoxOpen] = useState(true);
+  const [isPracticeMode, setIsPracticeMode] = useState(false);
+  const [practiceStartIndex, setPracticeStartIndex] = useState(0);
+  const [typeFilter, setTypeFilter] = useState<"all" | "radical" | "kanji" | "vocabulary">("all");
+
+  if (!isLoggedIn || bookmarks.length === 0) return null;
+
+  const radicalCount = bookmarks.filter((b) => b.Object?.toLowerCase() === "radical").length;
+  const kanjiCount = bookmarks.filter((b) => b.Object?.toLowerCase() === "kanji").length;
+  const vocabCount = bookmarks.filter(
+    (b) => b.Object?.toLowerCase() === "vocabulary" || b.Object?.toLowerCase() === "kanavocabulary"
+  ).length;
+
+  const filteredBookmarks = bookmarks.filter((b) => {
+    if (typeFilter === "all") return true;
+    const obj = b.Object?.toLowerCase();
+    if (typeFilter === "vocabulary") return obj === "vocabulary" || obj === "kanavocabulary";
+    return obj === typeFilter;
+  });
+
+  return (
+    <section id="home-my-box-deck" className="home-my-box-section">
+      <div className="my-box-deck-container home-my-box-container">
+        <div className="home-my-box-header">
+          <div className="home-my-box-header-left">
+            <button
+              onClick={() => setIsBoxOpen(!isBoxOpen)}
+              className="my-box-collapse-btn"
+              aria-label={isBoxOpen ? "Collapse My Box" : "Expand My Box"}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  transform: isBoxOpen ? "rotate(90deg)" : "none",
+                  transition: "transform 0.2s",
+                }}
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+            <h2 className="home-my-box-title">
+              My Study Box
+              <span className="home-my-box-badge">{bookmarks.length}</span>
+            </h2>
+          </div>
+
+          <div className="home-my-box-controls">
+            {/* Type filter tabs */}
+            <div className="home-my-box-type-tabs">
+              <button
+                className={`type-tab-btn ${typeFilter === "all" ? "active" : ""}`}
+                onClick={() => setTypeFilter("all")}
+              >
+                All ({bookmarks.length})
+              </button>
+              {radicalCount > 0 && (
+                <button
+                  className={`type-tab-btn tab-radical ${typeFilter === "radical" ? "active" : ""}`}
+                  onClick={() => setTypeFilter("radical")}
+                >
+                  Radicals ({radicalCount})
+                </button>
+              )}
+              {kanjiCount > 0 && (
+                <button
+                  className={`type-tab-btn tab-kanji ${typeFilter === "kanji" ? "active" : ""}`}
+                  onClick={() => setTypeFilter("kanji")}
+                >
+                  Kanji ({kanjiCount})
+                </button>
+              )}
+              {vocabCount > 0 && (
+                <button
+                  className={`type-tab-btn tab-vocab ${typeFilter === "vocabulary" ? "active" : ""}`}
+                  onClick={() => setTypeFilter("vocabulary")}
+                >
+                  Vocabulary ({vocabCount})
+                </button>
+              )}
+            </div>
+
+            <div className="home-my-box-divider"></div>
+
+            <ToggleSwitch
+              checked={isPracticeMode}
+              onChange={setIsPracticeMode}
+              label="Practice Mode"
+              color="var(--color-pink-hot, #FE3365)"
+            />
+          </div>
+        </div>
+
+        {isBoxOpen && (
+          isPracticeMode ? (
+            <div key="practice-mode" className="mode-transition-enter" style={{ marginTop: "20px" }}>
+              <PracticeCarousel
+                subjects={filteredBookmarks}
+                initialIndex={practiceStartIndex}
+              />
+            </div>
+          ) : (
+            <div
+              key="grid-mode"
+              className="subjects-grid my-box-grid mode-transition-enter"
+              style={{ justifyContent: "flex-start", marginTop: "20px", marginBottom: 0 }}
+            >
+              {filteredBookmarks.map((subject, index) => (
+                <SubjectCard
+                  key={subject.Id}
+                  subject={subject}
+                  onClick={() => {
+                    setPracticeStartIndex(index);
+                    setIsPracticeMode(true);
+                  }}
+                />
+              ))}
+            </div>
+          )
+        )}
       </div>
     </section>
   );

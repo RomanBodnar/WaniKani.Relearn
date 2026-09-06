@@ -17,6 +17,14 @@ export const SubjectCard = ({ subject, variant, onClick }: SubjectCardProps) => 
 
   const bookmarked = isBookmarked(subject.Id);
 
+  const getSubjectVariant = (subj: Subject): "kanji" | "vocabulary" | "radical" => {
+    const obj = subj.Object?.toLowerCase();
+    if (obj === "kanji") return "kanji";
+    if (obj === "radical") return "radical";
+    return "vocabulary";
+  };
+  const effectiveVariant = variant || getSubjectVariant(subject);
+
   const handleBookmarkClick = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent Link navigation
     e.stopPropagation();
@@ -33,7 +41,7 @@ export const SubjectCard = ({ subject, variant, onClick }: SubjectCardProps) => 
       className="subject-card-link"
       onClick={onClick ? (e) => { e.preventDefault(); onClick(e, subject); } : undefined}
     >
-      <div className={`subject-card ${variant ? `subject-card-${variant}` : ''} ${bookmarked ? 'bookmarked-card' : ''}`}>
+      <div className={`subject-card ${effectiveVariant ? `subject-card-${effectiveVariant}` : ''} ${bookmarked ? 'bookmarked-card' : ''}`}>
         {isLoggedIn && (
           <button 
             className={`subject-bookmark-btn ${bookmarked ? 'bookmarked' : ''}`}

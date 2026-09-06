@@ -2,6 +2,8 @@ import type { Route } from "./+types/home";
 import "./home.css";
 import {
   ReadingHeroHeader,
+  HomeUserDashboard,
+  HomeMyBoxDeck,
   CorePillarsHub,
   LiveSentenceDemo,
   QuickLevelSelector,
@@ -20,6 +22,8 @@ export default function Home() {
   return (
     <div className="home-page">
       <ReadingHeroHeader />
+      <HomeUserDashboard />
+      <HomeMyBoxDeck />
       <CorePillarsHub />
       <HomeDivider />
       <LiveSentenceDemo />

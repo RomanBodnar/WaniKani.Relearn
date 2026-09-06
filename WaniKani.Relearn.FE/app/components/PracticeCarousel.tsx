@@ -77,6 +77,8 @@ export default function PracticeCarousel({ subjects, variant, initialIndex = 0 }
           const zIndex = 100 - absOffset;
           const opacity = Math.max(1 - absOffset * 0.4, 0); // Drops to 0 at offset 3, keeping 2 cards visible per side
 
+          const itemVariant = variant || (subject.Object?.toLowerCase() === 'radical' ? 'radical' : subject.Object?.toLowerCase() === 'kanji' ? 'kanji' : 'vocabulary');
+
           return (
             <div 
               key={subject.Id}
@@ -91,7 +93,7 @@ export default function PracticeCarousel({ subjects, variant, initialIndex = 0 }
             >
               <PracticeCard 
                 subject={subject} 
-                variant={variant} 
+                variant={itemVariant} 
                 isActive={offset === 0} 
               />
             </div>
