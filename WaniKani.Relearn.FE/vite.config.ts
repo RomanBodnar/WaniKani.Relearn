@@ -6,7 +6,7 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 
 export default defineConfig({
   plugins: [
-    basicSsl(),
+    ...(process.env.VITE_USE_HTTPS === "false" ? [] : [basicSsl()]),
     tailwindcss(),
     reactRouter(),
     tsconfigPaths()

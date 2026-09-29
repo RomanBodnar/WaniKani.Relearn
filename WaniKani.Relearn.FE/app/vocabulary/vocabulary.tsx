@@ -8,7 +8,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { LevelFilter, type LevelRange } from "../components/LevelFilter";
 import { FloatingWatermarks } from "../components/FloatingWatermarks";
 import { ErrorDisplay } from "../components/ErrorDisplay";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { useBookmarks } from "~/hooks/useBookmarks";
 import React, { useMemo, useEffect, useRef, useCallback, useState } from "react";
 import "./subjects.css";
@@ -146,7 +146,15 @@ export default function Vocabulary({ loaderData: initialData }: Route.ComponentP
   return (
     <div className="subjects-container">
       <FloatingWatermarks chars={["食", "話", "見", "行", "水", "時", "人", "月"]} />
-      <h1 className="subjects-title">Vocabulary</h1>
+      <div className="subjects-heading-row">
+        <h1 className="subjects-title">Vocabulary</h1>
+        <Link to="/vocabulary/new" className="new-vocabulary-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          <span>Add word</span>
+        </Link>
+      </div>
 
       <div className="level-filter-container level-filter-vocabulary">
         <LevelFilter

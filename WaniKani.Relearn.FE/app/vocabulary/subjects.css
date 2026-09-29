@@ -12,6 +12,46 @@
   text-align: left;
 }
 
+.subjects-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.subjects-heading-row .subjects-title {
+  margin-bottom: 0;
+}
+
+.new-vocabulary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--color-vocabulary-block);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.2);
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.new-vocabulary-link:hover {
+  background: #00b34a;
+  box-shadow: 0 6px 16px rgba(0, 200, 83, 0.26);
+  transform: translateY(-1px);
+}
+
+.new-vocabulary-link:focus-visible {
+  outline: 3px solid rgba(0, 200, 83, 0.24);
+  outline-offset: 3px;
+}
+
 .subjects-subtitle {
   font-size: 15px;
   color: #64748b;
@@ -62,6 +102,12 @@
 
   .subjects-title {
     font-size: 20px;
+  }
+
+  .new-vocabulary-link {
+    min-height: 40px;
+    padding: 7px 12px;
+    font-size: 14px;
   }
 
   .subjects-subtitle {
